@@ -105,6 +105,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: wheels
+          path: wheels
       - name: Create bin/
         run: mkdir -p bin
       - name: get MininZinc path to cache
@@ -206,6 +207,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: wheels
+          path: wheels
       - name: Create the github release
         uses: softprops/action-gh-release@v1
         with:
