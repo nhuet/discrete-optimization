@@ -88,6 +88,7 @@ class Ga(SolverDO):
     """
 
     hyperparameters = [
+        EnumHyperparameter(name="mutation", enum=DeapMutation, default=None),
         EnumHyperparameter(name="crossover", enum=DeapCrossover, default=None),
         EnumHyperparameter(
             name="selection", enum=DeapSelection, default=DeapSelection.SEL_TOURNAMENT
