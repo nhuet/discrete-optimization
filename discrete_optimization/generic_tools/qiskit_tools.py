@@ -220,7 +220,8 @@ class QiskitQAOASolver(SolverDO):
         sol = self.retrieve_current_solution(result)
         fit = self.aggreg_from_sol(sol)
         return ResultStorage(
-            [(sol, fit)], mode_optim=self.params_objective_function.sense_function
+            mode_optim=self.params_objective_function.sense_function,
+            list_solution_fits=[(sol, fit)],
         )
 
     @abstractmethod
@@ -288,7 +289,8 @@ class QiskitVQESolver(SolverDO):
         sol = self.retrieve_current_solution(result)
         fit = self.aggreg_from_sol(sol)
         return ResultStorage(
-            [(sol, fit)], mode_optim=self.params_objective_function.sense_function
+            mode_optim=self.params_objective_function.sense_function,
+            list_solution_fits=[(sol, fit)],
         )
 
     @abstractmethod

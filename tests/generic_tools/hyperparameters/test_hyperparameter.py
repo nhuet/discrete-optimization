@@ -41,7 +41,10 @@ class DummySolver(SolverDO):
     def solve(
         self, callbacks: Optional[List[Callback]] = None, **kwargs: Any
     ) -> ResultStorage:
-        return ResultStorage([])
+        return ResultStorage(
+            mode_optim=self.params_objective_function.sense_function,
+            list_solution_fits=[],
+        )
 
 
 def bee1_impl(x):
@@ -89,7 +92,10 @@ class DummySolverWithEnumSubset(SolverDO):
     def solve(
         self, callbacks: Optional[List[Callback]] = None, **kwargs: Any
     ) -> ResultStorage:
-        return ResultStorage([])
+        return ResultStorage(
+            mode_optim=self.params_objective_function.sense_function,
+            list_solution_fits=[],
+        )
 
 
 class DummySolverWithDependencies(SolverDO):
@@ -111,7 +117,10 @@ class DummySolverWithDependencies(SolverDO):
     def solve(
         self, callbacks: Optional[List[Callback]] = None, **kwargs: Any
     ) -> ResultStorage:
-        return ResultStorage([])
+        return ResultStorage(
+            mode_optim=self.params_objective_function.sense_function,
+            list_solution_fits=[],
+        )
 
 
 class DummySolverWithNameInKwargs(SolverDO):
@@ -155,7 +164,10 @@ class DummySolver2(SolverDO):
     def solve(
         self, callbacks: Optional[List[Callback]] = None, **kwargs: Any
     ) -> ResultStorage:
-        return ResultStorage([])
+        return ResultStorage(
+            mode_optim=self.params_objective_function.sense_function,
+            list_solution_fits=[],
+        )
 
 
 class BaseMetaSolver(SolverDO):
@@ -170,7 +182,10 @@ class BaseMetaSolver(SolverDO):
     def solve(
         self, callbacks: Optional[List[Callback]] = None, **kwargs: Any
     ) -> ResultStorage:
-        return ResultStorage([])
+        return ResultStorage(
+            mode_optim=self.params_objective_function.sense_function,
+            list_solution_fits=[],
+        )
 
 
 class MetaSolver(BaseMetaSolver):
@@ -191,7 +206,10 @@ class MetaSolverFixedSubsolver(SolverDO):
     def solve(
         self, callbacks: Optional[List[Callback]] = None, **kwargs: Any
     ) -> ResultStorage:
-        return ResultStorage([])
+        return ResultStorage(
+            mode_optim=self.params_objective_function.sense_function,
+            list_solution_fits=[],
+        )
 
 
 class MetaMetaSolver(SolverDO):
@@ -206,7 +224,10 @@ class MetaMetaSolver(SolverDO):
     def solve(
         self, callbacks: Optional[List[Callback]] = None, **kwargs: Any
     ) -> ResultStorage:
-        return ResultStorage([])
+        return ResultStorage(
+            mode_optim=self.params_objective_function.sense_function,
+            list_solution_fits=[],
+        )
 
 
 def test_get_hyperparameters_and_co():
