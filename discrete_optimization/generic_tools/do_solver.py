@@ -79,3 +79,42 @@ class SolverDO(Hyperparametrizable):
 
         """
         return None
+
+    def set_model_objective(self, obj: str) -> None:
+        """Update intern model objective.
+
+        Args:
+            obj: a string representing the desired objective.
+                Should be one of `self.problem.get_objective_names()`.
+
+        Returns:
+
+        """
+        ...
+
+    def add_model_constraint(self, obj: str, value: float) -> Any:
+        """
+
+        Args:
+            obj: a string representing the desired objective.
+                Should be one of `self.problem.get_objective_names()`.
+            value: the limiting value.
+                If the optimization direction is maximizing, this is a lower bound,
+                else this is an upper bound.
+
+        Returns:
+            the created constraint.
+
+        """
+        ...
+
+    def remove_model_constraint(self, cstr: Any) -> None:
+        """Remove the intern model constraint.
+
+        Args:
+            cstr: constraint created with `add_model_constraint()`
+
+        Returns:
+
+        """
+        ...

@@ -34,25 +34,60 @@ class CPSatKnapsackSolver(OrtoolsCPSatSolver, SolverKnapsack):
         variables = [
             model.NewBoolVar(name=f"x_{i}") for i in range(self.problem.nb_items)
         ]
-        model.Add(
-            sum(
-                [
-                    variables[i] * self.problem.list_items[i].weight
-                    for i in range(self.problem.nb_items)
-                ]
-            )
-            <= self.problem.max_capacity
-        )
-        model.Maximize(
-            sum(
-                [
-                    variables[i] * self.problem.list_items[i].value
-                    for i in range(self.problem.nb_items)
-                ]
-            )
-        )
-        self.cp_model = model
         self.variables["taken"] = variables
+        self.cp_model = model
+
+        model.Add(self._intern_weight() <= self.problem.max_capacity)
+
+        self.set_model_objective("value")
+
+    def _intern_value(self):
+        variables = self.variables["taken"]
+        return sum(
+            [
+                variables[i] * self.problem.list_items[i].value
+                for i in range(self.problem.nb_items)
+            ]
+        )
+
+    def _intern_weight(self):
+        variables = self.variables["taken"]
+        return sum(
+            [
+                variables[i] * self.problem.list_items[i].weight
+                for i in range(self.problem.nb_items)
+            ]
+        )
+
+    def _intern_heaviest_item(self):
+        variables = self.variables["taken"]
+        return max(
+            [
+                variables[i] * self.problem.list_items[i].weight
+                for i in range(self.problem.nb_items)
+            ]
+        )
+
+    def _intern_weight_violation(self):
+        return max(0.0, self._intern_weight() - self.problem.max_capacity)
+
+    def _intern_objective(self, obj: str) -> Any:
+        intern_objective_mapping = {
+            "value": self._intern_value,
+            "weight": self._intern_weight,
+            "heaviest_item": self._intern_heaviest_item,
+            "weight_violation": self._intern_weight_violation,
+        }
+        if obj in intern_objective_mapping:
+            intern_objective_mapping[obj]()
+        else:
+            raise ValueError(f"Unknown objective '{obj}'.")
+
+    def set_model_objective(self, obj: str) -> None:
+        self.cp_model.Maximize(self._intern_objective(obj))
+
+    def add_model_constraint(self, obj: str, value: float) -> Any:
+        return self.cp_model.Add(self._intern_objective(obj) >= value)
 
     def retrieve_solution(
         self, cpsolvercb: CpSolverSolutionCallback

@@ -331,7 +331,7 @@ class Problem:
 
         """
         # output of evaluate(solution) typically
-        keys = sorted(self.get_objective_register().dict_objective_to_doc.keys())
+        keys = self.get_objective_names()
         return TupleFitness(np.array([dict_values[k] for k in keys]), len(keys))
 
     @abstractmethod
@@ -379,6 +379,9 @@ class Problem:
         else:
             direction = "maximize"
         return direction
+
+    def get_objective_names(self) -> List[str]:
+        return sorted(self.get_objective_register().dict_objective_to_doc.keys())
 
 
 class BaseMethodAggregating(Enum):
