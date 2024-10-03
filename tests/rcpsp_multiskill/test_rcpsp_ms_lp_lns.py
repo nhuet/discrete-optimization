@@ -25,18 +25,17 @@ from discrete_optimization.rcpsp_multiskill.rcpsp_multiskill_parser import (
 )
 from discrete_optimization.rcpsp_multiskill.solvers.lp_model import (
     LP_Solver_MRSCPSP,
+    LP_Solver_MRSCPSP_MathOpt,
     MilpSolverName,
 )
 from discrete_optimization.rcpsp_multiskill.solvers.ms_rcpsp_lp_lns_solver import (
+    ConstraintHandlerStartTimeIntervalMathOpt,
     ConstraintHandlerStartTimeIntervalMRCPSP,
     InitialMethodRCPSP,
     InitialSolutionMS_RCPSP,
 )
 
 
-@pytest.mark.skip(
-    reason="mip+gurobi not working with gurobi license coming from mere pip install"
-)
 def test_multiskill_imopse():
     params_objective_function = ParamsObjectiveFunction(
         objectives=["makespan"],
@@ -46,16 +45,9 @@ def test_multiskill_imopse():
     )
     file = [f for f in get_data_available() if "100_5_20_9_D3.def" in f][0]
     model, _ = parse_file(file)
-    model_rcpsp = model.build_multimode_rcpsp_calendar_representative()
-    graph = model_rcpsp.compute_graph()
-    cycles = graph.check_loop()
-    solver = PileSolverRCPSP_Calendar(problem=model_rcpsp)
-    store_solution = solver.solve(time_limit=200)
-    best_mrcpsp, fit = store_solution.get_best_solution_fit()
-    solver = LP_Solver_MRSCPSP(
+    model = model.to_variant_model()
+    solver = LP_Solver_MRSCPSP_MathOpt(
         problem=model,
-        lp_solver=MilpSolverName.GRB,
-        # CBC is not working well at all. -> so in unit test you should probably skip this test.
         params_objective_function=params_objective_function,
     )
     solver.init_model(max_time=600)
@@ -65,7 +57,7 @@ def test_multiskill_imopse():
         mip_gap=0.001,
         retrieve_all_solution=True,
     )
-    constraint_handler = ConstraintHandlerStartTimeIntervalMRCPSP(
+    constraint_handler = ConstraintHandlerStartTimeIntervalMathOpt(
         problem=model, fraction_to_fix=0.95, minus_delta=5, plus_delta=5
     )
     initial_solution_provider = InitialSolutionMS_RCPSP(

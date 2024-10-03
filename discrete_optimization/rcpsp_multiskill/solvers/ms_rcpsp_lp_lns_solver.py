@@ -13,6 +13,7 @@ from discrete_optimization.generic_tools.do_problem import (
 )
 from discrete_optimization.generic_tools.lns_mip import (
     InitialSolution,
+    OrtoolsMathOptConstraintHandler,
     PymipConstraintHandler,
 )
 from discrete_optimization.generic_tools.lp_tools import MilpSolverName
@@ -28,7 +29,10 @@ from discrete_optimization.rcpsp_multiskill.rcpsp_multiskill import (
     MS_RCPSPModel,
     MS_RCPSPSolution,
 )
-from discrete_optimization.rcpsp_multiskill.solvers.lp_model import LP_Solver_MRSCPSP
+from discrete_optimization.rcpsp_multiskill.solvers.lp_model import (
+    LP_Solver_MRSCPSP,
+    LP_Solver_MRSCPSP_MathOpt,
+)
 
 
 class InitialSolutionMS_RCPSP(InitialSolution):
@@ -188,4 +192,59 @@ class ConstraintHandlerStartTimeIntervalMRCPSP(PymipConstraintHandler):
             )
         if solver.lp_solver == MilpSolverName.GRB:
             solver.model.solver.update()
+        return lns_constraints
+
+
+class ConstraintHandlerStartTimeIntervalMathOpt(OrtoolsMathOptConstraintHandler):
+    def __init__(
+        self,
+        problem: MS_RCPSPModel,
+        fraction_to_fix: float = 0.9,
+        minus_delta: int = 2,
+        plus_delta: int = 2,
+    ):
+        self.problem = problem
+        self.fraction_to_fix = fraction_to_fix
+        self.minus_delta = minus_delta
+        self.plus_delta = plus_delta
+
+    def adding_constraint_from_results_store(
+        self,
+        solver: LP_Solver_MRSCPSP_MathOpt,
+        result_storage: ResultStorage,
+        **kwargs: Any
+    ) -> Iterable[Any]:
+        current_solution: MS_RCPSPSolution = result_storage.get_best_solution()
+        solver.set_warm_start(current_solution)
+        lns_constraints = []
+        max_time = max(
+            [
+                current_solution.schedule[x]["end_time"]
+                for x in current_solution.schedule
+            ]
+        )
+        last_jobs = [
+            x
+            for x in current_solution.schedule
+            if current_solution.schedule[x]["end_time"] >= max_time - 5
+        ]
+        nb_jobs = self.problem.nb_tasks
+        jobs_to_fix = set(
+            random.sample(
+                list(current_solution.schedule), int(self.fraction_to_fix * nb_jobs)
+            )
+        )
+        for lj in last_jobs:
+            if lj in jobs_to_fix:
+                jobs_to_fix.remove(lj)
+        for job in jobs_to_fix:
+            start_time_j = current_solution.schedule[job]["start_time"]
+            min_st = max(start_time_j - self.minus_delta, 0)
+            max_st = min(start_time_j + self.plus_delta, max_time)
+            lns_constraints.append(
+                solver.add_linear_constraint(solver.start_times_task[job] <= max_st)
+            )
+            lns_constraints.append(
+                solver.add_linear_constraint(solver.start_times_task[job] >= min_st)
+            )
         return lns_constraints
