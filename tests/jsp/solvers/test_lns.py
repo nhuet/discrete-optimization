@@ -30,15 +30,6 @@ def test_lns(objective_subproblem):
     initial_solution_provider = TrivialInitialSolution(solution=initial_res)
     constraint_handler = SchedulingConstraintHandler(
         problem=problem,
-        neighbor_builder=NeighborBuilderMix(
-            list_neighbor=[
-                NeighborBuilderSubPart(
-                    problem=problem,
-                ),
-                NeighborRandom(problem=problem),
-            ],
-            weight_neighbor=[0.5, 0.5],
-        ),
         objective_subproblem=objective_subproblem,
     )
     solver = LnsOrtoolsCpSat(
@@ -48,8 +39,8 @@ def test_lns(objective_subproblem):
         initial_solution_provider=initial_solution_provider,
     )
     res = solver.solve(
-        nb_iteration_lns=2,
-        time_limit_subsolver=10,
+        nb_iteration_lns=20,
+        time_limit_subsolver=5,
         parameters_cp=parameters_cp,
     )
     sol = res.get_best_solution()

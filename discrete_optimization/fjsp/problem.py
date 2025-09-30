@@ -11,6 +11,7 @@ from discrete_optimization.generic_scheduling_tools.multimode import (
     MultimodeProblem,
     MultimodeSolution,
 )
+from discrete_optimization.generic_scheduling_tools.precedence import PrecedenceProblem
 from discrete_optimization.generic_scheduling_tools.scheduling import (
     SchedulingProblem,
     SchedulingSolution,
@@ -72,7 +73,9 @@ class Job:
     sub_jobs: list[SubjobOptions]
 
 
-class FJobShopProblem(SchedulingProblem[Task], MultimodeProblem[Task]):
+class FJobShopProblem(
+    SchedulingProblem[Task], MultimodeProblem[Task], PrecedenceProblem[Task]
+):
     n_jobs: int
     n_machines: int
     list_jobs: list[Job]
@@ -140,6 +143,13 @@ class FJobShopProblem(SchedulingProblem[Task], MultimodeProblem[Task]):
             for j, job in enumerate(self.list_jobs)
             for k in range(len(job.sub_jobs))
         ]
+
+    def get_precedence_constraints(self) -> dict[Task, list[Task]]:
+        return {
+            (j, k): [(j, k + 1)] if k + 1 < len(job.sub_jobs) else []
+            for j, job in enumerate(self.list_jobs)
+            for k in range(len(job.sub_jobs))
+        }
 
     def get_task_modes(self, task: Task) -> set[int]:
         j, k = task

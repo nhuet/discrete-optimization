@@ -5,6 +5,7 @@
 #  here https://github.com/erachelson/seq_dec_mak/blob/main/scheduling_newcourse/correction/nb2_jobshopsolver.py
 from __future__ import annotations
 
+from discrete_optimization.generic_scheduling_tools.precedence import PrecedenceProblem
 from discrete_optimization.generic_scheduling_tools.scheduling import (
     SchedulingProblem,
     SchedulingSolution,
@@ -59,7 +60,7 @@ class Subjob:
         self.processing_time = processing_time
 
 
-class JobShopProblem(SchedulingProblem[Task]):
+class JobShopProblem(SchedulingProblem[Task], PrecedenceProblem[Task]):
     n_jobs: int
     n_machines: int
     list_jobs: list[list[Subjob]]
@@ -95,6 +96,13 @@ class JobShopProblem(SchedulingProblem[Task]):
     @property
     def tasks_list(self) -> list[Task]:
         return [(j, k) for j, job in enumerate(self.list_jobs) for k in range(len(job))]
+
+    def get_precedence_constraints(self) -> dict[Task, list[Task]]:
+        return {
+            (j, k): [(j, k + 1)] if k + 1 < len(job) else []
+            for j, job in enumerate(self.list_jobs)
+            for k in range(len(job))
+        }
 
     def get_last_tasks(self) -> list[Task]:
         return [(j, len(job) - 1) for j, job in enumerate(self.list_jobs)]

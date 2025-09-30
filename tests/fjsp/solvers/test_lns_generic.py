@@ -29,15 +29,6 @@ def test_lnscpsat_fjsp():
     p.nb_process = 10
     constraint_handler = SchedulingConstraintHandler(
         problem=problem,
-        neighbor_builder=NeighborBuilderMix(
-            list_neighbor=[
-                NeighborBuilderSubPart(
-                    problem=problem,
-                ),
-                NeighborRandom(problem=problem),
-            ],
-            weight_neighbor=[0.5, 0.5],
-        ),
     )
     assert isinstance(constraint_handler.constraints_extractor, ConstraintExtractorList)
     assert any(
@@ -50,7 +41,7 @@ def test_lnscpsat_fjsp():
     )
     res = lns_solver.solve(
         skip_initial_solution_provider=True,
-        nb_iteration_lns=10,
+        nb_iteration_lns=20,
         parameters_cp=p,
         time_limit_subsolver_iter0=1,
         time_limit_subsolver=2,

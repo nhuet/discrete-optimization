@@ -22,6 +22,7 @@ from discrete_optimization.generic_scheduling_tools.multimode import (
     MultimodeProblem,
     MultimodeSolution,
 )
+from discrete_optimization.generic_scheduling_tools.precedence import PrecedenceProblem
 from discrete_optimization.generic_scheduling_tools.scheduling import (
     SchedulingProblem,
     SchedulingSolution,
@@ -1950,6 +1951,7 @@ class MultiskillRcpspProblem(
     SchedulingProblem[Task],
     MultimodeProblem[Task],
     AllocationProblem[Task, UnaryResource],
+    PrecedenceProblem[Task],
 ):
     sgs: ScheduleGenerationScheme
     skills_set: set[str]
@@ -2166,6 +2168,9 @@ class MultiskillRcpspProblem(
             self.resource_blocking_data = []
 
         self.update_functions()
+
+    def get_precedence_constraints(self) -> dict[Task, list[Task]]:
+        return self.successors
 
     def get_last_tasks(self) -> list[Task]:
         return [self.sink_task]

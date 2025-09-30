@@ -30,6 +30,7 @@ from discrete_optimization.generic_scheduling_tools.scheduling import (
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (
     NeighborBuilder,
+    build_default_neighbor_builder,
 )
 from discrete_optimization.generic_tools.cp_tools import SignEnum
 from discrete_optimization.generic_tools.hyperparameters.hyperparameter import (
@@ -592,12 +593,15 @@ class BaseTasksConstraintHandler(ConstraintHandler, Generic[Task]):
     def __init__(
         self,
         problem: TasksProblem,
-        neighbor_builder: NeighborBuilder[Task],
+        neighbor_builder: Optional[NeighborBuilder[Task]] = None,
         constraints_extractor: Optional[BaseConstraintExtractor] = None,
         params_constraint_builder: Optional[ParamsConstraintBuilder] = None,
     ):
         self.problem = problem
-        self.neighbor_builder = neighbor_builder
+        if neighbor_builder is None:
+            self.neighbor_builder = build_default_neighbor_builder(problem=problem)
+        else:
+            self.neighbor_builder = neighbor_builder
         if params_constraint_builder is None:
             self.params_constraint_builder = ParamsConstraintBuilder.default()
         else:
@@ -648,7 +652,7 @@ class SchedulingConstraintHandler(BaseTasksConstraintHandler[Task]):
     def __init__(
         self,
         problem: SchedulingProblem,
-        neighbor_builder: NeighborBuilder[Task],
+        neighbor_builder: Optional[NeighborBuilder[Task]] = None,
         constraints_extractor: Optional[BaseConstraintExtractor] = None,
         params_constraint_builder: Optional[ParamsConstraintBuilder] = None,
         objective_subproblem: ObjectiveSubproblem = ObjectiveSubproblem.GLOBAL_MAKESPAN,

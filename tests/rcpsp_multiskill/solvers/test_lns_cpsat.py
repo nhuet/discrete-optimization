@@ -1,9 +1,6 @@
-import random
-
 import numpy as np
 import pytest
 
-from discrete_optimization.generic_scheduling_tools.enums import StartOrEnd
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
     BaseConstraintExtractor,
     ChainingConstraintExtractor,
@@ -19,21 +16,14 @@ from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_ha
     SubtasksAllocationConstraintExtractor,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (
-    NeighborBuilderMix,
-    NeighborBuilderSubPart,
     NeighborRandom,
 )
-from discrete_optimization.generic_tools.callbacks.early_stoppers import (
-    NbIterationStopper,
-)
-from discrete_optimization.generic_tools.cp_tools import ParametersCp, SignEnum
+from discrete_optimization.generic_tools.cp_tools import ParametersCp
 from discrete_optimization.generic_tools.lns_cp import LnsOrtoolsCpSat
-from discrete_optimization.generic_tools.lns_tools import TrivialInitialSolution
 from discrete_optimization.rcpsp_multiskill.parser_imopse import (
     get_data_available,
     parse_file,
 )
-from discrete_optimization.rcpsp_multiskill.problem import MultiskillRcpspSolution
 from discrete_optimization.rcpsp_multiskill.solvers.cpsat import (
     CpSatMultiskillRcpspSolver,
 )
@@ -115,15 +105,6 @@ def test_lns_cpsat(
     constraint_handler = SchedulingConstraintHandler(
         problem=problem,
         constraints_extractor=constraints_extractor,
-        neighbor_builder=NeighborBuilderMix(
-            list_neighbor=[
-                NeighborBuilderSubPart(
-                    problem=problem,
-                ),
-                NeighborRandom(problem=problem),
-            ],
-            weight_neighbor=[0.5, 0.5],
-        ),
     )
 
     solver = LnsOrtoolsCpSat(
@@ -150,15 +131,6 @@ def test_lns_cpsat_subobjective(problem_multimode):
 
     constraint_handler = SchedulingConstraintHandler(
         problem=problem,
-        neighbor_builder=NeighborBuilderMix(
-            list_neighbor=[
-                NeighborBuilderSubPart(
-                    problem=problem,
-                ),
-                NeighborRandom(problem=problem),
-            ],
-            weight_neighbor=[0.5, 0.5],
-        ),
         objective_subproblem=ObjectiveSubproblem.SUM_END_SUBTASKS,
     )
 

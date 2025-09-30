@@ -17,6 +17,7 @@ from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tool
     NeighborBuilderMix,
     NeighborBuilderSubPart,
     NeighborRandom,
+    NeighborRandomAndNeighborGraph,
 )
 from discrete_optimization.generic_tools.callbacks.early_stoppers import (
     NbIterationStopper,
@@ -63,15 +64,6 @@ def test_lns(fix_primary_tasks_modes, fix_secondary_tasks_modes, random_seed):
     constraint_handler = SchedulingConstraintHandler(
         problem=problem,
         constraints_extractor=constraints_extractor,
-        neighbor_builder=NeighborBuilderMix(
-            list_neighbor=[
-                NeighborBuilderSubPart(
-                    problem=problem,
-                ),
-                NeighborRandom(problem=problem),
-            ],
-            weight_neighbor=[0.5, 0.5],
-        ),
     )
 
     solver = LnsOrtoolsCpSat(
@@ -99,10 +91,8 @@ def test_default_constraint_handler(model):
     problem = parse_file(file)
     constraint_handler = SchedulingConstraintHandler(
         problem=problem,
-        neighbor_builder=NeighborRandom(problem=problem),
     )
     assert isinstance(constraint_handler.constraints_extractor, ConstraintExtractorList)
-
     assert (
         MultimodeConstraintExtractor
         in [
@@ -110,3 +100,7 @@ def test_default_constraint_handler(model):
             for extractor in constraint_handler.constraints_extractor.extractors
         ]
     ) == problem.is_multimode
+    assert isinstance(constraint_handler.neighbor_builder, NeighborBuilderMix)
+    assert NeighborRandomAndNeighborGraph in (
+        type(builder) for builder in constraint_handler.neighbor_builder.list_neighbor
+    )

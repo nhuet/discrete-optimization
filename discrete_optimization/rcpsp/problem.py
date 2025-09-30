@@ -14,6 +14,7 @@ import numpy as np
 import numpy.typing as npt
 
 from discrete_optimization.generic_scheduling_tools.multimode import MultimodeProblem
+from discrete_optimization.generic_scheduling_tools.precedence import PrecedenceProblem
 from discrete_optimization.generic_scheduling_tools.scheduling import SchedulingProblem
 from discrete_optimization.generic_tools.do_problem import (
     EncodingRegister,
@@ -47,7 +48,9 @@ class ScheduleGenerationScheme(Enum):
     PARALLEL_SGS = 1
 
 
-class RcpspProblem(MultimodeProblem[Task], SchedulingProblem[Task]):
+class RcpspProblem(
+    MultimodeProblem[Task], SchedulingProblem[Task], PrecedenceProblem[Task]
+):
     """
 
     Attributes:
@@ -227,6 +230,9 @@ class RcpspProblem(MultimodeProblem[Task], SchedulingProblem[Task]):
 
     def get_last_tasks(self) -> list[Task]:
         return [self.sink_task]
+
+    def get_precedence_constraints(self) -> dict[Task, Iterable[Task]]:
+        return self.successors
 
     def update_functions(self) -> None:
         (

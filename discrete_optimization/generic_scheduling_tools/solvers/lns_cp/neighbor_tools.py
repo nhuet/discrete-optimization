@@ -15,7 +15,15 @@ from discrete_optimization.generic_scheduling_tools.base import (
     TasksProblem,
     TasksSolution,
 )
-from discrete_optimization.generic_scheduling_tools.scheduling import SchedulingSolution
+from discrete_optimization.generic_scheduling_tools.precedence import (
+    HashableTask,
+    PrecedenceProblem,
+)
+from discrete_optimization.generic_scheduling_tools.scheduling import (
+    SchedulingProblem,
+    SchedulingSolution,
+)
+from discrete_optimization.generic_tools.graph_api import Graph
 
 logger = logging.getLogger(__name__)
 
@@ -202,3 +210,95 @@ class NeighborBuilderTimeWindow(NeighborBuilder[Task]):
             self.current_time_window[1] + self.time_window_length,
         ]
         return set(tasks_of_interest), set(other_tasks)
+
+
+class NeighborRandomAndNeighborGraph(NeighborBuilder[HashableTask]):
+    def __init__(
+        self,
+        problem: TasksProblem[HashableTask],
+        graph: Optional[Graph] = None,
+        fraction_subproblem: float = 0.05,
+    ):
+        if not isinstance(problem, PrecedenceProblem):
+            raise ValueError(
+                "This neighbor builder is applicable only to a problem with precedence constraints."
+            )
+        self.problem = problem
+        if graph is None:
+            self.graph = problem.get_precedence_graph()
+        else:
+            self.graph = graph
+        self.fraction_subproblem = fraction_subproblem
+        self.nb_jobs_subproblem = math.ceil(
+            len(self.problem.tasks_list) * self.fraction_subproblem
+        )
+        self.set_tasks = set(self.problem.tasks_list)
+
+    def find_subtasks(
+        self,
+        current_solution: TasksSolution[HashableTask],
+        subtasks: Optional[set[HashableTask]] = None,
+    ) -> tuple[set[HashableTask], set[HashableTask]]:
+        if not isinstance(current_solution, SchedulingSolution):
+            raise ValueError(
+                "This neighbor builder is applicable only to a scheduling solution."
+            )
+        if subtasks is None:
+            subtasks = set()
+            len_subtask = 0
+        else:
+            len_subtask = len(subtasks)
+        while len_subtask < self.nb_jobs_subproblem:
+            random_pick = random.choice(self.problem.tasks_list)
+            interval = (
+                current_solution.get_start_time(random_pick),
+                current_solution.get_end_time(random_pick),
+            )
+            task_intersect = [
+                t
+                for t in self.problem.tasks_list
+                if intersect(
+                    interval,
+                    (
+                        current_solution.get_start_time(t),
+                        current_solution.get_end_time(t),
+                    ),
+                )
+                is not None
+            ]
+            for k in set(task_intersect):
+                task_intersect += list(self.graph.get_predecessors(k)) + list(
+                    self.graph.get_neighbors(k)
+                )
+            subtasks.update(task_intersect)
+            len_subtask = len(subtasks)
+        if len(subtasks) >= self.nb_jobs_subproblem:
+            subtasks = set(random.sample(list(subtasks), self.nb_jobs_subproblem))
+        return subtasks, self.set_tasks.difference(subtasks)
+
+
+def build_default_neighbor_builder(
+    problem: TasksProblem[Task],
+) -> NeighborBuilder[Task]:
+    if isinstance(problem, PrecedenceProblem) and isinstance(
+        problem, SchedulingProblem
+    ):
+        return NeighborBuilderMix(
+            list_neighbor=[
+                NeighborBuilderSubPart(
+                    problem=problem,
+                ),
+                NeighborRandomAndNeighborGraph(problem=problem),
+            ],
+            weight_neighbor=[0.5, 0.5],
+        )
+    else:
+        return NeighborBuilderMix(
+            list_neighbor=[
+                NeighborBuilderSubPart(
+                    problem=problem,
+                ),
+                NeighborRandom(problem=problem),
+            ],
+            weight_neighbor=[0.5, 0.5],
+        )
