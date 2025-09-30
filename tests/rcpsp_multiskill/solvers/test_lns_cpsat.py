@@ -1,0 +1,199 @@
+import random
+
+import numpy as np
+import pytest
+
+from discrete_optimization.generic_scheduling_tools.enums import StartOrEnd
+from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
+    BaseConstraintExtractor,
+    ChainingConstraintExtractor,
+    ConstraintExtractorList,
+    MultimodeConstraintExtractor,
+    NbChangesAllocationConstraintExtractor,
+    NbUsagesAllocationConstraintExtractor,
+    ObjectiveSubproblem,
+    ParamsConstraintBuilder,
+    SchedulingConstraintExtractor,
+    SchedulingConstraintHandler,
+    SubresourcesAllocationConstraintExtractor,
+    SubtasksAllocationConstraintExtractor,
+)
+from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (
+    NeighborBuilderMix,
+    NeighborBuilderSubPart,
+    NeighborRandom,
+)
+from discrete_optimization.generic_tools.callbacks.early_stoppers import (
+    NbIterationStopper,
+)
+from discrete_optimization.generic_tools.cp_tools import ParametersCp, SignEnum
+from discrete_optimization.generic_tools.lns_cp import LnsOrtoolsCpSat
+from discrete_optimization.generic_tools.lns_tools import TrivialInitialSolution
+from discrete_optimization.rcpsp_multiskill.parser_imopse import (
+    get_data_available,
+    parse_file,
+)
+from discrete_optimization.rcpsp_multiskill.problem import MultiskillRcpspSolution
+from discrete_optimization.rcpsp_multiskill.solvers.cpsat import (
+    CpSatMultiskillRcpspSolver,
+)
+
+
+@pytest.fixture()
+def problem():
+    file = [f for f in get_data_available() if "100_5_64_9.def" in f][0]
+    problem, _ = parse_file(file, max_horizon=1000)
+    for emp in problem.employees:
+        problem.employees[emp].calendar_employee = np.array(
+            problem.employees[emp].calendar_employee
+        )
+        problem.employees[emp].calendar_employee[5:10] = 0
+    problem.update_functions()
+    return problem
+
+
+@pytest.fixture()
+def problem_multimode(problem):
+    task = 2
+    old_mode = 1
+    new_mode = 2
+    new_details = dict(problem.mode_details[task][old_mode])
+    new_details["duration"] *= 10
+    new_details["Q8"] = 2
+    problem.mode_details[task][new_mode] = new_details
+    problem.update_functions()
+    return problem
+
+
+TIME_LIMIT_SUBSOLVER = 5
+
+
+@pytest.mark.parametrize(
+    "chaining, nb_changes, nb_usages, subtasks, subresources, fix_secondary_tasks_mode",
+    [
+        (False, False, False, True, False, True),
+        (True, False, True, True, False, False),
+        (True, True, False, False, False, False),
+        (False, False, False, False, True, False),
+    ],
+)
+def test_lns_cpsat(
+    problem_multimode,
+    chaining,
+    nb_changes,
+    nb_usages,
+    subtasks,
+    subresources,
+    fix_secondary_tasks_mode,
+):
+    problem = problem_multimode
+    subsolver = CpSatMultiskillRcpspSolver(
+        problem=problem,
+    )
+    parameters_cp = ParametersCp.default()
+
+    extractors: list[BaseConstraintExtractor] = [
+        SchedulingConstraintExtractor(),
+        MultimodeConstraintExtractor(),
+    ]
+    if chaining:
+        extractors.append(ChainingConstraintExtractor())
+    if nb_changes:
+        extractors.append(NbChangesAllocationConstraintExtractor())
+    if nb_usages:
+        extractors.append(NbUsagesAllocationConstraintExtractor())
+    if subresources:
+        extractors.append(SubresourcesAllocationConstraintExtractor())
+    if subtasks:
+        extractors.append(
+            SubtasksAllocationConstraintExtractor(
+                fix_secondary_tasks_modes=fix_secondary_tasks_mode
+            )
+        )
+    constraints_extractor = ConstraintExtractorList(extractors=extractors)
+
+    constraint_handler = SchedulingConstraintHandler(
+        problem=problem,
+        constraints_extractor=constraints_extractor,
+        neighbor_builder=NeighborBuilderMix(
+            list_neighbor=[
+                NeighborBuilderSubPart(
+                    problem=problem,
+                ),
+                NeighborRandom(problem=problem),
+            ],
+            weight_neighbor=[0.5, 0.5],
+        ),
+    )
+
+    solver = LnsOrtoolsCpSat(
+        problem=problem,
+        subsolver=subsolver,
+        constraint_handler=constraint_handler,
+    )
+    res = solver.solve(
+        nb_iteration_lns=3,
+        time_limit_subsolver=TIME_LIMIT_SUBSOLVER,
+        parameters_cp=parameters_cp,
+        skip_initial_solution_provider=True,
+    )
+    sol = res.get_best_solution()
+    problem.satisfy(sol)
+
+
+def test_lns_cpsat_subobjective(problem_multimode):
+    problem = problem_multimode
+    subsolver = CpSatMultiskillRcpspSolver(
+        problem=problem,
+    )
+    parameters_cp = ParametersCp.default()
+
+    constraint_handler = SchedulingConstraintHandler(
+        problem=problem,
+        neighbor_builder=NeighborBuilderMix(
+            list_neighbor=[
+                NeighborBuilderSubPart(
+                    problem=problem,
+                ),
+                NeighborRandom(problem=problem),
+            ],
+            weight_neighbor=[0.5, 0.5],
+        ),
+        objective_subproblem=ObjectiveSubproblem.SUM_END_SUBTASKS,
+    )
+
+    solver = LnsOrtoolsCpSat(
+        problem=problem,
+        subsolver=subsolver,
+        constraint_handler=constraint_handler,
+    )
+    res = solver.solve(
+        nb_iteration_lns=3,
+        time_limit_subsolver=TIME_LIMIT_SUBSOLVER,
+        parameters_cp=parameters_cp,
+        skip_initial_solution_provider=True,
+    )
+    sol = res.get_best_solution()
+    problem.satisfy(sol)
+
+
+@pytest.mark.parametrize(
+    "params",
+    [
+        ParamsConstraintBuilder(5, 5, 0, 0, first_method_multiskill=True),
+        ParamsConstraintBuilder(
+            5, 5, 0, 0, first_method_multiskill=True, additional_methods=True
+        ),
+        ParamsConstraintBuilder(5, 5, 0, 0, second_method_multiskill=True),
+        ParamsConstraintBuilder(
+            5, 5, 0, 0, second_method_multiskill=True, additional_methods=True
+        ),
+    ],
+)
+def test_default_constraint_handler(problem, params):
+
+    constraint_handler = SchedulingConstraintHandler(
+        problem=problem,
+        neighbor_builder=NeighborRandom(problem=problem),
+        params_constraint_builder=params,
+    )
