@@ -9,11 +9,12 @@ from typing import Any, Optional, Union
 
 import numpy as np
 from ortools.sat.python import cp_model
-from ortools.sat.python.cp_model import CpSolver, CpSolverSolutionCallback, IntVar
+from ortools.sat.python.cp_model import CpSolverSolutionCallback, IntVar, LinearExprT
 
-from discrete_optimization.generic_tools.callbacks.callback import (
-    Callback,
-    CallbackList,
+from discrete_optimization.generic_scheduling_tools.enums import StartOrEnd
+from discrete_optimization.generic_scheduling_tools.solvers.cpsat import (
+    AllocationCpSatSolver,
+    SchedulingCpSatSolver,
 )
 from discrete_optimization.generic_tools.do_problem import Solution
 from discrete_optimization.generic_tools.do_solver import WarmstartMixin
@@ -22,11 +23,6 @@ from discrete_optimization.generic_tools.hyperparameters.hyperparameter import (
     EnumHyperparameter,
     SubBrick,
     SubBrickHyperparameter,
-)
-from discrete_optimization.generic_tools.ortools_cpsat_tools import (
-    OrtoolsCpSatCallback,
-    OrtoolsCpSatSolver,
-    ParametersCp,
 )
 from discrete_optimization.generic_tools.result_storage.result_storage import (
     ResultStorage,
@@ -41,6 +37,8 @@ from discrete_optimization.workforce.commons.fairness_modeling_ortools import (
 from discrete_optimization.workforce.scheduling.problem import (
     AllocSchedulingProblem,
     AllocSchedulingSolution,
+    Task,
+    UnaryResource,
 )
 from discrete_optimization.workforce.scheduling.solvers import (
     ObjectivesEnum,
@@ -91,7 +89,10 @@ class AdditionalCPConstraints:
 
 
 class CPSatAllocSchedulingSolver(
-    OrtoolsCpSatSolver, SolverAllocScheduling, WarmstartMixin
+    SchedulingCpSatSolver[Task],
+    AllocationCpSatSolver[Task, UnaryResource],
+    SolverAllocScheduling,
+    WarmstartMixin,
 ):
     hyperparameters = [
         CategoricalHyperparameter(
@@ -128,6 +129,32 @@ class CPSatAllocSchedulingSolver(
 
     problem: AllocSchedulingProblem
     variables: dict[str, dict[Any, Any]]
+
+    def get_task_start_or_end_variable(
+        self, task: Task, start_or_end: StartOrEnd
+    ) -> LinearExprT:
+        i_task = self.problem.tasks_to_index[task]
+        if start_or_end == StartOrEnd.START:
+            key = "starts_var"
+        else:
+            key = "ends_var"
+        return self.variables[key][i_task]
+
+    def get_task_unary_resource_is_present_variable(
+        self, task: Task, unary_resource: UnaryResource
+    ) -> LinearExprT:
+        """Return a 0-1 variable/expression telling if the unary_resource is used for the task.
+
+        NB: sometimes the given resource is never to be used by a task and the variable has not been created.
+        The convention is to return 0 in that case.
+
+        """
+        i_task = self.problem.tasks_to_index[task]
+        i_team = self.problem.teams_to_index[unary_resource]
+        try:
+            return self.variables["is_present_var"][i_task][i_team]
+        except KeyError:
+            return 0
 
     @staticmethod
     def implements_lexico_api() -> bool:
@@ -442,8 +469,9 @@ class CPSatAllocSchedulingSolver(
                 additional_constraints=additional_constraints,
             )
         if ObjectivesEnum.MAKESPAN in objectives:
-            makespan = self.create_makespan_obj(ends_var, st_lb)
-            self.variables["objectives"][ObjectivesEnum.MAKESPAN] = makespan
+            self.variables["objectives"][
+                ObjectivesEnum.MAKESPAN
+            ] = self.get_global_makespan_variable()
         if ObjectivesEnum.NB_DONE_AC in objectives and optional_activities:
             nb_done = sum([actually_done_var[i] for i in actually_done_var])
             self.variables["objectives"][ObjectivesEnum.NB_DONE_AC] = -nb_done
@@ -626,12 +654,8 @@ class CPSatAllocSchedulingSolver(
         base_problem: AllocSchedulingProblem,
         additional_constraints: Optional[AdditionalCPConstraints] = None,
     ):
-        objs = []
         common_tasks = list(
             set(base_problem.tasks_list).intersection(self.problem.tasks_list)
-        )
-        common_teams = list(
-            set(base_problem.team_names).intersection(self.problem.team_names)
         )
         len_common_tasks = len(common_tasks)
         reallocation_bool = [
@@ -748,27 +772,6 @@ class CPSatAllocSchedulingSolver(
                 [is_present_var[x[0]][x[1]] for x in key_per_team[index_team]],
             )
         return used
-
-    def create_makespan_obj(
-        self, ends_var: dict[int, IntVar], st_lb: list[tuple[int, int, int, int]] = None
-    ):
-        if st_lb is None:
-            st_lb = [
-                (
-                    int(self.problem.get_lb_start_window(t)),
-                    int(self.problem.get_ub_start_window(t)),
-                    int(self.problem.get_lb_end_window(t)),
-                    int(self.problem.get_ub_end_window(t)),
-                )
-                for t in self.problem.tasks_list
-            ]
-        lb_makespan = max([x[2] for x in st_lb])
-        ub_makespan = max([x[3] for x in st_lb])
-        makespan = self.cp_model.NewIntVar(
-            lb=lb_makespan, ub=ub_makespan, name="makespan"
-        )
-        self.cp_model.AddMaxEquality(makespan, [ends_var[i] for i in ends_var])
-        return makespan
 
 
 def _get_variables_obj_key(

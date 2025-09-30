@@ -1,6 +1,8 @@
 #  Copyright (c) 2025 AIRBUS and its affiliates.
 #  This source code is licensed under the MIT license found in the
 #  LICENSE file in the root directory of this source tree.
+from __future__ import annotations
+
 import itertools
 import logging
 from collections.abc import Hashable
@@ -10,6 +12,15 @@ from typing import Optional
 import networkx as nx
 import numpy as np
 
+from discrete_optimization.generic_scheduling_tools.allocation import (
+    AllocationProblem,
+    AllocationSolution,
+)
+from discrete_optimization.generic_scheduling_tools.precedence import PrecedenceProblem
+from discrete_optimization.generic_scheduling_tools.scheduling import (
+    SchedulingProblem,
+    SchedulingSolution,
+)
 from discrete_optimization.generic_tools.do_problem import (
     EncodingRegister,
     ModeOptim,
@@ -30,10 +41,18 @@ from discrete_optimization.rcpsp.problem import (
 logger = logging.getLogger(__name__)
 
 
-class AllocSchedulingSolution(Solution):
+Task = Hashable
+UnaryResource = Hashable
+
+
+class AllocSchedulingSolution(
+    SchedulingSolution[Task], AllocationSolution[Task, UnaryResource]
+):
+    problem: AllocSchedulingProblem
+
     def __init__(
         self,
-        problem: "AllocSchedulingProblem",
+        problem: AllocSchedulingProblem,
         schedule: np.ndarray,
         allocation: np.ndarray,
     ):
@@ -51,6 +70,19 @@ class AllocSchedulingSolution(Solution):
     def change_problem(self, new_problem: "Problem") -> None:
         self.problem = new_problem
 
+    def get_end_time(self, task: Task) -> int:
+        i_task = self.problem.tasks_to_index[task]
+        return int(self.schedule[i_task, 1])
+
+    def get_start_time(self, task: Task) -> int:
+        i_task = self.problem.tasks_to_index[task]
+        return int(self.schedule[i_task, 0])
+
+    def is_allocated(self, task: Task, unary_resource: UnaryResource) -> bool:
+        i_task = self.problem.tasks_to_index[task]
+        i_team = self.problem.teams_to_index[unary_resource]
+        return int(self.allocation[i_task]) == i_team
+
 
 class TasksDescription:
     def __init__(self, duration_task: int, resource_consumption: dict[str, int] = None):
@@ -60,7 +92,11 @@ class TasksDescription:
             self.resource_consumption = {}
 
 
-class AllocSchedulingProblem(Problem):
+class AllocSchedulingProblem(
+    SchedulingProblem[Task],
+    AllocationProblem[Task, UnaryResource],
+    PrecedenceProblem[Task],
+):
     def __init__(
         self,
         team_names: list[Hashable],
@@ -114,6 +150,19 @@ class AllocSchedulingProblem(Problem):
         self.resources_capacity = resources_capacity
         self.horizon_start_shift = horizon_start_shift
 
+    @property
+    def unary_resources_list(self) -> list[UnaryResource]:
+        return self.team_names
+
+    def get_precedence_constraints(self) -> dict[Task, set[Task]]:
+        return self.precedence_constraints
+
+    def get_makespan_lower_bound(self) -> int:
+        return max(int(self.get_lb_end_window(t)) for t in self.tasks_list)
+
+    def get_makespan_upper_bound(self) -> int:
+        return max(int(self.get_ub_end_window(t)) for t in self.tasks_list)
+
     def set_objective_handling(self, objective_handling: ObjectiveHandling):
         self.objective_handling = objective_handling
 
@@ -130,7 +179,6 @@ class AllocSchedulingProblem(Problem):
         )
 
     def compute_predecessors(self):
-        self.successors = self.precedence_constraints
         self.predecessors = {}
         for t in self.precedence_constraints:
             for succ in self.precedence_constraints[t]:
