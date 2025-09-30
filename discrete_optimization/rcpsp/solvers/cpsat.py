@@ -16,19 +16,25 @@ from ortools.sat.python.cp_model import (
     IntervalVar,
     IntVar,
     LinearExpr,
+    LinearExprT,
     ObjLinearExprT,
 )
 
+from discrete_optimization.generic_scheduling_tools.enums import StartOrEnd
+from discrete_optimization.generic_scheduling_tools.solvers.cpsat import (
+    MultimodeCpSatSolver,
+    SchedulingCpSatSolver,
+)
+from discrete_optimization.generic_tools.cp_tools import SignEnum
 from discrete_optimization.generic_tools.do_problem import ParamsObjectiveFunction
 from discrete_optimization.generic_tools.do_solver import StatusSolver, WarmstartMixin
 from discrete_optimization.generic_tools.hyperparameters.hyperparameter import (
     CategoricalHyperparameter,
 )
-from discrete_optimization.generic_tools.ortools_cpsat_tools import OrtoolsCpSatSolver
 from discrete_optimization.generic_tools.result_storage.result_storage import (
     ResultStorage,
 )
-from discrete_optimization.rcpsp.problem import RcpspProblem, RcpspSolution
+from discrete_optimization.rcpsp.problem import RcpspProblem, RcpspSolution, Task
 from discrete_optimization.rcpsp.solvers import RcpspSolver
 from discrete_optimization.rcpsp.special_constraints import PairModeConstraint
 from discrete_optimization.rcpsp.utils import (
@@ -40,7 +46,14 @@ from discrete_optimization.rcpsp.utils import (
 logger = logging.getLogger(__name__)
 
 
-class CpSatRcpspSolver(OrtoolsCpSatSolver, RcpspSolver, WarmstartMixin):
+class CpSatRcpspSolver(
+    SchedulingCpSatSolver[Task],
+    MultimodeCpSatSolver[Task],
+    RcpspSolver,
+    WarmstartMixin,
+):
+    problem: RcpspProblem
+
     def __init__(
         self,
         problem: RcpspProblem,
@@ -56,6 +69,27 @@ class CpSatRcpspSolver(OrtoolsCpSatSolver, RcpspSolver, WarmstartMixin):
         self.cp_solver: Optional[CpSolver] = None
         self.variables: Optional[dict[str, Any]] = None
         self.status_solver: Optional[StatusSolver] = None
+
+    def get_task_start_or_end_variable(
+        self, task: Task, start_or_end: StartOrEnd
+    ) -> LinearExprT:
+        if start_or_end == StartOrEnd.START:
+            key = "start"
+        else:
+            key = "end"
+
+        return self.variables[key][task]
+
+    def get_task_mode_is_present_variable(self, task: Task, mode: int) -> LinearExprT:
+        return self.variables["is_present"][task, mode]
+
+    def add_constraint_on_max_end_time(self, sign: SignEnum, time: int) -> list[Any]:
+        return self.add_constraint_on_task(
+            task=self.problem.sink_task,
+            start_or_end=StartOrEnd.END,
+            sign=sign,
+            time=time,
+        )
 
     def init_temporal_variable(
         self, model: CpModel
@@ -251,6 +285,15 @@ class CpSatRcpspSolver(OrtoolsCpSatSolver, RcpspSolver, WarmstartMixin):
             interval_var,
             interval_per_tasks,
         ) = self.init_temporal_variable(model=model)
+        self.cp_model = model
+        self.variables = {
+            "start": starts_var,
+            "end": ends_var,
+            "is_present": is_present_var,
+        }
+        self.makespan = self.cp_model.NewIntVar(
+            0, self.problem.horizon, name="makespan"
+        )
         self.add_one_mode_selected_per_task(
             model=model,
             is_present_var=is_present_var,
@@ -269,7 +312,6 @@ class CpSatRcpspSolver(OrtoolsCpSatSolver, RcpspSolver, WarmstartMixin):
                 is_present_var=is_present_var,
                 fake_task=fake_task,
             )
-        model.Minimize(starts_var[self.problem.sink_task])
         if include_special_constraints:
             if self.problem.special_constraints.pair_mode_constraint is not None:
                 self.create_mode_pair_constraint(
@@ -278,12 +320,13 @@ class CpSatRcpspSolver(OrtoolsCpSatSolver, RcpspSolver, WarmstartMixin):
                     is_present_var=is_present_var,
                     pair_mode_constraint=self.problem.special_constraints.pair_mode_constraint,
                 )
-        self.cp_model = model
-        self.variables = {
-            "start": starts_var,
-            "end": ends_var,
-            "is_present": is_present_var,
-        }
+        self.set_objective_max_end_time()
+
+    def set_objective_max_end_time(self) -> Any:
+        self.remove_constraints_on_objective()
+        objective = self.variables["start"][self.problem.sink_task]
+        self.cp_model.Minimize(objective)
+        return objective
 
     def set_warm_start(self, solution: RcpspSolution) -> None:
         """Make the solver warm start from the given solution."""

@@ -6,16 +6,22 @@
 import logging
 from typing import Any
 
-from ortools.sat.python.cp_model import CpModel, CpSolverSolutionCallback, Domain
+from ortools.sat.python.cp_model import CpModel, CpSolverSolutionCallback, LinearExprT
 
+from discrete_optimization.generic_scheduling_tools.enums import StartOrEnd
+from discrete_optimization.generic_scheduling_tools.solvers.cpsat import (
+    SchedulingCpSatSolver,
+)
 from discrete_optimization.generic_tools.do_solver import WarmstartMixin
-from discrete_optimization.generic_tools.ortools_cpsat_tools import OrtoolsCpSatSolver
-from discrete_optimization.jsp.problem import JobShopProblem, JobShopSolution
+from discrete_optimization.jsp.problem import JobShopProblem, JobShopSolution, Task
 
 logger = logging.getLogger(__name__)
 
 
-class CpSatJspSolver(OrtoolsCpSatSolver, WarmstartMixin):
+class CpSatJspSolver(
+    SchedulingCpSatSolver[Task],
+    WarmstartMixin,
+):
     problem: JobShopProblem
 
     def __init__(self, problem: JobShopProblem, **kwargs: Any):
@@ -70,14 +76,13 @@ class CpSatJspSolver(OrtoolsCpSatSolver, WarmstartMixin):
             self.cp_model.AddNoOverlap(
                 [intervals[x[0]][x[1]] for x in self.problem.job_per_machines[machine]]
             )
-        # Objective value variable
-        makespan = self.cp_model.NewIntVar(0, max_time, name="makespan")
-        self.cp_model.AddMaxEquality(makespan, [ends[i][-1] for i in range(len(ends))])
-        self.cp_model.Minimize(makespan)
         # Store the variables in some dictionaries.
         self.variables["starts"] = starts
         self.variables["ends"] = ends
         self.variables["intervals"] = intervals
+        # Objective value variable
+        self.makespan = self.cp_model.NewIntVar(0, max_time, name="makespan")
+        self.set_objective_max_end_time()
 
     def set_warm_start(self, solution: JobShopSolution) -> None:
         for job_index in range(len(solution.schedule)):
@@ -113,3 +118,13 @@ class CpSatJspSolver(OrtoolsCpSatSolver, WarmstartMixin):
                 )
             schedule.append(sched_job)
         return JobShopSolution(problem=self.problem, schedule=schedule)
+
+    def get_task_start_or_end_variable(
+        self, task: Task, start_or_end: StartOrEnd
+    ) -> LinearExprT:
+        if start_or_end == StartOrEnd.START:
+            var_label = "starts"
+        else:
+            var_label = "ends"
+        j, k = task
+        return self.variables[var_label][j][k]

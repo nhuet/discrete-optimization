@@ -5,20 +5,33 @@
 import logging
 from typing import Any
 
-from ortools.sat.python.cp_model import CpModel, CpSolverSolutionCallback, Domain
+from ortools.sat.python.cp_model import (
+    CpModel,
+    CpSolverSolutionCallback,
+    Domain,
+    LinearExprT,
+)
 
-from discrete_optimization.fjsp.problem import FJobShopProblem, FJobShopSolution
+from discrete_optimization.fjsp.problem import FJobShopProblem, FJobShopSolution, Task
+from discrete_optimization.generic_scheduling_tools.enums import StartOrEnd
+from discrete_optimization.generic_scheduling_tools.solvers.cpsat import (
+    MultimodeCpSatSolver,
+    SchedulingCpSatSolver,
+)
 from discrete_optimization.generic_tools.do_problem import Solution
 from discrete_optimization.generic_tools.do_solver import WarmstartMixin
 from discrete_optimization.generic_tools.hyperparameters.hyperparameter import (
     CategoricalHyperparameter,
 )
-from discrete_optimization.generic_tools.ortools_cpsat_tools import OrtoolsCpSatSolver
 
 logger = logging.getLogger(__name__)
 
 
-class CpSatFjspSolver(OrtoolsCpSatSolver, WarmstartMixin):
+class CpSatFjspSolver(
+    SchedulingCpSatSolver[Task],
+    MultimodeCpSatSolver[Task],
+    WarmstartMixin,
+):
     hyperparameters = [
         CategoricalHyperparameter(
             name="duplicate_temporal_var", choices=[True, False], default=False
@@ -41,16 +54,9 @@ class CpSatFjspSolver(OrtoolsCpSatSolver, WarmstartMixin):
         self.create_is_present_constraints()
         self.create_disjunctive_constraints(**args)
         max_time = args.get("max_time", self.problem.horizon)
-        makespan = self.cp_model.NewIntVar(0, max_time, name="makespan")
-        self.cp_model.AddMaxEquality(
-            makespan,
-            [
-                self.variables["ends"][(i, len(self.problem.list_jobs[i].sub_jobs) - 1)]
-                for i in range(self.problem.n_jobs)
-            ],
-        )
-        self.variables["makespan"] = makespan
-        self.cp_model.Minimize(makespan)
+        self.makespan = self.cp_model.NewIntVar(0, max_time, name="makespan")
+        self.variables["makespan"] = self.makespan
+        self.set_objective_max_end_time()
 
     def retrieve_solution(self, cpsolvercb: CpSolverSolutionCallback) -> Solution:
         logger.info(
@@ -67,6 +73,7 @@ class CpSatFjspSolver(OrtoolsCpSatSolver, WarmstartMixin):
                     self.variables["ends"][(job_index, subjob_index)]
                 )
                 machine = None
+                idx_option = 0
                 if len(self.problem.list_jobs[job_index].sub_jobs[subjob_index]) == 1:
                     machine = (
                         self.problem.list_jobs[job_index]
@@ -74,13 +81,14 @@ class CpSatFjspSolver(OrtoolsCpSatSolver, WarmstartMixin):
                         .machine_id
                     )
                 else:
-                    for k in self.variables["keys_per_subjob"][
+                    for key in self.variables["keys_per_subjob"][
                         (job_index, subjob_index)
                     ]:
-                        if cpsolvercb.Value(self.variables["presents"][k]):
-                            machine = self.variables["key_to_machine"][k]
+                        if cpsolvercb.Value(self.variables["presents"][key]):
+                            machine = self.variables["key_to_machine"][key]
+                            idx_option = key[-1]
                             break
-                sched_job.append((start, end, machine))
+                sched_job.append((start, end, machine, idx_option))
             schedule.append(sched_job)
         return FJobShopSolution(problem=self.problem, schedule=schedule)
 
@@ -261,3 +269,42 @@ class CpSatFjspSolver(OrtoolsCpSatSolver, WarmstartMixin):
                                 ],
                                 0,
                             )
+
+    def get_task_start_or_end_variable(
+        self, task: Task, start_or_end: StartOrEnd
+    ) -> LinearExprT:
+        if start_or_end == StartOrEnd.START:
+            var_label = "starts"
+        else:
+            var_label = "ends"
+        return self.variables[var_label][task]
+
+    def get_task_mode_is_present_variable(self, task: Task, mode: int) -> LinearExprT:
+        i, j = task
+        key = (i, j, mode)
+        return self.variables["presents"][key]
+
+    # def add_constraint_on_task_mode(self, task: Task, mode: int) -> list[Any]:
+    #     constraints = []
+    #     if len(self.variables["keys_per_subjob"][task]) == 1:
+    #         key = next(iter(self.variables["keys_per_subjob"][task]))
+    #         machine = self.variables["key_to_machine"][key]
+    #         if machine != mode:
+    #             raise ValueError(f"Task {task} cannot be done with mode {mode}.")
+    #     else:
+    #         if mode not in self.variables["keys_per_machine"] or task not in {
+    #             (i, j) for i, j, k in self.variables["keys_per_machine"][mode]
+    #         }:
+    #             raise ValueError(f"Task {task} cannot be done with mode {mode}.")
+    #         for key in self.variables["keys_per_subjob"][task]:
+    #             machine = self.variables["key_to_machine"][key]
+    #             if machine == mode:
+    #                 constraints.append(
+    #                     self.cp_model.add(self.variables["presents"][key] == True)
+    #                 )
+    #             else:
+    #                 constraints.append(
+    #                     self.cp_model.add(self.variables["presents"][key] == False)
+    #                 )
+    #
+    #     return constraints
