@@ -104,6 +104,9 @@ class JobShopProblem(SchedulingProblem[Task], PrecedenceProblem[Task]):
             for k in range(len(job))
         }
 
+    def get_makespan_upper_bound(self) -> int:
+        return self.horizon
+
     def get_last_tasks(self) -> list[Task]:
         return [(j, len(job) - 1) for j, job in enumerate(self.list_jobs)]
 

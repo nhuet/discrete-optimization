@@ -85,11 +85,9 @@ class CpSatMultiskillRcpspSolver(
             time=time,
         )
 
-    def set_objective_max_end_time(self) -> Any:
+    def get_global_makespan_variable(self) -> Any:
         self.remove_constraints_on_objective()
-        objective = self.variables["makespan"]
-        self.cp_model.Minimize(objective)
-        return objective
+        return self.variables["makespan"]
 
     def get_task_unary_resource_is_present_variable(
         self, task: Task, unary_resource: UnaryResource
@@ -147,12 +145,9 @@ class CpSatMultiskillRcpspSolver(
         self.variables["makespan"] = self.variables["base_variable"]["ends"][
             self.problem.sink_task
         ]
-        # create makespan variable to be used for makespan on tasks subset
-        self.makespan = self.cp_model.NewIntVar(
-            0, self.problem.horizon, name="makespan"
-        )
         self.create_workload_variables()
-        self.set_objective_max_end_time()
+        objective = self.get_global_makespan_variable()
+        self.minimize_variable(objective)
 
     def create_base_variable(self):
         start_var = {}

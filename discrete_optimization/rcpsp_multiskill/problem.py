@@ -2178,6 +2178,9 @@ class MultiskillRcpspProblem(
     def get_task_modes(self, task: Task) -> set[int]:
         return set(self.mode_details[task])
 
+    def get_makespan_upper_bound(self) -> int:
+        return self.horizon
+
     @property
     def unary_resources_list(self) -> list[UnaryResource]:
         """Get available unary resources for allocation.

@@ -29,6 +29,19 @@ class SchedulingProblem(TasksProblem[Task]):
         """
         return self.tasks_list
 
+    def get_makespan_lower_bound(self) -> int:
+        """Get a lower bound on global makespan.
+
+        Default to 0. But can be overriden for problems with more information.
+
+        """
+        return 0
+
+    @abstractmethod
+    def get_makespan_upper_bound(self) -> int:
+        """Get a upper bound on global makespan."""
+        pass
+
 
 class SchedulingSolution(TasksSolution[Task]):
     """Base class for solution to scheduling problems."""
@@ -143,10 +156,17 @@ class SchedulingCpSolver(TasksCpSolver[Task]):
         """
         ...
 
-    def set_objective_max_end_time(self) -> Any:
-        """Set the internal objective of the cp solver to be the global makespan.
+    @abstractmethod
+    def minimize_variable(self, var: Any) -> None:
+        """Set the cp solver objective as minimizing `var`."""
+        pass
 
-        Default implementation uses `set_objective_max_end_time_substasks` on all tasks.
+    def get_global_makespan_variable(self) -> Any:
+        """Construct and get the variable tracking the global makespan.
+
+        Default implementation uses `get_subtasks_makespan_variable` on last tasks.
+        Beware: a further call to `get_subtasks_makespan_variable` with another subset of tasks can
+        change the constraints on this variable and thus make it obsolete.
 
         Args:
             subtasks:
@@ -155,13 +175,16 @@ class SchedulingCpSolver(TasksCpSolver[Task]):
             objective variable to minimize
 
         """
-        return self.set_objective_max_end_time_substasks(
+        return self.get_subtasks_makespan_variable(
             subtasks=set(self.problem.get_last_tasks())
         )
 
     @abstractmethod
-    def set_objective_max_end_time_substasks(self, subtasks: Iterable[Task]) -> Any:
-        """Set the internal objective of the cp solver to be the makespan on a subset of tasks.
+    def get_subtasks_makespan_variable(self, subtasks: Iterable[Task]) -> Any:
+        """Construct and get the variable tracking the makespan on a subset of tasks.
+
+        Beware: a further call to `get_subtasks_makespan_variable` with another subset of tasks can
+        change the constraints on this variable and thus make it obsolete.
 
         Args:
             subtasks:
@@ -173,8 +196,8 @@ class SchedulingCpSolver(TasksCpSolver[Task]):
         ...
 
     @abstractmethod
-    def set_objective_sum_end_time_substasks(self, subtasks: Iterable[Task]) -> Any:
-        """Set the internal objective of the cp solver to be sum of end times on a subset of tasks.
+    def get_subtasks_sum_end_time_variable(self, subtasks: Iterable[Task]) -> Any:
+        """Construct and get the variable tracking the sum of end times on a subset of tasks.
 
         Args:
             subtasks:
@@ -186,8 +209,8 @@ class SchedulingCpSolver(TasksCpSolver[Task]):
         ...
 
     @abstractmethod
-    def set_objective_sum_start_time_substasks(self, subtasks: Iterable[Task]) -> Any:
-        """Set the internal objective of the cp solver to be the sum of start times on a subset of tasks.
+    def get_subtasks_sum_start_time_variable(self, subtasks: Iterable[Task]) -> Any:
+        """Construct and get the variable tracking the sum of start times on a subset of tasks.
 
         Args:
             subtasks:

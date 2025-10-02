@@ -25,7 +25,7 @@ class SchedulingCpSatSolver(OrtoolsCpSatSolver, SchedulingCpSolver[Task]):
 
     """
 
-    makespan: IntVar
+    _makespan: Optional[IntVar] = None
     """Internal variable use to define the objective (global or partial makespan)."""
 
     constraints_on_makespan: Optional[list[Any]] = None
@@ -61,45 +61,65 @@ class SchedulingCpSatSolver(OrtoolsCpSatSolver, SchedulingCpSolver[Task]):
         )
         return [self.cp_model.add(var1 == var2)]
 
+    def get_makespan_var(self) -> IntVar:
+        """Get the makespan variable used to track global or subtasks makespan."""
+        if self._makespan is None:
+            self._makespan = self.cp_model.NewIntVar(
+                lb=self.get_makespan_lower_bound(),
+                ub=self.get_makespan_upper_bound(),
+                name="makespan",
+            )
+        return self._makespan
+
+    def get_makespan_lower_bound(self) -> int:
+        """Get a lower bound on global makespan.
+
+        Can be overriden in solvers wanting to specify it in init_model() for instance.
+
+        """
+        return self.problem.get_makespan_lower_bound()
+
+    def get_makespan_upper_bound(self) -> int:
+        """Get a upper bound on global makespan."""
+        return self.problem.get_makespan_upper_bound()
+
     def remove_constraints_on_objective(self) -> None:
         if self.constraints_on_makespan is not None:
             self.remove_constraints(self.constraints_on_makespan)
 
-    def set_objective_max_end_time_substasks(self, subtasks: Iterable[Task]) -> Any:
+    def get_subtasks_makespan_variable(self, subtasks: Iterable[Task]) -> Any:
         # remove previous constraints on makespan variable from cp model
         self.remove_constraints_on_objective()
+        # get makespan variable
+        makespan = self.get_makespan_var()
         # update those constraints
         self.constraints_on_makespan = [
             self.cp_model.AddMaxEquality(
-                self.makespan,
+                makespan,
                 [
                     self.get_task_start_or_end_variable(task, StartOrEnd.END)
                     for task in subtasks
                 ],
             )
         ]
-        # minimize makespan variable
-        self.cp_model.Minimize(self.makespan)
-        # return objective
-        return self.makespan
+        return makespan
 
-    def set_objective_sum_end_time_substasks(self, subtasks: Iterable[Task]) -> Any:
+    def get_subtasks_sum_end_time_variable(self, subtasks: Iterable[Task]) -> Any:
         self.remove_constraints_on_objective()
-        objective = sum(
+        return sum(
             self.get_task_start_or_end_variable(task, StartOrEnd.END)
             for task in subtasks
         )
-        self.cp_model.Minimize(objective)
-        return objective
 
-    def set_objective_sum_start_time_substasks(self, subtasks: Iterable[Task]) -> Any:
+    def get_subtasks_sum_start_time_variable(self, subtasks: Iterable[Task]) -> Any:
         self.remove_constraints_on_objective()
-        objective = sum(
+        return sum(
             self.get_task_start_or_end_variable(task, StartOrEnd.START)
             for task in subtasks
         )
-        self.cp_model.Minimize(objective)
-        return objective
+
+    def minimize_variable(self, var: Any) -> None:
+        self.cp_model.minimize(var)
 
 
 class MultimodeCpSatSolver(OrtoolsCpSatSolver, MultimodeCpSolver[Task]):

@@ -28,16 +28,17 @@ class CpSatJspSolver(
         super().__init__(problem, **kwargs)
         self.variables = {}
 
+    def get_makespan_upper_bound(self) -> int:
+        return self._max_time
+
     def init_model(self, **args: Any) -> None:
         self.cp_model = CpModel()
         # dummy value, todo : compute a better bound
         max_time = args.get(
             "max_time",
-            sum(
-                sum(subjob.processing_time for subjob in job)
-                for job in self.problem.list_jobs
-            ),
+            self.problem.get_makespan_upper_bound(),
         )
+        self._max_time = max_time  # will be used by the makespan variable
         # Write variables, constraints
         starts = [
             [
@@ -80,9 +81,9 @@ class CpSatJspSolver(
         self.variables["starts"] = starts
         self.variables["ends"] = ends
         self.variables["intervals"] = intervals
-        # Objective value variable
-        self.makespan = self.cp_model.NewIntVar(0, max_time, name="makespan")
-        self.set_objective_max_end_time()
+
+        objective = self.get_global_makespan_variable()
+        self.minimize_variable(objective)
 
     def set_warm_start(self, solution: JobShopSolution) -> None:
         for job_index in range(len(solution.schedule)):

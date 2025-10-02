@@ -291,9 +291,6 @@ class CpSatRcpspSolver(
             "end": ends_var,
             "is_present": is_present_var,
         }
-        self.makespan = self.cp_model.NewIntVar(
-            0, self.problem.horizon, name="makespan"
-        )
         self.add_one_mode_selected_per_task(
             model=model,
             is_present_var=is_present_var,
@@ -320,13 +317,12 @@ class CpSatRcpspSolver(
                     is_present_var=is_present_var,
                     pair_mode_constraint=self.problem.special_constraints.pair_mode_constraint,
                 )
-        self.set_objective_max_end_time()
+        objective = self.get_global_makespan_variable()
+        self.minimize_variable(objective)
 
-    def set_objective_max_end_time(self) -> Any:
+    def get_global_makespan_variable(self) -> Any:
         self.remove_constraints_on_objective()
-        objective = self.variables["start"][self.problem.sink_task]
-        self.cp_model.Minimize(objective)
-        return objective
+        return self.variables["end"][self.problem.sink_task]
 
     def set_warm_start(self, solution: RcpspSolution) -> None:
         """Make the solver warm start from the given solution."""

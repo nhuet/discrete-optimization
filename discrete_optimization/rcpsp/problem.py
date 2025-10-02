@@ -234,6 +234,9 @@ class RcpspProblem(
     def get_precedence_constraints(self) -> dict[Task, Iterable[Task]]:
         return self.successors
 
+    def get_makespan_upper_bound(self) -> int:
+        return self.horizon
+
     def update_functions(self) -> None:
         (
             self.func_sgs,

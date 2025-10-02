@@ -702,19 +702,20 @@ class SchedulingConstraintHandler(BaseTasksConstraintHandler[Task]):
 
         # change objective and add constraint on it
         if self.objective_subproblem == ObjectiveSubproblem.MAKESPAN_SUBTASKS:
-            objective = solver.set_objective_max_end_time_substasks(
-                subtasks=tasks_primary
-            )
+            objective = solver.get_subtasks_makespan_variable(subtasks=tasks_primary)
+            solver.minimize_variable(objective)
             current_max = max([current_solution.get_end_time(t) for t in tasks_primary])
             constraints += solver.add_bound_constraint(
                 var=objective, sign=SignEnum.LEQ, value=current_max
             )
         elif self.objective_subproblem == ObjectiveSubproblem.GLOBAL_MAKESPAN:
-            objective = solver.set_objective_max_end_time()
+            objective = solver.get_global_makespan_variable()
+            solver.minimize_variable(objective)
         elif self.objective_subproblem == ObjectiveSubproblem.SUM_START_SUBTASKS:
-            objective = solver.set_objective_sum_start_time_substasks(
+            objective = solver.get_subtasks_sum_start_time_variable(
                 subtasks=tasks_primary
             )
+            solver.minimize_variable(objective)
             sum_start = sum(
                 [
                     1  # (10 if t == self.problem.sink_task else 1)
@@ -726,9 +727,10 @@ class SchedulingConstraintHandler(BaseTasksConstraintHandler[Task]):
                 var=objective, sign=SignEnum.LEQ, value=sum_start
             )
         elif self.objective_subproblem == ObjectiveSubproblem.SUM_END_SUBTASKS:
-            objective = solver.set_objective_sum_end_time_substasks(
+            objective = solver.get_subtasks_sum_end_time_variable(
                 subtasks=tasks_primary
             )
+            solver.minimize_variable(objective)
             sum_start = sum(
                 [
                     1  # (10 if t == self.problem.sink_task else 1)

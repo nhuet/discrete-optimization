@@ -47,27 +47,31 @@ def test_cpsat_jsp(random_seed, problem):
     # tests several objectives
     # max end time subtasks
     subtasks = {(0, 1), (1, 2)}
-    solver.set_objective_max_end_time_substasks(subtasks)
+    objective = solver.get_subtasks_makespan_variable(subtasks)
+    solver.minimize_variable(objective)
     sol = solver.solve(
         parameters_cp=parameters_cp, callbacks=[NbIterationStopper(nb_iteration_max=1)]
     ).get_best_solution()
     solver.solver.ObjectiveValue() == max(sol.get_end_time(task) for task in subtasks)
     # sum end time subtasks
     subtasks = {(0, 1), (1, 2)}
-    solver.set_objective_sum_end_time_substasks(subtasks)
+    objective = solver.get_subtasks_sum_end_time_variable(subtasks)
+    solver.minimize_variable(objective)
     sol = solver.solve(
         parameters_cp=parameters_cp, callbacks=[NbIterationStopper(nb_iteration_max=1)]
     ).get_best_solution()
     solver.solver.ObjectiveValue() == sum(sol.get_end_time(task) for task in subtasks)
     # sum start time subtasks
     subtasks = {(0, 1), (1, 2)}
-    solver.set_objective_sum_start_time_substasks(subtasks)
+    objective = solver.get_subtasks_sum_start_time_variable(subtasks)
+    solver.minimize_variable(objective)
     sol = solver.solve(
         parameters_cp=parameters_cp, callbacks=[NbIterationStopper(nb_iteration_max=1)]
     ).get_best_solution()
     solver.solver.ObjectiveValue() == sum(sol.get_start_time(task) for task in subtasks)
     # max end time
-    solver.set_objective_max_end_time()
+    objective = solver.get_global_makespan_variable()
+    solver.minimize_variable(objective)
     sol = solver.solve(
         parameters_cp=parameters_cp, callbacks=[NbIterationStopper(nb_iteration_max=1)]
     ).get_best_solution()

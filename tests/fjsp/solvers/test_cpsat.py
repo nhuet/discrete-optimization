@@ -141,7 +141,8 @@ def test_objectives():
 
     subtasks = {(0, 0), (2, 2)}
     # max end time subtasks
-    solver.set_objective_max_end_time_substasks(subtasks)
+    objective = solver.get_subtasks_makespan_variable(subtasks)
+    solver.minimize_variable(objective)
     sol = solver.solve(
         parameters_cp=p, callbacks=[NbIterationStopper(nb_iteration_max=1)]
     ).get_best_solution()

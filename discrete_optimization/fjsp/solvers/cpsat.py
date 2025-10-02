@@ -53,10 +53,14 @@ class CpSatFjspSolver(
         self.create_precedence_constraints()
         self.create_is_present_constraints()
         self.create_disjunctive_constraints(**args)
-        max_time = args.get("max_time", self.problem.horizon)
-        self.makespan = self.cp_model.NewIntVar(0, max_time, name="makespan")
-        self.variables["makespan"] = self.makespan
-        self.set_objective_max_end_time()
+        self._max_time = args.get(
+            "max_time", self.problem.get_makespan_upper_bound()
+        )  # update the upper bound for makespan
+        objective = self.get_global_makespan_variable()
+        self.minimize_variable(objective)
+
+    def get_makespan_upper_bound(self) -> int:
+        return self._max_time
 
     def retrieve_solution(self, cpsolvercb: CpSolverSolutionCallback) -> Solution:
         logger.info(

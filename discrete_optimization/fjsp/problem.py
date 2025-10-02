@@ -136,6 +136,9 @@ class FJobShopProblem(
             for (i, j) in self.subjob_possible_machines
         }
 
+    def get_makespan_upper_bound(self) -> int:
+        return self.horizon
+
     @property
     def tasks_list(self) -> list[Task]:
         return [
