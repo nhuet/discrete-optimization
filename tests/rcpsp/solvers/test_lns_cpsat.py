@@ -11,7 +11,7 @@ from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_ha
     ConstraintExtractorList,
     MultimodeConstraintExtractor,
     SchedulingConstraintExtractor,
-    SchedulingConstraintHandler,
+    TasksConstraintHandler,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (
     NeighborBuilderMix,
@@ -61,7 +61,7 @@ def test_lns(fix_primary_tasks_modes, fix_secondary_tasks_modes, random_seed):
         ]
     )
 
-    constraint_handler = SchedulingConstraintHandler(
+    constraint_handler = TasksConstraintHandler(
         problem=problem,
         constraints_extractor=constraints_extractor,
     )
@@ -89,7 +89,7 @@ def test_default_constraint_handler(model):
     files_available = get_data_available()
     file = [f for f in files_available if model in f][0]
     problem = parse_file(file)
-    constraint_handler = SchedulingConstraintHandler(
+    constraint_handler = TasksConstraintHandler(
         problem=problem,
     )
     assert isinstance(constraint_handler.constraints_extractor, ConstraintExtractorList)

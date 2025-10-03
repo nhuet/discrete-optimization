@@ -533,6 +533,7 @@ def full_satisfy(
     solution: AllocSchedulingSolution,
     partial_solution: bool = False,
 ) -> bool:
+    is_satisfied = True
     for func in [
         satisfy_all_done,
         satisfy_precedence,
@@ -546,18 +547,8 @@ def full_satisfy(
             problem=problem, solution=solution, partial_solution=partial_solution
         ):
             logger.warning(func, " not satisfied !!")
-    return all(
-        func(problem=problem, solution=solution, partial_solution=partial_solution)
-        for func in [
-            satisfy_all_done,
-            satisfy_precedence,
-            satisfy_available_team,
-            satisfy_same_allocation,
-            satisfy_time_window,
-            satisfy_calendars,
-            satisfy_overlap_teams,
-        ]
-    )
+            is_satisfied = False
+    return is_satisfied
 
 
 def satisfy_detailed(

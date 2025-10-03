@@ -581,21 +581,47 @@ def build_default_constraint_extractor(
 
 
 class ObjectiveSubproblem(Enum):
-    MAKESPAN_SUBTASKS = 0
-    SUM_START_SUBTASKS = 1
-    SUM_END_SUBTASKS = 2
-    GLOBAL_MAKESPAN = 3
+    # default
+    INITIAL_OBJECTIVE = 0  # keep initial objective of the solver
+    # scheduling
+    MAKESPAN_SUBTASKS = 1  # makespan on tasks subset
+    SUM_START_SUBTASKS = 2  # sum of start time on tasks subset
+    SUM_END_SUBTASKS = 3  # sum of end time on tasks subset
+    GLOBAL_MAKESPAN = 4  # global makespan
+    # allocation
+    NB_TASKS_DONE = 5  # number of tasks with at least a resource allocated
+    NB_UNARY_RESOURCES_USED = (
+        6  # number of unary resources allocated to at least one task
+    )
 
 
-class BaseTasksConstraintHandler(ConstraintHandler, Generic[Task]):
-    """Generic constraint handler for tasks related problem."""
+SCHEDULING_OBJECTIVES = (
+    ObjectiveSubproblem.MAKESPAN_SUBTASKS,
+    ObjectiveSubproblem.SUM_START_SUBTASKS,
+    ObjectiveSubproblem.SUM_END_SUBTASKS,
+    ObjectiveSubproblem.GLOBAL_MAKESPAN,
+)
+
+ALLOCATION_OBJECTIVES = (
+    ObjectiveSubproblem.NB_TASKS_DONE,
+    ObjectiveSubproblem.NB_UNARY_RESOURCES_USED,
+)
+
+
+class TasksConstraintHandler(ConstraintHandler, Generic[Task]):
+    """Generic constraint handler for tasks related problems.
+
+    Include constraints for scheduling, multimode, and allocation features if present.
+
+    """
 
     def __init__(
         self,
-        problem: TasksProblem,
+        problem: SchedulingProblem,
         neighbor_builder: Optional[NeighborBuilder[Task]] = None,
         constraints_extractor: Optional[BaseConstraintExtractor] = None,
         params_constraint_builder: Optional[ParamsConstraintBuilder] = None,
+        objective_subproblem: ObjectiveSubproblem = ObjectiveSubproblem.GLOBAL_MAKESPAN,
     ):
         self.problem = problem
         if neighbor_builder is None:
@@ -613,57 +639,20 @@ class BaseTasksConstraintHandler(ConstraintHandler, Generic[Task]):
             )
         else:
             self.constraints_extractor = constraints_extractor
-
-    def adding_constraint_from_results_store(
-        self,
-        solver: SchedulingCpSolver,
-        result_storage: ResultStorage,
-        **kwargs: Any,
-    ) -> Iterable[Any]:
-        # current solution
-        current_solution: TasksSolution
-        current_solution = result_storage.get_best_solution()
-        # split tasks
-        (tasks_primary, tasks_secondary) = self.neighbor_builder.find_subtasks(
-            current_solution=current_solution
-        )
-        logger.debug(self.__class__.__name__)
-        logger.debug(
-            f"{len(tasks_primary)} in first set, {len(tasks_secondary)} in second set"
-        )
-
-        constraints = self.constraints_extractor.add_constraints(
-            solver=solver,
-            current_solution=current_solution,
-            tasks_primary=tasks_primary,
-            tasks_secondary=tasks_secondary,
-            params_constraint_builder=self.params_constraint_builder,
-        )
-        return constraints
-
-
-class SchedulingConstraintHandler(BaseTasksConstraintHandler[Task]):
-    """Generic constraint handler for scheduling problems.
-
-    Include constraints for multimode and allocation features if present.
-
-    """
-
-    def __init__(
-        self,
-        problem: SchedulingProblem,
-        neighbor_builder: Optional[NeighborBuilder[Task]] = None,
-        constraints_extractor: Optional[BaseConstraintExtractor] = None,
-        params_constraint_builder: Optional[ParamsConstraintBuilder] = None,
-        objective_subproblem: ObjectiveSubproblem = ObjectiveSubproblem.GLOBAL_MAKESPAN,
-    ):
-        super().__init__(
-            problem=problem,
-            neighbor_builder=neighbor_builder,
-            constraints_extractor=constraints_extractor,
-            params_constraint_builder=params_constraint_builder,
-        )
         self.objective_subproblem = objective_subproblem
+
+        if self.objective_subproblem in SCHEDULING_OBJECTIVES and not isinstance(
+            problem, SchedulingProblem
+        ):
+            raise ValueError(
+                f"{self.objective_subproblem} objective possible only for a scheduling problem."
+            )
+        if self.objective_subproblem in ALLOCATION_OBJECTIVES and not isinstance(
+            problem, AllocationProblem
+        ):
+            raise ValueError(
+                f"{self.objective_subproblem} objective possible only for an allocation problem."
+            )
 
     def adding_constraint_from_results_store(
         self,
@@ -672,16 +661,7 @@ class SchedulingConstraintHandler(BaseTasksConstraintHandler[Task]):
         **kwargs: Any,
     ) -> Iterable[Any]:
         # current solution
-        current_solution = result_storage.get_best_solution()
-
-        if not (
-            isinstance(current_solution, SchedulingSolution)
-            and isinstance(solver, SchedulingCpSolver)
-        ):
-            raise ValueError(
-                f"{self.__class__.__name__} extract constraints only "
-                f"if solution and solver are related to a scheduling problem."
-            )
+        current_solution: TasksSolution[Task] = result_storage.get_best_solution()
 
         # split tasks
         (tasks_primary, tasks_secondary) = self.neighbor_builder.find_subtasks(
@@ -701,45 +681,75 @@ class SchedulingConstraintHandler(BaseTasksConstraintHandler[Task]):
         )
 
         # change objective and add constraint on it
-        if self.objective_subproblem == ObjectiveSubproblem.MAKESPAN_SUBTASKS:
-            objective = solver.get_subtasks_makespan_variable(subtasks=tasks_primary)
-            solver.minimize_variable(objective)
-            current_max = max([current_solution.get_end_time(t) for t in tasks_primary])
-            constraints += solver.add_bound_constraint(
-                var=objective, sign=SignEnum.LEQ, value=current_max
-            )
+        objective: Optional[Any] = None
+        if self.objective_subproblem == ObjectiveSubproblem.INITIAL_OBJECTIVE:
+            # keep current objective
+            pass
+        elif self.objective_subproblem == ObjectiveSubproblem.MAKESPAN_SUBTASKS:
+            if isinstance(current_solution, SchedulingSolution) and isinstance(
+                solver, SchedulingCpSolver
+            ):
+                objective = solver.get_subtasks_makespan_variable(
+                    subtasks=tasks_primary
+                )
+                current_max = max(
+                    [current_solution.get_end_time(t) for t in tasks_primary]
+                )
+                constraints += solver.add_bound_constraint(
+                    var=objective, sign=SignEnum.LEQ, value=current_max
+                )
         elif self.objective_subproblem == ObjectiveSubproblem.GLOBAL_MAKESPAN:
-            objective = solver.get_global_makespan_variable()
-            solver.minimize_variable(objective)
+            if isinstance(current_solution, SchedulingSolution) and isinstance(
+                solver, SchedulingCpSolver
+            ):
+                objective = solver.get_global_makespan_variable()
+
         elif self.objective_subproblem == ObjectiveSubproblem.SUM_START_SUBTASKS:
-            objective = solver.get_subtasks_sum_start_time_variable(
-                subtasks=tasks_primary
-            )
-            solver.minimize_variable(objective)
-            sum_start = sum(
-                [
-                    1  # (10 if t == self.problem.sink_task else 1)
-                    * current_solution.get_start_time(t)
-                    for t in tasks_primary
-                ]
-            )
-            constraints += solver.add_bound_constraint(
-                var=objective, sign=SignEnum.LEQ, value=sum_start
-            )
+            if isinstance(current_solution, SchedulingSolution) and isinstance(
+                solver, SchedulingCpSolver
+            ):
+                objective = solver.get_subtasks_sum_start_time_variable(
+                    subtasks=tasks_primary
+                )
+                sum_start = sum(
+                    (current_solution.get_start_time(t) for t in tasks_primary)
+                )
+                constraints += solver.add_bound_constraint(
+                    var=objective, sign=SignEnum.LEQ, value=sum_start
+                )
         elif self.objective_subproblem == ObjectiveSubproblem.SUM_END_SUBTASKS:
-            objective = solver.get_subtasks_sum_end_time_variable(
-                subtasks=tasks_primary
-            )
+            if isinstance(current_solution, SchedulingSolution) and isinstance(
+                solver, SchedulingCpSolver
+            ):
+                objective = solver.get_subtasks_sum_end_time_variable(
+                    subtasks=tasks_primary
+                )
+                sum_start = sum(
+                    (current_solution.get_end_time(t) for t in tasks_primary)
+                )
+                constraints += solver.add_bound_constraint(
+                    var=objective, sign=SignEnum.LEQ, value=sum_start
+                )
+        elif self.objective_subproblem == ObjectiveSubproblem.NB_TASKS_DONE:
+            if isinstance(current_solution, AllocationSolution) and isinstance(
+                solver, AllocationCpSolver
+            ):
+                objective = solver.get_nb_tasks_done_variable()
+                current_val = current_solution.compute_nb_tasks_done()
+                constraints += solver.add_bound_constraint(
+                    var=objective, sign=SignEnum.LEQ, value=current_val
+                )
+        elif self.objective_subproblem == ObjectiveSubproblem.NB_UNARY_RESOURCES_USED:
+            if isinstance(current_solution, AllocationSolution) and isinstance(
+                solver, AllocationCpSolver
+            ):
+                objective = solver.get_nb_unary_resources_used_variable()
+                current_val = current_solution.compute_nb_unary_resources_used()
+                constraints += solver.add_bound_constraint(
+                    var=objective, sign=SignEnum.LEQ, value=current_val
+                )
+
+        if objective is not None:
             solver.minimize_variable(objective)
-            sum_start = sum(
-                [
-                    1  # (10 if t == self.problem.sink_task else 1)
-                    * current_solution.get_end_time(t)
-                    for t in tasks_primary
-                ]
-            )
-            constraints += solver.add_bound_constraint(
-                var=objective, sign=SignEnum.LEQ, value=sum_start
-            )
 
         return constraints

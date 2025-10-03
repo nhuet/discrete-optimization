@@ -11,9 +11,9 @@ from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_ha
     ObjectiveSubproblem,
     ParamsConstraintBuilder,
     SchedulingConstraintExtractor,
-    SchedulingConstraintHandler,
     SubresourcesAllocationConstraintExtractor,
     SubtasksAllocationConstraintExtractor,
+    TasksConstraintHandler,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (
     NeighborRandom,
@@ -102,7 +102,7 @@ def test_lns_cpsat(
         )
     constraints_extractor = ConstraintExtractorList(extractors=extractors)
 
-    constraint_handler = SchedulingConstraintHandler(
+    constraint_handler = TasksConstraintHandler(
         problem=problem,
         constraints_extractor=constraints_extractor,
     )
@@ -129,7 +129,7 @@ def test_lns_cpsat_subobjective(problem_multimode):
     )
     parameters_cp = ParametersCp.default()
 
-    constraint_handler = SchedulingConstraintHandler(
+    constraint_handler = TasksConstraintHandler(
         problem=problem,
         objective_subproblem=ObjectiveSubproblem.SUM_END_SUBTASKS,
     )
@@ -164,7 +164,7 @@ def test_lns_cpsat_subobjective(problem_multimode):
 )
 def test_default_constraint_handler(problem, params):
 
-    constraint_handler = SchedulingConstraintHandler(
+    constraint_handler = TasksConstraintHandler(
         problem=problem,
         neighbor_builder=NeighborRandom(problem=problem),
         params_constraint_builder=params,

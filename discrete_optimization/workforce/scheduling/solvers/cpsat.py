@@ -288,8 +288,6 @@ class CPSatAllocSchedulingSolver(
         is_present_var = {}
         interval_var = {}
         actually_done_var = {}
-        if optional_activities:
-            actually_done_var = {}
         opt_interval_var = {}
         st_lb = [
             (

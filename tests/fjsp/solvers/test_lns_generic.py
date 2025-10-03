@@ -8,7 +8,7 @@ from discrete_optimization.fjsp.solvers.cpsat import CpSatFjspSolver
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
     ConstraintExtractorList,
     MultimodeConstraintExtractor,
-    SchedulingConstraintHandler,
+    TasksConstraintHandler,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (
     NeighborBuilderMix,
@@ -27,7 +27,7 @@ def test_lnscpsat_fjsp():
     solver = CpSatFjspSolver(problem=problem)
     p = ParametersCp.default_cpsat()
     p.nb_process = 10
-    constraint_handler = SchedulingConstraintHandler(
+    constraint_handler = TasksConstraintHandler(
         problem=problem,
     )
     assert isinstance(constraint_handler.constraints_extractor, ConstraintExtractorList)

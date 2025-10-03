@@ -69,6 +69,26 @@ class AllocationSolution(TasksSolution[Task], Generic[Task, UnaryResource]):
             for unary_resource in self.problem.unary_resources_list
         )
 
+    def compute_nb_tasks_done(self) -> int:
+        """Compute number of tasks with at least a resource allocated."""
+        return sum(
+            any(
+                self.is_allocated(task=task, unary_resource=unary_resource)
+                for unary_resource in self.problem.unary_resources_list
+            )
+            for task in self.problem.tasks_list
+        )
+
+    def compute_nb_unary_resources_used(self) -> int:
+        """Compute number of unary resources allocated to at least one task."""
+        return sum(
+            any(
+                self.is_allocated(task=task, unary_resource=unary_resource)
+                for task in self.problem.tasks_list
+            )
+            for unary_resource in self.problem.unary_resources_list
+        )
+
     def check_same_allocation_as_ref(
         self,
         ref: AllocationSolution[Task, UnaryResource],
@@ -101,6 +121,31 @@ class AllocationProblem(TasksProblem[Task], Generic[Task, UnaryResource]):
     a mix of several types.
 
     """
+
+    _map_unary_resource_to_index: Optional[dict[UnaryResource, int]] = None
+
+    def get_unary_resource_from_index(self, i: int) -> UnaryResource:
+        return self.unary_resources_list[i]
+
+    def get_index_from_unary_resource(self, unary_resource: UnaryResource) -> int:
+        if self._map_unary_resource_to_index is None:
+            self._map_unary_resource_to_index = {
+                unary_resource: i
+                for i, unary_resource in enumerate(self.unary_resources_list)
+            }
+        return self._map_unary_resource_to_index[unary_resource]
+
+    def is_compatible_task_unary_resource(
+        self, task: Task, unary_resource: UnaryResource
+    ) -> bool:
+        """Should return False if the unary_resource can never be allocated to task.
+
+        This is only a hint used to reduce the number of variables or constraints generated.
+
+        Default to True, to be overriden in subclasses.
+
+        """
+        return True
 
 
 class AllocationCpSolver(TasksCpSolver[Task], Generic[Task, UnaryResource]):
@@ -189,6 +234,26 @@ class AllocationCpSolver(TasksCpSolver[Task], Generic[Task, UnaryResource]):
                     used=ref.is_allocated(task=task, unary_resource=unary_resource),
                 )
         return constraints
+
+    @abstractmethod
+    def get_nb_tasks_done_variable(self) -> Any:
+        """Construct and get the variable tracking number of tasks with at least a resource allocated.
+
+        Returns:
+            objective variable to minimize
+
+        """
+        ...
+
+    @abstractmethod
+    def get_nb_unary_resources_used_variable(self) -> Any:
+        """Construct and get the variable tracking number of tasks with at least a resource allocated.
+
+        Returns:
+            objective variable to minimize
+
+        """
+        ...
 
 
 def get_default_tasks_n_unary_resources(

@@ -140,36 +140,12 @@ class SchedulingCpSolver(TasksCpSolver[Task]):
             )
         return constraints
 
-    @abstractmethod
-    def add_bound_constraint(self, var: Any, sign: SignEnum, value: int) -> list[Any]:
-        """Add constraint of bound type on an integer variable (or expression) of the underlying cp model.
-
-        `var` must compare to `value` according to `value`.
-
-        Args:
-            var:
-            sign:
-            value:
-
-        Returns:
-
-        """
-        ...
-
-    @abstractmethod
-    def minimize_variable(self, var: Any) -> None:
-        """Set the cp solver objective as minimizing `var`."""
-        pass
-
     def get_global_makespan_variable(self) -> Any:
         """Construct and get the variable tracking the global makespan.
 
         Default implementation uses `get_subtasks_makespan_variable` on last tasks.
         Beware: a further call to `get_subtasks_makespan_variable` with another subset of tasks can
         change the constraints on this variable and thus make it obsolete.
-
-        Args:
-            subtasks:
 
         Returns:
             objective variable to minimize

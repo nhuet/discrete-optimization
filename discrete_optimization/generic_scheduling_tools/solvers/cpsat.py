@@ -118,9 +118,6 @@ class SchedulingCpSatSolver(OrtoolsCpSatSolver, SchedulingCpSolver[Task]):
             for task in subtasks
         )
 
-    def minimize_variable(self, var: Any) -> None:
-        self.cp_model.minimize(var)
-
 
 class MultimodeCpSatSolver(OrtoolsCpSatSolver, MultimodeCpSolver[Task]):
     @abstractmethod
@@ -156,6 +153,12 @@ class AllocationCpSatSolver(
     OrtoolsCpSatSolver,
     AllocationCpSolver[Task, UnaryResource],
 ):
+    """Base class for allocation cp-sat solvers using a binary modelling.
+
+    I.e. using 0-1 variables to model allocation status of each couple (task, unary_resource)
+    This is a more general modelisation thant the integer one as it allows allocation of multiple resources.
+
+    """
 
     allocation_changes_variables_created = False
     allocation_changes_variables: dict[tuple[Task, UnaryResource], IntVar]
@@ -171,6 +174,12 @@ class AllocationCpSatSolver(
 
         """
         ...
+
+    def get_nb_tasks_done_variable(self) -> Any:
+        pass
+
+    def get_nb_unary_resources_used_variable(self) -> Any:
+        pass
 
     def add_constraint_on_task_unary_resource_allocation(
         self, task: Task, unary_resource: UnaryResource, used: bool
@@ -213,7 +222,8 @@ class AllocationCpSatSolver(
             for task in tasks
             for unary_resource in unary_resources
         )
-        return [self.cp_model.add(var <= nb_changes)]
+        constraints += [self.cp_model.add(var <= nb_changes)]
+        return constraints
 
     def create_allocation_changes_variables(self):
         """Create variables necessary for constraint on nb of changes."""
@@ -256,3 +266,125 @@ class AllocationCpSatSolver(
         return self.add_constraint_nb_unary_resource_usages(
             sign=sign, target=target, unary_resources=(unary_resource,)
         )
+
+
+class AllocationIntegerModellingCpSatSolver(
+    AllocationCpSatSolver[Task, UnaryResource],
+):
+    """Base class for allocation cp-sat solvers using an integer modelling.
+
+    I.e. using integer variables to model allocation of a task.
+    This assumes that at most one unary_resource can be allocated to a task.
+
+    """
+
+    is_present_variables_created = False
+    is_present_variables: dict[tuple[Task, UnaryResource], IntVar]
+
+    @abstractmethod
+    def get_task_allocation_variable(
+        self,
+        task: Task,
+    ) -> LinearExprT:
+        """Return an integer variable/expression storing the index of the allocated unary_resource.
+
+        Assumes that exactly one unary resource is allocated to a task.
+
+        """
+        ...
+
+    def create_is_present_variables(self) -> None:
+        if not self.is_present_variables_created:
+            tasks, unary_resources = self.get_default_tasks_n_unary_resources()
+            self.is_present_variables = {}
+            for task in tasks:
+                for unary_resource in unary_resources:
+                    if self.problem.is_compatible_task_unary_resource(
+                        task=task, unary_resource=unary_resource
+                    ):
+                        boolvar = self.cp_model.new_bool_var(
+                            f"is_present_{task}_{unary_resource}"
+                        )
+                        self.is_present_variables[(task, unary_resource)] = boolvar
+                        var = self.get_task_allocation_variable(task=task)
+                        value = self.problem.get_index_from_unary_resource(
+                            unary_resource
+                        )
+                        self.cp_model.add(var == value).only_enforce_if(boolvar)
+                        self.cp_model.add(var != value).only_enforce_if(~boolvar)
+
+            self.is_present_variables_created = True
+
+    def get_task_unary_resource_is_present_variable(
+        self, task: Task, unary_resource: UnaryResource
+    ) -> LinearExprT:
+        """Return a 0-1 variable/expression telling if the unary_resource is used for the task.
+
+        NB: sometimes the given resource is never to be used by a task and the variable has not been created.
+        The convention is to return 0 in that case.
+
+        """
+        self.create_is_present_variables()
+        try:
+            return self.is_present_variables[(task, unary_resource)]
+        except:
+            return 0
+
+    def add_constraint_on_task_unary_resource_allocation(
+        self, task: Task, unary_resource: UnaryResource, used: bool
+    ) -> list[Any]:
+        var = self.get_task_allocation_variable(task=task)
+        if used:
+            return [self.cp_model.add(var == unary_resource)]
+        else:
+            return [self.cp_model.add(var != unary_resource)]
+
+    def add_constraint_on_nb_allocation_changes(
+        self, ref: AllocationSolution[Task, UnaryResource], nb_changes: int
+    ) -> list[Any]:
+        tasks, unary_resources = self.get_default_tasks_n_unary_resources()
+        self.create_allocation_changes_variables()
+        # constraints so that change variables reflect diff to ref
+        constraints = []
+        for task in tasks:
+            for unary_resource in unary_resources:
+                if ref.is_allocated(task=task, unary_resource=unary_resource):
+                    subconstraints = [
+                        self.cp_model.add(
+                            self.get_task_allocation_variable(task=task)
+                            != unary_resource
+                        ).only_enforce_if(
+                            self.allocation_changes_variables[(task, unary_resource)]
+                        ),
+                        self.cp_model.add(
+                            self.get_task_allocation_variable(task=task)
+                            == unary_resource
+                        ).only_enforce_if(
+                            ~self.allocation_changes_variables[(task, unary_resource)]
+                        ),
+                    ]
+                else:
+                    subconstraints = [
+                        self.cp_model.add(
+                            self.get_task_allocation_variable(task=task)
+                            == unary_resource
+                        ).only_enforce_if(
+                            self.allocation_changes_variables[(task, unary_resource)]
+                        ),
+                        self.cp_model.add(
+                            self.get_task_allocation_variable(task=task)
+                            != unary_resource
+                        ).only_enforce_if(
+                            ~self.allocation_changes_variables[(task, unary_resource)]
+                        ),
+                    ]
+                constraints += subconstraints
+
+        # nb of changes variable
+        var = sum(
+            self.allocation_changes_variables[(task, unary_resource)]
+            for task in tasks
+            for unary_resource in unary_resources
+        )
+        constraints += [self.cp_model.add(var <= nb_changes)]
+        return constraints

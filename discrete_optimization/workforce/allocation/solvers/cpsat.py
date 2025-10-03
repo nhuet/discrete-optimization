@@ -13,11 +13,13 @@ from ortools.sat.python.cp_model import (
     CpSolver,
     CpSolverSolutionCallback,
     Domain,
-    IntVar,
     LinearExpr,
-    VarArrayAndObjectiveSolutionPrinter,
+    LinearExprT,
 )
 
+from discrete_optimization.generic_scheduling_tools.solvers.cpsat import (
+    AllocationCpSatSolver,
+)
 from discrete_optimization.generic_tools.callbacks.callback import (
     Callback,
     CallbackList,
@@ -35,20 +37,17 @@ from discrete_optimization.generic_tools.hyperparameters.hyperparameter import (
     CategoricalHyperparameter,
     EnumHyperparameter,
 )
-from discrete_optimization.generic_tools.ortools_cpsat_tools import (
-    OrtoolsCpSatCallback,
-    OrtoolsCpSatSolver,
-)
+from discrete_optimization.generic_tools.ortools_cpsat_tools import OrtoolsCpSatCallback
 from discrete_optimization.generic_tools.result_storage.result_storage import (
     ResultStorage,
-    from_solutions_to_result_storage,
 )
 from discrete_optimization.workforce.allocation.problem import (
-    AggregateOperator,
     AllocationAdditionalConstraint,
+    Task,
     TeamAllocationProblem,
     TeamAllocationProblemMultiobj,
     TeamAllocationSolution,
+    UnaryResource,
 )
 from discrete_optimization.workforce.allocation.solvers import TeamAllocationSolver
 from discrete_optimization.workforce.allocation.utils import (
@@ -59,7 +58,6 @@ from discrete_optimization.workforce.commons.fairness_modeling import (
     ModelisationDispersion,
 )
 from discrete_optimization.workforce.commons.fairness_modeling_ortools import (
-    cumulate_value_per_teams_version_2,
     model_fairness,
 )
 
@@ -82,7 +80,7 @@ logger = logging.getLogger(__name__)
 
 
 class CpsatTeamAllocationSolver(
-    OrtoolsCpSatSolver, TeamAllocationSolver, WarmstartMixin
+    AllocationCpSatSolver[Task, UnaryResource], TeamAllocationSolver, WarmstartMixin
 ):
     problem: TeamAllocationProblem
     hyperparameters = [
@@ -135,19 +133,41 @@ class CpsatTeamAllocationSolver(
         params_objective_function: Optional[ParamsObjectiveFunction] = None,
         **kwargs: Any,
     ):
-        OrtoolsCpSatSolver.__init__(self, problem, params_objective_function, **kwargs)
+        super().__init__(problem, params_objective_function, **kwargs)
         self.modelisation_allocation: Optional[ModelisationAllocationOrtools] = None
         self.modelisation_dispersion: Optional[ModelisationDispersion] = None
         self.model_max_and_min: bool = False
         self.variables = {}
         self.key_main_decision_variable = None
 
-    def set_warm_start(self, solution: TeamAllocationSolution) -> None:
-        self.cp_model.ClearHints()
-        if self.modelisation_allocation in {
+    def get_task_unary_resource_is_present_variable(
+        self, task: Task, unary_resource: UnaryResource
+    ) -> LinearExprT:
+        """Return a 0-1 variable/expression telling if the unary_resource is used for the task.
+
+        NB: sometimes the given resource is never to be used by a task and the variable has not been created.
+        The convention is to return 0 in that case.
+
+        """
+        if self.modelisation_allocation in (
             ModelisationAllocationOrtools.BINARY,
             ModelisationAllocationOrtools.BINARY_OPTIONAL_ACTIVITIES,
-        }:
+        ):
+            i_task = self.problem.index_activities_name[task]
+            i_team = self.problem.index_teams_name[unary_resource]
+            try:
+                return self.variables["allocation_binary"][i_task][i_team]
+            except KeyError:
+                return 0
+        else:
+            raise NotImplementedError()
+
+    def set_warm_start(self, solution: TeamAllocationSolution) -> None:
+        self.cp_model.ClearHints()
+        if self.modelisation_allocation in (
+            ModelisationAllocationOrtools.BINARY,
+            ModelisationAllocationOrtools.BINARY_OPTIONAL_ACTIVITIES,
+        ):
             variables = self.variables["allocation_binary"]
             for i in range(len(solution.allocation)):
                 alloc = solution.allocation[i]
@@ -207,6 +227,7 @@ class CpsatTeamAllocationSolver(
         **args,
     ):
         args = self.complete_with_default_hyperparameters(args)
+        self.modelisation_allocation = modelisation_allocation
         if modelisation_allocation in [
             ModelisationAllocationOrtools.BINARY,
             ModelisationAllocationOrtools.BINARY_OPTIONAL_ACTIVITIES,
@@ -216,7 +237,6 @@ class CpsatTeamAllocationSolver(
                 == ModelisationAllocationOrtools.BINARY_OPTIONAL_ACTIVITIES
             )
             self.init_model_binary(**args)
-            self.modelisation_allocation = modelisation_allocation
             self.key_main_decision_variable = "allocation_binary"
             if "base_solution" in args:
                 self.create_delta_to_base_solution_binary(
@@ -227,7 +247,6 @@ class CpsatTeamAllocationSolver(
                 )
         else:
             self.init_model_integer(**args)
-            self.modelisation_allocation = modelisation_allocation
             self.key_main_decision_variable = "allocation"
             if "base_solution" in args:
                 self.create_delta_to_base_solution_integer(

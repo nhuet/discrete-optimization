@@ -2,7 +2,7 @@ import pytest
 
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
     ObjectiveSubproblem,
-    SchedulingConstraintHandler,
+    TasksConstraintHandler,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (
     NeighborBuilderMix,
@@ -28,7 +28,7 @@ def test_lns(objective_subproblem):
         parameters_cp=parameters_cp, callbacks=[NbIterationStopper(nb_iteration_max=1)]
     )
     initial_solution_provider = TrivialInitialSolution(solution=initial_res)
-    constraint_handler = SchedulingConstraintHandler(
+    constraint_handler = TasksConstraintHandler(
         problem=problem,
         objective_subproblem=objective_subproblem,
     )

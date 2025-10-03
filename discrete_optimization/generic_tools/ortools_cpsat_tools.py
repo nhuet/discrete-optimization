@@ -188,6 +188,9 @@ class OrtoolsCpSatSolver(CpSolver, BoundsProviderMixin):
         cstr = self.cp_model.add(cstr_tmp)
         return [cstr]
 
+    def minimize_variable(self, var: Any) -> None:
+        self.cp_model.minimize(var)
+
 
 class OrtoolsCpSatCallback(CpSolverSolutionCallback):
     def __init__(
