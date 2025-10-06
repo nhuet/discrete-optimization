@@ -26,10 +26,13 @@ class SchedulingCpSatSolver(OrtoolsCpSatSolver, SchedulingCpSolver[Task]):
     """
 
     _makespan: Optional[IntVar] = None
-    """Internal variable use to define the objective (global or partial makespan)."""
+    """Internal variable use to define the global makespan."""
+
+    _subtasks_makespan: Optional[IntVar] = None
+    """Internal variable use to define the partial makespan."""
 
     constraints_on_makespan: Optional[list[Any]] = None
-    """Constraints on makespan so that it can be considered as the objective."""
+    """Constraints on partial makespan so that it can be considered as the objective."""
 
     @abstractmethod
     def get_task_start_or_end_variable(
@@ -62,7 +65,7 @@ class SchedulingCpSatSolver(OrtoolsCpSatSolver, SchedulingCpSolver[Task]):
         return [self.cp_model.add(var1 == var2)]
 
     def get_makespan_var(self) -> IntVar:
-        """Get the makespan variable used to track global or subtasks makespan."""
+        """Get the makespan variable used to track global makespan."""
         if self._makespan is None:
             self._makespan = self.cp_model.NewIntVar(
                 lb=self.get_makespan_lower_bound(),
@@ -70,6 +73,16 @@ class SchedulingCpSatSolver(OrtoolsCpSatSolver, SchedulingCpSolver[Task]):
                 name="makespan",
             )
         return self._makespan
+
+    def get_subtasks_makespan_var(self) -> IntVar:
+        """Get the makespan variable used to track subtasks makespan."""
+        if self._subtasks_makespan is None:
+            self._subtasks_makespan = self.cp_model.NewIntVar(
+                lb=0,  # lower bound for any tasks subset
+                ub=self.get_makespan_upper_bound(),
+                name="subtasks_makespan",
+            )
+        return self._subtasks_makespan
 
     def get_makespan_lower_bound(self) -> int:
         """Get a lower bound on global makespan.
@@ -87,11 +100,28 @@ class SchedulingCpSatSolver(OrtoolsCpSatSolver, SchedulingCpSolver[Task]):
         if self.constraints_on_makespan is not None:
             self.remove_constraints(self.constraints_on_makespan)
 
-    def get_subtasks_makespan_variable(self, subtasks: Iterable[Task]) -> Any:
+    def get_global_makespan_variable(self) -> Any:
         # remove previous constraints on makespan variable from cp model
         self.remove_constraints_on_objective()
         # get makespan variable
         makespan = self.get_makespan_var()
+        # update those constraints
+        self.constraints_on_makespan = [
+            self.cp_model.AddMaxEquality(
+                makespan,
+                [
+                    self.get_task_start_or_end_variable(task, StartOrEnd.END)
+                    for task in self.problem.get_last_tasks()
+                ],
+            )
+        ]
+        return makespan
+
+    def get_subtasks_makespan_variable(self, subtasks: Iterable[Task]) -> Any:
+        # remove previous constraints on makespan variable from cp model
+        self.remove_constraints_on_objective()
+        # get makespan variable
+        makespan = self.get_subtasks_makespan_var()
         # update those constraints
         self.constraints_on_makespan = [
             self.cp_model.AddMaxEquality(

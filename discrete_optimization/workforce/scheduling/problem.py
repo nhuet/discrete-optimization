@@ -157,7 +157,7 @@ class AllocSchedulingProblem(
     def get_precedence_constraints(self) -> dict[Task, set[Task]]:
         return self.precedence_constraints
 
-    def get_makespan_lower_bound(self) -> int:
+    def get_makespan_lower_bound(self, subtasks: Iterable[Task]) -> int:
         return max(int(self.get_lb_end_window(t)) for t in self.tasks_list)
 
     def get_makespan_upper_bound(self) -> int:

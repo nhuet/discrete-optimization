@@ -374,3 +374,152 @@ def test_chaining_constraint(problem):
         callbacks=[NbIterationStopper(nb_iteration_max=1)]
     ).get_best_solution()
     assert not sol.constraint_chaining_tasks_satisfied(task1=task1, task2=task2)
+
+
+def test_objective_global_makespan(problem):
+    solver = CPSatAllocSchedulingSolver(problem)
+    sol: AllocSchedulingSolution
+    solver.init_model()
+
+    objective = solver.get_global_makespan_variable()
+    solver.minimize_variable(objective)
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sol.get_max_end_time()
+
+
+def test_objective_subtasks_makespan(problem):
+    solver = CPSatAllocSchedulingSolver(problem)
+    sol: AllocSchedulingSolution
+    solver.init_model()
+    subtasks = ["80719", "21963"]
+
+    objective = solver.get_subtasks_makespan_variable(subtasks)
+    solver.minimize_variable(objective)
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == max(
+        sol.get_end_time(task) for task in subtasks
+    )
+
+
+def test_objective_subtasks_sum_starts(problem):
+    solver = CPSatAllocSchedulingSolver(problem)
+    sol: AllocSchedulingSolution
+    solver.init_model()
+    subtasks = ["80719", "21963"]
+    objective = solver.get_subtasks_sum_start_time_variable(subtasks)
+    solver.minimize_variable(objective)
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sum(
+        sol.get_start_time(task) for task in subtasks
+    )
+
+
+def test_objective_subtasks_sum_ends(problem):
+    solver = CPSatAllocSchedulingSolver(problem)
+    sol: AllocSchedulingSolution
+    solver.init_model()
+    subtasks = ["80719", "21963"]
+    objective = solver.get_subtasks_sum_end_time_variable(subtasks)
+    solver.minimize_variable(objective)
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sum(
+        sol.get_end_time(task) for task in subtasks
+    )
+
+
+def test_objective_nb_tasks_done(problem):
+    solver = CPSatAllocSchedulingSolver(problem)
+    sol: AllocSchedulingSolution
+    solver.init_model()
+    objective = solver.get_nb_tasks_done_variable()
+    solver.minimize_variable(objective)
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sum(
+        max(
+            sol.is_allocated(task, unary_resource)
+            for unary_resource in problem.unary_resources_list
+        )
+        for task in problem.tasks_list
+    )
+
+
+def test_objective_nb_unary_resources_used(problem):
+    solver = CPSatAllocSchedulingSolver(problem)
+    sol: AllocSchedulingSolution
+    solver.init_model()
+    objective = solver.get_nb_unary_resources_used_variable()
+    solver.minimize_variable(objective)
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sum(
+        max(sol.is_allocated(task, unary_resource) for task in problem.tasks_list)
+        for unary_resource in problem.unary_resources_list
+    )
+
+
+def test_constraint_nb_usages(problem):
+    solver = CPSatAllocSchedulingSolver(
+        problem=problem,
+    )
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    nb_usages_total = sol.compute_nb_unary_resource_usages()
+    unary_resource = "adba7"
+    nb_usages = sol.compute_nb_unary_resource_usages(unary_resources=(unary_resource,))
+
+    # constraint on total nb usages: infeasible (by hypothesis exactly 1 team by task)
+    constraints = solver.add_constraint_on_total_nb_usages(
+        sign=SignEnum.UP, target=nb_usages_total
+    )
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert sol is None
+
+    # constraint on a unary resource usage: increase team usage
+    solver.remove_constraints(constraints)
+    solver.add_constraint_on_unary_resource_nb_usages(
+        sign=SignEnum.UP, target=nb_usages, unary_resource=unary_resource
+    )
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert (
+        sol.compute_nb_unary_resource_usages(unary_resources=(unary_resource,))
+        > nb_usages
+    )
+
+
+def test_constraint_nb_allocation_changes(problem):
+    solver = CPSatAllocSchedulingSolver(
+        problem=problem,
+    )
+    res = solver.solve(callbacks=[NbIterationStopper(nb_iteration_max=3)])
+    ref: AllocSchedulingSolution = res.get_best_solution()
+    sol: AllocSchedulingSolution
+    for sol, _ in res:
+        print(sol.compute_nb_allocation_changes(ref))
+    sol, _ = res[0]
+    nb_changes_max = 4
+    assert sol.compute_nb_allocation_changes(ref) > nb_changes_max
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert sol.compute_nb_allocation_changes(ref) > nb_changes_max
+    solver.add_constraint_on_nb_allocation_changes(ref=ref, nb_changes=nb_changes_max)
+    sol = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert sol.compute_nb_allocation_changes(ref) <= nb_changes_max
