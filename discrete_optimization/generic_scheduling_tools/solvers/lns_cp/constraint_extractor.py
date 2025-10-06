@@ -295,10 +295,10 @@ class ConstraintExtractorList(BaseConstraintExtractor[Task]):
 class SchedulingConstraintExtractor(BaseConstraintExtractor[Task]):
     def __init__(
         self,
-        minus_delta_primary: int,
-        plus_delta_primary: int,
-        minus_delta_secondary: int,
-        plus_delta_secondary: int,
+        minus_delta_primary: int = 5,
+        plus_delta_primary: int = 5,
+        minus_delta_secondary: int = 0,
+        plus_delta_secondary: int = 0,
         constraint_to_current_solution_makespan: bool = True,
         margin_rel_to_current_solution_makespan: float = 0.05,
     ):

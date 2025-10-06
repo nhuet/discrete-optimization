@@ -259,6 +259,104 @@ def test_constraint_nb_usages(problem):
     )
 
 
+def test_objective_global_makespan(problem):
+    solver = CpSatMultiskillRcpspSolver(
+        problem=problem,
+    )
+    solver.init_model()
+
+    objective = solver.get_global_makespan_variable()
+    solver.minimize_variable(objective)
+    sol: MultiskillRcpspSolution = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sol.get_max_end_time()
+
+
+def test_objective_subtasks_makespan(problem):
+    solver = CpSatMultiskillRcpspSolver(
+        problem=problem,
+    )
+    solver.init_model()
+    subtasks = [2, 3]
+
+    objective = solver.get_subtasks_makespan_variable(subtasks)
+    solver.minimize_variable(objective)
+    sol: MultiskillRcpspSolution = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == max(
+        sol.get_end_time(task) for task in subtasks
+    )
+
+
+def test_objective_subtasks_sum_starts(problem):
+    solver = CpSatMultiskillRcpspSolver(
+        problem=problem,
+    )
+    solver.init_model()
+    subtasks = [2, 3]
+    objective = solver.get_subtasks_sum_start_time_variable(subtasks)
+    solver.minimize_variable(objective)
+    sol: MultiskillRcpspSolution = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sum(
+        sol.get_start_time(task) for task in subtasks
+    )
+
+
+def test_objective_subtasks_sum_ends(problem):
+    solver = CpSatMultiskillRcpspSolver(
+        problem=problem,
+    )
+    solver.init_model()
+    subtasks = [2, 3]
+    objective = solver.get_subtasks_sum_end_time_variable(subtasks)
+    solver.minimize_variable(objective)
+    sol: MultiskillRcpspSolution = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sum(
+        sol.get_end_time(task) for task in subtasks
+    )
+
+
+def test_objective_nb_tasks_done(problem):
+    solver = CpSatMultiskillRcpspSolver(
+        problem=problem,
+    )
+    solver.init_model()
+    objective = solver.get_nb_tasks_done_variable()
+    solver.minimize_variable(objective)
+    sol: MultiskillRcpspSolution = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sum(
+        max(
+            sol.is_allocated(task, unary_resource)
+            for unary_resource in problem.unary_resources_list
+        )
+        for task in problem.tasks_list
+    )
+
+
+def test_objective_nb_unary_resources_used(problem):
+    solver = CpSatMultiskillRcpspSolver(
+        problem=problem,
+    )
+    solver.init_model()
+    objective = solver.get_nb_unary_resources_used_variable()
+    solver.minimize_variable(objective)
+    sol: MultiskillRcpspSolution = solver.solve(
+        callbacks=[NbIterationStopper(nb_iteration_max=1)]
+    ).get_best_solution()
+    assert solver.solver.ObjectiveValue() == sum(
+        max(sol.is_allocated(task, unary_resource) for task in problem.tasks_list)
+        for unary_resource in problem.unary_resources_list
+    )
+
+
 def test_constraint_multimode(problem_multimode, random_seed):
     problem = problem_multimode
     assert problem.is_multimode

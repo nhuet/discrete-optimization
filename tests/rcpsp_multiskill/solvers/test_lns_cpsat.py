@@ -8,13 +8,13 @@ from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_ex
     MultimodeConstraintExtractor,
     NbChangesAllocationConstraintExtractor,
     NbUsagesAllocationConstraintExtractor,
+    ParamsConstraintExtractor,
     SchedulingConstraintExtractor,
     SubresourcesAllocationConstraintExtractor,
     SubtasksAllocationConstraintExtractor,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
     ObjectiveSubproblem,
-    ParamsConstraintBuilder,
     TasksConstraintHandler,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (
@@ -61,7 +61,7 @@ TIME_LIMIT_SUBSOLVER = 5
 
 
 @pytest.mark.parametrize(
-    "chaining, nb_changes, nb_usages, subtasks, subresources, fix_secondary_tasks_mode",
+    "chaining, nb_changes, nb_usages, subtasks, subresources, fix_secondary_tasks_allocation",
     [
         (False, False, False, True, False, True),
         (True, False, True, True, False, False),
@@ -76,7 +76,7 @@ def test_lns_cpsat(
     nb_usages,
     subtasks,
     subresources,
-    fix_secondary_tasks_mode,
+    fix_secondary_tasks_allocation,
 ):
     problem = problem_multimode
     subsolver = CpSatMultiskillRcpspSolver(
@@ -99,7 +99,7 @@ def test_lns_cpsat(
     if subtasks:
         extractors.append(
             SubtasksAllocationConstraintExtractor(
-                fix_secondary_tasks_allocation=fix_secondary_tasks_mode
+                fix_secondary_tasks_allocation=fix_secondary_tasks_allocation
             )
         )
     constraints_extractor = ConstraintExtractorList(extractors=extractors)
@@ -124,7 +124,11 @@ def test_lns_cpsat(
     problem.satisfy(sol)
 
 
-def test_lns_cpsat_subobjective(problem_multimode):
+@pytest.mark.parametrize(
+    "subojective",
+    [ObjectiveSubproblem.SUM_END_SUBTASKS, ObjectiveSubproblem.NB_UNARY_RESOURCES_USED],
+)
+def test_lns_cpsat_subobjective(problem_multimode, subojective):
     problem = problem_multimode
     subsolver = CpSatMultiskillRcpspSolver(
         problem=problem,
@@ -133,7 +137,7 @@ def test_lns_cpsat_subobjective(problem_multimode):
 
     constraint_handler = TasksConstraintHandler(
         problem=problem,
-        objective_subproblem=ObjectiveSubproblem.SUM_END_SUBTASKS,
+        objective_subproblem=subojective,
     )
 
     solver = LnsOrtoolsCpSat(
@@ -153,21 +157,12 @@ def test_lns_cpsat_subobjective(problem_multimode):
 
 @pytest.mark.parametrize(
     "params",
-    [
-        ParamsConstraintBuilder(5, 5, 0, 0, first_method_multiskill=True),
-        ParamsConstraintBuilder(
-            5, 5, 0, 0, first_method_multiskill=True, additional_methods=True
-        ),
-        ParamsConstraintBuilder(5, 5, 0, 0, second_method_multiskill=True),
-        ParamsConstraintBuilder(
-            5, 5, 0, 0, second_method_multiskill=True, additional_methods=True
-        ),
-    ],
+    [ParamsConstraintExtractor()],
 )
 def test_default_constraint_handler(problem, params):
 
     constraint_handler = TasksConstraintHandler(
         problem=problem,
         neighbor_builder=NeighborRandom(problem=problem),
-        params_constraint_builder=params,
+        params_constraint_extractor=params,
     )

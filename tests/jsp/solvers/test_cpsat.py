@@ -44,7 +44,8 @@ def test_cpsat_jsp(random_seed, problem):
     for task in problem.tasks_list:
         print(sol.get_start_time(task), sol.get_end_time(task))
 
-    # tests several objectives
+    # test subojectives
+
     # max end time subtasks
     subtasks = {(0, 1), (1, 2)}
     objective = solver.get_subtasks_makespan_variable(subtasks)
@@ -78,7 +79,7 @@ def test_cpsat_jsp(random_seed, problem):
     solver.solver.ObjectiveValue() == sol.get_max_end_time()
 
 
-def test_cpsat_jsp_max_end_time_constraint(problem, random_seed):
+def test_max_end_time_constraint(problem, random_seed):
     solver = CpSatJspSolver(problem=problem)
     parameters_cp = ParametersCp.default()
     sol: JobShopSolution = solver.solve(
@@ -111,9 +112,7 @@ def test_cpsat_jsp_max_end_time_constraint(problem, random_seed):
         ((0, 0), StartOrEnd.END, SignEnum.UEQ, 120),
     ],
 )
-def test_cpsat_jsp_task_constraint(
-    problem, task, start_or_end, sign, time, random_seed
-):
+def test_task_constraint(problem, task, start_or_end, sign, time, random_seed):
     solver = CpSatJspSolver(problem=problem)
     parameters_cp = ParametersCp.default()
     sol: JobShopSolution = solver.solve(
@@ -146,7 +145,7 @@ def test_cpsat_jsp_task_constraint(
     )
 
 
-def test_cpsat_jsp_chaining_tasks_constraint(problem, random_seed):
+def test_chaining_tasks_constraint(problem, random_seed):
     solver = CpSatJspSolver(problem=problem)
     parameters_cp = ParametersCp.default()
     task1 = (0, 0)
