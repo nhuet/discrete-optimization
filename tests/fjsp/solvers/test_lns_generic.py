@@ -5,9 +5,11 @@
 
 from discrete_optimization.fjsp.parser import get_data_available, parse_file
 from discrete_optimization.fjsp.solvers.cpsat import CpSatFjspSolver
-from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
+from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_extractor import (
     ConstraintExtractorList,
     MultimodeConstraintExtractor,
+)
+from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
     TasksConstraintHandler,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (

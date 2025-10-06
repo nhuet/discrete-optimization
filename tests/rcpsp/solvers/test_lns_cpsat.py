@@ -7,10 +7,12 @@ import random
 import numpy as np
 import pytest
 
-from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
+from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_extractor import (
     ConstraintExtractorList,
     MultimodeConstraintExtractor,
     SchedulingConstraintExtractor,
+)
+from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
     TasksConstraintHandler,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (

@@ -1,18 +1,20 @@
 import numpy as np
 import pytest
 
-from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
+from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_extractor import (
     BaseConstraintExtractor,
     ChainingConstraintExtractor,
     ConstraintExtractorList,
     MultimodeConstraintExtractor,
     NbChangesAllocationConstraintExtractor,
     NbUsagesAllocationConstraintExtractor,
-    ObjectiveSubproblem,
-    ParamsConstraintBuilder,
     SchedulingConstraintExtractor,
     SubresourcesAllocationConstraintExtractor,
     SubtasksAllocationConstraintExtractor,
+)
+from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.constraint_handler import (
+    ObjectiveSubproblem,
+    ParamsConstraintBuilder,
     TasksConstraintHandler,
 )
 from discrete_optimization.generic_scheduling_tools.solvers.lns_cp.neighbor_tools import (
@@ -97,7 +99,7 @@ def test_lns_cpsat(
     if subtasks:
         extractors.append(
             SubtasksAllocationConstraintExtractor(
-                fix_secondary_tasks_modes=fix_secondary_tasks_mode
+                fix_secondary_tasks_allocation=fix_secondary_tasks_mode
             )
         )
     constraints_extractor = ConstraintExtractorList(extractors=extractors)

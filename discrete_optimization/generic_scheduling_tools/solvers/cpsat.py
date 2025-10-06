@@ -161,7 +161,17 @@ class AllocationCpSatSolver(
     """
 
     allocation_changes_variables_created = False
+    """Flag telling whether 'allocation changes variables' have been created"""
     allocation_changes_variables: dict[tuple[Task, UnaryResource], IntVar]
+    """Variables tracking allocation changes from a given reference."""
+    used_variables_created = False
+    """Flag telling whether 'used variables' have been created"""
+    used_variables: dict[UnaryResource, IntVar]
+    """Variables tracking whether a unary resource has been used at least once."""
+    done_variables_created = False
+    """Flag telling whether 'done variables' have been created"""
+    done_variables: dict[Task, IntVar]
+    """Variables tracking whether a task has at least one unary resource allocated."""
 
     @abstractmethod
     def get_task_unary_resource_is_present_variable(
@@ -174,12 +184,6 @@ class AllocationCpSatSolver(
 
         """
         ...
-
-    def get_nb_tasks_done_variable(self) -> Any:
-        pass
-
-    def get_nb_unary_resources_used_variable(self) -> Any:
-        pass
 
     def add_constraint_on_task_unary_resource_allocation(
         self, task: Task, unary_resource: UnaryResource, used: bool
@@ -267,6 +271,54 @@ class AllocationCpSatSolver(
             sign=sign, target=target, unary_resources=(unary_resource,)
         )
 
+    def create_used_variables(self):
+        if not self.used_variables_created:
+            self.used_variables = {}
+            for unary_resource in self.problem.unary_resources_list:
+                used = self.cp_model.new_bool_var(f"used_{unary_resource}")
+                self.used_variables[unary_resource] = used
+                self.cp_model.add_max_equality(
+                    used,
+                    [
+                        self.get_task_unary_resource_is_present_variable(
+                            task=task, unary_resource=unary_resource
+                        )
+                        for task in self.problem.tasks_list
+                        if self.problem.is_compatible_task_unary_resource(
+                            task, unary_resource
+                        )
+                    ],
+                )
+            self.used_variables_created = True
+
+    def create_done_variables(self):
+        if not self.done_variables_created:
+            self.done_variables = {}
+            for task in self.problem.tasks_list:
+                done = self.cp_model.new_bool_var(f"{task}_done")
+                self.done_variables[task] = done
+                self.cp_model.add_max_equality(
+                    done,
+                    [
+                        self.get_task_unary_resource_is_present_variable(
+                            task=task, unary_resource=unary_resource
+                        )
+                        for unary_resource in self.problem.unary_resources_list
+                        if self.problem.is_compatible_task_unary_resource(
+                            task, unary_resource
+                        )
+                    ],
+                )
+            self.done_variables_created = True
+
+    def get_nb_tasks_done_variable(self) -> Any:
+        self.create_done_variables()
+        return sum(self.done_variables.values())
+
+    def get_nb_unary_resources_used_variable(self) -> Any:
+        self.create_used_variables()
+        return sum(self.used_variables.values())
+
 
 class AllocationIntegerModellingCpSatSolver(
     AllocationCpSatSolver[Task, UnaryResource],
@@ -327,7 +379,7 @@ class AllocationIntegerModellingCpSatSolver(
         self.create_is_present_variables()
         try:
             return self.is_present_variables[(task, unary_resource)]
-        except:
+        except KeyError:
             return 0
 
     def add_constraint_on_task_unary_resource_allocation(
