@@ -2,6 +2,7 @@
 #  This source code is licensed under the MIT license found in the
 #  LICENSE file in the root directory of this source tree.
 import logging
+import os
 import time
 from collections.abc import Iterable
 from functools import reduce
@@ -276,6 +277,7 @@ class CPSatAllocSchedulingSolver(
         additional_constraints: AdditionalCPConstraints = args.get(
             "additional_constraints", None
         )
+        used_add_ge_constraints = args.get("used_add_ge_constraints", True)
         if objectives is None:
             objectives = [ObjectivesEnum.NB_TEAMS]
         args = self.complete_with_default_hyperparameters(args)
@@ -473,7 +475,9 @@ class CPSatAllocSchedulingSolver(
         if ObjectivesEnum.NB_DONE_AC in objectives and optional_activities:
             nb_done = sum([actually_done_var[i] for i in actually_done_var])
             self.variables["objectives"][ObjectivesEnum.NB_DONE_AC] = -nb_done
-        used = self.create_used_variable(is_present_var, key_per_team)
+        used = self.create_used_variable(
+            is_present_var, key_per_team, add_ge_constraints=used_add_ge_constraints
+        )
         self.variables["used"] = used
         if args["symmbreak_on_used"]:
             equivalent_ = compute_equivalent_teams_scheduling_problem(self.problem)
@@ -757,14 +761,16 @@ class CPSatAllocSchedulingSolver(
         self,
         is_present_var: dict[int, dict[int, IntVar]],
         key_per_team: dict[int, list[tuple[int, int]]],
+        add_ge_constraints: bool = True,
     ):
         used = {
             index_team: self.cp_model.NewBoolVar(f"used_{index_team}")
             for index_team in key_per_team
         }
         for index_team in used:
-            for x in key_per_team[index_team]:
-                self.cp_model.Add(used[index_team] >= is_present_var[x[0]][x[1]])
+            if add_ge_constraints:
+                for x in key_per_team[index_team]:
+                    self.cp_model.Add(used[index_team] >= is_present_var[x[0]][x[1]])
             self.cp_model.AddMaxEquality(
                 used[index_team],
                 [is_present_var[x[0]][x[1]] for x in key_per_team[index_team]],
