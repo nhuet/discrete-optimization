@@ -307,18 +307,19 @@ class AllocationCpSatSolver(
             for unary_resource in self.problem.unary_resources_list:
                 used = self.cp_model.new_bool_var(f"used_{unary_resource}")
                 self.used_variables[unary_resource] = used
-                self.cp_model.add_max_equality(
-                    used,
-                    [
-                        self.get_task_unary_resource_is_present_variable(
-                            task=task, unary_resource=unary_resource
-                        )
-                        for task in self.problem.tasks_list
-                        if self.problem.is_compatible_task_unary_resource(
-                            task, unary_resource
-                        )
-                    ],
-                )
+                list_is_present_variables = [
+                    self.get_task_unary_resource_is_present_variable(
+                        task=task, unary_resource=unary_resource
+                    )
+                    for task in self.problem.tasks_list
+                    if self.problem.is_compatible_task_unary_resource(
+                        task, unary_resource
+                    )
+                ]
+                if len(list_is_present_variables) > 0:
+                    self.cp_model.add_max_equality(used, list_is_present_variables)
+                else:
+                    self.cp_model.add(used == 0)
             self.used_variables_created = True
 
     def create_done_variables(self):
@@ -327,18 +328,19 @@ class AllocationCpSatSolver(
             for task in self.problem.tasks_list:
                 done = self.cp_model.new_bool_var(f"{task}_done")
                 self.done_variables[task] = done
-                self.cp_model.add_max_equality(
-                    done,
-                    [
-                        self.get_task_unary_resource_is_present_variable(
-                            task=task, unary_resource=unary_resource
-                        )
-                        for unary_resource in self.problem.unary_resources_list
-                        if self.problem.is_compatible_task_unary_resource(
-                            task, unary_resource
-                        )
-                    ],
-                )
+                list_is_present_variables = [
+                    self.get_task_unary_resource_is_present_variable(
+                        task=task, unary_resource=unary_resource
+                    )
+                    for unary_resource in self.problem.unary_resources_list
+                    if self.problem.is_compatible_task_unary_resource(
+                        task, unary_resource
+                    )
+                ]
+                if len(list_is_present_variables) > 0:
+                    self.cp_model.add_max_equality(done, list_is_present_variables)
+                else:
+                    self.cp_model.add(done == 0)
             self.done_variables_created = True
 
     def get_nb_tasks_done_variable(self) -> Any:

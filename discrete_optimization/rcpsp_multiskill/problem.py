@@ -1976,24 +1976,24 @@ class MultiskillRcpspProblem(
         resources_set: set[str],
         non_renewable_resources: set[str],
         resources_availability: dict[str, list[int]],
-        employees: dict[Hashable, Employee],
-        mode_details: dict[Hashable, dict[int, dict[str, int]]],
-        successors: dict[Hashable, list[Hashable]],
-        horizon,
-        employees_availability: list[int] = None,
-        tasks_list: list[Hashable] = None,
-        employees_list: list[Hashable] = None,
-        horizon_multiplier=1,
-        sink_task: Optional[Hashable] = None,
-        source_task: Optional[Hashable] = None,
+        employees: dict[UnaryResource, Employee],
+        mode_details: dict[Task, dict[int, dict[str, int]]],
+        successors: dict[Task, list[Task]],
+        horizon: int,
+        employees_availability: Optional[list[int]] = None,
+        tasks_list: Optional[list[Task]] = None,
+        employees_list: Optional[list[UnaryResource]] = None,
+        horizon_multiplier: int = 1,
+        sink_task: Optional[Task] = None,
+        source_task: Optional[Task] = None,
         one_unit_per_task_max: bool = False,
         preemptive: bool = False,
-        preemptive_indicator: dict[Hashable, bool] = None,
-        special_constraints: SpecialConstraintsDescription = None,
-        partial_preemption_data: dict[Hashable, dict[int, dict[str, bool]]] = None,
+        preemptive_indicator: dict[Task, bool] = None,
+        special_constraints: Optional[SpecialConstraintsDescription] = None,
+        partial_preemption_data: dict[Task, dict[int, dict[str, bool]]] = None,
         always_releasable_resources: set[str] = None,
         never_releasable_resources: set[str] = None,
-        resource_blocking_data: list[tuple[list[Hashable], set[str]]] = None,
+        resource_blocking_data: list[tuple[list[Task], set[str]]] = None,
         strictly_disjunctive_subtasks: bool = True,
     ):
         self.skills_set = skills_set
@@ -2163,11 +2163,36 @@ class MultiskillRcpspProblem(
                 ):
                     self.always_releasable_resources.add(r)
         self.strictly_disjunctive_subtasks = strictly_disjunctive_subtasks
-        self.resource_blocking_data = resource_blocking_data
-        if self.resource_blocking_data is None:
+        if resource_blocking_data is None:
             self.resource_blocking_data = []
+        else:
+            self.resource_blocking_data = resource_blocking_data
 
+        self.create_employee_task_compatibility()
         self.update_functions()
+
+    def create_employee_task_compatibility(self) -> None:
+        self.employees_per_skill: dict[str, set[UnaryResource]] = {
+            s: {
+                e
+                for e in self.employees
+                if s in self.employees[e].get_non_zero_skills()
+            }
+            for s in self.skills_set
+        }
+        self.compatibility_task_employee: dict[Task, dict[UnaryResource, bool]] = {}
+        for task in self.tasks_list:
+            self.compatibility_task_employee[task] = {}
+            skills_of_task = set()
+            for mode in self.mode_details[task]:
+                for skill in self.skills_set:
+                    if self.mode_details[task][mode].get(skill, 0) > 0:
+                        skills_of_task.add(skill)
+            for employee in self.employees:
+                if any(employee in self.employees_per_skill[s] for s in skills_of_task):
+                    self.compatibility_task_employee[task][employee] = True
+                else:
+                    self.compatibility_task_employee[task][employee] = False
 
     def get_precedence_constraints(self) -> dict[Task, list[Task]]:
         return self.successors
@@ -2191,6 +2216,11 @@ class MultiskillRcpspProblem(
 
         """
         return self.employees_list
+
+    def is_compatible_task_unary_resource(
+        self, task: Task, unary_resource: UnaryResource
+    ) -> bool:
+        return self.compatibility_task_employee[task][unary_resource]
 
     def get_resource_available(self, res, time):
         return self.resources_availability[res][time]

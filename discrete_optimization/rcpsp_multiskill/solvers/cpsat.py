@@ -216,13 +216,6 @@ class CpSatMultiskillRcpspSolver(
         opt_interval_var = {}
         is_present_var = {}
         skills_used_var = {}
-        employees_per_skill = {}
-        for s in self.problem.skills_set:
-            employees_per_skill[s] = {
-                e
-                for e in self.problem.employees
-                if s in self.problem.employees[e].get_non_zero_skills()
-            }
         for task in self.problem.tasks_list:
             skills_of_task = set()
             for mode in self.problem.mode_details[task]:
@@ -246,7 +239,10 @@ class CpSatMultiskillRcpspSolver(
                         )
                         for mode in self.problem.mode_details[task]
                     )
-                ) or any(worker in employees_per_skill[s] for s in skills_of_task):
+                ) or any(
+                    worker in self.problem.employees_per_skill[s]
+                    for s in skills_of_task
+                ):
                     skills_used_var[task][worker] = {}
                     is_present_var[task][worker] = self.cp_model.NewBoolVar(
                         name=f"used_{task}_{worker}"

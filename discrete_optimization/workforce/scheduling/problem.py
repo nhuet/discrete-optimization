@@ -99,20 +99,20 @@ class AllocSchedulingProblem(
 ):
     def __init__(
         self,
-        team_names: list[Hashable],
+        team_names: list[UnaryResource],
         calendar_team: dict[
-            Hashable, list[tuple[int, int]]
+            UnaryResource, list[tuple[int, int]]
         ],  # List of available slots per team.
         horizon: int,
-        tasks_list: list[Hashable],
-        tasks_data: dict[Hashable, TasksDescription],
-        same_allocation: list[set[Hashable]],
-        precedence_constraints: dict[Hashable, set[Hashable]],
-        available_team_for_activity: dict[Hashable, set[Hashable]],
-        start_window: dict[Hashable, tuple[Optional[int], Optional[int]]],
-        end_window: dict[Hashable, tuple[Optional[int], Optional[int]]],
-        original_start: dict[Hashable, int],
-        original_end: dict[Hashable, int],
+        tasks_list: list[Task],
+        tasks_data: dict[Task, TasksDescription],
+        same_allocation: list[set[Task]],
+        precedence_constraints: dict[Task, set[Task]],
+        available_team_for_activity: dict[Task, set[UnaryResource]],
+        start_window: dict[Task, tuple[Optional[int], Optional[int]]],
+        end_window: dict[Task, tuple[Optional[int], Optional[int]]],
+        original_start: dict[Task, int],
+        original_end: dict[Task, int],
         resources_list: list[str] = None,
         resources_capacity: dict[str, int] = None,
         horizon_start_shift: Optional[int] = 0,
@@ -157,7 +157,12 @@ class AllocSchedulingProblem(
     def get_precedence_constraints(self) -> dict[Task, set[Task]]:
         return self.precedence_constraints
 
-    def get_makespan_lower_bound(self, subtasks: Iterable[Task]) -> int:
+    def is_compatible_task_unary_resource(
+        self, task: Task, unary_resource: UnaryResource
+    ) -> bool:
+        return unary_resource in self.available_team_for_activity[task]
+
+    def get_makespan_lower_bound(self) -> int:
         return max(int(self.get_lb_end_window(t)) for t in self.tasks_list)
 
     def get_makespan_upper_bound(self) -> int:
