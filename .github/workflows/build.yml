@@ -226,6 +226,14 @@ jobs:
             pip install gurobipy
             python -c "import gurobipy"
           fi
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: install optal
+        run: |
+          cd discrete_optimization/generic_tools/hub_solver/optal
+          npm install
+          npm ls
       - name: Restore tests data cache
         id: cache-data
         uses: actions/cache@v4
