@@ -17,6 +17,8 @@ def test_optal():
     res = solver.solve(
         time_limit=5,
         do_not_retrieve_solutions=True,  # free license = no solutions stored
+        verbose=False,
+        debug=True,
     )
     assert len(res) == 0
     assert solver.status_solver in (StatusSolver.OPTIMAL, StatusSolver.SATISFIED)
