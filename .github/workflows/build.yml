@@ -239,13 +239,10 @@ jobs:
           print(os.path.dirname(optal.__file__))
           ")
           cd ${optal_dir}
-          npm install
-          npm ls
           npm --version
           node --version
-          npx optalcp --version
-      - name: check optal installation
-        run: |
+          npm install 'scheduleopt/optalcp-js-bin-preview#latest'
+          npm ls
           npx optalcp --version
       - name: Restore tests data cache
         id: cache-data

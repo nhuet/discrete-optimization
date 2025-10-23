@@ -4,21 +4,28 @@ We briefly explain how to make use of Optal wrappers coded in d-o.
 
 ## How to install Optal?
 
+WARNING: You need to install it at the correct location, i.e. where discrete-optimization is installed (or a parent directory).
+
+
 - npm + node >= 22.7.9: you need npm installed and node >= 22.7.9 as shown in package.json.
   See https://docs.npmjs.com/downloading-and-installing-node-js-and-npm for installation process.
-- optal version: by default, package.json is set with the preview (free) version of Optal that returns
-  lower bound and objective values but not the solution. If you have access to a full version, please modify
-  accordingly package.json. For instance by replacing
-  ```json
-    "@scheduleopt/optalcp-bin-preview": "github:ScheduleOpt/optalcp-js-bin-preview#latest",
+- then go to the directory where the optal models are stored
+  ```shell
+  optal_dir=$(python -c "
+  import discrete_optimization.generic_tools.hub_solver.optal as optal
+  import os
+  print(os.path.dirname(optal.__file__))
+  ")
+  cd ${optal_dir}
   ```
-  with
-  ```json
-    "@scheduleopt/optalcp-bin-academic": "github:scheduleopt/optalcp-js-bin-academic#v2025.8.0",
-  ```
-- then go to this directory ("path/to/discrete-optimization/discrete_optimization/generic_tools/hub_solver/optal"), and type
+- [install OptalCP](https://optalcp.com/docs/installation#install-optalcp):
+  - either the free preview version
     ```shell
-    npm install
+    npm install 'scheduleopt/optalcp-js-bin-preview#latest'
+    ```
+  - or the licensed one
+    ```shell
+    npm install 'scheduleopt/optalcp-js-bin#latest'
     ```
 
 **Note**:
