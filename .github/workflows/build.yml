@@ -233,6 +233,7 @@ jobs:
       - name: install optal
         run: |
           set +e
+          cd tests
           optal_dir=$(python -c "
           import discrete_optimization.generic_tools.hub_solver.optal as optal
           import os
