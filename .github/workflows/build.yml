@@ -233,21 +233,20 @@ jobs:
       - name: install optal
         run: |
           set +e
-          cd discrete_optimization/generic_tools/hub_solver/optal
+          optal_dir=$(python -c "
+          import discrete_optimization.generic_tools.hub_solver.optal as optal
+          import os
+          print(os.path.dirname(optal.__file__))
+          ")
+          cd ${optal_dir}
           npm install
           npm ls
           npm --version
           node --version
-          node models/jsp/jobshop.mts
-          cd -
-          node discrete_optimization/generic_tools/hub_solver/optal/models/jsp/jobshop.mts
-          exit 0
+          npx optalcp --version
       - name: check optal installation
         run: |
-          set +e
-          node discrete_optimization/generic_tools/hub_solver/optal/models/jsp/jobshop.mts
-          exit 0
-
+          npx optalcp --version
       - name: Restore tests data cache
         id: cache-data
         uses: actions/cache@v4
