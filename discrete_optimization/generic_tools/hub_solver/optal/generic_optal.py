@@ -18,7 +18,11 @@ from discrete_optimization.generic_tools.callbacks.callback import (
 from discrete_optimization.generic_tools.callbacks.stats_retrievers import (
     BasicStatsCallback,
 )
-from discrete_optimization.generic_tools.cp_tools import CpSolver, ParametersCp
+from discrete_optimization.generic_tools.cp_tools import (
+    CpSolver,
+    ParametersCp,
+    SignEnum,
+)
 from discrete_optimization.generic_tools.do_problem import (
     ParamsObjectiveFunction,
     Problem,
@@ -90,6 +94,12 @@ class OptalSolver(CpSolver):
         self._stats: dict = None
         self._script_model: str = None
         self._is_init: bool = False
+
+    def minimize_variable(self, var: Any) -> None:
+        pass
+
+    def add_bound_constraint(self, var: Any, sign: SignEnum, value: int) -> list[Any]:
+        pass
 
     def init_model(self, **args: Any) -> None:
         self._is_init = True

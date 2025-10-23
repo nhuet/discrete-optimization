@@ -4,12 +4,13 @@ We briefly explain how to make use of Optal wrappers coded in d-o.
 
 ## How to install Optal?
 
-WARNING: You need to install it at the correct location, i.e. where discrete-optimization is installed (or a parent directory).
+WARNING: You need to install it at the correct location, i.e. where the mts optal models are stored (under the discrete-optimization installation directory,
+which may be different from your local repository clone).
 
 
-- npm + node >= 22.7.9: you need npm installed and node >= 22.7.9 as shown in package.json.
+- install npm + node >= 20.
   See https://docs.npmjs.com/downloading-and-installing-node-js-and-npm for installation process.
-- then go to the directory where the optal models are stored
+- go to the directory where the optal models are stored
   ```shell
   optal_dir=$(python -c "
   import discrete_optimization.generic_tools.hub_solver.optal as optal
