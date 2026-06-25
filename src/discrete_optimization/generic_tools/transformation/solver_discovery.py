@@ -205,6 +205,7 @@ def _problem_name_to_module(problem_type: str) -> Optional[str]:
         "VRPTWProblem": "vrptw",
         "GpdpProblem": "gpdp",
         "TeamOrienteeringProblem": "top",
+        "GenericSchedulingImplProblem": "generic_tasks_tools",
     }
 
     if problem_type in special_cases:
