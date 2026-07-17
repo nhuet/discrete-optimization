@@ -1,0 +1,62 @@
+:py:mod:`discrete_optimization.workforce.scheduling.parser`
+===========================================================
+
+.. py:module:: discrete_optimization.workforce.scheduling.parser
+
+.. autodoc2-docstring:: discrete_optimization.workforce.scheduling.parser
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_data_available <discrete_optimization.workforce.scheduling.parser.get_data_available>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.parser.get_data_available
+          :summary:
+   * - :py:obj:`update_calendars_with_disruptions <discrete_optimization.workforce.scheduling.parser.update_calendars_with_disruptions>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.parser.update_calendars_with_disruptions
+          :summary:
+   * - :py:obj:`parse_json_to_problem <discrete_optimization.workforce.scheduling.parser.parse_json_to_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.parser.parse_json_to_problem
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.scheduling.parser.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.parser.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.scheduling.parser.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.parser.logger
+
+.. py:function:: get_data_available(data_folder: typing.Optional[str] = None, data_home: typing.Optional[str] = None) -> list[str]
+   :canonical: discrete_optimization.workforce.scheduling.parser.get_data_available
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.parser.get_data_available
+
+.. py:function:: update_calendars_with_disruptions(list_drop_resource, teams: list[typing.Hashable], calendar_team: dict[typing.Hashable, list[tuple[int, int]]])
+   :canonical: discrete_optimization.workforce.scheduling.parser.update_calendars_with_disruptions
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.parser.update_calendars_with_disruptions
+
+.. py:function:: parse_json_to_problem(json_path: str) -> discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem
+   :canonical: discrete_optimization.workforce.scheduling.parser.parse_json_to_problem
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.parser.parse_json_to_problem

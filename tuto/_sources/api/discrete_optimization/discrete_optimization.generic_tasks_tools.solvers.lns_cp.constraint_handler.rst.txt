@@ -1,0 +1,124 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler`
+=====================================================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ObjectiveSubproblem <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem>`
+     -
+   * - :py:obj:`TasksConstraintHandler <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.TasksConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.TasksConstraintHandler
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.logger
+          :summary:
+   * - :py:obj:`SCHEDULING_OBJECTIVES <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.SCHEDULING_OBJECTIVES>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.SCHEDULING_OBJECTIVES
+          :summary:
+   * - :py:obj:`ALLOCATION_OBJECTIVES <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ALLOCATION_OBJECTIVES>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ALLOCATION_OBJECTIVES
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.logger
+
+.. py:class:: ObjectiveSubproblem
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: INITIAL_OBJECTIVE
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.INITIAL_OBJECTIVE
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.INITIAL_OBJECTIVE
+
+   .. py:attribute:: MAKESPAN_SUBTASKS
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.MAKESPAN_SUBTASKS
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.MAKESPAN_SUBTASKS
+
+   .. py:attribute:: SUM_START_SUBTASKS
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.SUM_START_SUBTASKS
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.SUM_START_SUBTASKS
+
+   .. py:attribute:: SUM_END_SUBTASKS
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.SUM_END_SUBTASKS
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.SUM_END_SUBTASKS
+
+   .. py:attribute:: GLOBAL_MAKESPAN
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.GLOBAL_MAKESPAN
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.GLOBAL_MAKESPAN
+
+   .. py:attribute:: NB_TASKS_DONE
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.NB_TASKS_DONE
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.NB_TASKS_DONE
+
+   .. py:attribute:: NB_UNARY_RESOURCES_USED
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.NB_UNARY_RESOURCES_USED
+      :value: 6
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem.NB_UNARY_RESOURCES_USED
+
+.. py:data:: SCHEDULING_OBJECTIVES
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.SCHEDULING_OBJECTIVES
+   :value: ()
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.SCHEDULING_OBJECTIVES
+
+.. py:data:: ALLOCATION_OBJECTIVES
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ALLOCATION_OBJECTIVES
+   :value: ()
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ALLOCATION_OBJECTIVES
+
+.. py:class:: TasksConstraintHandler(problem: discrete_optimization.generic_tasks_tools.base.TasksProblem, neighbor_builder: typing.Optional[discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder[discrete_optimization.generic_tasks_tools.base.Task]] = None, constraints_extractor: typing.Optional[discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor] = None, params_constraint_extractor: typing.Optional[discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ParamsConstraintExtractor] = None, objective_subproblem: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.ObjectiveSubproblem = ObjectiveSubproblem.INITIAL_OBJECTIVE)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.TasksConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`, :py:obj:`typing.Generic`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.TasksConstraintHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.TasksConstraintHandler.__init__
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> typing.Iterable[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.TasksConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler.TasksConstraintHandler.adding_constraint_from_results_store

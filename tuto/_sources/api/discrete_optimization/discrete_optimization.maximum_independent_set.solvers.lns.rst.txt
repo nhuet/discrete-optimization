@@ -1,0 +1,100 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.lns`
+===================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.lns
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OrtoolsCpSatMisConstraintHandler <discrete_optimization.maximum_independent_set.solvers.lns.OrtoolsCpSatMisConstraintHandler>`
+     -
+   * - :py:obj:`DestroyOrtoolsCpSatMisConstraintHandler <discrete_optimization.maximum_independent_set.solvers.lns.DestroyOrtoolsCpSatMisConstraintHandler>`
+     -
+   * - :py:obj:`AllVarsOrtoolsCpSatMisConstraintHandler <discrete_optimization.maximum_independent_set.solvers.lns.AllVarsOrtoolsCpSatMisConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.AllVarsOrtoolsCpSatMisConstraintHandler
+          :summary:
+   * - :py:obj:`LocalMovesOrtoolsCpSatMisConstraintHandler <discrete_optimization.maximum_independent_set.solvers.lns.LocalMovesOrtoolsCpSatMisConstraintHandler>`
+     -
+
+API
+~~~
+
+.. py:class:: OrtoolsCpSatMisConstraintHandler(problem: discrete_optimization.maximum_independent_set.problem.MisProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.lns.OrtoolsCpSatMisConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lns.OrtoolsCpSatMisConstraintHandler.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.OrtoolsCpSatMisConstraintHandler.hyperparameters
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lns.OrtoolsCpSatMisConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.OrtoolsCpSatMisConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: DestroyOrtoolsCpSatMisConstraintHandler(problem: discrete_optimization.maximum_independent_set.problem.MisProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.lns.DestroyOrtoolsCpSatMisConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lns.DestroyOrtoolsCpSatMisConstraintHandler.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.DestroyOrtoolsCpSatMisConstraintHandler.hyperparameters
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lns.DestroyOrtoolsCpSatMisConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.DestroyOrtoolsCpSatMisConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: AllVarsOrtoolsCpSatMisConstraintHandler(problem: discrete_optimization.maximum_independent_set.problem.MisProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.lns.AllVarsOrtoolsCpSatMisConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.AllVarsOrtoolsCpSatMisConstraintHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.AllVarsOrtoolsCpSatMisConstraintHandler.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lns.AllVarsOrtoolsCpSatMisConstraintHandler.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.AllVarsOrtoolsCpSatMisConstraintHandler.hyperparameters
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lns.AllVarsOrtoolsCpSatMisConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.AllVarsOrtoolsCpSatMisConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: LocalMovesOrtoolsCpSatMisConstraintHandler(problem: discrete_optimization.maximum_independent_set.problem.MisProblem, nb_moves: int = 5, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.lns.LocalMovesOrtoolsCpSatMisConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lns.LocalMovesOrtoolsCpSatMisConstraintHandler.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.LocalMovesOrtoolsCpSatMisConstraintHandler.hyperparameters
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lns.LocalMovesOrtoolsCpSatMisConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lns.LocalMovesOrtoolsCpSatMisConstraintHandler.adding_constraint_from_results_store

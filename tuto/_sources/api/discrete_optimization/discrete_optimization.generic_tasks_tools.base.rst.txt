@@ -1,0 +1,93 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.base`
+========================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.base
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TasksProblem <discrete_optimization.generic_tasks_tools.base.TasksProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksProblem
+          :summary:
+   * - :py:obj:`TasksSolution <discrete_optimization.generic_tasks_tools.base.TasksSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksSolution
+          :summary:
+   * - :py:obj:`TasksCpSolver <discrete_optimization.generic_tasks_tools.base.TasksCpSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksCpSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Task <discrete_optimization.generic_tasks_tools.base.Task>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.Task
+          :summary:
+
+API
+~~~
+
+.. py:data:: Task
+   :canonical: discrete_optimization.generic_tasks_tools.base.Task
+   :value: 'TypeVar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.Task
+
+.. py:class:: TasksProblem
+   :canonical: discrete_optimization.generic_tasks_tools.base.TasksProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Problem`, :py:obj:`typing.Generic`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksProblem
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.generic_tasks_tools.base.TasksProblem.tasks_list
+      :abstractmethod:
+      :type: list[discrete_optimization.generic_tasks_tools.base.Task]
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksProblem.tasks_list
+
+.. py:class:: TasksSolution
+   :canonical: discrete_optimization.generic_tasks_tools.base.TasksSolution
+
+   Bases: :py:obj:`abc.ABC`, :py:obj:`discrete_optimization.generic_tools.do_problem.Solution`, :py:obj:`typing.Generic`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksSolution
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tasks_tools.base.TasksSolution.problem
+      :type: discrete_optimization.generic_tasks_tools.base.TasksProblem[discrete_optimization.generic_tasks_tools.base.Task]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksSolution.problem
+
+.. py:class:: TasksCpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tasks_tools.base.TasksCpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.CpSolver`, :py:obj:`typing.Generic`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksCpSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksCpSolver.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tasks_tools.base.TasksCpSolver.problem
+      :type: discrete_optimization.generic_tasks_tools.base.TasksProblem[discrete_optimization.generic_tasks_tools.base.Task]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.base.TasksCpSolver.problem

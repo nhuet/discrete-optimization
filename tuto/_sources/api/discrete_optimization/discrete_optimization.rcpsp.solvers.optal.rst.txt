@@ -1,0 +1,88 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.optal`
+===================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.optal
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.optal
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OptalRcpspSolver <discrete_optimization.rcpsp.solvers.optal.OptalRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`dump_to_json <discrete_optimization.rcpsp.solvers.optal.dump_to_json>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.optal.dump_to_json
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`script_single_mode <discrete_optimization.rcpsp.solvers.optal.script_single_mode>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.optal.script_single_mode
+          :summary:
+   * - :py:obj:`script_multi_mode <discrete_optimization.rcpsp.solvers.optal.script_multi_mode>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.optal.script_multi_mode
+          :summary:
+
+API
+~~~
+
+.. py:data:: script_single_mode
+   :canonical: discrete_optimization.rcpsp.solvers.optal.script_single_mode
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.optal.script_single_mode
+
+.. py:data:: script_multi_mode
+   :canonical: discrete_optimization.rcpsp.solvers.optal.script_multi_mode
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.optal.script_multi_mode
+
+.. py:function:: dump_to_json(problem: discrete_optimization.rcpsp.problem.RcpspProblem)
+   :canonical: discrete_optimization.rcpsp.solvers.optal.dump_to_json
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.optal.dump_to_json
+
+.. py:class:: OptalRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.optal.OptalRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.optal.OptalRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.optal.OptalRcpspSolver.problem
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.optal.OptalRcpspSolver.init_model
+
+   .. py:method:: build_command(parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: int = 10, **args: typing.Any)
+      :canonical: discrete_optimization.rcpsp.solvers.optal.OptalRcpspSolver.build_command
+
+   .. py:method:: retrieve_current_solution(dict_results: dict) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.rcpsp.solvers.optal.OptalRcpspSolver.retrieve_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.optal.OptalRcpspSolver.retrieve_current_solution

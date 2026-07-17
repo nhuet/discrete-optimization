@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>discrete_optimization.rcpsp.utils_preemptive &mdash; discrete-optimization tuto-howto documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2030f8cb"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/versions.js?v=dd1a30db"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            discrete-optimization
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto_new_problem_implementation/tutorial_new_problem_or_solver.html">How to write its own problem/solver class?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">discrete-optimization</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.utils_preemptive</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-discrete_optimization.rcpsp.utils_preemptive">
+<span id="discrete-optimization-rcpsp-utils-preemptive"></span><h1><a class="reference internal" href="#module-discrete_optimization.rcpsp.utils_preemptive" title="discrete_optimization.rcpsp.utils_preemptive"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.utils_preemptive</span></code></a><a class="headerlink" href="#module-discrete_optimization.rcpsp.utils_preemptive" title="Link to this heading"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.utils_preemptive.compute_resource_consumption" title="discrete_optimization.rcpsp.utils_preemptive.compute_resource_consumption"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_resource_consumption</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.utils_preemptive.compute_nice_resource_consumption" title="discrete_optimization.rcpsp.utils_preemptive.compute_nice_resource_consumption"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_nice_resource_consumption</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.utils_preemptive.plot_ressource_view" title="discrete_optimization.rcpsp.utils_preemptive.plot_ressource_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_ressource_view</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.utils_preemptive.plot_task_gantt" title="discrete_optimization.rcpsp.utils_preemptive.plot_task_gantt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_task_gantt</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.utils_preemptive.compute_schedule_per_resource_individual" title="discrete_optimization.rcpsp.utils_preemptive.compute_schedule_per_resource_individual"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_schedule_per_resource_individual</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.utils_preemptive.plot_resource_individual_gantt" title="discrete_optimization.rcpsp.utils_preemptive.plot_resource_individual_gantt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_resource_individual_gantt</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.utils_preemptive.logger" title="discrete_optimization.rcpsp.utils_preemptive.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logger</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.utils_preemptive.logger">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.utils_preemptive.</span></span><span class="sig-name descname"><span class="pre">logger</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'getLogger(...)'</span></em><a class="headerlink" href="#discrete_optimization.rcpsp.utils_preemptive.logger" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.utils_preemptive.compute_resource_consumption">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.utils_preemptive.</span></span><span class="sig-name descname"><span class="pre">compute_resource_consumption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_resources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future_view</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/utils_preemptive.html#compute_resource_consumption"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.utils_preemptive.compute_resource_consumption" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.utils_preemptive.compute_nice_resource_consumption">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.utils_preemptive.</span></span><span class="sig-name descname"><span class="pre">compute_nice_resource_consumption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_resources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/utils_preemptive.html#compute_nice_resource_consumption"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.utils_preemptive.compute_nice_resource_consumption" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.utils_preemptive.plot_ressource_view">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.utils_preemptive.</span></span><span class="sig-name descname"><span class="pre">plot_ressource_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_lim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/utils_preemptive.html#plot_ressource_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.utils_preemptive.plot_ressource_view" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.utils_preemptive.plot_task_gantt">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.utils_preemptive.</span></span><span class="sig-name descname"><span class="pre">plot_task_gantt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_lim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/utils_preemptive.html#plot_task_gantt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.utils_preemptive.plot_task_gantt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.utils_preemptive.compute_schedule_per_resource_individual">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.utils_preemptive.</span></span><span class="sig-name descname"><span class="pre">compute_schedule_per_resource_individual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_types_to_consider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/utils_preemptive.html#compute_schedule_per_resource_individual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.utils_preemptive.compute_schedule_per_resource_individual" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.utils_preemptive.plot_resource_individual_gantt">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.utils_preemptive.</span></span><span class="sig-name descname"><span class="pre">plot_resource_individual_gantt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem_preemptive.html#discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution" title="discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution"><span class="pre">discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_types_to_consider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_lim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/utils_preemptive.html#plot_resource_individual_gantt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.utils_preemptive.plot_resource_individual_gantt" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Airbus.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: tuto-howto
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl id="docs-versions">
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

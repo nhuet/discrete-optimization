@@ -1,0 +1,139 @@
+:py:mod:`discrete_optimization.generic_tools.lns_cp`
+====================================================
+
+.. py:module:: discrete_optimization.generic_tools.lns_cp
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`BaseLnsCp <discrete_optimization.generic_tools.lns_cp.BaseLnsCp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.BaseLnsCp
+          :summary:
+   * - :py:obj:`LnsOrtoolsCpSat <discrete_optimization.generic_tools.lns_cp.LnsOrtoolsCpSat>`
+     -
+   * - :py:obj:`OrtoolsCpSatConstraintHandler <discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler
+          :summary:
+   * - :py:obj:`MznConstraintHandler <discrete_optimization.generic_tools.lns_cp.MznConstraintHandler>`
+     -
+   * - :py:obj:`LnsCpMzn <discrete_optimization.generic_tools.lns_cp.LnsCpMzn>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.lns_cp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.lns_cp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.logger
+
+.. py:class:: BaseLnsCp(problem: discrete_optimization.generic_tools.do_problem.Problem, subsolver: typing.Optional[discrete_optimization.generic_tools.cp_tools.CpSolver] = None, initial_solution_provider: typing.Optional[discrete_optimization.generic_tools.lns_tools.InitialSolution] = None, constraint_handler: typing.Optional[discrete_optimization.generic_tools.lns_tools.ConstraintHandler] = None, post_process_solution: typing.Optional[discrete_optimization.generic_tools.lns_tools.PostProcessSolution] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lns_cp.BaseLnsCp
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.BaseLns`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.BaseLnsCp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.BaseLnsCp.__init__
+
+   .. py:attribute:: subsolver
+      :canonical: discrete_optimization.generic_tools.lns_cp.BaseLnsCp.subsolver
+      :type: discrete_optimization.generic_tools.cp_tools.CpSolver
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.BaseLnsCp.subsolver
+
+   .. py:method:: solve(nb_iteration_lns: int, parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit_subsolver: typing.Optional[float] = 100.0, time_limit_subsolver_iter0: typing.Optional[float] = None, nb_iteration_no_improvement: typing.Optional[int] = None, skip_initial_solution_provider: bool = False, stop_first_iteration_if_optimal: bool = True, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lns_cp.BaseLnsCp.solve
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.BaseLnsCp.solve
+
+.. py:class:: LnsOrtoolsCpSat(problem: discrete_optimization.generic_tools.do_problem.Problem, subsolver: typing.Optional[discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver] = None, initial_solution_provider: typing.Optional[discrete_optimization.generic_tools.lns_tools.InitialSolution] = None, constraint_handler: typing.Optional[discrete_optimization.generic_tools.lns_tools.ConstraintHandler] = None, post_process_solution: typing.Optional[discrete_optimization.generic_tools.lns_tools.PostProcessSolution] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lns_cp.LnsOrtoolsCpSat
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.BaseLnsCp`
+
+   .. py:attribute:: subsolver
+      :canonical: discrete_optimization.generic_tools.lns_cp.LnsOrtoolsCpSat.subsolver
+      :type: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.LnsOrtoolsCpSat.subsolver
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.lns_cp.LnsOrtoolsCpSat.init_model
+
+.. py:class:: OrtoolsCpSatConstraintHandler
+   :canonical: discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler.adding_constraint_from_results_store
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: MznConstraintHandler
+   :canonical: discrete_optimization.generic_tools.lns_cp.MznConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, child_instance: minizinc.Instance, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.generic_tools.lns_cp.MznConstraintHandler.adding_constraint_from_results_store
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.MznConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: LnsCpMzn(problem: discrete_optimization.generic_tools.do_problem.Problem, subsolver: typing.Optional[discrete_optimization.generic_tools.cp_tools.MinizincCpSolver] = None, initial_solution_provider: typing.Optional[discrete_optimization.generic_tools.lns_tools.InitialSolution] = None, constraint_handler: typing.Optional[discrete_optimization.generic_tools.lns_cp.MznConstraintHandler] = None, post_process_solution: typing.Optional[discrete_optimization.generic_tools.lns_tools.PostProcessSolution] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lns_cp.LnsCpMzn
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.BaseLnsCp`
+
+   .. py:attribute:: subsolver
+      :canonical: discrete_optimization.generic_tools.lns_cp.LnsCpMzn.subsolver
+      :type: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.LnsCpMzn.subsolver
+
+   .. py:attribute:: constraint_handler
+      :canonical: discrete_optimization.generic_tools.lns_cp.LnsCpMzn.constraint_handler
+      :type: discrete_optimization.generic_tools.lns_cp.MznConstraintHandler
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.LnsCpMzn.constraint_handler
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.lns_cp.LnsCpMzn.init_model
+
+   .. py:method:: create_submodel() -> contextlib.AbstractContextManager
+      :canonical: discrete_optimization.generic_tools.lns_cp.LnsCpMzn.create_submodel
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_cp.LnsCpMzn.create_submodel

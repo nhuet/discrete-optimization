@@ -1,0 +1,21 @@
+:py:mod:`discrete_optimization.generic_tools.mutations`
+=======================================================
+
+.. py:module:: discrete_optimization.generic_tools.mutations
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.mutations
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.mutations.mutation_util
+   discrete_optimization.generic_tools.mutations.mutation_catalog
+   discrete_optimization.generic_tools.mutations.mutation_integer
+   discrete_optimization.generic_tools.mutations.mutation_bool
+   discrete_optimization.generic_tools.mutations.mixed_mutation
+   discrete_optimization.generic_tools.mutations.permutation_mutations

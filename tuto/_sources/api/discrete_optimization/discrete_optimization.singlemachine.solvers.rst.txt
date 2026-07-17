@@ -1,0 +1,21 @@
+:py:mod:`discrete_optimization.singlemachine.solvers`
+=====================================================
+
+.. py:module:: discrete_optimization.singlemachine.solvers
+
+.. autodoc2-docstring:: discrete_optimization.singlemachine.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.singlemachine.solvers.optal
+   discrete_optimization.singlemachine.solvers.lp
+   discrete_optimization.singlemachine.solvers.cpsat
+   discrete_optimization.singlemachine.solvers.dp
+   discrete_optimization.singlemachine.solvers.greedy
+   discrete_optimization.singlemachine.solvers.cpmpy_solver

@@ -1,0 +1,128 @@
+:py:mod:`discrete_optimization.generic_tools.ls.simulated_annealing`
+====================================================================
+
+.. py:module:: discrete_optimization.generic_tools.ls.simulated_annealing
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TemperatureScheduling <discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling
+          :summary:
+   * - :py:obj:`SimulatedAnnealing <discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing>`
+     -
+   * - :py:obj:`TemperatureSchedulingFactor <discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.ls.simulated_annealing.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.logger
+
+.. py:class:: TemperatureScheduling
+   :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling
+
+   .. py:attribute:: nb_iteration
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.nb_iteration
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.nb_iteration
+
+   .. py:attribute:: restart_handler
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.restart_handler
+      :type: discrete_optimization.generic_tools.ls.local_search.RestartHandler
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.restart_handler
+
+   .. py:attribute:: temperature
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.temperature
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.temperature
+
+   .. py:method:: next_temperature() -> float
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.next_temperature
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling.next_temperature
+
+.. py:class:: SimulatedAnnealing(problem: discrete_optimization.generic_tools.do_problem.Problem, mutator: discrete_optimization.generic_tools.do_mutation.Mutation, restart_handler: discrete_optimization.generic_tools.ls.local_search.RestartHandler, temperature_handler: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling, mode_mutation: discrete_optimization.generic_tools.ls.local_search.ModeMutation, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, store_solution: bool = False, **kwargs)
+   :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: aggreg_from_sol
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.aggreg_from_sol
+      :type: collections.abc.Callable[[discrete_optimization.generic_tools.do_problem.Solution], float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.aggreg_from_sol
+
+   .. py:attribute:: aggreg_from_dict
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.aggreg_from_dict
+      :type: collections.abc.Callable[[dict[str, float]], float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.aggreg_from_dict
+
+   .. py:attribute:: initial_solution
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.initial_solution
+      :type: typing.Optional[discrete_optimization.generic_tools.do_problem.Solution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.initial_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.set_warm_start
+
+   .. py:method:: solve(nb_iteration_max: int, initial_variable: typing.Optional[discrete_optimization.generic_tools.do_problem.Solution] = None, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.SimulatedAnnealing.solve
+
+.. py:class:: TemperatureSchedulingFactor(temperature: float, restart_handler: discrete_optimization.generic_tools.ls.local_search.RestartHandler, coefficient: float = 0.99)
+   :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureScheduling`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor.__init__
+
+   .. py:method:: next_temperature() -> float
+      :canonical: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor.next_temperature
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.simulated_annealing.TemperatureSchedulingFactor.next_temperature

@@ -1,0 +1,96 @@
+:py:mod:`discrete_optimization.knapsack.solvers.decomposition`
+==============================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.decomposition
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DecomposedKnapsackSolver <discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`cur_folder <discrete_optimization.knapsack.solvers.decomposition.cur_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.cur_folder
+          :summary:
+   * - :py:obj:`logger <discrete_optimization.knapsack.solvers.decomposition.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.logger
+          :summary:
+   * - :py:obj:`subsolvers <discrete_optimization.knapsack.solvers.decomposition.subsolvers>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.subsolvers
+          :summary:
+
+API
+~~~
+
+.. py:data:: cur_folder
+   :canonical: discrete_optimization.knapsack.solvers.decomposition.cur_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.cur_folder
+
+.. py:data:: logger
+   :canonical: discrete_optimization.knapsack.solvers.decomposition.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.logger
+
+.. py:data:: subsolvers
+   :canonical: discrete_optimization.knapsack.solvers.decomposition.subsolvers
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.subsolvers
+
+.. py:class:: DecomposedKnapsackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.hyperparameters
+
+   .. py:attribute:: initial_solution
+      :canonical: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.initial_solution
+      :type: typing.Optional[discrete_optimization.knapsack.problem.KnapsackSolution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.initial_solution
+
+   .. py:method:: rebuild_sol(sol: discrete_optimization.knapsack.problem.KnapsackSolution, original_knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem, original_solution: discrete_optimization.knapsack.problem.KnapsackSolution, indexes_to_remove: set[int])
+      :canonical: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.rebuild_sol
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.rebuild_sol
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> None
+      :canonical: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.set_warm_start
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.knapsack.solvers.decomposition.DecomposedKnapsackSolver.solve

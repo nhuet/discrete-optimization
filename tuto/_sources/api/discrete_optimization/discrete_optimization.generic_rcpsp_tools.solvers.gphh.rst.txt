@@ -1,0 +1,587 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.solvers.gphh`
+================================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.solvers.gphh
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`FeatureEnum <discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum>`
+     -
+   * - :py:obj:`EvaluationGphh <discrete_optimization.generic_rcpsp_tools.solvers.gphh.EvaluationGphh>`
+     -
+   * - :py:obj:`PermutationDistance <discrete_optimization.generic_rcpsp_tools.solvers.gphh.PermutationDistance>`
+     -
+   * - :py:obj:`ParametersGphh <discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh
+          :summary:
+   * - :py:obj:`GphhGenericRcpspSolver <discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`if_then_else <discrete_optimization.generic_rcpsp_tools.solvers.gphh.if_then_else>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.if_then_else
+          :summary:
+   * - :py:obj:`protected_div <discrete_optimization.generic_rcpsp_tools.solvers.gphh.protected_div>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.protected_div
+          :summary:
+   * - :py:obj:`max_operator <discrete_optimization.generic_rcpsp_tools.solvers.gphh.max_operator>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.max_operator
+          :summary:
+   * - :py:obj:`min_operator <discrete_optimization.generic_rcpsp_tools.solvers.gphh.min_operator>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.min_operator
+          :summary:
+   * - :py:obj:`feature_task_duration <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_task_duration>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_task_duration
+          :summary:
+   * - :py:obj:`feature_total_n_res <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_total_n_res>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_total_n_res
+          :summary:
+   * - :py:obj:`feature_n_successors <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_n_successors>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_n_successors
+          :summary:
+   * - :py:obj:`feature_n_predecessors <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_n_predecessors>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_n_predecessors
+          :summary:
+   * - :py:obj:`get_resource_requirements_across_duration <discrete_optimization.generic_rcpsp_tools.solvers.gphh.get_resource_requirements_across_duration>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.get_resource_requirements_across_duration
+          :summary:
+   * - :py:obj:`feature_average_resource_requirements <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_average_resource_requirements>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_average_resource_requirements
+          :summary:
+   * - :py:obj:`feature_minimum_resource_requirements <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_minimum_resource_requirements>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_minimum_resource_requirements
+          :summary:
+   * - :py:obj:`feature_non_zero_minimum_resource_requirements <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_non_zero_minimum_resource_requirements>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_non_zero_minimum_resource_requirements
+          :summary:
+   * - :py:obj:`feature_maximum_resource_requirements <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_maximum_resource_requirements>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_maximum_resource_requirements
+          :summary:
+   * - :py:obj:`feature_resource_requirements <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_resource_requirements>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_resource_requirements
+          :summary:
+   * - :py:obj:`feature_all_descendants <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_all_descendants>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_all_descendants
+          :summary:
+   * - :py:obj:`compute_cpm <discrete_optimization.generic_rcpsp_tools.solvers.gphh.compute_cpm>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.compute_cpm
+          :summary:
+   * - :py:obj:`feature_esd <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_esd>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_esd
+          :summary:
+   * - :py:obj:`feature_lsd <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_lsd>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_lsd
+          :summary:
+   * - :py:obj:`feature_efd <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_efd>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_efd
+          :summary:
+   * - :py:obj:`feature_lfd <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_lfd>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_lfd
+          :summary:
+   * - :py:obj:`get_dummy <discrete_optimization.generic_rcpsp_tools.solvers.gphh.get_dummy>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.get_dummy
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_rcpsp_tools.solvers.gphh.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.logger
+          :summary:
+   * - :py:obj:`feature_function_map <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_function_map>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_function_map
+          :summary:
+   * - :py:obj:`feature_static_map <discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_static_map>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_static_map
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.logger
+
+.. py:function:: if_then_else(input1, output1, output2)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.if_then_else
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.if_then_else
+
+.. py:function:: protected_div(left, right)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.protected_div
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.protected_div
+
+.. py:function:: max_operator(left, right)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.max_operator
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.max_operator
+
+.. py:function:: min_operator(left, right)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.min_operator
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.min_operator
+
+.. py:function:: feature_task_duration(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_task_duration
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_task_duration
+
+.. py:function:: feature_total_n_res(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_total_n_res
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_total_n_res
+
+.. py:function:: feature_n_successors(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_n_successors
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_n_successors
+
+.. py:function:: feature_n_predecessors(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_n_predecessors
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_n_predecessors
+
+.. py:function:: get_resource_requirements_across_duration(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.get_resource_requirements_across_duration
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.get_resource_requirements_across_duration
+
+.. py:function:: feature_average_resource_requirements(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_average_resource_requirements
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_average_resource_requirements
+
+.. py:function:: feature_minimum_resource_requirements(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_minimum_resource_requirements
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_minimum_resource_requirements
+
+.. py:function:: feature_non_zero_minimum_resource_requirements(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_non_zero_minimum_resource_requirements
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_non_zero_minimum_resource_requirements
+
+.. py:function:: feature_maximum_resource_requirements(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_maximum_resource_requirements
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_maximum_resource_requirements
+
+.. py:function:: feature_resource_requirements(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_resource_requirements
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_resource_requirements
+
+.. py:function:: feature_all_descendants(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_all_descendants
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_all_descendants
+
+.. py:function:: compute_cpm(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.compute_cpm
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.compute_cpm
+
+.. py:function:: feature_esd(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_esd
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_esd
+
+.. py:function:: feature_lsd(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_lsd
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_lsd
+
+.. py:function:: feature_efd(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_efd
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_efd
+
+.. py:function:: feature_lfd(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_lfd
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_lfd
+
+.. py:function:: get_dummy(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, cpm, cpm_esd, task_id: int, increase: int, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.get_dummy
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.get_dummy
+
+.. py:class:: FeatureEnum
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: TASK_DURATION
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.TASK_DURATION
+      :value: 'task_duration'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.TASK_DURATION
+
+   .. py:attribute:: RESSOURCE_TOTAL
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_TOTAL
+      :value: 'total_nres'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_TOTAL
+
+   .. py:attribute:: N_SUCCESSORS
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.N_SUCCESSORS
+      :value: 'n_successors'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.N_SUCCESSORS
+
+   .. py:attribute:: N_PREDECESSORS
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.N_PREDECESSORS
+      :value: 'n_predecessors'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.N_PREDECESSORS
+
+   .. py:attribute:: RESSOURCE_REQUIRED
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_REQUIRED
+      :value: 'res_requ'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_REQUIRED
+
+   .. py:attribute:: RESSOURCE_AVG
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_AVG
+      :value: 'avg_res_requ'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_AVG
+
+   .. py:attribute:: RESSOURCE_MIN
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_MIN
+      :value: 'min_res_requ'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_MIN
+
+   .. py:attribute:: RESSOURCE_NZ_MIN
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_NZ_MIN
+      :value: 'nz_min_res_requ'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_NZ_MIN
+
+   .. py:attribute:: RESSOURCE_MAX
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_MAX
+      :value: 'max_res_requ'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.RESSOURCE_MAX
+
+   .. py:attribute:: ALL_DESCENDANTS
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.ALL_DESCENDANTS
+      :value: 'all_descendants'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.ALL_DESCENDANTS
+
+   .. py:attribute:: EARLIEST_START_DATE
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.EARLIEST_START_DATE
+      :value: 'ESD'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.EARLIEST_START_DATE
+
+   .. py:attribute:: LATEST_START_DATE
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.LATEST_START_DATE
+      :value: 'LSD'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.LATEST_START_DATE
+
+   .. py:attribute:: EARLIEST_FINISH_DATE
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.EARLIEST_FINISH_DATE
+      :value: 'EFD'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.EARLIEST_FINISH_DATE
+
+   .. py:attribute:: LATEST_FINISH_DATE
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.LATEST_FINISH_DATE
+      :value: 'LFD'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.LATEST_FINISH_DATE
+
+   .. py:attribute:: DUMMY
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.DUMMY
+      :value: 'DUMMY'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum.DUMMY
+
+.. py:data:: feature_function_map
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_function_map
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_function_map
+
+.. py:data:: feature_static_map
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_static_map
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.feature_static_map
+
+.. py:class:: EvaluationGphh
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.EvaluationGphh
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: SGS
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.EvaluationGphh.SGS
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.EvaluationGphh.SGS
+
+   .. py:attribute:: PERMUTATION_DISTANCE
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.EvaluationGphh.PERMUTATION_DISTANCE
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.EvaluationGphh.PERMUTATION_DISTANCE
+
+.. py:class:: PermutationDistance
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.PermutationDistance
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: KTD
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.PermutationDistance.KTD
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.PermutationDistance.KTD
+
+   .. py:attribute:: HAMMING
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.PermutationDistance.HAMMING
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.PermutationDistance.HAMMING
+
+   .. py:attribute:: KTD_HAMMING
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.PermutationDistance.KTD_HAMMING
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.PermutationDistance.KTD_HAMMING
+
+.. py:class:: ParametersGphh(set_feature, set_primitves, tournament_ratio, pop_size, n_gen, min_tree_depth, max_tree_depth, crossover_rate, mutation_rate, deap_verbose, evaluation, permutation_distance)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.__init__
+
+   .. py:attribute:: set_feature
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.set_feature
+      :type: set[discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.set_feature
+
+   .. py:attribute:: set_primitves
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.set_primitves
+      :type: deap.gp.PrimitiveSet
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.set_primitves
+
+   .. py:attribute:: tournament_ratio
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.tournament_ratio
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.tournament_ratio
+
+   .. py:attribute:: pop_size
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.pop_size
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.pop_size
+
+   .. py:attribute:: n_gen
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.n_gen
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.n_gen
+
+   .. py:attribute:: min_tree_depth
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.min_tree_depth
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.min_tree_depth
+
+   .. py:attribute:: max_tree_depth
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.max_tree_depth
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.max_tree_depth
+
+   .. py:attribute:: crossover_rate
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.crossover_rate
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.crossover_rate
+
+   .. py:attribute:: mutation_rate
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.mutation_rate
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.mutation_rate
+
+   .. py:attribute:: deap_verbose
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.deap_verbose
+      :type: bool
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.deap_verbose
+
+   .. py:attribute:: evaluation
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.evaluation
+      :type: discrete_optimization.generic_rcpsp_tools.solvers.gphh.EvaluationGphh
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.evaluation
+
+   .. py:attribute:: permutation_distance
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.permutation_distance
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.permutation_distance
+
+   .. py:method:: default()
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.default
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.default
+
+   .. py:method:: fast_test()
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.fast_test
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.fast_test
+
+   .. py:method:: ms_fast()
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.ms_fast
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.ms_fast
+
+   .. py:method:: ms_default()
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.ms_default
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.ms_default
+
+   .. py:method:: default_for_set_features(set_feature: set[discrete_optimization.generic_rcpsp_tools.solvers.gphh.FeatureEnum])
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.default_for_set_features
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh.default_for_set_features
+
+.. py:class:: GphhGenericRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, training_domains: typing.Optional[list[discrete_optimization.generic_tools.do_problem.Problem]] = None, weight: int = 1, params_gphh: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh = None, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver`
+
+   .. py:attribute:: training_domains
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.training_domains
+      :type: list[discrete_optimization.generic_tools.do_problem.Problem]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.training_domains
+
+   .. py:attribute:: weight
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.weight
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.weight
+
+   .. py:attribute:: pset
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.pset
+      :type: deap.gp.PrimitiveSet
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.pset
+
+   .. py:attribute:: toolbox
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.toolbox
+      :type: deap.base.Toolbox
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.toolbox
+
+   .. py:attribute:: params_gphh
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.params_gphh
+      :type: discrete_optimization.generic_rcpsp_tools.solvers.gphh.ParametersGphh
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.params_gphh
+
+   .. py:attribute:: evaluation_method
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.evaluation_method
+      :type: discrete_optimization.generic_rcpsp_tools.solvers.gphh.EvaluationGphh
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.evaluation_method
+
+   .. py:attribute:: reference_permutations
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.reference_permutations
+      :type: dict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.reference_permutations
+
+   .. py:attribute:: permutation_distance
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.permutation_distance
+      :type: discrete_optimization.generic_rcpsp_tools.solvers.gphh.PermutationDistance
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.permutation_distance
+
+   .. py:method:: init_model()
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.init_model
+
+   .. py:method:: solve(**kwargs)
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.solve
+
+   .. py:method:: init_primitives(pset) -> deap.gp.PrimitiveSet
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.init_primitives
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.init_primitives
+
+   .. py:method:: build_solution(domain, individual=None, func_heuristic=None)
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.build_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.build_solution
+
+   .. py:method:: evaluate_heuristic(individual, domains) -> float
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.evaluate_heuristic
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.evaluate_heuristic
+
+   .. py:method:: initialize_cpm_data_for_training()
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.initialize_cpm_data_for_training
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.gphh.GphhGenericRcpspSolver.initialize_cpm_data_for_training

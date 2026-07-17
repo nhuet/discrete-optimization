@@ -1,0 +1,199 @@
+:py:mod:`discrete_optimization.workforce.scheduling.utils`
+==========================================================
+
+.. py:module:: discrete_optimization.workforce.scheduling.utils
+
+.. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`overlap_interval <discrete_optimization.workforce.scheduling.utils.overlap_interval>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.overlap_interval
+          :summary:
+   * - :py:obj:`compute_equivalent_teams_scheduling_problem <discrete_optimization.workforce.scheduling.utils.compute_equivalent_teams_scheduling_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_equivalent_teams_scheduling_problem
+          :summary:
+   * - :py:obj:`compute_changes_between_solution <discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution
+          :summary:
+   * - :py:obj:`compute_changes_between_solution_same_pb <discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution_same_pb>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution_same_pb
+          :summary:
+   * - :py:obj:`plot_schedule_comparison <discrete_optimization.workforce.scheduling.utils.plot_schedule_comparison>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.plot_schedule_comparison
+          :summary:
+   * - :py:obj:`plotly_schedule_comparison <discrete_optimization.workforce.scheduling.utils.plotly_schedule_comparison>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.plotly_schedule_comparison
+          :summary:
+   * - :py:obj:`estimate_nb_resource_needed <discrete_optimization.workforce.scheduling.utils.estimate_nb_resource_needed>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.estimate_nb_resource_needed
+          :summary:
+   * - :py:obj:`template_violated_constraint <discrete_optimization.workforce.scheduling.utils.template_violated_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.template_violated_constraint
+          :summary:
+   * - :py:obj:`natural_explanation_unsat <discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat
+          :summary:
+   * - :py:obj:`natural_explanation_unsat_from_sol <discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat_from_sol>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat_from_sol
+          :summary:
+   * - :py:obj:`compute_precedence_graph <discrete_optimization.workforce.scheduling.utils.compute_precedence_graph>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_precedence_graph
+          :summary:
+   * - :py:obj:`export_scheduling_problem_json <discrete_optimization.workforce.scheduling.utils.export_scheduling_problem_json>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.export_scheduling_problem_json
+          :summary:
+   * - :py:obj:`get_working_time_teams <discrete_optimization.workforce.scheduling.utils.get_working_time_teams>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.get_working_time_teams
+          :summary:
+   * - :py:obj:`compute_available_teams_per_activities_alloc_problem <discrete_optimization.workforce.scheduling.utils.compute_available_teams_per_activities_alloc_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_available_teams_per_activities_alloc_problem
+          :summary:
+   * - :py:obj:`build_allocation_problem_from_scheduling <discrete_optimization.workforce.scheduling.utils.build_allocation_problem_from_scheduling>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.build_allocation_problem_from_scheduling
+          :summary:
+   * - :py:obj:`build_scheduling_problem_from_allocation <discrete_optimization.workforce.scheduling.utils.build_scheduling_problem_from_allocation>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.build_scheduling_problem_from_allocation
+          :summary:
+   * - :py:obj:`alloc_solution_to_alloc_sched_solution <discrete_optimization.workforce.scheduling.utils.alloc_solution_to_alloc_sched_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.alloc_solution_to_alloc_sched_solution
+          :summary:
+   * - :py:obj:`binary_calendar <discrete_optimization.workforce.scheduling.utils.binary_calendar>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.binary_calendar
+          :summary:
+   * - :py:obj:`get_availability_slots <discrete_optimization.workforce.scheduling.utils.get_availability_slots>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.get_availability_slots
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.scheduling.utils.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.logger
+          :summary:
+   * - :py:obj:`this_folder <discrete_optimization.workforce.scheduling.utils.this_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.this_folder
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.scheduling.utils.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.logger
+
+.. py:data:: this_folder
+   :canonical: discrete_optimization.workforce.scheduling.utils.this_folder
+   :value: 'dirname(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.this_folder
+
+.. py:function:: overlap_interval(interval_1: tuple[int, int], interval_2: tuple[int, int])
+   :canonical: discrete_optimization.workforce.scheduling.utils.overlap_interval
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.overlap_interval
+
+.. py:function:: compute_equivalent_teams_scheduling_problem(scheduling_problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem) -> list[list[int]]
+   :canonical: discrete_optimization.workforce.scheduling.utils.compute_equivalent_teams_scheduling_problem
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_equivalent_teams_scheduling_problem
+
+.. py:function:: compute_changes_between_solution(solution_a: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, solution_b: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, problem_a: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem = None, problem_b: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem = None)
+   :canonical: discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution
+
+.. py:function:: compute_changes_between_solution_same_pb(solution_a: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, solution_b: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem = None)
+   :canonical: discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution_same_pb
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution_same_pb
+
+.. py:function:: plot_schedule_comparison(base_solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, updated_solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem)
+   :canonical: discrete_optimization.workforce.scheduling.utils.plot_schedule_comparison
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.plot_schedule_comparison
+
+.. py:function:: plotly_schedule_comparison(base_solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, updated_solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, index_team_to_other_index: dict[int, int] = None, display: bool = False, additional_info: dict[typing.Hashable, dict[str, typing.Any]] = None, use_color_scale: bool = True, use_color_map_per_task: bool = False, color_map_per_task: dict[int, typing.Any] = None, opacity_map_per_task: dict[int, float] = None, show_all_changes: bool = True, show_change: dict[int, bool] = None, plot_team_breaks: bool = False, plot_xticks: bool = True, plot_text: bool = True, title='Scheduling Comparison (Base vs Updated)')
+   :canonical: discrete_optimization.workforce.scheduling.utils.plotly_schedule_comparison
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.plotly_schedule_comparison
+
+.. py:function:: estimate_nb_resource_needed(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem)
+   :canonical: discrete_optimization.workforce.scheduling.utils.estimate_nb_resource_needed
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.estimate_nb_resource_needed
+
+.. py:function:: template_violated_constraint(satisfy_detailed_output: typing.Union[tuple, dict], problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem)
+   :canonical: discrete_optimization.workforce.scheduling.utils.template_violated_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.template_violated_constraint
+
+.. py:function:: natural_explanation_unsat(detailed_output: list[typing.Union[tuple, dict]], problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem) -> list[str]
+   :canonical: discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat
+
+.. py:function:: natural_explanation_unsat_from_sol(solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution) -> list[str]
+   :canonical: discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat_from_sol
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat_from_sol
+
+.. py:function:: compute_precedence_graph(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem) -> networkx.DiGraph
+   :canonical: discrete_optimization.workforce.scheduling.utils.compute_precedence_graph
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_precedence_graph
+
+.. py:function:: export_scheduling_problem_json(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem) -> dict
+   :canonical: discrete_optimization.workforce.scheduling.utils.export_scheduling_problem_json
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.export_scheduling_problem_json
+
+.. py:function:: get_working_time_teams(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem) -> dict
+   :canonical: discrete_optimization.workforce.scheduling.utils.get_working_time_teams
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.get_working_time_teams
+
+.. py:function:: compute_available_teams_per_activities_alloc_problem(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, starts: numpy.ndarray, ends: numpy.ndarray, calendars_team: dict[typing.Hashable, numpy.ndarray])
+   :canonical: discrete_optimization.workforce.scheduling.utils.compute_available_teams_per_activities_alloc_problem
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.compute_available_teams_per_activities_alloc_problem
+
+.. py:function:: build_allocation_problem_from_scheduling(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution = None, problem_alloc: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem = None, multiobjective: bool = True) -> discrete_optimization.workforce.allocation.problem.TeamAllocationProblem
+   :canonical: discrete_optimization.workforce.scheduling.utils.build_allocation_problem_from_scheduling
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.build_allocation_problem_from_scheduling
+
+.. py:function:: build_scheduling_problem_from_allocation(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, horizon_start_shift: int = 0) -> discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem
+   :canonical: discrete_optimization.workforce.scheduling.utils.build_scheduling_problem_from_allocation
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.build_scheduling_problem_from_allocation
+
+.. py:function:: alloc_solution_to_alloc_sched_solution(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution)
+   :canonical: discrete_optimization.workforce.scheduling.utils.alloc_solution_to_alloc_sched_solution
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.alloc_solution_to_alloc_sched_solution
+
+.. py:function:: binary_calendar(list_available: list[tuple[int, int]], horizon: int)
+   :canonical: discrete_optimization.workforce.scheduling.utils.binary_calendar
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.binary_calendar
+
+.. py:function:: get_availability_slots(calendar_matrix: numpy.ndarray)
+   :canonical: discrete_optimization.workforce.scheduling.utils.get_availability_slots
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.utils.get_availability_slots

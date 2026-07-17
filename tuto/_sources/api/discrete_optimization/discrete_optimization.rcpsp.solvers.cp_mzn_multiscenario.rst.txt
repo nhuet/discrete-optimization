@@ -1,0 +1,105 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario`
+==================================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpMultiscenarioRcpspSolver <discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`add_fake_task_cp_data <discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.add_fake_task_cp_data>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.add_fake_task_cp_data
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.logger
+          :summary:
+   * - :py:obj:`this_path <discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.this_path>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.this_path
+          :summary:
+   * - :py:obj:`files_mzn <discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.files_mzn>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.files_mzn
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.logger
+
+.. py:data:: this_path
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.this_path
+   :value: 'dirname(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.this_path
+
+.. py:data:: files_mzn
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.files_mzn
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.files_mzn
+
+.. py:function:: add_fake_task_cp_data(rcpsp_problem: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem], ignore_fake_task: bool = True, max_time_to_consider: int = None)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.add_fake_task_cp_data
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.add_fake_task_cp_data
+
+.. py:class:: CpMultiscenarioRcpspSolver(problem: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, silent_solve_error: bool = False, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.MinizincCpSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver.problem
+
+   .. py:property:: base_problem
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver.base_problem
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver.base_problem
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver.init_model
+
+   .. py:method:: retrieve_solution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario.CpMultiscenarioRcpspSolver.retrieve_solution

@@ -1,0 +1,17 @@
+:py:mod:`discrete_optimization.workforce.generators`
+====================================================
+
+.. py:module:: discrete_optimization.workforce.generators
+
+.. autodoc2-docstring:: discrete_optimization.workforce.generators
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.workforce.generators.random_tools
+   discrete_optimization.workforce.generators.resource_scenario

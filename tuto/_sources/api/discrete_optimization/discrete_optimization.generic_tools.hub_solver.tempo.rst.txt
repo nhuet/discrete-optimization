@@ -1,0 +1,16 @@
+:py:mod:`discrete_optimization.generic_tools.hub_solver.tempo`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tools.hub_solver.tempo
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools

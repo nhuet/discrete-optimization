@@ -1,0 +1,50 @@
+:py:mod:`discrete_optimization.generic_tools.ea.alternating_ga`
+===============================================================
+
+.. py:module:: discrete_optimization.generic_tools.ea.alternating_ga
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ea.alternating_ga
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`AlternatingGa <discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa
+          :summary:
+
+API
+~~~
+
+.. py:class:: AlternatingGa(problem: discrete_optimization.generic_tools.do_problem.Problem, objectives: typing.Union[str, list[str]], encodings: typing.Optional[typing.Union[list[str], list[dict[str, typing.Any]]]] = None, mutations: typing.Optional[typing.Union[list[discrete_optimization.generic_tools.do_mutation.Mutation], list[discrete_optimization.generic_tools.ea.ga.DeapMutation]]] = None, crossovers: typing.Optional[list[discrete_optimization.generic_tools.ea.ga.DeapCrossover]] = None, selections: typing.Optional[list[discrete_optimization.generic_tools.ea.ga.DeapSelection]] = None, objective_handling: typing.Optional[discrete_optimization.generic_tools.do_problem.ObjectiveHandling] = None, objective_weights: typing.Optional[list[float]] = None, pop_size: typing.Optional[int] = None, max_evals: int = 10000, sub_evals: typing.Optional[list[int]] = None, mut_rate: typing.Optional[float] = None, crossover_rate: typing.Optional[float] = None, tournament_size: typing.Optional[float] = None, deap_verbose: bool = False, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa.__init__
+
+   .. py:attribute:: initial_solution
+      :canonical: discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa.initial_solution
+      :type: typing.Optional[discrete_optimization.generic_tools.do_problem.Solution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa.initial_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa.set_warm_start
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.ea.alternating_ga.AlternatingGa.solve

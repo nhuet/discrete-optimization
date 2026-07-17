@@ -1,0 +1,26 @@
+:py:mod:`discrete_optimization.fjsp`
+====================================
+
+.. py:module:: discrete_optimization.fjsp
+
+.. autodoc2-docstring:: discrete_optimization.fjsp
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.fjsp.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.fjsp.problem
+   discrete_optimization.fjsp.parser

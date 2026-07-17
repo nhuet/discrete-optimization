@@ -1,0 +1,43 @@
+:py:mod:`discrete_optimization`
+===============================
+
+.. py:module:: discrete_optimization
+
+.. autodoc2-docstring:: discrete_optimization
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.tsptw
+   discrete_optimization.tsp
+   discrete_optimization.binpack
+   discrete_optimization.coloring
+   discrete_optimization.fjsp
+   discrete_optimization.rcpsp
+   discrete_optimization.workforce
+   discrete_optimization.gpdp
+   discrete_optimization.generic_rcpsp_tools
+   discrete_optimization.generic_tasks_tools
+   discrete_optimization.maximum_independent_set
+   discrete_optimization.rcpsp_multiskill
+   discrete_optimization.jsp
+   discrete_optimization.vrp
+   discrete_optimization.singlemachine
+   discrete_optimization.facility
+   discrete_optimization.knapsack
+   discrete_optimization.vrptw
+   discrete_optimization.generic_tools
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.datasets

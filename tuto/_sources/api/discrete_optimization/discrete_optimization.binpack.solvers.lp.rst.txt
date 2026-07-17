@@ -1,0 +1,56 @@
+:py:mod:`discrete_optimization.binpack.solvers.lp`
+==================================================
+
+.. py:module:: discrete_optimization.binpack.solvers.lp
+
+.. autodoc2-docstring:: discrete_optimization.binpack.solvers.lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_BaseLpBinPackSolver <discrete_optimization.binpack.solvers.lp._BaseLpBinPackSolver>`
+     -
+   * - :py:obj:`MathOptBinPackSolver <discrete_optimization.binpack.solvers.lp.MathOptBinPackSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: _BaseLpBinPackSolver(problem: discrete_optimization.binpack.problem.BinPackProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.binpack.solvers.lp._BaseLpBinPackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.binpack.solvers.lp._BaseLpBinPackSolver.problem
+      :type: discrete_optimization.binpack.problem.BinPackProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.lp._BaseLpBinPackSolver.problem
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.binpack.solvers.lp._BaseLpBinPackSolver.init_model
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.binpack.problem.BinPackSolution) -> dict[typing.Any, float]
+      :canonical: discrete_optimization.binpack.solvers.lp._BaseLpBinPackSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.lp._BaseLpBinPackSolver.convert_to_variable_values
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.binpack.problem.BinPackSolution
+      :canonical: discrete_optimization.binpack.solvers.lp._BaseLpBinPackSolver.retrieve_current_solution
+
+.. py:class:: MathOptBinPackSolver(problem: discrete_optimization.binpack.problem.BinPackProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.binpack.solvers.lp.MathOptBinPackSolver
+
+   Bases: :py:obj:`discrete_optimization.binpack.solvers.lp._BaseLpBinPackSolver`, :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.binpack.solvers.lp.MathOptBinPackSolver.convert_to_variable_values

@@ -1,0 +1,38 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.solvers.rcpsp_based`
+====================================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.solvers.rcpsp_based
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.rcpsp_based
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`RcpspBasedMultiskillRcpspSolver <discrete_optimization.rcpsp_multiskill.solvers.rcpsp_based.RcpspBasedMultiskillRcpspSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: RcpspBasedMultiskillRcpspSolver(problem: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem], method, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, **args)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.rcpsp_based.RcpspBasedMultiskillRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.rcpsp_based.RcpspBasedMultiskillRcpspSolver.problem
+      :type: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.rcpsp_based.RcpspBasedMultiskillRcpspSolver.problem
+
+   .. py:method:: solve(**kwargs)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.rcpsp_based.RcpspBasedMultiskillRcpspSolver.solve

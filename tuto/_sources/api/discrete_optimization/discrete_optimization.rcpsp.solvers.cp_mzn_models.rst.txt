@@ -1,0 +1,126 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.cp_mzn_models`
+===========================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.cp_mzn_models
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpModelEnum <discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`this_path <discrete_optimization.rcpsp.solvers.cp_mzn_models.this_path>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.this_path
+          :summary:
+   * - :py:obj:`files_mzn <discrete_optimization.rcpsp.solvers.cp_mzn_models.files_mzn>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.files_mzn
+          :summary:
+
+API
+~~~
+
+.. py:data:: this_path
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.this_path
+   :value: 'dirname(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.this_path
+
+.. py:data:: files_mzn
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.files_mzn
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.files_mzn
+
+.. py:class:: CpModelEnum
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: SINGLE
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.SINGLE
+      :value: 'single'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.SINGLE
+
+   .. py:attribute:: SINGLE_PREEMPTIVE
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.SINGLE_PREEMPTIVE
+      :value: 'single-preemptive'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.SINGLE_PREEMPTIVE
+
+   .. py:attribute:: SINGLE_PREEMPTIVE_CALENDAR
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.SINGLE_PREEMPTIVE_CALENDAR
+      :value: 'single-preemptive-calendar'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.SINGLE_PREEMPTIVE_CALENDAR
+
+   .. py:attribute:: MULTI_PREEMPTIVE
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_PREEMPTIVE
+      :value: 'multi-preemptive'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_PREEMPTIVE
+
+   .. py:attribute:: MULTI_PREEMPTIVE_CALENDAR
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_PREEMPTIVE_CALENDAR
+      :value: 'multi-preemptive-calendar'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_PREEMPTIVE_CALENDAR
+
+   .. py:attribute:: MULTI
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI
+      :value: 'multi'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI
+
+   .. py:attribute:: MULTI_FAKETASKS
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_FAKETASKS
+      :value: 'multi-faketasks'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_FAKETASKS
+
+   .. py:attribute:: MULTI_NO_BOOL
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_NO_BOOL
+      :value: 'multi-no-bool'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_NO_BOOL
+
+   .. py:attribute:: MULTI_CALENDAR
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_CALENDAR
+      :value: 'multi-calendar'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_CALENDAR
+
+   .. py:attribute:: MULTI_CALENDAR_BOXES
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_CALENDAR_BOXES
+      :value: 'multi-calendar-boxes'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_CALENDAR_BOXES
+
+   .. py:attribute:: MULTI_RESOURCE_FEASIBILITY
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_RESOURCE_FEASIBILITY
+      :value: 'multi-resource-feasibility'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MULTI_RESOURCE_FEASIBILITY
+
+   .. py:attribute:: MODES
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MODES
+      :value: 'modes'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn_models.CpModelEnum.MODES

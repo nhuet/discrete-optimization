@@ -1,0 +1,28 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers`
+===============================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.maximum_independent_set.solvers.mathopt
+   discrete_optimization.maximum_independent_set.solvers.decomposition
+   discrete_optimization.maximum_independent_set.solvers.asp
+   discrete_optimization.maximum_independent_set.solvers.lp
+   discrete_optimization.maximum_independent_set.solvers.mis_solver
+   discrete_optimization.maximum_independent_set.solvers.cpsat
+   discrete_optimization.maximum_independent_set.solvers.gurobi
+   discrete_optimization.maximum_independent_set.solvers.dp
+   discrete_optimization.maximum_independent_set.solvers.lns
+   discrete_optimization.maximum_independent_set.solvers.kamis
+   discrete_optimization.maximum_independent_set.solvers.networkx
+   discrete_optimization.maximum_independent_set.solvers.toulbar
+   discrete_optimization.maximum_independent_set.solvers.quantum

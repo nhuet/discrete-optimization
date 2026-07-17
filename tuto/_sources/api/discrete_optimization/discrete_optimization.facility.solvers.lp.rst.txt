@@ -1,0 +1,182 @@
+:py:mod:`discrete_optimization.facility.solvers.lp`
+===================================================
+
+.. py:module:: discrete_optimization.facility.solvers.lp
+
+.. autodoc2-docstring:: discrete_optimization.facility.solvers.lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_BaseLpFacilitySolver <discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver
+          :summary:
+   * - :py:obj:`GurobiFacilitySolver <discrete_optimization.facility.solvers.lp.GurobiFacilitySolver>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.GurobiFacilitySolver
+          :summary:
+   * - :py:obj:`MathOptFacilitySolver <discrete_optimization.facility.solvers.lp.MathOptFacilitySolver>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.MathOptFacilitySolver
+          :summary:
+   * - :py:obj:`CbcFacilitySolver <discrete_optimization.facility.solvers.lp.CbcFacilitySolver>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.CbcFacilitySolver
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_length_matrix <discrete_optimization.facility.solvers.lp.compute_length_matrix>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.compute_length_matrix
+          :summary:
+   * - :py:obj:`prune_search_space <discrete_optimization.facility.solvers.lp.prune_search_space>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.prune_search_space
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.facility.solvers.lp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.facility.solvers.lp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.logger
+
+.. py:function:: compute_length_matrix(facility_problem: discrete_optimization.facility.problem.FacilityProblem) -> tuple[numpy.typing.NDArray[numpy.float64], numpy.typing.NDArray[numpy.int_], numpy.typing.NDArray[numpy.float64]]
+   :canonical: discrete_optimization.facility.solvers.lp.compute_length_matrix
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.compute_length_matrix
+
+.. py:function:: prune_search_space(facility_problem: discrete_optimization.facility.problem.FacilityProblem, n_cheapest: int = 10, n_shortest: int = 10) -> tuple[numpy.ndarray, numpy.ndarray]
+   :canonical: discrete_optimization.facility.solvers.lp.prune_search_space
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.prune_search_space
+
+.. py:class:: _BaseLpFacilitySolver(problem: discrete_optimization.facility.problem.FacilityProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`, :py:obj:`discrete_optimization.facility.solvers.FacilitySolver`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver.init_model
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.facility.problem.FacilitySolution) -> dict[typing.Any, float]
+      :canonical: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver.convert_to_variable_values
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.facility.problem.FacilitySolution
+      :canonical: discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver.retrieve_current_solution
+
+.. py:class:: GurobiFacilitySolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.facility.solvers.lp.GurobiFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver`, :py:obj:`discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.GurobiFacilitySolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.GurobiFacilitySolver.__init__
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.facility.solvers.lp.GurobiFacilitySolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.GurobiFacilitySolver.init_model
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.facility.solvers.lp.GurobiFacilitySolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.GurobiFacilitySolver.convert_to_variable_values
+
+.. py:class:: MathOptFacilitySolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.facility.solvers.lp.MathOptFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`, :py:obj:`discrete_optimization.facility.solvers.lp._BaseLpFacilitySolver`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.MathOptFacilitySolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.MathOptFacilitySolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.facility.solvers.lp.MathOptFacilitySolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.MathOptFacilitySolver.hyperparameters
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.facility.problem.FacilitySolution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.facility.solvers.lp.MathOptFacilitySolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.MathOptFacilitySolver.convert_to_variable_values
+
+.. py:class:: CbcFacilitySolver(problem: discrete_optimization.facility.problem.FacilityProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.facility.solvers.lp.CbcFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.facility.solvers.FacilitySolver`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.CbcFacilitySolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.CbcFacilitySolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.facility.solvers.lp.CbcFacilitySolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.CbcFacilitySolver.hyperparameters
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.facility.solvers.lp.CbcFacilitySolver.model
+      :type: typing.Optional[ortools.linear_solver.pywraplp.Solver]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.CbcFacilitySolver.model
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.facility.solvers.lp.CbcFacilitySolver.init_model
+
+   .. py:method:: retrieve() -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.facility.solvers.lp.CbcFacilitySolver.retrieve
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lp.CbcFacilitySolver.retrieve
+
+   .. py:method:: solve(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[int] = 30, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.facility.solvers.lp.CbcFacilitySolver.solve

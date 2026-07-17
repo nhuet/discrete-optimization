@@ -1,0 +1,186 @@
+:py:mod:`discrete_optimization.facility.solvers.toulbar`
+========================================================
+
+.. py:module:: discrete_optimization.facility.solvers.toulbar
+
+.. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ModelingToulbarFacility <discrete_optimization.facility.solvers.toulbar.ModelingToulbarFacility>`
+     -
+   * - :py:obj:`ToulbarFacilitySolver <discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver>`
+     -
+   * - :py:obj:`FacilityConstraintHandlerToulbar <discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerToulbar>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerToulbar
+          :summary:
+   * - :py:obj:`FacilityConstraintHandlerDestroyFacilityToulbar <discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerDestroyFacilityToulbar>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerDestroyFacilityToulbar
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.facility.solvers.toulbar.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.logger
+          :summary:
+   * - :py:obj:`ToulbarFacilitySolverForLns <discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolverForLns>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolverForLns
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.facility.solvers.toulbar.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.logger
+
+.. py:class:: ModelingToulbarFacility
+   :canonical: discrete_optimization.facility.solvers.toulbar.ModelingToulbarFacility
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: INTEGER
+      :canonical: discrete_optimization.facility.solvers.toulbar.ModelingToulbarFacility.INTEGER
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ModelingToulbarFacility.INTEGER
+
+   .. py:attribute:: BINARY
+      :canonical: discrete_optimization.facility.solvers.toulbar.ModelingToulbarFacility.BINARY
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ModelingToulbarFacility.BINARY
+
+.. py:class:: ToulbarFacilitySolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver`, :py:obj:`discrete_optimization.facility.solvers.facility_solver.FacilitySolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.hyperparameters
+
+   .. py:attribute:: modeling
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.modeling
+      :type: discrete_optimization.facility.solvers.toulbar.ModelingToulbarFacility
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.modeling
+
+   .. py:attribute:: key_to_index
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.key_to_index
+      :type: typing.Optional[dict]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.key_to_index
+
+   .. py:attribute:: used_var_to_index
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.used_var_to_index
+      :type: typing.Optional[dict]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.used_var_to_index
+
+   .. py:attribute:: client_var_to_index
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.client_var_to_index
+      :type: typing.Optional[dict]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.client_var_to_index
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.init_model
+
+   .. py:method:: init_model_boolean_variable(**kwargs)
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.init_model_boolean_variable
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.init_model_boolean_variable
+
+   .. py:method:: init_model_integer_variable(**kwargs)
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.init_model_integer_variable
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.init_model_integer_variable
+
+   .. py:method:: retrieve_solution(solution) -> discrete_optimization.facility.problem.FacilitySolution
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.retrieve_solution
+
+   .. py:method:: retrieve_solution_binary(solution) -> discrete_optimization.facility.problem.FacilitySolution
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.retrieve_solution_binary
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.retrieve_solution_binary
+
+   .. py:method:: retrieve_solution_integer(solution) -> discrete_optimization.facility.problem.FacilitySolution
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.retrieve_solution_integer
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.retrieve_solution_integer
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.facility.problem.FacilitySolution) -> None
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.set_warm_start
+
+   .. py:method:: set_warm_start_binary(solution: discrete_optimization.facility.problem.FacilitySolution) -> None
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.set_warm_start_binary
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.set_warm_start_binary
+
+   .. py:method:: set_warm_start_integer(solution: discrete_optimization.facility.problem.FacilitySolution) -> None
+      :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.set_warm_start_integer
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolver.set_warm_start_integer
+
+.. py:data:: ToulbarFacilitySolverForLns
+   :canonical: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolverForLns
+   :value: 'to_lns_toulbar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolverForLns
+
+.. py:class:: FacilityConstraintHandlerToulbar(problem: discrete_optimization.facility.problem.FacilityProblem, fraction_of_customers: typing.Optional[float] = 0.4)
+   :canonical: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerToulbar
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerToulbar
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerToulbar.__init__
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolverForLns, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerToulbar.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerToulbar.adding_constraint_from_results_store
+
+.. py:class:: FacilityConstraintHandlerDestroyFacilityToulbar(problem: discrete_optimization.facility.problem.FacilityProblem)
+   :canonical: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerDestroyFacilityToulbar
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerDestroyFacilityToulbar
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerDestroyFacilityToulbar.__init__
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.facility.solvers.toulbar.ToulbarFacilitySolverForLns, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerDestroyFacilityToulbar.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.toulbar.FacilityConstraintHandlerDestroyFacilityToulbar.adding_constraint_from_results_store

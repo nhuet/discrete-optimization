@@ -1,0 +1,707 @@
+:py:mod:`discrete_optimization.generic_tools.dashboard.dashboard`
+=================================================================
+
+.. py:module:: discrete_optimization.generic_tools.dashboard.dashboard
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Dashboard <discrete_optimization.generic_tools.dashboard.dashboard.Dashboard>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_convert_bool2classname_dict <discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname_dict>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname_dict
+          :summary:
+   * - :py:obj:`_convert_bool2classname <discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname
+          :summary:
+   * - :py:obj:`_extract_dash_table_data_from_df <discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_data_from_df>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_data_from_df
+          :summary:
+   * - :py:obj:`_extract_dash_table_columns_from_df <discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_columns_from_df>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_columns_from_df
+          :summary:
+   * - :py:obj:`_get_dash_table_kwargs <discrete_optimization.generic_tools.dashboard.dashboard._get_dash_table_kwargs>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._get_dash_table_kwargs
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TIME_LOGSCALE_KEY <discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_KEY>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_KEY
+          :summary:
+   * - :py:obj:`TIME_LOGSCALE_ID <discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_ID
+          :summary:
+   * - :py:obj:`TIME_LOGSCALE_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_DIV_ID
+          :summary:
+   * - :py:obj:`MINIMIZING_KEY <discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_KEY>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_KEY
+          :summary:
+   * - :py:obj:`MINIMIZING_ID <discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_ID
+          :summary:
+   * - :py:obj:`SOLVED_WO_PROOF_ID <discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_ID
+          :summary:
+   * - :py:obj:`SOLVED_WO_PROOF_KEY <discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_KEY>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_KEY
+          :summary:
+   * - :py:obj:`SOLVED_WO_PROOF_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_DIV_ID
+          :summary:
+   * - :py:obj:`TRANSPOSE_KEY <discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_KEY>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_KEY
+          :summary:
+   * - :py:obj:`TRANSPOSE_ID <discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_ID
+          :summary:
+   * - :py:obj:`SOLVERS_COMPETITION_ALL_XPS_KEY <discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_KEY>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_KEY
+          :summary:
+   * - :py:obj:`SOLVERS_COMPETITION_ALL_XPS_ID <discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_ID
+          :summary:
+   * - :py:obj:`SOLVERS_COMPETITION_DIST_ID <discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_ID
+          :summary:
+   * - :py:obj:`SOLVERS_COMPETITION_TIME_ID <discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_ID
+          :summary:
+   * - :py:obj:`SOLVERS_COMPETITION_ALL_XPS_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_DIV_ID
+          :summary:
+   * - :py:obj:`SOLVERS_COMPETITION_DIST_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_DIV_ID
+          :summary:
+   * - :py:obj:`SOLVERS_COMPETITION_TIME_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_DIV_ID
+          :summary:
+   * - :py:obj:`GRAPH_METRIC_ID <discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_METRIC_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_METRIC_ID
+          :summary:
+   * - :py:obj:`GRAPH_AGG_METRIC_ID <discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_AGG_METRIC_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_AGG_METRIC_ID
+          :summary:
+   * - :py:obj:`GRAPH_NB_SOLVED_INSTANCES_ID <discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_NB_SOLVED_INSTANCES_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_NB_SOLVED_INSTANCES_ID
+          :summary:
+   * - :py:obj:`GRAPH_SOLVERS_COMPETITION_ID <discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_SOLVERS_COMPETITION_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_SOLVERS_COMPETITION_ID
+          :summary:
+   * - :py:obj:`TABLE_AGG_METRIC_ID <discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_METRIC_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_METRIC_ID
+          :summary:
+   * - :py:obj:`TABLE_AGG_RANK_ID <discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_RANK_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_RANK_ID
+          :summary:
+   * - :py:obj:`TABLE_EMPTY_XPS_ID <discrete_optimization.generic_tools.dashboard.dashboard.TABLE_EMPTY_XPS_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_EMPTY_XPS_ID
+          :summary:
+   * - :py:obj:`TABLE_XP_ID <discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_ID
+          :summary:
+   * - :py:obj:`TABLE_XP_NO_DATA_ID <discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_NO_DATA_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_NO_DATA_ID
+          :summary:
+   * - :py:obj:`TABLE_XP_STATUS_ID <discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_STATUS_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_STATUS_ID
+          :summary:
+   * - :py:obj:`TABLE_NB_SOLVED_INSTANCES_ID <discrete_optimization.generic_tools.dashboard.dashboard.TABLE_NB_SOLVED_INSTANCES_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_NB_SOLVED_INSTANCES_ID
+          :summary:
+   * - :py:obj:`CONFIG_MD_ID <discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_MD_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_MD_ID
+          :summary:
+   * - :py:obj:`TAB_METRIC_ID <discrete_optimization.generic_tools.dashboard.dashboard.TAB_METRIC_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_METRIC_ID
+          :summary:
+   * - :py:obj:`TAB_AGG_METRIC_ID <discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_METRIC_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_METRIC_ID
+          :summary:
+   * - :py:obj:`TAB_NB_SOLVED_INSTANCES_ID <discrete_optimization.generic_tools.dashboard.dashboard.TAB_NB_SOLVED_INSTANCES_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_NB_SOLVED_INSTANCES_ID
+          :summary:
+   * - :py:obj:`TAB_CONFIG_ID <discrete_optimization.generic_tools.dashboard.dashboard.TAB_CONFIG_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_CONFIG_ID
+          :summary:
+   * - :py:obj:`TAB_XP_ID <discrete_optimization.generic_tools.dashboard.dashboard.TAB_XP_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_XP_ID
+          :summary:
+   * - :py:obj:`TAB_EMPTY_XPS_ID <discrete_optimization.generic_tools.dashboard.dashboard.TAB_EMPTY_XPS_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_EMPTY_XPS_ID
+          :summary:
+   * - :py:obj:`TAB_AGG_RANK_ID <discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_RANK_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_RANK_ID
+          :summary:
+   * - :py:obj:`TABS_ID <discrete_optimization.generic_tools.dashboard.dashboard.TABS_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABS_ID
+          :summary:
+   * - :py:obj:`ALIAS_INSTANCES_ALL <discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_ALL>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_ALL
+          :summary:
+   * - :py:obj:`ALIAS_INSTANCES_WITHSOL <discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_WITHSOL>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_WITHSOL
+          :summary:
+   * - :py:obj:`ALIASES_INSTANCES <discrete_optimization.generic_tools.dashboard.dashboard.ALIASES_INSTANCES>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.ALIASES_INSTANCES
+          :summary:
+   * - :py:obj:`METRIC_ID <discrete_optimization.generic_tools.dashboard.dashboard.METRIC_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.METRIC_ID
+          :summary:
+   * - :py:obj:`INSTANCES_ID <discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_ID
+          :summary:
+   * - :py:obj:`STAT_ID <discrete_optimization.generic_tools.dashboard.dashboard.STAT_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.STAT_ID
+          :summary:
+   * - :py:obj:`CONFIGS_ID <discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_ID
+          :summary:
+   * - :py:obj:`CONFIG_ID <discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_ID
+          :summary:
+   * - :py:obj:`Q_ID <discrete_optimization.generic_tools.dashboard.dashboard.Q_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Q_ID
+          :summary:
+   * - :py:obj:`CLIP_ID <discrete_optimization.generic_tools.dashboard.dashboard.CLIP_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CLIP_ID
+          :summary:
+   * - :py:obj:`CLIP_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.CLIP_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CLIP_DIV_ID
+          :summary:
+   * - :py:obj:`METRIC_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.METRIC_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.METRIC_DIV_ID
+          :summary:
+   * - :py:obj:`INSTANCES_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_DIV_ID
+          :summary:
+   * - :py:obj:`STAT_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.STAT_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.STAT_DIV_ID
+          :summary:
+   * - :py:obj:`CONFIG_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_DIV_ID
+          :summary:
+   * - :py:obj:`CONFIGS_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_DIV_ID
+          :summary:
+   * - :py:obj:`Q_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.Q_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Q_DIV_ID
+          :summary:
+   * - :py:obj:`TRANSPOSE_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_DIV_ID
+          :summary:
+   * - :py:obj:`MINIMIZING_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_DIV_ID
+          :summary:
+   * - :py:obj:`INSTANCE_ID <discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_ID
+          :summary:
+   * - :py:obj:`INSTANCE_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_DIV_ID
+          :summary:
+   * - :py:obj:`RUN_ID <discrete_optimization.generic_tools.dashboard.dashboard.RUN_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.RUN_ID
+          :summary:
+   * - :py:obj:`RUN_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.RUN_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.RUN_DIV_ID
+          :summary:
+   * - :py:obj:`MIN_XP_PROP_ID <discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_ID
+          :summary:
+   * - :py:obj:`MIN_XP_PROP_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_DIV_ID
+          :summary:
+   * - :py:obj:`Y_LOGSCALE_KEY <discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_KEY>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_KEY
+          :summary:
+   * - :py:obj:`Y_LOGSCALE_ID <discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_ID
+          :summary:
+   * - :py:obj:`Y_LOGSCALE_DIV_ID <discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_DIV_ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_DIV_ID
+          :summary:
+   * - :py:obj:`_data_table_numeric_column_extras <discrete_optimization.generic_tools.dashboard.dashboard._data_table_numeric_column_extras>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._data_table_numeric_column_extras
+          :summary:
+   * - :py:obj:`_explanation_table_agg_rank <discrete_optimization.generic_tools.dashboard.dashboard._explanation_table_agg_rank>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._explanation_table_agg_rank
+          :summary:
+
+API
+~~~
+
+.. py:data:: TIME_LOGSCALE_KEY
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_KEY
+   :value: 'time log-scale'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_KEY
+
+.. py:data:: TIME_LOGSCALE_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_ID
+   :value: 'time-log-scale'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_ID
+
+.. py:data:: TIME_LOGSCALE_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_DIV_ID
+   :value: 'time-log-scale-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_DIV_ID
+
+.. py:data:: MINIMIZING_KEY
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_KEY
+   :value: 'minimizing'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_KEY
+
+.. py:data:: MINIMIZING_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_ID
+   :value: 'minimizing'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_ID
+
+.. py:data:: SOLVED_WO_PROOF_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_ID
+   :value: 'solved-wo-proof'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_ID
+
+.. py:data:: SOLVED_WO_PROOF_KEY
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_KEY
+   :value: 'w/o proof'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_KEY
+
+.. py:data:: SOLVED_WO_PROOF_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_DIV_ID
+   :value: 'solved-wo-proof-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_DIV_ID
+
+.. py:data:: TRANSPOSE_KEY
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_KEY
+   :value: 'transpose'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_KEY
+
+.. py:data:: TRANSPOSE_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_ID
+   :value: 'transpose'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_ID
+
+.. py:data:: SOLVERS_COMPETITION_ALL_XPS_KEY
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_KEY
+   :value: 'all xps'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_KEY
+
+.. py:data:: SOLVERS_COMPETITION_ALL_XPS_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_ID
+   :value: 'solvers_competition-all-xps'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_ID
+
+.. py:data:: SOLVERS_COMPETITION_DIST_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_ID
+   :value: 'solvers-competition-dist'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_ID
+
+.. py:data:: SOLVERS_COMPETITION_TIME_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_ID
+   :value: 'solvers-competition-time'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_ID
+
+.. py:data:: SOLVERS_COMPETITION_ALL_XPS_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_DIV_ID
+   :value: 'solvers_competition-all-xps-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_DIV_ID
+
+.. py:data:: SOLVERS_COMPETITION_DIST_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_DIV_ID
+   :value: 'solvers-competition-dist-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_DIV_ID
+
+.. py:data:: SOLVERS_COMPETITION_TIME_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_DIV_ID
+   :value: 'solvers-competition-time-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_DIV_ID
+
+.. py:data:: GRAPH_METRIC_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_METRIC_ID
+   :value: 'graph-metric'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_METRIC_ID
+
+.. py:data:: GRAPH_AGG_METRIC_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_AGG_METRIC_ID
+   :value: 'graph-agg-metric'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_AGG_METRIC_ID
+
+.. py:data:: GRAPH_NB_SOLVED_INSTANCES_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_NB_SOLVED_INSTANCES_ID
+   :value: 'graph-nb-solved-instances'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_NB_SOLVED_INSTANCES_ID
+
+.. py:data:: GRAPH_SOLVERS_COMPETITION_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_SOLVERS_COMPETITION_ID
+   :value: 'graph-solvers-competition'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_SOLVERS_COMPETITION_ID
+
+.. py:data:: TABLE_AGG_METRIC_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_METRIC_ID
+   :value: 'table-agg-metric'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_METRIC_ID
+
+.. py:data:: TABLE_AGG_RANK_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_RANK_ID
+   :value: 'table-agg-rank'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_RANK_ID
+
+.. py:data:: TABLE_EMPTY_XPS_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_EMPTY_XPS_ID
+   :value: 'table-empty-xps'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_EMPTY_XPS_ID
+
+.. py:data:: TABLE_XP_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_ID
+   :value: 'table-metric'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_ID
+
+.. py:data:: TABLE_XP_NO_DATA_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_NO_DATA_ID
+   :value: 'table-metric-no-data'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_NO_DATA_ID
+
+.. py:data:: TABLE_XP_STATUS_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_STATUS_ID
+   :value: 'table-metric-status'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_STATUS_ID
+
+.. py:data:: TABLE_NB_SOLVED_INSTANCES_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_NB_SOLVED_INSTANCES_ID
+   :value: 'table-nb-solved-instances'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABLE_NB_SOLVED_INSTANCES_ID
+
+.. py:data:: CONFIG_MD_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_MD_ID
+   :value: 'config-markdown'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_MD_ID
+
+.. py:data:: TAB_METRIC_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TAB_METRIC_ID
+   :value: 'tab-metric'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_METRIC_ID
+
+.. py:data:: TAB_AGG_METRIC_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_METRIC_ID
+   :value: 'tab-agg-metric'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_METRIC_ID
+
+.. py:data:: TAB_NB_SOLVED_INSTANCES_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TAB_NB_SOLVED_INSTANCES_ID
+   :value: 'tab-nb-solved-instances'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_NB_SOLVED_INSTANCES_ID
+
+.. py:data:: TAB_CONFIG_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TAB_CONFIG_ID
+   :value: 'tab-config'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_CONFIG_ID
+
+.. py:data:: TAB_XP_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TAB_XP_ID
+   :value: 'tab-experiment'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_XP_ID
+
+.. py:data:: TAB_EMPTY_XPS_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TAB_EMPTY_XPS_ID
+   :value: 'tab-empty-xps'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_EMPTY_XPS_ID
+
+.. py:data:: TAB_AGG_RANK_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_RANK_ID
+   :value: 'tab-agg-rank'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_RANK_ID
+
+.. py:data:: TABS_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TABS_ID
+   :value: 'tabs'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TABS_ID
+
+.. py:data:: ALIAS_INSTANCES_ALL
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_ALL
+   :value: '@all'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_ALL
+
+.. py:data:: ALIAS_INSTANCES_WITHSOL
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_WITHSOL
+   :value: '@withsol'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_WITHSOL
+
+.. py:data:: ALIASES_INSTANCES
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.ALIASES_INSTANCES
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.ALIASES_INSTANCES
+
+.. py:data:: METRIC_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.METRIC_ID
+   :value: 'metric'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.METRIC_ID
+
+.. py:data:: INSTANCES_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_ID
+   :value: 'instances'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_ID
+
+.. py:data:: STAT_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.STAT_ID
+   :value: 'stat'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.STAT_ID
+
+.. py:data:: CONFIGS_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_ID
+   :value: 'configs'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_ID
+
+.. py:data:: CONFIG_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_ID
+   :value: 'config'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_ID
+
+.. py:data:: Q_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Q_ID
+   :value: 'quantile-q'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Q_ID
+
+.. py:data:: CLIP_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.CLIP_ID
+   :value: 'clip'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CLIP_ID
+
+.. py:data:: CLIP_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.CLIP_DIV_ID
+   :value: 'clip-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CLIP_DIV_ID
+
+.. py:data:: METRIC_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.METRIC_DIV_ID
+   :value: 'metric-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.METRIC_DIV_ID
+
+.. py:data:: INSTANCES_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_DIV_ID
+   :value: 'instances-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_DIV_ID
+
+.. py:data:: STAT_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.STAT_DIV_ID
+   :value: 'stat-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.STAT_DIV_ID
+
+.. py:data:: CONFIG_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_DIV_ID
+   :value: 'config-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_DIV_ID
+
+.. py:data:: CONFIGS_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_DIV_ID
+   :value: 'configs-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_DIV_ID
+
+.. py:data:: Q_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Q_DIV_ID
+   :value: 'quantile-q-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Q_DIV_ID
+
+.. py:data:: TRANSPOSE_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_DIV_ID
+   :value: 'transpose-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_DIV_ID
+
+.. py:data:: MINIMIZING_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_DIV_ID
+   :value: 'minimizing-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_DIV_ID
+
+.. py:data:: INSTANCE_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_ID
+   :value: 'instance'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_ID
+
+.. py:data:: INSTANCE_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_DIV_ID
+   :value: 'instance-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_DIV_ID
+
+.. py:data:: RUN_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.RUN_ID
+   :value: 'run-id'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.RUN_ID
+
+.. py:data:: RUN_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.RUN_DIV_ID
+   :value: 'run-id-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.RUN_DIV_ID
+
+.. py:data:: MIN_XP_PROP_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_ID
+   :value: 'min-exp-proportion-slider'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_ID
+
+.. py:data:: MIN_XP_PROP_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_DIV_ID
+   :value: 'min-exp-proportion-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_DIV_ID
+
+.. py:data:: Y_LOGSCALE_KEY
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_KEY
+   :value: 'metric log-scale'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_KEY
+
+.. py:data:: Y_LOGSCALE_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_ID
+   :value: 'y-log-scale'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_ID
+
+.. py:data:: Y_LOGSCALE_DIV_ID
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_DIV_ID
+   :value: 'y-log-scale-div'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_DIV_ID
+
+.. py:class:: Dashboard(results: typing.Optional[list[pandas.DataFrame]] = None, title='Discrete-Optimization Experiments Dashboard', external_stylesheets: typing.Optional[collections.abc.Sequence[typing.Union[str, dict[str, typing.Any]]]] = None, **kwargs)
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Dashboard
+
+   Bases: :py:obj:`dash.Dash`
+
+   .. py:method:: preprocess_data()
+      :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.preprocess_data
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.preprocess_data
+
+   .. py:method:: create_layout()
+      :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.create_layout
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.create_layout
+
+   .. py:method:: load_callbacks()
+      :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.load_callbacks
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.load_callbacks
+
+   .. py:method:: _replace_instances_aliases(instances: list[str], configs: list[str]) -> list[str]
+      :canonical: discrete_optimization.generic_tools.dashboard.dashboard.Dashboard._replace_instances_aliases
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard.Dashboard._replace_instances_aliases
+
+.. py:function:: _convert_bool2classname_dict(d: dict[str, bool]) -> dict[str, str]
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname_dict
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname_dict
+
+.. py:function:: _convert_bool2classname(v: bool) -> str
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname
+
+.. py:function:: _extract_dash_table_data_from_df(df: pandas.DataFrame) -> list[dict[str, typing.Any]]
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_data_from_df
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_data_from_df
+
+.. py:function:: _extract_dash_table_columns_from_df(df: pandas.DataFrame, numeric_columns: typing.Optional[list[str]] = None, non_numeric_columns: typing.Optional[list[str]] = None) -> list[dict[str, typing.Any]]
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_columns_from_df
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_columns_from_df
+
+.. py:function:: _get_dash_table_kwargs(**kwargs)
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard._get_dash_table_kwargs
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._get_dash_table_kwargs
+
+.. py:data:: _data_table_numeric_column_extras
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard._data_table_numeric_column_extras
+   :value: 'dict(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._data_table_numeric_column_extras
+
+.. py:data:: _explanation_table_agg_rank
+   :canonical: discrete_optimization.generic_tools.dashboard.dashboard._explanation_table_agg_rank
+   :value: <Multiline-String>
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.dashboard._explanation_table_agg_rank

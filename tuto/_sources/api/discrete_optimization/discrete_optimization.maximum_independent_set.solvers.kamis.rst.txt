@@ -1,0 +1,136 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.kamis`
+=====================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.kamis
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`KamisMisSolver <discrete_optimization.maximum_independent_set.solvers.kamis.KamisMisSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.KamisMisSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`this_folder <discrete_optimization.maximum_independent_set.solvers.kamis.this_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.this_folder
+          :summary:
+   * - :py:obj:`folder_ <discrete_optimization.maximum_independent_set.solvers.kamis.folder_>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.folder_
+          :summary:
+   * - :py:obj:`redumis <discrete_optimization.maximum_independent_set.solvers.kamis.redumis>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.redumis
+          :summary:
+   * - :py:obj:`online_mis <discrete_optimization.maximum_independent_set.solvers.kamis.online_mis>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.online_mis
+          :summary:
+   * - :py:obj:`weighted <discrete_optimization.maximum_independent_set.solvers.kamis.weighted>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.weighted
+          :summary:
+   * - :py:obj:`weighted_local_search <discrete_optimization.maximum_independent_set.solvers.kamis.weighted_local_search>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.weighted_local_search
+          :summary:
+   * - :py:obj:`methods <discrete_optimization.maximum_independent_set.solvers.kamis.methods>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.methods
+          :summary:
+   * - :py:obj:`tmp_dir <discrete_optimization.maximum_independent_set.solvers.kamis.tmp_dir>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.tmp_dir
+          :summary:
+   * - :py:obj:`logger <discrete_optimization.maximum_independent_set.solvers.kamis.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: this_folder
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.this_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.this_folder
+
+.. py:data:: folder_
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.folder_
+   :value: 'get(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.folder_
+
+.. py:data:: redumis
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.redumis
+   :value: 'join(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.redumis
+
+.. py:data:: online_mis
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.online_mis
+   :value: 'join(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.online_mis
+
+.. py:data:: weighted
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.weighted
+   :value: 'join(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.weighted
+
+.. py:data:: weighted_local_search
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.weighted_local_search
+   :value: 'join(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.weighted_local_search
+
+.. py:data:: methods
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.methods
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.methods
+
+.. py:data:: tmp_dir
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.tmp_dir
+   :value: 'join(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.tmp_dir
+
+.. py:data:: logger
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.logger
+
+.. py:class:: KamisMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.KamisMisSolver
+
+   Bases: :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.KamisMisSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.KamisMisSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.KamisMisSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.kamis.KamisMisSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.KamisMisSolver.init_model
+
+   .. py:method:: solve(**kwargs) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.maximum_independent_set.solvers.kamis.KamisMisSolver.solve

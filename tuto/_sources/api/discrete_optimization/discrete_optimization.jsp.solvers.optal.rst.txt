@@ -1,0 +1,79 @@
+:py:mod:`discrete_optimization.jsp.solvers.optal`
+=================================================
+
+.. py:module:: discrete_optimization.jsp.solvers.optal
+
+.. autodoc2-docstring:: discrete_optimization.jsp.solvers.optal
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OptalJspSolver <discrete_optimization.jsp.solvers.optal.OptalJspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`from_jsp_to_jsplib <discrete_optimization.jsp.solvers.optal.from_jsp_to_jsplib>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.solvers.optal.from_jsp_to_jsplib
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`script <discrete_optimization.jsp.solvers.optal.script>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.solvers.optal.script
+          :summary:
+
+API
+~~~
+
+.. py:data:: script
+   :canonical: discrete_optimization.jsp.solvers.optal.script
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.solvers.optal.script
+
+.. py:function:: from_jsp_to_jsplib(problem: discrete_optimization.jsp.problem.JobShopProblem) -> str
+   :canonical: discrete_optimization.jsp.solvers.optal.from_jsp_to_jsplib
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.solvers.optal.from_jsp_to_jsplib
+
+.. py:class:: OptalJspSolver(problem: discrete_optimization.jsp.problem.JobShopProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.jsp.solvers.optal.OptalJspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.jsp.solvers.optal.OptalJspSolver.problem
+      :type: discrete_optimization.jsp.problem.JobShopProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.solvers.optal.OptalJspSolver.problem
+
+   .. py:method:: retrieve_current_solution(dict_results: dict) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.jsp.solvers.optal.OptalJspSolver.retrieve_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.solvers.optal.OptalJspSolver.retrieve_current_solution
+
+   .. py:method:: build_command(parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: int = 10, **args: typing.Any)
+      :canonical: discrete_optimization.jsp.solvers.optal.OptalJspSolver.build_command
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.jsp.solvers.optal.OptalJspSolver.init_model

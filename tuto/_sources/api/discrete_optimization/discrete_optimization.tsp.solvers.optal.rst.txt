@@ -1,0 +1,62 @@
+:py:mod:`discrete_optimization.tsp.solvers.optal`
+=================================================
+
+.. py:module:: discrete_optimization.tsp.solvers.optal
+
+.. autodoc2-docstring:: discrete_optimization.tsp.solvers.optal
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OptalTspSolver <discrete_optimization.tsp.solvers.optal.OptalTspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`tsp_to_dict <discrete_optimization.tsp.solvers.optal.tsp_to_dict>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.optal.tsp_to_dict
+          :summary:
+
+API
+~~~
+
+.. py:function:: tsp_to_dict(problem: discrete_optimization.tsp.problem.TspProblem, scaling: float = 100)
+   :canonical: discrete_optimization.tsp.solvers.optal.tsp_to_dict
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.optal.tsp_to_dict
+
+.. py:class:: OptalTspSolver(problem: discrete_optimization.tsp.problem.TspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.tsp.solvers.optal.OptalTspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.tsp.solvers.optal.OptalTspSolver.problem
+      :type: discrete_optimization.tsp.problem.TspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.optal.OptalTspSolver.problem
+
+   .. py:method:: init_model(scaling: float = 100.0, **args: typing.Any) -> None
+      :canonical: discrete_optimization.tsp.solvers.optal.OptalTspSolver.init_model
+
+   .. py:method:: build_command(parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: int = 10, **args: typing.Any)
+      :canonical: discrete_optimization.tsp.solvers.optal.OptalTspSolver.build_command
+
+   .. py:method:: retrieve_current_solution(dict_results: dict) -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.solvers.optal.OptalTspSolver.retrieve_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.optal.OptalTspSolver.retrieve_current_solution

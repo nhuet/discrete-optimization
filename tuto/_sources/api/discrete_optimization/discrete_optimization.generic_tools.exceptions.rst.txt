@@ -1,0 +1,24 @@
+:py:mod:`discrete_optimization.generic_tools.exceptions`
+========================================================
+
+.. py:module:: discrete_optimization.generic_tools.exceptions
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.exceptions
+   :allowtitles:
+
+Module Contents
+---------------
+
+API
+~~~
+
+.. py:exception:: SolveEarlyStop()
+   :canonical: discrete_optimization.generic_tools.exceptions.SolveEarlyStop
+
+   Bases: :py:obj:`Exception`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.exceptions.SolveEarlyStop
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.exceptions.SolveEarlyStop.__init__

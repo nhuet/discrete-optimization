@@ -1,0 +1,74 @@
+:py:mod:`discrete_optimization.tsp.solvers.toulbar`
+===================================================
+
+.. py:module:: discrete_optimization.tsp.solvers.toulbar
+
+.. autodoc2-docstring:: discrete_optimization.tsp.solvers.toulbar
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ToulbarTspSolver <discrete_optimization.tsp.solvers.toulbar.ToulbarTspSolver>`
+     -
+   * - :py:obj:`TspConstraintHandlerToulbar <discrete_optimization.tsp.solvers.toulbar.TspConstraintHandlerToulbar>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.tsp.solvers.toulbar.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.toulbar.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.tsp.solvers.toulbar.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.toulbar.logger
+
+.. py:class:: ToulbarTspSolver(problem: discrete_optimization.tsp.solvers.tsp_solver.TspProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.tsp.solvers.toulbar.ToulbarTspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver`, :py:obj:`discrete_optimization.tsp.solvers.tsp_solver.TspSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.tsp.solvers.toulbar.ToulbarTspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.toulbar.ToulbarTspSolver.hyperparameters
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.tsp.problem.TspSolution) -> None
+      :canonical: discrete_optimization.tsp.solvers.toulbar.ToulbarTspSolver.set_warm_start
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.tsp.solvers.toulbar.ToulbarTspSolver.init_model
+
+   .. py:method:: retrieve_solution(solution_from_toulbar2: tuple[list, float, int]) -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.solvers.toulbar.ToulbarTspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.toulbar.ToulbarTspSolver.retrieve_solution
+
+.. py:class:: TspConstraintHandlerToulbar(fraction_nodes: float = 0.5)
+   :canonical: discrete_optimization.tsp.solvers.toulbar.TspConstraintHandlerToulbar
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.tsp.solvers.toulbar.ToulbarTspSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> typing.Iterable[typing.Any]
+      :canonical: discrete_optimization.tsp.solvers.toulbar.TspConstraintHandlerToulbar.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.toulbar.TspConstraintHandlerToulbar.adding_constraint_from_results_store

@@ -1,0 +1,94 @@
+:py:mod:`discrete_optimization.vrptw.solvers.dp`
+================================================
+
+.. py:module:: discrete_optimization.vrptw.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpVrptwSolver <discrete_optimization.vrptw.solvers.dp.DpVrptwSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.vrptw.solvers.dp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.vrptw.solvers.dp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.logger
+
+.. py:class:: DpVrptwSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.problem
+      :type: discrete_optimization.vrptw.problem.VRPTWProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.problem
+
+   .. py:attribute:: transitions
+      :canonical: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.transitions
+      :type: dict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.transitions
+
+   .. py:attribute:: scaling
+      :canonical: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.scaling
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.scaling
+
+   .. py:method:: init_model(scaling: int = 1000, cost_per_vehicle: int = 10**6, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.init_model
+
+   .. py:method:: retrieve_solution(sol: didppy.Solution) -> discrete_optimization.vrptw.problem.VRPTWSolution
+      :canonical: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.vrptw.problem.VRPTWSolution) -> None
+      :canonical: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.dp.DpVrptwSolver.set_warm_start

@@ -1,0 +1,62 @@
+:py:mod:`discrete_optimization.workforce.scheduling.solvers.optal`
+==================================================================
+
+.. py:module:: discrete_optimization.workforce.scheduling.solvers.optal
+
+.. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.optal
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OptalAllocSchedulingSolver <discrete_optimization.workforce.scheduling.solvers.optal.OptalAllocSchedulingSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`alloc_scheduling_to_dict <discrete_optimization.workforce.scheduling.solvers.optal.alloc_scheduling_to_dict>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.optal.alloc_scheduling_to_dict
+          :summary:
+
+API
+~~~
+
+.. py:function:: alloc_scheduling_to_dict(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem)
+   :canonical: discrete_optimization.workforce.scheduling.solvers.optal.alloc_scheduling_to_dict
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.optal.alloc_scheduling_to_dict
+
+.. py:class:: OptalAllocSchedulingSolver(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.workforce.scheduling.solvers.optal.OptalAllocSchedulingSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.workforce.scheduling.solvers.optal.OptalAllocSchedulingSolver.problem
+      :type: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.optal.OptalAllocSchedulingSolver.problem
+
+   .. py:method:: init_model(model_dispersion: bool = False, run_lexico: bool = False, **args: typing.Any) -> None
+      :canonical: discrete_optimization.workforce.scheduling.solvers.optal.OptalAllocSchedulingSolver.init_model
+
+   .. py:method:: build_command(parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: int = 10, **args: typing.Any)
+      :canonical: discrete_optimization.workforce.scheduling.solvers.optal.OptalAllocSchedulingSolver.build_command
+
+   .. py:method:: retrieve_current_solution(dict_results: dict) -> discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution
+      :canonical: discrete_optimization.workforce.scheduling.solvers.optal.OptalAllocSchedulingSolver.retrieve_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.optal.OptalAllocSchedulingSolver.retrieve_current_solution

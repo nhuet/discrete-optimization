@@ -1,0 +1,213 @@
+:py:mod:`discrete_optimization.rcpsp.solution`
+==============================================
+
+.. py:module:: discrete_optimization.rcpsp.solution
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solution
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TaskDetails <discrete_optimization.rcpsp.solution.TaskDetails>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.TaskDetails
+          :summary:
+   * - :py:obj:`RcpspSolution <discrete_optimization.rcpsp.solution.RcpspSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution
+          :summary:
+   * - :py:obj:`PartialSolution <discrete_optimization.rcpsp.solution.PartialSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.PartialSolution
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`permutation_do_to_permutation_sgs_fast <discrete_optimization.rcpsp.solution.permutation_do_to_permutation_sgs_fast>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.permutation_do_to_permutation_sgs_fast
+          :summary:
+   * - :py:obj:`generate_schedule_from_permutation_serial_sgs <discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs
+          :summary:
+   * - :py:obj:`generate_schedule_from_permutation_serial_sgs_special_constraints <discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_special_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_special_constraints
+          :summary:
+   * - :py:obj:`generate_schedule_from_permutation_serial_sgs_partial_schedule <discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_partial_schedule>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_partial_schedule
+          :summary:
+   * - :py:obj:`generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints <discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints
+          :summary:
+   * - :py:obj:`compute_mean_resource_reserve <discrete_optimization.rcpsp.solution.compute_mean_resource_reserve>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.compute_mean_resource_reserve
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Task <discrete_optimization.rcpsp.solution.Task>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.Task
+          :summary:
+
+API
+~~~
+
+.. py:data:: Task
+   :canonical: discrete_optimization.rcpsp.solution.Task
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.Task
+
+.. py:class:: TaskDetails(start: int, end: int)
+   :canonical: discrete_optimization.rcpsp.solution.TaskDetails
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.TaskDetails
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.TaskDetails.__init__
+
+.. py:class:: RcpspSolution(problem: discrete_optimization.rcpsp.problem.RcpspProblem, rcpsp_permutation: typing.Optional[list[int]] = None, rcpsp_schedule: typing.Optional[dict[collections.abc.Hashable, dict[str, int]]] = None, rcpsp_modes: typing.Optional[list[int]] = None, rcpsp_schedule_feasible: bool = True, standardised_permutation: typing.Optional[list[int]] = None, fast: bool = True)
+   :canonical: discrete_optimization.rcpsp.solution.RcpspSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution`\ [\ :py:obj:`discrete_optimization.rcpsp.solution.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution`\ [\ :py:obj:`discrete_optimization.rcpsp.solution.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.problem
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.rcpsp.problem.RcpspProblem) -> None
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.change_problem
+
+   .. py:method:: __setattr__(key: str, value: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.__setattr__
+
+   .. py:method:: copy() -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.lazy_copy
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.__str__
+
+   .. py:method:: generate_permutation_from_schedule() -> list[int]
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.generate_permutation_from_schedule
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.generate_permutation_from_schedule
+
+   .. py:method:: compute_mean_resource_reserve(fast: bool = True) -> float
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.compute_mean_resource_reserve
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.compute_mean_resource_reserve
+
+   .. py:method:: generate_schedule_from_permutation_serial_sgs(do_fast: bool = True) -> None
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.generate_schedule_from_permutation_serial_sgs
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.generate_schedule_from_permutation_serial_sgs
+
+   .. py:method:: generate_schedule_from_permutation_serial_sgs_2(current_t: int = 0, completed_tasks: typing.Optional[dict[collections.abc.Hashable, discrete_optimization.rcpsp.solution.TaskDetails]] = None, scheduled_tasks_start_times: typing.Optional[dict[collections.abc.Hashable, int]] = None, do_fast: bool = True) -> None
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.generate_schedule_from_permutation_serial_sgs_2
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.generate_schedule_from_permutation_serial_sgs_2
+
+   .. py:method:: get_max_end_time() -> int
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.get_max_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.get_max_end_time
+
+   .. py:method:: get_start_time(task: collections.abc.Hashable) -> int
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.get_start_time
+
+   .. py:method:: get_end_time(task: collections.abc.Hashable) -> int
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.get_end_time
+
+   .. py:method:: get_start_times_list(task: collections.abc.Hashable) -> list[int]
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.get_start_times_list
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.get_start_times_list
+
+   .. py:method:: get_end_times_list(task: collections.abc.Hashable) -> list[int]
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.get_end_times_list
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.get_end_times_list
+
+   .. py:method:: get_active_time(task: collections.abc.Hashable) -> list[int]
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.get_active_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.RcpspSolution.get_active_time
+
+   .. py:method:: get_mode(task: collections.abc.Hashable) -> int
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.get_mode
+
+   .. py:method:: __hash__() -> int
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.__hash__
+
+   .. py:method:: __eq__(other: object) -> bool
+      :canonical: discrete_optimization.rcpsp.solution.RcpspSolution.__eq__
+
+.. py:function:: permutation_do_to_permutation_sgs_fast(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, permutation_do: collections.abc.Iterable[int]) -> numpy.typing.NDArray[numpy.int_]
+   :canonical: discrete_optimization.rcpsp.solution.permutation_do_to_permutation_sgs_fast
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.permutation_do_to_permutation_sgs_fast
+
+.. py:function:: generate_schedule_from_permutation_serial_sgs(solution: discrete_optimization.rcpsp.solution.RcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem) -> tuple[dict[collections.abc.Hashable, dict[str, int]], bool]
+   :canonical: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs
+
+.. py:function:: generate_schedule_from_permutation_serial_sgs_special_constraints(solution: discrete_optimization.rcpsp.solution.RcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem) -> tuple[dict[collections.abc.Hashable, dict[str, int]], bool]
+   :canonical: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_special_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_special_constraints
+
+.. py:function:: generate_schedule_from_permutation_serial_sgs_partial_schedule(solution: discrete_optimization.rcpsp.solution.RcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, current_t: int, completed_tasks: dict[collections.abc.Hashable, discrete_optimization.rcpsp.solution.TaskDetails], scheduled_tasks_start_times: dict[collections.abc.Hashable, int]) -> tuple[dict[collections.abc.Hashable, dict[str, int]], bool]
+   :canonical: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_partial_schedule
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_partial_schedule
+
+.. py:function:: generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints(solution: discrete_optimization.rcpsp.solution.RcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, current_t: int, completed_tasks: dict[collections.abc.Hashable, discrete_optimization.rcpsp.solution.TaskDetails], scheduled_tasks_start_times: dict[collections.abc.Hashable, int]) -> tuple[dict[collections.abc.Hashable, dict[str, int]], bool]
+   :canonical: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.generate_schedule_from_permutation_serial_sgs_partial_schedule_specialized_constraints
+
+.. py:function:: compute_mean_resource_reserve(solution: discrete_optimization.rcpsp.solution.RcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem) -> float
+   :canonical: discrete_optimization.rcpsp.solution.compute_mean_resource_reserve
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.compute_mean_resource_reserve
+
+.. py:class:: PartialSolution(task_mode: typing.Optional[dict[int, int]] = None, start_times: typing.Optional[dict[int, int]] = None, end_times: typing.Optional[dict[int, int]] = None, partial_permutation: typing.Optional[list[int]] = None, list_partial_order: typing.Optional[list[list[int]]] = None, start_together: typing.Optional[list[tuple[int, int]]] = None, start_at_end: typing.Optional[list[tuple[int, int]]] = None, start_at_end_plus_offset: typing.Optional[list[tuple[int, int, int]]] = None, start_after_nunit: typing.Optional[list[tuple[int, int, int]]] = None, disjunctive_tasks: typing.Optional[list[tuple[int, int]]] = None, start_times_window: typing.Optional[dict[collections.abc.Hashable, tuple[int, int]]] = None, end_times_window: typing.Optional[dict[collections.abc.Hashable, tuple[int, int]]] = None)
+   :canonical: discrete_optimization.rcpsp.solution.PartialSolution
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.PartialSolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solution.PartialSolution.__init__

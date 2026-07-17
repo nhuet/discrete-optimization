@@ -1,0 +1,107 @@
+:py:mod:`discrete_optimization.binpack.solvers.dp`
+==================================================
+
+.. py:module:: discrete_optimization.binpack.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ModelingDpBinPack <discrete_optimization.binpack.solvers.dp.ModelingDpBinPack>`
+     -
+   * - :py:obj:`DpBinPackSolver <discrete_optimization.binpack.solvers.dp.DpBinPackSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: ModelingDpBinPack
+   :canonical: discrete_optimization.binpack.solvers.dp.ModelingDpBinPack
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: ASSIGN_ITEM_BINS
+      :canonical: discrete_optimization.binpack.solvers.dp.ModelingDpBinPack.ASSIGN_ITEM_BINS
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.ModelingDpBinPack.ASSIGN_ITEM_BINS
+
+   .. py:attribute:: PACK_ITEMS
+      :canonical: discrete_optimization.binpack.solvers.dp.ModelingDpBinPack.PACK_ITEMS
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.ModelingDpBinPack.PACK_ITEMS
+
+.. py:class:: DpBinPackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.problem
+      :type: discrete_optimization.binpack.problem.BinPackProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.problem
+
+   .. py:attribute:: transitions
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.transitions
+      :type: dict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.transitions
+
+   .. py:attribute:: modeling
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.modeling
+      :type: discrete_optimization.binpack.solvers.dp.ModelingDpBinPack
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.modeling
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.init_model
+
+   .. py:method:: init_model_assign_item_and_bins(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.init_model_assign_item_and_bins
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.init_model_assign_item_and_bins
+
+   .. py:method:: init_model_fill_bins(**kwargs)
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.init_model_fill_bins
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.init_model_fill_bins
+
+   .. py:method:: init_model_fill_bins_with_constraints(**kwargs)
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.init_model_fill_bins_with_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.init_model_fill_bins_with_constraints
+
+   .. py:method:: retrieve_solution_pack_items(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.retrieve_solution_pack_items
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.retrieve_solution_pack_items
+
+   .. py:method:: retrieve_solution_color_transition(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.retrieve_solution_color_transition
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.retrieve_solution_color_transition
+
+   .. py:method:: retrieve_solution(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.dp.DpBinPackSolver.retrieve_solution

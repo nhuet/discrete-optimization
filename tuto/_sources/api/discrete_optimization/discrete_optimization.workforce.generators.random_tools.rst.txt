@@ -1,0 +1,81 @@
+:py:mod:`discrete_optimization.workforce.generators.random_tools`
+=================================================================
+
+.. py:module:: discrete_optimization.workforce.generators.random_tools
+
+.. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`RandomState <discrete_optimization.workforce.generators.random_tools.RandomState>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.RandomState
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`epsilon <discrete_optimization.workforce.generators.random_tools.epsilon>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.epsilon
+          :summary:
+
+API
+~~~
+
+.. py:data:: epsilon
+   :canonical: discrete_optimization.workforce.generators.random_tools.epsilon
+   :value: 1e-05
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.epsilon
+
+.. py:class:: RandomState(seed)
+   :canonical: discrete_optimization.workforce.generators.random_tools.RandomState
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.RandomState
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.RandomState.__init__
+
+   .. py:attribute:: T
+      :canonical: discrete_optimization.workforce.generators.random_tools.RandomState.T
+      :value: 'TypeVar(...)'
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.RandomState.T
+
+   .. py:method:: get_random_element_uniform(list: discrete_optimization.workforce.generators.random_tools.RandomState.get_random_element_uniform.list[T]) -> T
+      :canonical: discrete_optimization.workforce.generators.random_tools.RandomState.get_random_element_uniform
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.RandomState.get_random_element_uniform
+
+   .. py:method:: get_random_element_prop(list: discrete_optimization.workforce.generators.random_tools.RandomState.get_random_element_prop.list[T], probs: discrete_optimization.workforce.generators.random_tools.RandomState.get_random_element_prop.list[float]) -> T
+      :canonical: discrete_optimization.workforce.generators.random_tools.RandomState.get_random_element_prop
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.RandomState.get_random_element_prop
+
+   .. py:method:: get_discrete_truncated_uniform_sample(lower: int, upper: int) -> int
+      :canonical: discrete_optimization.workforce.generators.random_tools.RandomState.get_discrete_truncated_uniform_sample
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.RandomState.get_discrete_truncated_uniform_sample
+
+   .. py:method:: get_discrete_truncated_normal_sample(center: int, sigma: int, lower: int, upper: int) -> int
+      :canonical: discrete_optimization.workforce.generators.random_tools.RandomState.get_discrete_truncated_normal_sample
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.RandomState.get_discrete_truncated_normal_sample
+
+   .. py:method:: get_uniform_advantage_sample(advantage: list[int]) -> int
+      :canonical: discrete_optimization.workforce.generators.random_tools.RandomState.get_uniform_advantage_sample
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.generators.random_tools.RandomState.get_uniform_advantage_sample

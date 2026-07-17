@@ -1,0 +1,465 @@
+:py:mod:`discrete_optimization.rcpsp.problem_preemptive`
+========================================================
+
+.. py:module:: discrete_optimization.rcpsp.problem_preemptive
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ScheduleGenerationScheme <discrete_optimization.rcpsp.problem_preemptive.ScheduleGenerationScheme>`
+     -
+   * - :py:obj:`PreemptiveRcpspSolution <discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution>`
+     -
+   * - :py:obj:`PartialPreemptiveRcpspSolution <discrete_optimization.rcpsp.problem_preemptive.PartialPreemptiveRcpspSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PartialPreemptiveRcpspSolution
+          :summary:
+   * - :py:obj:`PreemptiveRcpspProblem <discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`tree <discrete_optimization.rcpsp.problem_preemptive.tree>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.tree
+          :summary:
+   * - :py:obj:`generate_schedule_from_permutation_serial_sgs <discrete_optimization.rcpsp.problem_preemptive.generate_schedule_from_permutation_serial_sgs>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.generate_schedule_from_permutation_serial_sgs
+          :summary:
+   * - :py:obj:`generate_schedule_from_permutation_serial_sgs_partial_schedule <discrete_optimization.rcpsp.problem_preemptive.generate_schedule_from_permutation_serial_sgs_partial_schedule>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.generate_schedule_from_permutation_serial_sgs_partial_schedule
+          :summary:
+   * - :py:obj:`compute_mean_resource_reserve <discrete_optimization.rcpsp.problem_preemptive.compute_mean_resource_reserve>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.compute_mean_resource_reserve
+          :summary:
+   * - :py:obj:`compute_resource <discrete_optimization.rcpsp.problem_preemptive.compute_resource>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.compute_resource
+          :summary:
+   * - :py:obj:`permutation_do_to_permutation_sgs_fast <discrete_optimization.rcpsp.problem_preemptive.permutation_do_to_permutation_sgs_fast>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.permutation_do_to_permutation_sgs_fast
+          :summary:
+   * - :py:obj:`create_np_data_and_jit_functions <discrete_optimization.rcpsp.problem_preemptive.create_np_data_and_jit_functions>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.create_np_data_and_jit_functions
+          :summary:
+   * - :py:obj:`get_rcpsp_problemp_preemptive <discrete_optimization.rcpsp.problem_preemptive.get_rcpsp_problemp_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.get_rcpsp_problemp_preemptive
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.problem_preemptive.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.logger
+
+.. py:function:: tree()
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.tree
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.tree
+
+.. py:class:: ScheduleGenerationScheme
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.ScheduleGenerationScheme
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: SERIAL_SGS
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.ScheduleGenerationScheme.SERIAL_SGS
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.ScheduleGenerationScheme.SERIAL_SGS
+
+   .. py:attribute:: PARALLEL_SGS
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.ScheduleGenerationScheme.PARALLEL_SGS
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.ScheduleGenerationScheme.PARALLEL_SGS
+
+.. py:class:: PreemptiveRcpspSolution(problem, rcpsp_permutation=None, rcpsp_schedule=None, rcpsp_modes=None, rcpsp_schedule_feasible=None, standardised_permutation=None)
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Solution`
+
+   .. py:attribute:: rcpsp_permutation
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.rcpsp_permutation
+      :type: typing.Union[list[int], numpy.array]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.rcpsp_permutation
+
+   .. py:attribute:: rcpsp_schedule
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.rcpsp_schedule
+      :type: dict[collections.abc.Hashable, dict[str, list[int]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.rcpsp_schedule
+
+   .. py:attribute:: rcpsp_modes
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.rcpsp_modes
+      :type: list[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.rcpsp_modes
+
+   .. py:attribute:: standardised_permutation
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.standardised_permutation
+      :type: typing.Union[list[int], numpy.array]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.standardised_permutation
+
+   .. py:method:: get_nb_task_preemption()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_nb_task_preemption
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_nb_task_preemption
+
+   .. py:method:: total_number_of_cut()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.total_number_of_cut
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.total_number_of_cut
+
+   .. py:method:: get_min_duration_subtask()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_min_duration_subtask
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_min_duration_subtask
+
+   .. py:method:: get_number_of_part(task)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_number_of_part
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_number_of_part
+
+   .. py:method:: get_max_preempted()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_max_preempted
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_max_preempted
+
+   .. py:method:: get_task_preempted()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_task_preempted
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_task_preempted
+
+   .. py:method:: get_start_time(task)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_start_time
+
+   .. py:method:: get_start_times_list(task)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_start_times_list
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_start_times_list
+
+   .. py:method:: get_end_time(task)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_end_time
+
+   .. py:method:: get_end_times_list(task)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_end_times_list
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_end_times_list
+
+   .. py:method:: get_max_end_time()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_max_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_max_end_time
+
+   .. py:method:: get_active_time(task)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_active_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.get_active_time
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.change_problem
+
+   .. py:method:: __setattr__(key, value)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.__setattr__
+
+   .. py:method:: copy()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.copy
+
+   .. py:method:: lazy_copy()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.lazy_copy
+
+   .. py:method:: __str__()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.__str__
+
+   .. py:method:: generate_permutation_from_schedule()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.generate_permutation_from_schedule
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.generate_permutation_from_schedule
+
+   .. py:method:: compute_mean_resource_reserve(fast=True)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.compute_mean_resource_reserve
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.compute_mean_resource_reserve
+
+   .. py:method:: generate_schedule_from_permutation_serial_sgs(do_fast=True)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.generate_schedule_from_permutation_serial_sgs
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.generate_schedule_from_permutation_serial_sgs
+
+   .. py:method:: generate_schedule_from_permutation_serial_sgs_2(current_t=0, completed_tasks: typing.Optional[set[collections.abc.Hashable]] = None, partial_schedule: typing.Optional[dict[collections.abc.Hashable, dict[str, list[int]]]] = None, do_fast=True)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.generate_schedule_from_permutation_serial_sgs_2
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.generate_schedule_from_permutation_serial_sgs_2
+
+   .. py:method:: __hash__()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.__hash__
+
+   .. py:method:: __eq__(other)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution.__eq__
+
+.. py:class:: PartialPreemptiveRcpspSolution(task_mode: dict[int, int] = None, start_times: dict[int, int] = None, end_times: dict[int, int] = None, partial_permutation: list[int] = None, list_partial_order: list[list[int]] = None, start_together: list[tuple[int, int]] = None, start_at_end: list[tuple[int, int]] = None, start_at_end_plus_offset: list[tuple[int, int, int]] = None, start_after_nunit: list[tuple[int, int, int]] = None, disjunctive_tasks: list[tuple[int, int]] = None, start_times_window: dict[collections.abc.Hashable, tuple[int, int]] = None, end_times_window: dict[collections.abc.Hashable, tuple[int, int]] = None)
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.PartialPreemptiveRcpspSolution
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PartialPreemptiveRcpspSolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PartialPreemptiveRcpspSolution.__init__
+
+.. py:class:: PreemptiveRcpspProblem(resources: typing.Union[dict[str, int], dict[str, list[int]]], non_renewable_resources: list[str], mode_details: dict[collections.abc.Hashable, dict[typing.Union[str, int], dict[str, int]]], successors: dict[typing.Union[int, str], list[typing.Union[str, int]]], horizon, horizon_multiplier=1, tasks_list: list[typing.Union[int, str]] = None, source_task=None, sink_task=None, preemptive_indicator: dict[collections.abc.Hashable, bool] = None, duration_subtask: dict[collections.abc.Hashable, tuple[bool, int]] = None, name_task: dict[int, str] = None)
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Problem`
+
+   .. py:attribute:: sgs
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.sgs
+      :type: discrete_optimization.rcpsp.problem_preemptive.ScheduleGenerationScheme
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.sgs
+
+   .. py:attribute:: resources
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.resources
+      :type: typing.Union[dict[str, int], dict[str, list[int]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.resources
+
+   .. py:attribute:: non_renewable_resources
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.non_renewable_resources
+      :type: list[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.non_renewable_resources
+
+   .. py:attribute:: n_jobs
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.n_jobs
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.n_jobs
+
+   .. py:attribute:: mode_details
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.mode_details
+      :type: dict[collections.abc.Hashable, dict[int, dict[str, int]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.mode_details
+
+   .. py:attribute:: successors
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.successors
+      :type: dict[int, list[int]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.successors
+
+   .. py:method:: get_resource_names()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_resource_names
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_resource_names
+
+   .. py:method:: get_resource_availability_array(res)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_resource_availability_array
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_resource_availability_array
+
+   .. py:method:: get_max_resource_capacity(res)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_max_resource_capacity
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_max_resource_capacity
+
+   .. py:method:: get_modes_dict(rcpsp_solution: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_modes_dict
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_modes_dict
+
+   .. py:method:: update_function()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.update_function
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.update_function
+
+   .. py:method:: is_rcpsp_multimode()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_rcpsp_multimode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_rcpsp_multimode
+
+   .. py:method:: is_varying_resource()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_varying_resource
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_varying_resource
+
+   .. py:method:: is_duration_minimum_preemption()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_duration_minimum_preemption
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_duration_minimum_preemption
+
+   .. py:method:: is_preemptive()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_preemptive
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_preemptive
+
+   .. py:method:: is_multiskill()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_multiskill
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.is_multiskill
+
+   .. py:method:: can_be_preempted(task)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.can_be_preempted
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.can_be_preempted
+
+   .. py:method:: compute_graph() -> discrete_optimization.generic_tools.graph_api.Graph
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.compute_graph
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.compute_graph
+
+   .. py:method:: evaluate_function(rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.evaluate_function
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.evaluate_function
+
+   .. py:method:: evaluate_from_encoding(int_vector, encoding_name)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.evaluate_from_encoding
+
+   .. py:method:: evaluate(rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution) -> dict[str, float]
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.evaluate
+
+   .. py:method:: evaluate_mobj(rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.evaluate_mobj
+
+   .. py:method:: evaluate_mobj_from_dict(dict_values: dict[str, float]) -> discrete_optimization.generic_tools.do_problem.TupleFitness
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.evaluate_mobj_from_dict
+
+   .. py:method:: build_mode_dict(rcpsp_modes_from_solution)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.build_mode_dict
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.build_mode_dict
+
+   .. py:method:: build_mode_array(rcpsp_modes_from_solution)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.build_mode_array
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.build_mode_array
+
+   .. py:method:: return_index_task(task, offset=0)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.return_index_task
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.return_index_task
+
+   .. py:method:: satisfy(rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution) -> bool
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.satisfy
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_solution_type
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_attribute_register
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_objective_register
+
+   .. py:method:: compute_resource_consumption(rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.compute_resource_consumption
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.compute_resource_consumption
+
+   .. py:method:: plot_ressource_view(rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.plot_ressource_view
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.plot_ressource_view
+
+   .. py:method:: copy()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.copy
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.copy
+
+   .. py:method:: copy_with_multiplier(multiplier=0.5)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.copy_with_multiplier
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.copy_with_multiplier
+
+   .. py:method:: get_dummy_solution()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_dummy_solution
+
+   .. py:method:: get_resource_available(res, time)
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_resource_available
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.get_resource_available
+
+   .. py:method:: __str__()
+      :canonical: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem.__str__
+
+.. py:function:: generate_schedule_from_permutation_serial_sgs(solution: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem)
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.generate_schedule_from_permutation_serial_sgs
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.generate_schedule_from_permutation_serial_sgs
+
+.. py:function:: generate_schedule_from_permutation_serial_sgs_partial_schedule(solution: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, partial_schedule: dict[collections.abc.Hashable, dict[str, list[int]]], current_t: int, completed_tasks: set[collections.abc.Hashable]) -> tuple[dict[int, dict[str, list[int]]], bool]
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.generate_schedule_from_permutation_serial_sgs_partial_schedule
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.generate_schedule_from_permutation_serial_sgs_partial_schedule
+
+.. py:function:: compute_mean_resource_reserve(solution: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem)
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.compute_mean_resource_reserve
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.compute_mean_resource_reserve
+
+.. py:function:: compute_resource(solution: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem)
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.compute_resource
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.compute_resource
+
+.. py:function:: permutation_do_to_permutation_sgs_fast(rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, permutation_do: collections.abc.Iterable[int]) -> numpy.typing.NDArray[numpy.int_]
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.permutation_do_to_permutation_sgs_fast
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.permutation_do_to_permutation_sgs_fast
+
+.. py:function:: create_np_data_and_jit_functions(rcpsp_problem: typing.Union[discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem])
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.create_np_data_and_jit_functions
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.create_np_data_and_jit_functions
+
+.. py:function:: get_rcpsp_problemp_preemptive(rcpsp_problem)
+   :canonical: discrete_optimization.rcpsp.problem_preemptive.get_rcpsp_problemp_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_preemptive.get_rcpsp_problemp_preemptive

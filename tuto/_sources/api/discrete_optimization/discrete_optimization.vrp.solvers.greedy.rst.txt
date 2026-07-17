@@ -1,0 +1,31 @@
+:py:mod:`discrete_optimization.vrp.solvers.greedy`
+==================================================
+
+.. py:module:: discrete_optimization.vrp.solvers.greedy
+
+.. autodoc2-docstring:: discrete_optimization.vrp.solvers.greedy
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GreedyVrpSolver <discrete_optimization.vrp.solvers.greedy.GreedyVrpSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: GreedyVrpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.vrp.solvers.greedy.GreedyVrpSolver
+
+   Bases: :py:obj:`discrete_optimization.vrp.solvers.VrpSolver`
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.vrp.solvers.greedy.GreedyVrpSolver.solve

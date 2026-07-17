@@ -1,0 +1,75 @@
+:py:mod:`discrete_optimization.generic_tools.mutations.mutation_bool`
+=====================================================================
+
+.. py:module:: discrete_optimization.generic_tools.mutations.mutation_bool
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`BitFlipMove <discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove
+          :summary:
+   * - :py:obj:`MutationBitFlip <discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip
+          :summary:
+
+API
+~~~
+
+.. py:class:: BitFlipMove(attribute: str, list_index_flip: collections.abc.Iterable[int])
+   :canonical: discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.LocalMove`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove.__init__
+
+   .. py:method:: apply_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove.apply_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove.apply_local_move
+
+   .. py:method:: backtrack_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove.backtrack_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.BitFlipMove.backtrack_local_move
+
+.. py:class:: MutationBitFlip(problem: discrete_optimization.generic_tools.do_problem.Problem, attribute: typing.Optional[str] = None, probability_flip: float = 0.1)
+   :canonical: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.__init__
+
+   .. py:method:: build(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, **kwargs: typing.Any) -> discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip
+      :canonical: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.build
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_bool.MutationBitFlip.mutate_and_compute_obj

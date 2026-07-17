@@ -1,0 +1,29 @@
+:py:mod:`discrete_optimization.rcpsp.transform_problem`
+=======================================================
+
+.. py:module:: discrete_optimization.rcpsp.transform_problem
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.transform_problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`from_rcpsp_problem <discrete_optimization.rcpsp.transform_problem.from_rcpsp_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.transform_problem.from_rcpsp_problem
+          :summary:
+
+API
+~~~
+
+.. py:function:: from_rcpsp_problem(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, constraints: discrete_optimization.rcpsp.problem.SpecialConstraintsDescription, preemptive=False) -> discrete_optimization.rcpsp.problem.RcpspProblem
+   :canonical: discrete_optimization.rcpsp.transform_problem.from_rcpsp_problem
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.transform_problem.from_rcpsp_problem

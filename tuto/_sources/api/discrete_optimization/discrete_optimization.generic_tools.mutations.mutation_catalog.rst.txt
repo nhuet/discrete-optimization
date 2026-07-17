@@ -1,0 +1,56 @@
+:py:mod:`discrete_optimization.generic_tools.mutations.mutation_catalog`
+========================================================================
+
+.. py:module:: discrete_optimization.generic_tools.mutations.mutation_catalog
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_catalog
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_available_mutations <discrete_optimization.generic_tools.mutations.mutation_catalog.get_available_mutations>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_catalog.get_available_mutations
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.mutations.mutation_catalog.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_catalog.logger
+          :summary:
+   * - :py:obj:`dictionnary_mutation <discrete_optimization.generic_tools.mutations.mutation_catalog.dictionnary_mutation>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_catalog.dictionnary_mutation
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.mutations.mutation_catalog.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_catalog.logger
+
+.. py:data:: dictionnary_mutation
+   :canonical: discrete_optimization.generic_tools.mutations.mutation_catalog.dictionnary_mutation
+   :type: dict[discrete_optimization.generic_tools.do_problem.TypeAttribute, dict[str, tuple[type[discrete_optimization.generic_tools.do_mutation.Mutation], dict[str, typing.Any]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_catalog.dictionnary_mutation
+
+.. py:function:: get_available_mutations(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: typing.Optional[discrete_optimization.generic_tools.do_problem.Solution] = None) -> tuple[dict[discrete_optimization.generic_tools.do_problem.TypeAttribute, dict[str, tuple[type[discrete_optimization.generic_tools.do_mutation.Mutation], dict[str, typing.Any]]]], list[tuple[type[discrete_optimization.generic_tools.do_mutation.Mutation], dict[str, typing.Any]]]]
+   :canonical: discrete_optimization.generic_tools.mutations.mutation_catalog.get_available_mutations
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_catalog.get_available_mutations

@@ -1,0 +1,65 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.asp`
+===================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.asp
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.asp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`AspMisSolver <discrete_optimization.maximum_independent_set.solvers.asp.AspMisSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`cur_folder <discrete_optimization.maximum_independent_set.solvers.asp.cur_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.asp.cur_folder
+          :summary:
+   * - :py:obj:`logger <discrete_optimization.maximum_independent_set.solvers.asp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.asp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: cur_folder
+   :canonical: discrete_optimization.maximum_independent_set.solvers.asp.cur_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.asp.cur_folder
+
+.. py:data:: logger
+   :canonical: discrete_optimization.maximum_independent_set.solvers.asp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.asp.logger
+
+.. py:class:: AspMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.asp.AspMisSolver
+
+   Bases: :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`, :py:obj:`discrete_optimization.generic_tools.asp_tools.AspClingoSolver`
+
+   .. py:method:: retrieve_solution(model: clingo.Model) -> discrete_optimization.maximum_independent_set.problem.MisSolution
+      :canonical: discrete_optimization.maximum_independent_set.solvers.asp.AspMisSolver.retrieve_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.asp.AspMisSolver.init_model
+
+   .. py:method:: build_data_string()
+      :canonical: discrete_optimization.maximum_independent_set.solvers.asp.AspMisSolver.build_data_string
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.asp.AspMisSolver.build_data_string

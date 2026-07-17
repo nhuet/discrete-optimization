@@ -1,0 +1,56 @@
+:py:mod:`discrete_optimization.coloring.solvers.starting_solution`
+==================================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.starting_solution
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.starting_solution
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`WithStartingSolutionColoringSolver <discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.coloring.solvers.starting_solution.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.starting_solution.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.coloring.solvers.starting_solution.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.starting_solution.logger
+
+.. py:class:: WithStartingSolutionColoringSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver.hyperparameters
+
+   .. py:method:: get_starting_solution(**kwargs: typing.Any) -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver.get_starting_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver.get_starting_solution

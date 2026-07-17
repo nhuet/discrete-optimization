@@ -1,0 +1,53 @@
+:py:mod:`discrete_optimization.workforce.commons.fairness_modeling_ortools`
+===========================================================================
+
+.. py:module:: discrete_optimization.workforce.commons.fairness_modeling_ortools
+
+.. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling_ortools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`cumulate_value_per_teams <discrete_optimization.workforce.commons.fairness_modeling_ortools.cumulate_value_per_teams>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling_ortools.cumulate_value_per_teams
+          :summary:
+   * - :py:obj:`cumulate_value_per_teams_version_2 <discrete_optimization.workforce.commons.fairness_modeling_ortools.cumulate_value_per_teams_version_2>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling_ortools.cumulate_value_per_teams_version_2
+          :summary:
+   * - :py:obj:`define_fairness_criteria_from_cumulated_value <discrete_optimization.workforce.commons.fairness_modeling_ortools.define_fairness_criteria_from_cumulated_value>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling_ortools.define_fairness_criteria_from_cumulated_value
+          :summary:
+   * - :py:obj:`model_fairness <discrete_optimization.workforce.commons.fairness_modeling_ortools.model_fairness>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling_ortools.model_fairness
+          :summary:
+
+API
+~~~
+
+.. py:function:: cumulate_value_per_teams(used_team: typing.Union[dict[int, ortools.sat.python.cp_model.IntVar], list[ortools.sat.python.cp_model.IntVar]], allocation_variables: typing.Union[list[list[ortools.sat.python.cp_model.IntVar]], list[dict[int, ortools.sat.python.cp_model.IntVar]]], value_per_task: list[int], cp_model: ortools.sat.python.cp_model.CpModel, number_teams: typing.Optional[int] = None, name_value: typing.Optional[str] = '')
+   :canonical: discrete_optimization.workforce.commons.fairness_modeling_ortools.cumulate_value_per_teams
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling_ortools.cumulate_value_per_teams
+
+.. py:function:: cumulate_value_per_teams_version_2(used_team: typing.Union[dict[int, ortools.sat.python.cp_model.IntVar], list[ortools.sat.python.cp_model.IntVar]], allocation_variables: typing.Union[list[list[ortools.sat.python.cp_model.IntVar]], list[dict[int, ortools.sat.python.cp_model.IntVar]]], value_per_task: list[int], cp_model: ortools.sat.python.cp_model.CpModel, number_teams: typing.Optional[int] = None, name_value: typing.Optional[str] = '')
+   :canonical: discrete_optimization.workforce.commons.fairness_modeling_ortools.cumulate_value_per_teams_version_2
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling_ortools.cumulate_value_per_teams_version_2
+
+.. py:function:: define_fairness_criteria_from_cumulated_value(used_team: typing.Union[dict[int, ortools.sat.python.cp_model.IntVar], list[ortools.sat.python.cp_model.IntVar]], cumulated_value_per_team: list[ortools.sat.python.cp_model.IntVar], value_per_task: list[int], modelisation_dispersion: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion, cp_model: ortools.sat.python.cp_model.CpModel, cumulated_value_per_team_nz: typing.Optional[list[ortools.sat.python.cp_model.IntVar]] = None, name_value: typing.Optional[str] = '')
+   :canonical: discrete_optimization.workforce.commons.fairness_modeling_ortools.define_fairness_criteria_from_cumulated_value
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling_ortools.define_fairness_criteria_from_cumulated_value
+
+.. py:function:: model_fairness(used_team: typing.Union[dict[int, ortools.sat.python.cp_model.IntVar], list[ortools.sat.python.cp_model.IntVar]], allocation_variables: typing.Union[list[list[ortools.sat.python.cp_model.IntVar]], list[dict[int, ortools.sat.python.cp_model.IntVar]]], value_per_task: list[int], modelisation_dispersion: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion, cp_model: ortools.sat.python.cp_model.CpModel, number_teams: typing.Optional[int] = None, name_value: typing.Optional[str] = '')
+   :canonical: discrete_optimization.workforce.commons.fairness_modeling_ortools.model_fairness
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling_ortools.model_fairness

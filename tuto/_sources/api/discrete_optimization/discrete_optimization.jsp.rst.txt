@@ -1,0 +1,27 @@
+:py:mod:`discrete_optimization.jsp`
+===================================
+
+.. py:module:: discrete_optimization.jsp
+
+.. autodoc2-docstring:: discrete_optimization.jsp
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.jsp.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.jsp.problem
+   discrete_optimization.jsp.utils
+   discrete_optimization.jsp.parser

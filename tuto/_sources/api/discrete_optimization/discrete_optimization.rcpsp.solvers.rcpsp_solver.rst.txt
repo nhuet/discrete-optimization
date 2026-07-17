@@ -1,0 +1,35 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.rcpsp_solver`
+==========================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.rcpsp_solver
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.rcpsp_solver
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`RcpspSolver <discrete_optimization.rcpsp.solvers.rcpsp_solver.RcpspSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: RcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.rcpsp_solver.RcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.rcpsp_solver.RcpspSolver.problem
+      :type: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.rcpsp_solver.RcpspSolver.problem

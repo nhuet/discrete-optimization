@@ -1,0 +1,74 @@
+:py:mod:`discrete_optimization.tsptw.solvers.cpsat`
+===================================================
+
+.. py:module:: discrete_optimization.tsptw.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatTSPTWSolver <discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.tsptw.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.tsptw.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat.logger
+
+.. py:class:: CpSatTSPTWSolver(problem: discrete_optimization.tsptw.problem.TSPTWProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver.problem
+      :type: discrete_optimization.tsptw.problem.TSPTWProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver.problem
+
+   .. py:method:: init_model(scaling_factor: float = 10.0, relaxed: bool = False, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver.init_model
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.tsptw.problem.TSPTWSolution
+      :canonical: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.tsptw.problem.TSPTWSolution) -> None
+      :canonical: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.cpsat.CpSatTSPTWSolver.set_warm_start

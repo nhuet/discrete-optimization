@@ -1,0 +1,16 @@
+:py:mod:`discrete_optimization.generic_tools.robustness`
+========================================================
+
+.. py:module:: discrete_optimization.generic_tools.robustness
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.robustness
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.robustness.robustness_tool

@@ -1,0 +1,123 @@
+:py:mod:`discrete_optimization.generic_tools.dashboard.config`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tools.dashboard.config
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ConfigStore <discrete_optimization.generic_tools.dashboard.config.ConfigStore>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.ConfigStore
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_config_name <discrete_optimization.generic_tools.dashboard.config.get_config_name>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.get_config_name
+          :summary:
+   * - :py:obj:`convert_config_dict2hashable <discrete_optimization.generic_tools.dashboard.config.convert_config_dict2hashable>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.convert_config_dict2hashable
+          :summary:
+   * - :py:obj:`is_tupleddict <discrete_optimization.generic_tools.dashboard.config.is_tupleddict>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.is_tupleddict
+          :summary:
+   * - :py:obj:`convert_config_hashable2dict <discrete_optimization.generic_tools.dashboard.config.convert_config_hashable2dict>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.convert_config_hashable2dict
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.dashboard.config.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.logger
+          :summary:
+   * - :py:obj:`DictConfig <discrete_optimization.generic_tools.dashboard.config.DictConfig>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.DictConfig
+          :summary:
+   * - :py:obj:`HashableConfig <discrete_optimization.generic_tools.dashboard.config.HashableConfig>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.HashableConfig
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.dashboard.config.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.logger
+
+.. py:data:: DictConfig
+   :canonical: discrete_optimization.generic_tools.dashboard.config.DictConfig
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.DictConfig
+
+.. py:data:: HashableConfig
+   :canonical: discrete_optimization.generic_tools.dashboard.config.HashableConfig
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.HashableConfig
+
+.. py:function:: get_config_name(config: discrete_optimization.generic_tools.dashboard.config.DictConfig) -> str
+   :canonical: discrete_optimization.generic_tools.dashboard.config.get_config_name
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.get_config_name
+
+.. py:function:: convert_config_dict2hashable(config: discrete_optimization.generic_tools.dashboard.config.DictConfig) -> discrete_optimization.generic_tools.dashboard.config.HashableConfig
+   :canonical: discrete_optimization.generic_tools.dashboard.config.convert_config_dict2hashable
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.convert_config_dict2hashable
+
+.. py:function:: is_tupleddict(config: typing.Any) -> bool
+   :canonical: discrete_optimization.generic_tools.dashboard.config.is_tupleddict
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.is_tupleddict
+
+.. py:function:: convert_config_hashable2dict(config: discrete_optimization.generic_tools.dashboard.config.HashableConfig) -> discrete_optimization.generic_tools.dashboard.config.DictConfig
+   :canonical: discrete_optimization.generic_tools.dashboard.config.convert_config_hashable2dict
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.convert_config_hashable2dict
+
+.. py:class:: ConfigStore()
+   :canonical: discrete_optimization.generic_tools.dashboard.config.ConfigStore
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.ConfigStore
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.ConfigStore.__init__
+
+   .. py:method:: add(config: discrete_optimization.generic_tools.dashboard.config.DictConfig) -> None
+      :canonical: discrete_optimization.generic_tools.dashboard.config.ConfigStore.add
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.ConfigStore.add
+
+   .. py:method:: get_name(config: discrete_optimization.generic_tools.dashboard.config.DictConfig) -> str
+      :canonical: discrete_optimization.generic_tools.dashboard.config.ConfigStore.get_name
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.ConfigStore.get_name
+
+   .. py:method:: get_configs(name: str) -> list[discrete_optimization.generic_tools.dashboard.config.DictConfig]
+      :canonical: discrete_optimization.generic_tools.dashboard.config.ConfigStore.get_configs
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.config.ConfigStore.get_configs

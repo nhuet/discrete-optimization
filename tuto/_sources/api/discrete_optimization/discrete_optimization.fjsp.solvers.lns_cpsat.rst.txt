@@ -1,0 +1,62 @@
+:py:mod:`discrete_optimization.fjsp.solvers.lns_cpsat`
+======================================================
+
+.. py:module:: discrete_optimization.fjsp.solvers.lns_cpsat
+
+.. autodoc2-docstring:: discrete_optimization.fjsp.solvers.lns_cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`NeighborBuilderSubPart <discrete_optimization.fjsp.solvers.lns_cpsat.NeighborBuilderSubPart>`
+     - .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.lns_cpsat.NeighborBuilderSubPart
+          :summary:
+   * - :py:obj:`FjspConstraintHandler <discrete_optimization.fjsp.solvers.lns_cpsat.FjspConstraintHandler>`
+     -
+   * - :py:obj:`NeighFjspConstraintHandler <discrete_optimization.fjsp.solvers.lns_cpsat.NeighFjspConstraintHandler>`
+     -
+
+API
+~~~
+
+.. py:class:: NeighborBuilderSubPart(problem: discrete_optimization.fjsp.problem.FJobShopProblem, nb_cut_part: int = 10)
+   :canonical: discrete_optimization.fjsp.solvers.lns_cpsat.NeighborBuilderSubPart
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.lns_cpsat.NeighborBuilderSubPart
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.lns_cpsat.NeighborBuilderSubPart.__init__
+
+   .. py:method:: find_subtasks(current_solution: discrete_optimization.fjsp.problem.FJobShopSolution, subtasks: typing.Optional[set[typing.Hashable]] = None) -> tuple[set[tuple[int, int]], set[tuple[int, int]]]
+      :canonical: discrete_optimization.fjsp.solvers.lns_cpsat.NeighborBuilderSubPart.find_subtasks
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.lns_cpsat.NeighborBuilderSubPart.find_subtasks
+
+.. py:class:: FjspConstraintHandler(problem: discrete_optimization.fjsp.problem.FJobShopProblem, fraction_segment_to_fix: float = 0.9)
+   :canonical: discrete_optimization.fjsp.solvers.lns_cpsat.FjspConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> typing.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.fjsp.solvers.lns_cpsat.FjspConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.lns_cpsat.FjspConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: NeighFjspConstraintHandler(problem: discrete_optimization.fjsp.problem.FJobShopProblem, neighbor_builder: discrete_optimization.fjsp.solvers.lns_cpsat.NeighborBuilderSubPart)
+   :canonical: discrete_optimization.fjsp.solvers.lns_cpsat.NeighFjspConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> typing.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.fjsp.solvers.lns_cpsat.NeighFjspConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.lns_cpsat.NeighFjspConstraintHandler.adding_constraint_from_results_store

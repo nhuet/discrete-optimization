@@ -1,0 +1,56 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers_map`
+===================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers_map
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers_map
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`solve <discrete_optimization.maximum_independent_set.solvers_map.solve>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers_map.solve
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`solvers <discrete_optimization.maximum_independent_set.solvers_map.solvers>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers_map.solvers
+          :summary:
+   * - :py:obj:`solvers_map <discrete_optimization.maximum_independent_set.solvers_map.solvers_map>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers_map.solvers_map
+          :summary:
+
+API
+~~~
+
+.. py:data:: solvers
+   :canonical: discrete_optimization.maximum_independent_set.solvers_map.solvers
+   :type: dict[str, list[tuple[type[discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver], dict[str, typing.Any]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers_map.solvers
+
+.. py:data:: solvers_map
+   :canonical: discrete_optimization.maximum_independent_set.solvers_map.solvers_map
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers_map.solvers_map
+
+.. py:function:: solve(method_solver: type[discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver], problem: discrete_optimization.maximum_independent_set.problem.MisProblem, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+   :canonical: discrete_optimization.maximum_independent_set.solvers_map.solve
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers_map.solve

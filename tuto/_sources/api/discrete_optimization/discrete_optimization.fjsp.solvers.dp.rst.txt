@@ -1,0 +1,52 @@
+:py:mod:`discrete_optimization.fjsp.solvers.dp`
+===============================================
+
+.. py:module:: discrete_optimization.fjsp.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.fjsp.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpFjspSolver <discrete_optimization.fjsp.solvers.dp.DpFjspSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: DpFjspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.fjsp.solvers.dp.DpFjspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.fjsp.solvers.dp.DpFjspSolver.problem
+      :type: discrete_optimization.fjsp.problem.FJobShopProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.dp.DpFjspSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.fjsp.solvers.dp.DpFjspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.dp.DpFjspSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.fjsp.solvers.dp.DpFjspSolver.init_model
+
+   .. py:method:: retrieve_solution(sol: discrete_optimization.generic_tools.dyn_prog_tools.dp.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.fjsp.solvers.dp.DpFjspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.dp.DpFjspSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.fjsp.problem.FJobShopSolution) -> None
+      :canonical: discrete_optimization.fjsp.solvers.dp.DpFjspSolver.set_warm_start

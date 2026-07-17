@@ -1,0 +1,92 @@
+:py:mod:`discrete_optimization.generic_tools.callbacks.early_stoppers`
+======================================================================
+
+.. py:module:: discrete_optimization.generic_tools.callbacks.early_stoppers
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TimerStopper <discrete_optimization.generic_tools.callbacks.early_stoppers.TimerStopper>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.TimerStopper
+          :summary:
+   * - :py:obj:`NbIterationStopper <discrete_optimization.generic_tools.callbacks.early_stoppers.NbIterationStopper>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.NbIterationStopper
+          :summary:
+   * - :py:obj:`ObjectiveGapStopper <discrete_optimization.generic_tools.callbacks.early_stoppers.ObjectiveGapStopper>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.ObjectiveGapStopper
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.callbacks.early_stoppers.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.callbacks.early_stoppers.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.logger
+
+.. py:class:: TimerStopper(total_seconds: int, check_nb_steps: int = 1)
+   :canonical: discrete_optimization.generic_tools.callbacks.early_stoppers.TimerStopper
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.TimerStopper
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.TimerStopper.__init__
+
+   .. py:method:: on_solve_start(solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.early_stoppers.TimerStopper.on_solve_start
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.early_stoppers.TimerStopper.on_step_end
+
+.. py:class:: NbIterationStopper(nb_iteration_max: int)
+   :canonical: discrete_optimization.generic_tools.callbacks.early_stoppers.NbIterationStopper
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.NbIterationStopper
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.NbIterationStopper.__init__
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.early_stoppers.NbIterationStopper.on_step_end
+
+.. py:class:: ObjectiveGapStopper(objective_gap_rel: typing.Optional[float] = None, objective_gap_abs: typing.Optional[float] = None)
+   :canonical: discrete_optimization.generic_tools.callbacks.early_stoppers.ObjectiveGapStopper
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.ObjectiveGapStopper
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.early_stoppers.ObjectiveGapStopper.__init__
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.early_stoppers.ObjectiveGapStopper.on_step_end

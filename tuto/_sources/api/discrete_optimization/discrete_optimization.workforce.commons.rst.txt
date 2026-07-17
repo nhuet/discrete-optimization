@@ -1,0 +1,18 @@
+:py:mod:`discrete_optimization.workforce.commons`
+=================================================
+
+.. py:module:: discrete_optimization.workforce.commons
+
+.. autodoc2-docstring:: discrete_optimization.workforce.commons
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.workforce.commons.fairness_modeling
+   discrete_optimization.workforce.commons.fairness_modeling_cpmpy
+   discrete_optimization.workforce.commons.fairness_modeling_ortools

@@ -1,0 +1,81 @@
+:py:mod:`discrete_optimization.generic_tools.robustness.robustness_tool`
+========================================================================
+
+.. py:module:: discrete_optimization.generic_tools.robustness.robustness_tool
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`RobustnessTool <discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`solve_model <discrete_optimization.generic_tools.robustness.robustness_tool.solve_model>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.solve_model
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.robustness.robustness_tool.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.robustness.robustness_tool.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.logger
+
+.. py:class:: RobustnessTool(base_instance: discrete_optimization.rcpsp.problem.RcpspProblem, all_instances: list[discrete_optimization.rcpsp.problem.RcpspProblem], train_instance: typing.Optional[list[discrete_optimization.rcpsp.problem.RcpspProblem]] = None, test_instance: typing.Optional[list[discrete_optimization.rcpsp.problem.RcpspProblem]] = None, proportion_train: float = 0.8)
+   :canonical: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.__init__
+
+   .. py:method:: get_models(apriori: bool = True, aposteriori: bool = True) -> list[discrete_optimization.rcpsp.problem.RcpspProblem]
+      :canonical: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.get_models
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.get_models
+
+   .. py:method:: solve_and_retrieve(solve_models_function: collections.abc.Callable[[discrete_optimization.rcpsp.problem.RcpspProblem], discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage], apriori: bool = True, aposteriori: bool = True) -> numpy.typing.NDArray[numpy.float64]
+      :canonical: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.solve_and_retrieve
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.solve_and_retrieve
+
+   .. py:method:: plot(results: numpy.typing.NDArray[numpy.float64], image_tag: str = '') -> None
+      :canonical: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.plot
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.RobustnessTool.plot
+
+.. py:function:: solve_model(model: discrete_optimization.generic_tools.do_problem.Problem, postpro: bool = True, nb_iteration: int = 500) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+   :canonical: discrete_optimization.generic_tools.robustness.robustness_tool.solve_model
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.robustness.robustness_tool.solve_model

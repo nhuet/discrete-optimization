@@ -1,0 +1,86 @@
+:py:mod:`discrete_optimization.rcpsp.utils_preemptive`
+======================================================
+
+.. py:module:: discrete_optimization.rcpsp.utils_preemptive
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_resource_consumption <discrete_optimization.rcpsp.utils_preemptive.compute_resource_consumption>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.compute_resource_consumption
+          :summary:
+   * - :py:obj:`compute_nice_resource_consumption <discrete_optimization.rcpsp.utils_preemptive.compute_nice_resource_consumption>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.compute_nice_resource_consumption
+          :summary:
+   * - :py:obj:`plot_ressource_view <discrete_optimization.rcpsp.utils_preemptive.plot_ressource_view>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.plot_ressource_view
+          :summary:
+   * - :py:obj:`plot_task_gantt <discrete_optimization.rcpsp.utils_preemptive.plot_task_gantt>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.plot_task_gantt
+          :summary:
+   * - :py:obj:`compute_schedule_per_resource_individual <discrete_optimization.rcpsp.utils_preemptive.compute_schedule_per_resource_individual>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.compute_schedule_per_resource_individual
+          :summary:
+   * - :py:obj:`plot_resource_individual_gantt <discrete_optimization.rcpsp.utils_preemptive.plot_resource_individual_gantt>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.plot_resource_individual_gantt
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.utils_preemptive.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.utils_preemptive.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.logger
+
+.. py:function:: compute_resource_consumption(rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, list_resources: list[typing.Union[int, str]] = None, future_view=True)
+   :canonical: discrete_optimization.rcpsp.utils_preemptive.compute_resource_consumption
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.compute_resource_consumption
+
+.. py:function:: compute_nice_resource_consumption(rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, list_resources: list[typing.Union[int, str]] = None)
+   :canonical: discrete_optimization.rcpsp.utils_preemptive.compute_nice_resource_consumption
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.compute_nice_resource_consumption
+
+.. py:function:: plot_ressource_view(rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, list_resource: list[typing.Union[int, str]] = None, title_figure='', x_lim=None, fig=None, ax=None)
+   :canonical: discrete_optimization.rcpsp.utils_preemptive.plot_ressource_view
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.plot_ressource_view
+
+.. py:function:: plot_task_gantt(rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, fig=None, ax=None, x_lim=None, title=None, current_t=None)
+   :canonical: discrete_optimization.rcpsp.utils_preemptive.plot_task_gantt
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.plot_task_gantt
+
+.. py:function:: compute_schedule_per_resource_individual(rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, resource_types_to_consider: list[str] = None)
+   :canonical: discrete_optimization.rcpsp.utils_preemptive.compute_schedule_per_resource_individual
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.compute_schedule_per_resource_individual
+
+.. py:function:: plot_resource_individual_gantt(rcpsp_problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, resource_types_to_consider: list[str] = None, title_figure='', x_lim=None, fig=None, ax=None, current_t=None)
+   :canonical: discrete_optimization.rcpsp.utils_preemptive.plot_resource_individual_gantt
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils_preemptive.plot_resource_individual_gantt

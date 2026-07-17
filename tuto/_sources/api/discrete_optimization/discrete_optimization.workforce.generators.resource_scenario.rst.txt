@@ -1,0 +1,102 @@
+:py:mod:`discrete_optimization.workforce.generators.resource_scenario`
+======================================================================
+
+.. py:module:: discrete_optimization.workforce.generators.resource_scenario
+
+.. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ParamsRandomness <discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_starts_end_activities <discrete_optimization.workforce.generators.resource_scenario.compute_starts_end_activities>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.compute_starts_end_activities
+          :summary:
+   * - :py:obj:`compute_available_teams_per_activities_alloc_problem <discrete_optimization.workforce.generators.resource_scenario.compute_available_teams_per_activities_alloc_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.compute_available_teams_per_activities_alloc_problem
+          :summary:
+   * - :py:obj:`update_allocation_constraint <discrete_optimization.workforce.generators.resource_scenario.update_allocation_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.update_allocation_constraint
+          :summary:
+   * - :py:obj:`create_scheduling_problem_several_resource_dropping <discrete_optimization.workforce.generators.resource_scenario.create_scheduling_problem_several_resource_dropping>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.create_scheduling_problem_several_resource_dropping
+          :summary:
+   * - :py:obj:`generate_resource_disruption_scenario_from <discrete_optimization.workforce.generators.resource_scenario.generate_resource_disruption_scenario_from>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.generate_resource_disruption_scenario_from
+          :summary:
+   * - :py:obj:`generate_allocation_disruption <discrete_optimization.workforce.generators.resource_scenario.generate_allocation_disruption>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.generate_allocation_disruption
+          :summary:
+   * - :py:obj:`generate_scheduling_disruption <discrete_optimization.workforce.generators.resource_scenario.generate_scheduling_disruption>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.generate_scheduling_disruption
+          :summary:
+
+API
+~~~
+
+.. py:class:: ParamsRandomness(seed: int = 42, lower_nb_disruption: int = 1, upper_nb_disruption: int = 10, lower_nb_teams: int = 1, upper_nb_teams: int = 4, lower_time: int = 0, upper_time: int = 480, duration_discrete_distribution: tuple[list, list] = None)
+   :canonical: discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness.__init__
+
+   .. py:method:: generate_list(solution: typing.Union[discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution])
+      :canonical: discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness.generate_list
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness.generate_list
+
+.. py:function:: compute_starts_end_activities(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem)
+   :canonical: discrete_optimization.workforce.generators.resource_scenario.compute_starts_end_activities
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.compute_starts_end_activities
+
+.. py:function:: compute_available_teams_per_activities_alloc_problem(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, starts: numpy.ndarray, ends: numpy.ndarray, calendars_team: dict[typing.Hashable, numpy.ndarray])
+   :canonical: discrete_optimization.workforce.generators.resource_scenario.compute_available_teams_per_activities_alloc_problem
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.compute_available_teams_per_activities_alloc_problem
+
+.. py:function:: update_allocation_constraint(starts: numpy.ndarray, ends: numpy.ndarray, problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, calendars_team: dict[typing.Hashable, numpy.ndarray])
+   :canonical: discrete_optimization.workforce.generators.resource_scenario.update_allocation_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.update_allocation_constraint
+
+.. py:function:: create_scheduling_problem_several_resource_dropping(allocation_problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, scheduling_problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, list_drop_resource: list[tuple[int, int, int]], base_solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution)
+   :canonical: discrete_optimization.workforce.generators.resource_scenario.create_scheduling_problem_several_resource_dropping
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.create_scheduling_problem_several_resource_dropping
+
+.. py:function:: generate_resource_disruption_scenario_from(original_allocation_problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, original_scheduling_problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, original_solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, list_drop_resource: typing.Optional[list[tuple[int, int, int]]] = None, params_randomness: typing.Optional[discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness] = None)
+   :canonical: discrete_optimization.workforce.generators.resource_scenario.generate_resource_disruption_scenario_from
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.generate_resource_disruption_scenario_from
+
+.. py:function:: generate_allocation_disruption(original_allocation_problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, original_solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, list_drop_resource: typing.Optional[list[tuple[int, int, int]]] = None, params_randomness: typing.Optional[discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness] = None)
+   :canonical: discrete_optimization.workforce.generators.resource_scenario.generate_allocation_disruption
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.generate_allocation_disruption
+
+.. py:function:: generate_scheduling_disruption(original_scheduling_problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, original_solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, list_drop_resource: typing.Optional[list[tuple[int, int, int]]] = None, params_randomness: typing.Optional[discrete_optimization.workforce.generators.resource_scenario.ParamsRandomness] = None)
+   :canonical: discrete_optimization.workforce.generators.resource_scenario.generate_scheduling_disruption
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.generators.resource_scenario.generate_scheduling_disruption

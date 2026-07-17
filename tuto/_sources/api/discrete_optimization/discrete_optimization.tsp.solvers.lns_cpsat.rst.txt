@@ -1,0 +1,45 @@
+:py:mod:`discrete_optimization.tsp.solvers.lns_cpsat`
+=====================================================
+
+.. py:module:: discrete_optimization.tsp.solvers.lns_cpsat
+
+.. autodoc2-docstring:: discrete_optimization.tsp.solvers.lns_cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TspConstraintHandler <discrete_optimization.tsp.solvers.lns_cpsat.TspConstraintHandler>`
+     -
+   * - :py:obj:`SubpathTspConstraintHandler <discrete_optimization.tsp.solvers.lns_cpsat.SubpathTspConstraintHandler>`
+     -
+
+API
+~~~
+
+.. py:class:: TspConstraintHandler(problem: discrete_optimization.tsp.problem.TspProblem, fraction_segment_to_fix: float = 0.9)
+   :canonical: discrete_optimization.tsp.solvers.lns_cpsat.TspConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.tsp.solvers.lns_cpsat.TspConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lns_cpsat.TspConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: SubpathTspConstraintHandler(problem: discrete_optimization.tsp.problem.TspProblem, fraction_segment_to_fix: float = 0.9)
+   :canonical: discrete_optimization.tsp.solvers.lns_cpsat.SubpathTspConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.tsp.solvers.lns_cpsat.SubpathTspConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lns_cpsat.SubpathTspConstraintHandler.adding_constraint_from_results_store

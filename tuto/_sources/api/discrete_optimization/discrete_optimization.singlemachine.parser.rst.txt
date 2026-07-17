@@ -1,0 +1,45 @@
+:py:mod:`discrete_optimization.singlemachine.parser`
+====================================================
+
+.. py:module:: discrete_optimization.singlemachine.parser
+
+.. autodoc2-docstring:: discrete_optimization.singlemachine.parser
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_data_available <discrete_optimization.singlemachine.parser.get_data_available>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.parser.get_data_available
+          :summary:
+   * - :py:obj:`parse_file <discrete_optimization.singlemachine.parser.parse_file>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.parser.parse_file
+          :summary:
+   * - :py:obj:`parse_wt_content <discrete_optimization.singlemachine.parser.parse_wt_content>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.parser.parse_wt_content
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_data_available(data_folder: typing.Optional[str] = None, data_home: typing.Optional[str] = None) -> list[str]
+   :canonical: discrete_optimization.singlemachine.parser.get_data_available
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.parser.get_data_available
+
+.. py:function:: parse_file(path: str, num_jobs: int = None)
+   :canonical: discrete_optimization.singlemachine.parser.parse_file
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.parser.parse_file
+
+.. py:function:: parse_wt_content(file_content: str, num_jobs: int) -> list[discrete_optimization.singlemachine.problem.WeightedTardinessProblem]
+   :canonical: discrete_optimization.singlemachine.parser.parse_wt_content
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.parser.parse_wt_content

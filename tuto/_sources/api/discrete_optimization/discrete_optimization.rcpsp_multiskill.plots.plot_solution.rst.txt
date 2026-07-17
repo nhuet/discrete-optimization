@@ -1,0 +1,61 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.plots.plot_solution`
+====================================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.plots.plot_solution
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_schedule_per_resource_individual_preemptive <discrete_optimization.rcpsp_multiskill.plots.plot_solution.compute_schedule_per_resource_individual_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.compute_schedule_per_resource_individual_preemptive
+          :summary:
+   * - :py:obj:`compute_schedule_per_resource_individual <discrete_optimization.rcpsp_multiskill.plots.plot_solution.compute_schedule_per_resource_individual>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.compute_schedule_per_resource_individual
+          :summary:
+   * - :py:obj:`plot_resource_individual_gantt <discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_resource_individual_gantt>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_resource_individual_gantt
+          :summary:
+   * - :py:obj:`plot_resource_individual_gantt_preemptive <discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_resource_individual_gantt_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_resource_individual_gantt_preemptive
+          :summary:
+   * - :py:obj:`plot_task_gantt <discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_task_gantt>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_task_gantt
+          :summary:
+
+API
+~~~
+
+.. py:function:: compute_schedule_per_resource_individual_preemptive(rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution)
+   :canonical: discrete_optimization.rcpsp_multiskill.plots.plot_solution.compute_schedule_per_resource_individual_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.compute_schedule_per_resource_individual_preemptive
+
+.. py:function:: compute_schedule_per_resource_individual(rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution)
+   :canonical: discrete_optimization.rcpsp_multiskill.plots.plot_solution.compute_schedule_per_resource_individual
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.compute_schedule_per_resource_individual
+
+.. py:function:: plot_resource_individual_gantt(rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, title_figure='', name_task=None, fig=None, ax=None, current_t=None)
+   :canonical: discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_resource_individual_gantt
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_resource_individual_gantt
+
+.. py:function:: plot_resource_individual_gantt_preemptive(rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution, title_figure='', name_task=None, subtasks=None, fig=None, ax=None, current_t=None)
+   :canonical: discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_resource_individual_gantt_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_resource_individual_gantt_preemptive
+
+.. py:function:: plot_task_gantt(rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, subtasks=None, fig=None, ax=None, x_lim=None, title=None, current_t=None)
+   :canonical: discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_task_gantt
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots.plot_solution.plot_task_gantt

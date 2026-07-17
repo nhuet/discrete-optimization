@@ -1,0 +1,60 @@
+:py:mod:`discrete_optimization.generic_tools.callbacks.optuna`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tools.callbacks.optuna
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.optuna
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OptunaCallback <discrete_optimization.generic_tools.callbacks.optuna.OptunaCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.optuna.OptunaCallback
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.callbacks.optuna.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.optuna.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.callbacks.optuna.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.optuna.logger
+
+.. py:class:: OptunaCallback(trial: optuna.trial.Trial, optuna_report_nb_steps: int = 1, starting_time: typing.Optional[float] = None, elapsed_time_attr: str = 'elapsed_time', report_time: bool = False, report_time_unit: float = 1.0, pruning: bool = True, **kwargs)
+   :canonical: discrete_optimization.generic_tools.callbacks.optuna.OptunaCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.optuna.OptunaCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.optuna.OptunaCallback.__init__
+
+   .. py:method:: on_solve_start(solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.optuna.OptunaCallback.on_solve_start
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.optuna.OptunaCallback.on_step_end
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.optuna.OptunaCallback.on_step_end

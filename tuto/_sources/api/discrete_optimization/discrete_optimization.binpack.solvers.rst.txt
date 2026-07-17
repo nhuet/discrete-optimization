@@ -1,0 +1,20 @@
+:py:mod:`discrete_optimization.binpack.solvers`
+===============================================
+
+.. py:module:: discrete_optimization.binpack.solvers
+
+.. autodoc2-docstring:: discrete_optimization.binpack.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.binpack.solvers.lp
+   discrete_optimization.binpack.solvers.cpsat
+   discrete_optimization.binpack.solvers.dp
+   discrete_optimization.binpack.solvers.greedy
+   discrete_optimization.binpack.solvers.toulbar

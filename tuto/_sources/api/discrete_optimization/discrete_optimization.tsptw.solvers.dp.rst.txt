@@ -1,0 +1,56 @@
+:py:mod:`discrete_optimization.tsptw.solvers.dp`
+================================================
+
+.. py:module:: discrete_optimization.tsptw.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.tsptw.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpTspTwSolver <discrete_optimization.tsptw.solvers.dp.DpTspTwSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: DpTspTwSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver.problem
+      :type: discrete_optimization.tsptw.problem.TSPTWProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver.problem
+
+   .. py:attribute:: transitions
+      :canonical: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver.transitions
+      :type: dict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver.transitions
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver.init_model
+
+   .. py:method:: retrieve_solution(sol: didppy.Solution) -> discrete_optimization.tsptw.problem.TSPTWSolution
+      :canonical: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.dp.DpTspTwSolver.retrieve_solution

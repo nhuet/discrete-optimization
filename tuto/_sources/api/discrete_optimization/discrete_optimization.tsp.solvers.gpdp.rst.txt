@@ -1,0 +1,37 @@
+:py:mod:`discrete_optimization.tsp.solvers.gpdp`
+================================================
+
+.. py:module:: discrete_optimization.tsp.solvers.gpdp
+
+.. autodoc2-docstring:: discrete_optimization.tsp.solvers.gpdp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GpdpBasedTspSolver <discrete_optimization.tsp.solvers.gpdp.GpdpBasedTspSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: GpdpBasedTspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.tsp.solvers.gpdp.GpdpBasedTspSolver
+
+   Bases: :py:obj:`discrete_optimization.tsp.solvers.TspSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.tsp.solvers.gpdp.GpdpBasedTspSolver.init_model
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.tsp.solvers.gpdp.GpdpBasedTspSolver.set_warm_start
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, time_limit: typing.Optional[float] = 100.0, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.tsp.solvers.gpdp.GpdpBasedTspSolver.solve

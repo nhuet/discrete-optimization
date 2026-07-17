@@ -1,0 +1,84 @@
+:py:mod:`discrete_optimization.jsp.solvers.tempo`
+=================================================
+
+.. py:module:: discrete_optimization.jsp.solvers.tempo
+
+.. autodoc2-docstring:: discrete_optimization.jsp.solvers.tempo
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TempoJspScheduler <discrete_optimization.jsp.solvers.tempo.TempoJspScheduler>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`from_jsp_to_jsplib <discrete_optimization.jsp.solvers.tempo.from_jsp_to_jsplib>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.solvers.tempo.from_jsp_to_jsplib
+          :summary:
+   * - :py:obj:`parse_output <discrete_optimization.jsp.solvers.tempo.parse_output>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.solvers.tempo.parse_output
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.jsp.solvers.tempo.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.solvers.tempo.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.jsp.solvers.tempo.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.solvers.tempo.logger
+
+.. py:function:: from_jsp_to_jsplib(problem: discrete_optimization.jsp.problem.JobShopProblem) -> str
+   :canonical: discrete_optimization.jsp.solvers.tempo.from_jsp_to_jsplib
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.solvers.tempo.from_jsp_to_jsplib
+
+.. py:function:: parse_output(solver_output: str, problem: discrete_optimization.jsp.problem.JobShopProblem) -> discrete_optimization.jsp.problem.JobShopSolution
+   :canonical: discrete_optimization.jsp.solvers.tempo.parse_output
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.solvers.tempo.parse_output
+
+.. py:class:: TempoJspScheduler(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, input_format: typing.Optional[discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum] = None, path_to_tempo_executable: typing.Optional[str] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.jsp.solvers.tempo.TempoJspScheduler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.jsp.solvers.tempo.TempoJspScheduler.problem
+      :type: discrete_optimization.jsp.problem.JobShopProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.solvers.tempo.TempoJspScheduler.problem
+
+   .. py:method:: retrieve_solution(path_to_output: str, process_stdout: str) -> discrete_optimization.jsp.problem.JobShopSolution
+      :canonical: discrete_optimization.jsp.solvers.tempo.TempoJspScheduler.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.solvers.tempo.TempoJspScheduler.retrieve_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.jsp.solvers.tempo.TempoJspScheduler.init_model

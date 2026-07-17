@@ -1,0 +1,70 @@
+:py:mod:`discrete_optimization.generic_tools.ls.hill_climber`
+=============================================================
+
+.. py:module:: discrete_optimization.generic_tools.ls.hill_climber
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ls.hill_climber
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`HillClimber <discrete_optimization.generic_tools.ls.hill_climber.HillClimber>`
+     -
+   * - :py:obj:`HillClimberPareto <discrete_optimization.generic_tools.ls.hill_climber.HillClimberPareto>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.ls.hill_climber.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.hill_climber.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.ls.hill_climber.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.hill_climber.logger
+
+.. py:class:: HillClimber(problem: discrete_optimization.generic_tools.do_problem.Problem, mutator: discrete_optimization.generic_tools.do_mutation.Mutation, restart_handler: discrete_optimization.generic_tools.ls.local_search.RestartHandler, mode_mutation: discrete_optimization.generic_tools.ls.local_search.ModeMutation, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, store_solution: bool = False, **kwargs)
+   :canonical: discrete_optimization.generic_tools.ls.hill_climber.HillClimber
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: initial_solution
+      :canonical: discrete_optimization.generic_tools.ls.hill_climber.HillClimber.initial_solution
+      :type: typing.Optional[discrete_optimization.generic_tools.do_problem.Solution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.hill_climber.HillClimber.initial_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.ls.hill_climber.HillClimber.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.hill_climber.HillClimber.set_warm_start
+
+   .. py:method:: solve(nb_iteration_max: int, initial_variable: typing.Optional[discrete_optimization.generic_tools.do_problem.Solution] = None, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.ls.hill_climber.HillClimber.solve
+
+.. py:class:: HillClimberPareto(problem: discrete_optimization.generic_tools.do_problem.Problem, mutator: discrete_optimization.generic_tools.do_mutation.Mutation, restart_handler: discrete_optimization.generic_tools.ls.local_search.RestartHandler, mode_mutation: discrete_optimization.generic_tools.ls.local_search.ModeMutation, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, store_solution: bool = False)
+   :canonical: discrete_optimization.generic_tools.ls.hill_climber.HillClimberPareto
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.ls.hill_climber.HillClimber`
+
+   .. py:method:: solve(nb_iteration_max: int, initial_variable: typing.Optional[discrete_optimization.generic_tools.do_problem.Solution] = None, update_iteration_pareto: int = 1000, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront
+      :canonical: discrete_optimization.generic_tools.ls.hill_climber.HillClimberPareto.solve

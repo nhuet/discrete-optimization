@@ -1,0 +1,87 @@
+:py:mod:`discrete_optimization.maximum_independent_set.parser`
+==============================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.parser
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DimacsPrefixes <discrete_optimization.maximum_independent_set.parser.DimacsPrefixes>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_data_available <discrete_optimization.maximum_independent_set.parser.get_data_available>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser.get_data_available
+          :summary:
+   * - :py:obj:`dimacs_parser <discrete_optimization.maximum_independent_set.parser.dimacs_parser>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser.dimacs_parser
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`dimacs_parser_nx <discrete_optimization.maximum_independent_set.parser.dimacs_parser_nx>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser.dimacs_parser_nx
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_data_available(data_folder: typing.Optional[str] = None, data_home: typing.Optional[str] = None) -> list[str]
+   :canonical: discrete_optimization.maximum_independent_set.parser.get_data_available
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser.get_data_available
+
+.. py:class:: DimacsPrefixes
+   :canonical: discrete_optimization.maximum_independent_set.parser.DimacsPrefixes
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: PROBLEM
+      :canonical: discrete_optimization.maximum_independent_set.parser.DimacsPrefixes.PROBLEM
+      :value: 'p'
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser.DimacsPrefixes.PROBLEM
+
+   .. py:attribute:: COMMENT
+      :canonical: discrete_optimization.maximum_independent_set.parser.DimacsPrefixes.COMMENT
+      :value: 'c'
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser.DimacsPrefixes.COMMENT
+
+   .. py:attribute:: EDGE
+      :canonical: discrete_optimization.maximum_independent_set.parser.DimacsPrefixes.EDGE
+      :value: 'e'
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser.DimacsPrefixes.EDGE
+
+.. py:function:: dimacs_parser(filename: str)
+   :canonical: discrete_optimization.maximum_independent_set.parser.dimacs_parser
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser.dimacs_parser
+
+.. py:data:: dimacs_parser_nx
+   :canonical: discrete_optimization.maximum_independent_set.parser.dimacs_parser_nx
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.parser.dimacs_parser_nx

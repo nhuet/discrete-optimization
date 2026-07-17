@@ -1,0 +1,30 @@
+:py:mod:`discrete_optimization.generic_tasks_tools`
+===================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.generic_tasks_tools.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tasks_tools.scheduling
+   discrete_optimization.generic_tasks_tools.multimode
+   discrete_optimization.generic_tasks_tools.enums
+   discrete_optimization.generic_tasks_tools.precedence
+   discrete_optimization.generic_tasks_tools.allocation
+   discrete_optimization.generic_tasks_tools.base

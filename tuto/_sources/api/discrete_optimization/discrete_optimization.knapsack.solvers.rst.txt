@@ -1,0 +1,29 @@
+:py:mod:`discrete_optimization.knapsack.solvers`
+================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.knapsack.solvers.decomposition
+   discrete_optimization.knapsack.solvers.cp_mzn
+   discrete_optimization.knapsack.solvers.lns_lp
+   discrete_optimization.knapsack.solvers.asp
+   discrete_optimization.knapsack.solvers.lp
+   discrete_optimization.knapsack.solvers.cpmpy
+   discrete_optimization.knapsack.solvers.cpsat
+   discrete_optimization.knapsack.solvers.dp
+   discrete_optimization.knapsack.solvers.greedy
+   discrete_optimization.knapsack.solvers.gphh
+   discrete_optimization.knapsack.solvers.toulbar
+   discrete_optimization.knapsack.solvers.knapsack_solver
+   discrete_optimization.knapsack.solvers.lns_cp
+   discrete_optimization.knapsack.solvers.quantum

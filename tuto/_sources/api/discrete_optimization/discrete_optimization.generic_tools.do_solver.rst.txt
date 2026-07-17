@@ -1,0 +1,225 @@
+:py:mod:`discrete_optimization.generic_tools.do_solver`
+=======================================================
+
+.. py:module:: discrete_optimization.generic_tools.do_solver
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`StatusSolver <discrete_optimization.generic_tools.do_solver.StatusSolver>`
+     -
+   * - :py:obj:`SolverDO <discrete_optimization.generic_tools.do_solver.SolverDO>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO
+          :summary:
+   * - :py:obj:`WarmstartMixin <discrete_optimization.generic_tools.do_solver.WarmstartMixin>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.WarmstartMixin
+          :summary:
+   * - :py:obj:`BoundsProviderMixin <discrete_optimization.generic_tools.do_solver.BoundsProviderMixin>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.BoundsProviderMixin
+          :summary:
+   * - :py:obj:`TrivialSolverFromResultStorage <discrete_optimization.generic_tools.do_solver.TrivialSolverFromResultStorage>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.TrivialSolverFromResultStorage
+          :summary:
+   * - :py:obj:`TrivialSolverFromSolution <discrete_optimization.generic_tools.do_solver.TrivialSolverFromSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.TrivialSolverFromSolution
+          :summary:
+
+API
+~~~
+
+.. py:class:: StatusSolver
+   :canonical: discrete_optimization.generic_tools.do_solver.StatusSolver
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: SATISFIED
+      :canonical: discrete_optimization.generic_tools.do_solver.StatusSolver.SATISFIED
+      :value: 'SATISFIED'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.StatusSolver.SATISFIED
+
+   .. py:attribute:: UNSATISFIABLE
+      :canonical: discrete_optimization.generic_tools.do_solver.StatusSolver.UNSATISFIABLE
+      :value: 'UNSATISFIABLE'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.StatusSolver.UNSATISFIABLE
+
+   .. py:attribute:: OPTIMAL
+      :canonical: discrete_optimization.generic_tools.do_solver.StatusSolver.OPTIMAL
+      :value: 'OPTIMAL'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.StatusSolver.OPTIMAL
+
+   .. py:attribute:: UNKNOWN
+      :canonical: discrete_optimization.generic_tools.do_solver.StatusSolver.UNKNOWN
+      :value: 'UNKNOWN'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.StatusSolver.UNKNOWN
+
+   .. py:attribute:: ERROR
+      :canonical: discrete_optimization.generic_tools.do_solver.StatusSolver.ERROR
+      :value: 'FAILED'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.StatusSolver.ERROR
+
+.. py:class:: SolverDO(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.do_solver.SolverDO
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable`, :py:obj:`abc.ABC`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.problem
+      :type: discrete_optimization.generic_tools.do_problem.Problem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.problem
+
+   .. py:attribute:: status_solver
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.status_solver
+      :type: discrete_optimization.generic_tools.do_solver.StatusSolver
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.status_solver
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.solve
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.solve
+
+   .. py:method:: create_result_storage(list_solution_fits: typing.Optional[list[tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]]] = None) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.create_result_storage
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.create_result_storage
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.init_model
+
+   .. py:method:: is_optimal() -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.is_optimal
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.is_optimal
+
+   .. py:method:: get_lexico_objectives_available() -> list[str]
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.get_lexico_objectives_available
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.get_lexico_objectives_available
+
+   .. py:method:: set_lexico_objective(obj: str) -> None
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.set_lexico_objective
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.set_lexico_objective
+
+   .. py:method:: get_lexico_objective_value(obj: str, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> float
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.get_lexico_objective_value
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.get_lexico_objective_value
+
+   .. py:method:: add_lexico_constraint(obj: str, value: float) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.add_lexico_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.add_lexico_constraint
+
+   .. py:method:: remove_constraints(constraints: collections.abc.Iterable[typing.Any]) -> None
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.remove_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.remove_constraints
+
+   .. py:method:: implements_lexico_api() -> bool
+      :canonical: discrete_optimization.generic_tools.do_solver.SolverDO.implements_lexico_api
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.SolverDO.implements_lexico_api
+
+.. py:class:: WarmstartMixin
+   :canonical: discrete_optimization.generic_tools.do_solver.WarmstartMixin
+
+   Bases: :py:obj:`abc.ABC`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.WarmstartMixin
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.do_solver.WarmstartMixin.set_warm_start
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.WarmstartMixin.set_warm_start
+
+.. py:class:: BoundsProviderMixin
+   :canonical: discrete_optimization.generic_tools.do_solver.BoundsProviderMixin
+
+   Bases: :py:obj:`abc.ABC`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.BoundsProviderMixin
+
+   .. py:method:: get_current_best_internal_objective_bound() -> typing.Optional[float]
+      :canonical: discrete_optimization.generic_tools.do_solver.BoundsProviderMixin.get_current_best_internal_objective_bound
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.BoundsProviderMixin.get_current_best_internal_objective_bound
+
+   .. py:method:: get_current_best_internal_objective_value() -> typing.Optional[float]
+      :canonical: discrete_optimization.generic_tools.do_solver.BoundsProviderMixin.get_current_best_internal_objective_value
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.BoundsProviderMixin.get_current_best_internal_objective_value
+
+   .. py:method:: get_current_absolute_gap() -> typing.Optional[float]
+      :canonical: discrete_optimization.generic_tools.do_solver.BoundsProviderMixin.get_current_absolute_gap
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.BoundsProviderMixin.get_current_absolute_gap
+
+.. py:class:: TrivialSolverFromResultStorage(problem: discrete_optimization.generic_tools.do_problem.Problem, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.do_solver.TrivialSolverFromResultStorage
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.TrivialSolverFromResultStorage
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.TrivialSolverFromResultStorage.__init__
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.do_solver.TrivialSolverFromResultStorage.solve
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.do_solver.TrivialSolverFromResultStorage.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.TrivialSolverFromResultStorage.set_warm_start
+
+.. py:class:: TrivialSolverFromSolution(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.do_solver.TrivialSolverFromSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.TrivialSolverFromSolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.TrivialSolverFromSolution.__init__
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.do_solver.TrivialSolverFromSolution.solve
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.do_solver.TrivialSolverFromSolution.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_solver.TrivialSolverFromSolution.set_warm_start

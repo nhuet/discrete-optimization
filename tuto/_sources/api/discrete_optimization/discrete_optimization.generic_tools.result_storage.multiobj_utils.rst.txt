@@ -1,0 +1,75 @@
+:py:mod:`discrete_optimization.generic_tools.result_storage.multiobj_utils`
+===========================================================================
+
+.. py:module:: discrete_optimization.generic_tools.result_storage.multiobj_utils
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.multiobj_utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TupleFitness <discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness
+          :summary:
+
+API
+~~~
+
+.. py:class:: TupleFitness(vector_fitness: numpy.ndarray, size: int)
+   :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.__init__
+
+   .. py:attribute:: vector_fitness
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.vector_fitness
+      :type: numpy.ndarray
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.vector_fitness
+
+   .. py:attribute:: size
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.size
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.size
+
+   .. py:method:: distance(other: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness) -> numpy.floating
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.distance
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.distance
+
+   .. py:method:: __eq__(other: object) -> bool
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.__eq__
+
+   .. py:method:: __le__(other: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness) -> bool
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.__le__
+
+   .. py:method:: __ge__(other: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness) -> bool
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.__ge__
+
+   .. py:method:: __lt__(other: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness) -> bool
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.__lt__
+
+   .. py:method:: __gt__(other: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness) -> bool
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.__gt__
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.__str__
+
+   .. py:method:: __mul__(other: float) -> discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness
+      :canonical: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.__mul__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness.__mul__

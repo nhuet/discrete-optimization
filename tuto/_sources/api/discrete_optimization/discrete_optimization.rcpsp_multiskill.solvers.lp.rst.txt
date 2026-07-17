@@ -1,0 +1,64 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.solvers.lp`
+===========================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.solvers.lp
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MathOptMultiskillRcpspSolver <discrete_optimization.rcpsp_multiskill.solvers.lp.MathOptMultiskillRcpspSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp_multiskill.solvers.lp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.lp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lp.logger
+
+.. py:class:: MathOptMultiskillRcpspSolver(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, **kwargs)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.lp.MathOptMultiskillRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.lp.MathOptMultiskillRcpspSolver.problem
+      :type: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lp.MathOptMultiskillRcpspSolver.problem
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.lp.MathOptMultiskillRcpspSolver.init_model
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.lp.MathOptMultiskillRcpspSolver.retrieve_current_solution
+
+   .. py:method:: solve(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[float] = 30.0, **args) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.lp.MathOptMultiskillRcpspSolver.solve
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution) -> dict[ortools.math_opt.python.mathopt.Variable, int]
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.lp.MathOptMultiskillRcpspSolver.convert_to_variable_values

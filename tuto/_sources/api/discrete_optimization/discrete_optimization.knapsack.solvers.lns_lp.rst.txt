@@ -1,0 +1,70 @@
+:py:mod:`discrete_optimization.knapsack.solvers.lns_lp`
+=======================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.lns_lp
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`InitialKnapsackMethod <discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackMethod>`
+     -
+   * - :py:obj:`InitialKnapsackSolution <discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackSolution>`
+     -
+   * - :py:obj:`MathOptKnapsackConstraintHandler <discrete_optimization.knapsack.solvers.lns_lp.MathOptKnapsackConstraintHandler>`
+     -
+
+API
+~~~
+
+.. py:class:: InitialKnapsackMethod
+   :canonical: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackMethod
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: DUMMY
+      :canonical: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackMethod.DUMMY
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackMethod.DUMMY
+
+   .. py:attribute:: GREEDY
+      :canonical: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackMethod.GREEDY
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackMethod.GREEDY
+
+.. py:class:: InitialKnapsackSolution(problem: discrete_optimization.knapsack.problem.KnapsackProblem, initial_method: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackMethod, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction)
+   :canonical: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.InitialSolution`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackSolution.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackSolution.hyperparameters
+
+   .. py:method:: get_starting_solution() -> discrete_optimization.knapsack.solvers.greedy.ResultStorage
+      :canonical: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackSolution.get_starting_solution
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_lp.InitialKnapsackSolution.get_starting_solution
+
+.. py:class:: MathOptKnapsackConstraintHandler(problem: discrete_optimization.knapsack.problem.KnapsackProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.knapsack.solvers.lns_lp.MathOptKnapsackConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.knapsack.solvers.lp.MathOptKnapsackSolver, result_storage: discrete_optimization.knapsack.solvers.greedy.ResultStorage, result_storage_last_iteration: discrete_optimization.knapsack.solvers.greedy.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.knapsack.solvers.lns_lp.MathOptKnapsackConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_lp.MathOptKnapsackConstraintHandler.adding_constraint_from_results_store

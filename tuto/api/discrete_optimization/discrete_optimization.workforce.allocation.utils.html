@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>discrete_optimization.workforce.allocation.utils &mdash; discrete-optimization tuto-howto documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2030f8cb"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/versions.js?v=dd1a30db"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            discrete-optimization
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto_new_problem_implementation/tutorial_new_problem_or_solver.html">How to write its own problem/solver class?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">discrete-optimization</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.workforce.allocation.utils</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-discrete_optimization.workforce.allocation.utils">
+<span id="discrete-optimization-workforce-allocation-utils"></span><h1><a class="reference internal" href="#module-discrete_optimization.workforce.allocation.utils" title="discrete_optimization.workforce.allocation.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.workforce.allocation.utils</span></code></a><a class="headerlink" href="#module-discrete_optimization.workforce.allocation.utils" title="Link to this heading"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.subgraph_teams" title="discrete_optimization.workforce.allocation.utils.subgraph_teams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subgraph_teams</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.subgraph_activities" title="discrete_optimization.workforce.allocation.utils.subgraph_activities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subgraph_activities</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.subgraph_bipartite_activities" title="discrete_optimization.workforce.allocation.utils.subgraph_bipartite_activities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subgraph_bipartite_activities</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.allocation_additional_constraint_subset_tasks" title="discrete_optimization.workforce.allocation.utils.allocation_additional_constraint_subset_tasks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allocation_additional_constraint_subset_tasks</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.create_subproblem_allocation" title="discrete_optimization.workforce.allocation.utils.create_subproblem_allocation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_subproblem_allocation</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.additional_constraint_subset_teams" title="discrete_optimization.workforce.allocation.utils.additional_constraint_subset_teams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">additional_constraint_subset_teams</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.cut_number_of_team" title="discrete_optimization.workforce.allocation.utils.cut_number_of_team"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cut_number_of_team</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.compute_equivalent_teams" title="discrete_optimization.workforce.allocation.utils.compute_equivalent_teams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_equivalent_teams</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_start_time" title="discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_start_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_overlapping_activities_on_start_time</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_end_time" title="discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_end_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_overlapping_activities_on_end_time</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.compute_active_activities_on_time" title="discrete_optimization.workforce.allocation.utils.compute_active_activities_on_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_active_activities_on_time</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.compute_all_overlapping" title="discrete_optimization.workforce.allocation.utils.compute_all_overlapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_all_overlapping</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.compute_changes_between_solution_alloc" title="discrete_optimization.workforce.allocation.utils.compute_changes_between_solution_alloc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_changes_between_solution_alloc</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.plot_allocation_solution" title="discrete_optimization.workforce.allocation.utils.plot_allocation_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_allocation_solution</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.allocation.utils.modify_graph" title="discrete_optimization.workforce.allocation.utils.modify_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modify_graph</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.subgraph_teams">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">subgraph_teams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_allocation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.GraphBipartite" title="discrete_optimization.workforce.allocation.problem.GraphBipartite"><span class="pre">discrete_optimization.workforce.allocation.problem.GraphBipartite</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_teams_keep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_teams_keep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.GraphBipartite" title="discrete_optimization.workforce.allocation.problem.GraphBipartite"><span class="pre">discrete_optimization.workforce.allocation.problem.GraphBipartite</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#subgraph_teams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.subgraph_teams" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.subgraph_activities">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">subgraph_activities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.generic_tools.graph_api.html#discrete_optimization.generic_tools.graph_api.Graph" title="discrete_optimization.generic_tools.graph_api.Graph"><span class="pre">discrete_optimization.generic_tools.graph_api.Graph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_tasks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.generic_tools.graph_api.html#discrete_optimization.generic_tools.graph_api.Graph" title="discrete_optimization.generic_tools.graph_api.Graph"><span class="pre">discrete_optimization.generic_tools.graph_api.Graph</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#subgraph_activities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.subgraph_activities" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.subgraph_bipartite_activities">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">subgraph_bipartite_activities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_allocation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.GraphBipartite" title="discrete_optimization.workforce.allocation.problem.GraphBipartite"><span class="pre">discrete_optimization.workforce.allocation.problem.GraphBipartite</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_tasks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.generic_tools.graph_api.html#discrete_optimization.generic_tools.graph_api.Graph" title="discrete_optimization.generic_tools.graph_api.Graph"><span class="pre">discrete_optimization.generic_tools.graph_api.Graph</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#subgraph_bipartite_activities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.subgraph_bipartite_activities" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.allocation_additional_constraint_subset_tasks">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">allocation_additional_constraint_subset_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allocation_additional_constraint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint" title="discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint"><span class="pre">discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_tasks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#allocation_additional_constraint_subset_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.allocation_additional_constraint_subset_tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.create_subproblem_allocation">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">create_subproblem_allocation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_tasks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#create_subproblem_allocation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.create_subproblem_allocation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.additional_constraint_subset_teams">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">additional_constraint_subset_teams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allocation_additional_constraint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint" title="discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint"><span class="pre">discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_teams_keep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#additional_constraint_subset_teams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.additional_constraint_subset_teams" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.cut_number_of_team">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">cut_number_of_team</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_allocation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_teams_keep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_teams_keep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#cut_number_of_team"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.cut_number_of_team" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.compute_equivalent_teams">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">compute_equivalent_teams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_allocation_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#compute_equivalent_teams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.compute_equivalent_teams" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_start_time">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">compute_overlapping_activities_on_start_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_allocation_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">activity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#compute_overlapping_activities_on_start_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_start_time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_end_time">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">compute_overlapping_activities_on_end_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_allocation_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">activity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#compute_overlapping_activities_on_end_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_end_time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.compute_active_activities_on_time">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">compute_active_activities_on_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_allocation_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pandas.Timestamp</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'left'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#compute_active_activities_on_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.compute_active_activities_on_time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.compute_all_overlapping">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">compute_all_overlapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_allocation_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">frozenset</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#compute_all_overlapping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.compute_all_overlapping" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.compute_changes_between_solution_alloc">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">compute_changes_between_solution_alloc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solution_a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationSolution" title="discrete_optimization.workforce.allocation.problem.TeamAllocationSolution"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationSolution" title="discrete_optimization.workforce.allocation.problem.TeamAllocationSolution"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem_a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem_b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#compute_changes_between_solution_alloc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.compute_changes_between_solution_alloc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.plot_allocation_solution">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">plot_allocation_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationSolution" title="discrete_optimization.workforce.allocation.problem.TeamAllocationSolution"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_team_to_other_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_color_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_breaks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_break</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_unallocated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_unallocated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Unset'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.Timestamp</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showlegend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#plot_allocation_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.plot_allocation_solution" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.allocation.utils.modify_graph">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.allocation.utils.</span></span><span class="sig-name descname"><span class="pre">modify_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/allocation/utils.html#modify_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.allocation.utils.modify_graph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Airbus.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: tuto-howto
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl id="docs-versions">
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

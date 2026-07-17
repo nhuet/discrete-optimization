@@ -1,0 +1,87 @@
+:py:mod:`discrete_optimization.singlemachine.solvers.cpmpy_solver`
+==================================================================
+
+.. py:module:: discrete_optimization.singlemachine.solvers.cpmpy_solver
+
+.. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`SingleMachineModel <discrete_optimization.singlemachine.solvers.cpmpy_solver.SingleMachineModel>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.SingleMachineModel
+          :summary:
+   * - :py:obj:`CpmpySingleMachineSolver <discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver
+          :summary:
+
+API
+~~~
+
+.. py:class:: SingleMachineModel
+   :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.SingleMachineModel
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.SingleMachineModel
+
+   .. py:attribute:: CP
+      :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.SingleMachineModel.CP
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.SingleMachineModel.CP
+
+   .. py:attribute:: LP
+      :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.SingleMachineModel.LP
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.SingleMachineModel.LP
+
+.. py:class:: CpmpySingleMachineSolver(problem: discrete_optimization.singlemachine.problem.WeightedTardinessProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver`
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver.__init__
+
+   .. py:method:: init_model(model_type: discrete_optimization.singlemachine.solvers.cpmpy_solver.SingleMachineModel = SingleMachineModel.CP, add_impossible_constraints: bool = False, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver.init_model
+
+   .. py:method:: _init_cp_model() -> None
+      :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver._init_cp_model
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver._init_cp_model
+
+   .. py:method:: _init_lp_model() -> None
+      :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver._init_lp_model
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver._init_lp_model
+
+   .. py:method:: retrieve_current_solution() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver.retrieve_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver.retrieve_current_solution
+
+   .. py:method:: get_soft_meta_constraints() -> typing.List[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver.get_soft_meta_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver.get_soft_meta_constraints
+
+   .. py:method:: get_hard_meta_constraints() -> typing.List[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver.get_hard_meta_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.cpmpy_solver.CpmpySingleMachineSolver.get_hard_meta_constraints

@@ -1,0 +1,322 @@
+:py:mod:`discrete_optimization.generic_tools.study.experiment`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tools.study.experiment
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`SolverConfig <discrete_optimization.generic_tools.study.experiment.SolverConfig>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverConfig
+          :summary:
+   * - :py:obj:`SolverJsonableConfig <discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig
+          :summary:
+   * - :py:obj:`Experiment <discrete_optimization.generic_tools.study.experiment.Experiment>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment
+          :summary:
+   * - :py:obj:`Study <discrete_optimization.generic_tools.study.experiment.Study>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Study
+          :summary:
+   * - :py:obj:`DoJSONEncoder <discrete_optimization.generic_tools.study.experiment.DoJSONEncoder>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ID <discrete_optimization.generic_tools.study.experiment.ID>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.ID
+          :summary:
+   * - :py:obj:`SOLVER <discrete_optimization.generic_tools.study.experiment.SOLVER>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SOLVER
+          :summary:
+   * - :py:obj:`PARAMETERS <discrete_optimization.generic_tools.study.experiment.PARAMETERS>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.PARAMETERS
+          :summary:
+   * - :py:obj:`NAME <discrete_optimization.generic_tools.study.experiment.NAME>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.NAME
+          :summary:
+   * - :py:obj:`STATUS <discrete_optimization.generic_tools.study.experiment.STATUS>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.STATUS
+          :summary:
+   * - :py:obj:`INSTANCE <discrete_optimization.generic_tools.study.experiment.INSTANCE>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.INSTANCE
+          :summary:
+   * - :py:obj:`METRICS <discrete_optimization.generic_tools.study.experiment.METRICS>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.METRICS
+          :summary:
+   * - :py:obj:`CONFIG_PREFIX <discrete_optimization.generic_tools.study.experiment.CONFIG_PREFIX>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.CONFIG_PREFIX
+          :summary:
+   * - :py:obj:`REASON <discrete_optimization.generic_tools.study.experiment.REASON>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.REASON
+          :summary:
+   * - :py:obj:`CONFIG <discrete_optimization.generic_tools.study.experiment.CONFIG>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.CONFIG
+          :summary:
+   * - :py:obj:`ConfigDict <discrete_optimization.generic_tools.study.experiment.ConfigDict>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.ConfigDict
+          :summary:
+
+API
+~~~
+
+.. py:data:: ID
+   :canonical: discrete_optimization.generic_tools.study.experiment.ID
+   :value: 'id'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.ID
+
+.. py:data:: SOLVER
+   :canonical: discrete_optimization.generic_tools.study.experiment.SOLVER
+   :value: 'solver'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SOLVER
+
+.. py:data:: PARAMETERS
+   :canonical: discrete_optimization.generic_tools.study.experiment.PARAMETERS
+   :value: 'parameters'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.PARAMETERS
+
+.. py:data:: NAME
+   :canonical: discrete_optimization.generic_tools.study.experiment.NAME
+   :value: 'name'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.NAME
+
+.. py:data:: STATUS
+   :canonical: discrete_optimization.generic_tools.study.experiment.STATUS
+   :value: 'status'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.STATUS
+
+.. py:data:: INSTANCE
+   :canonical: discrete_optimization.generic_tools.study.experiment.INSTANCE
+   :value: 'instance'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.INSTANCE
+
+.. py:data:: METRICS
+   :canonical: discrete_optimization.generic_tools.study.experiment.METRICS
+   :value: 'metrics'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.METRICS
+
+.. py:data:: CONFIG_PREFIX
+   :canonical: discrete_optimization.generic_tools.study.experiment.CONFIG_PREFIX
+   :value: 'config_'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.CONFIG_PREFIX
+
+.. py:data:: REASON
+   :canonical: discrete_optimization.generic_tools.study.experiment.REASON
+   :value: 'reason'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.REASON
+
+.. py:data:: CONFIG
+   :canonical: discrete_optimization.generic_tools.study.experiment.CONFIG
+   :value: 'config'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.CONFIG
+
+.. py:data:: ConfigDict
+   :canonical: discrete_optimization.generic_tools.study.experiment.ConfigDict
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.ConfigDict
+
+.. py:class:: SolverConfig
+   :canonical: discrete_optimization.generic_tools.study.experiment.SolverConfig
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverConfig
+
+   .. py:attribute:: cls
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverConfig.cls
+      :type: type[discrete_optimization.generic_tools.do_solver.SolverDO]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverConfig.cls
+
+   .. py:attribute:: kwargs
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverConfig.kwargs
+      :type: dict[str, typing.Any]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverConfig.kwargs
+
+.. py:class:: SolverJsonableConfig
+   :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig
+
+   .. py:attribute:: solver
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.solver
+      :type: str
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.solver
+
+   .. py:attribute:: parameters
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.parameters
+      :type: discrete_optimization.generic_tools.study.experiment.ConfigDict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.parameters
+
+   .. py:attribute:: name
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.name
+      :type: typing.Optional[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.name
+
+   .. py:method:: get_json_parameters() -> str
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.get_json_parameters
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.get_json_parameters
+
+   .. py:method:: get_record() -> dict[str, typing.Optional[str]]
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.get_record
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.get_record
+
+   .. py:method:: as_nested_dict() -> discrete_optimization.generic_tools.study.experiment.ConfigDict
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.as_nested_dict
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.as_nested_dict
+
+   .. py:method:: from_xp_metadata_record(record)
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.from_xp_metadata_record
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.from_xp_metadata_record
+
+   .. py:method:: from_record(record)
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.from_record
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.from_record
+
+   .. py:method:: from_solver_config(config: discrete_optimization.generic_tools.study.experiment.SolverConfig, name: typing.Optional[str] = None)
+      :canonical: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.from_solver_config
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig.from_solver_config
+
+.. py:class:: Experiment
+   :canonical: discrete_optimization.generic_tools.study.experiment.Experiment
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment
+
+   .. py:attribute:: xp_id
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.xp_id
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.xp_id
+
+   .. py:attribute:: instance
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.instance
+      :type: str
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.instance
+
+   .. py:attribute:: status
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.status
+      :type: str
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.status
+
+   .. py:attribute:: config
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.config
+      :type: discrete_optimization.generic_tools.study.experiment.SolverJsonableConfig
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.config
+
+   .. py:attribute:: metrics
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.metrics
+      :type: pandas.DataFrame
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.metrics
+
+   .. py:attribute:: reason
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.reason
+      :type: str
+      :value: <Multiline-String>
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.reason
+
+   .. py:method:: get_metadata_as_a_record() -> dict[str, typing.Any]
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.get_metadata_as_a_record
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.get_metadata_as_a_record
+
+   .. py:method:: get_metadata_as_nested_dict() -> discrete_optimization.generic_tools.study.experiment.ConfigDict
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.get_metadata_as_nested_dict
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.get_metadata_as_nested_dict
+
+   .. py:method:: to_df()
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.to_df
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.to_df
+
+   .. py:method:: from_solver_config(xp_id: int, instance: str, status: typing.Union[str, discrete_optimization.generic_tools.do_solver.StatusSolver], solver_config: discrete_optimization.generic_tools.study.experiment.SolverConfig, metrics: pandas.DataFrame, config_name: typing.Optional[str] = None, reason: str = '')
+      :canonical: discrete_optimization.generic_tools.study.experiment.Experiment.from_solver_config
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Experiment.from_solver_config
+
+.. py:class:: Study
+   :canonical: discrete_optimization.generic_tools.study.experiment.Study
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Study
+
+   .. py:attribute:: name
+      :canonical: discrete_optimization.generic_tools.study.experiment.Study.name
+      :type: str
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Study.name
+
+   .. py:attribute:: instances
+      :canonical: discrete_optimization.generic_tools.study.experiment.Study.instances
+      :type: list[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Study.instances
+
+   .. py:attribute:: solver_configs
+      :canonical: discrete_optimization.generic_tools.study.experiment.Study.solver_configs
+      :type: list[discrete_optimization.generic_tools.study.experiment.SolverConfig]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.experiment.Study.solver_configs
+
+.. py:class:: DoJSONEncoder(*, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, sort_keys=False, indent=None, separators=None, default=None)
+   :canonical: discrete_optimization.generic_tools.study.experiment.DoJSONEncoder
+
+   Bases: :py:obj:`json.JSONEncoder`
+
+   .. py:method:: default(o)
+      :canonical: discrete_optimization.generic_tools.study.experiment.DoJSONEncoder.default

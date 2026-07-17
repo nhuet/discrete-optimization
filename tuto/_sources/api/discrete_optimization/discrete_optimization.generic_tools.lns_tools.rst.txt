@@ -1,0 +1,252 @@
+:py:mod:`discrete_optimization.generic_tools.lns_tools`
+=======================================================
+
+.. py:module:: discrete_optimization.generic_tools.lns_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ConstraintHandler <discrete_optimization.generic_tools.lns_tools.ConstraintHandler>`
+     -
+   * - :py:obj:`InitialSolution <discrete_optimization.generic_tools.lns_tools.InitialSolution>`
+     -
+   * - :py:obj:`InitialSolutionFromSolver <discrete_optimization.generic_tools.lns_tools.InitialSolutionFromSolver>`
+     -
+   * - :py:obj:`TrivialInitialSolution <discrete_optimization.generic_tools.lns_tools.TrivialInitialSolution>`
+     -
+   * - :py:obj:`PostProcessSolution <discrete_optimization.generic_tools.lns_tools.PostProcessSolution>`
+     -
+   * - :py:obj:`TrivialPostProcessSolution <discrete_optimization.generic_tools.lns_tools.TrivialPostProcessSolution>`
+     -
+   * - :py:obj:`ReinitModelCallback <discrete_optimization.generic_tools.lns_tools.ReinitModelCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.ReinitModelCallback
+          :summary:
+   * - :py:obj:`BaseLns <discrete_optimization.generic_tools.lns_tools.BaseLns>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns
+          :summary:
+   * - :py:obj:`ConstraintStatus <discrete_optimization.generic_tools.lns_tools.ConstraintStatus>`
+     -
+   * - :py:obj:`ConstraintHandlerMix <discrete_optimization.generic_tools.lns_tools.ConstraintHandlerMix>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_dummy_contextmanager <discrete_optimization.generic_tools.lns_tools._dummy_contextmanager>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools._dummy_contextmanager
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.lns_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.lns_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.logger
+
+.. py:class:: ConstraintHandler
+   :canonical: discrete_optimization.generic_tools.lns_tools.ConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tools.do_solver.SolverDO, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.generic_tools.lns_tools.ConstraintHandler.adding_constraint_from_results_store
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.ConstraintHandler.adding_constraint_from_results_store
+
+   .. py:method:: extract_best_solution_from_last_iteration(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> typing.Optional[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.generic_tools.lns_tools.ConstraintHandler.extract_best_solution_from_last_iteration
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.ConstraintHandler.extract_best_solution_from_last_iteration
+
+.. py:class:: InitialSolution
+   :canonical: discrete_optimization.generic_tools.lns_tools.InitialSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable`
+
+   .. py:method:: get_starting_solution() -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lns_tools.InitialSolution.get_starting_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.InitialSolution.get_starting_solution
+
+.. py:class:: InitialSolutionFromSolver(solver: discrete_optimization.generic_tools.do_solver.SolverDO, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lns_tools.InitialSolutionFromSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.InitialSolution`
+
+   .. py:method:: get_starting_solution() -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lns_tools.InitialSolutionFromSolver.get_starting_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.InitialSolutionFromSolver.get_starting_solution
+
+.. py:class:: TrivialInitialSolution(solution: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lns_tools.TrivialInitialSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.InitialSolution`
+
+   .. py:method:: get_starting_solution() -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lns_tools.TrivialInitialSolution.get_starting_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.TrivialInitialSolution.get_starting_solution
+
+.. py:class:: PostProcessSolution
+   :canonical: discrete_optimization.generic_tools.lns_tools.PostProcessSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable`
+
+   .. py:method:: build_other_solution(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lns_tools.PostProcessSolution.build_other_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.PostProcessSolution.build_other_solution
+
+.. py:class:: TrivialPostProcessSolution(**kwargs)
+   :canonical: discrete_optimization.generic_tools.lns_tools.TrivialPostProcessSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.PostProcessSolution`
+
+   .. py:method:: build_other_solution(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lns_tools.TrivialPostProcessSolution.build_other_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.TrivialPostProcessSolution.build_other_solution
+
+.. py:class:: ReinitModelCallback
+   :canonical: discrete_optimization.generic_tools.lns_tools.ReinitModelCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.ReinitModelCallback
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.lns_tools.ReinitModelCallback.on_step_end
+
+.. py:class:: BaseLns(problem: discrete_optimization.generic_tools.do_problem.Problem, subsolver: typing.Optional[discrete_optimization.generic_tools.do_solver.SolverDO] = None, initial_solution_provider: typing.Optional[discrete_optimization.generic_tools.lns_tools.InitialSolution] = None, constraint_handler: typing.Optional[discrete_optimization.generic_tools.lns_tools.ConstraintHandler] = None, post_process_solution: typing.Optional[discrete_optimization.generic_tools.lns_tools.PostProcessSolution] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lns_tools.BaseLns
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns.__init__
+
+   .. py:attribute:: subsolver
+      :canonical: discrete_optimization.generic_tools.lns_tools.BaseLns.subsolver
+      :type: discrete_optimization.generic_tools.do_solver.SolverDO
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns.subsolver
+
+   .. py:attribute:: constraint_handler
+      :canonical: discrete_optimization.generic_tools.lns_tools.BaseLns.constraint_handler
+      :type: discrete_optimization.generic_tools.lns_tools.ConstraintHandler
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns.constraint_handler
+
+   .. py:attribute:: initial_solution_provider
+      :canonical: discrete_optimization.generic_tools.lns_tools.BaseLns.initial_solution_provider
+      :type: typing.Optional[discrete_optimization.generic_tools.lns_tools.InitialSolution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns.initial_solution_provider
+
+   .. py:attribute:: post_process_solution
+      :canonical: discrete_optimization.generic_tools.lns_tools.BaseLns.post_process_solution
+      :type: typing.Optional[discrete_optimization.generic_tools.lns_tools.PostProcessSolution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns.post_process_solution
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.lns_tools.BaseLns.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns.hyperparameters
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.lns_tools.BaseLns.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns.set_warm_start
+
+   .. py:method:: create_submodel() -> contextlib.AbstractContextManager
+      :canonical: discrete_optimization.generic_tools.lns_tools.BaseLns.create_submodel
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns.create_submodel
+
+   .. py:method:: solve(nb_iteration_lns: int, time_limit_subsolver: typing.Optional[float] = 100.0, time_limit_subsolver_iter0: typing.Optional[float] = None, nb_iteration_no_improvement: typing.Optional[int] = None, skip_initial_solution_provider: bool = False, stop_first_iteration_if_optimal: bool = True, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lns_tools.BaseLns.solve
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.BaseLns.solve
+
+.. py:function:: _dummy_contextmanager()
+   :canonical: discrete_optimization.generic_tools.lns_tools._dummy_contextmanager
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools._dummy_contextmanager
+
+.. py:class:: ConstraintStatus()
+   :canonical: discrete_optimization.generic_tools.lns_tools.ConstraintStatus
+
+   Bases: :py:obj:`typing.TypedDict`
+
+   .. py:attribute:: nb_usage
+      :canonical: discrete_optimization.generic_tools.lns_tools.ConstraintStatus.nb_usage
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.ConstraintStatus.nb_usage
+
+   .. py:attribute:: nb_improvement
+      :canonical: discrete_optimization.generic_tools.lns_tools.ConstraintStatus.nb_improvement
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.ConstraintStatus.nb_improvement
+
+   .. py:attribute:: name
+      :canonical: discrete_optimization.generic_tools.lns_tools.ConstraintStatus.name
+      :type: str
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.ConstraintStatus.name
+
+.. py:class:: ConstraintHandlerMix(problem: discrete_optimization.generic_tools.do_problem.Problem, list_constraints_handler: list[discrete_optimization.generic_tools.lns_tools.ConstraintHandler], list_proba: list[float], update_proba: bool = True, tag_constraint_handler: typing.Optional[list[str]] = None, sequential: bool = False)
+   :canonical: discrete_optimization.generic_tools.lns_tools.ConstraintHandlerMix
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tools.do_solver.SolverDO, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.generic_tools.lns_tools.ConstraintHandlerMix.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_tools.ConstraintHandlerMix.adding_constraint_from_results_store

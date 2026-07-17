@@ -1,0 +1,46 @@
+:py:mod:`discrete_optimization.binpack.solvers.toulbar`
+=======================================================
+
+.. py:module:: discrete_optimization.binpack.solvers.toulbar
+
+.. autodoc2-docstring:: discrete_optimization.binpack.solvers.toulbar
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ToulbarBinPackSolver <discrete_optimization.binpack.solvers.toulbar.ToulbarBinPackSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: ToulbarBinPackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.binpack.solvers.toulbar.ToulbarBinPackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.binpack.solvers.toulbar.ToulbarBinPackSolver.problem
+      :type: discrete_optimization.binpack.problem.BinPackProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.toulbar.ToulbarBinPackSolver.problem
+
+   .. py:method:: init_model(**kwargs) -> None
+      :canonical: discrete_optimization.binpack.solvers.toulbar.ToulbarBinPackSolver.init_model
+
+   .. py:method:: retrieve_solution(solution_from_toulbar2: tuple[list, float, int]) -> discrete_optimization.binpack.problem.BinPackSolution
+      :canonical: discrete_optimization.binpack.solvers.toulbar.ToulbarBinPackSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.toulbar.ToulbarBinPackSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.binpack.problem.BinPackSolution) -> None
+      :canonical: discrete_optimization.binpack.solvers.toulbar.ToulbarBinPackSolver.set_warm_start

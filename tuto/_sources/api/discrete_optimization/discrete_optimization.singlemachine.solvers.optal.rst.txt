@@ -1,0 +1,62 @@
+:py:mod:`discrete_optimization.singlemachine.solvers.optal`
+===========================================================
+
+.. py:module:: discrete_optimization.singlemachine.solvers.optal
+
+.. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.optal
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OptalSingleMachineSolver <discrete_optimization.singlemachine.solvers.optal.OptalSingleMachineSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`to_dict <discrete_optimization.singlemachine.solvers.optal.to_dict>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.optal.to_dict
+          :summary:
+
+API
+~~~
+
+.. py:function:: to_dict(problem: discrete_optimization.singlemachine.problem.WeightedTardinessProblem)
+   :canonical: discrete_optimization.singlemachine.solvers.optal.to_dict
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.optal.to_dict
+
+.. py:class:: OptalSingleMachineSolver(problem: discrete_optimization.singlemachine.problem.WeightedTardinessProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.singlemachine.solvers.optal.OptalSingleMachineSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.singlemachine.solvers.optal.OptalSingleMachineSolver.problem
+      :type: discrete_optimization.singlemachine.problem.WeightedTardinessProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.optal.OptalSingleMachineSolver.problem
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.singlemachine.solvers.optal.OptalSingleMachineSolver.init_model
+
+   .. py:method:: build_command(parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: int = 10, **args: typing.Any)
+      :canonical: discrete_optimization.singlemachine.solvers.optal.OptalSingleMachineSolver.build_command
+
+   .. py:method:: retrieve_current_solution(dict_results: dict) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.singlemachine.solvers.optal.OptalSingleMachineSolver.retrieve_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.optal.OptalSingleMachineSolver.retrieve_current_solution

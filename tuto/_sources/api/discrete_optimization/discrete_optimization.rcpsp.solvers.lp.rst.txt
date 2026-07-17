@@ -1,0 +1,232 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.lp`
+================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.lp
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_BaseLpRcpspSolver <discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver>`
+     -
+   * - :py:obj:`MathOptRcpspSolver <discrete_optimization.rcpsp.solvers.lp.MathOptRcpspSolver>`
+     -
+   * - :py:obj:`_BaseLpMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver>`
+     -
+   * - :py:obj:`GurobiMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver>`
+     -
+   * - :py:obj:`MathOptMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver>`
+     -
+   * - :py:obj:`CplexMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.lp.CplexMultimodeRcpspSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.lp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.lp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.logger
+
+.. py:class:: _BaseLpRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.init_model
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.rcpsp.solution.RcpspSolution) -> dict[discrete_optimization.generic_tools.lp_tools.VariableType, float]
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.convert_to_variable_values
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.set_warm_start
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.set_warm_start
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver.retrieve_current_solution
+
+.. py:class:: MathOptRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.lp.MathOptRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.lp._BaseLpRcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.lp.MathOptRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.MathOptRcpspSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.lp.MathOptRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.MathOptRcpspSolver.problem
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.rcpsp.solution.RcpspSolution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.rcpsp.solvers.lp.MathOptRcpspSolver.convert_to_variable_values
+
+.. py:class:: _BaseLpMultimodeRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.hyperparameters
+
+   .. py:attribute:: x
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.x
+      :type: dict[tuple[collections.abc.Hashable, int, int], discrete_optimization.generic_tools.lp_tools.VariableType]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.x
+
+   .. py:attribute:: max_horizon
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.max_horizon
+      :type: typing.Optional[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.max_horizon
+
+   .. py:attribute:: partial_solution
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.partial_solution
+      :type: typing.Optional[discrete_optimization.rcpsp.solution.PartialSolution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.partial_solution
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.init_model
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.set_warm_start
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.set_warm_start
+
+   .. py:method:: update_model() -> None
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.update_model
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.update_model
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.retrieve_current_solution
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.rcpsp.solution.RcpspSolution) -> dict[discrete_optimization.generic_tools.lp_tools.VariableType, float]
+      :canonical: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver.convert_to_variable_values
+
+.. py:class:: GurobiMultimodeRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver.hyperparameters
+
+   .. py:method:: update_model() -> None
+      :canonical: discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver.update_model
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver.update_model
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.rcpsp.solution.RcpspSolution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver.convert_to_variable_values
+
+.. py:class:: MathOptMultimodeRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver.hyperparameters
+
+   .. py:attribute:: max_horizon
+      :canonical: discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver.max_horizon
+      :type: typing.Optional[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver.max_horizon
+
+   .. py:attribute:: partial_solution
+      :canonical: discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver.partial_solution
+      :type: typing.Optional[discrete_optimization.rcpsp.solution.PartialSolution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver.partial_solution
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.rcpsp.solution.RcpspSolution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver.convert_to_variable_values
+
+.. py:class:: CplexMultimodeRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.lp.CplexMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.CplexMilpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.lp._BaseLpMultimodeRcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.lp.CplexMultimodeRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp.CplexMultimodeRcpspSolver.hyperparameters
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.lp.CplexMultimodeRcpspSolver.init_model

@@ -1,0 +1,29 @@
+:py:mod:`discrete_optimization.gpdp.plot`
+=========================================
+
+.. py:module:: discrete_optimization.gpdp.plot
+
+.. autodoc2-docstring:: discrete_optimization.gpdp.plot
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`plot_gpdp_solution <discrete_optimization.gpdp.plot.plot_gpdp_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.plot.plot_gpdp_solution
+          :summary:
+
+API
+~~~
+
+.. py:function:: plot_gpdp_solution(sol: discrete_optimization.gpdp.problem.GpdpSolution, problem: discrete_optimization.gpdp.problem.GpdpProblem) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]
+   :canonical: discrete_optimization.gpdp.plot.plot_gpdp_solution
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.plot.plot_gpdp_solution

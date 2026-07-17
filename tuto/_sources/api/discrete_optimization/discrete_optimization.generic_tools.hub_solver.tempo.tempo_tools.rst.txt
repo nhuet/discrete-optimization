@@ -1,0 +1,177 @@
+:py:mod:`discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools`
+==========================================================================
+
+.. py:module:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`FormatEnum <discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum>`
+     -
+   * - :py:obj:`TempoLogsCallback <discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoLogsCallback>`
+     -
+   * - :py:obj:`TempoSchedulingSolver <discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`from_format_to_str_arg <discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.from_format_to_str_arg>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.from_format_to_str_arg
+          :summary:
+   * - :py:obj:`parse_solver_log_robust <discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.parse_solver_log_robust>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.parse_solver_log_robust
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.logger
+
+.. py:class:: FormatEnum
+   :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: WORKFORCE
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum.WORKFORCE
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum.WORKFORCE
+
+   .. py:attribute:: PSPLIB
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum.PSPLIB
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum.PSPLIB
+
+   .. py:attribute:: JSP
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum.JSP
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum.JSP
+
+   .. py:attribute:: FJSP
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum.FJSP
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum.FJSP
+
+.. py:function:: from_format_to_str_arg(format_enum: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum)
+   :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.from_format_to_str_arg
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.from_format_to_str_arg
+
+.. py:function:: parse_solver_log_robust(file_content: str) -> tuple[list[pandas.DataFrame], list[str]]
+   :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.parse_solver_log_robust
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.parse_solver_log_robust
+
+.. py:class:: TempoLogsCallback()
+   :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoLogsCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. py:method:: on_solve_end(res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver)
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoLogsCallback.on_solve_end
+
+   .. py:method:: get_df_metrics(phase: int = 0) -> pandas.DataFrame
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoLogsCallback.get_df_metrics
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoLogsCallback.get_df_metrics
+
+.. py:class:: TempoSchedulingSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, input_format: typing.Optional[discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum] = None, path_to_tempo_executable: typing.Optional[str] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.hyperparameters
+
+   .. py:attribute:: _input_format
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver._input_format
+      :type: typing.Optional[discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver._input_format
+
+   .. py:attribute:: _path_to_tempo_executable
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver._path_to_tempo_executable
+      :type: str
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver._path_to_tempo_executable
+
+   .. py:attribute:: _file_input
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver._file_input
+      :type: str
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver._file_input
+
+   .. py:method:: get_input_format() -> str
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.get_input_format
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.get_input_format
+
+   .. py:method:: get_processed_logs()
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.get_processed_logs
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.get_processed_logs
+
+   .. py:method:: get_processed_status()
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.get_processed_status
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.get_processed_status
+
+   .. py:method:: get_tmp_folder_path() -> str
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.get_tmp_folder_path
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.get_tmp_folder_path
+
+   .. py:method:: retrieve_solution(path_to_output: str, process_stdout: str) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.retrieve_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.retrieve_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.init_model
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.init_model
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, time_limit: float = 10, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver.solve

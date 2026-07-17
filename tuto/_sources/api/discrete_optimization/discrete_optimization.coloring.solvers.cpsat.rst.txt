@@ -1,0 +1,123 @@
+:py:mod:`discrete_optimization.coloring.solvers.cpsat`
+======================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ModelingCpSat <discrete_optimization.coloring.solvers.cpsat.ModelingCpSat>`
+     -
+   * - :py:obj:`CpSatColoringSolver <discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: ModelingCpSat
+   :canonical: discrete_optimization.coloring.solvers.cpsat.ModelingCpSat
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: BINARY
+      :canonical: discrete_optimization.coloring.solvers.cpsat.ModelingCpSat.BINARY
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.ModelingCpSat.BINARY
+
+   .. py:attribute:: INTEGER
+      :canonical: discrete_optimization.coloring.solvers.cpsat.ModelingCpSat.INTEGER
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.ModelingCpSat.INTEGER
+
+.. py:class:: CpSatColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver`\ [\ :py:obj:`discrete_optimization.coloring.problem.Node`\ , :py:obj:`discrete_optimization.coloring.problem.Color`\ ], :py:obj:`discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.hyperparameters
+
+   .. py:attribute:: at_most_one_unary_resource_per_task
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.at_most_one_unary_resource_per_task
+      :value: True
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.at_most_one_unary_resource_per_task
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.problem
+      :type: discrete_optimization.coloring.problem.ColoringProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.problem
+
+   .. py:attribute:: _nb_colors
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver._nb_colors
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver._nb_colors
+
+   .. py:method:: get_binary_allocation_variable(task: discrete_optimization.coloring.problem.Node, unary_resource: discrete_optimization.coloring.problem.Color) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.get_binary_allocation_variable
+
+   .. py:method:: get_integer_allocation_variable(task: discrete_optimization.coloring.problem.Node) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.get_integer_allocation_variable
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.retrieve_solution
+
+   .. py:method:: init_model_binary(nb_colors: int, **kwargs)
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.init_model_binary
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.init_model_binary
+
+   .. py:method:: init_model_integer(nb_colors: int, **kwargs)
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.init_model_integer
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.init_model_integer
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.coloring.problem.ColoringSolution) -> None
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.set_warm_start
+
+   .. py:method:: set_warm_start_integer(solution: discrete_optimization.coloring.problem.ColoringSolution)
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.set_warm_start_integer
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.set_warm_start_integer
+
+   .. py:method:: set_warm_start_binary(solution: discrete_optimization.coloring.problem.ColoringSolution)
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.set_warm_start_binary
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.set_warm_start_binary
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.init_model
+
+   .. py:property:: subset_tasks_of_interest
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.subset_tasks_of_interest
+      :type: collections.abc.Iterable[discrete_optimization.coloring.problem.Node]
+
+   .. py:property:: subset_unaryresources_allowed
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.subset_unaryresources_allowed
+      :type: collections.abc.Iterable[discrete_optimization.coloring.problem.Color]
+
+   .. py:method:: create_used_variables_list() -> list[ortools.sat.python.cp_model.IntVar]
+      :canonical: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.create_used_variables_list
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver.create_used_variables_list

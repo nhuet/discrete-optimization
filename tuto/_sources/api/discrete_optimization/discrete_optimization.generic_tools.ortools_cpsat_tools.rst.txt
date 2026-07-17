@@ -1,0 +1,169 @@
+:py:mod:`discrete_optimization.generic_tools.ortools_cpsat_tools`
+=================================================================
+
+.. py:module:: discrete_optimization.generic_tools.ortools_cpsat_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OrtoolsCpSatSolver <discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver
+          :summary:
+   * - :py:obj:`OrtoolsCpSatCallback <discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatCallback>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`cpstatus_to_dostatus <discrete_optimization.generic_tools.ortools_cpsat_tools.cpstatus_to_dostatus>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.cpstatus_to_dostatus
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.ortools_cpsat_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.logger
+
+.. py:class:: OrtoolsCpSatSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.CpSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.BoundsProviderMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.__init__
+
+   .. py:attribute:: cp_model
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.cp_model
+      :type: typing.Optional[ortools.sat.python.cp_model.CpModel]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.cp_model
+
+   .. py:attribute:: solver
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.solver
+      :type: typing.Optional[ortools.sat.python.cp_model.CpSolver]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.solver
+
+   .. py:attribute:: clb
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.clb
+      :type: typing.Optional[ortools.sat.python.cp_model.CpSolverSolutionCallback]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.clb
+
+   .. py:attribute:: early_stopping_exception
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.early_stopping_exception
+      :type: typing.Optional[Exception]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.early_stopping_exception
+
+   .. py:attribute:: _current_internal_objective_best_value
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver._current_internal_objective_best_value
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver._current_internal_objective_best_value
+
+   .. py:attribute:: _current_internal_objective_best_bound
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver._current_internal_objective_best_bound
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver._current_internal_objective_best_bound
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.retrieve_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.retrieve_solution
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: typing.Optional[float] = 100.0, ortools_cpsat_solver_kwargs: typing.Optional[dict[str, typing.Any]] = None, retrieve_stats: bool = False, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.solve
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.solve
+
+   .. py:method:: remove_constraints(constraints: collections.abc.Iterable[typing.Any]) -> None
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.remove_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.remove_constraints
+
+   .. py:method:: get_current_best_internal_objective_bound() -> typing.Optional[float]
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.get_current_best_internal_objective_bound
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.get_current_best_internal_objective_bound
+
+   .. py:method:: get_current_best_internal_objective_value() -> typing.Optional[float]
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.get_current_best_internal_objective_value
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.get_current_best_internal_objective_value
+
+   .. py:method:: set_warm_start_from_previous_run()
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.set_warm_start_from_previous_run
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.set_warm_start_from_previous_run
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.init_model
+
+   .. py:method:: add_bound_constraint(var: typing.Any, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, value: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.add_bound_constraint
+
+   .. py:method:: minimize_variable(var: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver.minimize_variable
+
+.. py:class:: OrtoolsCpSatCallback(do_solver: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver, callback: discrete_optimization.generic_tools.callbacks.callback.Callback, retrieve_stats: bool = False)
+   :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatCallback
+
+   Bases: :py:obj:`ortools.sat.python.cp_model.CpSolverSolutionCallback`
+
+   .. py:method:: on_solution_callback() -> None
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatCallback.on_solution_callback
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatCallback.on_solution_callback
+
+   .. py:method:: store_current_solution()
+      :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatCallback.store_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatCallback.store_current_solution
+
+.. py:function:: cpstatus_to_dostatus(status_from_cpsat) -> discrete_optimization.generic_tools.do_solver.StatusSolver
+   :canonical: discrete_optimization.generic_tools.ortools_cpsat_tools.cpstatus_to_dostatus
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ortools_cpsat_tools.cpstatus_to_dostatus

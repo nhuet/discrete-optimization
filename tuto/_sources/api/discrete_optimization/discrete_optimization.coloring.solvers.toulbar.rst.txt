@@ -1,0 +1,98 @@
+:py:mod:`discrete_optimization.coloring.solvers.toulbar`
+========================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.toulbar
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ToulbarColoringSolver <discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver>`
+     -
+   * - :py:obj:`ColoringConstraintHandlerToulbar <discrete_optimization.coloring.solvers.toulbar.ColoringConstraintHandlerToulbar>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.coloring.solvers.toulbar.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.logger
+          :summary:
+   * - :py:obj:`ToulbarColoringSolverForLns <discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolverForLns>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolverForLns
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.coloring.solvers.toulbar.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.logger
+
+.. py:class:: ToulbarColoringSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver`, :py:obj:`discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.hyperparameters
+
+   .. py:method:: get_range_value(index_node: int, nb_colors_on_subset: int, nb_colors_all: int)
+      :canonical: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.get_range_value
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.get_range_value
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.init_model
+
+   .. py:method:: default_costs_matrix(nb_colors_all: int, nb_colors_on_subset: int)
+      :canonical: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.default_costs_matrix
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.default_costs_matrix
+
+   .. py:method:: get_costs_matrix(index1: int, index2: int, costs: dict[str, list], range_map: dict[int, typing.Any])
+      :canonical: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.get_costs_matrix
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.get_costs_matrix
+
+   .. py:method:: retrieve_solution(solution_from_toulbar2: tuple[list, float, int]) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.coloring.problem.ColoringSolution) -> None
+      :canonical: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolver.set_warm_start
+
+.. py:data:: ToulbarColoringSolverForLns
+   :canonical: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolverForLns
+   :value: 'to_lns_toulbar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolverForLns
+
+.. py:class:: ColoringConstraintHandlerToulbar(fraction_node: float = 0.3)
+   :canonical: discrete_optimization.coloring.solvers.toulbar.ColoringConstraintHandlerToulbar
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.coloring.solvers.toulbar.ToulbarColoringSolverForLns, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> typing.Iterable[typing.Any]
+      :canonical: discrete_optimization.coloring.solvers.toulbar.ColoringConstraintHandlerToulbar.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.toulbar.ColoringConstraintHandlerToulbar.adding_constraint_from_results_store

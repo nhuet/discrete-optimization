@@ -1,0 +1,60 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.tempo`
+===================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.tempo
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.tempo
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TempoRcpspSolver <discrete_optimization.rcpsp.solvers.tempo.TempoRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`deparse_psplib <discrete_optimization.rcpsp.solvers.tempo.deparse_psplib>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.tempo.deparse_psplib
+          :summary:
+   * - :py:obj:`parse_solver_output <discrete_optimization.rcpsp.solvers.tempo.parse_solver_output>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.tempo.parse_solver_output
+          :summary:
+
+API
+~~~
+
+.. py:function:: deparse_psplib(problem: discrete_optimization.rcpsp.problem.RcpspProblem, **kwargs) -> str
+   :canonical: discrete_optimization.rcpsp.solvers.tempo.deparse_psplib
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.tempo.deparse_psplib
+
+.. py:function:: parse_solver_output(solver_output: str, makespan: int, tasks_list_in_output_order: list) -> dict[int, int]
+   :canonical: discrete_optimization.rcpsp.solvers.tempo.parse_solver_output
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.tempo.parse_solver_output
+
+.. py:class:: TempoRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, input_format: typing.Optional[discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum] = None, path_to_tempo_executable: typing.Optional[str] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.tempo.TempoRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.rcpsp_solver.RcpspSolver`
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.tempo.TempoRcpspSolver.init_model
+
+   .. py:method:: retrieve_solution(path_to_output: str, process_stdout: str) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.rcpsp.solvers.tempo.TempoRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.tempo.TempoRcpspSolver.retrieve_solution

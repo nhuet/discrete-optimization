@@ -1,0 +1,205 @@
+:py:mod:`discrete_optimization.generic_tools.result_storage.result_storage`
+===========================================================================
+
+.. py:module:: discrete_optimization.generic_tools.result_storage.result_storage
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ResultStorage <discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+          :summary:
+   * - :py:obj:`ParetoFront <discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`merge_results_storage <discrete_optimization.generic_tools.result_storage.result_storage.merge_results_storage>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.merge_results_storage
+          :summary:
+   * - :py:obj:`from_solutions_to_result_storage <discrete_optimization.generic_tools.result_storage.result_storage.from_solutions_to_result_storage>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.from_solutions_to_result_storage
+          :summary:
+   * - :py:obj:`result_storage_to_pareto_front <discrete_optimization.generic_tools.result_storage.result_storage.result_storage_to_pareto_front>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.result_storage_to_pareto_front
+          :summary:
+   * - :py:obj:`plot_storage_2d <discrete_optimization.generic_tools.result_storage.result_storage.plot_storage_2d>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.plot_storage_2d
+          :summary:
+   * - :py:obj:`plot_pareto_2d <discrete_optimization.generic_tools.result_storage.result_storage.plot_pareto_2d>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.plot_pareto_2d
+          :summary:
+   * - :py:obj:`plot_fitness <discrete_optimization.generic_tools.result_storage.result_storage.plot_fitness>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.plot_fitness
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`fitness_class <discrete_optimization.generic_tools.result_storage.result_storage.fitness_class>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.fitness_class
+          :summary:
+
+API
+~~~
+
+.. py:data:: fitness_class
+   :canonical: discrete_optimization.generic_tools.result_storage.result_storage.fitness_class
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.fitness_class
+
+.. py:class:: ResultStorage(mode_optim: discrete_optimization.generic_tools.do_problem.ModeOptim, list_solution_fits: typing.Optional[list[tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]]] = None)
+   :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+
+   Bases: :py:obj:`collections.abc.MutableSequence`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__init__
+
+   .. py:attribute:: list_solution_fits
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.list_solution_fits
+      :type: list[tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.list_solution_fits
+
+   .. py:method:: __add__(other: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__add__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__add__
+
+   .. py:method:: __getitem__(index) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__getitem__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__getitem__
+
+   .. py:method:: __len__() -> int
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__len__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__len__
+
+   .. py:method:: __setitem__(index: int, value: tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class])
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__setitem__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__setitem__
+
+   .. py:method:: __delitem__(index: int) -> None
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__delitem__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.__delitem__
+
+   .. py:method:: insert(index, value: tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]) -> None
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.insert
+
+   .. py:method:: get_best_solution_fit(satisfying: typing.Optional[discrete_optimization.generic_tools.do_problem.Problem] = None) -> typing.Union[tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class], tuple[None, None]]
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_best_solution_fit
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_best_solution_fit
+
+   .. py:method:: get_last_best_solution() -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_last_best_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_last_best_solution
+
+   .. py:method:: get_random_best_solution() -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_random_best_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_random_best_solution
+
+   .. py:method:: get_random_solution() -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_random_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_random_solution
+
+   .. py:method:: get_best_solution() -> typing.Optional[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_best_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_best_solution
+
+   .. py:method:: get_n_best_solution(n_solutions: int) -> list[tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]]
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_n_best_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.get_n_best_solution
+
+   .. py:method:: remove_duplicate_solutions(var_name: str) -> None
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.remove_duplicate_solutions
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage.remove_duplicate_solutions
+
+.. py:function:: merge_results_storage(result_1: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_2: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+   :canonical: discrete_optimization.generic_tools.result_storage.result_storage.merge_results_storage
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.merge_results_storage
+
+.. py:function:: from_solutions_to_result_storage(list_solution: list[discrete_optimization.generic_tools.do_problem.Solution], problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+   :canonical: discrete_optimization.generic_tools.result_storage.result_storage.from_solutions_to_result_storage
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.from_solutions_to_result_storage
+
+.. py:function:: result_storage_to_pareto_front(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, problem: typing.Optional[discrete_optimization.generic_tools.do_problem.Problem] = None) -> ParetoFront
+   :canonical: discrete_optimization.generic_tools.result_storage.result_storage.result_storage_to_pareto_front
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.result_storage_to_pareto_front
+
+.. py:class:: ParetoFront(list_solution_fits: list[tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]], mode_optim: discrete_optimization.generic_tools.do_problem.ModeOptim = ModeOptim.MAXIMIZATION)
+   :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage`
+
+   .. py:method:: add_point(solution: discrete_optimization.generic_tools.do_problem.Solution, tuple_fitness: discrete_optimization.generic_tools.do_problem.TupleFitness) -> None
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.add_point
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.add_point
+
+   .. py:method:: len_pareto_front() -> int
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.len_pareto_front
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.len_pareto_front
+
+   .. py:method:: finalize() -> None
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.finalize
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.finalize
+
+   .. py:method:: compute_extreme_points() -> list[tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_problem.TupleFitness]]
+      :canonical: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.compute_extreme_points
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront.compute_extreme_points
+
+.. py:function:: plot_storage_2d(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, name_axis: list[str], ax: typing.Any = None, color: str = 'r') -> None
+   :canonical: discrete_optimization.generic_tools.result_storage.result_storage.plot_storage_2d
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.plot_storage_2d
+
+.. py:function:: plot_pareto_2d(pareto_front: discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront, name_axis: list[str], ax: typing.Any = None, color: str = 'b') -> typing.Any
+   :canonical: discrete_optimization.generic_tools.result_storage.result_storage.plot_pareto_2d
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.plot_pareto_2d
+
+.. py:function:: plot_fitness(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, ax: typing.Any = None, color: str = 'b', title: str = '') -> typing.Any
+   :canonical: discrete_optimization.generic_tools.result_storage.result_storage.plot_fitness
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.result_storage.plot_fitness

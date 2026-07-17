@@ -1,0 +1,572 @@
+:py:mod:`discrete_optimization.generic_tools.do_problem`
+========================================================
+
+.. py:module:: discrete_optimization.generic_tools.do_problem
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TypeAttribute <discrete_optimization.generic_tools.do_problem.TypeAttribute>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute
+          :summary:
+   * - :py:obj:`ModeOptim <discrete_optimization.generic_tools.do_problem.ModeOptim>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ModeOptim
+          :summary:
+   * - :py:obj:`EncodingRegister <discrete_optimization.generic_tools.do_problem.EncodingRegister>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.EncodingRegister
+          :summary:
+   * - :py:obj:`ObjectiveHandling <discrete_optimization.generic_tools.do_problem.ObjectiveHandling>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveHandling
+          :summary:
+   * - :py:obj:`TypeObjective <discrete_optimization.generic_tools.do_problem.TypeObjective>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeObjective
+          :summary:
+   * - :py:obj:`ObjectiveDoc <discrete_optimization.generic_tools.do_problem.ObjectiveDoc>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveDoc
+          :summary:
+   * - :py:obj:`ObjectiveRegister <discrete_optimization.generic_tools.do_problem.ObjectiveRegister>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+          :summary:
+   * - :py:obj:`Solution <discrete_optimization.generic_tools.do_problem.Solution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Solution
+          :summary:
+   * - :py:obj:`Problem <discrete_optimization.generic_tools.do_problem.Problem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem
+          :summary:
+   * - :py:obj:`BaseMethodAggregating <discrete_optimization.generic_tools.do_problem.BaseMethodAggregating>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating
+          :summary:
+   * - :py:obj:`MethodAggregating <discrete_optimization.generic_tools.do_problem.MethodAggregating>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.MethodAggregating
+          :summary:
+   * - :py:obj:`RobustProblem <discrete_optimization.generic_tools.do_problem.RobustProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.RobustProblem
+          :summary:
+   * - :py:obj:`ParamsObjectiveFunction <discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`lower_bound_vector_encoding_from_dict <discrete_optimization.generic_tools.do_problem.lower_bound_vector_encoding_from_dict>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.lower_bound_vector_encoding_from_dict
+          :summary:
+   * - :py:obj:`upper_bound_vector_encoding_from_dict <discrete_optimization.generic_tools.do_problem.upper_bound_vector_encoding_from_dict>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.upper_bound_vector_encoding_from_dict
+          :summary:
+   * - :py:obj:`get_default_objective_setup <discrete_optimization.generic_tools.do_problem.get_default_objective_setup>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.get_default_objective_setup
+          :summary:
+   * - :py:obj:`build_aggreg_function_and_params_objective <discrete_optimization.generic_tools.do_problem.build_aggreg_function_and_params_objective>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.build_aggreg_function_and_params_objective
+          :summary:
+   * - :py:obj:`build_evaluate_function_aggregated <discrete_optimization.generic_tools.do_problem.build_evaluate_function_aggregated>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.build_evaluate_function_aggregated
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.do_problem.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.do_problem.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.logger
+
+.. py:class:: TypeAttribute
+   :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute
+
+   .. py:attribute:: LIST_INTEGER
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_INTEGER
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_INTEGER
+
+   .. py:attribute:: LIST_BOOLEAN
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_BOOLEAN
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_BOOLEAN
+
+   .. py:attribute:: PERMUTATION
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.PERMUTATION
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.PERMUTATION
+
+   .. py:attribute:: PERMUTATION_TSP
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.PERMUTATION_TSP
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.PERMUTATION_TSP
+
+   .. py:attribute:: PERMUTATION_RCPSP
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.PERMUTATION_RCPSP
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.PERMUTATION_RCPSP
+
+   .. py:attribute:: SET_INTEGER
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.SET_INTEGER
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.SET_INTEGER
+
+   .. py:attribute:: LIST_BOOLEAN_KNAP
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_BOOLEAN_KNAP
+      :value: 6
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_BOOLEAN_KNAP
+
+   .. py:attribute:: LIST_INTEGER_SPECIFIC_ARITY
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_INTEGER_SPECIFIC_ARITY
+      :value: 7
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_INTEGER_SPECIFIC_ARITY
+
+   .. py:attribute:: SET_TUPLE_INTEGER
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.SET_TUPLE_INTEGER
+      :value: 8
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.SET_TUPLE_INTEGER
+
+   .. py:attribute:: VRP_PATHS
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.VRP_PATHS
+      :value: 9
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.VRP_PATHS
+
+   .. py:attribute:: LIST_FLOATS
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_FLOATS
+      :value: 10
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeAttribute.LIST_FLOATS
+
+.. py:class:: ModeOptim
+   :canonical: discrete_optimization.generic_tools.do_problem.ModeOptim
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ModeOptim
+
+   .. py:attribute:: MAXIMIZATION
+      :canonical: discrete_optimization.generic_tools.do_problem.ModeOptim.MAXIMIZATION
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ModeOptim.MAXIMIZATION
+
+   .. py:attribute:: MINIMIZATION
+      :canonical: discrete_optimization.generic_tools.do_problem.ModeOptim.MINIMIZATION
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ModeOptim.MINIMIZATION
+
+.. py:class:: EncodingRegister(dict_attribute_to_type: dict[str, typing.Any])
+   :canonical: discrete_optimization.generic_tools.do_problem.EncodingRegister
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.EncodingRegister
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.EncodingRegister.__init__
+
+   .. py:attribute:: dict_attribute_to_type
+      :canonical: discrete_optimization.generic_tools.do_problem.EncodingRegister.dict_attribute_to_type
+      :type: dict[str, typing.Any]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.EncodingRegister.dict_attribute_to_type
+
+   .. py:method:: get_types() -> list[discrete_optimization.generic_tools.do_problem.TypeAttribute]
+      :canonical: discrete_optimization.generic_tools.do_problem.EncodingRegister.get_types
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.EncodingRegister.get_types
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.generic_tools.do_problem.EncodingRegister.__str__
+
+   .. py:method:: lower_bound_vector_encoding(encoding_name: str) -> list[int]
+      :canonical: discrete_optimization.generic_tools.do_problem.EncodingRegister.lower_bound_vector_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.EncodingRegister.lower_bound_vector_encoding
+
+   .. py:method:: upper_bound_vector_encoding(encoding_name: str) -> list[int]
+      :canonical: discrete_optimization.generic_tools.do_problem.EncodingRegister.upper_bound_vector_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.EncodingRegister.upper_bound_vector_encoding
+
+.. py:function:: lower_bound_vector_encoding_from_dict(dict_encoding: dict[str, typing.Any]) -> list[int]
+   :canonical: discrete_optimization.generic_tools.do_problem.lower_bound_vector_encoding_from_dict
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.lower_bound_vector_encoding_from_dict
+
+.. py:function:: upper_bound_vector_encoding_from_dict(dict_encoding: dict[str, typing.Any]) -> list[int]
+   :canonical: discrete_optimization.generic_tools.do_problem.upper_bound_vector_encoding_from_dict
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.upper_bound_vector_encoding_from_dict
+
+.. py:class:: ObjectiveHandling
+   :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveHandling
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveHandling
+
+   .. py:attribute:: SINGLE
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveHandling.SINGLE
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveHandling.SINGLE
+
+   .. py:attribute:: AGGREGATE
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveHandling.AGGREGATE
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveHandling.AGGREGATE
+
+   .. py:attribute:: MULTI_OBJ
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveHandling.MULTI_OBJ
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveHandling.MULTI_OBJ
+
+.. py:class:: TypeObjective
+   :canonical: discrete_optimization.generic_tools.do_problem.TypeObjective
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeObjective
+
+   .. py:attribute:: OBJECTIVE
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeObjective.OBJECTIVE
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeObjective.OBJECTIVE
+
+   .. py:attribute:: PENALTY
+      :canonical: discrete_optimization.generic_tools.do_problem.TypeObjective.PENALTY
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.TypeObjective.PENALTY
+
+.. py:class:: ObjectiveDoc
+   :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveDoc
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveDoc
+
+   .. py:attribute:: type
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveDoc.type
+      :type: discrete_optimization.generic_tools.do_problem.TypeObjective
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveDoc.type
+
+   .. py:attribute:: default_weight
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveDoc.default_weight
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveDoc.default_weight
+
+.. py:class:: ObjectiveRegister(objective_sense: discrete_optimization.generic_tools.do_problem.ModeOptim, objective_handling: discrete_optimization.generic_tools.do_problem.ObjectiveHandling, dict_objective_to_doc: dict[str, typing.Any])
+   :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.__init__
+
+   .. py:attribute:: objective_sense
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.objective_sense
+      :type: discrete_optimization.generic_tools.do_problem.ModeOptim
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.objective_sense
+
+   .. py:attribute:: objective_handling
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.objective_handling
+      :type: discrete_optimization.generic_tools.do_problem.ObjectiveHandling
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.objective_handling
+
+   .. py:attribute:: dict_objective_to_doc
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.dict_objective_to_doc
+      :type: dict[str, discrete_optimization.generic_tools.do_problem.ObjectiveDoc]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.dict_objective_to_doc
+
+   .. py:method:: get_objective_names() -> list[str]
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.get_objective_names
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.get_objective_names
+
+   .. py:method:: get_list_objective_and_default_weight() -> tuple[list[str], list[float]]
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.get_list_objective_and_default_weight
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.get_list_objective_and_default_weight
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.generic_tools.do_problem.ObjectiveRegister.__str__
+
+.. py:class:: Solution
+   :canonical: discrete_optimization.generic_tools.do_problem.Solution
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Solution
+
+   .. py:method:: copy() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.do_problem.Solution.copy
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Solution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.do_problem.Solution.lazy_copy
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Solution.lazy_copy
+
+   .. py:method:: get_attribute_register(problem: discrete_optimization.generic_tools.do_problem.Problem) -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.generic_tools.do_problem.Solution.get_attribute_register
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Solution.get_attribute_register
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.generic_tools.do_problem.Solution.change_problem
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Solution.change_problem
+
+.. py:class:: Problem
+   :canonical: discrete_optimization.generic_tools.do_problem.Problem
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem
+
+   .. py:method:: evaluate(variable: discrete_optimization.generic_tools.do_problem.Solution) -> dict[str, float]
+      :canonical: discrete_optimization.generic_tools.do_problem.Problem.evaluate
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem.evaluate
+
+   .. py:method:: evaluate_mobj(variable: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness
+      :canonical: discrete_optimization.generic_tools.do_problem.Problem.evaluate_mobj
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem.evaluate_mobj
+
+   .. py:method:: evaluate_mobj_from_dict(dict_values: dict[str, float]) -> discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness
+      :canonical: discrete_optimization.generic_tools.do_problem.Problem.evaluate_mobj_from_dict
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem.evaluate_mobj_from_dict
+
+   .. py:method:: satisfy(variable: discrete_optimization.generic_tools.do_problem.Solution) -> bool
+      :canonical: discrete_optimization.generic_tools.do_problem.Problem.satisfy
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.generic_tools.do_problem.Problem.get_attribute_register
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.generic_tools.do_problem.Problem.get_solution_type
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.generic_tools.do_problem.Problem.get_objective_register
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem.get_objective_register
+
+   .. py:method:: get_optuna_study_direction() -> str
+      :canonical: discrete_optimization.generic_tools.do_problem.Problem.get_optuna_study_direction
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem.get_optuna_study_direction
+
+   .. py:method:: get_objective_names() -> list[str]
+      :canonical: discrete_optimization.generic_tools.do_problem.Problem.get_objective_names
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.Problem.get_objective_names
+
+.. py:class:: BaseMethodAggregating
+   :canonical: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating
+
+   .. py:attribute:: MEAN
+      :canonical: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.MEAN
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.MEAN
+
+   .. py:attribute:: MEDIAN
+      :canonical: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.MEDIAN
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.MEDIAN
+
+   .. py:attribute:: PERCENTILE
+      :canonical: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.PERCENTILE
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.PERCENTILE
+
+   .. py:attribute:: PONDERATION
+      :canonical: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.PONDERATION
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.PONDERATION
+
+   .. py:attribute:: MIN
+      :canonical: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.MIN
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.MIN
+
+   .. py:attribute:: MAX
+      :canonical: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.MAX
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating.MAX
+
+.. py:class:: MethodAggregating(base_method_aggregating: discrete_optimization.generic_tools.do_problem.BaseMethodAggregating, percentile: float = 90.0, ponderation: typing.Optional[numpy.ndarray] = None)
+   :canonical: discrete_optimization.generic_tools.do_problem.MethodAggregating
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.MethodAggregating
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.MethodAggregating.__init__
+
+.. py:class:: RobustProblem(list_problem: collections.abc.Sequence[discrete_optimization.generic_tools.do_problem.Problem], method_aggregating: discrete_optimization.generic_tools.do_problem.MethodAggregating)
+   :canonical: discrete_optimization.generic_tools.do_problem.RobustProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Problem`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.RobustProblem
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.RobustProblem.__init__
+
+   .. py:method:: aggregate_vector() -> collections.abc.Callable[[numpy.typing.ArrayLike], float]
+      :canonical: discrete_optimization.generic_tools.do_problem.RobustProblem.aggregate_vector
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.RobustProblem.aggregate_vector
+
+   .. py:method:: evaluate(variable: discrete_optimization.generic_tools.do_problem.Solution) -> dict[str, float]
+      :canonical: discrete_optimization.generic_tools.do_problem.RobustProblem.evaluate
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.RobustProblem.evaluate
+
+   .. py:method:: satisfy(variable: discrete_optimization.generic_tools.do_problem.Solution) -> bool
+      :canonical: discrete_optimization.generic_tools.do_problem.RobustProblem.satisfy
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.RobustProblem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.generic_tools.do_problem.RobustProblem.get_attribute_register
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.RobustProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.generic_tools.do_problem.RobustProblem.get_solution_type
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.RobustProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.generic_tools.do_problem.RobustProblem.get_objective_register
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.RobustProblem.get_objective_register
+
+.. py:class:: ParamsObjectiveFunction(objective_handling: discrete_optimization.generic_tools.do_problem.ObjectiveHandling, objectives: list[str], weights: list[float], sense_function: discrete_optimization.generic_tools.do_problem.ModeOptim)
+   :canonical: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.__init__
+
+   .. py:attribute:: objective_handling
+      :canonical: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.objective_handling
+      :type: discrete_optimization.generic_tools.do_problem.ObjectiveHandling
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.objective_handling
+
+   .. py:attribute:: objectives
+      :canonical: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.objectives
+      :type: list[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.objectives
+
+   .. py:attribute:: weights
+      :canonical: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.weights
+      :type: list[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.weights
+
+   .. py:attribute:: sense_function
+      :canonical: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.sense_function
+      :type: discrete_optimization.generic_tools.do_problem.ModeOptim
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.sense_function
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction.__str__
+
+.. py:function:: get_default_objective_setup(problem: discrete_optimization.generic_tools.do_problem.Problem) -> discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction
+   :canonical: discrete_optimization.generic_tools.do_problem.get_default_objective_setup
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.get_default_objective_setup
+
+.. py:function:: build_aggreg_function_and_params_objective(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None) -> tuple[typing.Union[collections.abc.Callable[[discrete_optimization.generic_tools.do_problem.Solution], float], collections.abc.Callable[[discrete_optimization.generic_tools.do_problem.Solution], discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness]], typing.Union[collections.abc.Callable[[dict[str, float]], float], collections.abc.Callable[[dict[str, float]], discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness]], discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction]
+   :canonical: discrete_optimization.generic_tools.do_problem.build_aggreg_function_and_params_objective
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.build_aggreg_function_and_params_objective
+
+.. py:function:: build_evaluate_function_aggregated(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None) -> typing.Union[tuple[collections.abc.Callable[[discrete_optimization.generic_tools.do_problem.Solution], float], collections.abc.Callable[[dict[str, float]], float]], tuple[collections.abc.Callable[[discrete_optimization.generic_tools.do_problem.Solution], discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness], collections.abc.Callable[[dict[str, float]], discrete_optimization.generic_tools.result_storage.multiobj_utils.TupleFitness]]]
+   :canonical: discrete_optimization.generic_tools.do_problem.build_evaluate_function_aggregated
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_problem.build_evaluate_function_aggregated

@@ -1,0 +1,57 @@
+:py:mod:`discrete_optimization.knapsack.solvers.lns_cp`
+=======================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.lns_cp
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_cp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`KnapsackMznConstraintHandler <discrete_optimization.knapsack.solvers.lns_cp.KnapsackMznConstraintHandler>`
+     -
+   * - :py:obj:`OrtoolsCpSatKnapsackConstraintHandler <discrete_optimization.knapsack.solvers.lns_cp.OrtoolsCpSatKnapsackConstraintHandler>`
+     -
+
+API
+~~~
+
+.. py:class:: KnapsackMznConstraintHandler(problem: discrete_optimization.knapsack.problem.KnapsackProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.knapsack.solvers.lns_cp.KnapsackMznConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.MznConstraintHandler`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.knapsack.solvers.lns_cp.KnapsackMznConstraintHandler.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_cp.KnapsackMznConstraintHandler.hyperparameters
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver, result_storage: discrete_optimization.knapsack.solvers.greedy.ResultStorage, result_storage_last_iteration: discrete_optimization.knapsack.solvers.greedy.ResultStorage, child_instance: minizinc.Instance, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.knapsack.solvers.lns_cp.KnapsackMznConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_cp.KnapsackMznConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: OrtoolsCpSatKnapsackConstraintHandler(problem: discrete_optimization.knapsack.problem.KnapsackProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.knapsack.solvers.lns_cp.OrtoolsCpSatKnapsackConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.knapsack.solvers.lns_cp.OrtoolsCpSatKnapsackConstraintHandler.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_cp.OrtoolsCpSatKnapsackConstraintHandler.hyperparameters
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver, result_storage: discrete_optimization.knapsack.solvers.greedy.ResultStorage, result_storage_last_iteration: discrete_optimization.knapsack.solvers.greedy.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.knapsack.solvers.lns_cp.OrtoolsCpSatKnapsackConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lns_cp.OrtoolsCpSatKnapsackConstraintHandler.adding_constraint_from_results_store

@@ -1,0 +1,28 @@
+:py:mod:`discrete_optimization.coloring.solvers`
+================================================
+
+.. py:module:: discrete_optimization.coloring.solvers
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.coloring.solvers.cp_mzn
+   discrete_optimization.coloring.solvers.lns_lp
+   discrete_optimization.coloring.solvers.asp
+   discrete_optimization.coloring.solvers.lp
+   discrete_optimization.coloring.solvers.cpmpy
+   discrete_optimization.coloring.solvers.cpsat
+   discrete_optimization.coloring.solvers.dp
+   discrete_optimization.coloring.solvers.starting_solution
+   discrete_optimization.coloring.solvers.greedy
+   discrete_optimization.coloring.solvers.toulbar
+   discrete_optimization.coloring.solvers.lns_cp
+   discrete_optimization.coloring.solvers.quantum
+   discrete_optimization.coloring.solvers.coloring_solver

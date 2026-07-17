@@ -1,0 +1,176 @@
+:py:mod:`discrete_optimization.generic_tools.study.database`
+============================================================
+
+.. py:module:: discrete_optimization.generic_tools.study.database
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.study.database
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Database <discrete_optimization.generic_tools.study.database.Database>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Database
+          :summary:
+   * - :py:obj:`Hdf5Database <discrete_optimization.generic_tools.study.database.Hdf5Database>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Hdf5Database
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_get_metrics_key <discrete_optimization.generic_tools.study.database._get_metrics_key>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database._get_metrics_key
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.study.database.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.logger
+          :summary:
+   * - :py:obj:`METADATA <discrete_optimization.generic_tools.study.database.METADATA>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.METADATA
+          :summary:
+   * - :py:obj:`COL_STR_MAXSIZE <discrete_optimization.generic_tools.study.database.COL_STR_MAXSIZE>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.COL_STR_MAXSIZE
+          :summary:
+   * - :py:obj:`PARAMETERS_STR_MAX_SIZE <discrete_optimization.generic_tools.study.database.PARAMETERS_STR_MAX_SIZE>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.PARAMETERS_STR_MAX_SIZE
+          :summary:
+   * - :py:obj:`REASON_MAX_SIZE <discrete_optimization.generic_tools.study.database.REASON_MAX_SIZE>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.REASON_MAX_SIZE
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.study.database.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.logger
+
+.. py:class:: Database
+   :canonical: discrete_optimization.generic_tools.study.database.Database
+
+   Bases: :py:obj:`abc.ABC`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Database
+
+   .. py:method:: get_new_experiment_id() -> int
+      :canonical: discrete_optimization.generic_tools.study.database.Database.get_new_experiment_id
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Database.get_new_experiment_id
+
+   .. py:method:: store(xp: discrete_optimization.generic_tools.study.experiment.Experiment) -> None
+      :canonical: discrete_optimization.generic_tools.study.database.Database.store
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Database.store
+
+   .. py:method:: load() -> list[discrete_optimization.generic_tools.study.experiment.Experiment]
+      :canonical: discrete_optimization.generic_tools.study.database.Database.load
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Database.load
+
+   .. py:method:: load_results() -> list[pandas.DataFrame]
+      :canonical: discrete_optimization.generic_tools.study.database.Database.load_results
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Database.load_results
+
+   .. py:method:: close() -> None
+      :canonical: discrete_optimization.generic_tools.study.database.Database.close
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Database.close
+
+   .. py:method:: __enter__() -> pandas._typing.Self
+      :canonical: discrete_optimization.generic_tools.study.database.Database.__enter__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Database.__enter__
+
+   .. py:method:: __exit__(exc_type: typing.Optional[type[BaseException]], exc_value: typing.Optional[BaseException], traceback: typing.Optional[types.TracebackType]) -> None
+      :canonical: discrete_optimization.generic_tools.study.database.Database.__exit__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Database.__exit__
+
+.. py:data:: METADATA
+   :canonical: discrete_optimization.generic_tools.study.database.METADATA
+   :value: 'metadata'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.METADATA
+
+.. py:data:: COL_STR_MAXSIZE
+   :canonical: discrete_optimization.generic_tools.study.database.COL_STR_MAXSIZE
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.COL_STR_MAXSIZE
+
+.. py:data:: PARAMETERS_STR_MAX_SIZE
+   :canonical: discrete_optimization.generic_tools.study.database.PARAMETERS_STR_MAX_SIZE
+   :value: 1024
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.PARAMETERS_STR_MAX_SIZE
+
+.. py:data:: REASON_MAX_SIZE
+   :canonical: discrete_optimization.generic_tools.study.database.REASON_MAX_SIZE
+   :value: 512
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.REASON_MAX_SIZE
+
+.. py:function:: _get_metrics_key(xp_id: int) -> str
+   :canonical: discrete_optimization.generic_tools.study.database._get_metrics_key
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database._get_metrics_key
+
+.. py:class:: Hdf5Database(filepath: str)
+   :canonical: discrete_optimization.generic_tools.study.database.Hdf5Database
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.study.database.Database`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Hdf5Database
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Hdf5Database.__init__
+
+   .. py:method:: close() -> None
+      :canonical: discrete_optimization.generic_tools.study.database.Hdf5Database.close
+
+   .. py:method:: get_new_experiment_id() -> int
+      :canonical: discrete_optimization.generic_tools.study.database.Hdf5Database.get_new_experiment_id
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Hdf5Database.get_new_experiment_id
+
+   .. py:method:: store(xp: discrete_optimization.generic_tools.study.experiment.Experiment) -> None
+      :canonical: discrete_optimization.generic_tools.study.database.Hdf5Database.store
+
+   .. py:method:: store_metadata(xp: discrete_optimization.generic_tools.study.experiment.Experiment) -> None
+      :canonical: discrete_optimization.generic_tools.study.database.Hdf5Database.store_metadata
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Hdf5Database.store_metadata
+
+   .. py:method:: store_metrics(xp: discrete_optimization.generic_tools.study.experiment.Experiment) -> None
+      :canonical: discrete_optimization.generic_tools.study.database.Hdf5Database.store_metrics
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.study.database.Hdf5Database.store_metrics
+
+   .. py:method:: load() -> list[discrete_optimization.generic_tools.study.experiment.Experiment]
+      :canonical: discrete_optimization.generic_tools.study.database.Hdf5Database.load

@@ -1,0 +1,69 @@
+:py:mod:`discrete_optimization.tsp.utils`
+=========================================
+
+.. py:module:: discrete_optimization.tsp.utils
+
+.. autodoc2-docstring:: discrete_optimization.tsp.utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`length_1 <discrete_optimization.tsp.utils.length_1>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.utils.length_1
+          :summary:
+   * - :py:obj:`compute_length <discrete_optimization.tsp.utils.compute_length>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.utils.compute_length
+          :summary:
+   * - :py:obj:`baseline_in_order <discrete_optimization.tsp.utils.baseline_in_order>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.utils.baseline_in_order
+          :summary:
+   * - :py:obj:`build_matrice_distance <discrete_optimization.tsp.utils.build_matrice_distance>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.utils.build_matrice_distance
+          :summary:
+   * - :py:obj:`build_matrice_distance_np <discrete_optimization.tsp.utils.build_matrice_distance_np>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.utils.build_matrice_distance_np
+          :summary:
+   * - :py:obj:`closest_greedy <discrete_optimization.tsp.utils.closest_greedy>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.utils.closest_greedy
+          :summary:
+
+API
+~~~
+
+.. py:function:: length_1(point1: discrete_optimization.tsp.problem.Point2D, point2: discrete_optimization.tsp.problem.Point2D) -> float
+   :canonical: discrete_optimization.tsp.utils.length_1
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.utils.length_1
+
+.. py:function:: compute_length(solution: list[int], list_points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D], nodeCount: int) -> tuple[list[float], float]
+   :canonical: discrete_optimization.tsp.utils.compute_length
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.utils.compute_length
+
+.. py:function:: baseline_in_order(nodeCount: int, points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D]) -> tuple[collections.abc.Iterable[int], float, int]
+   :canonical: discrete_optimization.tsp.utils.baseline_in_order
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.utils.baseline_in_order
+
+.. py:function:: build_matrice_distance(nodeCount: int, method: collections.abc.Callable[[int, int], float]) -> numpy.typing.NDArray[numpy.float64]
+   :canonical: discrete_optimization.tsp.utils.build_matrice_distance
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.utils.build_matrice_distance
+
+.. py:function:: build_matrice_distance_np(nodeCount: int, points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D]) -> tuple[numpy.ndarray, numpy.ndarray]
+   :canonical: discrete_optimization.tsp.utils.build_matrice_distance_np
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.utils.build_matrice_distance_np
+
+.. py:function:: closest_greedy(nodeCount: int, points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D]) -> tuple[list[int], float, int]
+   :canonical: discrete_optimization.tsp.utils.closest_greedy
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.utils.closest_greedy

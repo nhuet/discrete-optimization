@@ -1,0 +1,18 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.solvers.lns_cp`
+==================================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.solvers.lns_cp
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_handler
+   discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools
+   discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor

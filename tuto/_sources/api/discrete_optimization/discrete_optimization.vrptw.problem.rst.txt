@@ -1,0 +1,140 @@
+:py:mod:`discrete_optimization.vrptw.problem`
+=============================================
+
+.. py:module:: discrete_optimization.vrptw.problem
+
+.. autodoc2-docstring:: discrete_optimization.vrptw.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`VRPTWSolution <discrete_optimization.vrptw.problem.VRPTWSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWSolution
+          :summary:
+   * - :py:obj:`VRPTWProblem <discrete_optimization.vrptw.problem.VRPTWProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWProblem
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Task <discrete_optimization.vrptw.problem.Task>`
+     - .. autodoc2-docstring:: discrete_optimization.vrptw.problem.Task
+          :summary:
+   * - :py:obj:`UnaryResource <discrete_optimization.vrptw.problem.UnaryResource>`
+     - .. autodoc2-docstring:: discrete_optimization.vrptw.problem.UnaryResource
+          :summary:
+
+API
+~~~
+
+.. py:data:: Task
+   :canonical: discrete_optimization.vrptw.problem.Task
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.problem.Task
+
+.. py:data:: UnaryResource
+   :canonical: discrete_optimization.vrptw.problem.UnaryResource
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.problem.UnaryResource
+
+.. py:class:: VRPTWSolution(problem: discrete_optimization.vrptw.problem.VRPTWProblem, routes: typing.Optional[typing.List[typing.List[int]]] = None, scaling: float = 1.0)
+   :canonical: discrete_optimization.vrptw.problem.VRPTWSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution`\ [\ :py:obj:`discrete_optimization.vrptw.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationSolution`\ [\ :py:obj:`discrete_optimization.vrptw.problem.Task`\ , :py:obj:`discrete_optimization.vrptw.problem.UnaryResource`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWSolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWSolution.__init__
+
+   .. py:method:: is_allocated(task: discrete_optimization.vrptw.problem.Task, unary_resource: discrete_optimization.vrptw.problem.UnaryResource) -> bool
+      :canonical: discrete_optimization.vrptw.problem.VRPTWSolution.is_allocated
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.vrptw.problem.VRPTWSolution.problem
+      :type: VRPTWProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWSolution.problem
+
+   .. py:method:: copy() -> discrete_optimization.vrptw.problem.VRPTWSolution
+      :canonical: discrete_optimization.vrptw.problem.VRPTWSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.vrptw.problem.VRPTWSolution
+      :canonical: discrete_optimization.vrptw.problem.VRPTWSolution.lazy_copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.vrptw.problem.VRPTWSolution.change_problem
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.vrptw.problem.VRPTWSolution.__str__
+
+   .. py:method:: get_end_time(task: discrete_optimization.vrptw.problem.Task) -> int
+      :canonical: discrete_optimization.vrptw.problem.VRPTWSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWSolution.get_end_time
+
+   .. py:method:: get_start_time(task: discrete_optimization.vrptw.problem.Task) -> int
+      :canonical: discrete_optimization.vrptw.problem.VRPTWSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWSolution.get_start_time
+
+.. py:class:: VRPTWProblem(nb_vehicles: int, vehicle_capacity: float, nb_nodes: int, distance_matrix: numpy.ndarray, time_windows: typing.List[typing.Tuple[int, int]], service_times: typing.List[float], demands: typing.List[float], depot_node: int = 0)
+   :canonical: discrete_optimization.vrptw.problem.VRPTWProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem`\ [\ :py:obj:`discrete_optimization.vrptw.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationProblem`\ [\ :py:obj:`discrete_optimization.vrptw.problem.Task`\ , :py:obj:`discrete_optimization.vrptw.problem.UnaryResource`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWProblem
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWProblem.__init__
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.vrptw.problem.VRPTWProblem.get_makespan_upper_bound
+
+   .. py:property:: unary_resources_list
+      :canonical: discrete_optimization.vrptw.problem.VRPTWProblem.unary_resources_list
+      :type: list[discrete_optimization.vrptw.problem.UnaryResource]
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.vrptw.problem.VRPTWProblem.tasks_list
+      :type: list[discrete_optimization.vrptw.problem.Task]
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.vrptw.problem.VRPTWProblem.get_attribute_register
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.vrptw.problem.VRPTWProblem.get_objective_register
+
+   .. py:method:: evaluate(solution: discrete_optimization.vrptw.problem.VRPTWSolution) -> typing.Dict[str, float]
+      :canonical: discrete_optimization.vrptw.problem.VRPTWProblem.evaluate
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWProblem.evaluate
+
+   .. py:method:: satisfy(solution: discrete_optimization.vrptw.problem.VRPTWSolution) -> bool
+      :canonical: discrete_optimization.vrptw.problem.VRPTWProblem.satisfy
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.vrptw.problem.VRPTWSolution
+      :canonical: discrete_optimization.vrptw.problem.VRPTWProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.problem.VRPTWProblem.get_dummy_solution
+
+   .. py:method:: get_solution_type() -> type
+      :canonical: discrete_optimization.vrptw.problem.VRPTWProblem.get_solution_type

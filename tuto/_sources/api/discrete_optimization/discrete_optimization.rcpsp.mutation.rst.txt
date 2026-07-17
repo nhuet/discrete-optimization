@@ -1,0 +1,81 @@
+:py:mod:`discrete_optimization.rcpsp.mutation`
+==============================================
+
+.. py:module:: discrete_optimization.rcpsp.mutation
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.mutation
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`PermutationMutationRcpsp <discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp
+          :summary:
+   * - :py:obj:`DeadlineMutationRcpsp <discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp
+          :summary:
+
+API
+~~~
+
+.. py:class:: PermutationMutationRcpsp(problem: discrete_optimization.generic_tools.mutations.permutation_mutations.Problem, solution: discrete_optimization.generic_tools.mutations.permutation_mutations.Solution, other_mutation: discrete_optimization.generic_tools.mutations.permutation_mutations.Mutation)
+   :canonical: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.mutations.permutation_mutations.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp.__init__
+
+   .. py:method:: build(problem: discrete_optimization.generic_tools.mutations.permutation_mutations.Problem, solution: discrete_optimization.generic_tools.mutations.permutation_mutations.Solution, other_mutation: type[discrete_optimization.generic_tools.mutations.permutation_mutations.Mutation] = PermutationShuffleMutation, **kwargs: typing.Any) -> discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp
+      :canonical: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp.build
+
+   .. py:method:: mutate(solution: discrete_optimization.rcpsp.solution.RcpspSolution) -> tuple[discrete_optimization.generic_tools.mutations.permutation_mutations.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.rcpsp.solution.RcpspSolution) -> tuple[discrete_optimization.generic_tools.mutations.permutation_mutations.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.PermutationMutationRcpsp.mutate_and_compute_obj
+
+.. py:class:: DeadlineMutationRcpsp(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, solution: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION, attribute: typing.Optional[str] = None, nb_swap: int = 1)
+   :canonical: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.mutations.permutation_mutations.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp.__init__
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION) -> tuple[discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.mutations.permutation_mutations.Solution) -> tuple[discrete_optimization.generic_tools.mutations.permutation_mutations.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp.mutate_and_compute_obj
+
+   .. py:method:: build(problem: discrete_optimization.generic_tools.mutations.permutation_mutations.Problem, solution: discrete_optimization.generic_tools.mutations.permutation_mutations.Solution, **kwargs: typing.Any) -> discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp
+      :canonical: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.mutation.DeadlineMutationRcpsp.build

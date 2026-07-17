@@ -1,0 +1,98 @@
+:py:mod:`discrete_optimization.coloring.solvers.cpmpy`
+======================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.cpmpy
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpmpyColoringSolver <discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`SOFT_METACONSTRAINT_PREFIX <discrete_optimization.coloring.solvers.cpmpy.SOFT_METACONSTRAINT_PREFIX>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy.SOFT_METACONSTRAINT_PREFIX
+          :summary:
+   * - :py:obj:`METADATA_NODE <discrete_optimization.coloring.solvers.cpmpy.METADATA_NODE>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy.METADATA_NODE
+          :summary:
+
+API
+~~~
+
+.. py:data:: SOFT_METACONSTRAINT_PREFIX
+   :canonical: discrete_optimization.coloring.solvers.cpmpy.SOFT_METACONSTRAINT_PREFIX
+   :value: 'neighbours colors of node '
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy.SOFT_METACONSTRAINT_PREFIX
+
+.. py:data:: METADATA_NODE
+   :canonical: discrete_optimization.coloring.solvers.cpmpy.METADATA_NODE
+   :value: 'node'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy.METADATA_NODE
+
+.. py:class:: CpmpyColoringSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, solver_name: typing.Optional[str] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver`, :py:obj:`discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver`, :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.init_model
+
+   .. py:method:: convert_constraint2edge(constraint: cpmpy.expressions.core.Expression) -> typing.Optional[tuple[collections.abc.Hashable, collections.abc.Hashable]]
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.convert_constraint2edge
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.convert_constraint2edge
+
+   .. py:method:: convert_constraints2edges(constraints: collections.abc.Iterable[cpmpy.expressions.core.Expression]) -> list[tuple[collections.abc.Hashable, collections.abc.Hashable]]
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.convert_constraints2edges
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.convert_constraints2edges
+
+   .. py:method:: _convert_variable2idx(variable: cpmpy.expressions.core.Expression) -> int
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver._convert_variable2idx
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver._convert_variable2idx
+
+   .. py:method:: convert_metaconstraint2node(meta: discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint) -> typing.Optional[collections.abc.Hashable]
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.convert_metaconstraint2node
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.convert_metaconstraint2node
+
+   .. py:method:: convert_metaconstraints2nodes(metas: list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]) -> list[collections.abc.Hashable]
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.convert_metaconstraints2nodes
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.convert_metaconstraints2nodes
+
+   .. py:method:: retrieve_current_solution() -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.retrieve_current_solution
+
+   .. py:method:: get_soft_meta_constraints() -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.get_soft_meta_constraints
+
+   .. py:method:: get_hard_meta_constraints() -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.get_hard_meta_constraints
+
+   .. py:method:: get_soft_constraints() -> list[cpmpy.expressions.core.Expression]
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.get_soft_constraints
+
+   .. py:method:: get_hard_constraints() -> list[cpmpy.expressions.core.Expression]
+      :canonical: discrete_optimization.coloring.solvers.cpmpy.CpmpyColoringSolver.get_hard_constraints

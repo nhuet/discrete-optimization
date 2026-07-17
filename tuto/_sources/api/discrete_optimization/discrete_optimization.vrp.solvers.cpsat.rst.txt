@@ -1,0 +1,67 @@
+:py:mod:`discrete_optimization.vrp.solvers.cpsat`
+=================================================
+
+.. py:module:: discrete_optimization.vrp.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.vrp.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatVrpSolver <discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.vrp.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.vrp.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.cpsat.logger
+
+.. py:class:: CpSatVrpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver`, :py:obj:`discrete_optimization.vrp.solvers.VrpSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver.problem
+      :type: discrete_optimization.vrp.problem.VrpProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver.hyperparameters
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.vrp.problem.VrpSolution, debug_mode: bool = False) -> None
+      :canonical: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver.set_warm_start
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver.retrieve_solution
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver.init_model

@@ -1,0 +1,40 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.enums`
+=========================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.enums
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.enums
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`StartOrEnd <discrete_optimization.generic_tasks_tools.enums.StartOrEnd>`
+     -
+
+API
+~~~
+
+.. py:class:: StartOrEnd
+   :canonical: discrete_optimization.generic_tasks_tools.enums.StartOrEnd
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: START
+      :canonical: discrete_optimization.generic_tasks_tools.enums.StartOrEnd.START
+      :value: 'start'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.enums.StartOrEnd.START
+
+   .. py:attribute:: END
+      :canonical: discrete_optimization.generic_tasks_tools.enums.StartOrEnd.END
+      :value: 'end'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.enums.StartOrEnd.END

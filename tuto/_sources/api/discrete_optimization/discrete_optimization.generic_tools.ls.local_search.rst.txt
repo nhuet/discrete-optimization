@@ -1,0 +1,102 @@
+:py:mod:`discrete_optimization.generic_tools.ls.local_search`
+=============================================================
+
+.. py:module:: discrete_optimization.generic_tools.ls.local_search
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ModeMutation <discrete_optimization.generic_tools.ls.local_search.ModeMutation>`
+     -
+   * - :py:obj:`RestartHandler <discrete_optimization.generic_tools.ls.local_search.RestartHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandler
+          :summary:
+   * - :py:obj:`RestartHandlerLimit <discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit
+          :summary:
+
+API
+~~~
+
+.. py:class:: ModeMutation
+   :canonical: discrete_optimization.generic_tools.ls.local_search.ModeMutation
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: MUTATE
+      :canonical: discrete_optimization.generic_tools.ls.local_search.ModeMutation.MUTATE
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.ModeMutation.MUTATE
+
+   .. py:attribute:: MUTATE_AND_EVALUATE
+      :canonical: discrete_optimization.generic_tools.ls.local_search.ModeMutation.MUTATE_AND_EVALUATE
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.ModeMutation.MUTATE_AND_EVALUATE
+
+.. py:class:: RestartHandler()
+   :canonical: discrete_optimization.generic_tools.ls.local_search.RestartHandler
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandler.__init__
+
+   .. py:attribute:: solution_restart
+      :canonical: discrete_optimization.generic_tools.ls.local_search.RestartHandler.solution_restart
+      :type: discrete_optimization.generic_tools.do_problem.Solution
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandler.solution_restart
+
+   .. py:attribute:: solution_best
+      :canonical: discrete_optimization.generic_tools.ls.local_search.RestartHandler.solution_best
+      :type: discrete_optimization.generic_tools.do_problem.Solution
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandler.solution_best
+
+   .. py:attribute:: best_fitness
+      :canonical: discrete_optimization.generic_tools.ls.local_search.RestartHandler.best_fitness
+      :type: discrete_optimization.generic_tools.result_storage.result_storage.fitness_class
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandler.best_fitness
+
+   .. py:method:: update(nv: discrete_optimization.generic_tools.do_problem.Solution, fitness: discrete_optimization.generic_tools.result_storage.result_storage.fitness_class, improved_global: bool, improved_local: bool) -> None
+      :canonical: discrete_optimization.generic_tools.ls.local_search.RestartHandler.update
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandler.update
+
+   .. py:method:: restart(cur_solution: discrete_optimization.generic_tools.do_problem.Solution, cur_objective: discrete_optimization.generic_tools.result_storage.result_storage.fitness_class) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]
+      :canonical: discrete_optimization.generic_tools.ls.local_search.RestartHandler.restart
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandler.restart
+
+.. py:class:: RestartHandlerLimit(nb_iteration_no_improvement: int)
+   :canonical: discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.ls.local_search.RestartHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit.__init__
+
+   .. py:method:: restart(cur_solution: discrete_optimization.generic_tools.do_problem.Solution, cur_objective: discrete_optimization.generic_tools.result_storage.result_storage.fitness_class) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]
+      :canonical: discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit.restart
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ls.local_search.RestartHandlerLimit.restart

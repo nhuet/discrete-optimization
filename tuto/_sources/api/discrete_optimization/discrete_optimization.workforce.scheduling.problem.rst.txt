@@ -1,0 +1,435 @@
+:py:mod:`discrete_optimization.workforce.scheduling.problem`
+============================================================
+
+.. py:module:: discrete_optimization.workforce.scheduling.problem
+
+.. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`AllocSchedulingSolution <discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution>`
+     -
+   * - :py:obj:`TasksDescription <discrete_optimization.workforce.scheduling.problem.TasksDescription>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.TasksDescription
+          :summary:
+   * - :py:obj:`AllocSchedulingProblem <discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`evaluate_solution <discrete_optimization.workforce.scheduling.problem.evaluate_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.evaluate_solution
+          :summary:
+   * - :py:obj:`satisfy_all_done <discrete_optimization.workforce.scheduling.problem.satisfy_all_done>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_all_done
+          :summary:
+   * - :py:obj:`satisfy_precedence <discrete_optimization.workforce.scheduling.problem.satisfy_precedence>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_precedence
+          :summary:
+   * - :py:obj:`satisfy_same_allocation <discrete_optimization.workforce.scheduling.problem.satisfy_same_allocation>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_same_allocation
+          :summary:
+   * - :py:obj:`satisfy_available_team <discrete_optimization.workforce.scheduling.problem.satisfy_available_team>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_available_team
+          :summary:
+   * - :py:obj:`realign_calendars <discrete_optimization.workforce.scheduling.problem.realign_calendars>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.realign_calendars
+          :summary:
+   * - :py:obj:`intervals_do_not_overlap <discrete_optimization.workforce.scheduling.problem.intervals_do_not_overlap>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.intervals_do_not_overlap
+          :summary:
+   * - :py:obj:`interval_inside <discrete_optimization.workforce.scheduling.problem.interval_inside>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.interval_inside
+          :summary:
+   * - :py:obj:`satisfy_calendars <discrete_optimization.workforce.scheduling.problem.satisfy_calendars>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_calendars
+          :summary:
+   * - :py:obj:`satisfy_time_window <discrete_optimization.workforce.scheduling.problem.satisfy_time_window>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_time_window
+          :summary:
+   * - :py:obj:`full_satisfy <discrete_optimization.workforce.scheduling.problem.full_satisfy>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.full_satisfy
+          :summary:
+   * - :py:obj:`satisfy_detailed <discrete_optimization.workforce.scheduling.problem.satisfy_detailed>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed
+          :summary:
+   * - :py:obj:`satisfy_detailed_all_done <discrete_optimization.workforce.scheduling.problem.satisfy_detailed_all_done>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_all_done
+          :summary:
+   * - :py:obj:`satisfy_time_window_detailed <discrete_optimization.workforce.scheduling.problem.satisfy_time_window_detailed>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_time_window_detailed
+          :summary:
+   * - :py:obj:`satisfy_detailed_precedence <discrete_optimization.workforce.scheduling.problem.satisfy_detailed_precedence>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_precedence
+          :summary:
+   * - :py:obj:`satisfy_detailed_same_allocation <discrete_optimization.workforce.scheduling.problem.satisfy_detailed_same_allocation>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_same_allocation
+          :summary:
+   * - :py:obj:`satisfy_detailed_available_team <discrete_optimization.workforce.scheduling.problem.satisfy_detailed_available_team>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_available_team
+          :summary:
+   * - :py:obj:`satisfy_overlap_teams <discrete_optimization.workforce.scheduling.problem.satisfy_overlap_teams>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_overlap_teams
+          :summary:
+   * - :py:obj:`satisfy_overlap_teams_detailed <discrete_optimization.workforce.scheduling.problem.satisfy_overlap_teams_detailed>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_overlap_teams_detailed
+          :summary:
+   * - :py:obj:`compute_stats_per_team <discrete_optimization.workforce.scheduling.problem.compute_stats_per_team>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.compute_stats_per_team
+          :summary:
+   * - :py:obj:`transform_rcpsp_solution_to_alloc_solution <discrete_optimization.workforce.scheduling.problem.transform_rcpsp_solution_to_alloc_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.transform_rcpsp_solution_to_alloc_solution
+          :summary:
+   * - :py:obj:`transform_alloc_solution_to_rcpsp_solution <discrete_optimization.workforce.scheduling.problem.transform_alloc_solution_to_rcpsp_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.transform_alloc_solution_to_rcpsp_solution
+          :summary:
+   * - :py:obj:`build_calendar_array_from_availability_slot <discrete_optimization.workforce.scheduling.problem.build_calendar_array_from_availability_slot>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.build_calendar_array_from_availability_slot
+          :summary:
+   * - :py:obj:`transform_to_multimode_rcpsp <discrete_optimization.workforce.scheduling.problem.transform_to_multimode_rcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.transform_to_multimode_rcpsp
+          :summary:
+   * - :py:obj:`transform_to_monomode_rcpsp <discrete_optimization.workforce.scheduling.problem.transform_to_monomode_rcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.transform_to_monomode_rcpsp
+          :summary:
+   * - :py:obj:`build_pair_mode_constraint <discrete_optimization.workforce.scheduling.problem.build_pair_mode_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.build_pair_mode_constraint
+          :summary:
+   * - :py:obj:`correct_schedule_avoid_overlap <discrete_optimization.workforce.scheduling.problem.correct_schedule_avoid_overlap>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.correct_schedule_avoid_overlap
+          :summary:
+   * - :py:obj:`export_scheduling_problem_json <discrete_optimization.workforce.scheduling.problem.export_scheduling_problem_json>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.export_scheduling_problem_json
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.scheduling.problem.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.logger
+          :summary:
+   * - :py:obj:`Task <discrete_optimization.workforce.scheduling.problem.Task>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.Task
+          :summary:
+   * - :py:obj:`UnaryResource <discrete_optimization.workforce.scheduling.problem.UnaryResource>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.UnaryResource
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.scheduling.problem.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.logger
+
+.. py:data:: Task
+   :canonical: discrete_optimization.workforce.scheduling.problem.Task
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.Task
+
+.. py:data:: UnaryResource
+   :canonical: discrete_optimization.workforce.scheduling.problem.UnaryResource
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.UnaryResource
+
+.. py:class:: AllocSchedulingSolution(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, schedule: numpy.ndarray, allocation: numpy.ndarray)
+   :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution`\ [\ :py:obj:`discrete_optimization.workforce.scheduling.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationSolution`\ [\ :py:obj:`discrete_optimization.workforce.scheduling.problem.Task`\ , :py:obj:`discrete_optimization.workforce.scheduling.problem.UnaryResource`\ ]
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution.problem
+      :type: AllocSchedulingProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution.problem
+
+   .. py:method:: copy() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution.copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution.change_problem
+
+   .. py:method:: get_end_time(task: discrete_optimization.workforce.scheduling.problem.Task) -> int
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution.get_end_time
+
+   .. py:method:: get_start_time(task: discrete_optimization.workforce.scheduling.problem.Task) -> int
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution.get_start_time
+
+   .. py:method:: is_allocated(task: discrete_optimization.workforce.scheduling.problem.Task, unary_resource: discrete_optimization.workforce.scheduling.problem.UnaryResource) -> bool
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution.is_allocated
+
+.. py:class:: TasksDescription(duration_task: int, resource_consumption: dict[str, int] = None)
+   :canonical: discrete_optimization.workforce.scheduling.problem.TasksDescription
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.TasksDescription
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.TasksDescription.__init__
+
+.. py:class:: AllocSchedulingProblem(team_names: list[discrete_optimization.workforce.scheduling.problem.UnaryResource], calendar_team: dict[discrete_optimization.workforce.scheduling.problem.UnaryResource, list[tuple[int, int]]], horizon: int, tasks_list: list[discrete_optimization.workforce.scheduling.problem.Task], tasks_data: dict[discrete_optimization.workforce.scheduling.problem.Task, discrete_optimization.workforce.scheduling.problem.TasksDescription], same_allocation: list[set[discrete_optimization.workforce.scheduling.problem.Task]], precedence_constraints: dict[discrete_optimization.workforce.scheduling.problem.Task, set[discrete_optimization.workforce.scheduling.problem.Task]], available_team_for_activity: dict[discrete_optimization.workforce.scheduling.problem.Task, set[discrete_optimization.workforce.scheduling.problem.UnaryResource]], start_window: dict[discrete_optimization.workforce.scheduling.problem.Task, tuple[typing.Optional[int], typing.Optional[int]]], end_window: dict[discrete_optimization.workforce.scheduling.problem.Task, tuple[typing.Optional[int], typing.Optional[int]]], original_start: dict[discrete_optimization.workforce.scheduling.problem.Task, int], original_end: dict[discrete_optimization.workforce.scheduling.problem.Task, int], resources_list: list[str] = None, resources_capacity: dict[str, int] = None, horizon_start_shift: typing.Optional[int] = 0, objective_handling: discrete_optimization.generic_tools.do_problem.ObjectiveHandling = ObjectiveHandling.AGGREGATE)
+   :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem`\ [\ :py:obj:`discrete_optimization.workforce.scheduling.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationProblem`\ [\ :py:obj:`discrete_optimization.workforce.scheduling.problem.Task`\ , :py:obj:`discrete_optimization.workforce.scheduling.problem.UnaryResource`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem`\ [\ :py:obj:`discrete_optimization.workforce.scheduling.problem.Task`\ ]
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.tasks_list
+      :type: list[discrete_optimization.workforce.scheduling.problem.Task]
+
+   .. py:property:: unary_resources_list
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.unary_resources_list
+      :type: list[discrete_optimization.workforce.scheduling.problem.UnaryResource]
+
+   .. py:method:: get_precedence_constraints() -> dict[discrete_optimization.workforce.scheduling.problem.Task, set[discrete_optimization.workforce.scheduling.problem.Task]]
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_precedence_constraints
+
+   .. py:method:: is_compatible_task_unary_resource(task: discrete_optimization.workforce.scheduling.problem.Task, unary_resource: discrete_optimization.workforce.scheduling.problem.UnaryResource) -> bool
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.is_compatible_task_unary_resource
+
+   .. py:method:: get_makespan_lower_bound() -> int
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_makespan_lower_bound
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_makespan_upper_bound
+
+   .. py:method:: set_objective_handling(objective_handling: discrete_optimization.generic_tools.do_problem.ObjectiveHandling)
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.set_objective_handling
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.set_objective_handling
+
+   .. py:method:: update_available_team_for_activity(available_team_for_activity: dict[collections.abc.Hashable, set[collections.abc.Hashable]])
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.update_available_team_for_activity
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.update_available_team_for_activity
+
+   .. py:method:: compute_predecessors()
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.compute_predecessors
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.compute_predecessors
+
+   .. py:method:: evaluate(variable: discrete_optimization.generic_tools.do_problem.Solution) -> dict[str, float]
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.evaluate
+
+   .. py:method:: satisfy(variable: discrete_optimization.generic_tools.do_problem.Solution) -> bool
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_objective_register
+
+   .. py:method:: get_lb_start_window(task: collections.abc.Hashable) -> int
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_lb_start_window
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_lb_start_window
+
+   .. py:method:: get_ub_start_window(task: collections.abc.Hashable) -> int
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_ub_start_window
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_ub_start_window
+
+   .. py:method:: get_lb_end_window(task: collections.abc.Hashable) -> int
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_lb_end_window
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_lb_end_window
+
+   .. py:method:: get_ub_end_window(task: collections.abc.Hashable) -> int
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_ub_end_window
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_ub_end_window
+
+   .. py:method:: get_all_lb_ub() -> list[tuple[int, int, int, int]]
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_all_lb_ub
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_all_lb_ub
+
+   .. py:method:: get_unavailable_teams_per_activity() -> dict[collections.abc.Hashable, set[collections.abc.Hashable]]
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_unavailable_teams_per_activity
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.get_unavailable_teams_per_activity
+
+   .. py:method:: compatible_teams_all_activity() -> dict[collections.abc.Hashable, set[collections.abc.Hashable]]
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.compatible_teams_all_activity
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.compatible_teams_all_activity
+
+   .. py:method:: compatible_teams_index_all_activity() -> dict[int, set[int]]
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.compatible_teams_index_all_activity
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.compatible_teams_index_all_activity
+
+   .. py:method:: compute_unavailability_calendar(team: collections.abc.Hashable) -> list[tuple[int, int]]
+      :canonical: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.compute_unavailability_calendar
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem.compute_unavailability_calendar
+
+.. py:function:: evaluate_solution(solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem) -> dict[str, float]
+   :canonical: discrete_optimization.workforce.scheduling.problem.evaluate_solution
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.evaluate_solution
+
+.. py:function:: satisfy_all_done(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_all_done
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_all_done
+
+.. py:function:: satisfy_precedence(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, partial_solution: bool = False) -> bool
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_precedence
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_precedence
+
+.. py:function:: satisfy_same_allocation(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, partial_solution: bool = False) -> bool
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_same_allocation
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_same_allocation
+
+.. py:function:: satisfy_available_team(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, partial_solution: bool = False) -> bool
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_available_team
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_available_team
+
+.. py:function:: realign_calendars(calendars_dict: dict[collections.abc.Hashable, list[tuple[int, int]]])
+   :canonical: discrete_optimization.workforce.scheduling.problem.realign_calendars
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.realign_calendars
+
+.. py:function:: intervals_do_not_overlap(interval1: tuple[float, float], interval2: tuple[float, float])
+   :canonical: discrete_optimization.workforce.scheduling.problem.intervals_do_not_overlap
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.intervals_do_not_overlap
+
+.. py:function:: interval_inside(interval1: tuple[float, float], interval_container: tuple[float, float])
+   :canonical: discrete_optimization.workforce.scheduling.problem.interval_inside
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.interval_inside
+
+.. py:function:: satisfy_calendars(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_calendars
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_calendars
+
+.. py:function:: satisfy_time_window(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_time_window
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_time_window
+
+.. py:function:: full_satisfy(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, partial_solution: bool = False) -> bool
+   :canonical: discrete_optimization.workforce.scheduling.problem.full_satisfy
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.full_satisfy
+
+.. py:function:: satisfy_detailed(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution)
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_detailed
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed
+
+.. py:function:: satisfy_detailed_all_done(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution)
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_all_done
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_all_done
+
+.. py:function:: satisfy_time_window_detailed(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution)
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_time_window_detailed
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_time_window_detailed
+
+.. py:function:: satisfy_detailed_precedence(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution) -> list[tuple[str, collections.abc.Hashable, collections.abc.Hashable, int]]
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_precedence
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_precedence
+
+.. py:function:: satisfy_detailed_same_allocation(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution) -> list[tuple[str, set[collections.abc.Hashable]], set[int]]
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_same_allocation
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_same_allocation
+
+.. py:function:: satisfy_detailed_available_team(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution) -> list[tuple[str, collections.abc.Hashable, collections.abc.Hashable, int, int]]
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_available_team
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_detailed_available_team
+
+.. py:function:: satisfy_overlap_teams(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, **kwargs) -> bool
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_overlap_teams
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_overlap_teams
+
+.. py:function:: satisfy_overlap_teams_detailed(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution) -> list[tuple[str, int, int, int]]
+   :canonical: discrete_optimization.workforce.scheduling.problem.satisfy_overlap_teams_detailed
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.satisfy_overlap_teams_detailed
+
+.. py:function:: compute_stats_per_team(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution) -> dict[int, float]
+   :canonical: discrete_optimization.workforce.scheduling.problem.compute_stats_per_team
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.compute_stats_per_team
+
+.. py:function:: transform_rcpsp_solution_to_alloc_solution(rcpsp_solution: discrete_optimization.rcpsp.problem.RcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, ac_mode_to_team: dict[tuple[collections.abc.Hashable, int], collections.abc.Hashable], alloc_scheduling_problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem) -> discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution
+   :canonical: discrete_optimization.workforce.scheduling.problem.transform_rcpsp_solution_to_alloc_solution
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.transform_rcpsp_solution_to_alloc_solution
+
+.. py:function:: transform_alloc_solution_to_rcpsp_solution(alloc_solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, ac_mode_to_team: dict[tuple[collections.abc.Hashable, int], collections.abc.Hashable], alloc_scheduling_problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem) -> discrete_optimization.rcpsp.problem.RcpspSolution
+   :canonical: discrete_optimization.workforce.scheduling.problem.transform_alloc_solution_to_rcpsp_solution
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.transform_alloc_solution_to_rcpsp_solution
+
+.. py:function:: build_calendar_array_from_availability_slot(availability_slots: list[tuple[int, int]], horizon: int, value: int = 1)
+   :canonical: discrete_optimization.workforce.scheduling.problem.build_calendar_array_from_availability_slot
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.build_calendar_array_from_availability_slot
+
+.. py:function:: transform_to_multimode_rcpsp(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, build_calendar: bool = True, add_window_time_constraint: bool = True, add_additional_constraint: bool = True) -> tuple[discrete_optimization.rcpsp.problem.RcpspProblem, dict[tuple[collections.abc.Hashable, int], collections.abc.Hashable]]
+   :canonical: discrete_optimization.workforce.scheduling.problem.transform_to_multimode_rcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.transform_to_multimode_rcpsp
+
+.. py:function:: transform_to_monomode_rcpsp(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, build_calendar: bool = True, add_additional_constraint: bool = True) -> tuple[discrete_optimization.rcpsp.problem.RcpspProblem, dict[tuple[collections.abc.Hashable, int], collections.abc.Hashable]]
+   :canonical: discrete_optimization.workforce.scheduling.problem.transform_to_monomode_rcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.transform_to_monomode_rcpsp
+
+.. py:function:: build_pair_mode_constraint(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, rcpsp: discrete_optimization.rcpsp.problem.RcpspProblem, use_score: bool = False)
+   :canonical: discrete_optimization.workforce.scheduling.problem.build_pair_mode_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.build_pair_mode_constraint
+
+.. py:function:: correct_schedule_avoid_overlap(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem, solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution, init_min_starting_date_lb: bool = False)
+   :canonical: discrete_optimization.workforce.scheduling.problem.correct_schedule_avoid_overlap
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.correct_schedule_avoid_overlap
+
+.. py:function:: export_scheduling_problem_json(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem) -> dict
+   :canonical: discrete_optimization.workforce.scheduling.problem.export_scheduling_problem_json
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.problem.export_scheduling_problem_json

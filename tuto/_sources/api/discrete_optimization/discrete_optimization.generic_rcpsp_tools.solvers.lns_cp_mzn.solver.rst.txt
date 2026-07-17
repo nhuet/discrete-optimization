@@ -1,0 +1,101 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver`
+=============================================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ConstraintHandlerType <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.ConstraintHandlerType>`
+     -
+   * - :py:obj:`LnsCpMznGenericRcpspSolver <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.LnsCpMznGenericRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`build_default_cp_model <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_cp_model>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_cp_model
+          :summary:
+   * - :py:obj:`build_default_postpro <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_postpro>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_postpro
+          :summary:
+   * - :py:obj:`build_default_initial_solution <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_initial_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_initial_solution
+          :summary:
+   * - :py:obj:`build_constraint_handler <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_constraint_handler>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_constraint_handler
+          :summary:
+   * - :py:obj:`build_constraint_handler_helper <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_constraint_handler_helper>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_constraint_handler_helper
+          :summary:
+
+API
+~~~
+
+.. py:class:: ConstraintHandlerType
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.ConstraintHandlerType
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: MIX_SUBPROBLEMS
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.ConstraintHandlerType.MIX_SUBPROBLEMS
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.ConstraintHandlerType.MIX_SUBPROBLEMS
+
+   .. py:attribute:: SOLUTION_REPAIR
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.ConstraintHandlerType.SOLUTION_REPAIR
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.ConstraintHandlerType.SOLUTION_REPAIR
+
+.. py:function:: build_default_cp_model(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, partial_solution=None, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_cp_model
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_cp_model
+
+.. py:function:: build_default_postpro(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, partial_solution=None, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_postpro
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_postpro
+
+.. py:function:: build_default_initial_solution(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_initial_solution
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_default_initial_solution
+
+.. py:function:: build_constraint_handler(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, graph, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_constraint_handler
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_constraint_handler
+
+.. py:function:: build_constraint_handler_helper(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, graph, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_constraint_handler_helper
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.build_constraint_handler_helper
+
+.. py:class:: LnsCpMznGenericRcpspSolver(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, partial_solution=None, subsolver: typing.Optional[discrete_optimization.generic_tools.cp_tools.MinizincCpSolver] = None, initial_solution_provider: typing.Optional[discrete_optimization.generic_tools.lns_mip.InitialSolution] = None, constraint_handler: typing.Optional[discrete_optimization.generic_tools.lns_cp.MznConstraintHandler] = None, post_process_solution: typing.Optional[discrete_optimization.generic_tools.lns_mip.PostProcessSolution] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.LnsCpMznGenericRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.LnsCpMzn`, :py:obj:`discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.LnsCpMznGenericRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver.LnsCpMznGenericRcpspSolver.hyperparameters

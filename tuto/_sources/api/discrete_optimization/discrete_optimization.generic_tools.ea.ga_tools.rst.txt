@@ -1,0 +1,63 @@
+:py:mod:`discrete_optimization.generic_tools.ea.ga_tools`
+=========================================================
+
+.. py:module:: discrete_optimization.generic_tools.ea.ga_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ParametersGa <discrete_optimization.generic_tools.ea.ga_tools.ParametersGa>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools.ParametersGa
+          :summary:
+   * - :py:obj:`ParametersAltGa <discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa
+          :summary:
+
+API
+~~~
+
+.. py:class:: ParametersGa(mutation: typing.Union[discrete_optimization.generic_tools.do_mutation.Mutation, discrete_optimization.generic_tools.ea.ga.DeapMutation], crossover: discrete_optimization.generic_tools.ea.ga.DeapCrossover, selection: discrete_optimization.generic_tools.ea.ga.DeapSelection, encoding: str, objective_handling: discrete_optimization.generic_tools.ea.ga.ObjectiveHandling, objectives: typing.Union[str, list[str]], objective_weights: list[float], pop_size: int, max_evals: int, mut_rate: float, crossover_rate: float, tournament_size: float, deap_verbose: bool)
+   :canonical: discrete_optimization.generic_tools.ea.ga_tools.ParametersGa
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools.ParametersGa
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools.ParametersGa.__init__
+
+   .. py:method:: default_rcpsp() -> discrete_optimization.generic_tools.ea.ga_tools.ParametersGa
+      :canonical: discrete_optimization.generic_tools.ea.ga_tools.ParametersGa.default_rcpsp
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools.ParametersGa.default_rcpsp
+
+.. py:class:: ParametersAltGa(mutations: list[typing.Union[discrete_optimization.generic_tools.do_mutation.Mutation, discrete_optimization.generic_tools.ea.ga.DeapMutation]], crossovers: list[discrete_optimization.generic_tools.ea.ga.DeapCrossover], selections: list[discrete_optimization.generic_tools.ea.ga.DeapSelection], encodings: list[str], objective_handling: discrete_optimization.generic_tools.ea.ga.ObjectiveHandling, objectives: typing.Union[str, list[str]], objective_weights: list[float], pop_size: int, max_evals: int, mut_rate: float, crossover_rate: float, tournament_size: float, deap_verbose: bool, sub_evals: list[int])
+   :canonical: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa.__init__
+
+   .. py:method:: default_mrcpsp() -> discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa
+      :canonical: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa.default_mrcpsp
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa.default_mrcpsp
+
+   .. py:method:: default_msrcpsp() -> discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa
+      :canonical: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa.default_msrcpsp
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa.default_msrcpsp

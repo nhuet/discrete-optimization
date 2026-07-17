@@ -1,0 +1,132 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.toulbar`
+=====================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.toulbar
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ToulbarRcpspSolver <discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolver>`
+     -
+   * - :py:obj:`ToulbarMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver>`
+     -
+   * - :py:obj:`RcpspConstraintHandlerToulbar <discrete_optimization.rcpsp.solvers.toulbar.RcpspConstraintHandlerToulbar>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.toulbar.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.logger
+          :summary:
+   * - :py:obj:`ToulbarRcpspSolverForLns <discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolverForLns>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolverForLns
+          :summary:
+   * - :py:obj:`ToulbarMultimodeRcpspSolverForLns <discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolverForLns>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolverForLns
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.toulbar.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.logger
+
+.. py:class:: ToulbarRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.rcpsp_solver.RcpspSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: start_task_to_index
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolver.start_task_to_index
+      :type: dict[int, int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolver.start_task_to_index
+
+   .. py:method:: retrieve_solution(solution_from_toulbar2: tuple[list, float, int]) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolver.retrieve_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolver.init_model
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.rcpsp.problem.RcpspSolution) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolver.set_warm_start
+
+.. py:class:: ToulbarMultimodeRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.rcpsp_solver.RcpspSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: modes
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.modes
+      :type: list[list[dict]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.modes
+
+   .. py:attribute:: name_var_to_index
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.name_var_to_index
+      :type: dict[str, int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.name_var_to_index
+
+   .. py:attribute:: start_task_to_index
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.start_task_to_index
+      :type: dict[int, int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.start_task_to_index
+
+   .. py:method:: retrieve_solution(solution_from_toulbar2: tuple[list, float, int]) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.retrieve_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.init_model
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.rcpsp.problem.RcpspSolution) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolver.set_warm_start
+
+.. py:data:: ToulbarRcpspSolverForLns
+   :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolverForLns
+   :value: 'to_lns_toulbar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolverForLns
+
+.. py:data:: ToulbarMultimodeRcpspSolverForLns
+   :canonical: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolverForLns
+   :value: 'to_lns_toulbar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.ToulbarMultimodeRcpspSolverForLns
+
+.. py:class:: RcpspConstraintHandlerToulbar(problem: discrete_optimization.rcpsp.problem.RcpspProblem, fraction_task: float = 0.5)
+   :canonical: discrete_optimization.rcpsp.solvers.toulbar.RcpspConstraintHandlerToulbar
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.rcpsp.solvers.toulbar.ToulbarRcpspSolverForLns, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> typing.Iterable[typing.Any]
+      :canonical: discrete_optimization.rcpsp.solvers.toulbar.RcpspConstraintHandlerToulbar.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.toulbar.RcpspConstraintHandlerToulbar.adding_constraint_from_results_store

@@ -1,0 +1,106 @@
+:py:mod:`discrete_optimization.generic_tools.callbacks.stats_retrievers`
+========================================================================
+
+.. py:module:: discrete_optimization.generic_tools.callbacks.stats_retrievers
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`BasicStatsCallback <discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback
+          :summary:
+   * - :py:obj:`StatsWithBoundsCallback <discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsWithBoundsCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsWithBoundsCallback
+          :summary:
+   * - :py:obj:`StatsCpsatCallback <discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsCpsatCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsCpsatCallback
+          :summary:
+
+API
+~~~
+
+.. py:class:: BasicStatsCallback()
+   :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.__init__
+
+   .. py:attribute:: time_column
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.time_column
+      :value: 'time'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.time_column
+
+   .. py:attribute:: metric_columns
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.metric_columns
+      :value: ['fit']
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.metric_columns
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.on_step_end
+
+   .. py:method:: on_solve_start(solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.on_solve_start
+
+   .. py:method:: on_solve_end(res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.on_solve_end
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.on_solve_end
+
+   .. py:method:: get_df_metrics() -> pandas.DataFrame
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.get_df_metrics
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback.get_df_metrics
+
+.. py:class:: StatsWithBoundsCallback()
+   :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsWithBoundsCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsWithBoundsCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsWithBoundsCallback.__init__
+
+   .. py:attribute:: metric_columns
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsWithBoundsCallback.metric_columns
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsWithBoundsCallback.metric_columns
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsWithBoundsCallback.on_step_end
+
+.. py:class:: StatsCpsatCallback()
+   :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsCpsatCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsWithBoundsCallback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsCpsatCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsCpsatCallback.__init__
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsCpsatCallback.on_step_end
+
+   .. py:method:: on_solve_end(res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver)
+      :canonical: discrete_optimization.generic_tools.callbacks.stats_retrievers.StatsCpsatCallback.on_solve_end

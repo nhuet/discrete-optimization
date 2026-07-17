@@ -1,0 +1,117 @@
+:py:mod:`discrete_optimization.generic_tools.hub_solver.optal.model_collections`
+================================================================================
+
+.. py:module:: discrete_optimization.generic_tools.hub_solver.optal.model_collections
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DoProblemEnum <discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`this_folder <discrete_optimization.generic_tools.hub_solver.optal.model_collections.this_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.this_folder
+          :summary:
+   * - :py:obj:`models_folder <discrete_optimization.generic_tools.hub_solver.optal.model_collections.models_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.models_folder
+          :summary:
+   * - :py:obj:`problem_to_script_path <discrete_optimization.generic_tools.hub_solver.optal.model_collections.problem_to_script_path>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.problem_to_script_path
+          :summary:
+
+API
+~~~
+
+.. py:class:: DoProblemEnum
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: JSP
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.JSP
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.JSP
+
+   .. py:attribute:: FJSP
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.FJSP
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.FJSP
+
+   .. py:attribute:: RCPSP
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.RCPSP
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.RCPSP
+
+   .. py:attribute:: MRCPSP
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.MRCPSP
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.MRCPSP
+
+   .. py:attribute:: MSRCPSP
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.MSRCPSP
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.MSRCPSP
+
+   .. py:attribute:: SINGLEMACHINE
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.SINGLEMACHINE
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.SINGLEMACHINE
+
+   .. py:attribute:: TSP
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.TSP
+      :value: 6
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.TSP
+
+   .. py:attribute:: TSPTW
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.TSPTW
+      :value: 7
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.TSPTW
+
+   .. py:attribute:: WORKFORCE_SCHEDULING
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.WORKFORCE_SCHEDULING
+      :value: 8
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.DoProblemEnum.WORKFORCE_SCHEDULING
+
+.. py:data:: this_folder
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.this_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.this_folder
+
+.. py:data:: models_folder
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.models_folder
+   :value: 'join(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.models_folder
+
+.. py:data:: problem_to_script_path
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.model_collections.problem_to_script_path
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.model_collections.problem_to_script_path

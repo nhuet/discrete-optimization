@@ -1,0 +1,727 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.cp_mzn`
+====================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.cp_mzn
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpRcpspSolver <discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver>`
+     -
+   * - :py:obj:`CpMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver>`
+     -
+   * - :py:obj:`CPMultimodeWithFakeTaskRcpspSolver <discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver>`
+     -
+   * - :py:obj:`CpMultimodePreemptiveRcpspSolver <discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver>`
+     -
+   * - :py:obj:`CpPreemptiveRcpspSolver <discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver>`
+     -
+   * - :py:obj:`CpNoBoolMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver>`
+     -
+   * - :py:obj:`CpModesMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`add_fake_task_cp_data <discrete_optimization.rcpsp.solvers.cp_mzn.add_fake_task_cp_data>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_fake_task_cp_data
+          :summary:
+   * - :py:obj:`precompute_possible_starting_time_interval <discrete_optimization.rcpsp.solvers.cp_mzn.precompute_possible_starting_time_interval>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.precompute_possible_starting_time_interval
+          :summary:
+   * - :py:obj:`hard_start_times <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_times>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_times
+          :summary:
+   * - :py:obj:`soft_start_times <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_times>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_times
+          :summary:
+   * - :py:obj:`hard_start_times_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_times_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_times_mrcpsp
+          :summary:
+   * - :py:obj:`soft_start_times_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_times_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_times_mrcpsp
+          :summary:
+   * - :py:obj:`soft_start_together_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_together_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_together_mrcpsp
+          :summary:
+   * - :py:obj:`hard_start_together_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_together_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_together_mrcpsp
+          :summary:
+   * - :py:obj:`soft_start_together <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_together>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_together
+          :summary:
+   * - :py:obj:`hard_start_together <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_together>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_together
+          :summary:
+   * - :py:obj:`hard_start_after_nunit <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_after_nunit>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_after_nunit
+          :summary:
+   * - :py:obj:`soft_start_after_nunit <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_after_nunit>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_after_nunit
+          :summary:
+   * - :py:obj:`hard_start_after_nunit_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_after_nunit_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_after_nunit_mrcpsp
+          :summary:
+   * - :py:obj:`soft_start_after_nunit_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_after_nunit_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_after_nunit_mrcpsp
+          :summary:
+   * - :py:obj:`hard_start_at_end_plus_offset_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_plus_offset_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_plus_offset_mrcpsp
+          :summary:
+   * - :py:obj:`hard_start_at_end_plus_offset <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_plus_offset>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_plus_offset
+          :summary:
+   * - :py:obj:`soft_start_at_end_plus_offset_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_plus_offset_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_plus_offset_mrcpsp
+          :summary:
+   * - :py:obj:`soft_start_at_end_plus_offset <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_plus_offset>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_plus_offset
+          :summary:
+   * - :py:obj:`hard_start_at_end_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_mrcpsp
+          :summary:
+   * - :py:obj:`soft_start_at_end_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_mrcpsp
+          :summary:
+   * - :py:obj:`hard_start_at_end <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end
+          :summary:
+   * - :py:obj:`soft_start_at_end <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end
+          :summary:
+   * - :py:obj:`soft_start_window <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_window>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_window
+          :summary:
+   * - :py:obj:`soft_end_window <discrete_optimization.rcpsp.solvers.cp_mzn.soft_end_window>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_end_window
+          :summary:
+   * - :py:obj:`soft_start_window_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_window_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_window_mrcpsp
+          :summary:
+   * - :py:obj:`soft_end_window_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.soft_end_window_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_end_window_mrcpsp
+          :summary:
+   * - :py:obj:`hard_start_window <discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_window>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_window
+          :summary:
+   * - :py:obj:`hard_end_window <discrete_optimization.rcpsp.solvers.cp_mzn.hard_end_window>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_end_window
+          :summary:
+   * - :py:obj:`add_hard_special_constraints_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.add_hard_special_constraints_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_hard_special_constraints_mrcpsp
+          :summary:
+   * - :py:obj:`add_soft_special_constraints_mrcpsp <discrete_optimization.rcpsp.solvers.cp_mzn.add_soft_special_constraints_mrcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_soft_special_constraints_mrcpsp
+          :summary:
+   * - :py:obj:`add_hard_special_constraints <discrete_optimization.rcpsp.solvers.cp_mzn.add_hard_special_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_hard_special_constraints
+          :summary:
+   * - :py:obj:`add_soft_special_constraints <discrete_optimization.rcpsp.solvers.cp_mzn.add_soft_special_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_soft_special_constraints
+          :summary:
+   * - :py:obj:`define_second_part_objective <discrete_optimization.rcpsp.solvers.cp_mzn.define_second_part_objective>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.define_second_part_objective
+          :summary:
+   * - :py:obj:`add_constraints_string <discrete_optimization.rcpsp.solvers.cp_mzn.add_constraints_string>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_constraints_string
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.cp_mzn.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.logger
+          :summary:
+   * - :py:obj:`this_path <discrete_optimization.rcpsp.solvers.cp_mzn.this_path>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.this_path
+          :summary:
+   * - :py:obj:`files_mzn <discrete_optimization.rcpsp.solvers.cp_mzn.files_mzn>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.files_mzn
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.logger
+
+.. py:data:: this_path
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.this_path
+   :value: 'dirname(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.this_path
+
+.. py:data:: files_mzn
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.files_mzn
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.files_mzn
+
+.. py:function:: add_fake_task_cp_data(rcpsp_problem: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem], ignore_fake_task: bool = True, max_time_to_consider: int = None)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.add_fake_task_cp_data
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_fake_task_cp_data
+
+.. py:class:: CpRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, silent_solve_error: bool = True, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.MinizincCpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.problem
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.init_model
+
+   .. py:method:: add_hard_special_constraints(partial_solution)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.add_hard_special_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.add_hard_special_constraints
+
+   .. py:method:: constraint_objective_makespan()
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_objective_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_objective_makespan
+
+   .. py:method:: constraint_objective_equal_makespan(task_sink)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_objective_equal_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_objective_equal_makespan
+
+   .. py:method:: constraint_sum_of_ending_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_sum_of_ending_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_sum_of_ending_time
+
+   .. py:method:: constraint_sum_of_starting_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_sum_of_starting_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_sum_of_starting_time
+
+   .. py:method:: constraint_objective_max_time_set_of_jobs(set_of_jobs)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+   .. py:method:: constraint_start_time_string(task, start_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_start_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_start_time_string
+
+   .. py:method:: constraint_end_time_string(task, end_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_end_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.constraint_end_time_string
+
+   .. py:method:: retrieve_solution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.retrieve_solution
+
+   .. py:method:: get_stats()
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.get_stats
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver.get_stats
+
+.. py:class:: CpMultimodeRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, silent_solve_error: bool = False, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.MinizincCpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.problem
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.init_model
+
+   .. py:method:: add_hard_special_constraints(partial_solution)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.add_hard_special_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.add_hard_special_constraints
+
+   .. py:method:: constraint_task_to_mode(task_id, mode)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_task_to_mode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_task_to_mode
+
+   .. py:method:: constraint_objective_makespan()
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_objective_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_objective_makespan
+
+   .. py:method:: constraint_objective_equal_makespan(task_sink)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_objective_equal_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_objective_equal_makespan
+
+   .. py:method:: constraint_objective_max_time_set_of_jobs(set_of_jobs)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+   .. py:method:: constraint_sum_of_ending_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_sum_of_ending_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_sum_of_ending_time
+
+   .. py:method:: constraint_sum_of_starting_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_sum_of_starting_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_sum_of_starting_time
+
+   .. py:method:: constraint_start_time_string(task, start_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_start_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_start_time_string
+
+   .. py:method:: constraint_end_time_string(task, end_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_end_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.constraint_end_time_string
+
+   .. py:method:: retrieve_solution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver.retrieve_solution
+
+.. py:class:: CPMultimodeWithFakeTaskRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, silent_solve_error: bool = False, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver`
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.init_model
+
+   .. py:method:: retrieve_solution(**kwargs: typing.Any) -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.retrieve_solution
+
+   .. py:method:: constraint_objective_makespan()
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_objective_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_objective_makespan
+
+   .. py:method:: constraint_objective_equal_makespan(task_sink)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_objective_equal_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_objective_equal_makespan
+
+   .. py:method:: constraint_objective_max_time_set_of_jobs(set_of_jobs)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+   .. py:method:: constraint_sum_of_ending_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_sum_of_ending_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_sum_of_ending_time
+
+   .. py:method:: constraint_sum_of_starting_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_sum_of_starting_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver.constraint_sum_of_starting_time
+
+.. py:class:: CpMultimodePreemptiveRcpspSolver(problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, silent_solve_error: bool = True, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.MinizincCpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.problem
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.init_model
+
+   .. py:method:: constraint_ressource_requirement_at_time_t(time, ressource, ressource_number, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.LEQ)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_ressource_requirement_at_time_t
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_ressource_requirement_at_time_t
+
+   .. py:method:: retrieve_solution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.retrieve_solution
+
+   .. py:method:: constraint_task_to_mode(task_id, mode)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_task_to_mode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_task_to_mode
+
+   .. py:method:: add_hard_special_constraints(partial_solution)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.add_hard_special_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.add_hard_special_constraints
+
+   .. py:method:: constraint_duration_to_min_duration_preemptive(task, min_duration)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_duration_to_min_duration_preemptive
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_duration_to_min_duration_preemptive
+
+   .. py:method:: constraint_minduration_all_tasks()
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_minduration_all_tasks
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_minduration_all_tasks
+
+   .. py:method:: constraint_start_time_string(task, start_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_start_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_start_time_string
+
+   .. py:method:: constraint_end_time_string(task, end_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_end_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_end_time_string
+
+   .. py:method:: constraint_start_time_string_preemptive_i(task, start_time, part_id=1, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_start_time_string_preemptive_i
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_start_time_string_preemptive_i
+
+   .. py:method:: constraint_duration_string_preemptive_i(task, duration, part_id=1, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_duration_string_preemptive_i
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_duration_string_preemptive_i
+
+   .. py:method:: constraint_start_time_precomputed()
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_start_time_precomputed
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_start_time_precomputed
+
+   .. py:method:: constraint_objective_makespan()
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_objective_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_objective_makespan
+
+   .. py:method:: constraint_objective_max_time_set_of_jobs(set_of_jobs)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+   .. py:method:: constraint_objective_equal_makespan(task_sink)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_objective_equal_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_objective_equal_makespan
+
+   .. py:method:: constraint_sum_of_ending_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_sum_of_ending_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_sum_of_ending_time
+
+   .. py:method:: constraint_sum_of_starting_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_sum_of_starting_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver.constraint_sum_of_starting_time
+
+.. py:class:: CpPreemptiveRcpspSolver(problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, silent_solve_error: bool = True, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver.problem
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver.init_model
+
+   .. py:method:: retrieve_solution(**kwargs: typing.Any) -> discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver.retrieve_solution
+
+   .. py:method:: constraint_ressource_requirement_at_time_t(time, ressource, ressource_number, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.LEQ)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver.constraint_ressource_requirement_at_time_t
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver.constraint_ressource_requirement_at_time_t
+
+.. py:class:: CpNoBoolMultimodeRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, silent_solve_error: bool = False, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.MinizincCpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.problem
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.init_model
+
+   .. py:method:: constraint_objective_makespan()
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_objective_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_objective_makespan
+
+   .. py:method:: constraint_objective_equal_makespan(task_sink)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_objective_equal_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_objective_equal_makespan
+
+   .. py:method:: constraint_objective_max_time_set_of_jobs(set_of_jobs)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+   .. py:method:: constraint_start_time_string(task, start_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_start_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_start_time_string
+
+   .. py:method:: constraint_end_time_string(task, end_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_end_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.constraint_end_time_string
+
+   .. py:method:: retrieve_solution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver.retrieve_solution
+
+.. py:class:: CpModesMultimodeRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver.problem
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver.init_model
+
+   .. py:method:: retrieve_solutions(result, parameters_cp: discrete_optimization.generic_tools.cp_tools.ParametersCp)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver.retrieve_solutions
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver.retrieve_solutions
+
+   .. py:method:: solve(parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: typing.Optional[float] = 100.0, nr_solutions: int = 1, all_solutions: bool = False, **args)
+      :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver.solve
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.CpModesMultimodeRcpspSolver.solve
+
+.. py:function:: precompute_possible_starting_time_interval(problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.precompute_possible_starting_time_interval
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.precompute_possible_starting_time_interval
+
+.. py:function:: hard_start_times(dict_start_times: dict[collections.abc.Hashable, int], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_times
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_times
+
+.. py:function:: soft_start_times(dict_start_times: dict[collections.abc.Hashable, int], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_times
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_times
+
+.. py:function:: hard_start_times_mrcpsp(dict_start_times: dict[collections.abc.Hashable, int], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_times_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_times_mrcpsp
+
+.. py:function:: soft_start_times_mrcpsp(dict_start_times: dict[collections.abc.Hashable, int], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_times_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_times_mrcpsp
+
+.. py:function:: soft_start_together_mrcpsp(list_start_together: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_together_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_together_mrcpsp
+
+.. py:function:: hard_start_together_mrcpsp(list_start_together: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_together_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_together_mrcpsp
+
+.. py:function:: soft_start_together(list_start_together: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_together
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_together
+
+.. py:function:: hard_start_together(list_start_together: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_together
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_together
+
+.. py:function:: hard_start_after_nunit(list_start_after_nunit: list[tuple[collections.abc.Hashable, collections.abc.Hashable, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_after_nunit
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_after_nunit
+
+.. py:function:: soft_start_after_nunit(list_start_after_nunit: list[tuple[collections.abc.Hashable, collections.abc.Hashable, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_after_nunit
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_after_nunit
+
+.. py:function:: hard_start_after_nunit_mrcpsp(list_start_after_nunit: list[tuple[collections.abc.Hashable, collections.abc.Hashable, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_after_nunit_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_after_nunit_mrcpsp
+
+.. py:function:: soft_start_after_nunit_mrcpsp(list_start_after_nunit: list[tuple[collections.abc.Hashable, collections.abc.Hashable, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_after_nunit_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_after_nunit_mrcpsp
+
+.. py:function:: hard_start_at_end_plus_offset_mrcpsp(list_start_at_end_plus_offset, cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_plus_offset_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_plus_offset_mrcpsp
+
+.. py:function:: hard_start_at_end_plus_offset(list_start_at_end_plus_offset, cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_plus_offset
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_plus_offset
+
+.. py:function:: soft_start_at_end_plus_offset_mrcpsp(list_start_at_end_plus_offset: list[tuple[collections.abc.Hashable, collections.abc.Hashable, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_plus_offset_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_plus_offset_mrcpsp
+
+.. py:function:: soft_start_at_end_plus_offset(list_start_at_end_plus_offset: list[tuple[collections.abc.Hashable, collections.abc.Hashable, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_plus_offset
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_plus_offset
+
+.. py:function:: hard_start_at_end_mrcpsp(list_start_at_end: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end_mrcpsp
+
+.. py:function:: soft_start_at_end_mrcpsp(list_start_at_end: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end_mrcpsp
+
+.. py:function:: hard_start_at_end(list_start_at_end: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_at_end
+
+.. py:function:: soft_start_at_end(list_start_at_end: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_at_end
+
+.. py:function:: soft_start_window(start_times_window: dict[collections.abc.Hashable, tuple[int, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_window
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_window
+
+.. py:function:: soft_end_window(end_times_window: dict[collections.abc.Hashable, tuple[int, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_end_window
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_end_window
+
+.. py:function:: soft_start_window_mrcpsp(start_times_window: dict[collections.abc.Hashable, tuple[int, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_window_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_start_window_mrcpsp
+
+.. py:function:: soft_end_window_mrcpsp(end_times_window: dict[collections.abc.Hashable, tuple[int, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.soft_end_window_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.soft_end_window_mrcpsp
+
+.. py:function:: hard_start_window(start_times_window: dict[collections.abc.Hashable, tuple[int, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_window
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_start_window
+
+.. py:function:: hard_end_window(end_times_window: dict[collections.abc.Hashable, tuple[int, int]], cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.hard_end_window
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.hard_end_window
+
+.. py:function:: add_hard_special_constraints_mrcpsp(partial_solution: discrete_optimization.rcpsp.solution.PartialSolution, cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CPMultimodeWithFakeTaskRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpNoBoolMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.add_hard_special_constraints_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_hard_special_constraints_mrcpsp
+
+.. py:function:: add_soft_special_constraints_mrcpsp(partial_solution: discrete_optimization.rcpsp.solution.PartialSolution, cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.add_soft_special_constraints_mrcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_soft_special_constraints_mrcpsp
+
+.. py:function:: add_hard_special_constraints(partial_solution: discrete_optimization.rcpsp.solution.PartialSolution, cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodeRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.add_hard_special_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_hard_special_constraints
+
+.. py:function:: add_soft_special_constraints(partial_solution: discrete_optimization.rcpsp.solution.PartialSolution, cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpRcpspSolver])
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.add_soft_special_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_soft_special_constraints
+
+.. py:function:: define_second_part_objective(weights, name_penalty, equal=False)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.define_second_part_objective
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.define_second_part_objective
+
+.. py:function:: add_constraints_string(child_instance, list_of_strings)
+   :canonical: discrete_optimization.rcpsp.solvers.cp_mzn.add_constraints_string
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cp_mzn.add_constraints_string

@@ -1,0 +1,19 @@
+:py:mod:`discrete_optimization.tsptw.solvers`
+=============================================
+
+.. py:module:: discrete_optimization.tsptw.solvers
+
+.. autodoc2-docstring:: discrete_optimization.tsptw.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.tsptw.solvers.optal
+   discrete_optimization.tsptw.solvers.ortools_routing
+   discrete_optimization.tsptw.solvers.cpsat
+   discrete_optimization.tsptw.solvers.dp

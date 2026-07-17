@@ -1,0 +1,48 @@
+:py:mod:`discrete_optimization.facility.solvers.greedy`
+=======================================================
+
+.. py:module:: discrete_optimization.facility.solvers.greedy
+
+.. autodoc2-docstring:: discrete_optimization.facility.solvers.greedy
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GreedyFacilitySolver <discrete_optimization.facility.solvers.greedy.GreedyFacilitySolver>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.greedy.GreedyFacilitySolver
+          :summary:
+   * - :py:obj:`DistanceBasedGreedyFacilitySolver <discrete_optimization.facility.solvers.greedy.DistanceBasedGreedyFacilitySolver>`
+     -
+
+API
+~~~
+
+.. py:class:: GreedyFacilitySolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.facility.solvers.greedy.GreedyFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.facility.solvers.FacilitySolver`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.greedy.GreedyFacilitySolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.greedy.GreedyFacilitySolver.__init__
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.facility.solvers.greedy.GreedyFacilitySolver.solve
+
+.. py:class:: DistanceBasedGreedyFacilitySolver(problem: discrete_optimization.facility.problem.FacilityProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.facility.solvers.greedy.DistanceBasedGreedyFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.facility.solvers.FacilitySolver`
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.facility.solvers.greedy.DistanceBasedGreedyFacilitySolver.solve

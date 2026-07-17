@@ -1,0 +1,16 @@
+:py:mod:`discrete_optimization.gpdp.builders`
+=============================================
+
+.. py:module:: discrete_optimization.gpdp.builders
+
+.. autodoc2-docstring:: discrete_optimization.gpdp.builders
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.gpdp.builders.instance_builders

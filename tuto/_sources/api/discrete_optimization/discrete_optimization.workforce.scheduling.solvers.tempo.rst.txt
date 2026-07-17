@@ -1,0 +1,53 @@
+:py:mod:`discrete_optimization.workforce.scheduling.solvers.tempo`
+==================================================================
+
+.. py:module:: discrete_optimization.workforce.scheduling.solvers.tempo
+
+.. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.tempo
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TempoScheduler <discrete_optimization.workforce.scheduling.solvers.tempo.TempoScheduler>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.scheduling.solvers.tempo.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.tempo.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.scheduling.solvers.tempo.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.tempo.logger
+
+.. py:class:: TempoScheduler(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, input_format: typing.Optional[discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.FormatEnum] = None, path_to_tempo_executable: typing.Optional[str] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.workforce.scheduling.solvers.tempo.TempoScheduler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.TempoSchedulingSolver`, :py:obj:`discrete_optimization.workforce.scheduling.solvers.SolverAllocScheduling`
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.workforce.scheduling.solvers.tempo.TempoScheduler.init_model
+
+   .. py:method:: retrieve_solution(path_to_output: str, process_stdout: str) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.workforce.scheduling.solvers.tempo.TempoScheduler.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.tempo.TempoScheduler.retrieve_solution

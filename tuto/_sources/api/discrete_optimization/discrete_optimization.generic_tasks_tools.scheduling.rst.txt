@@ -1,0 +1,157 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.scheduling`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.scheduling
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`SchedulingProblem <discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem
+          :summary:
+   * - :py:obj:`SchedulingSolution <discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution
+          :summary:
+   * - :py:obj:`SchedulingCpSolver <discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver
+          :summary:
+
+API
+~~~
+
+.. py:class:: SchedulingProblem
+   :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksProblem`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem
+
+   .. py:method:: get_last_tasks() -> list[discrete_optimization.generic_tasks_tools.base.Task]
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem.get_last_tasks
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem.get_last_tasks
+
+   .. py:method:: get_makespan_lower_bound() -> int
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem.get_makespan_lower_bound
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem.get_makespan_lower_bound
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem.get_makespan_upper_bound
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem.get_makespan_upper_bound
+
+.. py:class:: SchedulingSolution
+   :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksSolution`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.problem
+      :type: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem[discrete_optimization.generic_tasks_tools.base.Task]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.problem
+
+   .. py:method:: get_end_time(task: discrete_optimization.generic_tasks_tools.base.Task) -> int
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.get_end_time
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.get_end_time
+
+   .. py:method:: get_start_time(task: discrete_optimization.generic_tasks_tools.base.Task) -> int
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.get_start_time
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.get_start_time
+
+   .. py:method:: get_max_end_time() -> int
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.get_max_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.get_max_end_time
+
+   .. py:method:: constraint_on_task_satisfied(task: discrete_optimization.generic_tasks_tools.base.Task, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, time: int) -> bool
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.constraint_on_task_satisfied
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.constraint_on_task_satisfied
+
+   .. py:method:: constraint_chaining_tasks_satisfied(task1: discrete_optimization.generic_tasks_tools.base.Task, task2: discrete_optimization.generic_tasks_tools.base.Task) -> bool
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.constraint_chaining_tasks_satisfied
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution.constraint_chaining_tasks_satisfied
+
+.. py:class:: SchedulingCpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksCpSolver`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.problem
+      :type: discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem[discrete_optimization.generic_tasks_tools.base.Task]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.problem
+
+   .. py:method:: get_makespan_lower_bound() -> int
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_makespan_lower_bound
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_makespan_lower_bound
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_makespan_upper_bound
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_makespan_upper_bound
+
+   .. py:method:: add_constraint_on_task(task: discrete_optimization.generic_tasks_tools.base.Task, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, time: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.add_constraint_on_task
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.add_constraint_on_task
+
+   .. py:method:: add_constraint_chaining_tasks(task1: discrete_optimization.generic_tasks_tools.base.Task, task2: discrete_optimization.generic_tasks_tools.base.Task) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.add_constraint_chaining_tasks
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.add_constraint_chaining_tasks
+
+   .. py:method:: get_global_makespan_variable() -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_global_makespan_variable
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_global_makespan_variable
+
+   .. py:method:: get_subtasks_makespan_variable(subtasks: collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]) -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_subtasks_makespan_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_subtasks_makespan_variable
+
+   .. py:method:: get_subtasks_sum_end_time_variable(subtasks: collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]) -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_subtasks_sum_end_time_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_subtasks_sum_end_time_variable
+
+   .. py:method:: get_subtasks_sum_start_time_variable(subtasks: collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]) -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_subtasks_sum_start_time_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver.get_subtasks_sum_start_time_variable

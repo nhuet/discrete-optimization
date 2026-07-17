@@ -1,0 +1,92 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.toulbar`
+=======================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.toulbar
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ToulbarMisSolver <discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolver>`
+     -
+   * - :py:obj:`MisConstraintHandlerToulbar <discrete_optimization.maximum_independent_set.solvers.toulbar.MisConstraintHandlerToulbar>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`this_folder <discrete_optimization.maximum_independent_set.solvers.toulbar.this_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar.this_folder
+          :summary:
+   * - :py:obj:`logger <discrete_optimization.maximum_independent_set.solvers.toulbar.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar.logger
+          :summary:
+   * - :py:obj:`ToulbarMisSolverForLns <discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolverForLns>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolverForLns
+          :summary:
+
+API
+~~~
+
+.. py:data:: this_folder
+   :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.this_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar.this_folder
+
+.. py:data:: logger
+   :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar.logger
+
+.. py:class:: ToulbarMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver`, :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolver.hyperparameters
+
+   .. py:method:: retrieve_solution(solution_from_toulbar2: tuple[list, float, int]) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolver.retrieve_solution
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolver.init_model
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.maximum_independent_set.problem.MisSolution) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolver.set_warm_start
+
+.. py:data:: ToulbarMisSolverForLns
+   :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolverForLns
+   :value: 'to_lns_toulbar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolverForLns
+
+.. py:class:: MisConstraintHandlerToulbar(fraction_node: float = 0.3)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.MisConstraintHandlerToulbar
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.maximum_independent_set.solvers.toulbar.ToulbarMisSolverForLns, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> typing.Iterable[typing.Any]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.toulbar.MisConstraintHandlerToulbar.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.toulbar.MisConstraintHandlerToulbar.adding_constraint_from_results_store

@@ -1,0 +1,81 @@
+:py:mod:`discrete_optimization.knapsack.solvers.greedy`
+=======================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.greedy
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.greedy
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GreedyBestKnapsackSolver <discrete_optimization.knapsack.solvers.greedy.GreedyBestKnapsackSolver>`
+     -
+   * - :py:obj:`GreedyDummyKnapsackSolver <discrete_optimization.knapsack.solvers.greedy.GreedyDummyKnapsackSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_density <discrete_optimization.knapsack.solvers.greedy.compute_density>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.greedy.compute_density
+          :summary:
+   * - :py:obj:`compute_density_and_penalty <discrete_optimization.knapsack.solvers.greedy.compute_density_and_penalty>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.greedy.compute_density_and_penalty
+          :summary:
+   * - :py:obj:`greedy_using_queue <discrete_optimization.knapsack.solvers.greedy.greedy_using_queue>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.greedy.greedy_using_queue
+          :summary:
+   * - :py:obj:`best_of_greedy <discrete_optimization.knapsack.solvers.greedy.best_of_greedy>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.greedy.best_of_greedy
+          :summary:
+
+API
+~~~
+
+.. py:function:: compute_density(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem) -> list[discrete_optimization.knapsack.problem.Item]
+   :canonical: discrete_optimization.knapsack.solvers.greedy.compute_density
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.greedy.compute_density
+
+.. py:function:: compute_density_and_penalty(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem) -> list[discrete_optimization.knapsack.problem.Item]
+   :canonical: discrete_optimization.knapsack.solvers.greedy.compute_density_and_penalty
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.greedy.compute_density_and_penalty
+
+.. py:function:: greedy_using_queue(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem, method_queue: typing.Optional[collections.abc.Callable[[discrete_optimization.knapsack.problem.KnapsackProblem], list[discrete_optimization.knapsack.problem.Item]]] = None) -> discrete_optimization.knapsack.problem.KnapsackSolution
+   :canonical: discrete_optimization.knapsack.solvers.greedy.greedy_using_queue
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.greedy.greedy_using_queue
+
+.. py:function:: best_of_greedy(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem) -> discrete_optimization.knapsack.problem.KnapsackSolution
+   :canonical: discrete_optimization.knapsack.solvers.greedy.best_of_greedy
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.greedy.best_of_greedy
+
+.. py:class:: GreedyBestKnapsackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.greedy.GreedyBestKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.knapsack.solvers.greedy.GreedyBestKnapsackSolver.solve
+
+.. py:class:: GreedyDummyKnapsackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.greedy.GreedyDummyKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.knapsack.solvers.greedy.GreedyDummyKnapsackSolver.solve

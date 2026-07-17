@@ -1,0 +1,540 @@
+:py:mod:`discrete_optimization.generic_tools.hyperparameters.hyperparameter`
+============================================================================
+
+.. py:module:: discrete_optimization.generic_tools.hyperparameters.hyperparameter
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Hyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter
+          :summary:
+   * - :py:obj:`IntegerHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter
+          :summary:
+   * - :py:obj:`FloatHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter
+          :summary:
+   * - :py:obj:`CategoricalHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter
+          :summary:
+   * - :py:obj:`EnumHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.EnumHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.EnumHyperparameter
+          :summary:
+   * - :py:obj:`SubBrickClsHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter
+          :summary:
+   * - :py:obj:`SubBrickKwargsHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickKwargsHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickKwargsHyperparameter
+          :summary:
+   * - :py:obj:`SubBrickHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter
+          :summary:
+   * - :py:obj:`SubBrick <discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick
+          :summary:
+   * - :py:obj:`ListHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter
+          :summary:
+   * - :py:obj:`BaseListWithoutReplacementHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter
+          :summary:
+   * - :py:obj:`CategoricalListWithoutReplacementHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalListWithoutReplacementHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalListWithoutReplacementHyperparameter
+          :summary:
+   * - :py:obj:`SubBrickListWithoutReplacementHyperparameter <discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickListWithoutReplacementHyperparameter>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickListWithoutReplacementHyperparameter
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`LabelType <discrete_optimization.generic_tools.hyperparameters.hyperparameter.LabelType>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.LabelType
+          :summary:
+
+API
+~~~
+
+.. py:class:: Hyperparameter
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter
+
+   .. py:attribute:: name
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.name
+      :type: str
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.name
+
+   .. py:attribute:: default
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.default
+      :type: typing.Optional[typing.Any]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.default
+
+   .. py:attribute:: depends_on
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.depends_on
+      :type: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.depends_on
+
+   .. py:attribute:: name_in_kwargs
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.name_in_kwargs
+      :type: typing.Optional[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.name_in_kwargs
+
+   .. py:method:: __post_init__()
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.__post_init__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.__post_init__
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, prefix: str = '', **kwargs: typing.Any) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.suggest_with_optuna
+
+   .. py:method:: copy_and_update_attributes(**kwargs) -> discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.copy_and_update_attributes
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter.copy_and_update_attributes
+
+.. py:class:: IntegerHyperparameter
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter
+
+   .. py:attribute:: low
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.low
+      :type: typing.Optional[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.low
+
+   .. py:attribute:: high
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.high
+      :type: typing.Optional[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.high
+
+   .. py:attribute:: step
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.step
+      :type: int
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.step
+
+   .. py:attribute:: log
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.log
+      :type: bool
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.log
+
+   .. py:attribute:: default
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.default
+      :type: typing.Optional[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.default
+
+   .. py:attribute:: depends_on
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.depends_on
+      :type: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.depends_on
+
+   .. py:attribute:: name_in_kwargs
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.name_in_kwargs
+      :type: typing.Optional[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.name_in_kwargs
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, low: typing.Optional[int] = None, high: typing.Optional[int] = None, step: typing.Optional[int] = None, log: typing.Optional[bool] = None, prefix: str = '', **kwargs: typing.Any) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.IntegerHyperparameter.suggest_with_optuna
+
+.. py:class:: FloatHyperparameter
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter
+
+   .. py:attribute:: low
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.low
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.low
+
+   .. py:attribute:: high
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.high
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.high
+
+   .. py:attribute:: suggest_low
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.suggest_low
+      :type: bool
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.suggest_low
+
+   .. py:attribute:: suggest_high
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.suggest_high
+      :type: bool
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.suggest_high
+
+   .. py:attribute:: step
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.step
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.step
+
+   .. py:attribute:: log
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.log
+      :type: bool
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.log
+
+   .. py:attribute:: default
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.default
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.default
+
+   .. py:attribute:: depends_on
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.depends_on
+      :type: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.depends_on
+
+   .. py:attribute:: name_in_kwargs
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.name_in_kwargs
+      :type: typing.Optional[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.name_in_kwargs
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, low: typing.Optional[float] = None, high: typing.Optional[float] = None, log: typing.Optional[bool] = None, suggest_low: typing.Optional[bool] = None, suggest_high: typing.Optional[bool] = None, prefix: str = '', **kwargs: typing.Any) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.FloatHyperparameter.suggest_with_optuna
+
+.. py:data:: LabelType
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.LabelType
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.LabelType
+
+.. py:class:: CategoricalHyperparameter(name: str, choices: typing.Union[collections.abc.Iterable[discrete_optimization.generic_tools.hyperparameters.hyperparameter.LabelType], collections.abc.Mapping[discrete_optimization.generic_tools.hyperparameters.hyperparameter.LabelType, typing.Any]], default: typing.Optional[typing.Any] = None, depends_on: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]] = None, name_in_kwargs: typing.Optional[str] = None)
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter.__init__
+
+   .. py:attribute:: choices
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter.choices
+      :type: collections.abc.Mapping[discrete_optimization.generic_tools.hyperparameters.hyperparameter.LabelType, typing.Any]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter.choices
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, choices: typing.Optional[typing.Union[collections.abc.Iterable[discrete_optimization.generic_tools.hyperparameters.hyperparameter.LabelType], collections.abc.Mapping[discrete_optimization.generic_tools.hyperparameters.hyperparameter.LabelType, typing.Any]]] = None, prefix: str = '', **kwargs: typing.Any) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter.suggest_with_optuna
+
+.. py:class:: EnumHyperparameter(name: str, enum: type[enum.Enum], choices: typing.Optional[typing.Union[collections.abc.Iterable[enum.Enum], dict[str, enum.Enum]]] = None, default: typing.Optional[typing.Any] = None, depends_on: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]] = None, name_in_kwargs: typing.Optional[str] = None)
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.EnumHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.EnumHyperparameter
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.EnumHyperparameter.__init__
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, choices: typing.Optional[collections.abc.Iterable[enum.Enum]] = None, prefix: str = '', **kwargs: typing.Any) -> enum.Enum
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.EnumHyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.EnumHyperparameter.suggest_with_optuna
+
+.. py:class:: SubBrickClsHyperparameter(name: str, choices: typing.Union[dict[str, type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]], collections.abc.Iterable[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]]], default: typing.Optional[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]] = None, depends_on: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]] = None, name_in_kwargs: typing.Optional[str] = None, include_module_in_labels: bool = False)
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter.__init__
+
+   .. py:attribute:: choices
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter.choices
+      :type: dict[str, type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter.choices
+
+   .. py:attribute:: include_module_in_labels
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter.include_module_in_labels
+      :type: bool
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter.include_module_in_labels
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, choices: typing.Optional[typing.Union[dict[str, type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]], collections.abc.Iterable[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]]]] = None, prefix: str = '', **kwargs: typing.Any) -> type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickClsHyperparameter.suggest_with_optuna
+
+.. py:class:: SubBrickKwargsHyperparameter(name: str, subbrick_hyperparameter: typing.Optional[str] = None, subbrick_cls: typing.Optional[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]] = None, default: typing.Optional[dict[str, typing.Any]] = None, depends_on: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]] = None, name_in_kwargs: typing.Optional[str] = None)
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickKwargsHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickKwargsHyperparameter
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickKwargsHyperparameter.__init__
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, subbrick: typing.Optional[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]] = None, names: typing.Optional[list[str]] = None, names_by_subbrick: typing.Optional[dict[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable], list[str]]] = None, kwargs_by_name: typing.Optional[dict[str, dict[str, typing.Any]]] = None, kwargs_by_name_by_subbrick: typing.Optional[dict[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable], dict[str, dict[str, typing.Any]]]] = None, fixed_hyperparameters: typing.Optional[dict[str, typing.Any]] = None, fixed_hyperparameters_by_subbrick: typing.Optional[dict[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable], dict[str, typing.Any]]] = None, prefix: str = '', **kwargs) -> dict[str, typing.Any]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickKwargsHyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickKwargsHyperparameter.suggest_with_optuna
+
+.. py:class:: SubBrickHyperparameter(name: str, choices: typing.Union[dict[str, type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]], collections.abc.Iterable[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]]], default: typing.Optional[discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick] = None, depends_on: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]] = None, name_in_kwargs: typing.Optional[str] = None, include_module_in_labels: bool = False)
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter.__init__
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, choices: typing.Optional[typing.Union[dict[str, type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]], collections.abc.Iterable[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]]]] = None, names: typing.Optional[list[str]] = None, names_by_subbrick: typing.Optional[dict[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable], list[str]]] = None, kwargs_by_name: typing.Optional[dict[str, dict[str, typing.Any]]] = None, kwargs_by_name_by_subbrick: typing.Optional[dict[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable], dict[str, dict[str, typing.Any]]]] = None, fixed_hyperparameters: typing.Optional[dict[str, typing.Any]] = None, fixed_hyperparameters_by_subbrick: typing.Optional[dict[type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable], dict[str, typing.Any]]] = None, prefix: str = '', **kwargs: typing.Any) -> discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter.suggest_with_optuna
+
+.. py:class:: SubBrick
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick
+
+   .. py:attribute:: cls
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick.cls
+      :type: type[discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick.cls
+
+   .. py:attribute:: kwargs
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick.kwargs
+      :type: dict[str, typing.Any]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick.kwargs
+
+   .. py:attribute:: kwargs_from_solution
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick.kwargs_from_solution
+      :type: typing.Optional[dict[str, collections.abc.Callable[..., typing.Any]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrick.kwargs_from_solution
+
+.. py:class:: ListHyperparameter(name: str, hyperparameter_template: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter, length_high: int, length_low: int = 0, numbering_start: int = 0, default: list[typing.Any] = None, depends_on: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]] = None, name_in_kwargs: typing.Optional[str] = None)
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.__init__
+
+   .. py:attribute:: hyperparameter_template
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.hyperparameter_template
+      :type: discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.hyperparameter_template
+
+   .. py:attribute:: length_high
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.length_high
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.length_high
+
+   .. py:attribute:: length_low
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.length_low
+      :type: int
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.length_low
+
+   .. py:attribute:: numbering_start
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.numbering_start
+      :type: int
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.numbering_start
+
+   .. py:attribute:: default
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.default
+      :type: typing.Optional[typing.Any]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.default
+
+   .. py:attribute:: depends_on
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.depends_on
+      :type: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.depends_on
+
+   .. py:attribute:: name_in_kwargs
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.name_in_kwargs
+      :type: typing.Optional[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.name_in_kwargs
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, length_low: typing.Optional[int] = None, length_high: typing.Optional[int] = None, numbering_start: typing.Optional[int] = None, prefix: str = '', **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter.suggest_with_optuna
+
+.. py:class:: BaseListWithoutReplacementHyperparameter(name: str, hyperparameter_template: typing.Union[discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter, discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter], length_high: typing.Optional[int] = None, length_low: int = 0, numbering_start: int = 0, default: list[typing.Any] = None, depends_on: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]] = None, name_in_kwargs: typing.Optional[str] = None)
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.ListHyperparameter`, :py:obj:`abc.ABC`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter.__init__
+
+   .. py:attribute:: hyperparameter_template
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter.hyperparameter_template
+      :type: typing.Union[discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter, discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter.hyperparameter_template
+
+   .. py:attribute:: length_high
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter.length_high
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter.length_high
+
+   .. py:method:: suggest_with_optuna(trial: optuna.trial.Trial, length_low: typing.Optional[int] = None, length_high: typing.Optional[int] = None, numbering_start: typing.Optional[int] = None, prefix: str = '', **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter.suggest_with_optuna
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter.suggest_with_optuna
+
+   .. py:method:: has_duplicates(list_choices: list[typing.Any]) -> True
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter.has_duplicates
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter.has_duplicates
+
+.. py:class:: CategoricalListWithoutReplacementHyperparameter(name: str, hyperparameter_template: typing.Union[discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter, discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter], length_high: typing.Optional[int] = None, length_low: int = 0, numbering_start: int = 0, default: list[typing.Any] = None, depends_on: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]] = None, name_in_kwargs: typing.Optional[str] = None)
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalListWithoutReplacementHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalListWithoutReplacementHyperparameter
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalListWithoutReplacementHyperparameter.__init__
+
+   .. py:attribute:: hyperparameter_template
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalListWithoutReplacementHyperparameter.hyperparameter_template
+      :type: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalListWithoutReplacementHyperparameter.hyperparameter_template
+
+   .. py:method:: has_duplicates(list_choices: list[typing.Any]) -> True
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalListWithoutReplacementHyperparameter.has_duplicates
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalListWithoutReplacementHyperparameter.has_duplicates
+
+.. py:class:: SubBrickListWithoutReplacementHyperparameter(name: str, hyperparameter_template: typing.Union[discrete_optimization.generic_tools.hyperparameters.hyperparameter.CategoricalHyperparameter, discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter], length_high: typing.Optional[int] = None, length_low: int = 0, numbering_start: int = 0, default: list[typing.Any] = None, depends_on: typing.Optional[tuple[str, collections.abc.Container[typing.Any]]] = None, name_in_kwargs: typing.Optional[str] = None)
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickListWithoutReplacementHyperparameter
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparameter.BaseListWithoutReplacementHyperparameter`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickListWithoutReplacementHyperparameter
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickListWithoutReplacementHyperparameter.__init__
+
+   .. py:attribute:: hyperparameter_template
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickListWithoutReplacementHyperparameter.hyperparameter_template
+      :type: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickHyperparameter
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickListWithoutReplacementHyperparameter.hyperparameter_template
+
+   .. py:method:: has_duplicates(list_choices: list[typing.Any]) -> True
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickListWithoutReplacementHyperparameter.has_duplicates
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparameter.SubBrickListWithoutReplacementHyperparameter.has_duplicates
+
+.. py:exception:: TrialDropped()
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparameter.TrialDropped
+
+   Bases: :py:obj:`Exception`

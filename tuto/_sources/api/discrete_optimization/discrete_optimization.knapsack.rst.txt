@@ -1,0 +1,28 @@
+:py:mod:`discrete_optimization.knapsack`
+========================================
+
+.. py:module:: discrete_optimization.knapsack
+
+.. autodoc2-docstring:: discrete_optimization.knapsack
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.knapsack.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.knapsack.solvers_map
+   discrete_optimization.knapsack.problem
+   discrete_optimization.knapsack.mutation
+   discrete_optimization.knapsack.parser

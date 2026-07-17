@@ -1,0 +1,30 @@
+:py:mod:`discrete_optimization.generic_tools.optuna.timed_percentile_pruner`
+============================================================================
+
+.. py:module:: discrete_optimization.generic_tools.optuna.timed_percentile_pruner
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.timed_percentile_pruner
+   :allowtitles:
+
+Module Contents
+---------------
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.optuna.timed_percentile_pruner.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.timed_percentile_pruner.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.optuna.timed_percentile_pruner.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.timed_percentile_pruner.logger

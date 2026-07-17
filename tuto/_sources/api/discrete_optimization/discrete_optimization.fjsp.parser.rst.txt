@@ -1,0 +1,37 @@
+:py:mod:`discrete_optimization.fjsp.parser`
+===========================================
+
+.. py:module:: discrete_optimization.fjsp.parser
+
+.. autodoc2-docstring:: discrete_optimization.fjsp.parser
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_data_available <discrete_optimization.fjsp.parser.get_data_available>`
+     - .. autodoc2-docstring:: discrete_optimization.fjsp.parser.get_data_available
+          :summary:
+   * - :py:obj:`parse_file <discrete_optimization.fjsp.parser.parse_file>`
+     - .. autodoc2-docstring:: discrete_optimization.fjsp.parser.parse_file
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_data_available(data_folder: typing.Optional[str] = None, data_home: typing.Optional[str] = None) -> list[str]
+   :canonical: discrete_optimization.fjsp.parser.get_data_available
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.parser.get_data_available
+
+.. py:function:: parse_file(file_path: str)
+   :canonical: discrete_optimization.fjsp.parser.parse_file
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.parser.parse_file

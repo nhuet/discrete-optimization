@@ -1,0 +1,400 @@
+:py:mod:`discrete_optimization.generic_tools.cp_tools`
+======================================================
+
+.. py:module:: discrete_optimization.generic_tools.cp_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSolverName <discrete_optimization.generic_tools.cp_tools.CpSolverName>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolverName
+          :summary:
+   * - :py:obj:`ParametersCp <discrete_optimization.generic_tools.cp_tools.ParametersCp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp
+          :summary:
+   * - :py:obj:`SignEnum <discrete_optimization.generic_tools.cp_tools.SignEnum>`
+     -
+   * - :py:obj:`CpSolver <discrete_optimization.generic_tools.cp_tools.CpSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolver
+          :summary:
+   * - :py:obj:`MinizincCpSolver <discrete_optimization.generic_tools.cp_tools.MinizincCpSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver
+          :summary:
+   * - :py:obj:`MinizincCpSolution <discrete_optimization.generic_tools.cp_tools.MinizincCpSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`find_right_minizinc_solver_name <discrete_optimization.generic_tools.cp_tools.find_right_minizinc_solver_name>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.find_right_minizinc_solver_name
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.cp_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.logger
+          :summary:
+   * - :py:obj:`map_cp_solver_name <discrete_optimization.generic_tools.cp_tools.map_cp_solver_name>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.map_cp_solver_name
+          :summary:
+   * - :py:obj:`_minizinc_minimal_parsed_version <discrete_optimization.generic_tools.cp_tools._minizinc_minimal_parsed_version>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools._minizinc_minimal_parsed_version
+          :summary:
+   * - :py:obj:`_minizinc_minimal_str_version <discrete_optimization.generic_tools.cp_tools._minizinc_minimal_str_version>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools._minizinc_minimal_str_version
+          :summary:
+   * - :py:obj:`map_mzn_status_to_do_status <discrete_optimization.generic_tools.cp_tools.map_mzn_status_to_do_status>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.map_mzn_status_to_do_status
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.cp_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.logger
+
+.. py:class:: CpSolverName
+   :canonical: discrete_optimization.generic_tools.cp_tools.CpSolverName
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolverName
+
+   .. py:attribute:: CHUFFED
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolverName.CHUFFED
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolverName.CHUFFED
+
+   .. py:attribute:: GECODE
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolverName.GECODE
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolverName.GECODE
+
+   .. py:attribute:: CPLEX
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolverName.CPLEX
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolverName.CPLEX
+
+   .. py:attribute:: CPOPT
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolverName.CPOPT
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolverName.CPOPT
+
+   .. py:attribute:: GUROBI
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolverName.GUROBI
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolverName.GUROBI
+
+   .. py:attribute:: ORTOOLS
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolverName.ORTOOLS
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolverName.ORTOOLS
+
+   .. py:attribute:: HIGHS
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolverName.HIGHS
+      :value: 6
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolverName.HIGHS
+
+.. py:data:: map_cp_solver_name
+   :canonical: discrete_optimization.generic_tools.cp_tools.map_cp_solver_name
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.map_cp_solver_name
+
+.. py:data:: _minizinc_minimal_parsed_version
+   :canonical: discrete_optimization.generic_tools.cp_tools._minizinc_minimal_parsed_version
+   :value: (2, 8)
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools._minizinc_minimal_parsed_version
+
+.. py:data:: _minizinc_minimal_str_version
+   :canonical: discrete_optimization.generic_tools.cp_tools._minizinc_minimal_str_version
+   :value: 'join(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools._minizinc_minimal_str_version
+
+.. py:function:: find_right_minizinc_solver_name(cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName)
+   :canonical: discrete_optimization.generic_tools.cp_tools.find_right_minizinc_solver_name
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.find_right_minizinc_solver_name
+
+.. py:class:: ParametersCp(intermediate_solution: bool, free_search: bool = False, multiprocess: bool = False, nb_process: int = 1, optimisation_level: int = 1)
+   :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.__init__
+
+   .. py:attribute:: intermediate_solution
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.intermediate_solution
+      :type: bool
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.intermediate_solution
+
+   .. py:attribute:: free_search
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.free_search
+      :type: bool
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.free_search
+
+   .. py:attribute:: multiprocess
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.multiprocess
+      :type: bool
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.multiprocess
+
+   .. py:attribute:: nb_process
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.nb_process
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.nb_process
+
+   .. py:attribute:: optimisation_level
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.optimisation_level
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.optimisation_level
+
+   .. py:method:: default() -> discrete_optimization.generic_tools.cp_tools.ParametersCp
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.default
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.default
+
+   .. py:method:: default_cpsat() -> discrete_optimization.generic_tools.cp_tools.ParametersCp
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.default_cpsat
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.default_cpsat
+
+   .. py:method:: default_fast_lns() -> discrete_optimization.generic_tools.cp_tools.ParametersCp
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.default_fast_lns
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.default_fast_lns
+
+   .. py:method:: default_free() -> discrete_optimization.generic_tools.cp_tools.ParametersCp
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.default_free
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.default_free
+
+   .. py:method:: copy() -> discrete_optimization.generic_tools.cp_tools.ParametersCp
+      :canonical: discrete_optimization.generic_tools.cp_tools.ParametersCp.copy
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.ParametersCp.copy
+
+.. py:class:: SignEnum
+   :canonical: discrete_optimization.generic_tools.cp_tools.SignEnum
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: EQUAL
+      :canonical: discrete_optimization.generic_tools.cp_tools.SignEnum.EQUAL
+      :value: '=='
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.SignEnum.EQUAL
+
+   .. py:attribute:: LEQ
+      :canonical: discrete_optimization.generic_tools.cp_tools.SignEnum.LEQ
+      :value: '<='
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.SignEnum.LEQ
+
+   .. py:attribute:: UEQ
+      :canonical: discrete_optimization.generic_tools.cp_tools.SignEnum.UEQ
+      :value: '>='
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.SignEnum.UEQ
+
+   .. py:attribute:: LESS
+      :canonical: discrete_optimization.generic_tools.cp_tools.SignEnum.LESS
+      :value: '<'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.SignEnum.LESS
+
+   .. py:attribute:: UP
+      :canonical: discrete_optimization.generic_tools.cp_tools.SignEnum.UP
+      :value: '>'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.SignEnum.UP
+
+.. py:data:: map_mzn_status_to_do_status
+   :canonical: discrete_optimization.generic_tools.cp_tools.map_mzn_status_to_do_status
+   :type: dict[minizinc.Status, discrete_optimization.generic_tools.do_solver.StatusSolver]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.map_mzn_status_to_do_status
+
+.. py:class:: CpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.cp_tools.CpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolver.__init__
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolver.init_model
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolver.init_model
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, **args: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolver.solve
+      :abstractmethod:
+
+   .. py:method:: minimize_variable(var: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolver.minimize_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolver.minimize_variable
+
+   .. py:method:: add_bound_constraint(var: typing.Any, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, value: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tools.cp_tools.CpSolver.add_bound_constraint
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.CpSolver.add_bound_constraint
+
+.. py:class:: MinizincCpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.CpSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.hyperparameters
+
+   .. py:attribute:: instance
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.instance
+      :type: typing.Optional[minizinc.Instance]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.instance
+
+   .. py:attribute:: silent_solve_error
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.silent_solve_error
+      :type: bool
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.silent_solve_error
+
+   .. py:method:: minimize_variable(var: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.minimize_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.minimize_variable
+
+   .. py:method:: add_bound_constraint(var: typing.Any, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, value: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.add_bound_constraint
+      :abstractmethod:
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, instance: typing.Optional[minizinc.Instance] = None, time_limit: typing.Optional[float] = 100.0, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.solve
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.solve
+
+   .. py:method:: retrieve_solution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.retrieve_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver.retrieve_solution
+
+.. py:class:: MinizincCpSolution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.__init__
+
+   .. py:attribute:: callback
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.callback
+      :type: discrete_optimization.generic_tools.callbacks.callback.Callback
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.callback
+
+   .. py:attribute:: solution
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.solution
+      :type: discrete_optimization.generic_tools.do_problem.Solution
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.solution
+
+   .. py:attribute:: step
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.step
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.step
+
+   .. py:attribute:: res
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.res
+      :type: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.res
+
+   .. py:attribute:: solver
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.solver
+      :type: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.solver
+
+   .. py:method:: generate_subclass_for_solve(solver: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver, callback: discrete_optimization.generic_tools.callbacks.callback.Callback) -> type[discrete_optimization.generic_tools.cp_tools.MinizincCpSolution]
+      :canonical: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.generate_subclass_for_solve
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cp_tools.MinizincCpSolution.generate_subclass_for_solve

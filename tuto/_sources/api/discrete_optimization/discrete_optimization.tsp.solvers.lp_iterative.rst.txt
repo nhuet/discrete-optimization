@@ -1,0 +1,153 @@
+:py:mod:`discrete_optimization.tsp.solvers.lp_iterative`
+========================================================
+
+.. py:module:: discrete_optimization.tsp.solvers.lp_iterative
+
+.. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MILPSolver <discrete_optimization.tsp.solvers.lp_iterative.MILPSolver>`
+     -
+   * - :py:obj:`LPIterativeTspSolver <discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`build_graph_pruned <discrete_optimization.tsp.solvers.lp_iterative.build_graph_pruned>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.build_graph_pruned
+          :summary:
+   * - :py:obj:`build_graph_complete <discrete_optimization.tsp.solvers.lp_iterative.build_graph_complete>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.build_graph_complete
+          :summary:
+   * - :py:obj:`build_the_cycles <discrete_optimization.tsp.solvers.lp_iterative.build_the_cycles>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.build_the_cycles
+          :summary:
+   * - :py:obj:`rebuild_tsp_routine <discrete_optimization.tsp.solvers.lp_iterative.rebuild_tsp_routine>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.rebuild_tsp_routine
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.tsp.solvers.lp_iterative.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.logger
+          :summary:
+   * - :py:obj:`Node <discrete_optimization.tsp.solvers.lp_iterative.Node>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.Node
+          :summary:
+   * - :py:obj:`Edge <discrete_optimization.tsp.solvers.lp_iterative.Edge>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.Edge
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.tsp.solvers.lp_iterative.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.logger
+
+.. py:data:: Node
+   :canonical: discrete_optimization.tsp.solvers.lp_iterative.Node
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.Node
+
+.. py:data:: Edge
+   :canonical: discrete_optimization.tsp.solvers.lp_iterative.Edge
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.Edge
+
+.. py:function:: build_graph_pruned(tsp_model: discrete_optimization.tsp.problem.Point2DTspProblem) -> tuple[networkx.DiGraph, networkx.DiGraph, dict[int, set[tuple[int, int]]], dict[int, set[tuple[int, int]]]]
+   :canonical: discrete_optimization.tsp.solvers.lp_iterative.build_graph_pruned
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.build_graph_pruned
+
+.. py:function:: build_graph_complete(tsp_model: discrete_optimization.tsp.problem.TspProblem) -> tuple[networkx.DiGraph, networkx.DiGraph, dict[int, set[discrete_optimization.tsp.solvers.lp_iterative.Edge]], dict[int, set[discrete_optimization.tsp.solvers.lp_iterative.Edge]]]
+   :canonical: discrete_optimization.tsp.solvers.lp_iterative.build_graph_complete
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.build_graph_complete
+
+.. py:class:: MILPSolver
+   :canonical: discrete_optimization.tsp.solvers.lp_iterative.MILPSolver
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: GUROBI
+      :canonical: discrete_optimization.tsp.solvers.lp_iterative.MILPSolver.GUROBI
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.MILPSolver.GUROBI
+
+   .. py:attribute:: CBC
+      :canonical: discrete_optimization.tsp.solvers.lp_iterative.MILPSolver.CBC
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.MILPSolver.CBC
+
+.. py:class:: LPIterativeTspSolver(problem: discrete_optimization.tsp.problem.TspProblem, graph_builder: collections.abc.Callable[[discrete_optimization.tsp.problem.TspProblem], tuple[networkx.DiGraph, networkx.DiGraph, dict[int, set[discrete_optimization.tsp.solvers.lp_iterative.Edge]], dict[int, set[discrete_optimization.tsp.solvers.lp_iterative.Edge]]]], params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver
+
+   Bases: :py:obj:`discrete_optimization.tsp.solvers.TspSolver`
+
+   .. py:method:: init_model(method: discrete_optimization.tsp.solvers.lp_iterative.MILPSolver = MILPSolver.CBC, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.init_model
+
+   .. py:method:: init_model_gurobi(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.init_model_gurobi
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.init_model_gurobi
+
+   .. py:method:: init_model_cbc(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.init_model_cbc
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.init_model_cbc
+
+   .. py:method:: retrieve_results_cbc() -> tuple[networkx.DiGraph, set[discrete_optimization.tsp.solvers.lp_iterative.Edge]]
+      :canonical: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.retrieve_results_cbc
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.retrieve_results_cbc
+
+   .. py:method:: retrieve_results_gurobi() -> tuple[networkx.DiGraph, set[discrete_optimization.tsp.solvers.lp_iterative.Edge]]
+      :canonical: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.retrieve_results_gurobi
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.retrieve_results_gurobi
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.solve
+
+   .. py:method:: plot_solve(solutions: list[set[discrete_optimization.tsp.solvers.lp_iterative.Edge]], rebuilt_solution: list[list[int]], cost: list[float], nb_components: list[int], rebuilt_obj: list[float], show: bool = True, plot_folder: typing.Optional[str] = None) -> None
+      :canonical: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.plot_solve
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.LPIterativeTspSolver.plot_solve
+
+.. py:function:: build_the_cycles(x_solution: set[discrete_optimization.tsp.solvers.lp_iterative.Edge], component: set[discrete_optimization.tsp.solvers.lp_iterative.Node], graph: networkx.DiGraph, start_index: discrete_optimization.tsp.solvers.lp_iterative.Node, end_index: discrete_optimization.tsp.solvers.lp_iterative.Node) -> tuple[list[discrete_optimization.tsp.solvers.lp_iterative.Node], dict[discrete_optimization.tsp.solvers.lp_iterative.Node, int]]
+   :canonical: discrete_optimization.tsp.solvers.lp_iterative.build_the_cycles
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.build_the_cycles
+
+.. py:function:: rebuild_tsp_routine(sorted_connected_component: collections.abc.Sequence[tuple[set[discrete_optimization.tsp.solvers.lp_iterative.Node], int]], paths_component: dict[int, list[discrete_optimization.tsp.solvers.lp_iterative.Node]], node_to_component: dict[discrete_optimization.tsp.solvers.lp_iterative.Node, int], indexes: dict[int, dict[discrete_optimization.tsp.solvers.lp_iterative.Node, int]], graph: networkx.DiGraph, edges: set[discrete_optimization.tsp.solvers.lp_iterative.Edge], nodeCount: int, list_points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point], evaluate_function_indexes: collections.abc.Callable[[int, int], float], tsp_model: discrete_optimization.tsp.problem.TspProblem, start_index: discrete_optimization.tsp.solvers.lp_iterative.Node = 0, end_index: discrete_optimization.tsp.solvers.lp_iterative.Node = 0) -> tuple[list[discrete_optimization.tsp.solvers.lp_iterative.Node], dict[str, float]]
+   :canonical: discrete_optimization.tsp.solvers.lp_iterative.rebuild_tsp_routine
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.lp_iterative.rebuild_tsp_routine

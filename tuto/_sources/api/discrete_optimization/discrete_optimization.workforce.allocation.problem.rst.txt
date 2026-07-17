@@ -1,0 +1,529 @@
+:py:mod:`discrete_optimization.workforce.allocation.problem`
+============================================================
+
+.. py:module:: discrete_optimization.workforce.allocation.problem
+
+.. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`AllocationAdditionalConstraint <discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint
+          :summary:
+   * - :py:obj:`GraphBipartite <discrete_optimization.workforce.allocation.problem.GraphBipartite>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.GraphBipartite
+          :summary:
+   * - :py:obj:`TeamAllocationSolution <discrete_optimization.workforce.allocation.problem.TeamAllocationSolution>`
+     -
+   * - :py:obj:`TeamAllocationProblem <discrete_optimization.workforce.allocation.problem.TeamAllocationProblem>`
+     -
+   * - :py:obj:`AggregateOperator <discrete_optimization.workforce.allocation.problem.AggregateOperator>`
+     -
+   * - :py:obj:`TeamAllocationProblemMultiobj <discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_available_teams_per_activities <discrete_optimization.workforce.allocation.problem.compute_available_teams_per_activities>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.compute_available_teams_per_activities
+          :summary:
+   * - :py:obj:`build_graph_allocation_from_calendar_and_schedule <discrete_optimization.workforce.allocation.problem.build_graph_allocation_from_calendar_and_schedule>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.build_graph_allocation_from_calendar_and_schedule
+          :summary:
+   * - :py:obj:`compute_graph_coloring <discrete_optimization.workforce.allocation.problem.compute_graph_coloring>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.compute_graph_coloring
+          :summary:
+   * - :py:obj:`transform_to_coloring_problem <discrete_optimization.workforce.allocation.problem.transform_to_coloring_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.transform_to_coloring_problem
+          :summary:
+   * - :py:obj:`satisfy_additional_constraint <discrete_optimization.workforce.allocation.problem.satisfy_additional_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_additional_constraint
+          :summary:
+   * - :py:obj:`satisfy_same_allocation <discrete_optimization.workforce.allocation.problem.satisfy_same_allocation>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_same_allocation
+          :summary:
+   * - :py:obj:`satisfy_all_diff <discrete_optimization.workforce.allocation.problem.satisfy_all_diff>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_all_diff
+          :summary:
+   * - :py:obj:`satisfy_forced_allocation <discrete_optimization.workforce.allocation.problem.satisfy_forced_allocation>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_forced_allocation
+          :summary:
+   * - :py:obj:`satisfy_forbidden_allocation <discrete_optimization.workforce.allocation.problem.satisfy_forbidden_allocation>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_forbidden_allocation
+          :summary:
+   * - :py:obj:`satisfy_allowed_allocation <discrete_optimization.workforce.allocation.problem.satisfy_allowed_allocation>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_allowed_allocation
+          :summary:
+   * - :py:obj:`satisfy_disjunctions <discrete_optimization.workforce.allocation.problem.satisfy_disjunctions>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_disjunctions
+          :summary:
+   * - :py:obj:`satisfy_disjunction <discrete_optimization.workforce.allocation.problem.satisfy_disjunction>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_disjunction
+          :summary:
+   * - :py:obj:`satisfy_nb_teams <discrete_optimization.workforce.allocation.problem.satisfy_nb_teams>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_nb_teams
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.allocation.problem.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.logger
+          :summary:
+   * - :py:obj:`Task <discrete_optimization.workforce.allocation.problem.Task>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.Task
+          :summary:
+   * - :py:obj:`UnaryResource <discrete_optimization.workforce.allocation.problem.UnaryResource>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.UnaryResource
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.allocation.problem.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.logger
+
+.. py:data:: Task
+   :canonical: discrete_optimization.workforce.allocation.problem.Task
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.Task
+
+.. py:data:: UnaryResource
+   :canonical: discrete_optimization.workforce.allocation.problem.UnaryResource
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.UnaryResource
+
+.. py:function:: compute_available_teams_per_activities(starts: numpy.ndarray, ends: numpy.ndarray, activities_name: list[collections.abc.Hashable], calendars_team: dict[collections.abc.Hashable, numpy.ndarray])
+   :canonical: discrete_optimization.workforce.allocation.problem.compute_available_teams_per_activities
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.compute_available_teams_per_activities
+
+.. py:class:: AllocationAdditionalConstraint(same_allocation: typing.Optional[list[set[collections.abc.Hashable]]] = None, all_diff_allocation: typing.Optional[list[set[collections.abc.Hashable]]] = None, forced_allocation: typing.Optional[dict[collections.abc.Hashable, collections.abc.Hashable]] = None, forbidden_allocation: typing.Optional[dict[collections.abc.Hashable, set[collections.abc.Hashable]]] = None, allowed_allocation: typing.Optional[dict[collections.abc.Hashable, set[collections.abc.Hashable]]] = None, disjunction: typing.Optional[list[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]]] = None, nb_max_teams: typing.Optional[int] = None, precedences: typing.Optional[dict[collections.abc.Hashable, set[collections.abc.Hashable]]] = None)
+   :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.__init__
+
+   .. py:attribute:: same_allocation
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.same_allocation
+      :type: list[set[collections.abc.Hashable]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.same_allocation
+
+   .. py:attribute:: all_diff_allocation
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.all_diff_allocation
+      :type: list[set[collections.abc.Hashable]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.all_diff_allocation
+
+   .. py:attribute:: forced_allocation
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.forced_allocation
+      :type: dict[collections.abc.Hashable, collections.abc.Hashable]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.forced_allocation
+
+   .. py:attribute:: forbidden_allocation
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.forbidden_allocation
+      :type: dict[collections.abc.Hashable, set[collections.abc.Hashable]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.forbidden_allocation
+
+   .. py:attribute:: allowed_allocation
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.allowed_allocation
+      :type: dict[collections.abc.Hashable, set[collections.abc.Hashable]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.allowed_allocation
+
+   .. py:attribute:: disjunction
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.disjunction
+      :type: list[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.disjunction
+
+   .. py:attribute:: nb_max_teams
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.nb_max_teams
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.nb_max_teams
+
+   .. py:attribute:: precedences
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.precedences
+      :type: dict[collections.abc.Hashable, set[collections.abc.Hashable]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.precedences
+
+   .. py:method:: is_empty()
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.is_empty
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.is_empty
+
+   .. py:method:: __str__()
+      :canonical: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint.__str__
+
+.. py:class:: GraphBipartite(nodes: list[tuple[collections.abc.Hashable, dict[str, typing.Any]]], edges: list[tuple[collections.abc.Hashable, collections.abc.Hashable, dict[str, typing.Any]]], nodes_activity: set[collections.abc.Hashable], nodes_team: set[collections.abc.Hashable], undirected: bool = True, compute_predecessors: bool = True)
+   :canonical: discrete_optimization.workforce.allocation.problem.GraphBipartite
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.graph_api.Graph`
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.GraphBipartite
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.GraphBipartite.__init__
+
+   .. py:method:: to_networkx() -> networkx.DiGraph
+      :canonical: discrete_optimization.workforce.allocation.problem.GraphBipartite.to_networkx
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.GraphBipartite.to_networkx
+
+   .. py:method:: is_bipartite() -> bool
+      :canonical: discrete_optimization.workforce.allocation.problem.GraphBipartite.is_bipartite
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.GraphBipartite.is_bipartite
+
+   .. py:method:: get_nodes_team()
+      :canonical: discrete_optimization.workforce.allocation.problem.GraphBipartite.get_nodes_team
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.GraphBipartite.get_nodes_team
+
+   .. py:method:: get_nodes_team_list()
+      :canonical: discrete_optimization.workforce.allocation.problem.GraphBipartite.get_nodes_team_list
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.GraphBipartite.get_nodes_team_list
+
+   .. py:method:: get_nodes_activity()
+      :canonical: discrete_optimization.workforce.allocation.problem.GraphBipartite.get_nodes_activity
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.GraphBipartite.get_nodes_activity
+
+.. py:class:: TeamAllocationSolution(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, allocation: list[typing.Optional[int]], **kwargs)
+   :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationSolution`\ [\ :py:obj:`discrete_optimization.workforce.allocation.problem.Task`\ , :py:obj:`discrete_optimization.workforce.allocation.problem.UnaryResource`\ ]
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution.problem
+      :type: TeamAllocationProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution.problem
+
+   .. py:method:: copy() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution.lazy_copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution.change_problem
+
+   .. py:method:: is_allocated(task: discrete_optimization.workforce.allocation.problem.Task, unary_resource: discrete_optimization.workforce.allocation.problem.UnaryResource) -> bool
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution.is_allocated
+
+.. py:function:: build_graph_allocation_from_calendar_and_schedule(starts: numpy.ndarray, ends: numpy.ndarray, calendar_team: dict[collections.abc.Hashable, list[tuple[int, int]]], horizon: int, tasks_name: list[collections.abc.Hashable], teams_name: list[collections.abc.Hashable])
+   :canonical: discrete_optimization.workforce.allocation.problem.build_graph_allocation_from_calendar_and_schedule
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.build_graph_allocation_from_calendar_and_schedule
+
+.. py:function:: compute_graph_coloring(starts: numpy.ndarray, ends: numpy.ndarray, task_names: list)
+   :canonical: discrete_optimization.workforce.allocation.problem.compute_graph_coloring
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.compute_graph_coloring
+
+.. py:class:: TeamAllocationProblem(graph_activity: typing.Optional[discrete_optimization.generic_tools.graph_api.Graph] = None, graph_allocation: typing.Optional[discrete_optimization.workforce.allocation.problem.GraphBipartite] = None, allocation_additional_constraint: typing.Optional[discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint] = None, schedule_activity: typing.Optional[dict[discrete_optimization.workforce.allocation.problem.Task, tuple[int, int]]] = None, calendar_team: typing.Optional[dict[discrete_optimization.workforce.allocation.problem.UnaryResource, list[tuple[int, int]]]] = None, activities_name: typing.Optional[list[discrete_optimization.workforce.allocation.problem.Task]] = None)
+   :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationProblem`\ [\ :py:obj:`discrete_optimization.workforce.allocation.problem.Task`\ , :py:obj:`discrete_optimization.workforce.allocation.problem.UnaryResource`\ ]
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.tasks_list
+      :type: list[discrete_optimization.workforce.allocation.problem.Task]
+
+   .. py:property:: unary_resources_list
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.unary_resources_list
+      :type: list[discrete_optimization.workforce.allocation.problem.UnaryResource]
+
+   .. py:method:: is_compatible_task_unary_resource(task: discrete_optimization.workforce.allocation.problem.Task, unary_resource: discrete_optimization.workforce.allocation.problem.UnaryResource) -> bool
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.is_compatible_task_unary_resource
+
+   .. py:method:: reorder_teams_name(new_order_teams_name: list[collections.abc.Hashable])
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.reorder_teams_name
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.reorder_teams_name
+
+   .. py:property:: do_add_cons
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.do_add_cons
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.do_add_cons
+
+   .. py:method:: computed_forbidden_team_for_task(task: collections.abc.Hashable) -> list[collections.abc.Hashable]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.computed_forbidden_team_for_task
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.computed_forbidden_team_for_task
+
+   .. py:method:: compute_compatibility_for_all_tasks() -> dict[discrete_optimization.workforce.allocation.problem.Task, set[discrete_optimization.workforce.allocation.problem.UnaryResource]]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_compatibility_for_all_tasks
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_compatibility_for_all_tasks
+
+   .. py:method:: compute_allowed_team_for_task(task: discrete_optimization.workforce.allocation.problem.Task) -> list[discrete_optimization.workforce.allocation.problem.UnaryResource]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_allowed_team_for_task
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_allowed_team_for_task
+
+   .. py:method:: compute_forbidden_team_index_for_task(task: collections.abc.Hashable) -> list[int]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_forbidden_team_index_for_task
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_forbidden_team_index_for_task
+
+   .. py:method:: compute_allowed_team_index_for_task(task: collections.abc.Hashable) -> list[int]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_allowed_team_index_for_task
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_allowed_team_index_for_task
+
+   .. py:method:: compute_forbidden_team_index_all_task() -> list[list[int]]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_forbidden_team_index_all_task
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_forbidden_team_index_all_task
+
+   .. py:method:: compute_allowed_team_index_all_task() -> list[list[int]]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_allowed_team_index_all_task
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_allowed_team_index_all_task
+
+   .. py:method:: compute_pair_overlap_index_task() -> list[tuple[int, int]]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_pair_overlap_index_task
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.compute_pair_overlap_index_task
+
+   .. py:method:: get_max_teams() -> int
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_max_teams
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_max_teams
+
+   .. py:method:: evaluate(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> dict[str, float]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.evaluate
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.evaluate
+
+   .. py:method:: satisfy(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> bool
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.satisfy
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.satisfy
+
+   .. py:method:: satisfy_color_constraints(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> bool
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.satisfy_color_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.satisfy_color_constraints
+
+   .. py:method:: satisfy_allowed_assignment(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> bool
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.satisfy_allowed_assignment
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.satisfy_allowed_assignment
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_attribute_register
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_solution_type
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_objective_register
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_objective_register
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.workforce.allocation.problem.TeamAllocationSolution
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_dummy_solution
+
+   .. py:method:: count_color_constraints_violations(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> int
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.count_color_constraints_violations
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.count_color_constraints_violations
+
+   .. py:method:: count_allowed_assignment_violations(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> int
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.count_allowed_assignment_violations
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.count_allowed_assignment_violations
+
+   .. py:method:: evaluate_from_encoding(int_vector: list[int], encoding_name: str) -> dict[str, float]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.evaluate_from_encoding
+
+   .. py:method:: get_natural_explanation_unsat_constraints(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> list[str]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_natural_explanation_unsat_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_natural_explanation_unsat_constraints
+
+   .. py:method:: get_natural_explanation_unsat_colors(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> list[str]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_natural_explanation_unsat_colors
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_natural_explanation_unsat_colors
+
+   .. py:method:: get_natural_explanation_unsat_allowed_assignment(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> list[str]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_natural_explanation_unsat_allowed_assignment
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.get_natural_explanation_unsat_allowed_assignment
+
+   .. py:method:: add_additional_constraint(allocation_additional_constraint: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint)
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.add_additional_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.add_additional_constraint
+
+   .. py:method:: remove_additional_constraint()
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.remove_additional_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem.remove_additional_constraint
+
+.. py:function:: transform_to_coloring_problem(team_allocation_problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, add_clique_team_nodes: bool = True, add_constraint_color: bool = False) -> discrete_optimization.coloring.problem.ColoringProblem
+   :canonical: discrete_optimization.workforce.allocation.problem.transform_to_coloring_problem
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.transform_to_coloring_problem
+
+.. py:class:: AggregateOperator
+   :canonical: discrete_optimization.workforce.allocation.problem.AggregateOperator
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: MAX_MINUS_MIN
+      :canonical: discrete_optimization.workforce.allocation.problem.AggregateOperator.MAX_MINUS_MIN
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AggregateOperator.MAX_MINUS_MIN
+
+   .. py:attribute:: MAX
+      :canonical: discrete_optimization.workforce.allocation.problem.AggregateOperator.MAX
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AggregateOperator.MAX
+
+   .. py:attribute:: MIN
+      :canonical: discrete_optimization.workforce.allocation.problem.AggregateOperator.MIN
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AggregateOperator.MIN
+
+   .. py:attribute:: MEAN
+      :canonical: discrete_optimization.workforce.allocation.problem.AggregateOperator.MEAN
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AggregateOperator.MEAN
+
+   .. py:attribute:: GINI
+      :canonical: discrete_optimization.workforce.allocation.problem.AggregateOperator.GINI
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.AggregateOperator.GINI
+
+.. py:class:: TeamAllocationProblemMultiobj(graph_activity: discrete_optimization.generic_tools.graph_api.Graph = None, graph_allocation: discrete_optimization.workforce.allocation.problem.GraphBipartite = None, allocation_additional_constraint: typing.Optional[discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint] = None, schedule_activity: typing.Optional[dict[collections.abc.Hashable, tuple[int, int]]] = None, calendar_team: dict[collections.abc.Hashable, list[tuple[int, int]]] = None, activities_name: list[collections.abc.Hashable] = None, attributes_cumul_activities: typing.Optional[list[str]] = None, objective_doc_cumul_activities: typing.Optional[dict[str, tuple[discrete_optimization.generic_tools.do_problem.ObjectiveDoc, discrete_optimization.workforce.allocation.problem.AggregateOperator]]] = None)
+   :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj
+
+   Bases: :py:obj:`discrete_optimization.workforce.allocation.problem.TeamAllocationProblem`
+
+   .. py:method:: update_attributes_of_activities()
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj.update_attributes_of_activities
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj.update_attributes_of_activities
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj.get_objective_register
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj.get_objective_register
+
+   .. py:method:: evaluate_cumul_nodes(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, attribute_on_node: str)
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj.evaluate_cumul_nodes
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj.evaluate_cumul_nodes
+
+   .. py:method:: aggregate_cumuls(cumuls_array, aggregate_operator: discrete_optimization.workforce.allocation.problem.AggregateOperator) -> float
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj.aggregate_cumuls
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj.aggregate_cumuls
+
+   .. py:method:: evaluate(variable: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> dict[str, float]
+      :canonical: discrete_optimization.workforce.allocation.problem.TeamAllocationProblemMultiobj.evaluate
+
+.. py:function:: satisfy_additional_constraint(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, additional_constraint: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint, partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.allocation.problem.satisfy_additional_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_additional_constraint
+
+.. py:function:: satisfy_same_allocation(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, same_allocation: list[set[collections.abc.Hashable]], partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.allocation.problem.satisfy_same_allocation
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_same_allocation
+
+.. py:function:: satisfy_all_diff(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, all_diffs: list[set[collections.abc.Hashable]], partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.allocation.problem.satisfy_all_diff
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_all_diff
+
+.. py:function:: satisfy_forced_allocation(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, forced_allocation: dict[collections.abc.Hashable, collections.abc.Hashable], partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.allocation.problem.satisfy_forced_allocation
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_forced_allocation
+
+.. py:function:: satisfy_forbidden_allocation(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, forbidden_allocation: dict[collections.abc.Hashable, set[collections.abc.Hashable]], partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.allocation.problem.satisfy_forbidden_allocation
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_forbidden_allocation
+
+.. py:function:: satisfy_allowed_allocation(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, allowed_allocation: dict[collections.abc.Hashable, set[collections.abc.Hashable]], partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.allocation.problem.satisfy_allowed_allocation
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_allowed_allocation
+
+.. py:function:: satisfy_disjunctions(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, disjunction: list[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]], partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.allocation.problem.satisfy_disjunctions
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_disjunctions
+
+.. py:function:: satisfy_disjunction(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, one_disjunction: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.allocation.problem.satisfy_disjunction
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_disjunction
+
+.. py:function:: satisfy_nb_teams(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, nb_teams_max: int, partial_solution: bool = False)
+   :canonical: discrete_optimization.workforce.allocation.problem.satisfy_nb_teams
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.problem.satisfy_nb_teams

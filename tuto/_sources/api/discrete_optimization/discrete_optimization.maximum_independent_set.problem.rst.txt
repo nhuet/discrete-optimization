@@ -1,0 +1,72 @@
+:py:mod:`discrete_optimization.maximum_independent_set.problem`
+===============================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.problem
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MisSolution <discrete_optimization.maximum_independent_set.problem.MisSolution>`
+     -
+   * - :py:obj:`MisProblem <discrete_optimization.maximum_independent_set.problem.MisProblem>`
+     -
+
+API
+~~~
+
+.. py:class:: MisSolution(problem: discrete_optimization.maximum_independent_set.problem.MisProblem, chosen: typing.Union[list, numpy.ndarray])
+   :canonical: discrete_optimization.maximum_independent_set.problem.MisSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Solution`
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisSolution.__str__
+
+   .. py:method:: copy() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisSolution.lazy_copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisSolution.change_problem
+
+.. py:class:: MisProblem(graph: typing.Union[discrete_optimization.generic_tools.graph_api.Graph, networkx.Graph], attribute_aggregate: str = 'size')
+   :canonical: discrete_optimization.maximum_independent_set.problem.MisProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Problem`
+
+   .. py:method:: evaluate(variable: discrete_optimization.maximum_independent_set.problem.MisSolution) -> dict[str, float]
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisProblem.evaluate
+
+   .. py:method:: satisfy(variable: discrete_optimization.maximum_independent_set.problem.MisSolution) -> bool
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisProblem.satisfy
+
+   .. py:method:: compute_violation(variable: discrete_optimization.maximum_independent_set.problem.MisSolution) -> int
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisProblem.compute_violation
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.problem.MisProblem.compute_violation
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.maximum_independent_set.problem.MisSolution
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.problem.MisProblem.get_dummy_solution
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.maximum_independent_set.problem.MisProblem.get_objective_register

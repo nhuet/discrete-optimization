@@ -1,0 +1,350 @@
+:py:mod:`discrete_optimization.knapsack.problem`
+================================================
+
+.. py:module:: discrete_optimization.knapsack.problem
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Item <discrete_optimization.knapsack.problem.Item>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.problem.Item
+          :summary:
+   * - :py:obj:`KnapsackSolution <discrete_optimization.knapsack.problem.KnapsackSolution>`
+     -
+   * - :py:obj:`KnapsackProblem <discrete_optimization.knapsack.problem.KnapsackProblem>`
+     -
+   * - :py:obj:`MobjKnapsackModel <discrete_optimization.knapsack.problem.MobjKnapsackModel>`
+     -
+   * - :py:obj:`MultidimensionalKnapsackSolution <discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution>`
+     -
+   * - :py:obj:`ItemMultidimensional <discrete_optimization.knapsack.problem.ItemMultidimensional>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.problem.ItemMultidimensional
+          :summary:
+   * - :py:obj:`MultidimensionalKnapsackProblem <discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem>`
+     -
+   * - :py:obj:`MultiScenarioMultidimensionalKnapsackProblem <discrete_optimization.knapsack.problem.MultiScenarioMultidimensionalKnapsackProblem>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`create_subknapsack_problem <discrete_optimization.knapsack.problem.create_subknapsack_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.problem.create_subknapsack_problem
+          :summary:
+   * - :py:obj:`from_kp_to_multi <discrete_optimization.knapsack.problem.from_kp_to_multi>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.problem.from_kp_to_multi
+          :summary:
+   * - :py:obj:`create_noised_scenario <discrete_optimization.knapsack.problem.create_noised_scenario>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.problem.create_noised_scenario
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Knapsack <discrete_optimization.knapsack.problem.Knapsack>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.problem.Knapsack
+          :summary:
+   * - :py:obj:`KNAPSACK_RESOURCE <discrete_optimization.knapsack.problem.KNAPSACK_RESOURCE>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.problem.KNAPSACK_RESOURCE
+          :summary:
+
+API
+~~~
+
+.. py:class:: Item
+   :canonical: discrete_optimization.knapsack.problem.Item
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.problem.Item
+
+   .. py:attribute:: index
+      :canonical: discrete_optimization.knapsack.problem.Item.index
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.Item.index
+
+   .. py:attribute:: value
+      :canonical: discrete_optimization.knapsack.problem.Item.value
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.Item.value
+
+   .. py:attribute:: weight
+      :canonical: discrete_optimization.knapsack.problem.Item.weight
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.Item.weight
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.knapsack.problem.Item.__str__
+
+.. py:data:: Knapsack
+   :canonical: discrete_optimization.knapsack.problem.Knapsack
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.problem.Knapsack
+
+.. py:data:: KNAPSACK_RESOURCE
+   :canonical: discrete_optimization.knapsack.problem.KNAPSACK_RESOURCE
+   :value: True
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.problem.KNAPSACK_RESOURCE
+
+.. py:class:: KnapsackSolution(problem: discrete_optimization.knapsack.problem.KnapsackProblem, list_taken: list[int], value: typing.Optional[float] = None, weight: typing.Optional[float] = None)
+   :canonical: discrete_optimization.knapsack.problem.KnapsackSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationSolution`\ [\ :py:obj:`discrete_optimization.knapsack.problem.Item`\ , :py:obj:`discrete_optimization.knapsack.problem.Knapsack`\ ]
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.knapsack.problem.KnapsackSolution.problem
+      :type: KnapsackProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.KnapsackSolution.problem
+
+   .. py:method:: is_allocated(task: discrete_optimization.knapsack.problem.Item, unary_resource: discrete_optimization.knapsack.problem.Knapsack) -> bool
+      :canonical: discrete_optimization.knapsack.problem.KnapsackSolution.is_allocated
+
+   .. py:method:: copy() -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.problem.KnapsackSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.problem.KnapsackSolution.lazy_copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.knapsack.problem.KnapsackSolution.change_problem
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.knapsack.problem.KnapsackSolution.__str__
+
+   .. py:method:: __hash__() -> int
+      :canonical: discrete_optimization.knapsack.problem.KnapsackSolution.__hash__
+
+   .. py:method:: __eq__(other: object) -> bool
+      :canonical: discrete_optimization.knapsack.problem.KnapsackSolution.__eq__
+
+.. py:class:: KnapsackProblem(list_items: list[discrete_optimization.knapsack.problem.Item], max_capacity: float, force_recompute_values: bool = False)
+   :canonical: discrete_optimization.knapsack.problem.KnapsackProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationProblem`\ [\ :py:obj:`discrete_optimization.knapsack.problem.Item`\ , :py:obj:`discrete_optimization.knapsack.problem.Knapsack`\ ]
+
+   .. py:property:: unary_resources_list
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.unary_resources_list
+      :type: list[discrete_optimization.knapsack.problem.Knapsack]
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.tasks_list
+      :type: list[discrete_optimization.knapsack.problem.Item]
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.get_attribute_register
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.get_objective_register
+
+   .. py:method:: evaluate_from_encoding(int_vector: list[int], encoding_name: str) -> dict[str, float]
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.KnapsackProblem.evaluate_from_encoding
+
+   .. py:method:: evaluate(knapsack_solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> dict[str, float]
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.evaluate
+
+   .. py:method:: evaluate_value(knapsack_solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> float
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.evaluate_value
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.KnapsackProblem.evaluate_value
+
+   .. py:method:: evaluate_weight_violation(knapsack_solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> float
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.evaluate_weight_violation
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.KnapsackProblem.evaluate_weight_violation
+
+   .. py:method:: satisfy(knapsack_solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> bool
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.satisfy
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.__str__
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.KnapsackProblem.get_dummy_solution
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.knapsack.problem.KnapsackProblem.get_solution_type
+
+.. py:function:: create_subknapsack_problem(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem, solution: discrete_optimization.knapsack.problem.KnapsackSolution, indexes_to_remove: set[int], indexes_to_keep: set[int] = None)
+   :canonical: discrete_optimization.knapsack.problem.create_subknapsack_problem
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.problem.create_subknapsack_problem
+
+.. py:class:: MobjKnapsackModel(list_items: list[discrete_optimization.knapsack.problem.Item], max_capacity: float, force_recompute_values: bool = False)
+   :canonical: discrete_optimization.knapsack.problem.MobjKnapsackModel
+
+   Bases: :py:obj:`discrete_optimization.knapsack.problem.KnapsackProblem`
+
+   .. py:method:: from_knapsack(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem) -> discrete_optimization.knapsack.problem.MobjKnapsackModel
+      :canonical: discrete_optimization.knapsack.problem.MobjKnapsackModel.from_knapsack
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.MobjKnapsackModel.from_knapsack
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.knapsack.problem.MobjKnapsackModel.get_objective_register
+
+   .. py:method:: evaluate(knapsack_solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> dict[str, float]
+      :canonical: discrete_optimization.knapsack.problem.MobjKnapsackModel.evaluate
+
+   .. py:method:: evaluate_mobj_from_dict(dict_values: dict[str, float]) -> discrete_optimization.generic_tools.do_problem.TupleFitness
+      :canonical: discrete_optimization.knapsack.problem.MobjKnapsackModel.evaluate_mobj_from_dict
+
+   .. py:method:: evaluate_mobj(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> discrete_optimization.generic_tools.do_problem.TupleFitness
+      :canonical: discrete_optimization.knapsack.problem.MobjKnapsackModel.evaluate_mobj
+
+.. py:class:: MultidimensionalKnapsackSolution(problem: typing.Union[discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem, discrete_optimization.knapsack.problem.MultiScenarioMultidimensionalKnapsackProblem], list_taken: list[int], value: typing.Optional[float] = None, weights: typing.Optional[list[float]] = None)
+   :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Solution`
+
+   .. py:method:: copy() -> discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution.lazy_copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution.change_problem
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution.__str__
+
+   .. py:method:: __hash__() -> int
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution.__hash__
+
+   .. py:method:: __eq__(other: object) -> bool
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution.__eq__
+
+.. py:class:: ItemMultidimensional
+   :canonical: discrete_optimization.knapsack.problem.ItemMultidimensional
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.problem.ItemMultidimensional
+
+   .. py:attribute:: index
+      :canonical: discrete_optimization.knapsack.problem.ItemMultidimensional.index
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.ItemMultidimensional.index
+
+   .. py:attribute:: value
+      :canonical: discrete_optimization.knapsack.problem.ItemMultidimensional.value
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.ItemMultidimensional.value
+
+   .. py:attribute:: weights
+      :canonical: discrete_optimization.knapsack.problem.ItemMultidimensional.weights
+      :type: list[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.ItemMultidimensional.weights
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.knapsack.problem.ItemMultidimensional.__str__
+
+.. py:class:: MultidimensionalKnapsackProblem(list_items: list[discrete_optimization.knapsack.problem.ItemMultidimensional], max_capacities: list[float], force_recompute_values: bool = False)
+   :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Problem`
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.get_attribute_register
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.get_objective_register
+
+   .. py:method:: evaluate_from_encoding(int_vector: list[int], encoding_name: str) -> dict[str, float]
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.evaluate_from_encoding
+
+   .. py:method:: evaluate(knapsack_solution: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution) -> dict[str, float]
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.evaluate
+
+   .. py:method:: evaluate_value(knapsack_solution: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution) -> float
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.evaluate_value
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.evaluate_value
+
+   .. py:method:: evaluate_weight_violation(knapsack_solution: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution) -> float
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.evaluate_weight_violation
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.evaluate_weight_violation
+
+   .. py:method:: satisfy(knapsack_solution: discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution) -> bool
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.satisfy
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.__str__
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.get_dummy_solution
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.get_solution_type
+
+   .. py:method:: copy() -> discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem
+      :canonical: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.copy
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem.copy
+
+.. py:class:: MultiScenarioMultidimensionalKnapsackProblem(list_problem: collections.abc.Sequence[discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem], method_aggregating: discrete_optimization.generic_tools.do_problem.MethodAggregating)
+   :canonical: discrete_optimization.knapsack.problem.MultiScenarioMultidimensionalKnapsackProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.RobustProblem`
+
+   .. py:attribute:: list_problem
+      :canonical: discrete_optimization.knapsack.problem.MultiScenarioMultidimensionalKnapsackProblem.list_problem
+      :type: collections.abc.Sequence[discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.MultiScenarioMultidimensionalKnapsackProblem.list_problem
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution
+      :canonical: discrete_optimization.knapsack.problem.MultiScenarioMultidimensionalKnapsackProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.problem.MultiScenarioMultidimensionalKnapsackProblem.get_dummy_solution
+
+.. py:function:: from_kp_to_multi(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem) -> discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem
+   :canonical: discrete_optimization.knapsack.problem.from_kp_to_multi
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.problem.from_kp_to_multi
+
+.. py:function:: create_noised_scenario(problem: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem, nb_scenarios: int = 20) -> list[discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem]
+   :canonical: discrete_optimization.knapsack.problem.create_noised_scenario
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.problem.create_noised_scenario

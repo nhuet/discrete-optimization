@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>discrete_optimization.workforce.scheduling.utils &mdash; discrete-optimization tuto-howto documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2030f8cb"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/versions.js?v=dd1a30db"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            discrete-optimization
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto_new_problem_implementation/tutorial_new_problem_or_solver.html">How to write its own problem/solver class?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">discrete-optimization</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.workforce.scheduling.utils</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-discrete_optimization.workforce.scheduling.utils">
+<span id="discrete-optimization-workforce-scheduling-utils"></span><h1><a class="reference internal" href="#module-discrete_optimization.workforce.scheduling.utils" title="discrete_optimization.workforce.scheduling.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.workforce.scheduling.utils</span></code></a><a class="headerlink" href="#module-discrete_optimization.workforce.scheduling.utils" title="Link to this heading"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.overlap_interval" title="discrete_optimization.workforce.scheduling.utils.overlap_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlap_interval</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.compute_equivalent_teams_scheduling_problem" title="discrete_optimization.workforce.scheduling.utils.compute_equivalent_teams_scheduling_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_equivalent_teams_scheduling_problem</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution" title="discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_changes_between_solution</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution_same_pb" title="discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution_same_pb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_changes_between_solution_same_pb</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.plot_schedule_comparison" title="discrete_optimization.workforce.scheduling.utils.plot_schedule_comparison"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_schedule_comparison</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.plotly_schedule_comparison" title="discrete_optimization.workforce.scheduling.utils.plotly_schedule_comparison"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotly_schedule_comparison</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.estimate_nb_resource_needed" title="discrete_optimization.workforce.scheduling.utils.estimate_nb_resource_needed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate_nb_resource_needed</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.template_violated_constraint" title="discrete_optimization.workforce.scheduling.utils.template_violated_constraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">template_violated_constraint</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat" title="discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">natural_explanation_unsat</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat_from_sol" title="discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat_from_sol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">natural_explanation_unsat_from_sol</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.compute_precedence_graph" title="discrete_optimization.workforce.scheduling.utils.compute_precedence_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_precedence_graph</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.export_scheduling_problem_json" title="discrete_optimization.workforce.scheduling.utils.export_scheduling_problem_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_scheduling_problem_json</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.get_working_time_teams" title="discrete_optimization.workforce.scheduling.utils.get_working_time_teams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_working_time_teams</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.compute_available_teams_per_activities_alloc_problem" title="discrete_optimization.workforce.scheduling.utils.compute_available_teams_per_activities_alloc_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_available_teams_per_activities_alloc_problem</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.build_allocation_problem_from_scheduling" title="discrete_optimization.workforce.scheduling.utils.build_allocation_problem_from_scheduling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_allocation_problem_from_scheduling</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.build_scheduling_problem_from_allocation" title="discrete_optimization.workforce.scheduling.utils.build_scheduling_problem_from_allocation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_scheduling_problem_from_allocation</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.alloc_solution_to_alloc_sched_solution" title="discrete_optimization.workforce.scheduling.utils.alloc_solution_to_alloc_sched_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alloc_solution_to_alloc_sched_solution</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.binary_calendar" title="discrete_optimization.workforce.scheduling.utils.binary_calendar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">binary_calendar</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.get_availability_slots" title="discrete_optimization.workforce.scheduling.utils.get_availability_slots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_availability_slots</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.logger" title="discrete_optimization.workforce.scheduling.utils.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logger</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.workforce.scheduling.utils.this_folder" title="discrete_optimization.workforce.scheduling.utils.this_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">this_folder</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.logger">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">logger</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'getLogger(...)'</span></em><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.logger" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.this_folder">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">this_folder</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'dirname(...)'</span></em><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.this_folder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.overlap_interval">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">overlap_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#overlap_interval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.overlap_interval" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.compute_equivalent_teams_scheduling_problem">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">compute_equivalent_teams_scheduling_problem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scheduling_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#compute_equivalent_teams_scheduling_problem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.compute_equivalent_teams_scheduling_problem" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">compute_changes_between_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solution_a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem_a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem_b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#compute_changes_between_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution_same_pb">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">compute_changes_between_solution_same_pb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solution_a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#compute_changes_between_solution_same_pb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.compute_changes_between_solution_same_pb" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.plot_schedule_comparison">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">plot_schedule_comparison</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#plot_schedule_comparison"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.plot_schedule_comparison" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.plotly_schedule_comparison">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">plotly_schedule_comparison</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_team_to_other_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_color_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_color_map_per_task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_map_per_task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity_map_per_task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_all_changes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_change</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_team_breaks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_xticks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Scheduling</span> <span class="pre">Comparison</span> <span class="pre">(Base</span> <span class="pre">vs</span> <span class="pre">Updated)'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#plotly_schedule_comparison"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.plotly_schedule_comparison" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.estimate_nb_resource_needed">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">estimate_nb_resource_needed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#estimate_nb_resource_needed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.estimate_nb_resource_needed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.template_violated_constraint">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">template_violated_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">satisfy_detailed_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#template_violated_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.template_violated_constraint" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">natural_explanation_unsat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detailed_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#natural_explanation_unsat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat_from_sol">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">natural_explanation_unsat_from_sol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#natural_explanation_unsat_from_sol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.natural_explanation_unsat_from_sol" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.compute_precedence_graph">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">compute_precedence_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">networkx.DiGraph</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#compute_precedence_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.compute_precedence_graph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.export_scheduling_problem_json">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">export_scheduling_problem_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#export_scheduling_problem_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.export_scheduling_problem_json" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.get_working_time_teams">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">get_working_time_teams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#get_working_time_teams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.get_working_time_teams" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.compute_available_teams_per_activities_alloc_problem">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">compute_available_teams_per_activities_alloc_problem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">starts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ends</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calendars_team</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#compute_available_teams_per_activities_alloc_problem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.compute_available_teams_per_activities_alloc_problem" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.build_allocation_problem_from_scheduling">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">build_allocation_problem_from_scheduling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem_alloc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiobjective</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#build_allocation_problem_from_scheduling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.build_allocation_problem_from_scheduling" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.build_scheduling_problem_from_allocation">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">build_scheduling_problem_from_allocation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationProblem" title="discrete_optimization.workforce.allocation.problem.TeamAllocationProblem"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizon_start_shift</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#build_scheduling_problem_from_allocation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.build_scheduling_problem_from_allocation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.alloc_solution_to_alloc_sched_solution">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">alloc_solution_to_alloc_sched_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.scheduling.problem.html#discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem" title="discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem"><span class="pre">discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.workforce.allocation.problem.html#discrete_optimization.workforce.allocation.problem.TeamAllocationSolution" title="discrete_optimization.workforce.allocation.problem.TeamAllocationSolution"><span class="pre">discrete_optimization.workforce.allocation.problem.TeamAllocationSolution</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#alloc_solution_to_alloc_sched_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.alloc_solution_to_alloc_sched_solution" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.binary_calendar">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">binary_calendar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_available</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#binary_calendar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.binary_calendar" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.workforce.scheduling.utils.get_availability_slots">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.workforce.scheduling.utils.</span></span><span class="sig-name descname"><span class="pre">get_availability_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calendar_matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/workforce/scheduling/utils.html#get_availability_slots"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.workforce.scheduling.utils.get_availability_slots" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Airbus.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: tuto-howto
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl id="docs-versions">
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

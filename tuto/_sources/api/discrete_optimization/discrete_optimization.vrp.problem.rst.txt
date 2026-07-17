@@ -1,0 +1,208 @@
+:py:mod:`discrete_optimization.vrp.problem`
+===========================================
+
+.. py:module:: discrete_optimization.vrp.problem
+
+.. autodoc2-docstring:: discrete_optimization.vrp.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`VrpSolution <discrete_optimization.vrp.problem.VrpSolution>`
+     -
+   * - :py:obj:`BasicCustomer <discrete_optimization.vrp.problem.BasicCustomer>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.problem.BasicCustomer
+          :summary:
+   * - :py:obj:`VrpProblem <discrete_optimization.vrp.problem.VrpProblem>`
+     -
+   * - :py:obj:`Customer2D <discrete_optimization.vrp.problem.Customer2D>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.problem.Customer2D
+          :summary:
+   * - :py:obj:`Customer2DVrpProblem <discrete_optimization.vrp.problem.Customer2DVrpProblem>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`length <discrete_optimization.vrp.problem.length>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.problem.length
+          :summary:
+   * - :py:obj:`trivial_solution <discrete_optimization.vrp.problem.trivial_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.problem.trivial_solution
+          :summary:
+   * - :py:obj:`stupid_solution <discrete_optimization.vrp.problem.stupid_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.problem.stupid_solution
+          :summary:
+   * - :py:obj:`compute_length <discrete_optimization.vrp.problem.compute_length>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.problem.compute_length
+          :summary:
+   * - :py:obj:`compute_length_np <discrete_optimization.vrp.problem.compute_length_np>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.problem.compute_length_np
+          :summary:
+   * - :py:obj:`sequential_computing <discrete_optimization.vrp.problem.sequential_computing>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.problem.sequential_computing
+          :summary:
+   * - :py:obj:`build_evaluate_function <discrete_optimization.vrp.problem.build_evaluate_function>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.problem.build_evaluate_function
+          :summary:
+
+API
+~~~
+
+.. py:class:: VrpSolution(problem: discrete_optimization.vrp.problem.VrpProblem, list_start_index: list[int], list_end_index: list[int], list_paths: list[list[int]], capacities: typing.Optional[list[float]] = None, length: typing.Optional[float] = None, lengths: typing.Optional[list[list[float]]] = None)
+   :canonical: discrete_optimization.vrp.problem.VrpSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Solution`
+
+   .. py:method:: copy() -> discrete_optimization.vrp.problem.VrpSolution
+      :canonical: discrete_optimization.vrp.problem.VrpSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.vrp.problem.VrpSolution
+      :canonical: discrete_optimization.vrp.problem.VrpSolution.lazy_copy
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.vrp.problem.VrpSolution.__str__
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.vrp.problem.VrpSolution.change_problem
+
+.. py:class:: BasicCustomer(name: typing.Union[str, int], demand: float)
+   :canonical: discrete_optimization.vrp.problem.BasicCustomer
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.BasicCustomer
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.BasicCustomer.__init__
+
+.. py:class:: VrpProblem(vehicle_count: int, vehicle_capacities: list[float], customer_count: int, customers: collections.abc.Sequence[discrete_optimization.vrp.problem.BasicCustomer], start_indexes: list[int], end_indexes: list[int])
+   :canonical: discrete_optimization.vrp.problem.VrpProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Problem`
+
+   .. py:attribute:: customers
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.customers
+      :type: collections.abc.Sequence[discrete_optimization.vrp.problem.BasicCustomer]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.problem.VrpProblem.customers
+
+   .. py:method:: evaluate_function(var_tsp: discrete_optimization.vrp.problem.VrpSolution) -> tuple[list[list[float]], list[float], float, list[float]]
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.evaluate_function
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.problem.VrpProblem.evaluate_function
+
+   .. py:method:: evaluate_function_indexes(index_1: int, index_2: int) -> float
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.evaluate_function_indexes
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.problem.VrpProblem.evaluate_function_indexes
+
+   .. py:method:: evaluate(variable: discrete_optimization.vrp.problem.VrpSolution) -> dict[str, float]
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.evaluate
+
+   .. py:method:: satisfy(variable: discrete_optimization.vrp.problem.VrpSolution) -> bool
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.get_objective_register
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.__str__
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.vrp.problem.VrpSolution
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.problem.VrpProblem.get_dummy_solution
+
+   .. py:method:: get_stupid_solution() -> discrete_optimization.vrp.problem.VrpSolution
+      :canonical: discrete_optimization.vrp.problem.VrpProblem.get_stupid_solution
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.problem.VrpProblem.get_stupid_solution
+
+.. py:class:: Customer2D(name: typing.Union[str, int], demand: float, x: float, y: float)
+   :canonical: discrete_optimization.vrp.problem.Customer2D
+
+   Bases: :py:obj:`discrete_optimization.vrp.problem.BasicCustomer`
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.Customer2D
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.Customer2D.__init__
+
+.. py:function:: length(point1: discrete_optimization.vrp.problem.Customer2D, point2: discrete_optimization.vrp.problem.Customer2D) -> float
+   :canonical: discrete_optimization.vrp.problem.length
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.length
+
+.. py:class:: Customer2DVrpProblem(vehicle_count: int, vehicle_capacities: list[float], customer_count: int, customers: collections.abc.Sequence[discrete_optimization.vrp.problem.Customer2D], start_indexes: list[int], end_indexes: list[int])
+   :canonical: discrete_optimization.vrp.problem.Customer2DVrpProblem
+
+   Bases: :py:obj:`discrete_optimization.vrp.problem.VrpProblem`
+
+   .. py:attribute:: customers
+      :canonical: discrete_optimization.vrp.problem.Customer2DVrpProblem.customers
+      :type: collections.abc.Sequence[discrete_optimization.vrp.problem.Customer2D]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.problem.Customer2DVrpProblem.customers
+
+   .. py:method:: evaluate_function(vrp_sol: discrete_optimization.vrp.problem.VrpSolution) -> tuple[list[list[float]], list[float], float, list[float]]
+      :canonical: discrete_optimization.vrp.problem.Customer2DVrpProblem.evaluate_function
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.problem.Customer2DVrpProblem.evaluate_function
+
+   .. py:method:: evaluate_function_indexes(index_1: int, index_2: int) -> float
+      :canonical: discrete_optimization.vrp.problem.Customer2DVrpProblem.evaluate_function_indexes
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.problem.Customer2DVrpProblem.evaluate_function_indexes
+
+.. py:function:: trivial_solution(vrp_problem: discrete_optimization.vrp.problem.VrpProblem) -> tuple[discrete_optimization.vrp.problem.VrpSolution, dict[str, float]]
+   :canonical: discrete_optimization.vrp.problem.trivial_solution
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.trivial_solution
+
+.. py:function:: stupid_solution(vrp_problem: discrete_optimization.vrp.problem.VrpProblem) -> tuple[discrete_optimization.vrp.problem.VrpSolution, dict[str, float]]
+   :canonical: discrete_optimization.vrp.problem.stupid_solution
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.stupid_solution
+
+.. py:function:: compute_length(start_index: int, end_index: int, solution: list[int], list_customers: collections.abc.Sequence[discrete_optimization.vrp.problem.BasicCustomer], method: collections.abc.Callable[[int, int], float]) -> tuple[list[float], float, float]
+   :canonical: discrete_optimization.vrp.problem.compute_length
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.compute_length
+
+.. py:function:: compute_length_np(start_index: int, end_index: int, solution: typing.Union[list[int], numpy.ndarray], np_points: numpy.ndarray) -> tuple[typing.Union[list[float], numpy.ndarray], float]
+   :canonical: discrete_optimization.vrp.problem.compute_length_np
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.compute_length_np
+
+.. py:function:: sequential_computing(vrp_sol: discrete_optimization.vrp.problem.VrpSolution, vrp_problem: discrete_optimization.vrp.problem.VrpProblem) -> tuple[list[list[float]], list[float], float, list[float]]
+   :canonical: discrete_optimization.vrp.problem.sequential_computing
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.sequential_computing
+
+.. py:function:: build_evaluate_function(vrp_problem: discrete_optimization.vrp.problem.VrpProblem) -> collections.abc.Callable[[discrete_optimization.vrp.problem.VrpSolution], tuple[list[list[float]], list[float], float, list[float]]]
+   :canonical: discrete_optimization.vrp.problem.build_evaluate_function
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.problem.build_evaluate_function

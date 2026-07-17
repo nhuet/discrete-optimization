@@ -1,0 +1,48 @@
+:py:mod:`discrete_optimization.generic_tools.callbacks.backup`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tools.callbacks.backup
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.backup
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`PickleBestSolutionBackup <discrete_optimization.generic_tools.callbacks.backup.PickleBestSolutionBackup>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.callbacks.backup.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.backup.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.callbacks.backup.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.backup.logger
+
+.. py:class:: PickleBestSolutionBackup(save_nb_steps: int, backup_path: str = 'debug.pkl')
+   :canonical: discrete_optimization.generic_tools.callbacks.backup.PickleBestSolutionBackup
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.backup.PickleBestSolutionBackup.on_step_end

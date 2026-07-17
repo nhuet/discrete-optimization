@@ -1,0 +1,37 @@
+:py:mod:`discrete_optimization.generic_tools.path_tools`
+========================================================
+
+.. py:module:: discrete_optimization.generic_tools.path_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.path_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_directory <discrete_optimization.generic_tools.path_tools.get_directory>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.path_tools.get_directory
+          :summary:
+   * - :py:obj:`abspath_from_file <discrete_optimization.generic_tools.path_tools.abspath_from_file>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.path_tools.abspath_from_file
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_directory(file: str) -> str
+   :canonical: discrete_optimization.generic_tools.path_tools.get_directory
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.path_tools.get_directory
+
+.. py:function:: abspath_from_file(file: str, relative_path: str) -> str
+   :canonical: discrete_optimization.generic_tools.path_tools.abspath_from_file
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.path_tools.abspath_from_file

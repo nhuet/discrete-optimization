@@ -1,0 +1,54 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.mathopt`
+=======================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.mathopt
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.mathopt
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MathOptMisSolver <discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptMisSolver>`
+     -
+   * - :py:obj:`MathOptQuadraticMisSolver <discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptQuadraticMisSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptQuadraticMisSolver
+          :summary:
+
+API
+~~~
+
+.. py:class:: MathOptMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptMisSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`, :py:obj:`discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver`
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.maximum_independent_set.problem.MisSolution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptMisSolver.convert_to_variable_values
+
+.. py:class:: MathOptQuadraticMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptQuadraticMisSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`, :py:obj:`discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptQuadraticMisSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptQuadraticMisSolver.__init__
+
+   .. py:attribute:: has_quadratic_objective
+      :canonical: discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptQuadraticMisSolver.has_quadratic_objective
+      :value: True
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptQuadraticMisSolver.has_quadratic_objective
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.maximum_independent_set.problem.MisSolution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.mathopt.MathOptQuadraticMisSolver.convert_to_variable_values

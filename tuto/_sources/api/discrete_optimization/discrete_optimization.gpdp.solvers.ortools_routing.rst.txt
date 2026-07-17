@@ -1,0 +1,195 @@
+:py:mod:`discrete_optimization.gpdp.solvers.ortools_routing`
+============================================================
+
+.. py:module:: discrete_optimization.gpdp.solvers.ortools_routing
+
+.. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`NodePosition <discrete_optimization.gpdp.solvers.ortools_routing.NodePosition>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.NodePosition
+          :summary:
+   * - :py:obj:`ParametersCost <discrete_optimization.gpdp.solvers.ortools_routing.ParametersCost>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.ParametersCost
+          :summary:
+   * - :py:obj:`OrtoolsGpdpSolver <discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver>`
+     -
+   * - :py:obj:`RoutingMonitor <discrete_optimization.gpdp.solvers.ortools_routing.RoutingMonitor>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`apply_cost <discrete_optimization.gpdp.solvers.ortools_routing.apply_cost>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.apply_cost
+          :summary:
+   * - :py:obj:`convert_to_gpdpsolution <discrete_optimization.gpdp.solvers.ortools_routing.convert_to_gpdpsolution>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.convert_to_gpdpsolution
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.gpdp.solvers.ortools_routing.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.logger
+          :summary:
+   * - :py:obj:`LocalSearchMetaheuristic <discrete_optimization.gpdp.solvers.ortools_routing.LocalSearchMetaheuristic>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.LocalSearchMetaheuristic
+          :summary:
+   * - :py:obj:`FirstSolutionStrategy <discrete_optimization.gpdp.solvers.ortools_routing.FirstSolutionStrategy>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.FirstSolutionStrategy
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.gpdp.solvers.ortools_routing.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.logger
+
+.. py:class:: NodePosition
+   :canonical: discrete_optimization.gpdp.solvers.ortools_routing.NodePosition
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.NodePosition
+
+   .. py:attribute:: START
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.NodePosition.START
+      :value: 'start'
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.NodePosition.START
+
+   .. py:attribute:: INTERMEDIATE
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.NodePosition.INTERMEDIATE
+      :value: 'intermediate'
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.NodePosition.INTERMEDIATE
+
+   .. py:attribute:: END
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.NodePosition.END
+      :value: 'end'
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.NodePosition.END
+
+.. py:class:: ParametersCost(dimension_name: str, global_span: bool = True, sum_over_vehicles: bool = False, coefficient_vehicles: typing.Union[float, list[float]] = 100)
+   :canonical: discrete_optimization.gpdp.solvers.ortools_routing.ParametersCost
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.ParametersCost
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.ParametersCost.__init__
+
+   .. py:method:: default() -> discrete_optimization.gpdp.solvers.ortools_routing.ParametersCost
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.ParametersCost.default
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.ParametersCost.default
+
+.. py:function:: apply_cost(list_parameters_cost: list[discrete_optimization.gpdp.solvers.ortools_routing.ParametersCost], routing: ortools.constraint_solver.pywrapcp.RoutingModel) -> None
+   :canonical: discrete_optimization.gpdp.solvers.ortools_routing.apply_cost
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.apply_cost
+
+.. py:data:: LocalSearchMetaheuristic
+   :canonical: discrete_optimization.gpdp.solvers.ortools_routing.LocalSearchMetaheuristic
+   :value: 'Enum(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.LocalSearchMetaheuristic
+
+.. py:data:: FirstSolutionStrategy
+   :canonical: discrete_optimization.gpdp.solvers.ortools_routing.FirstSolutionStrategy
+   :value: 'Enum(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.FirstSolutionStrategy
+
+.. py:class:: OrtoolsGpdpSolver(problem: discrete_optimization.gpdp.problem.GpdpProblem, factor_multiplier_distance: float = 1, factor_multiplier_time: float = 1, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver
+
+   Bases: :py:obj:`discrete_optimization.gpdp.solvers.GpdpSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.problem
+      :type: discrete_optimization.gpdp.problem.GpdpProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.hyperparameters
+
+   .. py:attribute:: initial_solution
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.initial_solution
+      :type: typing.Optional[discrete_optimization.gpdp.problem.GpdpSolution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.initial_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.init_model
+
+   .. py:method:: build_search_parameters(**kwargs: typing.Any) -> ortools.constraint_solver.routing_parameters_pb2.RoutingSearchParameters
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.build_search_parameters
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.build_search_parameters
+
+   .. py:method:: solve(search_parameters: typing.Optional[ortools.constraint_solver.routing_parameters_pb2.RoutingSearchParameters] = None, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.solve
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.gpdp.problem.GpdpSolution) -> None
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver.set_warm_start
+
+   .. py:method:: _solution2routes(solution: discrete_optimization.gpdp.problem.GpdpSolution) -> list[list[int]]
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver._solution2routes
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver._solution2routes
+
+.. py:class:: RoutingMonitor(do_solver: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver, callback: discrete_optimization.generic_tools.callbacks.callback.Callback)
+   :canonical: discrete_optimization.gpdp.solvers.ortools_routing.RoutingMonitor
+
+   Bases: :py:obj:`ortools.constraint_solver.pywrapcp.SearchMonitor`
+
+   .. py:method:: AtSolution() -> bool
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.RoutingMonitor.AtSolution
+
+   .. py:method:: EnterSearch()
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.RoutingMonitor.EnterSearch
+
+   .. py:method:: ExitSearch()
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.RoutingMonitor.ExitSearch
+
+   .. py:method:: retrieve_current_solution() -> None
+      :canonical: discrete_optimization.gpdp.solvers.ortools_routing.RoutingMonitor.retrieve_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.RoutingMonitor.retrieve_current_solution
+
+.. py:function:: convert_to_gpdpsolution(problem: discrete_optimization.gpdp.problem.GpdpProblem, sol: tuple[dict[int, list[int]], dict[tuple[int, int, discrete_optimization.gpdp.solvers.ortools_routing.NodePosition], dict[str, tuple[float, float, float]]], float, float, float]) -> discrete_optimization.gpdp.problem.GpdpSolution
+   :canonical: discrete_optimization.gpdp.solvers.ortools_routing.convert_to_gpdpsolution
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.ortools_routing.convert_to_gpdpsolution

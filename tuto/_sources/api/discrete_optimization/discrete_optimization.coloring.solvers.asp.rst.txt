@@ -1,0 +1,98 @@
+:py:mod:`discrete_optimization.coloring.solvers.asp`
+====================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.asp
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`AspColoringSolver <discrete_optimization.coloring.solvers.asp.AspColoringSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.AspColoringSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`cur_folder <discrete_optimization.coloring.solvers.asp.cur_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.cur_folder
+          :summary:
+   * - :py:obj:`logger <discrete_optimization.coloring.solvers.asp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: cur_folder
+   :canonical: discrete_optimization.coloring.solvers.asp.cur_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.cur_folder
+
+.. py:data:: logger
+   :canonical: discrete_optimization.coloring.solvers.asp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.logger
+
+.. py:class:: AspColoringSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.asp.AspColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.asp_tools.AspClingoSolver`, :py:obj:`discrete_optimization.coloring.solvers.starting_solution.WithStartingSolutionColoringSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.AspColoringSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.AspColoringSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.asp.AspColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.AspColoringSolver.hyperparameters
+
+   .. py:method:: retrieve_solution(model: clingo.Model) -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.solvers.asp.AspColoringSolver.retrieve_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.asp.AspColoringSolver.init_model
+
+   .. py:method:: init_model_without_subset(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.asp.AspColoringSolver.init_model_without_subset
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.AspColoringSolver.init_model_without_subset
+
+   .. py:method:: init_model_with_subset(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.asp.AspColoringSolver.init_model_with_subset
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.AspColoringSolver.init_model_with_subset
+
+   .. py:method:: build_string_data_input(nb_colors, nb_colors_subset: typing.Optional[int] = None)
+      :canonical: discrete_optimization.coloring.solvers.asp.AspColoringSolver.build_string_data_input
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.AspColoringSolver.build_string_data_input
+
+   .. py:method:: constrained_data_input()
+      :canonical: discrete_optimization.coloring.solvers.asp.AspColoringSolver.constrained_data_input
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.AspColoringSolver.constrained_data_input
+
+   .. py:method:: compute_clever_colors_map(colors_name: list[str])
+      :canonical: discrete_optimization.coloring.solvers.asp.AspColoringSolver.compute_clever_colors_map
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.asp.AspColoringSolver.compute_clever_colors_map

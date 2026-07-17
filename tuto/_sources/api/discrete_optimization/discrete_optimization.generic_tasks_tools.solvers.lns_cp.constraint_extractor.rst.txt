@@ -1,0 +1,190 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor`
+=======================================================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ParamsConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ParamsConstraintExtractor>`
+     -
+   * - :py:obj:`BaseConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor
+          :summary:
+   * - :py:obj:`DummyConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.DummyConstraintExtractor>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.DummyConstraintExtractor
+          :summary:
+   * - :py:obj:`ConstraintExtractorList <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorList>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorList
+          :summary:
+   * - :py:obj:`ConstraintExtractorPortfolio <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorPortfolio>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorPortfolio
+          :summary:
+   * - :py:obj:`SchedulingConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.SchedulingConstraintExtractor>`
+     -
+   * - :py:obj:`ChainingConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ChainingConstraintExtractor>`
+     -
+   * - :py:obj:`MultimodeConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.MultimodeConstraintExtractor>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.MultimodeConstraintExtractor
+          :summary:
+   * - :py:obj:`SubtasksAllocationConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.SubtasksAllocationConstraintExtractor>`
+     -
+   * - :py:obj:`SubresourcesAllocationConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.SubresourcesAllocationConstraintExtractor>`
+     -
+   * - :py:obj:`NbChangesAllocationConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.NbChangesAllocationConstraintExtractor>`
+     -
+   * - :py:obj:`NbUsagesAllocationConstraintExtractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.NbUsagesAllocationConstraintExtractor>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`build_default_constraint_extractor <discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.build_default_constraint_extractor>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.build_default_constraint_extractor
+          :summary:
+
+API
+~~~
+
+.. py:class:: ParamsConstraintExtractor(minus_delta_primary: int = 5, plus_delta_primary: int = 5, minus_delta_secondary: int = 0, plus_delta_secondary: int = 0, constraint_to_current_solution_makespan: bool = True, margin_rel_to_current_solution_makespan: float = 0.05, minus_delta_primary_duration: int = 5, plus_delta_primary_duration: int = 5, minus_delta_secondary_duration: int = 5, plus_delta_secondary_duration: int = 5, fix_primary_tasks_modes: bool = False, fix_secondary_tasks_modes: bool = True, chaining: bool = False, frac_fixed_chaining: float = 0.25, allocation_subtasks: bool = True, fix_secondary_tasks_allocation: bool = False, frac_random_fixed_tasks: float = 0.6, allocation_subresources: bool = False, frac_random_fixed_unary_resources: float = 0.5, nb_changes: bool = False, nb_changes_max: int = 10, nb_usages: bool = False, plus_delta_nb_usages_total: int = 5, plus_delta_nb_usages_per_unary_resource: int = 3, minus_delta_nb_usages_per_unary_resource: int = 3)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ParamsConstraintExtractor
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ParamsConstraintExtractor.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ParamsConstraintExtractor.hyperparameters
+
+.. py:class:: BaseConstraintExtractor
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor
+
+   Bases: :py:obj:`abc.ABC`, :py:obj:`typing.Generic`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor.add_constraints
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor.add_constraints
+
+.. py:class:: DummyConstraintExtractor
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.DummyConstraintExtractor
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.DummyConstraintExtractor
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.DummyConstraintExtractor.add_constraints
+
+.. py:class:: ConstraintExtractorList(extractors: list[discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor[discrete_optimization.generic_tasks_tools.base.Task]])
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorList
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorList
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorList.__init__
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorList.add_constraints
+
+.. py:class:: ConstraintExtractorPortfolio(extractors: list[discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor[discrete_optimization.generic_tasks_tools.base.Task]], weights: typing.Union[list[float], numpy.array] = None, verbose: bool = False)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorPortfolio
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorPortfolio
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorPortfolio.__init__
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ConstraintExtractorPortfolio.add_constraints
+
+.. py:class:: SchedulingConstraintExtractor(minus_delta_primary: int = 5, plus_delta_primary: int = 5, minus_delta_secondary: int = 0, plus_delta_secondary: int = 0)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.SchedulingConstraintExtractor
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.SchedulingConstraintExtractor.add_constraints
+
+.. py:class:: ChainingConstraintExtractor(frac_fixed_chaining: float = 0.25)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ChainingConstraintExtractor
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ChainingConstraintExtractor.add_constraints
+
+.. py:class:: MultimodeConstraintExtractor(fix_primary_tasks_modes: bool = False, fix_secondary_tasks_modes: bool = True)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.MultimodeConstraintExtractor
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.MultimodeConstraintExtractor
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.MultimodeConstraintExtractor.__init__
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.MultimodeConstraintExtractor.add_constraints
+
+.. py:class:: SubtasksAllocationConstraintExtractor(fix_secondary_tasks_allocation: bool = False, frac_random_fixed_tasks: float = 0.6)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.SubtasksAllocationConstraintExtractor
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.SubtasksAllocationConstraintExtractor.add_constraints
+
+.. py:class:: SubresourcesAllocationConstraintExtractor(frac_random_fixed_unary_resources: float = 0.5)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.SubresourcesAllocationConstraintExtractor
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.SubresourcesAllocationConstraintExtractor.add_constraints
+
+.. py:class:: NbChangesAllocationConstraintExtractor(nb_changes_max: int = 10)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.NbChangesAllocationConstraintExtractor
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.NbChangesAllocationConstraintExtractor.add_constraints
+
+.. py:class:: NbUsagesAllocationConstraintExtractor(plus_delta_nb_usages_total: int = 5, plus_delta_nb_usages_per_unary_resource: int = 3, minus_delta_nb_usages_per_unary_resource: int = 3)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.NbUsagesAllocationConstraintExtractor
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:method:: add_constraints(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], solver: discrete_optimization.generic_tasks_tools.base.TasksCpSolver[discrete_optimization.generic_tasks_tools.base.Task], tasks_primary: set[discrete_optimization.generic_tasks_tools.base.Task], tasks_secondary: set[discrete_optimization.generic_tasks_tools.base.Task], **kwargs: typing.Any) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.NbUsagesAllocationConstraintExtractor.add_constraints
+
+.. py:function:: build_default_constraint_extractor(problem: discrete_optimization.generic_tasks_tools.base.TasksProblem, params_constraint_extractor: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.ParamsConstraintExtractor) -> discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.BaseConstraintExtractor
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.build_default_constraint_extractor
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.constraint_extractor.build_default_constraint_extractor

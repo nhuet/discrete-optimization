@@ -1,0 +1,26 @@
+:py:mod:`discrete_optimization.binpack`
+=======================================
+
+.. py:module:: discrete_optimization.binpack
+
+.. autodoc2-docstring:: discrete_optimization.binpack
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.binpack.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.binpack.problem
+   discrete_optimization.binpack.parser

@@ -1,0 +1,504 @@
+:py:mod:`discrete_optimization.generic_tools.dashboard.preprocess`
+==================================================================
+
+.. py:module:: discrete_optimization.generic_tools.dashboard.preprocess
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`drop_empty_results <discrete_optimization.generic_tools.dashboard.preprocess.drop_empty_results>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.drop_empty_results
+          :summary:
+   * - :py:obj:`extract_empty_xps_metadata <discrete_optimization.generic_tools.dashboard.preprocess.extract_empty_xps_metadata>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_empty_xps_metadata
+          :summary:
+   * - :py:obj:`normalize_results <discrete_optimization.generic_tools.dashboard.preprocess.normalize_results>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.normalize_results
+          :summary:
+   * - :py:obj:`normalize_df <discrete_optimization.generic_tools.dashboard.preprocess.normalize_df>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.normalize_df
+          :summary:
+   * - :py:obj:`normalize_metadata <discrete_optimization.generic_tools.dashboard.preprocess.normalize_metadata>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.normalize_metadata
+          :summary:
+   * - :py:obj:`compute_extra_metrics <discrete_optimization.generic_tools.dashboard.preprocess.compute_extra_metrics>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_extra_metrics
+          :summary:
+   * - :py:obj:`compute_extra_metrics_df <discrete_optimization.generic_tools.dashboard.preprocess.compute_extra_metrics_df>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_extra_metrics_df
+          :summary:
+   * - :py:obj:`extract_instances <discrete_optimization.generic_tools.dashboard.preprocess.extract_instances>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_instances
+          :summary:
+   * - :py:obj:`extract_configs <discrete_optimization.generic_tools.dashboard.preprocess.extract_configs>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_configs
+          :summary:
+   * - :py:obj:`extract_instances_with_sol_by_config <discrete_optimization.generic_tools.dashboard.preprocess.extract_instances_with_sol_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_instances_with_sol_by_config
+          :summary:
+   * - :py:obj:`extract_nb_xps_by_config <discrete_optimization.generic_tools.dashboard.preprocess.extract_nb_xps_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_nb_xps_by_config
+          :summary:
+   * - :py:obj:`extract_nb_xps_w_n_wo_sol_by_config <discrete_optimization.generic_tools.dashboard.preprocess.extract_nb_xps_w_n_wo_sol_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_nb_xps_w_n_wo_sol_by_config
+          :summary:
+   * - :py:obj:`extract_metrics <discrete_optimization.generic_tools.dashboard.preprocess.extract_metrics>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_metrics
+          :summary:
+   * - :py:obj:`filter_results <discrete_optimization.generic_tools.dashboard.preprocess.filter_results>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.filter_results
+          :summary:
+   * - :py:obj:`clip_df <discrete_optimization.generic_tools.dashboard.preprocess.clip_df>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.clip_df
+          :summary:
+   * - :py:obj:`clip_results <discrete_optimization.generic_tools.dashboard.preprocess.clip_results>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.clip_results
+          :summary:
+   * - :py:obj:`get_experiment_name <discrete_optimization.generic_tools.dashboard.preprocess.get_experiment_name>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.get_experiment_name
+          :summary:
+   * - :py:obj:`get_status_str <discrete_optimization.generic_tools.dashboard.preprocess.get_status_str>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.get_status_str
+          :summary:
+   * - :py:obj:`has_multiple_runs <discrete_optimization.generic_tools.dashboard.preprocess.has_multiple_runs>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.has_multiple_runs
+          :summary:
+   * - :py:obj:`get_stat_name <discrete_optimization.generic_tools.dashboard.preprocess.get_stat_name>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.get_stat_name
+          :summary:
+   * - :py:obj:`aggregate_results_config <discrete_optimization.generic_tools.dashboard.preprocess.aggregate_results_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.aggregate_results_config
+          :summary:
+   * - :py:obj:`aggregate_results_by_config <discrete_optimization.generic_tools.dashboard.preprocess.aggregate_results_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.aggregate_results_by_config
+          :summary:
+   * - :py:obj:`compute_stat_by_config <discrete_optimization.generic_tools.dashboard.preprocess.compute_stat_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_stat_by_config
+          :summary:
+   * - :py:obj:`compute_stat_from_df_config <discrete_optimization.generic_tools.dashboard.preprocess.compute_stat_from_df_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_stat_from_df_config
+          :summary:
+   * - :py:obj:`extract_optimal_fit_by_instance <discrete_optimization.generic_tools.dashboard.preprocess.extract_optimal_fit_by_instance>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_optimal_fit_by_instance
+          :summary:
+   * - :py:obj:`extract_solvetimes_wo_status_by_config <discrete_optimization.generic_tools.dashboard.preprocess.extract_solvetimes_wo_status_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_solvetimes_wo_status_by_config
+          :summary:
+   * - :py:obj:`extract_solvetimes_by_config <discrete_optimization.generic_tools.dashboard.preprocess.extract_solvetimes_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_solvetimes_by_config
+          :summary:
+   * - :py:obj:`convert_solvetimes2nbsolvedinstances <discrete_optimization.generic_tools.dashboard.preprocess.convert_solvetimes2nbsolvedinstances>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.convert_solvetimes2nbsolvedinstances
+          :summary:
+   * - :py:obj:`extract_nbsolvedinstances_by_config <discrete_optimization.generic_tools.dashboard.preprocess.extract_nbsolvedinstances_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_nbsolvedinstances_by_config
+          :summary:
+   * - :py:obj:`extract_nbsolvedinstances_wo_status_by_config <discrete_optimization.generic_tools.dashboard.preprocess.extract_nbsolvedinstances_wo_status_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_nbsolvedinstances_wo_status_by_config
+          :summary:
+   * - :py:obj:`_extract_nbsolvedinstances_by_config_from_solvetimes <discrete_optimization.generic_tools.dashboard.preprocess._extract_nbsolvedinstances_by_config_from_solvetimes>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess._extract_nbsolvedinstances_by_config_from_solvetimes
+          :summary:
+   * - :py:obj:`convert_nb2percentage_solvedinstances <discrete_optimization.generic_tools.dashboard.preprocess.convert_nb2percentage_solvedinstances>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.convert_nb2percentage_solvedinstances
+          :summary:
+   * - :py:obj:`convert_nb2percentage_solvedinstances_by_config <discrete_optimization.generic_tools.dashboard.preprocess.convert_nb2percentage_solvedinstances_by_config>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.convert_nb2percentage_solvedinstances_by_config
+          :summary:
+   * - :py:obj:`construct_summary_nbsolved_instances <discrete_optimization.generic_tools.dashboard.preprocess.construct_summary_nbsolved_instances>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.construct_summary_nbsolved_instances
+          :summary:
+   * - :py:obj:`construct_summary_metric_agg <discrete_optimization.generic_tools.dashboard.preprocess.construct_summary_metric_agg>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.construct_summary_metric_agg
+          :summary:
+   * - :py:obj:`compute_best_metrics_by_xp <discrete_optimization.generic_tools.dashboard.preprocess.compute_best_metrics_by_xp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_best_metrics_by_xp
+          :summary:
+   * - :py:obj:`compute_convergence_time_by_xp <discrete_optimization.generic_tools.dashboard.preprocess.compute_convergence_time_by_xp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_convergence_time_by_xp
+          :summary:
+   * - :py:obj:`compute_summary_agg_ranks_and_dist_to_best_metric <discrete_optimization.generic_tools.dashboard.preprocess.compute_summary_agg_ranks_and_dist_to_best_metric>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_summary_agg_ranks_and_dist_to_best_metric
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`BOUND <discrete_optimization.generic_tools.dashboard.preprocess.BOUND>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.BOUND
+          :summary:
+   * - :py:obj:`OBJ <discrete_optimization.generic_tools.dashboard.preprocess.OBJ>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.OBJ
+          :summary:
+   * - :py:obj:`GAP <discrete_optimization.generic_tools.dashboard.preprocess.GAP>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.GAP
+          :summary:
+   * - :py:obj:`GAP_REL_OBJ <discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_OBJ>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_OBJ
+          :summary:
+   * - :py:obj:`GAP_REL_BOUND <discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_BOUND>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_BOUND
+          :summary:
+   * - :py:obj:`GAP_REL_MAX_OBJ_BOUND <discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_MAX_OBJ_BOUND>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_MAX_OBJ_BOUND
+          :summary:
+   * - :py:obj:`FIT <discrete_optimization.generic_tools.dashboard.preprocess.FIT>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.FIT
+          :summary:
+   * - :py:obj:`DIST_TO_BEST <discrete_optimization.generic_tools.dashboard.preprocess.DIST_TO_BEST>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.DIST_TO_BEST
+          :summary:
+   * - :py:obj:`DIST_TO_BEST_REL <discrete_optimization.generic_tools.dashboard.preprocess.DIST_TO_BEST_REL>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.DIST_TO_BEST_REL
+          :summary:
+   * - :py:obj:`CONVERGENCE_TIME <discrete_optimization.generic_tools.dashboard.preprocess.CONVERGENCE_TIME>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.CONVERGENCE_TIME
+          :summary:
+   * - :py:obj:`MEAN <discrete_optimization.generic_tools.dashboard.preprocess.MEAN>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.MEAN
+          :summary:
+   * - :py:obj:`MAX <discrete_optimization.generic_tools.dashboard.preprocess.MAX>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.MAX
+          :summary:
+   * - :py:obj:`MIN <discrete_optimization.generic_tools.dashboard.preprocess.MIN>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.MIN
+          :summary:
+   * - :py:obj:`MEDIAN <discrete_optimization.generic_tools.dashboard.preprocess.MEDIAN>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.MEDIAN
+          :summary:
+   * - :py:obj:`QUANTILE <discrete_optimization.generic_tools.dashboard.preprocess.QUANTILE>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.QUANTILE
+          :summary:
+   * - :py:obj:`map_stat_key2func_df <discrete_optimization.generic_tools.dashboard.preprocess.map_stat_key2func_df>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.map_stat_key2func_df
+          :summary:
+   * - :py:obj:`map_stat_key2func_sergroupby <discrete_optimization.generic_tools.dashboard.preprocess.map_stat_key2func_sergroupby>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.map_stat_key2func_sergroupby
+          :summary:
+   * - :py:obj:`I_RUN_LABEL <discrete_optimization.generic_tools.dashboard.preprocess.I_RUN_LABEL>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.I_RUN_LABEL
+          :summary:
+   * - :py:obj:`TIMEOUT_REASON <discrete_optimization.generic_tools.dashboard.preprocess.TIMEOUT_REASON>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.TIMEOUT_REASON
+          :summary:
+
+API
+~~~
+
+.. py:data:: BOUND
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.BOUND
+   :value: 'bound'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.BOUND
+
+.. py:data:: OBJ
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.OBJ
+   :value: 'obj'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.OBJ
+
+.. py:data:: GAP
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.GAP
+   :value: 'gap'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.GAP
+
+.. py:data:: GAP_REL_OBJ
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_OBJ
+   :value: 'gap_rel_obj'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_OBJ
+
+.. py:data:: GAP_REL_BOUND
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_BOUND
+   :value: 'gap_rel_bound'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_BOUND
+
+.. py:data:: GAP_REL_MAX_OBJ_BOUND
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_MAX_OBJ_BOUND
+   :value: 'gap_rel_max_obj_bound'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.GAP_REL_MAX_OBJ_BOUND
+
+.. py:data:: FIT
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.FIT
+   :value: 'fit'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.FIT
+
+.. py:data:: DIST_TO_BEST
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.DIST_TO_BEST
+   :value: 'dist to best'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.DIST_TO_BEST
+
+.. py:data:: DIST_TO_BEST_REL
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.DIST_TO_BEST_REL
+   :value: 'dist rel to best'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.DIST_TO_BEST_REL
+
+.. py:data:: CONVERGENCE_TIME
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.CONVERGENCE_TIME
+   :value: 'convergence time (s)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.CONVERGENCE_TIME
+
+.. py:data:: MEAN
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.MEAN
+   :value: 'mean'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.MEAN
+
+.. py:data:: MAX
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.MAX
+   :value: 'max'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.MAX
+
+.. py:data:: MIN
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.MIN
+   :value: 'min'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.MIN
+
+.. py:data:: MEDIAN
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.MEDIAN
+   :value: 'median'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.MEDIAN
+
+.. py:data:: QUANTILE
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.QUANTILE
+   :value: 'quantile'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.QUANTILE
+
+.. py:data:: map_stat_key2func_df
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.map_stat_key2func_df
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.map_stat_key2func_df
+
+.. py:data:: map_stat_key2func_sergroupby
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.map_stat_key2func_sergroupby
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.map_stat_key2func_sergroupby
+
+.. py:data:: I_RUN_LABEL
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.I_RUN_LABEL
+   :value: 'attempt'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.I_RUN_LABEL
+
+.. py:data:: TIMEOUT_REASON
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.TIMEOUT_REASON
+   :value: 'Probably due to a timeout.'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.TIMEOUT_REASON
+
+.. py:function:: drop_empty_results(results: list[pandas.DataFrame]) -> list[pandas.DataFrame]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.drop_empty_results
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.drop_empty_results
+
+.. py:function:: extract_empty_xps_metadata(results: list[pandas.DataFrame]) -> pandas.DataFrame
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_empty_xps_metadata
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_empty_xps_metadata
+
+.. py:function:: normalize_results(results: list[pandas.DataFrame], config_store: discrete_optimization.generic_tools.dashboard.config.ConfigStore) -> None
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.normalize_results
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.normalize_results
+
+.. py:function:: normalize_df(df: pandas.DataFrame, config_store: discrete_optimization.generic_tools.dashboard.config.ConfigStore, timedelta_unit='s') -> None
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.normalize_df
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.normalize_df
+
+.. py:function:: normalize_metadata(metadata: dict[str, typing.Any], config_store: discrete_optimization.generic_tools.dashboard.config.ConfigStore) -> None
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.normalize_metadata
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.normalize_metadata
+
+.. py:function:: compute_extra_metrics(results: list[pandas.DataFrame]) -> None
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.compute_extra_metrics
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_extra_metrics
+
+.. py:function:: compute_extra_metrics_df(df: pandas.DataFrame) -> None
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.compute_extra_metrics_df
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_extra_metrics_df
+
+.. py:function:: extract_instances(results: list[pandas.DataFrame]) -> set[str]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_instances
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_instances
+
+.. py:function:: extract_configs(results: list[pandas.DataFrame]) -> set[str]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_configs
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_configs
+
+.. py:function:: extract_instances_with_sol_by_config(results: list[pandas.DataFrame]) -> dict[str, set[str]]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_instances_with_sol_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_instances_with_sol_by_config
+
+.. py:function:: extract_nb_xps_by_config(results: list[pandas.DataFrame]) -> dict[str, int]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_nb_xps_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_nb_xps_by_config
+
+.. py:function:: extract_nb_xps_w_n_wo_sol_by_config(results: list[pandas.DataFrame], configs: list[str], instances: list[str]) -> tuple[dict[str, int], dict[str, int]]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_nb_xps_w_n_wo_sol_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_nb_xps_w_n_wo_sol_by_config
+
+.. py:function:: extract_metrics(results: list[pandas.DataFrame]) -> set[str]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_metrics
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_metrics
+
+.. py:function:: filter_results(results: list[pandas.DataFrame], configs: collections.abc.Container[str], instances: collections.abc.Container[str]) -> list[pandas.DataFrame]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.filter_results
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.filter_results
+
+.. py:function:: clip_df(df: pandas.DataFrame, clip_value: float) -> pandas.DataFrame
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.clip_df
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.clip_df
+
+.. py:function:: clip_results(results: list[pandas.DataFrame], clip_value: float) -> list[pandas.DataFrame]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.clip_results
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.clip_results
+
+.. py:function:: get_experiment_name(df: typing.Union[pandas.DataFrame, pandas.Series], with_run_nb=True) -> str
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.get_experiment_name
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.get_experiment_name
+
+.. py:function:: get_status_str(df: pandas.DataFrame) -> str
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.get_status_str
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.get_status_str
+
+.. py:function:: has_multiple_runs(results: list[pandas.DataFrame]) -> bool
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.has_multiple_runs
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.has_multiple_runs
+
+.. py:function:: get_stat_name(stat: str, q: float) -> str
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.get_stat_name
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.get_stat_name
+
+.. py:function:: aggregate_results_config(results: list[pandas.DataFrame], config: str) -> pandas.DataFrame
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.aggregate_results_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.aggregate_results_config
+
+.. py:function:: aggregate_results_by_config(results: list[pandas.DataFrame], configs: collections.abc.Iterable[str]) -> dict[str, pandas.DataFrame]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.aggregate_results_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.aggregate_results_by_config
+
+.. py:function:: compute_stat_by_config(results_by_config: dict[str, pandas.DataFrame], stat: str = MEAN, q: float = 0.5, instances: typing.Optional[list[str]] = None, min_xp_proportion: float = 0.5) -> dict[str, pandas.DataFrame]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.compute_stat_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_stat_by_config
+
+.. py:function:: compute_stat_from_df_config(df_config: pandas.DataFrame, stat: str = MEAN, q: float = 0.5, instances: typing.Optional[list[str]] = None, min_xp_proportion: float = 0.0) -> pandas.DataFrame
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.compute_stat_from_df_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_stat_from_df_config
+
+.. py:function:: extract_optimal_fit_by_instance(results: list[pandas.DataFrame]) -> dict[str, float]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_optimal_fit_by_instance
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_optimal_fit_by_instance
+
+.. py:function:: extract_solvetimes_wo_status_by_config(results: list[pandas.DataFrame], optimal_fit_by_instance: dict[str, float]) -> dict[str, list[float]]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_solvetimes_wo_status_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_solvetimes_wo_status_by_config
+
+.. py:function:: extract_solvetimes_by_config(results: list[pandas.DataFrame]) -> dict[str, list[float]]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_solvetimes_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_solvetimes_by_config
+
+.. py:function:: convert_solvetimes2nbsolvedinstances(solvetimes: list[float], time_label: str = 'time') -> pandas.Series
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.convert_solvetimes2nbsolvedinstances
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.convert_solvetimes2nbsolvedinstances
+
+.. py:function:: extract_nbsolvedinstances_by_config(results: list[pandas.DataFrame]) -> dict[str, pandas.Series]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_nbsolvedinstances_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_nbsolvedinstances_by_config
+
+.. py:function:: extract_nbsolvedinstances_wo_status_by_config(results: list[pandas.DataFrame]) -> dict[str, pandas.Series]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.extract_nbsolvedinstances_wo_status_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.extract_nbsolvedinstances_wo_status_by_config
+
+.. py:function:: _extract_nbsolvedinstances_by_config_from_solvetimes(results: list[pandas.DataFrame], solvetimes_by_config: dict[str, list[float]]) -> dict[str, pandas.Series]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess._extract_nbsolvedinstances_by_config_from_solvetimes
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess._extract_nbsolvedinstances_by_config_from_solvetimes
+
+.. py:function:: convert_nb2percentage_solvedinstances(ser: pandas.Series, n_xps: int) -> pandas.Series
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.convert_nb2percentage_solvedinstances
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.convert_nb2percentage_solvedinstances
+
+.. py:function:: convert_nb2percentage_solvedinstances_by_config(nbsolvedinstances_by_config: dict[str, pandas.Series], n_xps_by_config: dict[str, int]) -> dict[str, pandas.Series]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.convert_nb2percentage_solvedinstances_by_config
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.convert_nb2percentage_solvedinstances_by_config
+
+.. py:function:: construct_summary_nbsolved_instances(nbsolvedinstances_by_config: dict[str, pandas.Series], nb_xps_by_config: dict[str, int], configs: typing.Optional[collections.abc.Container[str]] = None) -> pandas.DataFrame
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.construct_summary_nbsolved_instances
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.construct_summary_nbsolved_instances
+
+.. py:function:: construct_summary_metric_agg(stat_by_config: dict[str, pandas.DataFrame], nb_xps_by_config: dict[str, int], nb_xps_wo_sol_by_config: dict[str, int], configs: typing.Optional[list[str]] = None) -> pandas.DataFrame
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.construct_summary_metric_agg
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.construct_summary_metric_agg
+
+.. py:function:: compute_best_metrics_by_xp(results: list[pandas.DataFrame], metrics: list[str]) -> pandas.DataFrame
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.compute_best_metrics_by_xp
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_best_metrics_by_xp
+
+.. py:function:: compute_convergence_time_by_xp(results: list[pandas.DataFrame], metrics: list[str]) -> pandas.DataFrame
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.compute_convergence_time_by_xp
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_convergence_time_by_xp
+
+.. py:function:: compute_summary_agg_ranks_and_dist_to_best_metric(df_best_metric_by_xp: pandas.DataFrame, df_convergence_time_by_xp: pandas.DataFrame, metric: str = 'fit', configs: typing.Optional[list[str]] = None, instances: typing.Optional[list[str]] = None, stat: str = MEAN, q: float = 0.5, minimizing: bool = False) -> tuple[pandas.DataFrame, pandas.DataFrame]
+   :canonical: discrete_optimization.generic_tools.dashboard.preprocess.compute_summary_agg_ranks_and_dist_to_best_metric
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.preprocess.compute_summary_agg_ranks_and_dist_to_best_metric

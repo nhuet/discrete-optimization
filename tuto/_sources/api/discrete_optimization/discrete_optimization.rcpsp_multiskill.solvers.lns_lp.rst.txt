@@ -1,0 +1,33 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.solvers.lns_lp`
+===============================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.solvers.lns_lp
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`InitialMultiskillRcpspSolution <discrete_optimization.rcpsp_multiskill.solvers.lns_lp.InitialMultiskillRcpspSolution>`
+     -
+
+API
+~~~
+
+.. py:class:: InitialMultiskillRcpspSolution(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, initial_method: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod = InitialRcpspMethod.PILE)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_lp.InitialMultiskillRcpspSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.InitialSolution`
+
+   .. py:method:: get_starting_solution() -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_lp.InitialMultiskillRcpspSolution.get_starting_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_lp.InitialMultiskillRcpspSolution.get_starting_solution

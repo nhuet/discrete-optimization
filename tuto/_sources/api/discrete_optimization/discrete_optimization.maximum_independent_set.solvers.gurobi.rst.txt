@@ -1,0 +1,70 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.gurobi`
+======================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.gurobi
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.gurobi
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GurobiMisSolver <discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiMisSolver>`
+     -
+   * - :py:obj:`GurobiQuadraticMisSolver <discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver
+          :summary:
+
+API
+~~~
+
+.. py:class:: GurobiMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiMisSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver`, :py:obj:`discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver`
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiMisSolver.init_model
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.maximum_independent_set.problem.MisSolution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiMisSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiMisSolver.convert_to_variable_values
+
+.. py:class:: GurobiQuadraticMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver`, :py:obj:`discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver.__init__
+
+   .. py:attribute:: vars_node_matrix
+      :canonical: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver.vars_node_matrix
+      :type: gurobipy.MVar
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver.vars_node_matrix
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver.init_model
+
+   .. py:method:: create_vars_node_matrix() -> gurobipy.MVar
+      :canonical: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver.create_vars_node_matrix
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver.create_vars_node_matrix
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.maximum_independent_set.problem.MisSolution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.gurobi.GurobiQuadraticMisSolver.convert_to_variable_values

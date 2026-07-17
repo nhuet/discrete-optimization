@@ -1,0 +1,103 @@
+:py:mod:`discrete_optimization.generic_tools.asp_tools`
+=======================================================
+
+.. py:module:: discrete_optimization.generic_tools.asp_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`AspClingoSolver <discrete_optimization.generic_tools.asp_tools.AspClingoSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspClingoSolver
+          :summary:
+   * - :py:obj:`AspCallback <discrete_optimization.generic_tools.asp_tools.AspCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspCallback
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.asp_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.logger
+          :summary:
+   * - :py:obj:`cur_folder <discrete_optimization.generic_tools.asp_tools.cur_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.cur_folder
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.asp_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.logger
+
+.. py:data:: cur_folder
+   :canonical: discrete_optimization.generic_tools.asp_tools.cur_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.cur_folder
+
+.. py:class:: AspClingoSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.asp_tools.AspClingoSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspClingoSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspClingoSolver.__init__
+
+   .. py:attribute:: ctl
+      :canonical: discrete_optimization.generic_tools.asp_tools.AspClingoSolver.ctl
+      :type: typing.Optional[clingo.Control]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspClingoSolver.ctl
+
+   .. py:attribute:: early_stopping_exception
+      :canonical: discrete_optimization.generic_tools.asp_tools.AspClingoSolver.early_stopping_exception
+      :type: typing.Optional[Exception]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspClingoSolver.early_stopping_exception
+
+   .. py:method:: retrieve_solution(model: clingo.Model) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.asp_tools.AspClingoSolver.retrieve_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspClingoSolver.retrieve_solution
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, time_limit: typing.Optional[float] = 100.0, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.asp_tools.AspClingoSolver.solve
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspClingoSolver.solve
+
+.. py:class:: AspCallback(do_solver: discrete_optimization.generic_tools.asp_tools.AspClingoSolver, callback: discrete_optimization.generic_tools.callbacks.callback.Callback, dump_model_in_folders: bool = False)
+   :canonical: discrete_optimization.generic_tools.asp_tools.AspCallback
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspCallback.__init__
+
+   .. py:method:: on_model(model: clingo.Model) -> bool
+      :canonical: discrete_optimization.generic_tools.asp_tools.AspCallback.on_model
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.asp_tools.AspCallback.on_model

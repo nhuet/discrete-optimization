@@ -1,0 +1,173 @@
+:py:mod:`discrete_optimization.rcpsp.problem_robust`
+====================================================
+
+.. py:module:: discrete_optimization.rcpsp.problem_robust
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`AggregRcpspProblem <discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem>`
+     -
+   * - :py:obj:`MethodBaseRobustification <discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification>`
+     -
+   * - :py:obj:`MethodRobustification <discrete_optimization.rcpsp.problem_robust.MethodRobustification>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodRobustification
+          :summary:
+   * - :py:obj:`UncertainRcpspProblem <discrete_optimization.rcpsp.problem_robust.UncertainRcpspProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.UncertainRcpspProblem
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`tree <discrete_optimization.rcpsp.problem_robust.tree>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.tree
+          :summary:
+   * - :py:obj:`create_poisson_laws_duration <discrete_optimization.rcpsp.problem_robust.create_poisson_laws_duration>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.create_poisson_laws_duration
+          :summary:
+   * - :py:obj:`create_poisson_laws_resource <discrete_optimization.rcpsp.problem_robust.create_poisson_laws_resource>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.create_poisson_laws_resource
+          :summary:
+   * - :py:obj:`create_poisson_laws <discrete_optimization.rcpsp.problem_robust.create_poisson_laws>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.create_poisson_laws
+          :summary:
+
+API
+~~~
+
+.. py:function:: tree() -> dict[typing.Any, typing.Any]
+   :canonical: discrete_optimization.rcpsp.problem_robust.tree
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.tree
+
+.. py:class:: AggregRcpspProblem(list_problem: collections.abc.Sequence[discrete_optimization.rcpsp.RcpspProblem], method_aggregating: discrete_optimization.generic_tools.do_problem.MethodAggregating)
+   :canonical: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.RobustProblem`, :py:obj:`discrete_optimization.rcpsp.RcpspProblem`
+
+   .. py:attribute:: list_problem
+      :canonical: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem.list_problem
+      :type: collections.abc.Sequence[discrete_optimization.rcpsp.RcpspProblem]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem.list_problem
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem.get_dummy_solution
+
+   .. py:method:: get_unique_rcpsp_problem() -> discrete_optimization.rcpsp.RcpspProblem
+      :canonical: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem.get_unique_rcpsp_problem
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem.get_unique_rcpsp_problem
+
+   .. py:method:: evaluate_from_encoding(int_vector: list[int], encoding_name: str) -> dict[str, float]
+      :canonical: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem.evaluate_from_encoding
+
+   .. py:method:: evaluate(variable: discrete_optimization.rcpsp.solution.RcpspSolution) -> dict[str, float]
+      :canonical: discrete_optimization.rcpsp.problem_robust.AggregRcpspProblem.evaluate
+
+.. py:class:: MethodBaseRobustification
+   :canonical: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: AVERAGE
+      :canonical: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.AVERAGE
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.AVERAGE
+
+   .. py:attribute:: WORST_CASE
+      :canonical: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.WORST_CASE
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.WORST_CASE
+
+   .. py:attribute:: BEST_CASE
+      :canonical: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.BEST_CASE
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.BEST_CASE
+
+   .. py:attribute:: PERCENTILE
+      :canonical: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.PERCENTILE
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.PERCENTILE
+
+   .. py:attribute:: SAMPLE
+      :canonical: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.SAMPLE
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification.SAMPLE
+
+.. py:class:: MethodRobustification(method_base: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification, percentile: float = 50)
+   :canonical: discrete_optimization.rcpsp.problem_robust.MethodRobustification
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodRobustification
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodRobustification.__init__
+
+   .. py:attribute:: method_base
+      :canonical: discrete_optimization.rcpsp.problem_robust.MethodRobustification.method_base
+      :type: discrete_optimization.rcpsp.problem_robust.MethodBaseRobustification
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodRobustification.method_base
+
+   .. py:attribute:: percentile
+      :canonical: discrete_optimization.rcpsp.problem_robust.MethodRobustification.percentile
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.MethodRobustification.percentile
+
+.. py:function:: create_poisson_laws_duration(rcpsp_problem: discrete_optimization.rcpsp.RcpspProblem, range_around_mean: int = 3) -> dict[collections.abc.Hashable, dict[int, dict[str, tuple[int, int, int]]]]
+   :canonical: discrete_optimization.rcpsp.problem_robust.create_poisson_laws_duration
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.create_poisson_laws_duration
+
+.. py:function:: create_poisson_laws_resource(rcpsp_problem: discrete_optimization.rcpsp.RcpspProblem, range_around_mean: int = 1) -> dict[collections.abc.Hashable, dict[int, dict[str, tuple[int, int, int]]]]
+   :canonical: discrete_optimization.rcpsp.problem_robust.create_poisson_laws_resource
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.create_poisson_laws_resource
+
+.. py:function:: create_poisson_laws(base_rcpsp_problem: discrete_optimization.rcpsp.RcpspProblem, range_around_mean_resource: int = 1, range_around_mean_duration: int = 3, do_uncertain_resource: bool = True, do_uncertain_duration: bool = True) -> dict[collections.abc.Hashable, dict[int, dict[str, tuple[int, int, int]]]]
+   :canonical: discrete_optimization.rcpsp.problem_robust.create_poisson_laws
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.create_poisson_laws
+
+.. py:class:: UncertainRcpspProblem(base_rcpsp_problem: discrete_optimization.rcpsp.RcpspProblem, poisson_laws: dict[collections.abc.Hashable, dict[int, dict[str, tuple[int, int, int]]]], uniform_law: bool = True)
+   :canonical: discrete_optimization.rcpsp.problem_robust.UncertainRcpspProblem
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.UncertainRcpspProblem
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.UncertainRcpspProblem.__init__
+
+   .. py:method:: create_rcpsp_problem(method_robustification: discrete_optimization.rcpsp.problem_robust.MethodRobustification) -> discrete_optimization.rcpsp.RcpspProblem
+      :canonical: discrete_optimization.rcpsp.problem_robust.UncertainRcpspProblem.create_rcpsp_problem
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem_robust.UncertainRcpspProblem.create_rcpsp_problem

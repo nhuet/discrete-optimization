@@ -1,0 +1,39 @@
+:py:mod:`discrete_optimization.knapsack.solvers.toulbar`
+========================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.toulbar
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.toulbar
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ToulbarKnapsackSolver <discrete_optimization.knapsack.solvers.toulbar.ToulbarKnapsackSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: ToulbarKnapsackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.toulbar.ToulbarKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver`, :py:obj:`discrete_optimization.knapsack.solvers.knapsack_solver.KnapsackSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.knapsack.solvers.toulbar.ToulbarKnapsackSolver.init_model
+
+   .. py:method:: retrieve_solution(solution_from_toulbar2: tuple[list, float, int]) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.knapsack.solvers.toulbar.ToulbarKnapsackSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.toulbar.ToulbarKnapsackSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> None
+      :canonical: discrete_optimization.knapsack.solvers.toulbar.ToulbarKnapsackSolver.set_warm_start

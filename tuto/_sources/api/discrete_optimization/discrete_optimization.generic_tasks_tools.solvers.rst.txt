@@ -1,0 +1,25 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.solvers`
+===========================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.solvers
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.generic_tasks_tools.solvers.lns_cp
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tasks_tools.solvers.cpsat

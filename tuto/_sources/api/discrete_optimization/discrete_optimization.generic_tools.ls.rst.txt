@@ -1,0 +1,18 @@
+:py:mod:`discrete_optimization.generic_tools.ls`
+================================================
+
+.. py:module:: discrete_optimization.generic_tools.ls
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ls
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.ls.hill_climber
+   discrete_optimization.generic_tools.ls.simulated_annealing
+   discrete_optimization.generic_tools.ls.local_search

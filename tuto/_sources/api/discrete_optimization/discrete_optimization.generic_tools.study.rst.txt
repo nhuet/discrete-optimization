@@ -1,0 +1,17 @@
+:py:mod:`discrete_optimization.generic_tools.study`
+===================================================
+
+.. py:module:: discrete_optimization.generic_tools.study
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.study
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.study.database
+   discrete_optimization.generic_tools.study.experiment

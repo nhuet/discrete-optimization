@@ -1,0 +1,165 @@
+:py:mod:`discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed`
+==========================================================================
+
+.. py:module:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed
+
+.. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CPSatAllocSchedulingSolverCumulative <discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_update_kwargs_subsolver <discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed._update_kwargs_subsolver>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed._update_kwargs_subsolver
+          :summary:
+   * - :py:obj:`_get_variables_obj_key <discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed._get_variables_obj_key>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed._get_variables_obj_key
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.logger
+
+.. py:class:: CPSatAllocSchedulingSolverCumulative(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver`, :py:obj:`discrete_optimization.workforce.scheduling.solvers.SolverAllocScheduling`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.hyperparameters
+
+   .. py:attribute:: not_implemented_objectives
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.not_implemented_objectives
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.not_implemented_objectives
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.problem
+      :type: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.problem
+
+   .. py:attribute:: variables
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.variables
+      :type: dict[str, dict[typing.Any, typing.Any]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.variables
+
+   .. py:method:: implements_lexico_api() -> bool
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.implements_lexico_api
+      :staticmethod:
+
+   .. py:method:: get_lexico_objectives_available() -> list[str]
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.get_lexico_objectives_available
+
+   .. py:method:: set_lexico_objective(obj: typing.Union[str, discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum]) -> None
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_lexico_objective
+
+   .. py:method:: add_lexico_constraint(obj: typing.Union[str, discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum], value: float) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.add_lexico_constraint
+
+   .. py:method:: get_lexico_objective_value(obj: typing.Union[str, discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum], res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> float
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.get_lexico_objective_value
+
+   .. py:method:: set_model_obj_aggregated(objs_weights: list[tuple[typing.Union[str, discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum], float]])
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_model_obj_aggregated
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_model_obj_aggregated
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.workforce.scheduling.problem.AllocSchedulingSolution) -> None
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_warm_start
+
+   .. py:method:: init_multimode_data(**kwargs)
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.init_multimode_data
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.init_multimode_data
+
+   .. py:method:: init_main_vars(**args)
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.init_main_vars
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.init_main_vars
+
+   .. py:method:: set_precedence_constraints()
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_precedence_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_precedence_constraints
+
+   .. py:method:: set_same_allocation_constraints()
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_same_allocation_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_same_allocation_constraints
+
+   .. py:method:: set_resource_pool_constraints()
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_resource_pool_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.set_resource_pool_constraints
+
+   .. py:method:: create_makespan_obj(ends_var: dict[int, ortools.sat.python.cp_model.IntVar], st_lb: list[tuple[int, int, int, int]] = None)
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.create_makespan_obj
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.create_makespan_obj
+
+   .. py:method:: define_objectives(objectives: list[discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum], **args)
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.define_objectives
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.define_objectives
+
+   .. py:method:: init_model(objectives: typing.Optional[list[discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum]] = None, **args: typing.Any) -> None
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.init_model
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_cp: typing.Optional[discrete_optimization.generic_tools.ortools_cpsat_tools.ParametersCp] = None, time_limit: typing.Optional[float] = 100.0, ortools_cpsat_solver_kwargs: typing.Optional[dict[str, typing.Any]] = None, retrieve_stats: bool = False, kwargs_scheduling: typing.Optional[dict[str, typing.Any]] = None, kwargs_allocation: typing.Optional[dict[str, typing.Any]] = None, **kwargs)
+      :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.solve
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed.CPSatAllocSchedulingSolverCumulative.solve
+
+.. py:function:: _update_kwargs_subsolver(kwargs_subsolver: typing.Optional[dict[str, typing.Any]] = None, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_cp: typing.Optional[discrete_optimization.generic_tools.ortools_cpsat_tools.ParametersCp] = None, time_limit: typing.Optional[float] = 100.0, ortools_cpsat_solver_kwargs: typing.Optional[dict[str, typing.Any]] = None, retrieve_stats: bool = False, **kwargs: typing.Any) -> dict[str, typing.Any]
+   :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed._update_kwargs_subsolver
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed._update_kwargs_subsolver
+
+.. py:function:: _get_variables_obj_key(obj: typing.Union[str, discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum]) -> typing.Union[str, discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum]
+   :canonical: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed._get_variables_obj_key
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed._get_variables_obj_key

@@ -1,0 +1,121 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.dp`
+==================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpModeling <discrete_optimization.maximum_independent_set.solvers.dp.DpModeling>`
+     -
+   * - :py:obj:`FixedOrderMethod <discrete_optimization.maximum_independent_set.solvers.dp.FixedOrderMethod>`
+     -
+   * - :py:obj:`DpMisSolver <discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: DpModeling
+   :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpModeling
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: ORDER
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpModeling.ORDER
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpModeling.ORDER
+
+   .. py:attribute:: ANY_ORDER
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpModeling.ANY_ORDER
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpModeling.ANY_ORDER
+
+.. py:class:: FixedOrderMethod
+   :canonical: discrete_optimization.maximum_independent_set.solvers.dp.FixedOrderMethod
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: ORIGINAL_ORDER
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.FixedOrderMethod.ORIGINAL_ORDER
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.FixedOrderMethod.ORIGINAL_ORDER
+
+   .. py:attribute:: DEGREE
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.FixedOrderMethod.DEGREE
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.FixedOrderMethod.DEGREE
+
+.. py:class:: DpMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`, :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.problem
+      :type: discrete_optimization.maximum_independent_set.problem.MisProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.hyperparameters
+
+   .. py:attribute:: nodes_convention
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.nodes_convention
+      :type: list
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.nodes_convention
+
+   .. py:attribute:: transitions
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.transitions
+      :type: dict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.transitions
+
+   .. py:attribute:: modeling
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.modeling
+      :type: discrete_optimization.maximum_independent_set.solvers.dp.DpModeling
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.modeling
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.init_model
+
+   .. py:method:: init_in_order(**kwargs: typing.Any)
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.init_in_order
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.init_in_order
+
+   .. py:method:: init_any_order(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.init_any_order
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.init_any_order
+
+   .. py:method:: retrieve_solution(sol: discrete_optimization.generic_tools.dyn_prog_tools.dp.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.maximum_independent_set.problem.MisSolution) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.dp.DpMisSolver.set_warm_start

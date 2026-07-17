@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>discrete_optimization.datasets &mdash; discrete-optimization tuto-howto documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2030f8cb"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/versions.js?v=dd1a30db"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            discrete-optimization
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto_new_problem_implementation/tutorial_new_problem_or_solver.html">How to write its own problem/solver class?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">discrete-optimization</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.datasets</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-discrete_optimization.datasets">
+<span id="discrete-optimization-datasets"></span><h1><a class="reference internal" href="#module-discrete_optimization.datasets" title="discrete_optimization.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.datasets</span></code></a><a class="headerlink" href="#module-discrete_optimization.datasets" title="Link to this heading"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.get_data_home" title="discrete_optimization.datasets.get_data_home"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data_home</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_from_coursera" title="discrete_optimization.datasets.fetch_data_from_coursera"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_from_coursera</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_from_solutionsupdate" title="discrete_optimization.datasets.fetch_data_from_solutionsupdate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_from_solutionsupdate</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_from_psplib" title="discrete_optimization.datasets.fetch_data_from_psplib"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_from_psplib</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_from_imopse" title="discrete_optimization.datasets.fetch_data_from_imopse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_from_imopse</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_from_mspsplib_repo" title="discrete_optimization.datasets.fetch_data_from_mspsplib_repo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_from_mspsplib_repo</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_from_mslib" title="discrete_optimization.datasets.fetch_data_from_mslib"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_from_mslib</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.decompress_gz_to_folder" title="discrete_optimization.datasets.decompress_gz_to_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decompress_gz_to_folder</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_for_mis" title="discrete_optimization.datasets.fetch_data_for_mis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_for_mis</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_mis_from_repo" title="discrete_optimization.datasets.fetch_mis_from_repo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_mis_from_repo</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_fjsp_from_repo" title="discrete_optimization.datasets.fetch_fjsp_from_repo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_fjsp_from_repo</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_datasets_from_repo" title="discrete_optimization.datasets.fetch_datasets_from_repo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_datasets_from_repo</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets._extract_dataset_from_zipped_repo" title="discrete_optimization.datasets._extract_dataset_from_zipped_repo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_extract_dataset_from_zipped_repo</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_from_jsplib_repo" title="discrete_optimization.datasets.fetch_data_from_jsplib_repo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_from_jsplib_repo</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_fjsp" title="discrete_optimization.datasets.fetch_data_fjsp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_fjsp</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_from_bppc" title="discrete_optimization.datasets.fetch_data_from_bppc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_from_bppc</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_from_cp25" title="discrete_optimization.datasets.fetch_data_from_cp25"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_from_cp25</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_weighted_tardiness_single_machine" title="discrete_optimization.datasets.fetch_data_weighted_tardiness_single_machine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_weighted_tardiness_single_machine</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_data_tsptw" title="discrete_optimization.datasets.fetch_data_tsptw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data_tsptw</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.fetch_all_datasets" title="discrete_optimization.datasets.fetch_all_datasets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_all_datasets</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.DO_DEFAULT_DATAHOME" title="discrete_optimization.datasets.DO_DEFAULT_DATAHOME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_DEFAULT_DATAHOME</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.DO_DEFAULT_DATAHOME_ENVVARNAME" title="discrete_optimization.datasets.DO_DEFAULT_DATAHOME_ENVVARNAME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_DEFAULT_DATAHOME_ENVVARNAME</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.OR_LIBRARY_ROOT_URL" title="discrete_optimization.datasets.OR_LIBRARY_ROOT_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OR_LIBRARY_ROOT_URL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.COURSERA_REPO_URL" title="discrete_optimization.datasets.COURSERA_REPO_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COURSERA_REPO_URL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.COURSERA_REPO_URL_SHA1" title="discrete_optimization.datasets.COURSERA_REPO_URL_SHA1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COURSERA_REPO_URL_SHA1</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.COURSERA_DATASETS" title="discrete_optimization.datasets.COURSERA_DATASETS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COURSERA_DATASETS</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.COURSERA_DATADIRNAME" title="discrete_optimization.datasets.COURSERA_DATADIRNAME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COURSERA_DATADIRNAME</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.SOLUTIONSUPDATE_BASE_URL" title="discrete_optimization.datasets.SOLUTIONSUPDATE_BASE_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLUTIONSUPDATE_BASE_URL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.SOLUTIONSUPDATE_DATASETS" title="discrete_optimization.datasets.SOLUTIONSUPDATE_DATASETS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLUTIONSUPDATE_DATASETS</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.PSPLIB_FILES_BASE_URL" title="discrete_optimization.datasets.PSPLIB_FILES_BASE_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PSPLIB_FILES_BASE_URL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.PSPLIB_DATASETS" title="discrete_optimization.datasets.PSPLIB_DATASETS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PSPLIB_DATASETS</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.IMOPSE_REPO_URL" title="discrete_optimization.datasets.IMOPSE_REPO_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IMOPSE_REPO_URL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.IMOPSE_REPO_URL_SHA1" title="discrete_optimization.datasets.IMOPSE_REPO_URL_SHA1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IMOPSE_REPO_URL_SHA1</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.IMOPSE_DATASET_RELATIVE_PATH" title="discrete_optimization.datasets.IMOPSE_DATASET_RELATIVE_PATH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IMOPSE_DATASET_RELATIVE_PATH</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.MSPSPLIB_REPO_URL" title="discrete_optimization.datasets.MSPSPLIB_REPO_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MSPSPLIB_REPO_URL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.MSPSPLIB_REPO_URL_SHA1" title="discrete_optimization.datasets.MSPSPLIB_REPO_URL_SHA1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MSPSPLIB_REPO_URL_SHA1</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.JSPLIB_REPO_URL" title="discrete_optimization.datasets.JSPLIB_REPO_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">JSPLIB_REPO_URL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.JSPLIB_REPO_URL_SHA1" title="discrete_optimization.datasets.JSPLIB_REPO_URL_SHA1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">JSPLIB_REPO_URL_SHA1</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.MSLIB_DATASET_URL" title="discrete_optimization.datasets.MSLIB_DATASET_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MSLIB_DATASET_URL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.MSLIB_DATASET_RELATIVE_PATH" title="discrete_optimization.datasets.MSLIB_DATASET_RELATIVE_PATH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MSLIB_DATASET_RELATIVE_PATH</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.MIS_FILES" title="discrete_optimization.datasets.MIS_FILES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MIS_FILES</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.BPPC_ZIP" title="discrete_optimization.datasets.BPPC_ZIP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BPPC_ZIP</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.FJSP_DATASET_PREFIX" title="discrete_optimization.datasets.FJSP_DATASET_PREFIX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FJSP_DATASET_PREFIX</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.MIS_DATASET_PREFIX" title="discrete_optimization.datasets.MIS_DATASET_PREFIX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MIS_DATASET_PREFIX</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.datasets.VRPTW_DATASET_PREFIX" title="discrete_optimization.datasets.VRPTW_DATASET_PREFIX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VRPTW_DATASET_PREFIX</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.datasets.ERROR_MSG_MISSING_DATASETS" title="discrete_optimization.datasets.ERROR_MSG_MISSING_DATASETS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ERROR_MSG_MISSING_DATASETS</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.DO_DEFAULT_DATAHOME">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">DO_DEFAULT_DATAHOME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'~/discrete_optimization_data'</span></em><a class="headerlink" href="#discrete_optimization.datasets.DO_DEFAULT_DATAHOME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.DO_DEFAULT_DATAHOME_ENVVARNAME">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">DO_DEFAULT_DATAHOME_ENVVARNAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DISCRETE_OPTIMIZATION_DATA'</span></em><a class="headerlink" href="#discrete_optimization.datasets.DO_DEFAULT_DATAHOME_ENVVARNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.OR_LIBRARY_ROOT_URL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">OR_LIBRARY_ROOT_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/'</span></em><a class="headerlink" href="#discrete_optimization.datasets.OR_LIBRARY_ROOT_URL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.COURSERA_REPO_URL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">COURSERA_REPO_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://github.com/discreteoptimization/assignment'</span></em><a class="headerlink" href="#discrete_optimization.datasets.COURSERA_REPO_URL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.COURSERA_REPO_URL_SHA1">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">COURSERA_REPO_URL_SHA1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'f69378420ce2bb845abaef0f448eab303aa7a7e7'</span></em><a class="headerlink" href="#discrete_optimization.datasets.COURSERA_REPO_URL_SHA1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.COURSERA_DATASETS">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">COURSERA_DATASETS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['coloring',</span> <span class="pre">'facility',</span> <span class="pre">'knapsack',</span> <span class="pre">'tsp',</span> <span class="pre">'vrp']</span></em><a class="headerlink" href="#discrete_optimization.datasets.COURSERA_DATASETS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.COURSERA_DATADIRNAME">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">COURSERA_DATADIRNAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'data'</span></em><a class="headerlink" href="#discrete_optimization.datasets.COURSERA_DATADIRNAME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.SOLUTIONSUPDATE_BASE_URL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">SOLUTIONSUPDATE_BASE_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'http://solutionsupdate.ugent.be/sites/default/files/datasets/instances'</span></em><a class="headerlink" href="#discrete_optimization.datasets.SOLUTIONSUPDATE_BASE_URL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.SOLUTIONSUPDATE_DATASETS">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">SOLUTIONSUPDATE_DATASETS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['RG30',</span> <span class="pre">'RG300']</span></em><a class="headerlink" href="#discrete_optimization.datasets.SOLUTIONSUPDATE_DATASETS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.PSPLIB_FILES_BASE_URL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">PSPLIB_FILES_BASE_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://www.om-db.wi.tum.de/psplib/files'</span></em><a class="headerlink" href="#discrete_optimization.datasets.PSPLIB_FILES_BASE_URL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.PSPLIB_DATASETS">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">PSPLIB_DATASETS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#discrete_optimization.datasets.PSPLIB_DATASETS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.IMOPSE_REPO_URL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">IMOPSE_REPO_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://github.com/imopse/iMOPSE'</span></em><a class="headerlink" href="#discrete_optimization.datasets.IMOPSE_REPO_URL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.IMOPSE_REPO_URL_SHA1">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">IMOPSE_REPO_URL_SHA1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'e58ace53202ec29aa548dd0678ae3164d8349f4e'</span></em><a class="headerlink" href="#discrete_optimization.datasets.IMOPSE_REPO_URL_SHA1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.IMOPSE_DATASET_RELATIVE_PATH">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">IMOPSE_DATASET_RELATIVE_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'configurations/problems/MSRCPSP/Regular'</span></em><a class="headerlink" href="#discrete_optimization.datasets.IMOPSE_DATASET_RELATIVE_PATH" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.MSPSPLIB_REPO_URL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">MSPSPLIB_REPO_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://github.com/youngkd/MSPSP-InstLib'</span></em><a class="headerlink" href="#discrete_optimization.datasets.MSPSPLIB_REPO_URL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.MSPSPLIB_REPO_URL_SHA1">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">MSPSPLIB_REPO_URL_SHA1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'f77644175b84beed3bd365315412abee1a15eea1'</span></em><a class="headerlink" href="#discrete_optimization.datasets.MSPSPLIB_REPO_URL_SHA1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.JSPLIB_REPO_URL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">JSPLIB_REPO_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://github.com/tamy0612/JSPLIB'</span></em><a class="headerlink" href="#discrete_optimization.datasets.JSPLIB_REPO_URL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.JSPLIB_REPO_URL_SHA1">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">JSPLIB_REPO_URL_SHA1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'eea2b60dd7e2f5c907ff7302662c61812eb7efdf'</span></em><a class="headerlink" href="#discrete_optimization.datasets.JSPLIB_REPO_URL_SHA1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.MSLIB_DATASET_URL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">MSLIB_DATASET_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'http://www.projectmanagement.ugent.be/sites/default/files/datasets/MSRCPSP/MSLIB.zip'</span></em><a class="headerlink" href="#discrete_optimization.datasets.MSLIB_DATASET_URL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.MSLIB_DATASET_RELATIVE_PATH">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">MSLIB_DATASET_RELATIVE_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MSLIB.zip'</span></em><a class="headerlink" href="#discrete_optimization.datasets.MSLIB_DATASET_RELATIVE_PATH" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.MIS_FILES">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">MIS_FILES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['https://oeis.org/A265032/a265032_1dc.64.txt.gz',</span> <span class="pre">'https://oeis.org/A265032/a265032_1dc.128.txt.gz'...</span></em><a class="headerlink" href="#discrete_optimization.datasets.MIS_FILES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.BPPC_ZIP">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">BPPC_ZIP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://site.unibo.it/operations-research/en/research/library-of-codes-and-instances-1/bppc.zip/&#64;&#64;do...'</span></em><a class="headerlink" href="#discrete_optimization.datasets.BPPC_ZIP" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.FJSP_DATASET_PREFIX">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">FJSP_DATASET_PREFIX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'jfsp_openhsu'</span></em><a class="headerlink" href="#discrete_optimization.datasets.FJSP_DATASET_PREFIX" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.MIS_DATASET_PREFIX">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">MIS_DATASET_PREFIX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'mis'</span></em><a class="headerlink" href="#discrete_optimization.datasets.MIS_DATASET_PREFIX" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.VRPTW_DATASET_PREFIX">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">VRPTW_DATASET_PREFIX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'vrptw/homberger_200_customer_instances'</span></em><a class="headerlink" href="#discrete_optimization.datasets.VRPTW_DATASET_PREFIX" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.ERROR_MSG_MISSING_DATASETS">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">ERROR_MSG_MISSING_DATASETS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#discrete_optimization.datasets.ERROR_MSG_MISSING_DATASETS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.get_data_home">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">get_data_home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#get_data_home"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.get_data_home" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_from_coursera">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_from_coursera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_from_coursera"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_from_coursera" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_from_solutionsupdate">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_from_solutionsupdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_from_solutionsupdate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_from_solutionsupdate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_from_psplib">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_from_psplib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_from_psplib"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_from_psplib" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_from_imopse">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_from_imopse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_from_imopse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_from_imopse" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_from_mspsplib_repo">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_from_mspsplib_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_from_mspsplib_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_from_mspsplib_repo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_from_mslib">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_from_mslib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_from_mslib"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_from_mslib" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.decompress_gz_to_folder">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">decompress_gz_to_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#decompress_gz_to_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.decompress_gz_to_folder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_for_mis">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_for_mis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_for_mis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_for_mis" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_mis_from_repo">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_mis_from_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_mis_from_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_mis_from_repo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_fjsp_from_repo">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_fjsp_from_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_fjsp_from_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_fjsp_from_repo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_datasets_from_repo">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_datasets_from_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_prefixes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_datasets_from_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_datasets_from_repo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets._extract_dataset_from_zipped_repo">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">_extract_dataset_from_zipped_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zipped_repo_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#_extract_dataset_from_zipped_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets._extract_dataset_from_zipped_repo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_from_jsplib_repo">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_from_jsplib_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_from_jsplib_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_from_jsplib_repo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_fjsp">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_fjsp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_fjsp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_fjsp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_from_bppc">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_from_bppc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_from_bppc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_from_bppc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_from_cp25">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_from_cp25</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_from_cp25"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_from_cp25" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_weighted_tardiness_single_machine">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_weighted_tardiness_single_machine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_weighted_tardiness_single_machine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_weighted_tardiness_single_machine" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_data_tsptw">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_data_tsptw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_data_tsptw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_data_tsptw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.datasets.fetch_all_datasets">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_all_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/datasets.html#fetch_all_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.datasets.fetch_all_datasets" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Airbus.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: tuto-howto
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl id="docs-versions">
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

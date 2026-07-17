@@ -1,0 +1,224 @@
+:py:mod:`discrete_optimization.facility.problem`
+================================================
+
+.. py:module:: discrete_optimization.facility.problem
+
+.. autodoc2-docstring:: discrete_optimization.facility.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Point <discrete_optimization.facility.problem.Point>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.problem.Point
+          :summary:
+   * - :py:obj:`Facility <discrete_optimization.facility.problem.Facility>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.problem.Facility
+          :summary:
+   * - :py:obj:`Customer <discrete_optimization.facility.problem.Customer>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.problem.Customer
+          :summary:
+   * - :py:obj:`FacilitySolution <discrete_optimization.facility.problem.FacilitySolution>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilitySolution
+          :summary:
+   * - :py:obj:`FacilityProblem <discrete_optimization.facility.problem.FacilityProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilityProblem
+          :summary:
+   * - :py:obj:`Facility2DProblem <discrete_optimization.facility.problem.Facility2DProblem>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`length <discrete_optimization.facility.problem.length>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.problem.length
+          :summary:
+
+API
+~~~
+
+.. py:class:: Point
+   :canonical: discrete_optimization.facility.problem.Point
+
+   .. autodoc2-docstring:: discrete_optimization.facility.problem.Point
+
+   .. py:attribute:: x
+      :canonical: discrete_optimization.facility.problem.Point.x
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Point.x
+
+   .. py:attribute:: y
+      :canonical: discrete_optimization.facility.problem.Point.y
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Point.y
+
+.. py:class:: Facility
+   :canonical: discrete_optimization.facility.problem.Facility
+
+   .. autodoc2-docstring:: discrete_optimization.facility.problem.Facility
+
+   .. py:attribute:: index
+      :canonical: discrete_optimization.facility.problem.Facility.index
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Facility.index
+
+   .. py:attribute:: setup_cost
+      :canonical: discrete_optimization.facility.problem.Facility.setup_cost
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Facility.setup_cost
+
+   .. py:attribute:: capacity
+      :canonical: discrete_optimization.facility.problem.Facility.capacity
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Facility.capacity
+
+   .. py:attribute:: location
+      :canonical: discrete_optimization.facility.problem.Facility.location
+      :type: discrete_optimization.facility.problem.Point
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Facility.location
+
+.. py:class:: Customer
+   :canonical: discrete_optimization.facility.problem.Customer
+
+   .. autodoc2-docstring:: discrete_optimization.facility.problem.Customer
+
+   .. py:attribute:: index
+      :canonical: discrete_optimization.facility.problem.Customer.index
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Customer.index
+
+   .. py:attribute:: demand
+      :canonical: discrete_optimization.facility.problem.Customer.demand
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Customer.demand
+
+   .. py:attribute:: location
+      :canonical: discrete_optimization.facility.problem.Customer.location
+      :type: discrete_optimization.facility.problem.Point
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Customer.location
+
+.. py:class:: FacilitySolution(problem: discrete_optimization.generic_tools.do_problem.Problem, facility_for_customers: list[int], dict_details: typing.Optional[dict[str, typing.Any]] = None)
+   :canonical: discrete_optimization.facility.problem.FacilitySolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationSolution`\ [\ :py:obj:`discrete_optimization.facility.problem.Customer`\ , :py:obj:`discrete_optimization.facility.problem.Facility`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilitySolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilitySolution.__init__
+
+   .. py:method:: copy() -> discrete_optimization.facility.problem.FacilitySolution
+      :canonical: discrete_optimization.facility.problem.FacilitySolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.facility.problem.FacilitySolution
+      :canonical: discrete_optimization.facility.problem.FacilitySolution.lazy_copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.facility.problem.FacilitySolution.change_problem
+
+   .. py:method:: is_allocated(task: discrete_optimization.facility.problem.Customer, unary_resource: discrete_optimization.facility.problem.Facility) -> bool
+      :canonical: discrete_optimization.facility.problem.FacilitySolution.is_allocated
+
+.. py:class:: FacilityProblem(facility_count: int, customer_count: int, facilities: list[discrete_optimization.facility.problem.Facility], customers: list[discrete_optimization.facility.problem.Customer])
+   :canonical: discrete_optimization.facility.problem.FacilityProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationProblem`\ [\ :py:obj:`discrete_optimization.facility.problem.Customer`\ , :py:obj:`discrete_optimization.facility.problem.Facility`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilityProblem
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilityProblem.__init__
+
+   .. py:property:: unary_resources_list
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.unary_resources_list
+      :type: list[discrete_optimization.facility.problem.Facility]
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.tasks_list
+      :type: list[discrete_optimization.facility.problem.Customer]
+
+   .. py:method:: evaluate_customer_facility(facility: discrete_optimization.facility.problem.Facility, customer: discrete_optimization.facility.problem.Customer) -> float
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.evaluate_customer_facility
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilityProblem.evaluate_customer_facility
+
+   .. py:method:: evaluate(variable: discrete_optimization.facility.problem.FacilitySolution) -> dict[str, float]
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.evaluate
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilityProblem.evaluate
+
+   .. py:method:: evaluate_from_encoding(int_vector: list[int], encoding_name: str) -> dict[str, float]
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilityProblem.evaluate_from_encoding
+
+   .. py:method:: evaluate_cost(variable: discrete_optimization.facility.problem.FacilitySolution) -> dict[str, typing.Any]
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.evaluate_cost
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilityProblem.evaluate_cost
+
+   .. py:method:: satisfy(variable: discrete_optimization.facility.problem.FacilitySolution) -> bool
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.satisfy
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilityProblem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.get_attribute_register
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.facility.problem.FacilitySolution
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.FacilityProblem.get_dummy_solution
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.facility.problem.FacilityProblem.get_objective_register
+
+.. py:function:: length(point1: discrete_optimization.facility.problem.Point, point2: discrete_optimization.facility.problem.Point) -> float
+   :canonical: discrete_optimization.facility.problem.length
+
+   .. autodoc2-docstring:: discrete_optimization.facility.problem.length
+
+.. py:class:: Facility2DProblem(facility_count: int, customer_count: int, facilities: list[discrete_optimization.facility.problem.Facility], customers: list[discrete_optimization.facility.problem.Customer])
+   :canonical: discrete_optimization.facility.problem.Facility2DProblem
+
+   Bases: :py:obj:`discrete_optimization.facility.problem.FacilityProblem`
+
+   .. py:method:: evaluate_customer_facility(facility: discrete_optimization.facility.problem.Facility, customer: discrete_optimization.facility.problem.Customer) -> float
+      :canonical: discrete_optimization.facility.problem.Facility2DProblem.evaluate_customer_facility
+
+      .. autodoc2-docstring:: discrete_optimization.facility.problem.Facility2DProblem.evaluate_customer_facility

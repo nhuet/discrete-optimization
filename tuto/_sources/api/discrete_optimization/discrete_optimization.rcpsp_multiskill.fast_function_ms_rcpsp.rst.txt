@@ -1,0 +1,78 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp`
+=======================================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`sgs_fast_ms <discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms
+          :summary:
+   * - :py:obj:`sgs_fast_ms_partial_schedule <discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_partial_schedule>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_partial_schedule
+          :summary:
+   * - :py:obj:`sgs_fast_ms_preemptive <discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive
+          :summary:
+   * - :py:obj:`sgs_fast_ms_preemptive_some_special_constraints <discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive_some_special_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive_some_special_constraints
+          :summary:
+   * - :py:obj:`sgs_fast_ms_preemptive_partial_schedule <discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive_partial_schedule>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive_partial_schedule
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`int_array <discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.int_array>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.int_array
+          :summary:
+
+API
+~~~
+
+.. py:data:: int_array
+   :canonical: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.int_array
+   :value: 'Array(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.int_array
+
+.. py:function:: sgs_fast_ms(permutation_task, priority_worker_per_task, modes_array, consumption_array, skills_needs, duration_array, predecessors, successors, horizon, ressource_available, ressource_renewable, worker_available, worker_skills, minimum_starting_time_array, one_unit_per_task: bool = True)
+   :canonical: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms
+
+.. py:function:: sgs_fast_ms_partial_schedule(permutation_task, priority_worker_per_task, modes_array, scheduled_task_indicator, scheduled_start_task_times, scheduled_end_task_times, worker_used, current_time, consumption_array, skills_needs, duration_array, predecessors, successors, horizon, ressource_available, ressource_renewable, worker_available, worker_skills, minimum_starting_time_array, one_unit_per_task: bool = True)
+   :canonical: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_partial_schedule
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_partial_schedule
+
+.. py:function:: sgs_fast_ms_preemptive(permutation_task, priority_worker_per_task, modes_array, consumption_array, skills_needs, duration_array, preemptive_tag, predecessors, successors, horizon, ressource_available, ressource_renewable, worker_available, worker_skills, minimum_starting_time_array, is_releasable, one_unit_per_task: bool = True, consider_partial_preemptive: bool = False, strictly_disjunctive_subtasks: bool = False)
+   :canonical: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive
+
+.. py:function:: sgs_fast_ms_preemptive_some_special_constraints(permutation_task, priority_worker_per_task, modes_array, consumption_array, skills_needs, duration_array, preemptive_tag, predecessors, successors, start_at_end_plus_offset, start_after_nunit, horizon, ressource_available, ressource_renewable, worker_available, worker_skills, minimum_starting_time_array, is_releasable, one_unit_per_task: bool = True, consider_partial_preemptive: bool = False, strictly_disjunctive_subtasks: bool = False)
+   :canonical: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive_some_special_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive_some_special_constraints
+
+.. py:function:: sgs_fast_ms_preemptive_partial_schedule(permutation_task, priority_worker_per_task, modes_array, scheduled_task_indicator, scheduled_start_task_times, scheduled_end_task_times, nb_subparts, worker_used, current_time, consumption_array, skills_needs, duration_array, preemptive_tag, predecessors, successors, horizon, ressource_available, ressource_renewable, worker_available, worker_skills, minimum_starting_time_array, is_releasable, one_unit_per_task: bool = True, consider_partial_preemptive: bool = False)
+   :canonical: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive_partial_schedule
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp.sgs_fast_ms_preemptive_partial_schedule

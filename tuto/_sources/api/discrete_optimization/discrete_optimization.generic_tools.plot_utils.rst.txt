@@ -1,0 +1,37 @@
+:py:mod:`discrete_optimization.generic_tools.plot_utils`
+========================================================
+
+.. py:module:: discrete_optimization.generic_tools.plot_utils
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.plot_utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_cmap_with_nb_colors <discrete_optimization.generic_tools.plot_utils.get_cmap_with_nb_colors>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.plot_utils.get_cmap_with_nb_colors
+          :summary:
+   * - :py:obj:`get_cmap <discrete_optimization.generic_tools.plot_utils.get_cmap>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.plot_utils.get_cmap
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_cmap_with_nb_colors(color_map_str: str, nb_colors: int = 2)
+   :canonical: discrete_optimization.generic_tools.plot_utils.get_cmap_with_nb_colors
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.plot_utils.get_cmap_with_nb_colors
+
+.. py:function:: get_cmap(color_map_str: str)
+   :canonical: discrete_optimization.generic_tools.plot_utils.get_cmap
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.plot_utils.get_cmap

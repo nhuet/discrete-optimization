@@ -1,0 +1,25 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.solvers`
+========================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.solvers
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.rcpsp_multiskill.solvers.cp_mzn
+   discrete_optimization.rcpsp_multiskill.solvers.lns_lp
+   discrete_optimization.rcpsp_multiskill.solvers.optal
+   discrete_optimization.rcpsp_multiskill.solvers.lp
+   discrete_optimization.rcpsp_multiskill.solvers.rcpsp_based
+   discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition
+   discrete_optimization.rcpsp_multiskill.solvers.lns_post_process
+   discrete_optimization.rcpsp_multiskill.solvers.cpsat
+   discrete_optimization.rcpsp_multiskill.solvers.ga
+   discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib

@@ -1,0 +1,160 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib`
+=========================================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpMspspMznMultiskillRcpspSolver <discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_log_minzinc_result <discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib._log_minzinc_result>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib._log_minzinc_result
+          :summary:
+   * - :py:obj:`create_usefull_res_data <discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.create_usefull_res_data>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.create_usefull_res_data
+          :summary:
+   * - :py:obj:`chuffed_specific_code <discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.chuffed_specific_code>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.chuffed_specific_code
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.logger
+          :summary:
+   * - :py:obj:`this_path <discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.this_path>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.this_path
+          :summary:
+   * - :py:obj:`files_mzn <discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.files_mzn>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.files_mzn
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.logger
+
+.. py:data:: this_path
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.this_path
+   :value: 'dirname(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.this_path
+
+.. py:data:: files_mzn
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.files_mzn
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.files_mzn
+
+.. py:function:: _log_minzinc_result(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> None
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib._log_minzinc_result
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib._log_minzinc_result
+
+.. py:function:: create_usefull_res_data(rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.create_usefull_res_data
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.create_usefull_res_data
+
+.. py:class:: CpMspspMznMultiskillRcpspSolver(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, silent_solve_error: bool = False, **kwargs)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.MinizincCpSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.problem
+      :type: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.problem
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.init_model
+
+   .. py:method:: init_from_model(**args)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.init_from_model
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.init_from_model
+
+   .. py:method:: constraint_task_to_mode(task_id, mode)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_task_to_mode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_task_to_mode
+
+   .. py:method:: constraint_start_time_string(task, start_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_start_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_start_time_string
+
+   .. py:method:: constraint_end_time_string(task, end_time, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.EQUAL) -> str
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_end_time_string
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_end_time_string
+
+   .. py:method:: constraint_objective_equal_makespan(task_sink)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_objective_equal_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_objective_equal_makespan
+
+   .. py:method:: constraint_objective_makespan()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_objective_makespan
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_objective_makespan
+
+   .. py:method:: constraint_used_employee(task, employee, indicator: bool = False)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_used_employee
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_used_employee
+
+   .. py:method:: constraint_objective_max_time_set_of_jobs(set_of_jobs)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_objective_max_time_set_of_jobs
+
+   .. py:method:: constraint_sum_of_ending_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_sum_of_ending_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_sum_of_ending_time
+
+   .. py:method:: constraint_sum_of_starting_time(set_subtasks: set[collections.abc.Hashable])
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_sum_of_starting_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.constraint_sum_of_starting_time
+
+   .. py:method:: retrieve_solution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.CpMspspMznMultiskillRcpspSolver.retrieve_solution
+
+.. py:function:: chuffed_specific_code()
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.chuffed_specific_code
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cp_mspsp_instlib.chuffed_specific_code

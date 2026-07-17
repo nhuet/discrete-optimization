@@ -1,0 +1,34 @@
+:py:mod:`discrete_optimization.knapsack.solvers.cpmpy`
+======================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.cpmpy
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpmpy
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpmpyKnapsackSolver <discrete_optimization.knapsack.solvers.cpmpy.CpmpyKnapsackSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: CpmpyKnapsackSolver(problem: discrete_optimization.knapsack.problem.KnapsackProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, solver_name: typing.Optional[str] = None, **kwargs)
+   :canonical: discrete_optimization.knapsack.solvers.cpmpy.CpmpyKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver`, :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.knapsack.solvers.cpmpy.CpmpyKnapsackSolver.init_model
+
+   .. py:method:: retrieve_current_solution() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.knapsack.solvers.cpmpy.CpmpyKnapsackSolver.retrieve_current_solution

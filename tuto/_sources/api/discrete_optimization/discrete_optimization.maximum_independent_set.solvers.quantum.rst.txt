@@ -1,0 +1,77 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.quantum`
+=======================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.quantum
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.quantum
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MisQiskit <discrete_optimization.maximum_independent_set.solvers.quantum.MisQiskit>`
+     -
+   * - :py:obj:`QaoaMisSolver <discrete_optimization.maximum_independent_set.solvers.quantum.QaoaMisSolver>`
+     -
+   * - :py:obj:`VqeMisSolver <discrete_optimization.maximum_independent_set.solvers.quantum.VqeMisSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.maximum_independent_set.solvers.quantum.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.quantum.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.quantum.logger
+
+.. py:class:: MisQiskit(problem: discrete_optimization.maximum_independent_set.problem.MisProblem)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.MisQiskit
+
+   Bases: :py:obj:`qiskit_optimization.applications.OptimizationApplication`
+
+   .. py:method:: interpret(result: typing.Union[qiskit_optimization.algorithms.OptimizationResult, numpy.ndarray]) -> discrete_optimization.maximum_independent_set.problem.MisSolution
+      :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.MisQiskit.interpret
+
+   .. py:method:: to_quadratic_program() -> qiskit_optimization.QuadraticProgram
+      :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.MisQiskit.to_quadratic_program
+
+.. py:class:: QaoaMisSolver(problem: discrete_optimization.maximum_independent_set.problem.MisProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.QaoaMisSolver
+
+   Bases: :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.QaoaMisSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result)
+      :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.QaoaMisSolver.retrieve_current_solution
+
+.. py:class:: VqeMisSolver(problem: discrete_optimization.maximum_independent_set.problem.MisProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.VqeMisSolver
+
+   Bases: :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.VqeMisSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.maximum_independent_set.solvers.quantum.VqeMisSolver.retrieve_current_solution

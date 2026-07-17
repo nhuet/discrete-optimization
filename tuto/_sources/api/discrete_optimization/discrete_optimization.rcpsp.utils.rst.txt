@@ -1,0 +1,158 @@
+:py:mod:`discrete_optimization.rcpsp.utils`
+===========================================
+
+.. py:module:: discrete_optimization.rcpsp.utils
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_resource_consumption <discrete_optimization.rcpsp.utils.compute_resource_consumption>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.compute_resource_consumption
+          :summary:
+   * - :py:obj:`compute_nice_resource_consumption <discrete_optimization.rcpsp.utils.compute_nice_resource_consumption>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.compute_nice_resource_consumption
+          :summary:
+   * - :py:obj:`plot_ressource_view <discrete_optimization.rcpsp.utils.plot_ressource_view>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.plot_ressource_view
+          :summary:
+   * - :py:obj:`plot_task_gantt <discrete_optimization.rcpsp.utils.plot_task_gantt>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.plot_task_gantt
+          :summary:
+   * - :py:obj:`compute_schedule_per_resource_individual <discrete_optimization.rcpsp.utils.compute_schedule_per_resource_individual>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.compute_schedule_per_resource_individual
+          :summary:
+   * - :py:obj:`plot_resource_individual_gantt <discrete_optimization.rcpsp.utils.plot_resource_individual_gantt>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.plot_resource_individual_gantt
+          :summary:
+   * - :py:obj:`kendall_tau_similarity <discrete_optimization.rcpsp.utils.kendall_tau_similarity>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.kendall_tau_similarity
+          :summary:
+   * - :py:obj:`intersect <discrete_optimization.rcpsp.utils.intersect>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.intersect
+          :summary:
+   * - :py:obj:`all_diff_start_time <discrete_optimization.rcpsp.utils.all_diff_start_time>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.all_diff_start_time
+          :summary:
+   * - :py:obj:`compute_graph_rcpsp <discrete_optimization.rcpsp.utils.compute_graph_rcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.compute_graph_rcpsp
+          :summary:
+   * - :py:obj:`create_fake_tasks <discrete_optimization.rcpsp.utils.create_fake_tasks>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.create_fake_tasks
+          :summary:
+   * - :py:obj:`get_max_time_solution <discrete_optimization.rcpsp.utils.get_max_time_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.get_max_time_solution
+          :summary:
+   * - :py:obj:`get_tasks_ending_between_two_times <discrete_optimization.rcpsp.utils.get_tasks_ending_between_two_times>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.get_tasks_ending_between_two_times
+          :summary:
+   * - :py:obj:`get_start_bounds_from_additional_constraint <discrete_optimization.rcpsp.utils.get_start_bounds_from_additional_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.get_start_bounds_from_additional_constraint
+          :summary:
+   * - :py:obj:`get_end_bounds_from_additional_constraint <discrete_optimization.rcpsp.utils.get_end_bounds_from_additional_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.get_end_bounds_from_additional_constraint
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.utils.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.utils.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.logger
+
+.. py:function:: compute_resource_consumption(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution, list_resources: typing.Optional[list[str]] = None, future_view: bool = True) -> tuple[numpy.typing.NDArray[numpy.int_], numpy.typing.NDArray[numpy.int_]]
+   :canonical: discrete_optimization.rcpsp.utils.compute_resource_consumption
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.compute_resource_consumption
+
+.. py:function:: compute_nice_resource_consumption(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution, list_resources: typing.Optional[list[str]] = None) -> tuple[dict[int, numpy.typing.NDArray[numpy.int_]], dict[int, numpy.typing.NDArray[numpy.int_]]]
+   :canonical: discrete_optimization.rcpsp.utils.compute_nice_resource_consumption
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.compute_nice_resource_consumption
+
+.. py:function:: plot_ressource_view(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution, list_resource: typing.Optional[list[str]] = None, title_figure: str = '', x_lim: typing.Optional[list[int]] = None, fig: typing.Optional[matplotlib.pyplot.Figure] = None, ax: typing.Optional[numpy.typing.NDArray[numpy.object_]] = None) -> matplotlib.pyplot.Figure
+   :canonical: discrete_optimization.rcpsp.utils.plot_ressource_view
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.plot_ressource_view
+
+.. py:function:: plot_task_gantt(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution, fig: typing.Optional[matplotlib.pyplot.Figure] = None, ax: typing.Optional[matplotlib.pyplot.Axes] = None, x_lim: typing.Optional[list[int]] = None, title: typing.Optional[str] = None) -> matplotlib.pyplot.Figure
+   :canonical: discrete_optimization.rcpsp.utils.plot_task_gantt
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.plot_task_gantt
+
+.. py:function:: compute_schedule_per_resource_individual(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution, resource_types_to_consider: typing.Optional[list[str]] = None) -> dict[str, dict[str, typing.Any]]
+   :canonical: discrete_optimization.rcpsp.utils.compute_schedule_per_resource_individual
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.compute_schedule_per_resource_individual
+
+.. py:function:: plot_resource_individual_gantt(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution, resource_types_to_consider: typing.Optional[list[str]] = None, title_figure: str = '', x_lim: typing.Optional[list[int]] = None, fig: typing.Optional[matplotlib.pyplot.Figure] = None, ax: typing.Optional[numpy.typing.NDArray[numpy.object_]] = None, current_t: typing.Optional[int] = None) -> matplotlib.pyplot.Figure
+   :canonical: discrete_optimization.rcpsp.utils.plot_resource_individual_gantt
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.plot_resource_individual_gantt
+
+.. py:function:: kendall_tau_similarity(rcpsp_sols: tuple[discrete_optimization.rcpsp.solution.RcpspSolution, discrete_optimization.rcpsp.solution.RcpspSolution]) -> float
+   :canonical: discrete_optimization.rcpsp.utils.kendall_tau_similarity
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.kendall_tau_similarity
+
+.. py:function:: intersect(i1: collections.abc.Sequence[int], i2: collections.abc.Sequence[int]) -> typing.Optional[list[int]]
+   :canonical: discrete_optimization.rcpsp.utils.intersect
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.intersect
+
+.. py:function:: all_diff_start_time(rcpsp_sols: tuple[discrete_optimization.rcpsp.solution.RcpspSolution, discrete_optimization.rcpsp.solution.RcpspSolution]) -> dict[collections.abc.Hashable, int]
+   :canonical: discrete_optimization.rcpsp.utils.all_diff_start_time
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.all_diff_start_time
+
+.. py:function:: compute_graph_rcpsp(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem) -> discrete_optimization.generic_tools.graph_api.Graph
+   :canonical: discrete_optimization.rcpsp.utils.compute_graph_rcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.compute_graph_rcpsp
+
+.. py:function:: create_fake_tasks(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem) -> list[dict[str, int]]
+   :canonical: discrete_optimization.rcpsp.utils.create_fake_tasks
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.create_fake_tasks
+
+.. py:function:: get_max_time_solution(solution: typing.Union[discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, discrete_optimization.rcpsp.solution.RcpspSolution]) -> int
+   :canonical: discrete_optimization.rcpsp.utils.get_max_time_solution
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.get_max_time_solution
+
+.. py:function:: get_tasks_ending_between_two_times(solution: typing.Union[discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, discrete_optimization.rcpsp.solution.RcpspSolution], time_1: int, time_2: int) -> list[collections.abc.Hashable]
+   :canonical: discrete_optimization.rcpsp.utils.get_tasks_ending_between_two_times
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.get_tasks_ending_between_two_times
+
+.. py:function:: get_start_bounds_from_additional_constraint(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, activity: collections.abc.Hashable) -> tuple[int, int]
+   :canonical: discrete_optimization.rcpsp.utils.get_start_bounds_from_additional_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.get_start_bounds_from_additional_constraint
+
+.. py:function:: get_end_bounds_from_additional_constraint(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem, activity: collections.abc.Hashable) -> tuple[int, int]
+   :canonical: discrete_optimization.rcpsp.utils.get_end_bounds_from_additional_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.utils.get_end_bounds_from_additional_constraint

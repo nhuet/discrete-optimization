@@ -1,0 +1,35 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.solvers.generic_rcpsp_solver`
+================================================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.solvers.generic_rcpsp_solver
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.generic_rcpsp_solver
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GenericRcpspSolver <discrete_optimization.generic_rcpsp_tools.solvers.generic_rcpsp_solver.GenericRcpspSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: GenericRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.generic_rcpsp_solver.GenericRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.generic_rcpsp_solver.GenericRcpspSolver.problem
+      :type: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.generic_rcpsp_solver.GenericRcpspSolver.problem

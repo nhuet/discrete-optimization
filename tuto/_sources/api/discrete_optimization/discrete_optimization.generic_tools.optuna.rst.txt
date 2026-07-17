@@ -1,0 +1,17 @@
+:py:mod:`discrete_optimization.generic_tools.optuna`
+====================================================
+
+.. py:module:: discrete_optimization.generic_tools.optuna
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.optuna
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.optuna.utils
+   discrete_optimization.generic_tools.optuna.timed_percentile_pruner

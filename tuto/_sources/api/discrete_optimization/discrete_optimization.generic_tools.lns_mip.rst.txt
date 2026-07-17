@@ -1,0 +1,93 @@
+:py:mod:`discrete_optimization.generic_tools.lns_mip`
+=====================================================
+
+.. py:module:: discrete_optimization.generic_tools.lns_mip
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GurobiConstraintHandler <discrete_optimization.generic_tools.lns_mip.GurobiConstraintHandler>`
+     -
+   * - :py:obj:`OrtoolsMathOptConstraintHandler <discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler>`
+     -
+   * - :py:obj:`LnsMilp <discrete_optimization.generic_tools.lns_mip.LnsMilp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip.LnsMilp
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.lns_mip.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.lns_mip.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip.logger
+
+.. py:class:: GurobiConstraintHandler
+   :canonical: discrete_optimization.generic_tools.lns_mip.GurobiConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.generic_tools.lns_mip.GurobiConstraintHandler.adding_constraint_from_results_store
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip.GurobiConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: OrtoolsMathOptConstraintHandler
+   :canonical: discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler.adding_constraint_from_results_store
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: LnsMilp(problem: discrete_optimization.generic_tools.do_problem.Problem, subsolver: typing.Optional[discrete_optimization.generic_tools.lp_tools.MilpSolver] = None, initial_solution_provider: typing.Optional[discrete_optimization.generic_tools.lns_tools.InitialSolution] = None, constraint_handler: typing.Optional[discrete_optimization.generic_tools.lns_tools.ConstraintHandler] = None, post_process_solution: typing.Optional[discrete_optimization.generic_tools.lns_tools.PostProcessSolution] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lns_mip.LnsMilp
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.BaseLns`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip.LnsMilp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip.LnsMilp.__init__
+
+   .. py:attribute:: subsolver
+      :canonical: discrete_optimization.generic_tools.lns_mip.LnsMilp.subsolver
+      :type: discrete_optimization.generic_tools.lp_tools.MilpSolver
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip.LnsMilp.subsolver
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.lns_mip.LnsMilp.init_model
+
+   .. py:method:: solve(nb_iteration_lns: int, parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit_subsolver: typing.Optional[float] = 30.0, time_limit_subsolver_iter0: typing.Optional[float] = None, nb_iteration_no_improvement: typing.Optional[int] = None, skip_initial_solution_provider: bool = False, stop_first_iteration_if_optimal: bool = True, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lns_mip.LnsMilp.solve
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lns_mip.LnsMilp.solve

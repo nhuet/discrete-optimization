@@ -1,0 +1,16 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.plots`
+======================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.plots
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.plots
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.rcpsp_multiskill.plots.plot_solution

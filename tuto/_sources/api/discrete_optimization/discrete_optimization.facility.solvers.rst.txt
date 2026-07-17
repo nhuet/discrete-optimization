@@ -1,0 +1,25 @@
+:py:mod:`discrete_optimization.facility.solvers`
+================================================
+
+.. py:module:: discrete_optimization.facility.solvers
+
+.. autodoc2-docstring:: discrete_optimization.facility.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.facility.solvers.cp_mzn
+   discrete_optimization.facility.solvers.lns_lp
+   discrete_optimization.facility.solvers.lp
+   discrete_optimization.facility.solvers.cpsat
+   discrete_optimization.facility.solvers.dp
+   discrete_optimization.facility.solvers.greedy
+   discrete_optimization.facility.solvers.facility_solver
+   discrete_optimization.facility.solvers.gphh
+   discrete_optimization.facility.solvers.toulbar
+   discrete_optimization.facility.solvers.quantum

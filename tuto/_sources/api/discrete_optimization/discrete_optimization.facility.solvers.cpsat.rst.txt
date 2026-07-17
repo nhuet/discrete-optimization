@@ -1,0 +1,71 @@
+:py:mod:`discrete_optimization.facility.solvers.cpsat`
+======================================================
+
+.. py:module:: discrete_optimization.facility.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.facility.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatFacilitySolver <discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.facility.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.facility.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.cpsat.logger
+
+.. py:class:: CpSatFacilitySolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver`\ [\ :py:obj:`discrete_optimization.facility.problem.Customer`\ , :py:obj:`discrete_optimization.facility.problem.Facility`\ ], :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.facility.problem.FacilitySolution) -> None
+      :canonical: discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver.set_warm_start
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver.problem
+      :type: discrete_optimization.facility.problem.FacilityProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver.problem
+
+   .. py:attribute:: variables
+      :canonical: discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver.variables
+      :type: dict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver.variables
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver.init_model
+
+   .. py:method:: get_task_unary_resource_is_present_variable(task: discrete_optimization.facility.problem.Customer, unary_resource: discrete_optimization.facility.problem.Facility) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver.get_task_unary_resource_is_present_variable
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.facility.problem.FacilitySolution
+      :canonical: discrete_optimization.facility.solvers.cpsat.CpSatFacilitySolver.retrieve_solution

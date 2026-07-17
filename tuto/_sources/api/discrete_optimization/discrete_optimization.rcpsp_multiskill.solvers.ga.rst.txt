@@ -1,0 +1,38 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.solvers.ga`
+===========================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.solvers.ga
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.ga
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GaMultiskillRcpspSolver <discrete_optimization.rcpsp_multiskill.solvers.ga.GaMultiskillRcpspSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: GaMultiskillRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.ga.GaMultiskillRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.ga.GaMultiskillRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.ga.GaMultiskillRcpspSolver.problem
+
+   .. py:method:: solve(parameters_ga: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa = None, **args)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.ga.GaMultiskillRcpspSolver.solve

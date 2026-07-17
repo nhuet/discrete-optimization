@@ -1,0 +1,217 @@
+:py:mod:`discrete_optimization.generic_tools.ea.ga`
+===================================================
+
+.. py:module:: discrete_optimization.generic_tools.ea.ga
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DeapSelection <discrete_optimization.generic_tools.ea.ga.DeapSelection>`
+     -
+   * - :py:obj:`DeapMutation <discrete_optimization.generic_tools.ea.ga.DeapMutation>`
+     -
+   * - :py:obj:`DeapCrossover <discrete_optimization.generic_tools.ea.ga.DeapCrossover>`
+     -
+   * - :py:obj:`Ga <discrete_optimization.generic_tools.ea.ga.Ga>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.Ga
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.ea.ga.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.logger
+          :summary:
+   * - :py:obj:`_default_crossovers <discrete_optimization.generic_tools.ea.ga._default_crossovers>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga._default_crossovers
+          :summary:
+   * - :py:obj:`_default_mutations <discrete_optimization.generic_tools.ea.ga._default_mutations>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga._default_mutations
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.ea.ga.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.logger
+
+.. py:class:: DeapSelection
+   :canonical: discrete_optimization.generic_tools.ea.ga.DeapSelection
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: SEL_TOURNAMENT
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_TOURNAMENT
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_TOURNAMENT
+
+   .. py:attribute:: SEL_RANDOM
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_RANDOM
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_RANDOM
+
+   .. py:attribute:: SEL_BEST
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_BEST
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_BEST
+
+   .. py:attribute:: SEL_ROULETTE
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_ROULETTE
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_ROULETTE
+
+   .. py:attribute:: SEL_WORST
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_WORST
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_WORST
+
+   .. py:attribute:: SEL_STOCHASTIC_UNIVERSAL_SAMPLING
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_STOCHASTIC_UNIVERSAL_SAMPLING
+      :value: 6
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapSelection.SEL_STOCHASTIC_UNIVERSAL_SAMPLING
+
+.. py:class:: DeapMutation
+   :canonical: discrete_optimization.generic_tools.ea.ga.DeapMutation
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: MUT_FLIP_BIT
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapMutation.MUT_FLIP_BIT
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapMutation.MUT_FLIP_BIT
+
+   .. py:attribute:: MUT_SHUFFLE_INDEXES
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapMutation.MUT_SHUFFLE_INDEXES
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapMutation.MUT_SHUFFLE_INDEXES
+
+   .. py:attribute:: MUT_UNIFORM_INT
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapMutation.MUT_UNIFORM_INT
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapMutation.MUT_UNIFORM_INT
+
+.. py:class:: DeapCrossover
+   :canonical: discrete_optimization.generic_tools.ea.ga.DeapCrossover
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: CX_UNIFORM
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_UNIFORM
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_UNIFORM
+
+   .. py:attribute:: CX_UNIFORM_PARTIALY_MATCHED
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_UNIFORM_PARTIALY_MATCHED
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_UNIFORM_PARTIALY_MATCHED
+
+   .. py:attribute:: CX_ORDERED
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_ORDERED
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_ORDERED
+
+   .. py:attribute:: CX_ONE_POINT
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_ONE_POINT
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_ONE_POINT
+
+   .. py:attribute:: CX_TWO_POINT
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_TWO_POINT
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_TWO_POINT
+
+   .. py:attribute:: CX_PARTIALY_MATCHED
+      :canonical: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_PARTIALY_MATCHED
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.DeapCrossover.CX_PARTIALY_MATCHED
+
+.. py:data:: _default_crossovers
+   :canonical: discrete_optimization.generic_tools.ea.ga._default_crossovers
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga._default_crossovers
+
+.. py:data:: _default_mutations
+   :canonical: discrete_optimization.generic_tools.ea.ga._default_mutations
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga._default_mutations
+
+.. py:class:: Ga(problem: discrete_optimization.generic_tools.do_problem.Problem, objectives: typing.Union[str, list[str]], mutation: typing.Optional[typing.Union[discrete_optimization.generic_tools.do_mutation.Mutation, discrete_optimization.generic_tools.ea.ga.DeapMutation]] = None, crossover: typing.Optional[discrete_optimization.generic_tools.ea.ga.DeapCrossover] = None, selection: discrete_optimization.generic_tools.ea.ga.DeapSelection = DeapSelection.SEL_TOURNAMENT, encoding: typing.Optional[typing.Union[str, dict[str, typing.Any]]] = None, objective_handling: discrete_optimization.generic_tools.do_problem.ObjectiveHandling = ObjectiveHandling.SINGLE, objective_weights: typing.Optional[list[float]] = None, pop_size: int = 100, max_evals: typing.Optional[int] = None, mut_rate: float = 0.1, crossover_rate: float = 0.9, tournament_size: float = 0.2, deap_verbose: bool = True, initial_population: typing.Optional[list[list[typing.Any]]] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.generic_tools.ea.ga.Ga
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.Ga
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.Ga.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.ea.ga.Ga.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.Ga.hyperparameters
+
+   .. py:attribute:: initial_solution
+      :canonical: discrete_optimization.generic_tools.ea.ga.Ga.initial_solution
+      :type: typing.Optional[discrete_optimization.generic_tools.do_problem.Solution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.Ga.initial_solution
+
+   .. py:method:: evaluate_problem(int_vector: list[int]) -> tuple[float]
+      :canonical: discrete_optimization.generic_tools.ea.ga.Ga.evaluate_problem
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.Ga.evaluate_problem
+
+   .. py:method:: generate_custom_population() -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tools.ea.ga.Ga.generate_custom_population
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.Ga.generate_custom_population
+
+   .. py:method:: create_individual_from_solution(solution: discrete_optimization.generic_tools.do_problem.Solution) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.ea.ga.Ga.create_individual_from_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.Ga.create_individual_from_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.ea.ga.Ga.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.ga.Ga.set_warm_start
+
+   .. py:method:: solve(callbacks: list[discrete_optimization.generic_tools.callbacks.callback.Callback] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.ea.ga.Ga.solve

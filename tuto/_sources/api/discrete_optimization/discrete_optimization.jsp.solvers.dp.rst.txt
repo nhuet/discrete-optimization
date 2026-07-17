@@ -1,0 +1,52 @@
+:py:mod:`discrete_optimization.jsp.solvers.dp`
+==============================================
+
+.. py:module:: discrete_optimization.jsp.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.jsp.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpJspSolver <discrete_optimization.jsp.solvers.dp.DpJspSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: DpJspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.jsp.solvers.dp.DpJspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.jsp.solvers.dp.DpJspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.solvers.dp.DpJspSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.jsp.solvers.dp.DpJspSolver.problem
+      :type: discrete_optimization.jsp.problem.JobShopProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.solvers.dp.DpJspSolver.problem
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.jsp.solvers.dp.DpJspSolver.init_model
+
+   .. py:method:: retrieve_solution(sol: discrete_optimization.generic_tools.dyn_prog_tools.dp.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.jsp.solvers.dp.DpJspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.solvers.dp.DpJspSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.jsp.problem.JobShopSolution) -> None
+      :canonical: discrete_optimization.jsp.solvers.dp.DpJspSolver.set_warm_start

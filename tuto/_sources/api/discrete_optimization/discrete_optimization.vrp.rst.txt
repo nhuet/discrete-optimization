@@ -1,0 +1,30 @@
+:py:mod:`discrete_optimization.vrp`
+===================================
+
+.. py:module:: discrete_optimization.vrp
+
+.. autodoc2-docstring:: discrete_optimization.vrp
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.vrp.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.vrp.solvers_map
+   discrete_optimization.vrp.problem
+   discrete_optimization.vrp.utils
+   discrete_optimization.vrp.mutation
+   discrete_optimization.vrp.parser
+   discrete_optimization.vrp.plot

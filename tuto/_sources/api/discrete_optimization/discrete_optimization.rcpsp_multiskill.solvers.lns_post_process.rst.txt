@@ -1,0 +1,85 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.solvers.lns_post_process`
+=========================================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MultiskillRcpspPostProcessSolution <discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.MultiskillRcpspPostProcessSolution>`
+     -
+   * - :py:obj:`PreemptiveMultiskillRcpspPostProcessSolution <discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.PreemptiveMultiskillRcpspPostProcessSolution>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`sgs_variant <discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.sgs_variant>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.sgs_variant
+          :summary:
+   * - :py:obj:`sgs_variant_preemptive <discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.sgs_variant_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.sgs_variant_preemptive
+          :summary:
+   * - :py:obj:`compute_schedule_per_employees <discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.compute_schedule_per_employees>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.compute_schedule_per_employees
+          :summary:
+   * - :py:obj:`shift_left_method <discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.shift_left_method>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.shift_left_method
+          :summary:
+
+API
+~~~
+
+.. py:class:: MultiskillRcpspPostProcessSolution(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.MultiskillRcpspPostProcessSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.PostProcessSolution`
+
+   .. py:method:: build_other_solution(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.MultiskillRcpspPostProcessSolution.build_other_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.MultiskillRcpspPostProcessSolution.build_other_solution
+
+.. py:class:: PreemptiveMultiskillRcpspPostProcessSolution(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.PreemptiveMultiskillRcpspPostProcessSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.PostProcessSolution`
+
+   .. py:method:: build_other_solution(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.PreemptiveMultiskillRcpspPostProcessSolution.build_other_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.PreemptiveMultiskillRcpspPostProcessSolution.build_other_solution
+
+.. py:function:: sgs_variant(solution: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, predecessors_dict)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.sgs_variant
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.sgs_variant
+
+.. py:function:: sgs_variant_preemptive(solution: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution, problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, predecessors_dict)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.sgs_variant_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.sgs_variant_preemptive
+
+.. py:function:: compute_schedule_per_employees(solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution], problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, predecessors_dict)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.compute_schedule_per_employees
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.compute_schedule_per_employees
+
+.. py:function:: shift_left_method(solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution], problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, predecessors_dict)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.shift_left_method
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.lns_post_process.shift_left_method

@@ -1,0 +1,81 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.lp`
+==================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.lp
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`BaseLpMisSolver <discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver>`
+     -
+   * - :py:obj:`BaseQuadMisSolver <discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver
+          :summary:
+
+API
+~~~
+
+.. py:class:: BaseLpMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver
+
+   Bases: :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`, :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`
+
+   .. py:attribute:: vars_node
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver.vars_node
+      :type: list[typing.Any]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver.vars_node
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver.init_model
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.maximum_independent_set.problem.MisSolution
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver.retrieve_current_solution
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.maximum_independent_set.problem.MisSolution) -> dict[typing.Any, float]
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver.convert_to_variable_values
+
+.. py:class:: BaseQuadMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver
+
+   Bases: :py:obj:`discrete_optimization.maximum_independent_set.solvers.lp.BaseLpMisSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver.__init__
+
+   .. py:attribute:: vars_node_matrix
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver.vars_node_matrix
+      :type: numpy.array
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver.vars_node_matrix
+
+   .. py:property:: vars_node
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver.vars_node
+      :type: list[typing.Any]
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver.vars_node
+
+   .. py:method:: create_vars_node_matrix() -> numpy.array
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver.create_vars_node_matrix
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver.create_vars_node_matrix
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.lp.BaseQuadMisSolver.init_model

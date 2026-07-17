@@ -1,0 +1,55 @@
+:py:mod:`discrete_optimization.tsptw.solvers.ortools_routing`
+=============================================================
+
+.. py:module:: discrete_optimization.tsptw.solvers.ortools_routing
+
+.. autodoc2-docstring:: discrete_optimization.tsptw.solvers.ortools_routing
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OrtoolsTspTwSolver <discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: OrtoolsTspTwSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver.problem
+      :type: discrete_optimization.tsptw.problem.TSPTWProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver.problem
+
+   .. py:attribute:: gpdp_problem
+      :canonical: discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver.gpdp_problem
+      :type: discrete_optimization.gpdp.problem.GpdpProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver.gpdp_problem
+
+   .. py:attribute:: solver
+      :canonical: discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver.solver
+      :type: discrete_optimization.gpdp.solvers.ortools_routing.OrtoolsGpdpSolver
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver.solver
+
+   .. py:method:: init_model(time_limit=10, scaling: float = 100, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver.init_model
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.tsptw.solvers.ortools_routing.OrtoolsTspTwSolver.solve

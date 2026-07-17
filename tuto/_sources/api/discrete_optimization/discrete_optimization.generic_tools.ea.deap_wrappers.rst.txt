@@ -1,0 +1,46 @@
+:py:mod:`discrete_optimization.generic_tools.ea.deap_wrappers`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tools.ea.deap_wrappers
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ea.deap_wrappers
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`generic_mutate_wrapper <discrete_optimization.generic_tools.ea.deap_wrappers.generic_mutate_wrapper>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.deap_wrappers.generic_mutate_wrapper
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`T <discrete_optimization.generic_tools.ea.deap_wrappers.T>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.deap_wrappers.T
+          :summary:
+
+API
+~~~
+
+.. py:data:: T
+   :canonical: discrete_optimization.generic_tools.ea.deap_wrappers.T
+   :value: 'TypeVar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.deap_wrappers.T
+
+.. py:function:: generic_mutate_wrapper(individual: collections.abc.MutableSequence[discrete_optimization.generic_tools.ea.deap_wrappers.T], problem: discrete_optimization.generic_tools.do_problem.Problem, encoding_name: str, indpb: typing.Any, solution_fn: type[discrete_optimization.generic_tools.do_problem.Solution], custom_mutation: discrete_optimization.generic_tools.do_mutation.Mutation) -> tuple[collections.abc.MutableSequence[discrete_optimization.generic_tools.ea.deap_wrappers.T]]
+   :canonical: discrete_optimization.generic_tools.ea.deap_wrappers.generic_mutate_wrapper
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.deap_wrappers.generic_mutate_wrapper

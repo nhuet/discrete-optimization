@@ -1,0 +1,35 @@
+:py:mod:`discrete_optimization.vrp.solvers.vrp_solver`
+======================================================
+
+.. py:module:: discrete_optimization.vrp.solvers.vrp_solver
+
+.. autodoc2-docstring:: discrete_optimization.vrp.solvers.vrp_solver
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`VrpSolver <discrete_optimization.vrp.solvers.vrp_solver.VrpSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: VrpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.vrp.solvers.vrp_solver.VrpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.vrp.solvers.vrp_solver.VrpSolver.problem
+      :type: discrete_optimization.vrp.problem.VrpProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.vrp_solver.VrpSolver.problem

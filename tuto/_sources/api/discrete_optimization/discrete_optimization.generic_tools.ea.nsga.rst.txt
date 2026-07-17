@@ -1,0 +1,95 @@
+:py:mod:`discrete_optimization.generic_tools.ea.nsga`
+=====================================================
+
+.. py:module:: discrete_optimization.generic_tools.ea.nsga
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Nsga <discrete_optimization.generic_tools.ea.nsga.Nsga>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga.Nsga
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.ea.nsga.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga.logger
+          :summary:
+   * - :py:obj:`_default_crossovers <discrete_optimization.generic_tools.ea.nsga._default_crossovers>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga._default_crossovers
+          :summary:
+   * - :py:obj:`_default_mutations <discrete_optimization.generic_tools.ea.nsga._default_mutations>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga._default_mutations
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.ea.nsga.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga.logger
+
+.. py:data:: _default_crossovers
+   :canonical: discrete_optimization.generic_tools.ea.nsga._default_crossovers
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga._default_crossovers
+
+.. py:data:: _default_mutations
+   :canonical: discrete_optimization.generic_tools.ea.nsga._default_mutations
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga._default_mutations
+
+.. py:class:: Nsga(problem: discrete_optimization.generic_tools.do_problem.Problem, objectives: typing.Union[str, list[str]], mutation: typing.Optional[typing.Union[discrete_optimization.generic_tools.do_mutation.Mutation, discrete_optimization.generic_tools.ea.ga.DeapMutation]] = None, crossover: typing.Optional[discrete_optimization.generic_tools.ea.ga.DeapCrossover] = None, encoding: typing.Optional[typing.Union[str, dict[str, typing.Any]]] = None, objective_weights: typing.Optional[list[float]] = None, pop_size: int = 100, max_evals: typing.Optional[int] = None, mut_rate: float = 0.1, crossover_rate: float = 0.9, deap_verbose: bool = True)
+   :canonical: discrete_optimization.generic_tools.ea.nsga.Nsga
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga.Nsga
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga.Nsga.__init__
+
+   .. py:attribute:: initial_solution
+      :canonical: discrete_optimization.generic_tools.ea.nsga.Nsga.initial_solution
+      :type: typing.Optional[discrete_optimization.generic_tools.do_problem.Solution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga.Nsga.initial_solution
+
+   .. py:method:: evaluate_problem(int_vector: list[int]) -> tuple[float, ...]
+      :canonical: discrete_optimization.generic_tools.ea.nsga.Nsga.evaluate_problem
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga.Nsga.evaluate_problem
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.ea.nsga.Nsga.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga.Nsga.set_warm_start
+
+   .. py:method:: create_individual_from_solution(solution: discrete_optimization.generic_tools.do_problem.Solution) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.ea.nsga.Nsga.create_individual_from_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.ea.nsga.Nsga.create_individual_from_solution
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.ea.nsga.Nsga.solve

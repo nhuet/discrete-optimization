@@ -1,0 +1,95 @@
+:py:mod:`discrete_optimization.generic_tools.result_storage.resultcomparator`
+=============================================================================
+
+.. py:module:: discrete_optimization.generic_tools.result_storage.resultcomparator
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ResultComparator <discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.result_storage.resultcomparator.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.logger
+
+.. py:class:: ResultComparator(list_result_storage: list[discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage], result_storage_names: list[str], objectives_str: list[str], objective_weights: list[int], test_problems: typing.Optional[list[discrete_optimization.generic_tools.do_problem.Problem]] = None)
+   :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.__init__
+
+   .. py:method:: reevaluate_result_storages() -> None
+      :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.reevaluate_result_storages
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.reevaluate_result_storages
+
+   .. py:method:: plot_distribution_for_objective(objective_str: str) -> matplotlib.figure.Figure
+      :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_distribution_for_objective
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_distribution_for_objective
+
+   .. py:method:: print_test_distribution() -> None
+      :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.print_test_distribution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.print_test_distribution
+
+   .. py:method:: get_best_by_objective_by_result_storage(objectif_str: str) -> dict[str, tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.result_storage.result_storage.fitness_class]]
+      :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.get_best_by_objective_by_result_storage
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.get_best_by_objective_by_result_storage
+
+   .. py:method:: generate_super_pareto() -> discrete_optimization.generic_tools.result_storage.result_storage.ParetoFront
+      :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.generate_super_pareto
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.generate_super_pareto
+
+   .. py:method:: plot_all_2d_paretos_single_plot(objectives_str: typing.Optional[list[str]] = None) -> matplotlib.axes.Axes
+      :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_all_2d_paretos_single_plot
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_all_2d_paretos_single_plot
+
+   .. py:method:: plot_all_2d_paretos_subplots(objectives_str: typing.Optional[list[str]] = None) -> matplotlib.figure.Figure
+      :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_all_2d_paretos_subplots
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_all_2d_paretos_subplots
+
+   .. py:method:: plot_super_pareto() -> None
+      :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_super_pareto
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_super_pareto
+
+   .. py:method:: plot_all_best_by_objective(objectif_str: str) -> None
+      :canonical: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_all_best_by_objective
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage.resultcomparator.ResultComparator.plot_all_best_by_objective

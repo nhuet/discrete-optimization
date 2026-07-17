@@ -1,0 +1,20 @@
+:py:mod:`discrete_optimization.generic_tools.ea`
+================================================
+
+.. py:module:: discrete_optimization.generic_tools.ea
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ea
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.ea.nsga
+   discrete_optimization.generic_tools.ea.ga_tools
+   discrete_optimization.generic_tools.ea.ga
+   discrete_optimization.generic_tools.ea.deap_wrappers
+   discrete_optimization.generic_tools.ea.alternating_ga

@@ -1,0 +1,191 @@
+:py:mod:`discrete_optimization.coloring.solvers.lp`
+===================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.lp
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ConstraintsDict <discrete_optimization.coloring.solvers.lp.ConstraintsDict>`
+     -
+   * - :py:obj:`_BaseLpColoringSolver <discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver
+          :summary:
+   * - :py:obj:`GurobiColoringSolver <discrete_optimization.coloring.solvers.lp.GurobiColoringSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver
+          :summary:
+   * - :py:obj:`MathOptColoringSolver <discrete_optimization.coloring.solvers.lp.MathOptColoringSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.coloring.solvers.lp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.logger
+          :summary:
+   * - :py:obj:`OneColorConstraints <discrete_optimization.coloring.solvers.lp.OneColorConstraints>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.OneColorConstraints
+          :summary:
+   * - :py:obj:`NeighborsConstraints <discrete_optimization.coloring.solvers.lp.NeighborsConstraints>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.NeighborsConstraints
+          :summary:
+   * - :py:obj:`VariableDecision <discrete_optimization.coloring.solvers.lp.VariableDecision>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.VariableDecision
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.coloring.solvers.lp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.logger
+
+.. py:data:: OneColorConstraints
+   :canonical: discrete_optimization.coloring.solvers.lp.OneColorConstraints
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.OneColorConstraints
+
+.. py:data:: NeighborsConstraints
+   :canonical: discrete_optimization.coloring.solvers.lp.NeighborsConstraints
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.NeighborsConstraints
+
+.. py:data:: VariableDecision
+   :canonical: discrete_optimization.coloring.solvers.lp.VariableDecision
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.VariableDecision
+
+.. py:class:: ConstraintsDict()
+   :canonical: discrete_optimization.coloring.solvers.lp.ConstraintsDict
+
+   Bases: :py:obj:`typing.TypedDict`
+
+   .. py:attribute:: one_color_constraints
+      :canonical: discrete_optimization.coloring.solvers.lp.ConstraintsDict.one_color_constraints
+      :type: discrete_optimization.coloring.solvers.lp.OneColorConstraints
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.ConstraintsDict.one_color_constraints
+
+   .. py:attribute:: constraints_neighbors
+      :canonical: discrete_optimization.coloring.solvers.lp.ConstraintsDict.constraints_neighbors
+      :type: discrete_optimization.coloring.solvers.lp.NeighborsConstraints
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.ConstraintsDict.constraints_neighbors
+
+.. py:class:: _BaseLpColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`, :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.init_model
+
+   .. py:method:: get_meta_constraints() -> list[discrete_optimization.generic_tools.unsat_tools.MetaConstraint]
+      :canonical: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.get_meta_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.get_meta_constraints
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.coloring.problem.ColoringSolution) -> dict[typing.Any, float]
+      :canonical: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.convert_to_variable_values
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.retrieve_current_solution
+
+   .. py:method:: get_range_color(node_name, range_color_subset, range_color_all)
+      :canonical: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.get_range_color
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver.get_range_color
+
+.. py:class:: GurobiColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver`, :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver.init_model
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.coloring.problem.ColoringSolution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver.convert_to_variable_values
+
+.. py:class:: MathOptColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.lp._BaseLpColoringSolver`, :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver.problem
+      :type: discrete_optimization.coloring.problem.ColoringProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver.problem
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.coloring.problem.ColoringSolution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lp.MathOptColoringSolver.convert_to_variable_values

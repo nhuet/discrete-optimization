@@ -1,0 +1,107 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair`
+======================================================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`NeighborRepairProblems <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.NeighborRepairProblems>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_shift_extremities <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.compute_shift_extremities>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.compute_shift_extremities
+          :summary:
+   * - :py:obj:`return_pauses_and_active_times <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.return_pauses_and_active_times>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.return_pauses_and_active_times
+          :summary:
+   * - :py:obj:`find_possible_problems_preemptive <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.find_possible_problems_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.find_possible_problems_preemptive
+          :summary:
+   * - :py:obj:`problem_constraints <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.problem_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.problem_constraints
+          :summary:
+   * - :py:obj:`post_process_solution <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.post_process_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.post_process_solution
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.logger
+          :summary:
+   * - :py:obj:`ANY_RCPSP <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.ANY_RCPSP>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.ANY_RCPSP
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.logger
+
+.. py:data:: ANY_RCPSP
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.ANY_RCPSP
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.ANY_RCPSP
+
+.. py:function:: compute_shift_extremities(model: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.ANY_RCPSP)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.compute_shift_extremities
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.compute_shift_extremities
+
+.. py:function:: return_pauses_and_active_times(model: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.ANY_RCPSP, solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, discrete_optimization.rcpsp.problem_specialized_constraints.SpecialPreemptiveRcpspSolution])
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.return_pauses_and_active_times
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.return_pauses_and_active_times
+
+.. py:function:: find_possible_problems_preemptive(model: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.ANY_RCPSP, solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, discrete_optimization.rcpsp.problem_specialized_constraints.SpecialPreemptiveRcpspSolution])
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.find_possible_problems_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.find_possible_problems_preemptive
+
+.. py:function:: problem_constraints(current_solution: typing.Union[discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution], problems_output: dict[collections.abc.Hashable, list], minus_delta: int, plus_delta: int, cp_solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver, discrete_optimization.rcpsp_multiskill.solvers.cp_mzn.CpPreemptiveMultiskillRcpspSolver], constraint_max_time=False, minus_delta_2=0, plus_delta_2=0)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.problem_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.problem_constraints
+
+.. py:function:: post_process_solution(model, solution)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.post_process_solution
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.post_process_solution
+
+.. py:class:: NeighborRepairProblems(problem: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, discrete_optimization.rcpsp.problem_specialized_constraints.SpecialConstraintsPreemptiveRcpspProblem, discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem], params_list: list[discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_tools.ParamsConstraintBuilder] = None)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.NeighborRepairProblems
+
+   Bases: :py:obj:`discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_tools.BaseSchedulingMznConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: typing.Union[discrete_optimization.rcpsp.solvers.cp_mzn.CpPreemptiveRcpspSolver, discrete_optimization.rcpsp_multiskill.solvers.cp_mzn.CpPreemptiveMultiskillRcpspSolver, discrete_optimization.rcpsp.solvers.cp_mzn.CpMultimodePreemptiveRcpspSolver], result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, child_instance: minizinc.Instance, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.NeighborRepairProblems.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair.NeighborRepairProblems.adding_constraint_from_results_store

@@ -1,0 +1,29 @@
+:py:mod:`discrete_optimization.generic_tools.mutations.mutation_util`
+=====================================================================
+
+.. py:module:: discrete_optimization.generic_tools.mutations.mutation_util
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_util
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_attribute_for_type <discrete_optimization.generic_tools.mutations.mutation_util.get_attribute_for_type>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_util.get_attribute_for_type
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_attribute_for_type(register: discrete_optimization.generic_tools.do_problem.EncodingRegister, type_attribute: discrete_optimization.generic_tools.do_problem.TypeAttribute) -> str
+   :canonical: discrete_optimization.generic_tools.mutations.mutation_util.get_attribute_for_type
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_util.get_attribute_for_type

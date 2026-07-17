@@ -1,0 +1,96 @@
+:py:mod:`discrete_optimization.generic_tools.hyperparameters.hyperparametrizable`
+=================================================================================
+
+.. py:module:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Hyperparametrizable <discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable
+          :summary:
+
+API
+~~~
+
+.. py:class:: Hyperparametrizable
+   :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.hyperparameters
+      :type: list[discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter]
+      :value: []
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.hyperparameters
+
+   .. py:method:: get_hyperparameters_names() -> list[str]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.get_hyperparameters_names
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.get_hyperparameters_names
+
+   .. py:method:: get_hyperparameters_by_name() -> dict[str, discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.get_hyperparameters_by_name
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.get_hyperparameters_by_name
+
+   .. py:method:: get_hyperparameter(name: str) -> discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.get_hyperparameter
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.get_hyperparameter
+
+   .. py:method:: copy_and_update_hyperparameters(names: typing.Optional[list[str]] = None, **kwargs_by_name: dict[str, typing.Any]) -> list[discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.copy_and_update_hyperparameters
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.copy_and_update_hyperparameters
+
+   .. py:method:: get_default_hyperparameters(names: typing.Optional[list[str]] = None) -> dict[str, typing.Any]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.get_default_hyperparameters
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.get_default_hyperparameters
+
+   .. py:method:: complete_with_default_hyperparameters(kwargs: dict[str, typing.Any], names: typing.Optional[list[str]] = None)
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.complete_with_default_hyperparameters
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.complete_with_default_hyperparameters
+
+   .. py:method:: suggest_hyperparameter_with_optuna(trial: optuna.trial.Trial, name: str, prefix: str = '', **kwargs) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.suggest_hyperparameter_with_optuna
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.suggest_hyperparameter_with_optuna
+
+   .. py:method:: suggest_hyperparameters_with_optuna(trial: optuna.trial.Trial, names: typing.Optional[list[str]] = None, kwargs_by_name: typing.Optional[dict[str, dict[str, typing.Any]]] = None, fixed_hyperparameters: typing.Optional[dict[str, typing.Any]] = None, prefix: str = '') -> dict[str, typing.Any]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.suggest_hyperparameters_with_optuna
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable.suggest_hyperparameters_with_optuna
+
+   .. py:method:: _get_hyperparameters_dependency_graph() -> networkx.DiGraph
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable._get_hyperparameters_dependency_graph
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable._get_hyperparameters_dependency_graph
+
+   .. py:method:: _sort_hyperparameters_by_dependency() -> collections.abc.Iterator[str]
+      :canonical: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable._sort_hyperparameters_by_dependency
+      :classmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable._sort_hyperparameters_by_dependency

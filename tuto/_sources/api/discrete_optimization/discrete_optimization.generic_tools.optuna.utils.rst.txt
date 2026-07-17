@@ -1,0 +1,62 @@
+:py:mod:`discrete_optimization.generic_tools.optuna.utils`
+==========================================================
+
+.. py:module:: discrete_optimization.generic_tools.optuna.utils
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`drop_already_tried_hyperparameters <discrete_optimization.generic_tools.optuna.utils.drop_already_tried_hyperparameters>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.utils.drop_already_tried_hyperparameters
+          :summary:
+   * - :py:obj:`generic_optuna_experiment_monoproblem <discrete_optimization.generic_tools.optuna.utils.generic_optuna_experiment_monoproblem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.utils.generic_optuna_experiment_monoproblem
+          :summary:
+   * - :py:obj:`generic_optuna_experiment_multiproblem <discrete_optimization.generic_tools.optuna.utils.generic_optuna_experiment_multiproblem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.utils.generic_optuna_experiment_multiproblem
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.optuna.utils.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.utils.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.optuna.utils.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.utils.logger
+
+.. py:function:: drop_already_tried_hyperparameters(trial: optuna.trial.Trial) -> None
+   :canonical: discrete_optimization.generic_tools.optuna.utils.drop_already_tried_hyperparameters
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.utils.drop_already_tried_hyperparameters
+
+.. py:function:: generic_optuna_experiment_monoproblem(problem: discrete_optimization.generic_tools.do_problem.Problem, solvers_to_test: list[type[discrete_optimization.generic_tools.do_solver.SolverDO]], kwargs_fixed_by_solver: typing.Optional[dict[type[discrete_optimization.generic_tools.do_solver.SolverDO], dict[str, typing.Any]]] = None, suggest_optuna_kwargs_by_name_by_solver: typing.Optional[dict[type[discrete_optimization.generic_tools.do_solver.SolverDO], dict[str, dict[str, typing.Any]]]] = None, additional_hyperparameters_by_solver: typing.Optional[dict[type[discrete_optimization.generic_tools.do_solver.SolverDO], list[discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter]]] = None, n_trials: int = 150, check_satisfy: bool = True, computation_time_in_study: bool = True, study_basename: str = 'study', create_another_study: bool = True, overwrite_study=False, storage_path: str = './optuna-journal.log', sampler: typing.Optional[optuna.samplers.BaseSampler] = None, pruner: typing.Optional[optuna.pruners.BasePruner] = None, seed: typing.Optional[int] = None, min_time_per_solver: int = 5, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None) -> optuna.Study
+   :canonical: discrete_optimization.generic_tools.optuna.utils.generic_optuna_experiment_monoproblem
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.utils.generic_optuna_experiment_monoproblem
+
+.. py:function:: generic_optuna_experiment_multiproblem(problems: list[discrete_optimization.generic_tools.do_problem.Problem], solvers_to_test: list[type[discrete_optimization.generic_tools.do_solver.SolverDO]], kwargs_fixed_by_solver: typing.Optional[dict[type[discrete_optimization.generic_tools.do_solver.SolverDO], dict[str, typing.Any]]] = None, suggest_optuna_kwargs_by_name_by_solver: typing.Optional[dict[type[discrete_optimization.generic_tools.do_solver.SolverDO], dict[str, dict[str, typing.Any]]]] = None, additional_hyperparameters_by_solver: typing.Optional[dict[type[discrete_optimization.generic_tools.do_solver.SolverDO], list[discrete_optimization.generic_tools.hyperparameters.hyperparameter.Hyperparameter]]] = None, n_trials: int = 150, check_satisfy: bool = True, study_basename: str = 'study', create_another_study: bool = True, overwrite_study=False, storage_path: str = './optuna-journal.log', sampler: typing.Optional[optuna.samplers.BaseSampler] = None, pruner: typing.Optional[optuna.pruners.BasePruner] = None, seed: typing.Optional[int] = None, prop_startup_instances: float = 0.2, randomize_instances: bool = True, report_cumulated_fitness: bool = False, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None) -> optuna.Study
+   :canonical: discrete_optimization.generic_tools.optuna.utils.generic_optuna_experiment_multiproblem
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.optuna.utils.generic_optuna_experiment_multiproblem

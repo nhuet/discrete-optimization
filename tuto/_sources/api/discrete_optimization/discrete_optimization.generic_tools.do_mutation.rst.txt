@@ -1,0 +1,92 @@
+:py:mod:`discrete_optimization.generic_tools.do_mutation`
+=========================================================
+
+.. py:module:: discrete_optimization.generic_tools.do_mutation
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`LocalMove <discrete_optimization.generic_tools.do_mutation.LocalMove>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.LocalMove
+          :summary:
+   * - :py:obj:`LocalMoveDefault <discrete_optimization.generic_tools.do_mutation.LocalMoveDefault>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.LocalMoveDefault
+          :summary:
+   * - :py:obj:`Mutation <discrete_optimization.generic_tools.do_mutation.Mutation>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.Mutation
+          :summary:
+
+API
+~~~
+
+.. py:class:: LocalMove
+   :canonical: discrete_optimization.generic_tools.do_mutation.LocalMove
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.LocalMove
+
+   .. py:method:: apply_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.do_mutation.LocalMove.apply_local_move
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.LocalMove.apply_local_move
+
+   .. py:method:: backtrack_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.do_mutation.LocalMove.backtrack_local_move
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.LocalMove.backtrack_local_move
+
+.. py:class:: LocalMoveDefault(prev_solution: discrete_optimization.generic_tools.do_problem.Solution, new_solution: discrete_optimization.generic_tools.do_problem.Solution)
+   :canonical: discrete_optimization.generic_tools.do_mutation.LocalMoveDefault
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.LocalMove`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.LocalMoveDefault
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.LocalMoveDefault.__init__
+
+   .. py:method:: apply_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.do_mutation.LocalMoveDefault.apply_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.LocalMoveDefault.apply_local_move
+
+   .. py:method:: backtrack_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.do_mutation.LocalMoveDefault.backtrack_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.LocalMoveDefault.backtrack_local_move
+
+.. py:class:: Mutation
+   :canonical: discrete_optimization.generic_tools.do_mutation.Mutation
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.Mutation
+
+   .. py:method:: build(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, **kwargs: typing.Any) -> discrete_optimization.generic_tools.do_mutation.Mutation
+      :canonical: discrete_optimization.generic_tools.do_mutation.Mutation.build
+      :abstractmethod:
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.Mutation.build
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.generic_tools.do_mutation.Mutation.mutate
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.Mutation.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.generic_tools.do_mutation.Mutation.mutate_and_compute_obj
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.do_mutation.Mutation.mutate_and_compute_obj

@@ -1,0 +1,31 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.networkx`
+========================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.networkx
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.networkx
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`NetworkxMisSolver <discrete_optimization.maximum_independent_set.solvers.networkx.NetworkxMisSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: NetworkxMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.networkx.NetworkxMisSolver
+
+   Bases: :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.maximum_independent_set.solvers.networkx.NetworkxMisSolver.solve

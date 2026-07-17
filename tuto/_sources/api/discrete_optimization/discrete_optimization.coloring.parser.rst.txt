@@ -1,0 +1,45 @@
+:py:mod:`discrete_optimization.coloring.parser`
+===============================================
+
+.. py:module:: discrete_optimization.coloring.parser
+
+.. autodoc2-docstring:: discrete_optimization.coloring.parser
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_data_available <discrete_optimization.coloring.parser.get_data_available>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.parser.get_data_available
+          :summary:
+   * - :py:obj:`parse <discrete_optimization.coloring.parser.parse>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.parser.parse
+          :summary:
+   * - :py:obj:`parse_file <discrete_optimization.coloring.parser.parse_file>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.parser.parse_file
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_data_available(data_folder: typing.Optional[str] = None, data_home: typing.Optional[str] = None) -> list[str]
+   :canonical: discrete_optimization.coloring.parser.get_data_available
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.parser.get_data_available
+
+.. py:function:: parse(input_data: str) -> discrete_optimization.coloring.problem.ColoringProblem
+   :canonical: discrete_optimization.coloring.parser.parse
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.parser.parse
+
+.. py:function:: parse_file(file_path: str) -> discrete_optimization.coloring.problem.ColoringProblem
+   :canonical: discrete_optimization.coloring.parser.parse_file
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.parser.parse_file

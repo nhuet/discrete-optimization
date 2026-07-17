@@ -1,0 +1,82 @@
+:py:mod:`discrete_optimization.generic_tools.callbacks.callback`
+================================================================
+
+.. py:module:: discrete_optimization.generic_tools.callbacks.callback
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Callback <discrete_optimization.generic_tools.callbacks.callback.Callback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.Callback
+          :summary:
+   * - :py:obj:`CallbackList <discrete_optimization.generic_tools.callbacks.callback.CallbackList>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.CallbackList
+          :summary:
+
+API
+~~~
+
+.. py:class:: Callback
+   :canonical: discrete_optimization.generic_tools.callbacks.callback.Callback
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.Callback
+
+   .. py:method:: set_params(params)
+      :canonical: discrete_optimization.generic_tools.callbacks.callback.Callback.set_params
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.Callback.set_params
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.callback.Callback.on_step_end
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.Callback.on_step_end
+
+   .. py:method:: on_solve_start(solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.callback.Callback.on_solve_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.Callback.on_solve_start
+
+   .. py:method:: on_solve_end(res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.callback.Callback.on_solve_end
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.Callback.on_solve_end
+
+.. py:class:: CallbackList(callbacks=None, **params)
+   :canonical: discrete_optimization.generic_tools.callbacks.callback.CallbackList
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.CallbackList
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.CallbackList.__init__
+
+   .. py:method:: append(callback)
+      :canonical: discrete_optimization.generic_tools.callbacks.callback.CallbackList.append
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.CallbackList.append
+
+   .. py:method:: set_params(params)
+      :canonical: discrete_optimization.generic_tools.callbacks.callback.CallbackList.set_params
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.callback.CallbackList.set_params
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.callback.CallbackList.on_step_end
+
+   .. py:method:: on_solve_start(solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.callback.CallbackList.on_solve_start
+
+   .. py:method:: on_solve_end(res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.callback.CallbackList.on_solve_end

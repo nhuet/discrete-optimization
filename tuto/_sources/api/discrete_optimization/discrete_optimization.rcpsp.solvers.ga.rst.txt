@@ -1,0 +1,67 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.ga`
+================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.ga
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.ga
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GaRcpspSolver <discrete_optimization.rcpsp.solvers.ga.GaRcpspSolver>`
+     -
+   * - :py:obj:`GaMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.ga.GaMultimodeRcpspSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: GaRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.ga.GaRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.ga.GaRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.ga.GaRcpspSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.ga.GaRcpspSolver.hyperparameters
+      :value: 'copy_and_update_hyperparameters(...)'
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.ga.GaRcpspSolver.hyperparameters
+
+   .. py:method:: solve(parameters_ga: typing.Optional[discrete_optimization.generic_tools.ea.ga_tools.ParametersGa] = None, **args)
+      :canonical: discrete_optimization.rcpsp.solvers.ga.GaRcpspSolver.solve
+
+.. py:class:: GaMultimodeRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.ga.GaMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.ga.GaMultimodeRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.ga.GaMultimodeRcpspSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.ga.GaMultimodeRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.ga.GaMultimodeRcpspSolver.hyperparameters
+
+   .. py:method:: solve(parameters_ga: discrete_optimization.generic_tools.ea.ga_tools.ParametersAltGa = ParametersAltGa.default_mrcpsp(), **args)
+      :canonical: discrete_optimization.rcpsp.solvers.ga.GaMultimodeRcpspSolver.solve

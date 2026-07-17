@@ -1,0 +1,336 @@
+:py:mod:`discrete_optimization.tsp.problem`
+===========================================
+
+.. py:module:: discrete_optimization.tsp.problem
+
+.. autodoc2-docstring:: discrete_optimization.tsp.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TspSolution <discrete_optimization.tsp.problem.TspSolution>`
+     -
+   * - :py:obj:`Point <discrete_optimization.tsp.problem.Point>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.Point
+          :summary:
+   * - :py:obj:`TspProblem <discrete_optimization.tsp.problem.TspProblem>`
+     -
+   * - :py:obj:`Point2D <discrete_optimization.tsp.problem.Point2D>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.Point2D
+          :summary:
+   * - :py:obj:`Point2DTspProblem <discrete_optimization.tsp.problem.Point2DTspProblem>`
+     -
+   * - :py:obj:`DistanceMatrixTspProblem <discrete_optimization.tsp.problem.DistanceMatrixTspProblem>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`length <discrete_optimization.tsp.problem.length>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.length
+          :summary:
+   * - :py:obj:`compute_length <discrete_optimization.tsp.problem.compute_length>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.compute_length
+          :summary:
+   * - :py:obj:`compute_length_np <discrete_optimization.tsp.problem.compute_length_np>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.compute_length_np
+          :summary:
+   * - :py:obj:`compute_length_matrix <discrete_optimization.tsp.problem.compute_length_matrix>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.compute_length_matrix
+          :summary:
+   * - :py:obj:`build_evaluate_function <discrete_optimization.tsp.problem.build_evaluate_function>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.build_evaluate_function
+          :summary:
+   * - :py:obj:`build_evaluate_function_np <discrete_optimization.tsp.problem.build_evaluate_function_np>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.build_evaluate_function_np
+          :summary:
+   * - :py:obj:`build_evaluate_function_matrix <discrete_optimization.tsp.problem.build_evaluate_function_matrix>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.build_evaluate_function_matrix
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Node <discrete_optimization.tsp.problem.Node>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.problem.Node
+          :summary:
+
+API
+~~~
+
+.. py:data:: Node
+   :canonical: discrete_optimization.tsp.problem.Node
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.Node
+
+.. py:class:: TspSolution(problem: discrete_optimization.tsp.problem.TspProblem, start_index: typing.Optional[int] = None, end_index: typing.Optional[int] = None, permutation: typing.Optional[list[int]] = None, lengths: typing.Optional[list[float]] = None, length: typing.Optional[float] = None, permutation_from0: typing.Optional[list[int]] = None)
+   :canonical: discrete_optimization.tsp.problem.TspSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution`\ [\ :py:obj:`discrete_optimization.tsp.problem.Node`\ ]
+
+   .. py:attribute:: permutation_from0
+      :canonical: discrete_optimization.tsp.problem.TspSolution.permutation_from0
+      :type: list[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspSolution.permutation_from0
+
+   .. py:attribute:: start_index
+      :canonical: discrete_optimization.tsp.problem.TspSolution.start_index
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspSolution.start_index
+
+   .. py:attribute:: end_index
+      :canonical: discrete_optimization.tsp.problem.TspSolution.end_index
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspSolution.end_index
+
+   .. py:attribute:: permutation
+      :canonical: discrete_optimization.tsp.problem.TspSolution.permutation
+      :type: list[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspSolution.permutation
+
+   .. py:attribute:: lengths
+      :canonical: discrete_optimization.tsp.problem.TspSolution.lengths
+      :type: typing.Optional[list[float]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspSolution.lengths
+
+   .. py:attribute:: length
+      :canonical: discrete_optimization.tsp.problem.TspSolution.length
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspSolution.length
+
+   .. py:method:: get_end_time(task: discrete_optimization.tsp.problem.Node) -> int
+      :canonical: discrete_optimization.tsp.problem.TspSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspSolution.get_end_time
+
+   .. py:method:: get_start_time(task: discrete_optimization.tsp.problem.Node) -> int
+      :canonical: discrete_optimization.tsp.problem.TspSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspSolution.get_start_time
+
+   .. py:method:: copy() -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.problem.TspSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.problem.TspSolution.lazy_copy
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.tsp.problem.TspSolution.__str__
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.tsp.problem.TspSolution.change_problem
+
+.. py:class:: Point
+   :canonical: discrete_optimization.tsp.problem.Point
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.Point
+
+.. py:class:: TspProblem(list_points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point], node_count: int, start_index: int = 0, end_index: int = 0)
+   :canonical: discrete_optimization.tsp.problem.TspProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem`\ [\ :py:obj:`discrete_optimization.tsp.problem.Node`\ ]
+
+   .. py:attribute:: list_points
+      :canonical: discrete_optimization.tsp.problem.TspProblem.list_points
+      :type: collections.abc.Sequence[discrete_optimization.tsp.problem.Point]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.list_points
+
+   .. py:attribute:: np_points
+      :canonical: discrete_optimization.tsp.problem.TspProblem.np_points
+      :type: numpy.ndarray
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.np_points
+
+   .. py:attribute:: node_count
+      :canonical: discrete_optimization.tsp.problem.TspProblem.node_count
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.node_count
+
+   .. py:method:: evaluate_function(var_tsp: discrete_optimization.tsp.problem.TspSolution) -> tuple[collections.abc.Iterable[float], float]
+      :canonical: discrete_optimization.tsp.problem.TspProblem.evaluate_function
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.evaluate_function
+
+   .. py:method:: evaluate_function_indexes(index_1: int, index_2: int) -> float
+      :canonical: discrete_optimization.tsp.problem.TspProblem.evaluate_function_indexes
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.evaluate_function_indexes
+
+   .. py:method:: evaluate_from_encoding(int_vector: collections.abc.Iterable[int], encoding_name: str) -> dict[str, float]
+      :canonical: discrete_optimization.tsp.problem.TspProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.evaluate_from_encoding
+
+   .. py:method:: evaluate(var_tsp: discrete_optimization.tsp.problem.TspSolution) -> dict[str, float]
+      :canonical: discrete_optimization.tsp.problem.TspProblem.evaluate
+
+   .. py:method:: satisfy(var_tsp: discrete_optimization.tsp.problem.TspSolution) -> bool
+      :canonical: discrete_optimization.tsp.problem.TspProblem.satisfy
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.problem.TspProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.get_dummy_solution
+
+   .. py:method:: get_random_dummy_solution() -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.problem.TspProblem.get_random_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.get_random_dummy_solution
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.tsp.problem.TspProblem.__str__
+
+   .. py:method:: convert_perm_from0_to_original_perm(perm_from0: collections.abc.Iterable[int]) -> list[int]
+      :canonical: discrete_optimization.tsp.problem.TspProblem.convert_perm_from0_to_original_perm
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.convert_perm_from0_to_original_perm
+
+   .. py:method:: convert_original_perm_to_perm_from0(perm: collections.abc.Iterable[int]) -> list[int]
+      :canonical: discrete_optimization.tsp.problem.TspProblem.convert_original_perm_to_perm_from0
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.TspProblem.convert_original_perm_to_perm_from0
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.tsp.problem.TspProblem.get_solution_type
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.tsp.problem.TspProblem.get_attribute_register
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.tsp.problem.TspProblem.get_objective_register
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.tsp.problem.TspProblem.get_makespan_upper_bound
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.tsp.problem.TspProblem.tasks_list
+      :type: list[discrete_optimization.tsp.problem.Node]
+
+.. py:class:: Point2D
+   :canonical: discrete_optimization.tsp.problem.Point2D
+
+   Bases: :py:obj:`discrete_optimization.tsp.problem.Point`
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.Point2D
+
+   .. py:attribute:: x
+      :canonical: discrete_optimization.tsp.problem.Point2D.x
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.Point2D.x
+
+   .. py:attribute:: y
+      :canonical: discrete_optimization.tsp.problem.Point2D.y
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.Point2D.y
+
+.. py:class:: Point2DTspProblem(list_points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D], node_count: int, start_index: int = 0, end_index: int = 0, use_numba: bool = True)
+   :canonical: discrete_optimization.tsp.problem.Point2DTspProblem
+
+   Bases: :py:obj:`discrete_optimization.tsp.problem.TspProblem`
+
+   .. py:attribute:: list_points
+      :canonical: discrete_optimization.tsp.problem.Point2DTspProblem.list_points
+      :type: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.Point2DTspProblem.list_points
+
+   .. py:method:: evaluate_function(var_tsp: discrete_optimization.tsp.problem.TspSolution) -> tuple[collections.abc.Iterable[float], float]
+      :canonical: discrete_optimization.tsp.problem.Point2DTspProblem.evaluate_function
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.Point2DTspProblem.evaluate_function
+
+   .. py:method:: evaluate_function_indexes(index_1: int, index_2: int) -> float
+      :canonical: discrete_optimization.tsp.problem.Point2DTspProblem.evaluate_function_indexes
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.Point2DTspProblem.evaluate_function_indexes
+
+.. py:class:: DistanceMatrixTspProblem(list_points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point], distance_matrix: numpy.ndarray, node_count: int, start_index: int = 0, end_index: int = 0, use_numba: bool = True)
+   :canonical: discrete_optimization.tsp.problem.DistanceMatrixTspProblem
+
+   Bases: :py:obj:`discrete_optimization.tsp.problem.TspProblem`
+
+   .. py:method:: evaluate_function(var_tsp: discrete_optimization.tsp.problem.TspSolution) -> tuple[list[int], int]
+      :canonical: discrete_optimization.tsp.problem.DistanceMatrixTspProblem.evaluate_function
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.DistanceMatrixTspProblem.evaluate_function
+
+   .. py:method:: evaluate_function_indexes(index_1: int, index_2: int) -> float
+      :canonical: discrete_optimization.tsp.problem.DistanceMatrixTspProblem.evaluate_function_indexes
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.problem.DistanceMatrixTspProblem.evaluate_function_indexes
+
+.. py:function:: length(point1: discrete_optimization.tsp.problem.Point2D, point2: discrete_optimization.tsp.problem.Point2D) -> float
+   :canonical: discrete_optimization.tsp.problem.length
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.length
+
+.. py:function:: compute_length(solution: list[int], start_index: int, end_index: int, list_points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D], node_count: int, length_permutation: int) -> tuple[list[float], float]
+   :canonical: discrete_optimization.tsp.problem.compute_length
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.compute_length
+
+.. py:function:: compute_length_np(solution: list[int], start_index: int, end_index: int, np_points: numpy.ndarray, node_count: int, length_permutation: int) -> tuple[numpy.typing.NDArray[numpy.float64], float]
+   :canonical: discrete_optimization.tsp.problem.compute_length_np
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.compute_length_np
+
+.. py:function:: compute_length_matrix(solution: typing.Union[list[int], numpy.ndarray], start_index: int, end_index: int, distance_matrix: numpy.ndarray, node_count: int, length_permutation: int) -> tuple[list[int], int]
+   :canonical: discrete_optimization.tsp.problem.compute_length_matrix
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.compute_length_matrix
+
+.. py:function:: build_evaluate_function(tsp_model: discrete_optimization.tsp.problem.TspProblem) -> collections.abc.Callable[[list[int]], tuple[list[float], float]]
+   :canonical: discrete_optimization.tsp.problem.build_evaluate_function
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.build_evaluate_function
+
+.. py:function:: build_evaluate_function_np(tsp_model: discrete_optimization.tsp.problem.TspProblem) -> collections.abc.Callable[[list[int]], tuple[numpy.typing.NDArray[numpy.float64], float]]
+   :canonical: discrete_optimization.tsp.problem.build_evaluate_function_np
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.build_evaluate_function_np
+
+.. py:function:: build_evaluate_function_matrix(tsp_model: discrete_optimization.tsp.problem.DistanceMatrixTspProblem) -> collections.abc.Callable[[list[int]], tuple[list[int], int]]
+   :canonical: discrete_optimization.tsp.problem.build_evaluate_function_matrix
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.problem.build_evaluate_function_matrix

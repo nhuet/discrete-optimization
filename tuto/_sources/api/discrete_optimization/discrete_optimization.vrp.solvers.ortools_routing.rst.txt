@@ -1,0 +1,145 @@
+:py:mod:`discrete_optimization.vrp.solvers.ortools_routing`
+===========================================================
+
+.. py:module:: discrete_optimization.vrp.solvers.ortools_routing
+
+.. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`FirstSolutionStrategy <discrete_optimization.vrp.solvers.ortools_routing.FirstSolutionStrategy>`
+     -
+   * - :py:obj:`LocalSearchMetaheuristic <discrete_optimization.vrp.solvers.ortools_routing.LocalSearchMetaheuristic>`
+     -
+   * - :py:obj:`BasicRoutingMonitor <discrete_optimization.vrp.solvers.ortools_routing.BasicRoutingMonitor>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.BasicRoutingMonitor
+          :summary:
+   * - :py:obj:`OrtoolsVrpSolver <discrete_optimization.vrp.solvers.ortools_routing.OrtoolsVrpSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.vrp.solvers.ortools_routing.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.logger
+          :summary:
+   * - :py:obj:`first_solution_map <discrete_optimization.vrp.solvers.ortools_routing.first_solution_map>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.first_solution_map
+          :summary:
+   * - :py:obj:`metaheuristic_map <discrete_optimization.vrp.solvers.ortools_routing.metaheuristic_map>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.metaheuristic_map
+          :summary:
+   * - :py:obj:`status_description <discrete_optimization.vrp.solvers.ortools_routing.status_description>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.status_description
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.vrp.solvers.ortools_routing.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.logger
+
+.. py:class:: FirstSolutionStrategy
+   :canonical: discrete_optimization.vrp.solvers.ortools_routing.FirstSolutionStrategy
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: SAVINGS
+      :canonical: discrete_optimization.vrp.solvers.ortools_routing.FirstSolutionStrategy.SAVINGS
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.FirstSolutionStrategy.SAVINGS
+
+   .. py:attribute:: PATH_MOST_CONSTRAINED_ARC
+      :canonical: discrete_optimization.vrp.solvers.ortools_routing.FirstSolutionStrategy.PATH_MOST_CONSTRAINED_ARC
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.FirstSolutionStrategy.PATH_MOST_CONSTRAINED_ARC
+
+.. py:class:: LocalSearchMetaheuristic
+   :canonical: discrete_optimization.vrp.solvers.ortools_routing.LocalSearchMetaheuristic
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: GUIDED_LOCAL_SEARCH
+      :canonical: discrete_optimization.vrp.solvers.ortools_routing.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
+
+   .. py:attribute:: SIMULATED_ANNEALING
+      :canonical: discrete_optimization.vrp.solvers.ortools_routing.LocalSearchMetaheuristic.SIMULATED_ANNEALING
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.LocalSearchMetaheuristic.SIMULATED_ANNEALING
+
+.. py:data:: first_solution_map
+   :canonical: discrete_optimization.vrp.solvers.ortools_routing.first_solution_map
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.first_solution_map
+
+.. py:data:: metaheuristic_map
+   :canonical: discrete_optimization.vrp.solvers.ortools_routing.metaheuristic_map
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.metaheuristic_map
+
+.. py:data:: status_description
+   :canonical: discrete_optimization.vrp.solvers.ortools_routing.status_description
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.status_description
+
+.. py:class:: BasicRoutingMonitor(do_solver: discrete_optimization.vrp.solvers.ortools_routing.OrtoolsVrpSolver)
+   :canonical: discrete_optimization.vrp.solvers.ortools_routing.BasicRoutingMonitor
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.BasicRoutingMonitor
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.BasicRoutingMonitor.__init__
+
+   .. py:method:: __call__()
+      :canonical: discrete_optimization.vrp.solvers.ortools_routing.BasicRoutingMonitor.__call__
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.BasicRoutingMonitor.__call__
+
+.. py:class:: OrtoolsVrpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.vrp.solvers.ortools_routing.OrtoolsVrpSolver
+
+   Bases: :py:obj:`discrete_optimization.vrp.solvers.VrpSolver`
+
+   .. py:attribute:: manager
+      :canonical: discrete_optimization.vrp.solvers.ortools_routing.OrtoolsVrpSolver.manager
+      :type: typing.Optional[ortools.constraint_solver.pywrapcp.RoutingIndexManager]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.OrtoolsVrpSolver.manager
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.vrp.solvers.ortools_routing.OrtoolsVrpSolver.init_model
+
+   .. py:method:: retrieve(solution: ortools.constraint_solver.pywrapcp.Assignment) -> discrete_optimization.vrp.problem.VrpSolution
+      :canonical: discrete_optimization.vrp.solvers.ortools_routing.OrtoolsVrpSolver.retrieve
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.ortools_routing.OrtoolsVrpSolver.retrieve
+
+   .. py:method:: solve(time_limit: typing.Optional[int] = 100, **kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.vrp.solvers.ortools_routing.OrtoolsVrpSolver.solve

@@ -1,0 +1,54 @@
+:py:mod:`discrete_optimization.generic_tools.dashboard.plots`
+=============================================================
+
+.. py:module:: discrete_optimization.generic_tools.dashboard.plots
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.plots
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`create_graph_from_series_dict <discrete_optimization.generic_tools.dashboard.plots.create_graph_from_series_dict>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.plots.create_graph_from_series_dict
+          :summary:
+   * - :py:obj:`create_solvers_competition_graph <discrete_optimization.generic_tools.dashboard.plots.create_solvers_competition_graph>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.plots.create_solvers_competition_graph
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.dashboard.plots.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.plots.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.dashboard.plots.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.plots.logger
+
+.. py:function:: create_graph_from_series_dict(map_label2ser: dict[str, pandas.Series], time_log_scale: bool = False, y_log_scale: bool = False, legend_title: str = 'labels', transpose: bool = False) -> plotly.graph_objects.Figure
+   :canonical: discrete_optimization.generic_tools.dashboard.plots.create_graph_from_series_dict
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.plots.create_graph_from_series_dict
+
+.. py:function:: create_solvers_competition_graph(df_summary: pandas.DataFrame, df_by_xp: typing.Optional[pandas.DataFrame] = None, x: str = 'convergence time (s)', y: str = 'dist to best', z: str = 'config', legend_title: typing.Optional[str] = None, time_log_scale: bool = False, transpose: bool = False, opacity_by_instance: float = 0.5) -> plotly.graph_objects.Figure
+   :canonical: discrete_optimization.generic_tools.dashboard.plots.create_solvers_competition_graph
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard.plots.create_solvers_competition_graph

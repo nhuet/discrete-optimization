@@ -1,0 +1,117 @@
+:py:mod:`discrete_optimization.coloring.solvers.lns_lp`
+=======================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.lns_lp
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`InitialColoringMethod <discrete_optimization.coloring.solvers.lns_lp.InitialColoringMethod>`
+     -
+   * - :py:obj:`InitialColoring <discrete_optimization.coloring.solvers.lns_lp.InitialColoring>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.InitialColoring
+          :summary:
+   * - :py:obj:`_BaseFixColorsConstraintHandler <discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler
+          :summary:
+   * - :py:obj:`FixColorsGurobiConstraintHandler <discrete_optimization.coloring.solvers.lns_lp.FixColorsGurobiConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.FixColorsGurobiConstraintHandler
+          :summary:
+   * - :py:obj:`FixColorsMathOptConstraintHandler <discrete_optimization.coloring.solvers.lns_lp.FixColorsMathOptConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.FixColorsMathOptConstraintHandler
+          :summary:
+
+API
+~~~
+
+.. py:class:: InitialColoringMethod
+   :canonical: discrete_optimization.coloring.solvers.lns_lp.InitialColoringMethod
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: DUMMY
+      :canonical: discrete_optimization.coloring.solvers.lns_lp.InitialColoringMethod.DUMMY
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.InitialColoringMethod.DUMMY
+
+   .. py:attribute:: GREEDY
+      :canonical: discrete_optimization.coloring.solvers.lns_lp.InitialColoringMethod.GREEDY
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.InitialColoringMethod.GREEDY
+
+.. py:class:: InitialColoring(problem: discrete_optimization.coloring.problem.ColoringProblem, initial_method: discrete_optimization.coloring.solvers.lns_lp.InitialColoringMethod, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction)
+   :canonical: discrete_optimization.coloring.solvers.lns_lp.InitialColoring
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.InitialSolution`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.InitialColoring
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.InitialColoring.__init__
+
+   .. py:method:: get_starting_solution() -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.coloring.solvers.lns_lp.InitialColoring.get_starting_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.InitialColoring.get_starting_solution
+
+.. py:class:: _BaseFixColorsConstraintHandler(problem: discrete_optimization.coloring.problem.ColoringProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler.hyperparameters
+
+   .. py:method:: adding_constraint_from_results_store(solver: typing.Union[discrete_optimization.coloring.solvers.lp.GurobiColoringSolver, discrete_optimization.coloring.solvers.lp.MathOptColoringSolver], result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: FixColorsGurobiConstraintHandler(problem: discrete_optimization.coloring.problem.ColoringProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.coloring.solvers.lns_lp.FixColorsGurobiConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler`, :py:obj:`discrete_optimization.generic_tools.lns_mip.GurobiConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.FixColorsGurobiConstraintHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.FixColorsGurobiConstraintHandler.__init__
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.coloring.solvers.lp.GurobiColoringSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.coloring.solvers.lns_lp.FixColorsGurobiConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.FixColorsGurobiConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: FixColorsMathOptConstraintHandler(problem: discrete_optimization.coloring.problem.ColoringProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.coloring.solvers.lns_lp.FixColorsMathOptConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.lns_lp._BaseFixColorsConstraintHandler`, :py:obj:`discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.FixColorsMathOptConstraintHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_lp.FixColorsMathOptConstraintHandler.__init__

@@ -1,0 +1,127 @@
+:py:mod:`discrete_optimization.binpack.solvers.cpsat`
+=====================================================
+
+.. py:module:: discrete_optimization.binpack.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ModelingBinPack <discrete_optimization.binpack.solvers.cpsat.ModelingBinPack>`
+     -
+   * - :py:obj:`CpSatBinPackSolver <discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.binpack.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.binpack.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.logger
+
+.. py:class:: ModelingBinPack
+   :canonical: discrete_optimization.binpack.solvers.cpsat.ModelingBinPack
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: BINARY
+      :canonical: discrete_optimization.binpack.solvers.cpsat.ModelingBinPack.BINARY
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.ModelingBinPack.BINARY
+
+   .. py:attribute:: SCHEDULING
+      :canonical: discrete_optimization.binpack.solvers.cpsat.ModelingBinPack.SCHEDULING
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.ModelingBinPack.SCHEDULING
+
+.. py:exception:: ModelingError()
+   :canonical: discrete_optimization.binpack.solvers.cpsat.ModelingError
+
+   Bases: :py:obj:`Exception`
+
+   .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.ModelingError
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.ModelingError.__init__
+
+.. py:class:: CpSatBinPackSolver(problem: discrete_optimization.binpack.problem.BinPackProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver`\ [\ :py:obj:`discrete_optimization.binpack.problem.Item`\ , :py:obj:`discrete_optimization.binpack.problem.BinPack`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver`\ [\ :py:obj:`discrete_optimization.binpack.problem.Item`\ ], :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.problem
+      :type: discrete_optimization.binpack.problem.BinPackProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.problem
+
+   .. py:attribute:: modeling
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.modeling
+      :type: discrete_optimization.binpack.solvers.cpsat.ModelingBinPack
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.modeling
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.retrieve_solution
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.init_model
+
+   .. py:property:: subset_unaryresources_allowed
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.subset_unaryresources_allowed
+      :type: typing.Iterable[discrete_optimization.binpack.problem.BinPack]
+
+   .. py:method:: init_model_binary(**args: typing.Any)
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.init_model_binary
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.init_model_binary
+
+   .. py:method:: get_task_unary_resource_is_present_variable(task: discrete_optimization.binpack.problem.Item, unary_resource: discrete_optimization.binpack.problem.BinPack) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.get_task_unary_resource_is_present_variable
+
+   .. py:method:: init_model_scheduling(**args: typing.Any)
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.init_model_scheduling
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.init_model_scheduling
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.get_makespan_upper_bound
+
+   .. py:method:: get_task_start_or_end_variable(task: discrete_optimization.binpack.problem.Item, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.get_task_start_or_end_variable
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.binpack.problem.BinPackSolution) -> None
+      :canonical: discrete_optimization.binpack.solvers.cpsat.CpSatBinPackSolver.set_warm_start

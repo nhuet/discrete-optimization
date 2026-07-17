@@ -1,0 +1,23 @@
+:py:mod:`discrete_optimization.generic_tools.callbacks`
+=======================================================
+
+.. py:module:: discrete_optimization.generic_tools.callbacks
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.callbacks.loggers
+   discrete_optimization.generic_tools.callbacks.callback
+   discrete_optimization.generic_tools.callbacks.warm_start_callback
+   discrete_optimization.generic_tools.callbacks.sequential_solvers_callback
+   discrete_optimization.generic_tools.callbacks.optuna
+   discrete_optimization.generic_tools.callbacks.early_stoppers
+   discrete_optimization.generic_tools.callbacks.stats_retrievers
+   discrete_optimization.generic_tools.callbacks.backup

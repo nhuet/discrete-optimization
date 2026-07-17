@@ -1,0 +1,67 @@
+:py:mod:`discrete_optimization.jsp.solvers.cpsat`
+=================================================
+
+.. py:module:: discrete_optimization.jsp.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.jsp.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatJspSolver <discrete_optimization.jsp.solvers.cpsat.CpSatJspSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.jsp.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.jsp.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.solvers.cpsat.logger
+
+.. py:class:: CpSatJspSolver(problem: discrete_optimization.jsp.problem.JobShopProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.jsp.solvers.cpsat.CpSatJspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver`\ [\ :py:obj:`discrete_optimization.jsp.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.jsp.solvers.cpsat.CpSatJspSolver.problem
+      :type: discrete_optimization.jsp.problem.JobShopProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.solvers.cpsat.CpSatJspSolver.problem
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.jsp.solvers.cpsat.CpSatJspSolver.get_makespan_upper_bound
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.jsp.solvers.cpsat.CpSatJspSolver.init_model
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.jsp.problem.JobShopSolution) -> None
+      :canonical: discrete_optimization.jsp.solvers.cpsat.CpSatJspSolver.set_warm_start
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.jsp.problem.JobShopSolution
+      :canonical: discrete_optimization.jsp.solvers.cpsat.CpSatJspSolver.retrieve_solution
+
+   .. py:method:: get_task_start_or_end_variable(task: discrete_optimization.jsp.problem.Task, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.jsp.solvers.cpsat.CpSatJspSolver.get_task_start_or_end_variable

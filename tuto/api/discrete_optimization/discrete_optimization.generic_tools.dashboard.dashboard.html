@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>discrete_optimization.generic_tools.dashboard.dashboard &mdash; discrete-optimization tuto-howto documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2030f8cb"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/versions.js?v=dd1a30db"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            discrete-optimization
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto_new_problem_implementation/tutorial_new_problem_or_solver.html">How to write its own problem/solver class?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">discrete-optimization</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-discrete_optimization.generic_tools.dashboard.dashboard">
+<span id="discrete-optimization-generic-tools-dashboard-dashboard"></span><h1><a class="reference internal" href="#module-discrete_optimization.generic_tools.dashboard.dashboard" title="discrete_optimization.generic_tools.dashboard.dashboard"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard</span></code></a><a class="headerlink" href="#module-discrete_optimization.generic_tools.dashboard.dashboard" title="Link to this heading"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.Dashboard" title="discrete_optimization.generic_tools.dashboard.dashboard.Dashboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dashboard</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname_dict" title="discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_convert_bool2classname_dict</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname" title="discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_convert_bool2classname</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_data_from_df" title="discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_data_from_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_extract_dash_table_data_from_df</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_columns_from_df" title="discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_columns_from_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_extract_dash_table_columns_from_df</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard._get_dash_table_kwargs" title="discrete_optimization.generic_tools.dashboard.dashboard._get_dash_table_kwargs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_get_dash_table_kwargs</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_KEY" title="discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_KEY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TIME_LOGSCALE_KEY</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TIME_LOGSCALE_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TIME_LOGSCALE_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_KEY" title="discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_KEY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MINIMIZING_KEY</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MINIMIZING_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVED_WO_PROOF_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_KEY" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_KEY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVED_WO_PROOF_KEY</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVED_WO_PROOF_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_KEY" title="discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_KEY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TRANSPOSE_KEY</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TRANSPOSE_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_KEY" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_KEY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVERS_COMPETITION_ALL_XPS_KEY</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVERS_COMPETITION_ALL_XPS_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVERS_COMPETITION_DIST_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVERS_COMPETITION_TIME_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVERS_COMPETITION_ALL_XPS_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVERS_COMPETITION_DIST_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOLVERS_COMPETITION_TIME_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_METRIC_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_METRIC_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAPH_METRIC_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_AGG_METRIC_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_AGG_METRIC_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAPH_AGG_METRIC_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_NB_SOLVED_INSTANCES_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_NB_SOLVED_INSTANCES_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAPH_NB_SOLVED_INSTANCES_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_SOLVERS_COMPETITION_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_SOLVERS_COMPETITION_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GRAPH_SOLVERS_COMPETITION_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_METRIC_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_METRIC_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TABLE_AGG_METRIC_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_RANK_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_RANK_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TABLE_AGG_RANK_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_EMPTY_XPS_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_EMPTY_XPS_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TABLE_EMPTY_XPS_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TABLE_XP_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_NO_DATA_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_NO_DATA_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TABLE_XP_NO_DATA_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_STATUS_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_STATUS_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TABLE_XP_STATUS_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_NB_SOLVED_INSTANCES_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_NB_SOLVED_INSTANCES_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TABLE_NB_SOLVED_INSTANCES_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_MD_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_MD_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONFIG_MD_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_METRIC_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TAB_METRIC_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TAB_METRIC_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_METRIC_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_METRIC_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TAB_AGG_METRIC_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_NB_SOLVED_INSTANCES_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TAB_NB_SOLVED_INSTANCES_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TAB_NB_SOLVED_INSTANCES_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_CONFIG_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TAB_CONFIG_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TAB_CONFIG_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_XP_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TAB_XP_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TAB_XP_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_EMPTY_XPS_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TAB_EMPTY_XPS_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TAB_EMPTY_XPS_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_RANK_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_RANK_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TAB_AGG_RANK_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABS_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TABS_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TABS_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_ALL" title="discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_ALL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALIAS_INSTANCES_ALL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_WITHSOL" title="discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_WITHSOL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALIAS_INSTANCES_WITHSOL</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.ALIASES_INSTANCES" title="discrete_optimization.generic_tools.dashboard.dashboard.ALIASES_INSTANCES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALIASES_INSTANCES</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.METRIC_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.METRIC_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METRIC_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">INSTANCES_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.STAT_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.STAT_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STAT_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONFIGS_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONFIG_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.Q_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.Q_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Q_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.CLIP_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.CLIP_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CLIP_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.CLIP_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.CLIP_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CLIP_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.METRIC_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.METRIC_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METRIC_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">INSTANCES_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.STAT_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.STAT_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STAT_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONFIG_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONFIGS_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.Q_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.Q_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Q_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TRANSPOSE_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MINIMIZING_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">INSTANCE_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">INSTANCE_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.RUN_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.RUN_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RUN_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.RUN_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.RUN_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RUN_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MIN_XP_PROP_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MIN_XP_PROP_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_KEY" title="discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_KEY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Y_LOGSCALE_KEY</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Y_LOGSCALE_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_DIV_ID" title="discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_DIV_ID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Y_LOGSCALE_DIV_ID</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard._data_table_numeric_column_extras" title="discrete_optimization.generic_tools.dashboard.dashboard._data_table_numeric_column_extras"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_data_table_numeric_column_extras</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.generic_tools.dashboard.dashboard._explanation_table_agg_rank" title="discrete_optimization.generic_tools.dashboard.dashboard._explanation_table_agg_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_explanation_table_agg_rank</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_KEY">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TIME_LOGSCALE_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'time</span> <span class="pre">log-scale'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_KEY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TIME_LOGSCALE_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'time-log-scale'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TIME_LOGSCALE_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'time-log-scale-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TIME_LOGSCALE_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_KEY">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">MINIMIZING_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'minimizing'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_KEY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">MINIMIZING_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'minimizing'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVED_WO_PROOF_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'solved-wo-proof'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_KEY">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVED_WO_PROOF_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'w/o</span> <span class="pre">proof'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_KEY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVED_WO_PROOF_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'solved-wo-proof-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVED_WO_PROOF_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_KEY">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TRANSPOSE_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'transpose'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_KEY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TRANSPOSE_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'transpose'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_KEY">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVERS_COMPETITION_ALL_XPS_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'all</span> <span class="pre">xps'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_KEY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVERS_COMPETITION_ALL_XPS_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'solvers_competition-all-xps'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVERS_COMPETITION_DIST_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'solvers-competition-dist'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVERS_COMPETITION_TIME_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'solvers-competition-time'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVERS_COMPETITION_ALL_XPS_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'solvers_competition-all-xps-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_ALL_XPS_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVERS_COMPETITION_DIST_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'solvers-competition-dist-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_DIST_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">SOLVERS_COMPETITION_TIME_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'solvers-competition-time-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.SOLVERS_COMPETITION_TIME_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_METRIC_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">GRAPH_METRIC_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'graph-metric'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_METRIC_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_AGG_METRIC_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">GRAPH_AGG_METRIC_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'graph-agg-metric'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_AGG_METRIC_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_NB_SOLVED_INSTANCES_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">GRAPH_NB_SOLVED_INSTANCES_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'graph-nb-solved-instances'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_NB_SOLVED_INSTANCES_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_SOLVERS_COMPETITION_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">GRAPH_SOLVERS_COMPETITION_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'graph-solvers-competition'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.GRAPH_SOLVERS_COMPETITION_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_METRIC_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TABLE_AGG_METRIC_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'table-agg-metric'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_METRIC_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_RANK_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TABLE_AGG_RANK_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'table-agg-rank'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_AGG_RANK_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_EMPTY_XPS_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TABLE_EMPTY_XPS_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'table-empty-xps'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_EMPTY_XPS_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TABLE_XP_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'table-metric'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_NO_DATA_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TABLE_XP_NO_DATA_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'table-metric-no-data'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_NO_DATA_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_STATUS_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TABLE_XP_STATUS_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'table-metric-status'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_XP_STATUS_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TABLE_NB_SOLVED_INSTANCES_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TABLE_NB_SOLVED_INSTANCES_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'table-nb-solved-instances'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABLE_NB_SOLVED_INSTANCES_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_MD_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">CONFIG_MD_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'config-markdown'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_MD_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TAB_METRIC_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TAB_METRIC_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tab-metric'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_METRIC_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_METRIC_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TAB_AGG_METRIC_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tab-agg-metric'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_METRIC_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TAB_NB_SOLVED_INSTANCES_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TAB_NB_SOLVED_INSTANCES_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tab-nb-solved-instances'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_NB_SOLVED_INSTANCES_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TAB_CONFIG_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TAB_CONFIG_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tab-config'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_CONFIG_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TAB_XP_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TAB_XP_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tab-experiment'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_XP_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TAB_EMPTY_XPS_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TAB_EMPTY_XPS_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tab-empty-xps'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_EMPTY_XPS_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_RANK_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TAB_AGG_RANK_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tab-agg-rank'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TAB_AGG_RANK_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TABS_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TABS_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tabs'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TABS_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_ALL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">ALIAS_INSTANCES_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'&#64;all'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_ALL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_WITHSOL">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">ALIAS_INSTANCES_WITHSOL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'&#64;withsol'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.ALIAS_INSTANCES_WITHSOL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.ALIASES_INSTANCES">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">ALIASES_INSTANCES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.ALIASES_INSTANCES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.METRIC_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">METRIC_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'metric'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.METRIC_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">INSTANCES_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'instances'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.STAT_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">STAT_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'stat'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.STAT_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">CONFIGS_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'configs'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">CONFIG_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'config'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Q_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">Q_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'quantile-q'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Q_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.CLIP_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">CLIP_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'clip'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.CLIP_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.CLIP_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">CLIP_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'clip-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.CLIP_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.METRIC_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">METRIC_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'metric-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.METRIC_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">INSTANCES_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'instances-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.INSTANCES_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.STAT_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">STAT_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'stat-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.STAT_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">CONFIG_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'config-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIG_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">CONFIGS_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'configs-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.CONFIGS_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Q_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">Q_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'quantile-q-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Q_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">TRANSPOSE_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'transpose-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.TRANSPOSE_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">MINIMIZING_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'minimizing-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.MINIMIZING_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">INSTANCE_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'instance'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">INSTANCE_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'instance-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.INSTANCE_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.RUN_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">RUN_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'run-id'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.RUN_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.RUN_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">RUN_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'run-id-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.RUN_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">MIN_XP_PROP_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'min-exp-proportion-slider'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">MIN_XP_PROP_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'min-exp-proportion-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.MIN_XP_PROP_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_KEY">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">Y_LOGSCALE_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'metric</span> <span class="pre">log-scale'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_KEY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">Y_LOGSCALE_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'y-log-scale'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_DIV_ID">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">Y_LOGSCALE_DIV_ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'y-log-scale-div'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Y_LOGSCALE_DIV_ID" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Dashboard">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">Dashboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Discrete-Optimization</span> <span class="pre">Experiments</span> <span class="pre">Dashboard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">external_stylesheets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#Dashboard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Dashboard" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">dash.Dash</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.preprocess_data">
+<span class="sig-name descname"><span class="pre">preprocess_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#Dashboard.preprocess_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.preprocess_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.create_layout">
+<span class="sig-name descname"><span class="pre">create_layout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#Dashboard.create_layout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.create_layout" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.load_callbacks">
+<span class="sig-name descname"><span class="pre">load_callbacks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#Dashboard.load_callbacks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Dashboard.load_callbacks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard.Dashboard._replace_instances_aliases">
+<span class="sig-name descname"><span class="pre">_replace_instances_aliases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#Dashboard._replace_instances_aliases"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard.Dashboard._replace_instances_aliases" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname_dict">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">_convert_bool2classname_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#_convert_bool2classname_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname_dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">_convert_bool2classname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#_convert_bool2classname"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard._convert_bool2classname" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_data_from_df">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">_extract_dash_table_data_from_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#_extract_dash_table_data_from_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_data_from_df" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_columns_from_df">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">_extract_dash_table_columns_from_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_numeric_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#_extract_dash_table_columns_from_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard._extract_dash_table_columns_from_df" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard._get_dash_table_kwargs">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">_get_dash_table_kwargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/generic_tools/dashboard/dashboard.html#_get_dash_table_kwargs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard._get_dash_table_kwargs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard._data_table_numeric_column_extras">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">_data_table_numeric_column_extras</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'dict(...)'</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard._data_table_numeric_column_extras" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.generic_tools.dashboard.dashboard._explanation_table_agg_rank">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard.</span></span><span class="sig-name descname"><span class="pre">_explanation_table_agg_rank</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Multiline-String&gt;</span></em><a class="headerlink" href="#discrete_optimization.generic_tools.dashboard.dashboard._explanation_table_agg_rank" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Airbus.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: tuto-howto
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl id="docs-versions">
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

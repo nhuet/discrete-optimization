@@ -1,0 +1,82 @@
+:py:mod:`discrete_optimization.singlemachine.solvers.lp`
+========================================================
+
+.. py:module:: discrete_optimization.singlemachine.solvers.lp
+
+.. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_BaseLpSingleMachineSolver <discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver
+          :summary:
+   * - :py:obj:`MathOptSingleMachineSolver <discrete_optimization.singlemachine.solvers.lp.MathOptSingleMachineSolver>`
+     -
+   * - :py:obj:`GurobiSingleMachineSolver <discrete_optimization.singlemachine.solvers.lp.GurobiSingleMachineSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.singlemachine.solvers.lp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.lp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.singlemachine.solvers.lp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.lp.logger
+
+.. py:class:: _BaseLpSingleMachineSolver(problem: discrete_optimization.singlemachine.problem.WeightedTardinessProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver.__init__
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver.init_model
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: typing.Callable[[typing.Any], float], **kwargs) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver.retrieve_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver.retrieve_current_solution
+
+.. py:class:: MathOptSingleMachineSolver(problem: discrete_optimization.singlemachine.problem.WeightedTardinessProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.singlemachine.solvers.lp.MathOptSingleMachineSolver
+
+   Bases: :py:obj:`discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver`, :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.singlemachine.solvers.lp.MathOptSingleMachineSolver.convert_to_variable_values
+
+.. py:class:: GurobiSingleMachineSolver(problem: discrete_optimization.singlemachine.problem.WeightedTardinessProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.singlemachine.solvers.lp.GurobiSingleMachineSolver
+
+   Bases: :py:obj:`discrete_optimization.singlemachine.solvers.lp._BaseLpSingleMachineSolver`, :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver`
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.singlemachine.solvers.lp.GurobiSingleMachineSolver.convert_to_variable_values

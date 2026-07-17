@@ -1,0 +1,116 @@
+:py:mod:`discrete_optimization.generic_tools.dyn_prog_tools`
+============================================================
+
+.. py:module:: discrete_optimization.generic_tools.dyn_prog_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpCallback <discrete_optimization.generic_tools.dyn_prog_tools.DpCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpCallback
+          :summary:
+   * - :py:obj:`DpSolver <discrete_optimization.generic_tools.dyn_prog_tools.DpSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`solvers <discrete_optimization.generic_tools.dyn_prog_tools.solvers>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.solvers
+          :summary:
+   * - :py:obj:`logger <discrete_optimization.generic_tools.dyn_prog_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: solvers
+   :canonical: discrete_optimization.generic_tools.dyn_prog_tools.solvers
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.solvers
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.dyn_prog_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.logger
+
+.. py:class:: DpCallback(do_solver: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver, callback: discrete_optimization.generic_tools.callbacks.callback.Callback)
+   :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpCallback
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpCallback.__init__
+
+   .. py:method:: on_solution_callback(sol: didppy.Solution) -> bool
+      :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpCallback.on_solution_callback
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpCallback.on_solution_callback
+
+   .. py:method:: store_current_solution(sol: didppy.Solution)
+      :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpCallback.store_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpCallback.store_current_solution
+
+.. py:class:: DpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: early_stopping_exception
+      :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.early_stopping_exception
+      :type: typing.Optional[Exception]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.early_stopping_exception
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.model
+      :type: didppy.Model
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.model
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.hyperparameters
+
+   .. py:attribute:: initial_solution
+      :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.initial_solution
+      :type: typing.Optional[list[didppy.Transition]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.initial_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.init_model
+      :abstractmethod:
+
+   .. py:method:: retrieve_solution(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.retrieve_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.retrieve_solution
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, time_limit: typing.Optional[float] = 100.0, retrieve_intermediate_solutions: bool = True, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.dyn_prog_tools.DpSolver.solve

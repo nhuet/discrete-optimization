@@ -1,0 +1,56 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.cpsat`
+=====================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatMisSolver <discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.maximum_independent_set.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.maximum_independent_set.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.cpsat.logger
+
+.. py:class:: CpSatMisSolver(problem: discrete_optimization.maximum_independent_set.problem.MisProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver
+
+   Bases: :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`, :py:obj:`discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver.init_model
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.maximum_independent_set.problem.MisSolution) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver.set_warm_start
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.maximum_independent_set.problem.MisSolution
+      :canonical: discrete_optimization.maximum_independent_set.solvers.cpsat.CpSatMisSolver.retrieve_solution

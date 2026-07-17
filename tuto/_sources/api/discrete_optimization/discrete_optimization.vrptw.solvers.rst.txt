@@ -1,0 +1,18 @@
+:py:mod:`discrete_optimization.vrptw.solvers`
+=============================================
+
+.. py:module:: discrete_optimization.vrptw.solvers
+
+.. autodoc2-docstring:: discrete_optimization.vrptw.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.vrptw.solvers.ortools_routing
+   discrete_optimization.vrptw.solvers.cpsat
+   discrete_optimization.vrptw.solvers.dp

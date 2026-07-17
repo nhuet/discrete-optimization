@@ -1,0 +1,32 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill`
+================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.rcpsp_multiskill.plots
+   discrete_optimization.rcpsp_multiskill.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.rcpsp_multiskill.solvers_map
+   discrete_optimization.rcpsp_multiskill.parser_mslib
+   discrete_optimization.rcpsp_multiskill.parser_imopse
+   discrete_optimization.rcpsp_multiskill.problem
+   discrete_optimization.rcpsp_multiskill.parser_mspsp
+   discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp
+   discrete_optimization.rcpsp_multiskill.fast_function_ms_rcpsp

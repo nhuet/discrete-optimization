@@ -1,0 +1,57 @@
+:py:mod:`discrete_optimization.binpack.solvers.greedy`
+======================================================
+
+.. py:module:: discrete_optimization.binpack.solvers.greedy
+
+.. autodoc2-docstring:: discrete_optimization.binpack.solvers.greedy
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GreedyBinPackSolver <discrete_optimization.binpack.solvers.greedy.GreedyBinPackSolver>`
+     -
+   * - :py:obj:`GreedyBinPackOpenEvolve <discrete_optimization.binpack.solvers.greedy.GreedyBinPackOpenEvolve>`
+     -
+
+API
+~~~
+
+.. py:class:: GreedyBinPackSolver(problem: discrete_optimization.binpack.problem.BinPackProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.binpack.solvers.greedy.GreedyBinPackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.binpack.solvers.greedy.GreedyBinPackSolver.problem
+      :type: discrete_optimization.binpack.problem.BinPackProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.greedy.GreedyBinPackSolver.problem
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.binpack.solvers.greedy.GreedyBinPackSolver.solve
+
+.. py:class:: GreedyBinPackOpenEvolve(problem: discrete_optimization.binpack.problem.BinPackProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.binpack.solvers.greedy.GreedyBinPackOpenEvolve
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.binpack.solvers.greedy.GreedyBinPackOpenEvolve.problem
+      :type: discrete_optimization.binpack.problem.BinPackProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.greedy.GreedyBinPackOpenEvolve.problem
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs)
+      :canonical: discrete_optimization.binpack.solvers.greedy.GreedyBinPackOpenEvolve.solve
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.solvers.greedy.GreedyBinPackOpenEvolve.solve

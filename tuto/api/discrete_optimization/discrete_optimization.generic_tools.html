@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>discrete_optimization.generic_tools &mdash; discrete-optimization tuto-howto documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2030f8cb"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/versions.js?v=dd1a30db"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            discrete-optimization
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto_new_problem_implementation/tutorial_new_problem_or_solver.html">How to write its own problem/solver class?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">discrete-optimization</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-discrete_optimization.generic_tools">
+<span id="discrete-optimization-generic-tools"></span><h1><a class="reference internal" href="#module-discrete_optimization.generic_tools" title="discrete_optimization.generic_tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools</span></code></a><a class="headerlink" href="#module-discrete_optimization.generic_tools" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.pytools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.pytools</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.pytools.timeout_decorator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.pytools.timeout_decorator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.study.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.study</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.study.database.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.study.database</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.study.experiment.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.study.experiment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.mutations.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.mutations</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.mutations.mutation_util.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.mutations.mutation_util</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.mutations.mutation_catalog.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.mutations.mutation_catalog</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.mutations.mutation_integer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.mutations.mutation_integer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.mutations.mutation_bool.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.mutations.mutation_bool</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.mutations.mixed_mutation.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.mutations.mixed_mutation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.mutations.permutation_mutations.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.mutations.permutation_mutations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.result_storage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.result_storage</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.result_storage.multiobj_utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.result_storage.multiobj_utils</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.result_storage.resultcomparator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.result_storage.resultcomparator</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.result_storage.result_storage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.result_storage.result_storage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.hub_solver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.hub_solver</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.hub_solver.optal.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.hub_solver.optal</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="discrete_optimization.generic_tools.hub_solver.optal.model_collections.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.hub_solver.optal.model_collections</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="discrete_optimization.generic_tools.hub_solver.optal.generic_optal.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.hub_solver.optal.generic_optal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.hub_solver.tempo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.hub_solver.tempo</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.hub_solver.tempo.tempo_tools</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.callbacks</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.loggers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.callbacks.loggers</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.callback.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.callbacks.callback</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.warm_start_callback.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.callbacks.warm_start_callback</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.sequential_solvers_callback.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.callbacks.sequential_solvers_callback</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.optuna.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.callbacks.optuna</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.early_stoppers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.callbacks.early_stoppers</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.stats_retrievers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.callbacks.stats_retrievers</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.backup.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.callbacks.backup</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.dashboard.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.dashboard</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.dashboard.dashboard.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.dashboard.dashboard</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.dashboard.plots.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.dashboard.plots</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.dashboard.config.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.dashboard.config</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.dashboard.preprocess.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.dashboard.preprocess</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.hyperparameters.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.hyperparameters</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.hyperparameters.hyperparameter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.hyperparameters.hyperparameter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.hyperparameters.hyperparametrizable</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.ea.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ea</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.ea.nsga.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ea.nsga</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.ea.ga_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ea.ga_tools</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.ea.ga.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ea.ga</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.ea.deap_wrappers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ea.deap_wrappers</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.ea.alternating_ga.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ea.alternating_ga</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.ls.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ls</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.ls.hill_climber.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ls.hill_climber</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.ls.simulated_annealing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ls.simulated_annealing</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.ls.local_search.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ls.local_search</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.optuna.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.optuna</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.optuna.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.optuna.utils</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.optuna.timed_percentile_pruner.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.optuna.timed_percentile_pruner</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.robustness.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.robustness</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete_optimization.generic_tools.robustness.robustness_tool.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.robustness.robustness_tool</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.qiskit_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.qiskit_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.graph_api.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.graph_api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.lns_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.lns_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.ortools_cpsat_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ortools_cpsat_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.dyn_prog_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.dyn_prog_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.cp_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.cp_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.quantum_solvers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.quantum_solvers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.do_solver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.do_solver</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.cpmpy_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.cpmpy_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.lns_mip.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.lns_mip</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.do_problem.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.do_problem</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.path_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.path_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.lexico_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.lexico_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.plot_utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.plot_utils</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.unsat_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.unsat_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.ghh_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.ghh_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.do_mutation.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.do_mutation</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.toulbar_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.toulbar_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.lp_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.lp_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.exceptions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.exceptions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.lns_cp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.lns_cp</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.asp_tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.asp_tools</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete_optimization.generic_tools.sequential_metasolver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.generic_tools.sequential_metasolver</span></code></a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Airbus.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: tuto-howto
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl id="docs-versions">
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

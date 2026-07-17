@@ -1,0 +1,175 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.dp`
+================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpRcpspModeling <discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling>`
+     -
+   * - :py:obj:`DpRcpspSolver <discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`create_resource_consumption_from_calendar <discrete_optimization.rcpsp.solvers.dp.create_resource_consumption_from_calendar>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.create_resource_consumption_from_calendar
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.dp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.dp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.logger
+
+.. py:class:: DpRcpspModeling
+   :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: TASK_AND_TIME
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling.TASK_AND_TIME
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling.TASK_AND_TIME
+
+   .. py:attribute:: TASK_ORIGINAL
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling.TASK_ORIGINAL
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling.TASK_ORIGINAL
+
+   .. py:attribute:: TASK_AVAIL_TASK_UPD
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling.TASK_AVAIL_TASK_UPD
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling.TASK_AVAIL_TASK_UPD
+
+   .. py:attribute:: TASK_MULTIMODE
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling.TASK_MULTIMODE
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling.TASK_MULTIMODE
+
+.. py:function:: create_resource_consumption_from_calendar(calendar_availability: numpy.ndarray) -> list[dict[str, int]]
+   :canonical: discrete_optimization.rcpsp.solvers.dp.create_resource_consumption_from_calendar
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.create_resource_consumption_from_calendar
+
+.. py:class:: DpRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.problem
+
+   .. py:attribute:: modeling
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.modeling
+      :type: discrete_optimization.rcpsp.solvers.dp.DpRcpspModeling
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.modeling
+
+   .. py:attribute:: transitions
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.transitions
+      :type: dict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.transitions
+
+   .. py:method:: init_model(**kwargs: typing.Any)
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model
+
+   .. py:method:: init_model_task_time(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_task_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_task_time
+
+   .. py:method:: init_model_task(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_task
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_task
+
+   .. py:method:: init_model_task_upd(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_task_upd
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_task_upd
+
+   .. py:method:: init_model_multimode(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_multimode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_multimode
+
+   .. py:method:: init_model_multimode_calendar(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_multimode_calendar
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_multimode_calendar
+
+   .. py:method:: init_model_task_time_calendar(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_task_time_calendar
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.init_model_task_time_calendar
+
+   .. py:method:: retrieve_solution(sol: discrete_optimization.generic_tools.dyn_prog_tools.dp.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.retrieve_solution
+
+   .. py:method:: retrieve_solution_task_time(sol: discrete_optimization.generic_tools.dyn_prog_tools.dp.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.retrieve_solution_task_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.retrieve_solution_task_time
+
+   .. py:method:: retrieve_solution_task(sol: discrete_optimization.generic_tools.dyn_prog_tools.dp.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.retrieve_solution_task
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.retrieve_solution_task
+
+   .. py:method:: retrieve_solution_multimode(sol: discrete_optimization.generic_tools.dyn_prog_tools.dp.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.retrieve_solution_multimode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.retrieve_solution_multimode
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.rcpsp.problem.RcpspSolution) -> None
+      :canonical: discrete_optimization.rcpsp.solvers.dp.DpRcpspSolver.set_warm_start

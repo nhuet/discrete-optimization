@@ -1,0 +1,33 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.postpro_ls`
+=================================================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.postpro_ls
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.postpro_ls
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`LocalSearchPostProcessSolution <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.postpro_ls.LocalSearchPostProcessSolution>`
+     -
+
+API
+~~~
+
+.. py:class:: LocalSearchPostProcessSolution(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.postpro_ls.LocalSearchPostProcessSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.PostProcessSolution`
+
+   .. py:method:: build_other_solution(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.postpro_ls.LocalSearchPostProcessSolution.build_other_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.postpro_ls.LocalSearchPostProcessSolution.build_other_solution

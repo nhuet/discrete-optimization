@@ -1,0 +1,26 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools`
+===================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.generic_rcpsp_tools.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_rcpsp_tools.graph_tools
+   discrete_optimization.generic_rcpsp_tools.typing

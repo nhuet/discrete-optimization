@@ -1,0 +1,110 @@
+:py:mod:`discrete_optimization.singlemachine.problem`
+=====================================================
+
+.. py:module:: discrete_optimization.singlemachine.problem
+
+.. autodoc2-docstring:: discrete_optimization.singlemachine.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`WTSolution <discrete_optimization.singlemachine.problem.WTSolution>`
+     -
+   * - :py:obj:`WeightedTardinessProblem <discrete_optimization.singlemachine.problem.WeightedTardinessProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.problem.WeightedTardinessProblem
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Task <discrete_optimization.singlemachine.problem.Task>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.problem.Task
+          :summary:
+
+API
+~~~
+
+.. py:data:: Task
+   :canonical: discrete_optimization.singlemachine.problem.Task
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.problem.Task
+
+.. py:class:: WTSolution(problem: discrete_optimization.singlemachine.problem.WeightedTardinessProblem, schedule: list[tuple[int, int]] = None, permutation: list[int] = None)
+   :canonical: discrete_optimization.singlemachine.problem.WTSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution`\ [\ :py:obj:`discrete_optimization.singlemachine.problem.Task`\ ]
+
+   .. py:method:: lazy_copy() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.singlemachine.problem.WTSolution.lazy_copy
+
+   .. py:method:: copy() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.singlemachine.problem.WTSolution.copy
+
+   .. py:method:: get_end_time(task: discrete_optimization.singlemachine.problem.Task) -> int
+      :canonical: discrete_optimization.singlemachine.problem.WTSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.problem.WTSolution.get_end_time
+
+   .. py:method:: get_start_time(task: discrete_optimization.singlemachine.problem.Task) -> int
+      :canonical: discrete_optimization.singlemachine.problem.WTSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.problem.WTSolution.get_start_time
+
+.. py:class:: WeightedTardinessProblem(num_jobs: int, processing_times: typing.List[int], weights: typing.List[int], due_dates: typing.List[int], release_dates: typing.Optional[typing.List[int]] = None)
+   :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem`\ [\ :py:obj:`discrete_optimization.singlemachine.problem.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.problem.WeightedTardinessProblem
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.__init__
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.tasks_list
+      :type: list[discrete_optimization.singlemachine.problem.Task]
+
+   .. py:method:: __repr__()
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.__repr__
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.get_makespan_upper_bound
+
+   .. py:method:: evaluate(variable: discrete_optimization.singlemachine.problem.WTSolution) -> dict[str, float]
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.evaluate
+
+   .. py:method:: evaluate_from_encoding(permutation: list[int], encoding_name)
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.evaluate_from_encoding
+
+   .. py:method:: satisfy(variable: discrete_optimization.singlemachine.problem.WTSolution) -> bool
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.get_solution_type
+
+   .. py:method:: get_dummy_solution()
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.get_dummy_solution
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.singlemachine.problem.WeightedTardinessProblem.get_objective_register

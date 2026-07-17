@@ -1,0 +1,325 @@
+:py:mod:`discrete_optimization.workforce.allocation.solvers.cpsat`
+==================================================================
+
+.. py:module:: discrete_optimization.workforce.allocation.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ModelisationAllocationOrtools <discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationAllocationOrtools>`
+     -
+   * - :py:obj:`ModelisationDispersionOrtools <discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationDispersionOrtools>`
+     -
+   * - :py:obj:`CpsatTeamAllocationSolver <discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`adding_same_allocation_constraint_binary <discrete_optimization.workforce.allocation.solvers.cpsat.adding_same_allocation_constraint_binary>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_same_allocation_constraint_binary
+          :summary:
+   * - :py:obj:`adding_same_allocation_constraint_integer <discrete_optimization.workforce.allocation.solvers.cpsat.adding_same_allocation_constraint_integer>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_same_allocation_constraint_integer
+          :summary:
+   * - :py:obj:`adding_all_diff_allocation_binary <discrete_optimization.workforce.allocation.solvers.cpsat.adding_all_diff_allocation_binary>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_all_diff_allocation_binary
+          :summary:
+   * - :py:obj:`adding_all_diff_allocation_integer <discrete_optimization.workforce.allocation.solvers.cpsat.adding_all_diff_allocation_integer>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_all_diff_allocation_integer
+          :summary:
+   * - :py:obj:`adding_forced_allocation_binary <discrete_optimization.workforce.allocation.solvers.cpsat.adding_forced_allocation_binary>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forced_allocation_binary
+          :summary:
+   * - :py:obj:`adding_forced_allocation_integer <discrete_optimization.workforce.allocation.solvers.cpsat.adding_forced_allocation_integer>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forced_allocation_integer
+          :summary:
+   * - :py:obj:`adding_forbidden_allocation_binary <discrete_optimization.workforce.allocation.solvers.cpsat.adding_forbidden_allocation_binary>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forbidden_allocation_binary
+          :summary:
+   * - :py:obj:`adding_forbidden_allocation_integer <discrete_optimization.workforce.allocation.solvers.cpsat.adding_forbidden_allocation_integer>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forbidden_allocation_integer
+          :summary:
+   * - :py:obj:`adding_allowed_allocation_binary <discrete_optimization.workforce.allocation.solvers.cpsat.adding_allowed_allocation_binary>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_allowed_allocation_binary
+          :summary:
+   * - :py:obj:`adding_allowed_allocation_integer <discrete_optimization.workforce.allocation.solvers.cpsat.adding_allowed_allocation_integer>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_allowed_allocation_integer
+          :summary:
+   * - :py:obj:`adding_disjunction_binary <discrete_optimization.workforce.allocation.solvers.cpsat.adding_disjunction_binary>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_disjunction_binary
+          :summary:
+   * - :py:obj:`adding_disjunction_integer <discrete_optimization.workforce.allocation.solvers.cpsat.adding_disjunction_integer>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_disjunction_integer
+          :summary:
+   * - :py:obj:`adding_max_nb_teams <discrete_optimization.workforce.allocation.solvers.cpsat.adding_max_nb_teams>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_max_nb_teams
+          :summary:
+   * - :py:obj:`adding_precedence_channeling_constraint <discrete_optimization.workforce.allocation.solvers.cpsat.adding_precedence_channeling_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_precedence_channeling_constraint
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.allocation.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:class:: ModelisationAllocationOrtools
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationAllocationOrtools
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: INTEGER
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationAllocationOrtools.INTEGER
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationAllocationOrtools.INTEGER
+
+   .. py:attribute:: BINARY
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationAllocationOrtools.BINARY
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationAllocationOrtools.BINARY
+
+   .. py:attribute:: BINARY_OPTIONAL_ACTIVITIES
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationAllocationOrtools.BINARY_OPTIONAL_ACTIVITIES
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationAllocationOrtools.BINARY_OPTIONAL_ACTIVITIES
+
+.. py:class:: ModelisationDispersionOrtools
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationDispersionOrtools
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: EXACT_NAIVE
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationDispersionOrtools.EXACT_NAIVE
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationDispersionOrtools.EXACT_NAIVE
+
+   .. py:attribute:: EPSILON_TO_AVG_V0
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationDispersionOrtools.EPSILON_TO_AVG_V0
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationDispersionOrtools.EPSILON_TO_AVG_V0
+
+   .. py:attribute:: EPSILON_TO_AVG_V1
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationDispersionOrtools.EPSILON_TO_AVG_V1
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationDispersionOrtools.EPSILON_TO_AVG_V1
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.logger
+
+.. py:class:: CpsatTeamAllocationSolver(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver`\ [\ :py:obj:`discrete_optimization.workforce.allocation.problem.Task`\ , :py:obj:`discrete_optimization.workforce.allocation.problem.UnaryResource`\ ], :py:obj:`discrete_optimization.workforce.allocation.solvers.TeamAllocationSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.problem
+      :type: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.hyperparameters
+
+   .. py:attribute:: at_most_one_unary_resource_per_task
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.at_most_one_unary_resource_per_task
+      :value: True
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.at_most_one_unary_resource_per_task
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> None
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.set_warm_start
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.retrieve_solution
+
+   .. py:method:: get_binary_allocation_variable(task: discrete_optimization.workforce.allocation.problem.Task, unary_resource: discrete_optimization.workforce.allocation.problem.UnaryResource) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.get_binary_allocation_variable
+
+   .. py:method:: get_integer_allocation_variable(task: discrete_optimization.workforce.allocation.problem.Task) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.get_integer_allocation_variable
+
+   .. py:method:: init_model(modelisation_allocation: discrete_optimization.workforce.allocation.solvers.cpsat.ModelisationAllocationOrtools = ModelisationAllocationOrtools.BINARY, **args)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.init_model
+
+   .. py:method:: init_model_integer(**kwargs)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.init_model_integer
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.init_model_integer
+
+   .. py:method:: init_model_binary(**kwargs)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.init_model_binary
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.init_model_binary
+
+   .. py:method:: create_is_allocated_variables() -> list[ortools.sat.python.cp_model.IntVar]
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.create_is_allocated_variables
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.create_is_allocated_variables
+
+   .. py:method:: create_used_variables_list() -> list[ortools.sat.python.cp_model.IntVar]
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.create_used_variables_list
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.create_used_variables_list
+
+   .. py:method:: additional_constraint(additional_constraint: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.additional_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.additional_constraint
+
+   .. py:method:: create_delta_to_base_solution_binary(base_solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, base_problem: typing.Optional[discrete_optimization.workforce.allocation.problem.TeamAllocationProblem] = None)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.create_delta_to_base_solution_binary
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.create_delta_to_base_solution_binary
+
+   .. py:method:: create_delta_to_base_solution_integer(base_solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, base_problem: typing.Optional[discrete_optimization.workforce.allocation.problem.TeamAllocationProblem] = None)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.create_delta_to_base_solution_integer
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.create_delta_to_base_solution_integer
+
+   .. py:method:: add_multiobj(key_objective: str, allocation_binary: list[dict[int, cpmpy.expressions.variables.NDVarArray]], used: cpmpy.expressions.variables.NDVarArray, modelisation_dispersion: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion, **kwargs)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.add_multiobj
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.add_multiobj
+
+   .. py:method:: implements_lexico_api() -> bool
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.implements_lexico_api
+      :staticmethod:
+
+   .. py:method:: add_lexico_constraint(obj: str, value: float) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.add_lexico_constraint
+
+   .. py:method:: set_lexico_objective(obj: str) -> None
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.set_lexico_objective
+
+   .. py:method:: set_model_obj_aggregated(objs_weights: list[tuple[str, float]])
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.set_model_obj_aggregated
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.set_model_obj_aggregated
+
+   .. py:method:: get_lexico_objectives_available() -> list[str]
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.get_lexico_objectives_available
+
+   .. py:method:: get_lexico_objective_value(obj: str, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> float
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.get_lexico_objective_value
+
+   .. py:method:: solve_n_best_solution(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, n_best_solution: int = 100, time_limit: typing.Optional[float] = 100.0, **kwargs)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.solve_n_best_solution
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.solve_n_best_solution
+
+   .. py:method:: compute_task_relaxation_alternatives(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: typing.Optional[float] = 100.0, time_limit_per_iteration: typing.Optional[float] = 10.0, **kwargs)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.compute_task_relaxation_alternatives
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.compute_task_relaxation_alternatives
+
+   .. py:method:: compute_sufficient_assumptions(parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: typing.Optional[float] = 100.0, **kwargs)
+      :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.compute_sufficient_assumptions
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.CpsatTeamAllocationSolver.compute_sufficient_assumptions
+
+.. py:function:: adding_same_allocation_constraint_binary(same_allocation: list[set[collections.abc.Hashable]], model: ortools.sat.python.cp_model.CpModel, variables: list[dict[int, ortools.sat.python.cp_model.IntVar]], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_same_allocation_constraint_binary
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_same_allocation_constraint_binary
+
+.. py:function:: adding_same_allocation_constraint_integer(same_allocation: list[set[collections.abc.Hashable]], model: ortools.sat.python.cp_model.CpModel, variables: list[ortools.sat.python.cp_model.IntVar], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_same_allocation_constraint_integer
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_same_allocation_constraint_integer
+
+.. py:function:: adding_all_diff_allocation_binary(all_diff_allocation: list[set[collections.abc.Hashable]], model: ortools.sat.python.cp_model.CpModel, variables: list[dict[int, ortools.sat.python.cp_model.IntVar]], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_all_diff_allocation_binary
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_all_diff_allocation_binary
+
+.. py:function:: adding_all_diff_allocation_integer(all_diff_allocation: list[set[collections.abc.Hashable]], model: ortools.sat.python.cp_model.CpModel, variables: list[ortools.sat.python.cp_model.IntVar], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_all_diff_allocation_integer
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_all_diff_allocation_integer
+
+.. py:function:: adding_forced_allocation_binary(forced_allocation: dict[collections.abc.Hashable, collections.abc.Hashable], model: ortools.sat.python.cp_model.CpModel, variables: list[dict[int, ortools.sat.python.cp_model.IntVar]], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forced_allocation_binary
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forced_allocation_binary
+
+.. py:function:: adding_forced_allocation_integer(forced_allocation: dict[collections.abc.Hashable, collections.abc.Hashable], model: ortools.sat.python.cp_model.CpModel, variables: list[dict[int, ortools.sat.python.cp_model.IntVar]], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forced_allocation_integer
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forced_allocation_integer
+
+.. py:function:: adding_forbidden_allocation_binary(forbidden_allocation: dict[collections.abc.Hashable, set[collections.abc.Hashable]], model: ortools.sat.python.cp_model.CpModel, variables: list[dict[int, ortools.sat.python.cp_model.IntVar]], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forbidden_allocation_binary
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forbidden_allocation_binary
+
+.. py:function:: adding_forbidden_allocation_integer(forbidden_allocation: dict[collections.abc.Hashable, set[collections.abc.Hashable]], model: ortools.sat.python.cp_model.CpModel, variables: list[ortools.sat.python.cp_model.IntVar], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forbidden_allocation_integer
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_forbidden_allocation_integer
+
+.. py:function:: adding_allowed_allocation_binary(allowed_allocation: dict[collections.abc.Hashable, set[collections.abc.Hashable]], model: ortools.sat.python.cp_model.CpModel, variables: list[dict[int, ortools.sat.python.cp_model.IntVar]], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_allowed_allocation_binary
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_allowed_allocation_binary
+
+.. py:function:: adding_allowed_allocation_integer(allowed_allocation: dict[collections.abc.Hashable, set[collections.abc.Hashable]], model: ortools.sat.python.cp_model.CpModel, variables: list[ortools.sat.python.cp_model.IntVar], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_allowed_allocation_integer
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_allowed_allocation_integer
+
+.. py:function:: adding_disjunction_binary(disjunction: list[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]], model: ortools.sat.python.cp_model.CpModel, variables: list[dict[int, ortools.sat.python.cp_model.IntVar]], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_disjunction_binary
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_disjunction_binary
+
+.. py:function:: adding_disjunction_integer(disjunction: list[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]], model: ortools.sat.python.cp_model.CpModel, variables: list[ortools.sat.python.cp_model.IntVar], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_disjunction_integer
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_disjunction_integer
+
+.. py:function:: adding_max_nb_teams(max_nb_teams: typing.Optional[int], model: ortools.sat.python.cp_model.CpModel, variables: list[ortools.sat.python.cp_model.IntVar], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_max_nb_teams
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_max_nb_teams
+
+.. py:function:: adding_precedence_channeling_constraint(precedences: dict[collections.abc.Hashable, set[collections.abc.Hashable]], model: ortools.sat.python.cp_model.CpModel, variables: list[ortools.sat.python.cp_model.IntVar], problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem)
+   :canonical: discrete_optimization.workforce.allocation.solvers.cpsat.adding_precedence_channeling_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.cpsat.adding_precedence_channeling_constraint

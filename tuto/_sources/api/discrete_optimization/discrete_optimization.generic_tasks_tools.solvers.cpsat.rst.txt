@@ -1,0 +1,381 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.solvers.cpsat`
+=================================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`SchedulingCpSatSolver <discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver
+          :summary:
+   * - :py:obj:`MultimodeCpSatSolver <discrete_optimization.generic_tasks_tools.solvers.cpsat.MultimodeCpSatSolver>`
+     -
+   * - :py:obj:`AllocationCpSatSolver <discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver
+          :summary:
+   * - :py:obj:`AllocationIntegerModellingCpSatSolver <discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver
+          :summary:
+   * - :py:obj:`AllocationModelling <discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationModelling>`
+     -
+   * - :py:obj:`AllocationBinaryOrIntegerModellingCpSatSolver <discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`is_a_trivial_zero <discrete_optimization.generic_tasks_tools.solvers.cpsat.is_a_trivial_zero>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.is_a_trivial_zero
+          :summary:
+
+API
+~~~
+
+.. py:class:: SchedulingCpSatSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver`, :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingCpSolver`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.__init__
+
+   .. py:attribute:: _makespan
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver._makespan
+      :type: typing.Optional[ortools.sat.python.cp_model.IntVar]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver._makespan
+
+   .. py:attribute:: _subtasks_makespan
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver._subtasks_makespan
+      :type: typing.Optional[ortools.sat.python.cp_model.IntVar]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver._subtasks_makespan
+
+   .. py:attribute:: constraints_on_makespan
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.constraints_on_makespan
+      :type: typing.Optional[list[typing.Any]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.constraints_on_makespan
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.init_model
+
+   .. py:method:: get_task_start_or_end_variable(task: discrete_optimization.generic_tasks_tools.scheduling.Task, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.get_task_start_or_end_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.get_task_start_or_end_variable
+
+   .. py:method:: add_constraint_on_task(task: discrete_optimization.generic_tasks_tools.scheduling.Task, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, time: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.add_constraint_on_task
+
+   .. py:method:: add_constraint_chaining_tasks(task1: discrete_optimization.generic_tasks_tools.scheduling.Task, task2: discrete_optimization.generic_tasks_tools.scheduling.Task) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.add_constraint_chaining_tasks
+
+   .. py:method:: _get_makespan_var() -> ortools.sat.python.cp_model.IntVar
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver._get_makespan_var
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver._get_makespan_var
+
+   .. py:method:: _get_subtasks_makespan_var() -> ortools.sat.python.cp_model.IntVar
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver._get_subtasks_makespan_var
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver._get_subtasks_makespan_var
+
+   .. py:method:: remove_constraints_on_objective() -> None
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.remove_constraints_on_objective
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.remove_constraints_on_objective
+
+   .. py:method:: get_global_makespan_variable() -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.get_global_makespan_variable
+
+   .. py:method:: get_subtasks_makespan_variable(subtasks: typing.Iterable[discrete_optimization.generic_tasks_tools.scheduling.Task]) -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.get_subtasks_makespan_variable
+
+   .. py:method:: get_subtasks_sum_end_time_variable(subtasks: typing.Iterable[discrete_optimization.generic_tasks_tools.scheduling.Task]) -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.get_subtasks_sum_end_time_variable
+
+   .. py:method:: get_subtasks_sum_start_time_variable(subtasks: typing.Iterable[discrete_optimization.generic_tasks_tools.scheduling.Task]) -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver.get_subtasks_sum_start_time_variable
+
+.. py:class:: MultimodeCpSatSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.MultimodeCpSatSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver`, :py:obj:`discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.Task`\ ]
+
+   .. py:method:: get_task_mode_is_present_variable(task: discrete_optimization.generic_tasks_tools.scheduling.Task, mode: int) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.MultimodeCpSatSolver.get_task_mode_is_present_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.MultimodeCpSatSolver.get_task_mode_is_present_variable
+
+   .. py:method:: add_constraint_on_task_mode(task: discrete_optimization.generic_tasks_tools.scheduling.Task, mode: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.MultimodeCpSatSolver.add_constraint_on_task_mode
+
+.. py:class:: AllocationCpSatSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.ortools_cpsat_tools.OrtoolsCpSatSolver`, :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.Task`\ , :py:obj:`discrete_optimization.generic_tasks_tools.allocation.UnaryResource`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.__init__
+
+   .. py:attribute:: allocation_changes_variables_created
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.allocation_changes_variables_created
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.allocation_changes_variables_created
+
+   .. py:attribute:: allocation_changes_variables
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.allocation_changes_variables
+      :type: dict[tuple[discrete_optimization.generic_tasks_tools.scheduling.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource], ortools.sat.python.cp_model.IntVar]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.allocation_changes_variables
+
+   .. py:attribute:: used_variables_created
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.used_variables_created
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.used_variables_created
+
+   .. py:attribute:: used_variables
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.used_variables
+      :type: dict[discrete_optimization.generic_tasks_tools.allocation.UnaryResource, ortools.sat.python.cp_model.IntVar]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.used_variables
+
+   .. py:attribute:: done_variables_created
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.done_variables_created
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.done_variables_created
+
+   .. py:attribute:: done_variables
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.done_variables
+      :type: dict[discrete_optimization.generic_tasks_tools.scheduling.Task, ortools.sat.python.cp_model.IntVar]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.done_variables
+
+   .. py:attribute:: at_most_one_unary_resource_per_task
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.at_most_one_unary_resource_per_task
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.at_most_one_unary_resource_per_task
+
+   .. py:property:: subset_tasks_of_interest
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.subset_tasks_of_interest
+      :type: typing.Iterable[discrete_optimization.generic_tasks_tools.scheduling.Task]
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.subset_tasks_of_interest
+
+   .. py:property:: subset_unaryresources_allowed
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.subset_unaryresources_allowed
+      :type: typing.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.subset_unaryresources_allowed
+
+   .. py:method:: get_default_tasks_n_unary_resources(tasks: typing.Optional[typing.Iterable[discrete_optimization.generic_tasks_tools.scheduling.Task]] = None, unary_resources: typing.Optional[typing.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]] = None) -> tuple[typing.Iterable[discrete_optimization.generic_tasks_tools.scheduling.Task], typing.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.get_default_tasks_n_unary_resources
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.get_default_tasks_n_unary_resources
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.init_model
+
+   .. py:method:: get_task_unary_resource_is_present_variable(task: discrete_optimization.generic_tasks_tools.scheduling.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.get_task_unary_resource_is_present_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.get_task_unary_resource_is_present_variable
+
+   .. py:method:: add_constraint_on_task_unary_resource_allocation(task: discrete_optimization.generic_tasks_tools.scheduling.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource, used: bool) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_constraint_on_task_unary_resource_allocation
+
+   .. py:method:: add_constraint_on_nb_allocation_changes(ref: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution[discrete_optimization.generic_tasks_tools.scheduling.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource], nb_changes: int, sign: discrete_optimization.generic_tools.cp_tools.SignEnum = SignEnum.LEQ) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_constraint_on_nb_allocation_changes
+
+   .. py:method:: add_allocation_changes_constraints(ref: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution[discrete_optimization.generic_tasks_tools.scheduling.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource]) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_allocation_changes_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_allocation_changes_constraints
+
+   .. py:method:: create_allocation_changes_variables()
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.create_allocation_changes_variables
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.create_allocation_changes_variables
+
+   .. py:method:: add_constraint_nb_unary_resource_usages(sign: discrete_optimization.generic_tools.cp_tools.SignEnum, target: int, tasks: typing.Optional[typing.Iterable[discrete_optimization.generic_tasks_tools.scheduling.Task]] = None, unary_resources: typing.Optional[typing.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]] = None) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_constraint_nb_unary_resource_usages
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_constraint_nb_unary_resource_usages
+
+   .. py:method:: add_constraint_on_total_nb_usages(sign: discrete_optimization.generic_tools.cp_tools.SignEnum, target: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_constraint_on_total_nb_usages
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_constraint_on_total_nb_usages
+
+   .. py:method:: add_constraint_on_unary_resource_nb_usages(unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, target: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_constraint_on_unary_resource_nb_usages
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.add_constraint_on_unary_resource_nb_usages
+
+   .. py:method:: create_used_variables()
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.create_used_variables
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.create_used_variables
+
+   .. py:method:: create_done_variables()
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.create_done_variables
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.create_done_variables
+
+   .. py:method:: get_nb_tasks_done_variable() -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.get_nb_tasks_done_variable
+
+   .. py:method:: get_nb_unary_resources_used_variable() -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver.get_nb_unary_resources_used_variable
+
+.. py:class:: AllocationIntegerModellingCpSatSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.Task`\ , :py:obj:`discrete_optimization.generic_tasks_tools.allocation.UnaryResource`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.__init__
+
+   .. py:attribute:: is_present_variables_created
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.is_present_variables_created
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.is_present_variables_created
+
+   .. py:attribute:: is_present_variables
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.is_present_variables
+      :type: dict[tuple[discrete_optimization.generic_tasks_tools.scheduling.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource], ortools.sat.python.cp_model.IntVar]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.is_present_variables
+
+   .. py:method:: get_task_allocation_variable(task: discrete_optimization.generic_tasks_tools.scheduling.Task) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.get_task_allocation_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.get_task_allocation_variable
+
+   .. py:method:: create_is_present_variables() -> None
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.create_is_present_variables
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.create_is_present_variables
+
+   .. py:method:: get_task_unary_resource_is_present_variable(task: discrete_optimization.generic_tasks_tools.scheduling.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.get_task_unary_resource_is_present_variable
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.get_task_unary_resource_is_present_variable
+
+   .. py:method:: add_constraint_on_task_unary_resource_allocation(task: discrete_optimization.generic_tasks_tools.scheduling.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource, used: bool) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.add_constraint_on_task_unary_resource_allocation
+
+   .. py:method:: add_allocation_changes_constraints(ref: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution[discrete_optimization.generic_tasks_tools.scheduling.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource]) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.add_allocation_changes_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver.add_allocation_changes_constraints
+
+.. py:class:: AllocationModelling
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationModelling
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: BINARY
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationModelling.BINARY
+      :value: 'binary'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationModelling.BINARY
+
+   .. py:attribute:: INTEGER
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationModelling.INTEGER
+      :value: 'integer'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationModelling.INTEGER
+
+.. py:class:: AllocationBinaryOrIntegerModellingCpSatSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationIntegerModellingCpSatSolver`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.Task`\ , :py:obj:`discrete_optimization.generic_tasks_tools.allocation.UnaryResource`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.__init__
+
+   .. py:attribute:: allocation_modelling
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.allocation_modelling
+      :type: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationModelling
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.allocation_modelling
+
+   .. py:method:: get_binary_allocation_variable(task: discrete_optimization.generic_tasks_tools.scheduling.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.get_binary_allocation_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.get_binary_allocation_variable
+
+   .. py:method:: get_integer_allocation_variable(task: discrete_optimization.generic_tasks_tools.scheduling.Task) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.get_integer_allocation_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.get_integer_allocation_variable
+
+   .. py:method:: get_task_allocation_variable(task: discrete_optimization.generic_tasks_tools.scheduling.Task) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.get_task_allocation_variable
+
+   .. py:method:: get_task_unary_resource_is_present_variable(task: discrete_optimization.generic_tasks_tools.scheduling.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.get_task_unary_resource_is_present_variable
+
+   .. py:method:: add_constraint_on_task_unary_resource_allocation(task: discrete_optimization.generic_tasks_tools.scheduling.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource, used: bool) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.add_constraint_on_task_unary_resource_allocation
+
+   .. py:method:: add_allocation_changes_constraints(ref: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution[discrete_optimization.generic_tasks_tools.scheduling.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource]) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationBinaryOrIntegerModellingCpSatSolver.add_allocation_changes_constraints
+
+.. py:function:: is_a_trivial_zero(var: ortools.sat.python.cp_model.LinearExprT) -> bool
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.cpsat.is_a_trivial_zero
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.cpsat.is_a_trivial_zero

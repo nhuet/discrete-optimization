@@ -1,0 +1,19 @@
+:py:mod:`discrete_optimization.fjsp.solvers`
+============================================
+
+.. py:module:: discrete_optimization.fjsp.solvers
+
+.. autodoc2-docstring:: discrete_optimization.fjsp.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.fjsp.solvers.optal
+   discrete_optimization.fjsp.solvers.cpsat
+   discrete_optimization.fjsp.solvers.dp
+   discrete_optimization.fjsp.solvers.lns_cpsat

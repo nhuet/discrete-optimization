@@ -1,0 +1,29 @@
+:py:mod:`discrete_optimization.tsp.plot`
+========================================
+
+.. py:module:: discrete_optimization.tsp.plot
+
+.. autodoc2-docstring:: discrete_optimization.tsp.plot
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`plot_tsp_solution <discrete_optimization.tsp.plot.plot_tsp_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.plot.plot_tsp_solution
+          :summary:
+
+API
+~~~
+
+.. py:function:: plot_tsp_solution(tsp_model: discrete_optimization.tsp.problem.Point2DTspProblem, solution: discrete_optimization.tsp.problem.TspSolution, ax: typing.Any = None) -> None
+   :canonical: discrete_optimization.tsp.plot.plot_tsp_solution
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.plot.plot_tsp_solution

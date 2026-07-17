@@ -1,0 +1,90 @@
+:py:mod:`discrete_optimization.vrp.solvers_map`
+===============================================
+
+.. py:module:: discrete_optimization.vrp.solvers_map
+
+.. autodoc2-docstring:: discrete_optimization.vrp.solvers_map
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`look_for_solver <discrete_optimization.vrp.solvers_map.look_for_solver>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.look_for_solver
+          :summary:
+   * - :py:obj:`look_for_solver_class <discrete_optimization.vrp.solvers_map.look_for_solver_class>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.look_for_solver_class
+          :summary:
+   * - :py:obj:`solve <discrete_optimization.vrp.solvers_map.solve>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.solve
+          :summary:
+   * - :py:obj:`return_solver <discrete_optimization.vrp.solvers_map.return_solver>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.return_solver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`solvers <discrete_optimization.vrp.solvers_map.solvers>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.solvers
+          :summary:
+   * - :py:obj:`solvers_map <discrete_optimization.vrp.solvers_map.solvers_map>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.solvers_map
+          :summary:
+   * - :py:obj:`solvers_compatibility <discrete_optimization.vrp.solvers_map.solvers_compatibility>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.solvers_compatibility
+          :summary:
+
+API
+~~~
+
+.. py:data:: solvers
+   :canonical: discrete_optimization.vrp.solvers_map.solvers
+   :type: dict[str, list[tuple[type[discrete_optimization.vrp.solvers.VrpSolver], dict[str, typing.Any]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.solvers
+
+.. py:data:: solvers_map
+   :canonical: discrete_optimization.vrp.solvers_map.solvers_map
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.solvers_map
+
+.. py:data:: solvers_compatibility
+   :canonical: discrete_optimization.vrp.solvers_map.solvers_compatibility
+   :type: dict[type[discrete_optimization.vrp.solvers.VrpSolver], list[type[discrete_optimization.vrp.problem.VrpProblem]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.solvers_compatibility
+
+.. py:function:: look_for_solver(domain: discrete_optimization.vrp.problem.VrpProblem) -> list[type[discrete_optimization.vrp.solvers.VrpSolver]]
+   :canonical: discrete_optimization.vrp.solvers_map.look_for_solver
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.look_for_solver
+
+.. py:function:: look_for_solver_class(class_domain: type[discrete_optimization.vrp.problem.VrpProblem]) -> list[type[discrete_optimization.vrp.solvers.VrpSolver]]
+   :canonical: discrete_optimization.vrp.solvers_map.look_for_solver_class
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.look_for_solver_class
+
+.. py:function:: solve(method: type[discrete_optimization.vrp.solvers.VrpSolver], problem: discrete_optimization.vrp.problem.VrpProblem, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+   :canonical: discrete_optimization.vrp.solvers_map.solve
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.solve
+
+.. py:function:: return_solver(method: type[discrete_optimization.vrp.solvers.VrpSolver], problem: discrete_optimization.vrp.problem.VrpProblem, **kwargs: typing.Any) -> discrete_optimization.vrp.solvers.VrpSolver
+   :canonical: discrete_optimization.vrp.solvers_map.return_solver
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers_map.return_solver

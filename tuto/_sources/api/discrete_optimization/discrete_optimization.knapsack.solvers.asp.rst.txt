@@ -1,0 +1,72 @@
+:py:mod:`discrete_optimization.knapsack.solvers.asp`
+====================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.asp
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.asp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`AspKnapsackSolver <discrete_optimization.knapsack.solvers.asp.AspKnapsackSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.asp.AspKnapsackSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`cur_folder <discrete_optimization.knapsack.solvers.asp.cur_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.asp.cur_folder
+          :summary:
+   * - :py:obj:`logger <discrete_optimization.knapsack.solvers.asp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.asp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: cur_folder
+   :canonical: discrete_optimization.knapsack.solvers.asp.cur_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.asp.cur_folder
+
+.. py:data:: logger
+   :canonical: discrete_optimization.knapsack.solvers.asp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.asp.logger
+
+.. py:class:: AspKnapsackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.asp.AspKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.asp_tools.AspClingoSolver`, :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.asp.AspKnapsackSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.asp.AspKnapsackSolver.__init__
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.knapsack.solvers.asp.AspKnapsackSolver.init_model
+
+   .. py:method:: build_string_data_input()
+      :canonical: discrete_optimization.knapsack.solvers.asp.AspKnapsackSolver.build_string_data_input
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.asp.AspKnapsackSolver.build_string_data_input
+
+   .. py:method:: retrieve_solution(model: clingo.Model) -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.solvers.asp.AspKnapsackSolver.retrieve_solution

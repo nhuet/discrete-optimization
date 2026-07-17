@@ -1,0 +1,79 @@
+:py:mod:`discrete_optimization.fjsp.solvers.optal`
+==================================================
+
+.. py:module:: discrete_optimization.fjsp.solvers.optal
+
+.. autodoc2-docstring:: discrete_optimization.fjsp.solvers.optal
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OptalFJspSolver <discrete_optimization.fjsp.solvers.optal.OptalFJspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`deparse_file <discrete_optimization.fjsp.solvers.optal.deparse_file>`
+     - .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.optal.deparse_file
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`script <discrete_optimization.fjsp.solvers.optal.script>`
+     - .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.optal.script
+          :summary:
+
+API
+~~~
+
+.. py:data:: script
+   :canonical: discrete_optimization.fjsp.solvers.optal.script
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.optal.script
+
+.. py:function:: deparse_file(problem: discrete_optimization.fjsp.problem.FJobShopProblem, original_header_float: float = 0.0) -> str
+   :canonical: discrete_optimization.fjsp.solvers.optal.deparse_file
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.optal.deparse_file
+
+.. py:class:: OptalFJspSolver(problem: discrete_optimization.fjsp.problem.FJobShopProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.fjsp.solvers.optal.OptalFJspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.fjsp.solvers.optal.OptalFJspSolver.problem
+      :type: discrete_optimization.fjsp.problem.FJobShopProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.optal.OptalFJspSolver.problem
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.fjsp.solvers.optal.OptalFJspSolver.init_model
+
+   .. py:method:: build_command(parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: int = 10, **args: typing.Any)
+      :canonical: discrete_optimization.fjsp.solvers.optal.OptalFJspSolver.build_command
+
+   .. py:method:: retrieve_current_solution(dict_results: dict) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.fjsp.solvers.optal.OptalFJspSolver.retrieve_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.optal.OptalFJspSolver.retrieve_current_solution

@@ -1,0 +1,208 @@
+:py:mod:`discrete_optimization.tsp.mutation`
+============================================
+
+.. py:module:: discrete_optimization.tsp.mutation
+
+.. autodoc2-docstring:: discrete_optimization.tsp.mutation
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Mutation2Opt <discrete_optimization.tsp.mutation.Mutation2Opt>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt
+          :summary:
+   * - :py:obj:`Mutation2OptIntersection <discrete_optimization.tsp.mutation.Mutation2OptIntersection>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2OptIntersection
+          :summary:
+   * - :py:obj:`SwapTspMove <discrete_optimization.tsp.mutation.SwapTspMove>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.mutation.SwapTspMove
+          :summary:
+   * - :py:obj:`MutationSwapTsp <discrete_optimization.tsp.mutation.MutationSwapTsp>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.mutation.MutationSwapTsp
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ccw <discrete_optimization.tsp.mutation.ccw>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.mutation.ccw
+          :summary:
+   * - :py:obj:`intersect <discrete_optimization.tsp.mutation.intersect>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.mutation.intersect
+          :summary:
+   * - :py:obj:`find_intersection <discrete_optimization.tsp.mutation.find_intersection>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.mutation.find_intersection
+          :summary:
+   * - :py:obj:`get_points_index <discrete_optimization.tsp.mutation.get_points_index>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.mutation.get_points_index
+          :summary:
+
+API
+~~~
+
+.. py:function:: ccw(A: discrete_optimization.tsp.problem.Point2D, B: discrete_optimization.tsp.problem.Point2D, C: discrete_optimization.tsp.problem.Point2D) -> bool
+   :canonical: discrete_optimization.tsp.mutation.ccw
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.ccw
+
+.. py:function:: intersect(A: discrete_optimization.tsp.problem.Point2D, B: discrete_optimization.tsp.problem.Point2D, C: discrete_optimization.tsp.problem.Point2D, D: discrete_optimization.tsp.problem.Point2D) -> bool
+   :canonical: discrete_optimization.tsp.mutation.intersect
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.intersect
+
+.. py:function:: find_intersection(variable: discrete_optimization.tsp.problem.TspSolution, points: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D], test_all: bool = False, nb_tests: int = 10) -> list[tuple[int, int]]
+   :canonical: discrete_optimization.tsp.mutation.find_intersection
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.find_intersection
+
+.. py:function:: get_points_index(it: int, jt: int, variable: discrete_optimization.tsp.problem.TspSolution, length_permutation: int) -> tuple[int, int, int, int]
+   :canonical: discrete_optimization.tsp.mutation.get_points_index
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.get_points_index
+
+.. py:class:: Mutation2Opt(tsp_model: discrete_optimization.tsp.problem.Point2DTspProblem, test_all: bool = False, nb_test: typing.Optional[int] = None, return_only_improvement: bool = False, **kwargs: typing.Any)
+   :canonical: discrete_optimization.tsp.mutation.Mutation2Opt
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt.__init__
+
+   .. py:attribute:: node_count
+      :canonical: discrete_optimization.tsp.mutation.Mutation2Opt.node_count
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt.node_count
+
+   .. py:attribute:: points
+      :canonical: discrete_optimization.tsp.mutation.Mutation2Opt.points
+      :type: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt.points
+
+   .. py:method:: build(problem: discrete_optimization.tsp.problem.Point2DTspProblem, solution: discrete_optimization.tsp.problem.TspSolution, **kwargs) -> discrete_optimization.tsp.mutation.Mutation2Opt
+      :canonical: discrete_optimization.tsp.mutation.Mutation2Opt.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt.build
+
+   .. py:method:: get_points(it: int, jt: int, variable: discrete_optimization.tsp.problem.TspSolution) -> tuple[discrete_optimization.tsp.problem.Point2D, discrete_optimization.tsp.problem.Point2D, discrete_optimization.tsp.problem.Point2D, discrete_optimization.tsp.problem.Point2D]
+      :canonical: discrete_optimization.tsp.mutation.Mutation2Opt.get_points
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt.get_points
+
+   .. py:method:: get_points_index(it: int, jt: int, variable: discrete_optimization.tsp.problem.TspSolution) -> tuple[int, int, int, int]
+      :canonical: discrete_optimization.tsp.mutation.Mutation2Opt.get_points_index
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt.get_points_index
+
+   .. py:method:: mutate_and_compute_obj(variable: discrete_optimization.tsp.problem.TspSolution) -> tuple[discrete_optimization.tsp.problem.TspSolution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.tsp.mutation.Mutation2Opt.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt.mutate_and_compute_obj
+
+   .. py:method:: mutate(variable: discrete_optimization.tsp.problem.TspSolution) -> tuple[discrete_optimization.tsp.problem.TspSolution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.tsp.mutation.Mutation2Opt.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2Opt.mutate
+
+.. py:class:: Mutation2OptIntersection(tsp_model: discrete_optimization.tsp.problem.Point2DTspProblem, test_all: bool = True, nb_test: typing.Optional[int] = None, return_only_improvement: bool = False, i_j_pairs: typing.Optional[list[tuple[int, int]]] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.tsp.mutation.Mutation2OptIntersection
+
+   Bases: :py:obj:`discrete_optimization.tsp.mutation.Mutation2Opt`
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2OptIntersection
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2OptIntersection.__init__
+
+   .. py:attribute:: nodeCount
+      :canonical: discrete_optimization.tsp.mutation.Mutation2OptIntersection.nodeCount
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2OptIntersection.nodeCount
+
+   .. py:attribute:: points
+      :canonical: discrete_optimization.tsp.mutation.Mutation2OptIntersection.points
+      :type: collections.abc.Sequence[discrete_optimization.tsp.problem.Point2D]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2OptIntersection.points
+
+   .. py:method:: build(problem: discrete_optimization.tsp.problem.Point2DTspProblem, solution: discrete_optimization.tsp.problem.TspSolution, **kwargs) -> discrete_optimization.tsp.mutation.Mutation2OptIntersection
+      :canonical: discrete_optimization.tsp.mutation.Mutation2OptIntersection.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2OptIntersection.build
+
+   .. py:method:: mutate_and_compute_obj(variable: discrete_optimization.tsp.problem.TspSolution) -> tuple[discrete_optimization.tsp.problem.TspSolution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.tsp.mutation.Mutation2OptIntersection.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.Mutation2OptIntersection.mutate_and_compute_obj
+
+.. py:class:: SwapTspMove(attribute: str, tsp_model: discrete_optimization.tsp.problem.TspProblem, swap: tuple[int, int])
+   :canonical: discrete_optimization.tsp.mutation.SwapTspMove
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.LocalMove`
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.SwapTspMove
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.SwapTspMove.__init__
+
+   .. py:method:: apply_local_move(solution: discrete_optimization.tsp.problem.TspSolution) -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.mutation.SwapTspMove.apply_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.SwapTspMove.apply_local_move
+
+   .. py:method:: backtrack_local_move(solution: discrete_optimization.tsp.problem.TspSolution) -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.mutation.SwapTspMove.backtrack_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.SwapTspMove.backtrack_local_move
+
+.. py:class:: MutationSwapTsp(tsp_model: discrete_optimization.tsp.problem.TspProblem)
+   :canonical: discrete_optimization.tsp.mutation.MutationSwapTsp
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.MutationSwapTsp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.mutation.MutationSwapTsp.__init__
+
+   .. py:method:: build(problem: discrete_optimization.tsp.problem.TspProblem, solution: discrete_optimization.tsp.problem.TspSolution, **kwargs) -> discrete_optimization.tsp.mutation.MutationSwapTsp
+      :canonical: discrete_optimization.tsp.mutation.MutationSwapTsp.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.MutationSwapTsp.build
+
+   .. py:method:: mutate(solution: discrete_optimization.tsp.problem.TspSolution) -> tuple[discrete_optimization.tsp.problem.TspSolution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.tsp.mutation.MutationSwapTsp.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.MutationSwapTsp.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.tsp.problem.TspSolution) -> tuple[discrete_optimization.tsp.problem.TspSolution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.tsp.mutation.MutationSwapTsp.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.mutation.MutationSwapTsp.mutate_and_compute_obj

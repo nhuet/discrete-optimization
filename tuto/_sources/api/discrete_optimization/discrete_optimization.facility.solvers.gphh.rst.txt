@@ -1,0 +1,160 @@
+:py:mod:`discrete_optimization.facility.solvers.gphh`
+=====================================================
+
+.. py:module:: discrete_optimization.facility.solvers.gphh
+
+.. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`FeatureEnum <discrete_optimization.facility.solvers.gphh.FeatureEnum>`
+     -
+   * - :py:obj:`ParametersGphh <discrete_optimization.facility.solvers.gphh.ParametersGphh>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.ParametersGphh
+          :summary:
+   * - :py:obj:`GphhFacilitySolver <discrete_optimization.facility.solvers.gphh.GphhFacilitySolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`distance <discrete_optimization.facility.solvers.gphh.distance>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.distance
+          :summary:
+   * - :py:obj:`demand_minus_capacity <discrete_optimization.facility.solvers.gphh.demand_minus_capacity>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.demand_minus_capacity
+          :summary:
+   * - :py:obj:`capacity <discrete_optimization.facility.solvers.gphh.capacity>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.capacity
+          :summary:
+   * - :py:obj:`closest_facility <discrete_optimization.facility.solvers.gphh.closest_facility>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.closest_facility
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`feature_function_map <discrete_optimization.facility.solvers.gphh.feature_function_map>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.feature_function_map
+          :summary:
+
+API
+~~~
+
+.. py:function:: distance(problem: discrete_optimization.facility.problem.FacilityProblem, customer_index: int, **kwargs: typing.Any) -> list[float]
+   :canonical: discrete_optimization.facility.solvers.gphh.distance
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.distance
+
+.. py:function:: demand_minus_capacity(problem: discrete_optimization.facility.problem.FacilityProblem, customer_index: int, **kwargs: typing.Any) -> list[float]
+   :canonical: discrete_optimization.facility.solvers.gphh.demand_minus_capacity
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.demand_minus_capacity
+
+.. py:function:: capacity(problem: discrete_optimization.facility.problem.FacilityProblem, customer_index: int, **kwargs: typing.Any) -> list[float]
+   :canonical: discrete_optimization.facility.solvers.gphh.capacity
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.capacity
+
+.. py:function:: closest_facility(problem: discrete_optimization.facility.problem.FacilityProblem, customer_index: int, **kwargs: typing.Any) -> int
+   :canonical: discrete_optimization.facility.solvers.gphh.closest_facility
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.closest_facility
+
+.. py:class:: FeatureEnum
+   :canonical: discrete_optimization.facility.solvers.gphh.FeatureEnum
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: DISTANCE
+      :canonical: discrete_optimization.facility.solvers.gphh.FeatureEnum.DISTANCE
+      :value: 'distance'
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.FeatureEnum.DISTANCE
+
+   .. py:attribute:: CAPACITIES
+      :canonical: discrete_optimization.facility.solvers.gphh.FeatureEnum.CAPACITIES
+      :value: 'capacities'
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.FeatureEnum.CAPACITIES
+
+   .. py:attribute:: DEMAND_MINUS_CAPACITY
+      :canonical: discrete_optimization.facility.solvers.gphh.FeatureEnum.DEMAND_MINUS_CAPACITY
+      :value: 'demand_minus_capacity'
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.FeatureEnum.DEMAND_MINUS_CAPACITY
+
+.. py:data:: feature_function_map
+   :canonical: discrete_optimization.facility.solvers.gphh.feature_function_map
+   :type: dict[discrete_optimization.facility.solvers.gphh.FeatureEnum, collections.abc.Callable[..., collections.abc.Iterable[float]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.feature_function_map
+
+.. py:class:: ParametersGphh(set_feature: set[discrete_optimization.facility.solvers.gphh.FeatureEnum], set_primitives: deap.gp.PrimitiveSetTyped, tournament_ratio: float, pop_size: int, n_gen: int, min_tree_depth: int, max_tree_depth: int, crossover_rate: float, mutation_rate: float, deap_verbose: bool)
+   :canonical: discrete_optimization.facility.solvers.gphh.ParametersGphh
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.ParametersGphh
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.ParametersGphh.__init__
+
+   .. py:method:: default() -> discrete_optimization.facility.solvers.gphh.ParametersGphh
+      :canonical: discrete_optimization.facility.solvers.gphh.ParametersGphh.default
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.ParametersGphh.default
+
+.. py:class:: GphhFacilitySolver(problem: discrete_optimization.facility.problem.FacilityProblem, training_domains: typing.Optional[list[discrete_optimization.facility.problem.FacilityProblem]] = None, weight: int = 1, params_gphh: typing.Optional[discrete_optimization.facility.solvers.gphh.ParametersGphh] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.facility.solvers.FacilitySolver`
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.init_model
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.solve
+
+   .. py:method:: init_primitives(pset: deap.gp.PrimitiveSetTyped) -> deap.gp.PrimitiveSet
+      :canonical: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.init_primitives
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.init_primitives
+
+   .. py:method:: build_solution(domain: discrete_optimization.facility.problem.FacilityProblem, individual: typing.Optional[typing.Any] = None, func_heuristic: typing.Optional[collections.abc.Callable[..., numpy.typing.ArrayLike]] = None) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.build_solution
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.build_solution
+
+   .. py:method:: evaluate_heuristic(individual: typing.Any, domains: list[discrete_optimization.facility.problem.FacilityProblem]) -> list[float]
+      :canonical: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.evaluate_heuristic
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.evaluate_heuristic
+
+   .. py:method:: evaluate_complexity(individual: typing.Any) -> float
+      :canonical: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.evaluate_complexity
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.evaluate_complexity
+
+   .. py:method:: plot_solution() -> None
+      :canonical: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.plot_solution
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.gphh.GphhFacilitySolver.plot_solution

@@ -1,0 +1,35 @@
+:py:mod:`discrete_optimization.knapsack.solvers.knapsack_solver`
+================================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.knapsack_solver
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.knapsack_solver
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`KnapsackSolver <discrete_optimization.knapsack.solvers.knapsack_solver.KnapsackSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: KnapsackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.knapsack_solver.KnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.knapsack.solvers.knapsack_solver.KnapsackSolver.problem
+      :type: discrete_optimization.knapsack.problem.KnapsackProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.knapsack_solver.KnapsackSolver.problem

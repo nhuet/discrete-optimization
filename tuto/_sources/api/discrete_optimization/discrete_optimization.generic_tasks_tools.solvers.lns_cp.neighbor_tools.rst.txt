@@ -1,0 +1,139 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools`
+=================================================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`NeighborBuilder <discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder>`
+     -
+   * - :py:obj:`NeighborBuilderSubPart <discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderSubPart>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderSubPart
+          :summary:
+   * - :py:obj:`NeighborRandom <discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborRandom>`
+     -
+   * - :py:obj:`NeighborBuilderMix <discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderMix>`
+     -
+   * - :py:obj:`NeighborBuilderTimeWindow <discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderTimeWindow>`
+     -
+   * - :py:obj:`NeighborRandomAndNeighborGraph <discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborRandomAndNeighborGraph>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`intersect <discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.intersect>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.intersect
+          :summary:
+   * - :py:obj:`build_default_neighbor_builder <discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.build_default_neighbor_builder>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.build_default_neighbor_builder
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.logger
+
+.. py:class:: NeighborBuilder
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder
+
+   Bases: :py:obj:`typing.Generic`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder.problem
+      :type: discrete_optimization.generic_tasks_tools.base.TasksProblem[discrete_optimization.generic_tasks_tools.base.Task]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder.problem
+
+   .. py:method:: find_subtasks(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], subtasks: typing.Optional[set[discrete_optimization.generic_tasks_tools.base.Task]] = None) -> tuple[set[discrete_optimization.generic_tasks_tools.base.Task], set[discrete_optimization.generic_tasks_tools.base.Task]]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder.find_subtasks
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder.find_subtasks
+
+.. py:function:: intersect(i1: tuple[int, int], i2: tuple[int, int])
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.intersect
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.intersect
+
+.. py:class:: NeighborBuilderSubPart(problem: discrete_optimization.generic_tasks_tools.base.TasksProblem[discrete_optimization.generic_tasks_tools.base.Task], nb_cut_part: int = 10)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderSubPart
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderSubPart
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderSubPart.__init__
+
+   .. py:method:: find_subtasks(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], subtasks: typing.Optional[set[discrete_optimization.generic_tasks_tools.base.Task]] = None) -> tuple[set[discrete_optimization.generic_tasks_tools.base.Task], set[discrete_optimization.generic_tasks_tools.base.Task]]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderSubPart.find_subtasks
+
+.. py:class:: NeighborRandom(problem: discrete_optimization.generic_tasks_tools.base.TasksProblem[discrete_optimization.generic_tasks_tools.base.Task], fraction_subproblem: float = 0.9, delta_abs_time_from_makespan_to_not_fix: int = 5, delta_rel_time_from_makespan_to_not_fix: float = 0.0)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborRandom
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:method:: find_subtasks(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], subtasks: typing.Optional[set[discrete_optimization.generic_tasks_tools.base.Task]] = None) -> tuple[set[discrete_optimization.generic_tasks_tools.base.Task], set[discrete_optimization.generic_tasks_tools.base.Task]]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborRandom.find_subtasks
+
+.. py:class:: NeighborBuilderMix(list_neighbor: list[discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder[discrete_optimization.generic_tasks_tools.base.Task]], weight_neighbor: typing.Union[list[float], numpy.array], verbose: bool = False)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderMix
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:method:: find_subtasks(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], subtasks: typing.Optional[set[discrete_optimization.generic_tasks_tools.base.Task]] = None) -> tuple[set[discrete_optimization.generic_tasks_tools.base.Task], set[discrete_optimization.generic_tasks_tools.base.Task]]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderMix.find_subtasks
+
+.. py:class:: NeighborBuilderTimeWindow(problem: discrete_optimization.generic_tasks_tools.base.TasksProblem[discrete_optimization.generic_tasks_tools.base.Task], time_window_length: int = 10)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderTimeWindow
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. py:method:: find_subtasks(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.base.Task], subtasks: typing.Optional[set[discrete_optimization.generic_tasks_tools.base.Task]] = None) -> tuple[set[discrete_optimization.generic_tasks_tools.base.Task], set[discrete_optimization.generic_tasks_tools.base.Task]]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilderTimeWindow.find_subtasks
+
+.. py:class:: NeighborRandomAndNeighborGraph(problem: discrete_optimization.generic_tasks_tools.base.TasksProblem[discrete_optimization.generic_tasks_tools.precedence.HashableTask], graph: typing.Optional[discrete_optimization.generic_tools.graph_api.Graph] = None, fraction_subproblem: float = 0.05)
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborRandomAndNeighborGraph
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.precedence.HashableTask`\ ]
+
+   .. py:method:: find_subtasks(current_solution: discrete_optimization.generic_tasks_tools.base.TasksSolution[discrete_optimization.generic_tasks_tools.precedence.HashableTask], subtasks: typing.Optional[set[discrete_optimization.generic_tasks_tools.precedence.HashableTask]] = None) -> tuple[set[discrete_optimization.generic_tasks_tools.precedence.HashableTask], set[discrete_optimization.generic_tasks_tools.precedence.HashableTask]]
+      :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborRandomAndNeighborGraph.find_subtasks
+
+.. py:function:: build_default_neighbor_builder(problem: discrete_optimization.generic_tasks_tools.base.TasksProblem[discrete_optimization.generic_tasks_tools.base.Task]) -> discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.NeighborBuilder[discrete_optimization.generic_tasks_tools.base.Task]
+   :canonical: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.build_default_neighbor_builder
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.solvers.lns_cp.neighbor_tools.build_default_neighbor_builder

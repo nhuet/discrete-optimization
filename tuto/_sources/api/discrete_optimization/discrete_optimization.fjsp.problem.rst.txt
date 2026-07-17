@@ -1,0 +1,168 @@
+:py:mod:`discrete_optimization.fjsp.problem`
+============================================
+
+.. py:module:: discrete_optimization.fjsp.problem
+
+.. autodoc2-docstring:: discrete_optimization.fjsp.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`FJobShopSolution <discrete_optimization.fjsp.problem.FJobShopSolution>`
+     -
+   * - :py:obj:`Job <discrete_optimization.fjsp.problem.Job>`
+     - .. autodoc2-docstring:: discrete_optimization.fjsp.problem.Job
+          :summary:
+   * - :py:obj:`FJobShopProblem <discrete_optimization.fjsp.problem.FJobShopProblem>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.fjsp.problem.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.fjsp.problem.logger
+          :summary:
+   * - :py:obj:`SubjobOptions <discrete_optimization.fjsp.problem.SubjobOptions>`
+     - .. autodoc2-docstring:: discrete_optimization.fjsp.problem.SubjobOptions
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.fjsp.problem.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.problem.logger
+
+.. py:class:: FJobShopSolution(problem: discrete_optimization.fjsp.problem.FJobShopProblem, schedule: list[list[tuple[int, int, int, int]]])
+   :canonical: discrete_optimization.fjsp.problem.FJobShopSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution`\ [\ :py:obj:`discrete_optimization.jsp.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution`\ [\ :py:obj:`discrete_optimization.jsp.problem.Task`\ ]
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.fjsp.problem.FJobShopSolution.problem
+      :type: FJobShopProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.FJobShopSolution.problem
+
+   .. py:method:: copy() -> discrete_optimization.fjsp.problem.FJobShopSolution
+      :canonical: discrete_optimization.fjsp.problem.FJobShopSolution.copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.fjsp.problem.FJobShopProblem) -> None
+      :canonical: discrete_optimization.fjsp.problem.FJobShopSolution.change_problem
+
+   .. py:method:: get_end_time(task: discrete_optimization.jsp.problem.Task) -> int
+      :canonical: discrete_optimization.fjsp.problem.FJobShopSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.FJobShopSolution.get_end_time
+
+   .. py:method:: get_start_time(task: discrete_optimization.jsp.problem.Task) -> int
+      :canonical: discrete_optimization.fjsp.problem.FJobShopSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.FJobShopSolution.get_start_time
+
+   .. py:method:: get_machine(task: discrete_optimization.jsp.problem.Task) -> int
+      :canonical: discrete_optimization.fjsp.problem.FJobShopSolution.get_machine
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.FJobShopSolution.get_machine
+
+   .. py:method:: get_mode(task: discrete_optimization.jsp.problem.Task) -> int
+      :canonical: discrete_optimization.fjsp.problem.FJobShopSolution.get_mode
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.FJobShopSolution.get_mode
+
+.. py:data:: SubjobOptions
+   :canonical: discrete_optimization.fjsp.problem.SubjobOptions
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.problem.SubjobOptions
+
+.. py:class:: Job
+   :canonical: discrete_optimization.fjsp.problem.Job
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.problem.Job
+
+   .. py:attribute:: job_id
+      :canonical: discrete_optimization.fjsp.problem.Job.job_id
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.Job.job_id
+
+   .. py:attribute:: sub_jobs
+      :canonical: discrete_optimization.fjsp.problem.Job.sub_jobs
+      :type: list[discrete_optimization.fjsp.problem.SubjobOptions]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.Job.sub_jobs
+
+.. py:class:: FJobShopProblem(list_jobs: list[discrete_optimization.fjsp.problem.Job], n_jobs: int = None, n_machines: int = None, horizon: int = None)
+   :canonical: discrete_optimization.fjsp.problem.FJobShopProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem`\ [\ :py:obj:`discrete_optimization.jsp.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem`\ [\ :py:obj:`discrete_optimization.jsp.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem`\ [\ :py:obj:`discrete_optimization.jsp.problem.Task`\ ]
+
+   .. py:attribute:: n_jobs
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.n_jobs
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.FJobShopProblem.n_jobs
+
+   .. py:attribute:: n_machines
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.n_machines
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.FJobShopProblem.n_machines
+
+   .. py:attribute:: list_jobs
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.list_jobs
+      :type: list[discrete_optimization.fjsp.problem.Job]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.problem.FJobShopProblem.list_jobs
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.get_makespan_upper_bound
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.tasks_list
+      :type: list[discrete_optimization.jsp.problem.Task]
+
+   .. py:method:: get_precedence_constraints() -> dict[discrete_optimization.jsp.problem.Task, list[discrete_optimization.jsp.problem.Task]]
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.get_precedence_constraints
+
+   .. py:method:: get_task_modes(task: discrete_optimization.jsp.problem.Task) -> set[int]
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.get_task_modes
+
+   .. py:method:: get_last_tasks() -> list[discrete_optimization.jsp.problem.Task]
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.get_last_tasks
+
+   .. py:method:: evaluate(variable: discrete_optimization.fjsp.problem.FJobShopSolution) -> dict[str, float]
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.evaluate
+
+   .. py:method:: satisfy(variable: discrete_optimization.fjsp.problem.FJobShopSolution) -> bool
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.fjsp.problem.FJobShopProblem.get_objective_register

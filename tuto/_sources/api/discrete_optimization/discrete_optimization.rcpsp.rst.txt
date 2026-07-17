@@ -1,0 +1,61 @@
+:py:mod:`discrete_optimization.rcpsp`
+=====================================
+
+.. py:module:: discrete_optimization.rcpsp
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.rcpsp.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.rcpsp.problem_robust
+   discrete_optimization.rcpsp.solvers_map
+   discrete_optimization.rcpsp.problem
+   discrete_optimization.rcpsp.utils_preemptive
+   discrete_optimization.rcpsp.fast_function
+   discrete_optimization.rcpsp.problem_preemptive
+   discrete_optimization.rcpsp.solution
+   discrete_optimization.rcpsp.utils
+   discrete_optimization.rcpsp.problem_specialized_constraints
+   discrete_optimization.rcpsp.special_constraints
+   discrete_optimization.rcpsp.mutation
+   discrete_optimization.rcpsp.transform_problem
+   discrete_optimization.rcpsp.sgs_without_array
+   discrete_optimization.rcpsp.parser
+
+Package Contents
+----------------
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GENERIC_CLASS <discrete_optimization.rcpsp.GENERIC_CLASS>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.GENERIC_CLASS
+          :summary:
+
+API
+~~~
+
+.. py:data:: GENERIC_CLASS
+   :canonical: discrete_optimization.rcpsp.GENERIC_CLASS
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.GENERIC_CLASS

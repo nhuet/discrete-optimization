@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>discrete_optimization.rcpsp.solvers.cpm &mdash; discrete-optimization tuto-howto documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2030f8cb"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/versions.js?v=dd1a30db"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            discrete-optimization
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto_new_problem_implementation/tutorial_new_problem_or_solver.html">How to write its own problem/solver class?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">discrete-optimization</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.solvers.cpm</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-discrete_optimization.rcpsp.solvers.cpm">
+<span id="discrete-optimization-rcpsp-solvers-cpm"></span><h1><a class="reference internal" href="#module-discrete_optimization.rcpsp.solvers.cpm" title="discrete_optimization.rcpsp.solvers.cpm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.solvers.cpm</span></code></a><a class="headerlink" href="#module-discrete_optimization.rcpsp.solvers.cpm" title="Link to this heading"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.solvers.cpm.CpmObject" title="discrete_optimization.rcpsp.solvers.cpm.CpmObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CpmObject</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver" title="discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CpmRcpspSolver</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.solvers.cpm.run_partial_classic_cpm" title="discrete_optimization.rcpsp.solvers.cpm.run_partial_classic_cpm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_partial_classic_cpm</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.solvers.cpm.logger" title="discrete_optimization.rcpsp.solvers.cpm.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logger</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.logger">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.solvers.cpm.</span></span><span class="sig-name descname"><span class="pre">logger</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'getLogger(...)'</span></em><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.logger" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmObject">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.solvers.cpm.</span></span><span class="sig-name descname"><span class="pre">CpmObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ESD</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EFD</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LSD</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LFD</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmObject"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmObject" title="Link to this definition"></a></dt>
+<dd><p class="rubric">Initialization</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_earliest_start_date">
+<span class="sig-name descname"><span class="pre">set_earliest_start_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ESD</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmObject.set_earliest_start_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_earliest_start_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_earliest_finish_date">
+<span class="sig-name descname"><span class="pre">set_earliest_finish_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">EFD</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmObject.set_earliest_finish_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_earliest_finish_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_latest_start_date">
+<span class="sig-name descname"><span class="pre">set_latest_start_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LSD</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmObject.set_latest_start_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_latest_start_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_latest_finish_date">
+<span class="sig-name descname"><span class="pre">set_latest_finish_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LFD</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmObject.set_latest_finish_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_latest_finish_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmObject.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmObject.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmObject.__str__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.solvers.cpm.</span></span><span class="sig-name descname"><span class="pre">CpmRcpspSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.problem.html#discrete_optimization.rcpsp.problem.RcpspProblem" title="discrete_optimization.rcpsp.problem.RcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem.RcpspProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_objective_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.generic_tools.do_problem.html#discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction" title="discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction"><span class="pre">discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmRcpspSolver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.solvers.RcpspSolver</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.problem">
+<span class="sig-name descname"><span class="pre">problem</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="discrete_optimization.rcpsp.problem.html#discrete_optimization.rcpsp.problem.RcpspProblem" title="discrete_optimization.rcpsp.problem.RcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem.RcpspProblem</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.problem" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_classic_cpm">
+<span class="sig-name descname"><span class="pre">run_classic_cpm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmRcpspSolver.run_classic_cpm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_classic_cpm" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.return_order_cpm">
+<span class="sig-name descname"><span class="pre">return_order_cpm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmRcpspSolver.return_order_cpm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.return_order_cpm" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_sgs_on_order">
+<span class="sig-name descname"><span class="pre">run_sgs_on_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#discrete_optimization.rcpsp.solvers.cpm.CpmObject" title="discrete_optimization.rcpsp.solvers.cpm.CpmObject"><span class="pre">discrete_optimization.rcpsp.solvers.cpm.CpmObject</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cut_sgs_by_critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmRcpspSolver.run_sgs_on_order"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_sgs_on_order" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.get_first_time_to_do_one_task">
+<span class="sig-name descname"><span class="pre">get_first_time_to_do_one_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_avail_in_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmRcpspSolver.get_first_time_to_do_one_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.get_first_time_to_do_one_task" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_sgs_time_loop">
+<span class="sig-name descname"><span class="pre">run_sgs_time_loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#discrete_optimization.rcpsp.solvers.cpm.CpmObject" title="discrete_optimization.rcpsp.solvers.cpm.CpmObject"><span class="pre">discrete_optimization.rcpsp.solvers.cpm.CpmObject</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmRcpspSolver.run_sgs_time_loop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_sgs_time_loop" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="discrete_optimization.generic_tools.callbacks.callback.html#discrete_optimization.generic_tools.callbacks.callback.Callback" title="discrete_optimization.generic_tools.callbacks.callback.Callback"><span class="pre">discrete_optimization.generic_tools.callbacks.callback.Callback</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.generic_tools.result_storage.result_storage.html#discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage" title="discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage"><span class="pre">discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#CpmRcpspSolver.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.solve" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.solvers.cpm.run_partial_classic_cpm">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.solvers.cpm.</span></span><span class="sig-name descname"><span class="pre">run_partial_classic_cpm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partial_schedule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpm_solver</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/solvers/cpm.html#run_partial_classic_cpm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.solvers.cpm.run_partial_classic_cpm" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Airbus.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: tuto-howto
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl id="docs-versions">
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+:py:mod:`discrete_optimization.vrp.solvers`
+===========================================
+
+.. py:module:: discrete_optimization.vrp.solvers
+
+.. autodoc2-docstring:: discrete_optimization.vrp.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.vrp.solvers.lp_iterative
+   discrete_optimization.vrp.solvers.ortools_routing
+   discrete_optimization.vrp.solvers.cpsat
+   discrete_optimization.vrp.solvers.dp
+   discrete_optimization.vrp.solvers.greedy
+   discrete_optimization.vrp.solvers.vrp_solver
+   discrete_optimization.vrp.solvers.lns_cpsat

@@ -1,0 +1,908 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.problem`
+========================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.problem
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ScheduleGenerationScheme <discrete_optimization.rcpsp_multiskill.problem.ScheduleGenerationScheme>`
+     -
+   * - :py:obj:`TaskDetails <discrete_optimization.rcpsp_multiskill.problem.TaskDetails>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.TaskDetails
+          :summary:
+   * - :py:obj:`TaskDetailsPreemptive <discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive
+          :summary:
+   * - :py:obj:`MultiskillRcpspSolution <discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution>`
+     -
+   * - :py:obj:`PreemptiveMultiskillRcpspSolution <discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution>`
+     -
+   * - :py:obj:`VariantMultiskillRcpspSolution <discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution>`
+     -
+   * - :py:obj:`VariantPreemptiveMultiskillRcpspSolution <discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution>`
+     -
+   * - :py:obj:`SkillDetail <discrete_optimization.rcpsp_multiskill.problem.SkillDetail>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.SkillDetail
+          :summary:
+   * - :py:obj:`Employee <discrete_optimization.rcpsp_multiskill.problem.Employee>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Employee
+          :summary:
+   * - :py:obj:`MultiskillRcpspProblem <discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem>`
+     -
+   * - :py:obj:`VariantMultiskillRcpspProblem <discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`tree <discrete_optimization.rcpsp_multiskill.problem.tree>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.tree
+          :summary:
+   * - :py:obj:`schedule_solution_to_variant <discrete_optimization.rcpsp_multiskill.problem.schedule_solution_to_variant>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.schedule_solution_to_variant
+          :summary:
+   * - :py:obj:`schedule_solution_preemptive_to_variant <discrete_optimization.rcpsp_multiskill.problem.schedule_solution_preemptive_to_variant>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.schedule_solution_preemptive_to_variant
+          :summary:
+   * - :py:obj:`sgs_multi_skill <discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill
+          :summary:
+   * - :py:obj:`sgs_multi_skill_preemptive <discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_preemptive
+          :summary:
+   * - :py:obj:`sgs_multi_skill_preemptive_partial_schedule <discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_preemptive_partial_schedule>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_preemptive_partial_schedule
+          :summary:
+   * - :py:obj:`sgs_multi_skill_partial_schedule <discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_partial_schedule>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_partial_schedule
+          :summary:
+   * - :py:obj:`intersect <discrete_optimization.rcpsp_multiskill.problem.intersect>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.intersect
+          :summary:
+   * - :py:obj:`permutation_do_to_permutation_sgs_fast <discrete_optimization.rcpsp_multiskill.problem.permutation_do_to_permutation_sgs_fast>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.permutation_do_to_permutation_sgs_fast
+          :summary:
+   * - :py:obj:`priority_worker_per_task_do_to_permutation_sgs_fast <discrete_optimization.rcpsp_multiskill.problem.priority_worker_per_task_do_to_permutation_sgs_fast>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.priority_worker_per_task_do_to_permutation_sgs_fast
+          :summary:
+   * - :py:obj:`build_partial_vectors <discrete_optimization.rcpsp_multiskill.problem.build_partial_vectors>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.build_partial_vectors
+          :summary:
+   * - :py:obj:`build_partial_vectors_preemptive <discrete_optimization.rcpsp_multiskill.problem.build_partial_vectors_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.build_partial_vectors_preemptive
+          :summary:
+   * - :py:obj:`create_fake_tasks_multiskills <discrete_optimization.rcpsp_multiskill.problem.create_fake_tasks_multiskills>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.create_fake_tasks_multiskills
+          :summary:
+   * - :py:obj:`compute_skills_calendar <discrete_optimization.rcpsp_multiskill.problem.compute_skills_calendar>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_skills_calendar
+          :summary:
+   * - :py:obj:`discretize_calendar_ <discrete_optimization.rcpsp_multiskill.problem.discretize_calendar_>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.discretize_calendar_
+          :summary:
+   * - :py:obj:`compute_discretize_calendar_skills <discrete_optimization.rcpsp_multiskill.problem.compute_discretize_calendar_skills>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_discretize_calendar_skills
+          :summary:
+   * - :py:obj:`cluster_employees_to_resource_types <discrete_optimization.rcpsp_multiskill.problem.cluster_employees_to_resource_types>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.cluster_employees_to_resource_types
+          :summary:
+   * - :py:obj:`create_np_data_and_jit_functions <discrete_optimization.rcpsp_multiskill.problem.create_np_data_and_jit_functions>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.create_np_data_and_jit_functions
+          :summary:
+   * - :py:obj:`employee_usage <discrete_optimization.rcpsp_multiskill.problem.employee_usage>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.employee_usage
+          :summary:
+   * - :py:obj:`evaluate_constraints <discrete_optimization.rcpsp_multiskill.problem.evaluate_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.evaluate_constraints
+          :summary:
+   * - :py:obj:`compute_constraints_details <discrete_optimization.rcpsp_multiskill.problem.compute_constraints_details>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_constraints_details
+          :summary:
+   * - :py:obj:`start_together_problem_description <discrete_optimization.rcpsp_multiskill.problem.start_together_problem_description>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.start_together_problem_description
+          :summary:
+   * - :py:obj:`check_solution <discrete_optimization.rcpsp_multiskill.problem.check_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.check_solution
+          :summary:
+   * - :py:obj:`compute_skills_missing_problem <discrete_optimization.rcpsp_multiskill.problem.compute_skills_missing_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_skills_missing_problem
+          :summary:
+   * - :py:obj:`compute_ressource_array_preemptive <discrete_optimization.rcpsp_multiskill.problem.compute_ressource_array_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_ressource_array_preemptive
+          :summary:
+   * - :py:obj:`compute_overskill <discrete_optimization.rcpsp_multiskill.problem.compute_overskill>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_overskill
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp_multiskill.problem.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.logger
+          :summary:
+   * - :py:obj:`Task <discrete_optimization.rcpsp_multiskill.problem.Task>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Task
+          :summary:
+   * - :py:obj:`UnaryResource <discrete_optimization.rcpsp_multiskill.problem.UnaryResource>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.UnaryResource
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.logger
+
+.. py:function:: tree()
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.tree
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.tree
+
+.. py:class:: ScheduleGenerationScheme
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.ScheduleGenerationScheme
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: SERIAL_SGS
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.ScheduleGenerationScheme.SERIAL_SGS
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.ScheduleGenerationScheme.SERIAL_SGS
+
+   .. py:attribute:: PARALLEL_SGS
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.ScheduleGenerationScheme.PARALLEL_SGS
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.ScheduleGenerationScheme.PARALLEL_SGS
+
+.. py:class:: TaskDetails(start, end, resource_units_used: list[int])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.TaskDetails
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.TaskDetails
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.TaskDetails.__init__
+
+   .. py:method:: __str__()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.TaskDetails.__str__
+
+.. py:class:: TaskDetailsPreemptive(starts: list[int], ends: list[int], resource_units_used: list[list[collections.abc.Hashable]])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive.__init__
+
+   .. py:method:: __str__()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive.__str__
+
+.. py:data:: Task
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.Task
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Task
+
+.. py:data:: UnaryResource
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.UnaryResource
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.UnaryResource
+
+.. py:class:: MultiskillRcpspSolution(problem: discrete_optimization.generic_tools.do_problem.Problem, modes: dict[collections.abc.Hashable, int], schedule: dict[collections.abc.Hashable, dict[str, typing.Union[int, list[int]]]], employee_usage: dict[collections.abc.Hashable, dict[collections.abc.Hashable, set[str]]])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationSolution`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ , :py:obj:`discrete_optimization.rcpsp_multiskill.problem.UnaryResource`\ ]
+
+   .. py:method:: get_number_of_part(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_number_of_part
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_number_of_part
+
+   .. py:method:: get_start_times_list(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_start_times_list
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_start_times_list
+
+   .. py:method:: get_end_times_list(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_end_times_list
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_end_times_list
+
+   .. py:method:: employee_used(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.employee_used
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.employee_used
+
+   .. py:method:: copy()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.change_problem
+
+   .. py:method:: get_start_time(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_start_time
+
+   .. py:method:: get_end_time(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_end_time
+
+   .. py:method:: get_active_time(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_active_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_active_time
+
+   .. py:method:: is_allocated(task: discrete_optimization.rcpsp_multiskill.problem.Task, unary_resource: discrete_optimization.rcpsp_multiskill.problem.UnaryResource) -> bool
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.is_allocated
+
+   .. py:method:: get_mode(task: discrete_optimization.rcpsp_multiskill.problem.Task) -> int
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution.get_mode
+
+.. py:class:: PreemptiveMultiskillRcpspSolution(problem: discrete_optimization.generic_tools.do_problem.Problem, modes: dict[collections.abc.Hashable, int], schedule: dict[collections.abc.Hashable, dict[str, list[int]]], employee_usage: dict[collections.abc.Hashable, list[dict[collections.abc.Hashable, set[str]]]])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution
+
+   Bases: :py:obj:`discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution`
+
+   .. py:method:: copy()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.copy
+
+   .. py:method:: get_start_time(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_start_time
+
+   .. py:method:: get_start_times_list(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_start_times_list
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_start_times_list
+
+   .. py:method:: get_end_time(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_end_time
+
+   .. py:method:: get_end_times_list(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_end_times_list
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_end_times_list
+
+   .. py:method:: get_active_time(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_active_time
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_active_time
+
+   .. py:method:: get_nb_task_preemption()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_nb_task_preemption
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_nb_task_preemption
+
+   .. py:method:: total_number_of_cut()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.total_number_of_cut
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.total_number_of_cut
+
+   .. py:method:: get_number_of_part(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_number_of_part
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_number_of_part
+
+   .. py:method:: get_min_duration_subtask()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_min_duration_subtask
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_min_duration_subtask
+
+   .. py:method:: get_max_preempted()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_max_preempted
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_max_preempted
+
+   .. py:method:: get_task_preempted()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_task_preempted
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.get_task_preempted
+
+   .. py:method:: employee_used(task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.employee_used
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution.employee_used
+
+.. py:function:: schedule_solution_to_variant(solution: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.schedule_solution_to_variant
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.schedule_solution_to_variant
+
+.. py:class:: VariantMultiskillRcpspSolution(problem: discrete_optimization.generic_tools.do_problem.Problem, modes_vector: typing.Optional[list[int]] = None, modes_vector_from0: typing.Optional[list[int]] = None, priority_list_task: typing.Optional[list[int]] = None, priority_worker_per_task: typing.Optional[list[list[collections.abc.Hashable]]] = None, modes: dict[int, int] = None, schedule: dict[int, dict[str, int]] = None, employee_usage: dict[int, dict[int, set[str]]] = None, fast: bool = True)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution
+
+   Bases: :py:obj:`discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution`
+
+   .. py:method:: do_recompute(fast=True)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution.do_recompute
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution.do_recompute
+
+   .. py:method:: run_sgs_partial(current_t, completed_tasks: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetails], scheduled_tasks_start_times: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetails], fast=True)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution.run_sgs_partial
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution.run_sgs_partial
+
+   .. py:method:: update_infos_from_numba_output(rcpsp_schedule, skills_usage, unfeasible_non_renewable_resources)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution.update_infos_from_numba_output
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution.update_infos_from_numba_output
+
+   .. py:method:: copy()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution.copy
+
+.. py:class:: VariantPreemptiveMultiskillRcpspSolution(problem: discrete_optimization.generic_tools.do_problem.Problem, modes_vector: typing.Optional[list[int]] = None, modes_vector_from0: typing.Optional[list[int]] = None, priority_list_task: typing.Optional[list[int]] = None, priority_worker_per_task: typing.Optional[list[list[collections.abc.Hashable]]] = None, modes: dict[int, int] = None, schedule: dict[collections.abc.Hashable, dict[str, list[int]]] = None, employee_usage: dict[collections.abc.Hashable, list[dict[collections.abc.Hashable, set[str]]]] = None, fast: bool = True)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution
+
+   Bases: :py:obj:`discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution`
+
+   .. py:method:: do_recompute(fast=True)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution.do_recompute
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution.do_recompute
+
+   .. py:method:: update_from_numba_output(starts_dict, ends_dict, skills_usage, unfeasible_non_renewable_resources)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution.update_from_numba_output
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution.update_from_numba_output
+
+   .. py:method:: run_sgs_partial(current_t, completed_tasks: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive], scheduled_tasks_start_times: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive], fast: bool = True)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution.run_sgs_partial
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution.run_sgs_partial
+
+   .. py:method:: copy()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution.copy
+
+.. py:function:: schedule_solution_preemptive_to_variant(solution: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.schedule_solution_preemptive_to_variant
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.schedule_solution_preemptive_to_variant
+
+.. py:function:: sgs_multi_skill(solution: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill
+
+.. py:function:: sgs_multi_skill_preemptive(solution: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_preemptive
+
+.. py:function:: sgs_multi_skill_preemptive_partial_schedule(solution: discrete_optimization.rcpsp_multiskill.problem.VariantPreemptiveMultiskillRcpspSolution, current_t, completed_tasks: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive], scheduled_tasks_start_times: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_preemptive_partial_schedule
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_preemptive_partial_schedule
+
+.. py:function:: sgs_multi_skill_partial_schedule(solution: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution, current_t, completed_tasks: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetails], scheduled_tasks_start_times: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetails])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_partial_schedule
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.sgs_multi_skill_partial_schedule
+
+.. py:class:: SkillDetail(skill_value: float, efficiency_ratio: float, experience: float)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.SkillDetail
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.SkillDetail
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.__init__
+
+   .. py:attribute:: skill_value
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.skill_value
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.skill_value
+
+   .. py:attribute:: efficiency_ratio
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.efficiency_ratio
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.efficiency_ratio
+
+   .. py:attribute:: experience
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.experience
+      :type: float
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.experience
+
+   .. py:method:: copy()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.copy
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.copy
+
+   .. py:method:: __str__()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.SkillDetail.__str__
+
+.. py:class:: Employee(dict_skill: dict[str, discrete_optimization.rcpsp_multiskill.problem.SkillDetail], calendar_employee: list[bool], salary: float = 0.0)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.Employee
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Employee
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Employee.__init__
+
+   .. py:attribute:: dict_skill
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.Employee.dict_skill
+      :type: dict[str, discrete_optimization.rcpsp_multiskill.problem.SkillDetail]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Employee.dict_skill
+
+   .. py:attribute:: calendar_employee
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.Employee.calendar_employee
+      :type: list[bool]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Employee.calendar_employee
+
+   .. py:method:: copy()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.Employee.copy
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Employee.copy
+
+   .. py:method:: get_non_zero_skills()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.Employee.get_non_zero_skills
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Employee.get_non_zero_skills
+
+   .. py:method:: to_json(with_calendar: bool = True)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.Employee.to_json
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Employee.to_json
+
+   .. py:method:: get_skill_level(s)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.Employee.get_skill_level
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.Employee.get_skill_level
+
+.. py:function:: intersect(i1, i2)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.intersect
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.intersect
+
+.. py:class:: MultiskillRcpspProblem(skills_set: set[str], resources_set: set[str], non_renewable_resources: set[str], resources_availability: dict[str, list[int]], employees: dict[discrete_optimization.rcpsp_multiskill.problem.UnaryResource, discrete_optimization.rcpsp_multiskill.problem.Employee], mode_details: dict[discrete_optimization.rcpsp_multiskill.problem.Task, dict[int, dict[str, int]]], successors: dict[discrete_optimization.rcpsp_multiskill.problem.Task, list[discrete_optimization.rcpsp_multiskill.problem.Task]], horizon: int, employees_availability: typing.Optional[list[int]] = None, tasks_list: typing.Optional[list[discrete_optimization.rcpsp_multiskill.problem.Task]] = None, employees_list: typing.Optional[list[discrete_optimization.rcpsp_multiskill.problem.UnaryResource]] = None, horizon_multiplier: int = 1, sink_task: typing.Optional[discrete_optimization.rcpsp_multiskill.problem.Task] = None, source_task: typing.Optional[discrete_optimization.rcpsp_multiskill.problem.Task] = None, one_unit_per_task_max: bool = False, preemptive: bool = False, preemptive_indicator: dict[discrete_optimization.rcpsp_multiskill.problem.Task, bool] = None, special_constraints: typing.Optional[discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription] = None, partial_preemption_data: dict[discrete_optimization.rcpsp_multiskill.problem.Task, dict[int, dict[str, bool]]] = None, always_releasable_resources: set[str] = None, never_releasable_resources: set[str] = None, resource_blocking_data: list[tuple[list[discrete_optimization.rcpsp_multiskill.problem.Task], set[str]]] = None, strictly_disjunctive_subtasks: bool = True)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationProblem`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ , :py:obj:`discrete_optimization.rcpsp_multiskill.problem.UnaryResource`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ ]
+
+   .. py:attribute:: sgs
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.sgs
+      :type: discrete_optimization.rcpsp_multiskill.problem.ScheduleGenerationScheme
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.sgs
+
+   .. py:attribute:: skills_set
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.skills_set
+      :type: set[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.skills_set
+
+   .. py:attribute:: resources_set
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.resources_set
+      :type: set[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.resources_set
+
+   .. py:attribute:: non_renewable_resources
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.non_renewable_resources
+      :type: set[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.non_renewable_resources
+
+   .. py:attribute:: resources_availability
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.resources_availability
+      :type: dict[str, list[int]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.resources_availability
+
+   .. py:attribute:: employees
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.employees
+      :type: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.Employee]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.employees
+
+   .. py:attribute:: employees_availability
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.employees_availability
+      :type: list[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.employees_availability
+
+   .. py:attribute:: n_jobs_non_dummy
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.n_jobs_non_dummy
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.n_jobs_non_dummy
+
+   .. py:attribute:: mode_details
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.mode_details
+      :type: dict[collections.abc.Hashable, dict[int, dict[str, int]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.mode_details
+
+   .. py:attribute:: successors
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.successors
+      :type: dict[collections.abc.Hashable, list[collections.abc.Hashable]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.successors
+
+   .. py:attribute:: partial_preemption_data
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.partial_preemption_data
+      :type: dict[collections.abc.Hashable, dict[int, dict[str, bool]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.partial_preemption_data
+
+   .. py:attribute:: resource_blocking_data
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.resource_blocking_data
+      :type: list[tuple[list[collections.abc.Hashable], set[str]]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.resource_blocking_data
+
+   .. py:attribute:: strictly_disjunctive_subtasks
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.strictly_disjunctive_subtasks
+      :type: bool
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.strictly_disjunctive_subtasks
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.tasks_list
+      :type: list[discrete_optimization.rcpsp_multiskill.problem.Task]
+
+   .. py:method:: create_employee_task_compatibility() -> None
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.create_employee_task_compatibility
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.create_employee_task_compatibility
+
+   .. py:method:: get_precedence_constraints() -> dict[discrete_optimization.rcpsp_multiskill.problem.Task, list[discrete_optimization.rcpsp_multiskill.problem.Task]]
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_precedence_constraints
+
+   .. py:method:: get_last_tasks() -> list[discrete_optimization.rcpsp_multiskill.problem.Task]
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_last_tasks
+
+   .. py:method:: get_task_modes(task: discrete_optimization.rcpsp_multiskill.problem.Task) -> set[int]
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_task_modes
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_makespan_upper_bound
+
+   .. py:property:: unary_resources_list
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.unary_resources_list
+      :type: list[discrete_optimization.rcpsp_multiskill.problem.UnaryResource]
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.unary_resources_list
+
+   .. py:method:: is_compatible_task_unary_resource(task: discrete_optimization.rcpsp_multiskill.problem.Task, unary_resource: discrete_optimization.rcpsp_multiskill.problem.UnaryResource) -> bool
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.is_compatible_task_unary_resource
+
+   .. py:method:: get_resource_available(res, time)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_resource_available
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_resource_available
+
+   .. py:method:: get_resource_names()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_resource_names
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_resource_names
+
+   .. py:method:: is_preemptive()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.is_preemptive
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.is_preemptive
+
+   .. py:method:: is_multiskill()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.is_multiskill
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.is_multiskill
+
+   .. py:method:: get_resource_availability_array(res)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_resource_availability_array
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_resource_availability_array
+
+   .. py:method:: update_functions()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.update_functions
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.update_functions
+
+   .. py:method:: update_function()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.update_function
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.update_function
+
+   .. py:method:: is_rcpsp_multimode()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.is_rcpsp_multimode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.is_rcpsp_multimode
+
+   .. py:method:: is_varying_resource()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.is_varying_resource
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.is_varying_resource
+
+   .. py:method:: includes_special_constraint()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.includes_special_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.includes_special_constraint
+
+   .. py:method:: build_multimode_rcpsp_calendar_representative()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.build_multimode_rcpsp_calendar_representative
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.build_multimode_rcpsp_calendar_representative
+
+   .. py:method:: return_index_task(task, offset=0)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.return_index_task
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.return_index_task
+
+   .. py:method:: compute_graph() -> discrete_optimization.generic_tools.graph_api.Graph
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.compute_graph
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.compute_graph
+
+   .. py:method:: build_mode_dict(rcpsp_modes_from_solution)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.build_mode_dict
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.build_mode_dict
+
+   .. py:method:: get_modes_dict(rcpsp_solution: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_modes_dict
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_modes_dict
+
+   .. py:method:: evaluate_function(rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.evaluate_function
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.evaluate_function
+
+   .. py:method:: evaluate_from_encoding(int_vector, encoding_name)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.evaluate_from_encoding
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.evaluate_from_encoding
+
+   .. py:method:: evaluate(rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution) -> dict[str, float]
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.evaluate
+
+   .. py:method:: evaluate_mobj(rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.evaluate_mobj
+
+   .. py:method:: evaluate_mobj_from_dict(dict_values: dict[str, float]) -> discrete_optimization.generic_tools.do_problem.TupleFitness
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.evaluate_mobj_from_dict
+
+   .. py:method:: satisfy(variable: discrete_optimization.generic_tools.do_problem.Solution) -> bool
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.satisfy
+
+   .. py:method:: satisfy_classic(rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution) -> bool
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.satisfy_classic
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.satisfy_classic
+
+   .. py:method:: satisfy_preemptive(rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution) -> bool
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.satisfy_preemptive
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.satisfy_preemptive
+
+   .. py:method:: __str__()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.__str__
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_solution_type
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_attribute_register
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_objective_register
+
+   .. py:method:: copy()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.copy
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.copy
+
+   .. py:method:: to_variant_model()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.to_variant_model
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.to_variant_model
+
+   .. py:method:: get_dummy_solution()
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_dummy_solution
+
+   .. py:method:: get_max_resource_capacity(res)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_max_resource_capacity
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem.get_max_resource_capacity
+
+.. py:class:: VariantMultiskillRcpspProblem(skills_set: set[str], resources_set: set[str], non_renewable_resources: set[str], resources_availability: dict[str, list[int]], employees: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.Employee], employees_availability: list[int], mode_details: dict[collections.abc.Hashable, dict[int, dict[str, int]]], successors: dict[collections.abc.Hashable, list[collections.abc.Hashable]], horizon, tasks_list: list[collections.abc.Hashable] = None, employees_list: list[collections.abc.Hashable] = None, horizon_multiplier=1, sink_task: typing.Optional[collections.abc.Hashable] = None, source_task: typing.Optional[collections.abc.Hashable] = None, one_unit_per_task_max: bool = False, preemptive: bool = False, preemptive_indicator: dict[collections.abc.Hashable, bool] = None, special_constraints: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription = None, partial_preemption_data: dict[collections.abc.Hashable, dict[int, dict[str, bool]]] = None, always_releasable_resources: set[str] = None, never_releasable_resources: set[str] = None, resource_blocking_data: list[tuple[list[collections.abc.Hashable], set[str]]] = None, strictly_disjunctive_subtasks: bool = True)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem
+
+   Bases: :py:obj:`discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem`
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.get_attribute_register
+
+   .. py:method:: get_dummy_solution(preemptive: typing.Optional[bool] = None)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.get_dummy_solution
+
+   .. py:method:: evaluate_function(rcpsp_sol: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.evaluate_function
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.evaluate_function
+
+   .. py:method:: set_fixed_attributes(encoding_str: str, sol: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_attributes
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_attributes
+
+   .. py:method:: set_fixed_modes(fixed_modes)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_modes
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_modes
+
+   .. py:method:: set_fixed_task_permutation(fixed_permutation)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_task_permutation
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_task_permutation
+
+   .. py:method:: set_fixed_priority_worker_per_task(fixed_priority_worker_per_task)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_priority_worker_per_task
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_priority_worker_per_task
+
+   .. py:method:: set_fixed_priority_worker_per_task_from_permutation(permutation)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_priority_worker_per_task_from_permutation
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.set_fixed_priority_worker_per_task_from_permutation
+
+   .. py:method:: convert_fixed_priority_worker_per_task_from_permutation(permutation)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.convert_fixed_priority_worker_per_task_from_permutation
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.convert_fixed_priority_worker_per_task_from_permutation
+
+   .. py:method:: evaluate_from_encoding(int_vector, encoding_name)
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.evaluate_from_encoding
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem.get_solution_type
+
+.. py:function:: permutation_do_to_permutation_sgs_fast(rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, permutation_do)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.permutation_do_to_permutation_sgs_fast
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.permutation_do_to_permutation_sgs_fast
+
+.. py:function:: priority_worker_per_task_do_to_permutation_sgs_fast(rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, priority_worker_per_task)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.priority_worker_per_task_do_to_permutation_sgs_fast
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.priority_worker_per_task_do_to_permutation_sgs_fast
+
+.. py:function:: build_partial_vectors(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, completed_tasks: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetails], scheduled_tasks_start_times: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetails])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.build_partial_vectors
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.build_partial_vectors
+
+.. py:function:: build_partial_vectors_preemptive(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, completed_tasks: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive], scheduled_tasks_start_times: dict[collections.abc.Hashable, discrete_optimization.rcpsp_multiskill.problem.TaskDetailsPreemptive])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.build_partial_vectors_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.build_partial_vectors_preemptive
+
+.. py:function:: create_fake_tasks_multiskills(rcpsp_problem: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspSolution])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.create_fake_tasks_multiskills
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.create_fake_tasks_multiskills
+
+.. py:function:: compute_skills_calendar(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.compute_skills_calendar
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_skills_calendar
+
+.. py:function:: discretize_calendar_(capacity_calendar: numpy.ndarray)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.discretize_calendar_
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.discretize_calendar_
+
+.. py:function:: compute_discretize_calendar_skills(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem) -> tuple[dict[str, list[dict]], dict[str, numpy.ndarray]]
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.compute_discretize_calendar_skills
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_discretize_calendar_skills
+
+.. py:function:: cluster_employees_to_resource_types(ms_rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.cluster_employees_to_resource_types
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.cluster_employees_to_resource_types
+
+.. py:function:: create_np_data_and_jit_functions(rcpsp_problem: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.create_np_data_and_jit_functions
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.create_np_data_and_jit_functions
+
+.. py:function:: employee_usage(solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution], problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.employee_usage
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.employee_usage
+
+.. py:function:: evaluate_constraints(solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution], constraints: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.evaluate_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.evaluate_constraints
+
+.. py:function:: compute_constraints_details(solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution], constraints: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.compute_constraints_details
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_constraints_details
+
+.. py:function:: start_together_problem_description(solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution], constraints: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.start_together_problem_description
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.start_together_problem_description
+
+.. py:function:: check_solution(problem: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem], solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution], relax_the_start_at_end: bool = True)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.check_solution
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.check_solution
+
+.. py:function:: compute_skills_missing_problem(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.compute_skills_missing_problem
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_skills_missing_problem
+
+.. py:function:: compute_ressource_array_preemptive(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, solution: typing.Union[discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspSolution, discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution])
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.compute_ressource_array_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_ressource_array_preemptive
+
+.. py:function:: compute_overskill(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, solution: discrete_optimization.rcpsp_multiskill.problem.PreemptiveMultiskillRcpspSolution)
+   :canonical: discrete_optimization.rcpsp_multiskill.problem.compute_overskill
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.problem.compute_overskill

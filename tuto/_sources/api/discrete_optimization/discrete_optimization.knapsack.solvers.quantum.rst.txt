@@ -1,0 +1,77 @@
+:py:mod:`discrete_optimization.knapsack.solvers.quantum`
+========================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.quantum
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.quantum
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`KnapsackQiskit <discrete_optimization.knapsack.solvers.quantum.KnapsackQiskit>`
+     -
+   * - :py:obj:`QaoaKnapsackSolver <discrete_optimization.knapsack.solvers.quantum.QaoaKnapsackSolver>`
+     -
+   * - :py:obj:`VqeKnapsackSolver <discrete_optimization.knapsack.solvers.quantum.VqeKnapsackSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.knapsack.solvers.quantum.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.quantum.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.knapsack.solvers.quantum.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.quantum.logger
+
+.. py:class:: KnapsackQiskit(problem: discrete_optimization.knapsack.problem.KnapsackProblem)
+   :canonical: discrete_optimization.knapsack.solvers.quantum.KnapsackQiskit
+
+   Bases: :py:obj:`qiskit_optimization.applications.OptimizationApplication`
+
+   .. py:method:: to_quadratic_program() -> qiskit_optimization.QuadraticProgram
+      :canonical: discrete_optimization.knapsack.solvers.quantum.KnapsackQiskit.to_quadratic_program
+
+   .. py:method:: interpret(result: typing.Union[qiskit_optimization.algorithms.OptimizationResult, numpy.ndarray])
+      :canonical: discrete_optimization.knapsack.solvers.quantum.KnapsackQiskit.interpret
+
+.. py:class:: QaoaKnapsackSolver(problem: discrete_optimization.knapsack.problem.KnapsackProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.knapsack.solvers.quantum.QaoaKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.knapsack.solvers.quantum.QaoaKnapsackSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.knapsack.solvers.quantum.QaoaKnapsackSolver.retrieve_current_solution
+
+.. py:class:: VqeKnapsackSolver(problem: discrete_optimization.knapsack.problem.KnapsackProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.knapsack.solvers.quantum.VqeKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.knapsack.solvers.quantum.VqeKnapsackSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.knapsack.solvers.quantum.VqeKnapsackSolver.retrieve_current_solution

@@ -1,0 +1,78 @@
+:py:mod:`discrete_optimization.generic_tools.unsat_tools`
+=========================================================
+
+.. py:module:: discrete_optimization.generic_tools.unsat_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MetaConstraint <discrete_optimization.generic_tools.unsat_tools.MetaConstraint>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools.MetaConstraint
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Constraint <discrete_optimization.generic_tools.unsat_tools.Constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools.Constraint
+          :summary:
+
+API
+~~~
+
+.. py:data:: Constraint
+   :canonical: discrete_optimization.generic_tools.unsat_tools.Constraint
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools.Constraint
+
+.. py:class:: MetaConstraint(name: str, constraints: typing.Optional[list[discrete_optimization.generic_tools.unsat_tools.Constraint]] = None, metadata=None)
+   :canonical: discrete_optimization.generic_tools.unsat_tools.MetaConstraint
+
+   Bases: :py:obj:`collections.abc.MutableSequence`\ [\ :py:obj:`discrete_optimization.generic_tools.unsat_tools.Constraint`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools.MetaConstraint
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__init__
+
+   .. py:method:: __repr__() -> str
+      :canonical: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__repr__
+
+   .. py:method:: __len__() -> int
+      :canonical: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__len__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__len__
+
+   .. py:method:: insert(index: int, value: discrete_optimization.generic_tools.unsat_tools.Constraint) -> None
+      :canonical: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.insert
+
+   .. py:method:: __getitem__(index: int) -> discrete_optimization.generic_tools.unsat_tools.Constraint
+      :canonical: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__getitem__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__getitem__
+
+   .. py:method:: __setitem__(index: int, value: discrete_optimization.generic_tools.unsat_tools.Constraint) -> None
+      :canonical: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__setitem__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__setitem__
+
+   .. py:method:: __delitem__(index: int) -> None
+      :canonical: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__delitem__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.unsat_tools.MetaConstraint.__delitem__

@@ -1,0 +1,148 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.lns_lp`
+====================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.lns_lp
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`InitialRcpspMethod <discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod>`
+     -
+   * - :py:obj:`InitialRcpspSolution <discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspSolution>`
+     -
+   * - :py:obj:`MathoptFixStartTimeRcpspConstraintHandler <discrete_optimization.rcpsp.solvers.lns_lp.MathoptFixStartTimeRcpspConstraintHandler>`
+     -
+   * - :py:obj:`MathoptStartTimeIntervalRcpspConstraintHandler <discrete_optimization.rcpsp.solvers.lns_lp.MathoptStartTimeIntervalRcpspConstraintHandler>`
+     -
+   * - :py:obj:`_BaseStartTimeIntervalMultimodeRcpspConstraintHandler <discrete_optimization.rcpsp.solvers.lns_lp._BaseStartTimeIntervalMultimodeRcpspConstraintHandler>`
+     -
+   * - :py:obj:`GurobiStartTimeIntervalMultimodeRcpspConstraintHandler <discrete_optimization.rcpsp.solvers.lns_lp.GurobiStartTimeIntervalMultimodeRcpspConstraintHandler>`
+     -
+   * - :py:obj:`MathOptStartTimeIntervalMultimodeRcpspConstraintHandler <discrete_optimization.rcpsp.solvers.lns_lp.MathOptStartTimeIntervalMultimodeRcpspConstraintHandler>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.lns_lp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.lns_lp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.logger
+
+.. py:class:: InitialRcpspMethod
+   :canonical: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: DUMMY
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.DUMMY
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.DUMMY
+
+   .. py:attribute:: PILE
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.PILE
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.PILE
+
+   .. py:attribute:: PILE_CALENDAR
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.PILE_CALENDAR
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.PILE_CALENDAR
+
+   .. py:attribute:: LS
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.LS
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.LS
+
+   .. py:attribute:: GA
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.GA
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.GA
+
+   .. py:attribute:: CP
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.CP
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod.CP
+
+.. py:class:: InitialRcpspSolution(problem: discrete_optimization.rcpsp.problem.RcpspProblem, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, initial_method: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspMethod = InitialRcpspMethod.PILE)
+   :canonical: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.InitialSolution`
+
+   .. py:method:: get_starting_solution() -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspSolution.get_starting_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.InitialRcpspSolution.get_starting_solution
+
+.. py:class:: MathoptFixStartTimeRcpspConstraintHandler(problem: discrete_optimization.rcpsp.problem.RcpspProblem, fraction_fix_start_time: float = 0.9)
+   :canonical: discrete_optimization.rcpsp.solvers.lns_lp.MathoptFixStartTimeRcpspConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.rcpsp.solvers.lp.MathOptRcpspSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.MathoptFixStartTimeRcpspConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.MathoptFixStartTimeRcpspConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: MathoptStartTimeIntervalRcpspConstraintHandler(problem: discrete_optimization.rcpsp.problem.RcpspProblem, fraction_to_fix: float = 0.9, minus_delta: int = 2, plus_delta: int = 2)
+   :canonical: discrete_optimization.rcpsp.solvers.lns_lp.MathoptStartTimeIntervalRcpspConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.rcpsp.solvers.lp.MathOptRcpspSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.MathoptStartTimeIntervalRcpspConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.MathoptStartTimeIntervalRcpspConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: _BaseStartTimeIntervalMultimodeRcpspConstraintHandler(problem: discrete_optimization.rcpsp.problem.RcpspProblem, fraction_to_fix: float = 0.9, minus_delta: int = 2, plus_delta: int = 2)
+   :canonical: discrete_optimization.rcpsp.solvers.lns_lp._BaseStartTimeIntervalMultimodeRcpspConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: typing.Union[discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver, discrete_optimization.rcpsp.solvers.lp.MathOptMultimodeRcpspSolver], result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp._BaseStartTimeIntervalMultimodeRcpspConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp._BaseStartTimeIntervalMultimodeRcpspConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: GurobiStartTimeIntervalMultimodeRcpspConstraintHandler(problem: discrete_optimization.rcpsp.problem.RcpspProblem, fraction_to_fix: float = 0.9, minus_delta: int = 2, plus_delta: int = 2)
+   :canonical: discrete_optimization.rcpsp.solvers.lns_lp.GurobiStartTimeIntervalMultimodeRcpspConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.lns_lp._BaseStartTimeIntervalMultimodeRcpspConstraintHandler`, :py:obj:`discrete_optimization.generic_tools.lns_mip.GurobiConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.rcpsp.solvers.lp.GurobiMultimodeRcpspSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.rcpsp.solvers.lns_lp.GurobiStartTimeIntervalMultimodeRcpspConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_lp.GurobiStartTimeIntervalMultimodeRcpspConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: MathOptStartTimeIntervalMultimodeRcpspConstraintHandler(problem: discrete_optimization.rcpsp.problem.RcpspProblem, fraction_to_fix: float = 0.9, minus_delta: int = 2, plus_delta: int = 2)
+   :canonical: discrete_optimization.rcpsp.solvers.lns_lp.MathOptStartTimeIntervalMultimodeRcpspConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.lns_lp._BaseStartTimeIntervalMultimodeRcpspConstraintHandler`, :py:obj:`discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler`

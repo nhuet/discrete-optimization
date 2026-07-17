@@ -1,0 +1,30 @@
+:py:mod:`discrete_optimization.tsp`
+===================================
+
+.. py:module:: discrete_optimization.tsp
+
+.. autodoc2-docstring:: discrete_optimization.tsp
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.tsp.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.tsp.solvers_map
+   discrete_optimization.tsp.problem
+   discrete_optimization.tsp.utils
+   discrete_optimization.tsp.mutation
+   discrete_optimization.tsp.parser
+   discrete_optimization.tsp.plot

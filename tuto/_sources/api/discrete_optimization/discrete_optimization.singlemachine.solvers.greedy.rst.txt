@@ -1,0 +1,69 @@
+:py:mod:`discrete_optimization.singlemachine.solvers.greedy`
+============================================================
+
+.. py:module:: discrete_optimization.singlemachine.solvers.greedy
+
+.. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.greedy
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GreedySingleMachineSolver <discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineSolver
+          :summary:
+   * - :py:obj:`GreedySingleMachineWSPT <discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineWSPT>`
+     - .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineWSPT
+          :summary:
+
+API
+~~~
+
+.. py:class:: GreedySingleMachineSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineSolver.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineSolver.problem
+      :type: discrete_optimization.singlemachine.problem.WeightedTardinessProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineSolver.problem
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineSolver.solve
+
+.. py:class:: GreedySingleMachineWSPT(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineWSPT
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineWSPT
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineWSPT.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineWSPT.problem
+      :type: discrete_optimization.singlemachine.problem.WeightedTardinessProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineWSPT.problem
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.singlemachine.solvers.greedy.GreedySingleMachineWSPT.solve

@@ -1,0 +1,79 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition`
+================================================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MultimodeTranspositionMultiskillRcpspSolver <discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.MultimodeTranspositionMultiskillRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`rebuild_multiskill_solution <discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.rebuild_multiskill_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.rebuild_multiskill_solution
+          :summary:
+   * - :py:obj:`rebuild_multiskill_solution_cp_based <discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.rebuild_multiskill_solution_cp_based>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.rebuild_multiskill_solution_cp_based
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.logger
+
+.. py:class:: MultimodeTranspositionMultiskillRcpspSolver(problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, multimode_problem: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem] = None, worker_type_to_worker: dict[str, set[typing.Union[str, int]]] = None, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, solver_multimode_rcpsp: discrete_optimization.generic_tools.do_solver.SolverDO = None, **kwargs)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.MultimodeTranspositionMultiskillRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.MultimodeTranspositionMultiskillRcpspSolver.problem
+      :type: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.MultimodeTranspositionMultiskillRcpspSolver.problem
+
+   .. py:method:: solve(**kwargs) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.MultimodeTranspositionMultiskillRcpspSolver.solve
+
+.. py:function:: rebuild_multiskill_solution(multiskill_rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, multimode_rcpsp_problem: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem], worker_type_to_worker: dict[str, set[typing.Union[str, int]]], solution_rcpsp: typing.Union[discrete_optimization.rcpsp.solution.RcpspSolution, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution])
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.rebuild_multiskill_solution
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.rebuild_multiskill_solution
+
+.. py:function:: rebuild_multiskill_solution_cp_based(multiskill_rcpsp_problem: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, multimode_rcpsp_problem: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem], worker_type_to_worker: dict[str, set[typing.Union[str, int]]], solution_rcpsp: typing.Union[discrete_optimization.rcpsp.solution.RcpspSolution, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution])
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.rebuild_multiskill_solution_cp_based
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.multimode_transposition.rebuild_multiskill_solution_cp_based

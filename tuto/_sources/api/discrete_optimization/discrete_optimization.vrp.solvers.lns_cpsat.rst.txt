@@ -1,0 +1,45 @@
+:py:mod:`discrete_optimization.vrp.solvers.lns_cpsat`
+=====================================================
+
+.. py:module:: discrete_optimization.vrp.solvers.lns_cpsat
+
+.. autodoc2-docstring:: discrete_optimization.vrp.solvers.lns_cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`VrpConstraintHandler <discrete_optimization.vrp.solvers.lns_cpsat.VrpConstraintHandler>`
+     -
+   * - :py:obj:`SubpathVrpConstraintHandler <discrete_optimization.vrp.solvers.lns_cpsat.SubpathVrpConstraintHandler>`
+     -
+
+API
+~~~
+
+.. py:class:: VrpConstraintHandler(problem: discrete_optimization.vrp.problem.VrpProblem, fraction_segment_to_fix: float = 0.9)
+   :canonical: discrete_optimization.vrp.solvers.lns_cpsat.VrpConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.vrp.solvers.lns_cpsat.VrpConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lns_cpsat.VrpConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: SubpathVrpConstraintHandler(problem: discrete_optimization.vrp.problem.VrpProblem, fraction_segment_to_fix: float = 0.9)
+   :canonical: discrete_optimization.vrp.solvers.lns_cpsat.SubpathVrpConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.vrp.solvers.cpsat.CpSatVrpSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.vrp.solvers.lns_cpsat.SubpathVrpConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lns_cpsat.SubpathVrpConstraintHandler.adding_constraint_from_results_store

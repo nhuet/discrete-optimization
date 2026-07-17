@@ -1,0 +1,127 @@
+:py:mod:`discrete_optimization.rcpsp.fast_function`
+===================================================
+
+.. py:module:: discrete_optimization.rcpsp.fast_function
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`sgs_fast <discrete_optimization.rcpsp.fast_function.sgs_fast>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast
+          :summary:
+   * - :py:obj:`sgs_fast_preemptive <discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive
+          :summary:
+   * - :py:obj:`sgs_fast_preemptive_some_special_constraints <discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive_some_special_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive_some_special_constraints
+          :summary:
+   * - :py:obj:`sgs_fast_preemptive_minduration <discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive_minduration>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive_minduration
+          :summary:
+   * - :py:obj:`sgs_fast_partial_schedule <discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule
+          :summary:
+   * - :py:obj:`sgs_fast_partial_schedule_incomplete_permutation_tasks <discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_incomplete_permutation_tasks>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_incomplete_permutation_tasks
+          :summary:
+   * - :py:obj:`sgs_fast_partial_schedule_preemptive <discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_preemptive>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_preemptive
+          :summary:
+   * - :py:obj:`sgs_fast_partial_schedule_preemptive_minduration <discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_preemptive_minduration>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_preemptive_minduration
+          :summary:
+   * - :py:obj:`compute_mean_ressource <discrete_optimization.rcpsp.fast_function.compute_mean_ressource>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.compute_mean_ressource
+          :summary:
+   * - :py:obj:`compute_ressource_consumption <discrete_optimization.rcpsp.fast_function.compute_ressource_consumption>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.compute_ressource_consumption
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.fast_function.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.logger
+          :summary:
+   * - :py:obj:`int_array <discrete_optimization.rcpsp.fast_function.int_array>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.int_array
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.fast_function.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.logger
+
+.. py:data:: int_array
+   :canonical: discrete_optimization.rcpsp.fast_function.int_array
+   :value: 'Array(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.int_array
+
+.. py:function:: sgs_fast(permutation_task: numpy.typing.NDArray[numpy.int_], modes_array: numpy.typing.NDArray[numpy.int_], consumption_array: numpy.typing.NDArray[numpy.int_], duration_array: numpy.typing.NDArray[numpy.int_], predecessors: numpy.typing.NDArray[numpy.int_], successors: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_], minimum_starting_time_array: numpy.typing.NDArray[numpy.int_]) -> tuple[dict[int, tuple[int, int]], bool]
+   :canonical: discrete_optimization.rcpsp.fast_function.sgs_fast
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast
+
+.. py:function:: sgs_fast_preemptive(permutation_task: numpy.typing.NDArray[numpy.int_], modes_array: numpy.typing.NDArray[numpy.int_], consumption_array: numpy.typing.NDArray[numpy.int_], duration_array: numpy.typing.NDArray[numpy.int_], preemptive_tag: numpy.typing.NDArray[numpy.bool_], predecessors: numpy.typing.NDArray[numpy.int_], successors: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_], minimum_starting_time_array: numpy.typing.NDArray[numpy.int_]) -> tuple[dict[int, numpy.typing.NDArray[numpy.int_]], dict[int, numpy.typing.NDArray[numpy.int_]], bool]
+   :canonical: discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive
+
+.. py:function:: sgs_fast_preemptive_some_special_constraints(permutation_task: numpy.typing.NDArray[numpy.int_], modes_array: numpy.typing.NDArray[numpy.int_], consumption_array: numpy.typing.NDArray[numpy.int_], duration_array: numpy.typing.NDArray[numpy.int_], preemptive_tag: numpy.typing.NDArray[numpy.bool_], predecessors: numpy.typing.NDArray[numpy.int_], successors: numpy.typing.NDArray[numpy.int_], start_at_end_plus_offset: numpy.typing.NDArray[numpy.int_], start_after_nunit: numpy.typing.NDArray[numpy.int_], minimum_starting_time_array: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_]) -> tuple[dict[int, numpy.typing.NDArray[numpy.int_]], dict[int, numpy.typing.NDArray[numpy.int_]], bool]
+   :canonical: discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive_some_special_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive_some_special_constraints
+
+.. py:function:: sgs_fast_preemptive_minduration(permutation_task: numpy.typing.NDArray[numpy.int_], modes_array: numpy.typing.NDArray[numpy.int_], consumption_array: numpy.typing.NDArray[numpy.int_], duration_array: numpy.typing.NDArray[numpy.int_], preemptive_tag: numpy.typing.NDArray[numpy.bool_], predecessors: numpy.typing.NDArray[numpy.int_], successors: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_], min_duration_preemptive_bool: numpy.typing.NDArray[numpy.bool_], min_duration_preemptive: numpy.typing.NDArray[numpy.int_]) -> tuple[dict[int, numpy.typing.NDArray[numpy.int_]], dict[int, numpy.typing.NDArray[numpy.int_]], bool]
+   :canonical: discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive_minduration
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_preemptive_minduration
+
+.. py:function:: sgs_fast_partial_schedule(current_time: int, permutation_task: numpy.typing.NDArray[numpy.int_], modes_array: numpy.typing.NDArray[numpy.int_], completed_task_indicator: numpy.typing.NDArray[numpy.int_], completed_task_times: numpy.typing.NDArray[numpy.int_], scheduled_task: numpy.typing.NDArray[numpy.int_], consumption_array: numpy.typing.NDArray[numpy.int_], duration_array: numpy.typing.NDArray[numpy.int_], predecessors: numpy.typing.NDArray[numpy.int_], successors: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_], minimum_starting_time_array: numpy.typing.NDArray[numpy.int_]) -> tuple[dict[int, tuple[int, int]], bool]
+   :canonical: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule
+
+.. py:function:: sgs_fast_partial_schedule_incomplete_permutation_tasks(current_time: int, permutation_task: numpy.typing.NDArray[numpy.int_], modes_array: numpy.typing.NDArray[numpy.int_], completed_task_indicator: numpy.typing.NDArray[numpy.int_], completed_task_times: numpy.typing.NDArray[numpy.int_], scheduled_task: numpy.typing.NDArray[numpy.int_], consumption_array: numpy.typing.NDArray[numpy.int_], duration_array: numpy.typing.NDArray[numpy.int_], predecessors: numpy.typing.NDArray[numpy.int_], successors: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_], minimum_starting_time_array: numpy.typing.NDArray[numpy.int_]) -> tuple[dict[int, tuple[int, int]], bool]
+   :canonical: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_incomplete_permutation_tasks
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_incomplete_permutation_tasks
+
+.. py:function:: sgs_fast_partial_schedule_preemptive(current_time: int, permutation_task: numpy.typing.NDArray[numpy.int_], modes_array: numpy.typing.NDArray[numpy.int_], completed_task_indicator: numpy.typing.NDArray[numpy.int_], partial_schedule_starts: numpy.typing.NDArray[numpy.int_], partial_schedule_ends: numpy.typing.NDArray[numpy.int_], preemptive_tag: numpy.typing.NDArray[numpy.bool_], consumption_array: numpy.typing.NDArray[numpy.int_], duration_array: numpy.typing.NDArray[numpy.int_], predecessors: numpy.typing.NDArray[numpy.int_], successors: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_], minimum_starting_time_array: numpy.typing.NDArray[numpy.int_]) -> tuple[dict[int, numpy.typing.NDArray[numpy.int_]], dict[int, numpy.typing.NDArray[numpy.int_]], bool]
+   :canonical: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_preemptive
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_preemptive
+
+.. py:function:: sgs_fast_partial_schedule_preemptive_minduration(current_time: int, permutation_task: numpy.typing.NDArray[numpy.int_], modes_array: numpy.typing.NDArray[numpy.int_], completed_task_indicator: numpy.typing.NDArray[numpy.int_], partial_schedule_starts: numpy.typing.NDArray[numpy.int_], partial_schedule_ends: numpy.typing.NDArray[numpy.int_], preemptive_tag: numpy.typing.NDArray[numpy.bool_], consumption_array: numpy.typing.NDArray[numpy.int_], duration_array: numpy.typing.NDArray[numpy.int_], predecessors: numpy.typing.NDArray[numpy.int_], successors: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_], min_duration_preemptive_bool: numpy.typing.NDArray[numpy.bool_], min_duration_preemptive: numpy.typing.NDArray[numpy.int_]) -> tuple[dict[int, numpy.typing.NDArray[numpy.int_]], dict[int, numpy.typing.NDArray[numpy.int_]], bool]
+   :canonical: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_preemptive_minduration
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.sgs_fast_partial_schedule_preemptive_minduration
+
+.. py:function:: compute_mean_ressource(modes_array: numpy.typing.NDArray[numpy.int_], consumption_array: numpy.typing.NDArray[numpy.int_], start_array: numpy.typing.NDArray[numpy.int_], end_array: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_]) -> float
+   :canonical: discrete_optimization.rcpsp.fast_function.compute_mean_ressource
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.compute_mean_ressource
+
+.. py:function:: compute_ressource_consumption(modes_array: numpy.typing.NDArray[numpy.int_], consumption_array: numpy.typing.NDArray[numpy.int_], start_array: numpy.typing.NDArray[numpy.int_], end_array: numpy.typing.NDArray[numpy.int_], horizon: int, ressource_available: numpy.typing.NDArray[numpy.int_], ressource_renewable: numpy.typing.NDArray[numpy.bool_]) -> dict[int, numpy.typing.NDArray[numpy.int_]]
+   :canonical: discrete_optimization.rcpsp.fast_function.compute_ressource_consumption
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.fast_function.compute_ressource_consumption

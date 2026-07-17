@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>discrete_optimization.rcpsp.problem &mdash; discrete-optimization tuto-howto documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2030f8cb"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/versions.js?v=dd1a30db"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            discrete-optimization
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto_new_problem_implementation/tutorial_new_problem_or_solver.html">How to write its own problem/solver class?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/airbus/discrete-optimization">Github</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">discrete-optimization</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.problem</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-discrete_optimization.rcpsp.problem">
+<span id="discrete-optimization-rcpsp-problem"></span><h1><a class="reference internal" href="#module-discrete_optimization.rcpsp.problem" title="discrete_optimization.rcpsp.problem"><code class="xref py py-mod docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.problem</span></code></a><a class="headerlink" href="#module-discrete_optimization.rcpsp.problem" title="Link to this heading"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.problem.ScheduleGenerationScheme" title="discrete_optimization.rcpsp.problem.ScheduleGenerationScheme"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ScheduleGenerationScheme</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.problem.RcpspProblem" title="discrete_optimization.rcpsp.problem.RcpspProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RcpspProblem</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.problem.create_np_data_and_jit_functions" title="discrete_optimization.rcpsp.problem.create_np_data_and_jit_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_np_data_and_jit_functions</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.problem.evaluate_constraints" title="discrete_optimization.rcpsp.problem.evaluate_constraints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate_constraints</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.problem.compute_constraints_details" title="discrete_optimization.rcpsp.problem.compute_constraints_details"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_constraints_details</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.problem.check_solution_with_special_constraints" title="discrete_optimization.rcpsp.problem.check_solution_with_special_constraints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_solution_with_special_constraints</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.problem.check_pair_mode_constraint" title="discrete_optimization.rcpsp.problem.check_pair_mode_constraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_pair_mode_constraint</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.problem.compute_details_mode_constraint" title="discrete_optimization.rcpsp.problem.compute_details_mode_constraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_details_mode_constraint</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#discrete_optimization.rcpsp.problem.logger" title="discrete_optimization.rcpsp.problem.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logger</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.logger">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.problem.</span></span><span class="sig-name descname"><span class="pre">logger</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'getLogger(...)'</span></em><a class="headerlink" href="#discrete_optimization.rcpsp.problem.logger" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.ScheduleGenerationScheme">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.problem.</span></span><span class="sig-name descname"><span class="pre">ScheduleGenerationScheme</span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#ScheduleGenerationScheme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.ScheduleGenerationScheme" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.ScheduleGenerationScheme.SERIAL_SGS">
+<span class="sig-name descname"><span class="pre">SERIAL_SGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#discrete_optimization.rcpsp.problem.ScheduleGenerationScheme.SERIAL_SGS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.ScheduleGenerationScheme.PARALLEL_SGS">
+<span class="sig-name descname"><span class="pre">PARALLEL_SGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#discrete_optimization.rcpsp.problem.ScheduleGenerationScheme.PARALLEL_SGS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.problem.</span></span><span class="sig-name descname"><span class="pre">RcpspProblem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_renewable_resources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">successors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizon_multiplier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tasks_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sink_task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calendar_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">special_constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="discrete_optimization.rcpsp.special_constraints.html#discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription" title="discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription"><span class="pre">discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relax_the_start_at_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_permutation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_modes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="discrete_optimization.generic_tasks_tools.multimode.html#discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem" title="discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem</span></code></a>[<a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.Task" title="discrete_optimization.rcpsp.solution.Task"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.solution.Task</span></code></a>], <a class="reference internal" href="discrete_optimization.generic_tasks_tools.scheduling.html#discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem" title="discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem</span></code></a>[<a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.Task" title="discrete_optimization.rcpsp.solution.Task"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.solution.Task</span></code></a>], <a class="reference internal" href="discrete_optimization.generic_tasks_tools.precedence.html#discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem" title="discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem</span></code></a>[<a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.Task" title="discrete_optimization.rcpsp.solution.Task"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discrete_optimization.rcpsp.solution.Task</span></code></a>]</p>
+<p class="rubric">Initialization</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.sgs">
+<span class="sig-name descname"><span class="pre">sgs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#discrete_optimization.rcpsp.problem.ScheduleGenerationScheme" title="discrete_optimization.rcpsp.problem.ScheduleGenerationScheme"><span class="pre">discrete_optimization.rcpsp.problem.ScheduleGenerationScheme</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.sgs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.tasks_list">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tasks_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">discrete_optimization.rcpsp.solution.Task</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.tasks_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_task_modes">
+<span class="sig-name descname"><span class="pre">get_task_modes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">discrete_optimization.rcpsp.solution.Task</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_task_modes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_task_modes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_last_tasks">
+<span class="sig-name descname"><span class="pre">get_last_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">discrete_optimization.rcpsp.solution.Task</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_last_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_last_tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_precedence_constraints">
+<span class="sig-name descname"><span class="pre">get_precedence_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">discrete_optimization.rcpsp.solution.Task</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">collections.abc.Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">discrete_optimization.rcpsp.solution.Task</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_precedence_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_precedence_constraints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_makespan_upper_bound">
+<span class="sig-name descname"><span class="pre">get_makespan_upper_bound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_makespan_upper_bound"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_makespan_upper_bound" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.update_functions">
+<span class="sig-name descname"><span class="pre">update_functions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.update_functions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.update_functions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.is_rcpsp_multimode">
+<span class="sig-name descname"><span class="pre">is_rcpsp_multimode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.is_rcpsp_multimode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.is_rcpsp_multimode" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.is_varying_resource">
+<span class="sig-name descname"><span class="pre">is_varying_resource</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.is_varying_resource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.is_varying_resource" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.is_preemptive">
+<span class="sig-name descname"><span class="pre">is_preemptive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.is_preemptive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.is_preemptive" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.is_multiskill">
+<span class="sig-name descname"><span class="pre">is_multiskill</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.is_multiskill"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.is_multiskill" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.includes_special_constraint">
+<span class="sig-name descname"><span class="pre">includes_special_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.includes_special_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.includes_special_constraint" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_names">
+<span class="sig-name descname"><span class="pre">get_resource_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_resource_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_names" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_availability_array">
+<span class="sig-name descname"><span class="pre">get_resource_availability_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_resource_availability_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_availability_array" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.compute_graph">
+<span class="sig-name descname"><span class="pre">compute_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compute_predecessors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.generic_tools.graph_api.html#discrete_optimization.generic_tools.graph_api.Graph" title="discrete_optimization.generic_tools.graph_api.Graph"><span class="pre">discrete_optimization.generic_tools.graph_api.Graph</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.compute_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.compute_graph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_function">
+<span class="sig-name descname"><span class="pre">evaluate_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.evaluate_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_function" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_from_encoding">
+<span class="sig-name descname"><span class="pre">evaluate_from_encoding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int_vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_from_encoding" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.evaluate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.evaluate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_mobj">
+<span class="sig-name descname"><span class="pre">evaluate_mobj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">discrete_optimization.generic_tools.do_problem.TupleFitness</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.evaluate_mobj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_mobj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_mobj_from_dict">
+<span class="sig-name descname"><span class="pre">evaluate_mobj_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">discrete_optimization.generic_tools.do_problem.TupleFitness</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.evaluate_mobj_from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_mobj_from_dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.build_mode_dict">
+<span class="sig-name descname"><span class="pre">build_mode_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_modes_from_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.build_mode_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.build_mode_dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.build_mode_array">
+<span class="sig-name descname"><span class="pre">build_mode_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_modes_from_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.build_mode_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.build_mode_array" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.return_index_task">
+<span class="sig-name descname"><span class="pre">return_index_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">collections.abc.Hashable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.return_index_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.return_index_task" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.satisfy">
+<span class="sig-name descname"><span class="pre">satisfy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.satisfy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.satisfy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.__str__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_solution_type">
+<span class="sig-name descname"><span class="pre">get_solution_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="discrete_optimization.generic_tools.do_problem.html#discrete_optimization.generic_tools.do_problem.Solution" title="discrete_optimization.generic_tools.do_problem.Solution"><span class="pre">discrete_optimization.generic_tools.do_problem.Solution</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_solution_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_solution_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_attribute_register">
+<span class="sig-name descname"><span class="pre">get_attribute_register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.generic_tools.do_problem.html#discrete_optimization.generic_tools.do_problem.EncodingRegister" title="discrete_optimization.generic_tools.do_problem.EncodingRegister"><span class="pre">discrete_optimization.generic_tools.do_problem.EncodingRegister</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_attribute_register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_attribute_register" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_objective_register">
+<span class="sig-name descname"><span class="pre">get_objective_register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.generic_tools.do_problem.html#discrete_optimization.generic_tools.do_problem.ObjectiveRegister" title="discrete_optimization.generic_tools.do_problem.ObjectiveRegister"><span class="pre">discrete_optimization.generic_tools.do_problem.ObjectiveRegister</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_objective_register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_objective_register" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.compute_resource_consumption">
+<span class="sig-name descname"><span class="pre">compute_resource_consumption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int_</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.compute_resource_consumption"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.compute_resource_consumption" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.plot_ressource_view">
+<span class="sig-name descname"><span class="pre">plot_ressource_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.plot_ressource_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.plot_ressource_view" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#discrete_optimization.rcpsp.problem.RcpspProblem" title="discrete_optimization.rcpsp.problem.RcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem.RcpspProblem</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.copy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_dummy_solution">
+<span class="sig-name descname"><span class="pre">get_dummy_solution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_dummy_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_dummy_solution" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_available">
+<span class="sig-name descname"><span class="pre">get_resource_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_resource_available"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_available" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.get_max_resource_capacity">
+<span class="sig-name descname"><span class="pre">get_max_resource_capacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.get_max_resource_capacity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.get_max_resource_capacity" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_attributes">
+<span class="sig-name descname"><span class="pre">set_fixed_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.set_fixed_attributes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_attributes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_modes">
+<span class="sig-name descname"><span class="pre">set_fixed_modes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixed_modes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.set_fixed_modes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_modes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_permutation">
+<span class="sig-name descname"><span class="pre">set_fixed_permutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixed_permutation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#RcpspProblem.set_fixed_permutation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_permutation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.create_np_data_and_jit_functions">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.problem.</span></span><span class="sig-name descname"><span class="pre">create_np_data_and_jit_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcpsp_problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#discrete_optimization.rcpsp.problem.RcpspProblem" title="discrete_optimization.rcpsp.problem.RcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem.RcpspProblem</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">collections.abc.Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">collections.abc.Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">collections.abc.Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#create_np_data_and_jit_functions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.create_np_data_and_jit_functions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.evaluate_constraints">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.problem.</span></span><span class="sig-name descname"><span class="pre">evaluate_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.special_constraints.html#discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription" title="discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription"><span class="pre">discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#evaluate_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.evaluate_constraints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.compute_constraints_details">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.problem.</span></span><span class="sig-name descname"><span class="pre">compute_constraints_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.special_constraints.html#discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription" title="discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription"><span class="pre">discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">collections.abc.Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#compute_constraints_details"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.compute_constraints_details" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.check_solution_with_special_constraints">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.problem.</span></span><span class="sig-name descname"><span class="pre">check_solution_with_special_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#discrete_optimization.rcpsp.problem.RcpspProblem" title="discrete_optimization.rcpsp.problem.RcpspProblem"><span class="pre">discrete_optimization.rcpsp.problem.RcpspProblem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">relax_the_start_at_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#check_solution_with_special_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.check_solution_with_special_constraints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.check_pair_mode_constraint">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.problem.</span></span><span class="sig-name descname"><span class="pre">check_pair_mode_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">pair_mode_constraint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.special_constraints.html#discrete_optimization.rcpsp.special_constraints.PairModeConstraint" title="discrete_optimization.rcpsp.special_constraints.PairModeConstraint"><span class="pre">discrete_optimization.rcpsp.special_constraints.PairModeConstraint</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#check_pair_mode_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.check_pair_mode_constraint" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="discrete_optimization.rcpsp.problem.compute_details_mode_constraint">
+<span class="sig-prename descclassname"><span class="pre">discrete_optimization.rcpsp.problem.</span></span><span class="sig-name descname"><span class="pre">compute_details_mode_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.solution.html#discrete_optimization.rcpsp.solution.RcpspSolution" title="discrete_optimization.rcpsp.solution.RcpspSolution"><span class="pre">discrete_optimization.rcpsp.solution.RcpspSolution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">pair_mode_constraint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="discrete_optimization.rcpsp.special_constraints.html#discrete_optimization.rcpsp.special_constraints.PairModeConstraint" title="discrete_optimization.rcpsp.special_constraints.PairModeConstraint"><span class="pre">discrete_optimization.rcpsp.special_constraints.PairModeConstraint</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/discrete_optimization/rcpsp/problem.html#compute_details_mode_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#discrete_optimization.rcpsp.problem.compute_details_mode_constraint" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Airbus.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Versions</span>
+      v: tuto-howto
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl id="docs-versions">
+      </dl>
+    </div>
+  </div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

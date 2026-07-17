@@ -1,0 +1,70 @@
+:py:mod:`discrete_optimization.workforce.commons.fairness_modeling`
+===================================================================
+
+.. py:module:: discrete_optimization.workforce.commons.fairness_modeling
+
+.. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ModelisationDispersion <discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion>`
+     -
+
+API
+~~~
+
+.. py:class:: ModelisationDispersion
+   :canonical: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: EXACT_MODELING_WITH_IMPLICATION
+      :canonical: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.EXACT_MODELING_WITH_IMPLICATION
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.EXACT_MODELING_WITH_IMPLICATION
+
+   .. py:attribute:: EXACT_MODELING_DUPLICATED_VARS
+      :canonical: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.EXACT_MODELING_DUPLICATED_VARS
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.EXACT_MODELING_DUPLICATED_VARS
+
+   .. py:attribute:: MAX_DIFF
+      :canonical: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.MAX_DIFF
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.MAX_DIFF
+
+   .. py:attribute:: PROXY_MAX_MIN
+      :canonical: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.PROXY_MAX_MIN
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.PROXY_MAX_MIN
+
+   .. py:attribute:: PROXY_MIN_MAX
+      :canonical: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.PROXY_MIN_MAX
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.PROXY_MIN_MAX
+
+   .. py:attribute:: PROXY_SUM
+      :canonical: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.PROXY_SUM
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.PROXY_SUM
+
+   .. py:attribute:: PROXY_SLACK
+      :canonical: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.PROXY_SLACK
+      :value: 6
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.commons.fairness_modeling.ModelisationDispersion.PROXY_SLACK

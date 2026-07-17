@@ -1,0 +1,16 @@
+:py:mod:`discrete_optimization.generic_tools.pytools`
+=====================================================
+
+.. py:module:: discrete_optimization.generic_tools.pytools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.pytools
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.pytools.timeout_decorator

@@ -1,0 +1,243 @@
+:py:mod:`discrete_optimization.vrp.solvers.lp_iterative`
+========================================================
+
+.. py:module:: discrete_optimization.vrp.solvers.lp_iterative
+
+.. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`LPIterativeVrpSolver <discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`build_matrice_distance_np <discrete_optimization.vrp.solvers.lp_iterative.build_matrice_distance_np>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.build_matrice_distance_np
+          :summary:
+   * - :py:obj:`build_graph_pruned_vrp <discrete_optimization.vrp.solvers.lp_iterative.build_graph_pruned_vrp>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.build_graph_pruned_vrp
+          :summary:
+   * - :py:obj:`compute_start_end_flows_info <discrete_optimization.vrp.solvers.lp_iterative.compute_start_end_flows_info>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.compute_start_end_flows_info
+          :summary:
+   * - :py:obj:`init_model_lp <discrete_optimization.vrp.solvers.lp_iterative.init_model_lp>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.init_model_lp
+          :summary:
+   * - :py:obj:`update_graph <discrete_optimization.vrp.solvers.lp_iterative.update_graph>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.update_graph
+          :summary:
+   * - :py:obj:`build_warm_edges_and_update_graph <discrete_optimization.vrp.solvers.lp_iterative.build_warm_edges_and_update_graph>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.build_warm_edges_and_update_graph
+          :summary:
+   * - :py:obj:`plot_solve <discrete_optimization.vrp.solvers.lp_iterative.plot_solve>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.plot_solve
+          :summary:
+   * - :py:obj:`build_the_cycles <discrete_optimization.vrp.solvers.lp_iterative.build_the_cycles>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.build_the_cycles
+          :summary:
+   * - :py:obj:`rebuild_tsp_routine <discrete_optimization.vrp.solvers.lp_iterative.rebuild_tsp_routine>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.rebuild_tsp_routine
+          :summary:
+   * - :py:obj:`retrieve_solutions <discrete_optimization.vrp.solvers.lp_iterative.retrieve_solutions>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.retrieve_solutions
+          :summary:
+   * - :py:obj:`reevaluate_solutions <discrete_optimization.vrp.solvers.lp_iterative.reevaluate_solutions>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.reevaluate_solutions
+          :summary:
+   * - :py:obj:`update_model_2 <discrete_optimization.vrp.solvers.lp_iterative.update_model_2>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.update_model_2
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.vrp.solvers.lp_iterative.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.logger
+          :summary:
+   * - :py:obj:`Node <discrete_optimization.vrp.solvers.lp_iterative.Node>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.Node
+          :summary:
+   * - :py:obj:`Edge <discrete_optimization.vrp.solvers.lp_iterative.Edge>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.Edge
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.logger
+
+.. py:data:: Node
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.Node
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.Node
+
+.. py:data:: Edge
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.Edge
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.Edge
+
+.. py:function:: build_matrice_distance_np(customer_count: int, customers: collections.abc.Sequence[discrete_optimization.vrp.problem.Customer2D]) -> tuple[numpy.ndarray, numpy.ndarray]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.build_matrice_distance_np
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.build_matrice_distance_np
+
+.. py:function:: build_graph_pruned_vrp(vrp_problem: discrete_optimization.vrp.problem.Customer2DVrpProblem) -> tuple[networkx.DiGraph, networkx.DiGraph, dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.build_graph_pruned_vrp
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.build_graph_pruned_vrp
+
+.. py:function:: compute_start_end_flows_info(start_indexes: list[int], end_indexes: list[int]) -> tuple[dict[int, dict[str, typing.Any]], dict[int, dict[str, typing.Any]]]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.compute_start_end_flows_info
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.compute_start_end_flows_info
+
+.. py:function:: init_model_lp(g: networkx.DiGraph, edges: set[discrete_optimization.vrp.solvers.lp_iterative.Edge], edges_in_customers: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_out_customers: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_in_merged_graph: dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_out_merged_graph: dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_warm_set: set[discrete_optimization.vrp.solvers.lp_iterative.Edge], fraction: float, start_indexes: list[int], end_indexes: list[int], vehicle_count: int, vehicle_capacity: list[float], do_lns: bool = False, include_backward: bool = True, include_triangle: bool = False) -> tuple[gurobipy.Model, dict[discrete_optimization.vrp.solvers.lp_iterative.Edge, gurobipy.Var], dict[typing.Union[str, int], typing.Any], dict[str, typing.Any], dict[int, typing.Any]]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.init_model_lp
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.init_model_lp
+
+.. py:function:: update_graph(g: networkx.DiGraph, edges: set[discrete_optimization.vrp.solvers.lp_iterative.Edge], edges_in_customers: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_out_customers: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_in_merged_graph: dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_out_merged_graph: dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_missing: set[discrete_optimization.vrp.solvers.lp_iterative.Edge], customers: collections.abc.Sequence[discrete_optimization.vrp.problem.Customer2D]) -> tuple[networkx.DiGraph, set[discrete_optimization.vrp.solvers.lp_iterative.Edge], dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.update_graph
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.update_graph
+
+.. py:function:: build_warm_edges_and_update_graph(vrp_problem: discrete_optimization.vrp.problem.VrpProblem, vrp_solution: discrete_optimization.vrp.problem.VrpSolution, graph: networkx.DiGraph, edges: set[discrete_optimization.vrp.solvers.lp_iterative.Edge], edges_in_merged_graph: dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_out_merged_graph: dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_in_customers: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_out_customers: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]) -> tuple[list[list[discrete_optimization.vrp.solvers.lp_iterative.Edge]], set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.build_warm_edges_and_update_graph
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.build_warm_edges_and_update_graph
+
+.. py:class:: LPIterativeVrpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver
+
+   Bases: :py:obj:`discrete_optimization.vrp.solvers.VrpSolver`
+
+   .. py:attribute:: edges
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges
+      :type: set[discrete_optimization.vrp.solvers.lp_iterative.Edge]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges
+
+   .. py:attribute:: edges_in_customers
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_in_customers
+      :type: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_in_customers
+
+   .. py:attribute:: edges_out_customers
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_out_customers
+      :type: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_out_customers
+
+   .. py:attribute:: edges_in_merged_graph
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_in_merged_graph
+      :type: dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_in_merged_graph
+
+   .. py:attribute:: edges_out_merged_graph
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_out_merged_graph
+      :type: dict[discrete_optimization.vrp.solvers.lp_iterative.Node, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_out_merged_graph
+
+   .. py:attribute:: edges_warm_set
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_warm_set
+      :type: set[discrete_optimization.vrp.solvers.lp_iterative.Edge]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.edges_warm_set
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.problem
+      :type: discrete_optimization.vrp.problem.Customer2DVrpProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.problem
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.model
+      :type: typing.Optional[gurobipy.Model]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.model
+
+   .. py:attribute:: x_var
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.x_var
+      :type: typing.Optional[dict[discrete_optimization.vrp.solvers.lp_iterative.Edge, gurobipy.Var]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.x_var
+
+   .. py:attribute:: constraint_on_edge
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.constraint_on_edge
+      :type: typing.Optional[dict[int, typing.Any]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.constraint_on_edge
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.init_model
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.vrp.solvers.lp_iterative.LPIterativeVrpSolver.solve
+
+.. py:function:: plot_solve(solutions: list[dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]], customers: collections.abc.Sequence[discrete_optimization.vrp.problem.Customer2D], rebuilt_solution: list[dict[int, list[discrete_optimization.vrp.solvers.lp_iterative.Node]]], cost: list[float], rebuilt_obj: list[float]) -> None
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.plot_solve
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.plot_solve
+
+.. py:function:: build_the_cycles(x_solution: set[discrete_optimization.vrp.solvers.lp_iterative.Edge], component: set[discrete_optimization.vrp.solvers.lp_iterative.Node], start_index: discrete_optimization.vrp.solvers.lp_iterative.Node, end_index: discrete_optimization.vrp.solvers.lp_iterative.Node) -> tuple[list[discrete_optimization.vrp.solvers.lp_iterative.Node], dict[discrete_optimization.vrp.solvers.lp_iterative.Node, int]]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.build_the_cycles
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.build_the_cycles
+
+.. py:function:: rebuild_tsp_routine(sorted_connected_component: list[tuple[set[discrete_optimization.vrp.solvers.lp_iterative.Node], int]], paths_component: dict[int, list[discrete_optimization.vrp.solvers.lp_iterative.Node]], node_to_component: dict[discrete_optimization.vrp.solvers.lp_iterative.Node, int], indexes: dict[int, dict[discrete_optimization.vrp.solvers.lp_iterative.Node, int]], graph: networkx.DiGraph, edges: set[discrete_optimization.vrp.solvers.lp_iterative.Edge], evaluate_function_indexes: collections.abc.Callable[[int, int], float], vrp_problem: discrete_optimization.vrp.problem.VrpProblem, start_index: discrete_optimization.vrp.solvers.lp_iterative.Node, end_index: discrete_optimization.vrp.solvers.lp_iterative.Node) -> tuple[list[discrete_optimization.vrp.solvers.lp_iterative.Node], float]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.rebuild_tsp_routine
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.rebuild_tsp_routine
+
+.. py:function:: retrieve_solutions(model: gurobipy.Model, x_var: dict[discrete_optimization.vrp.solvers.lp_iterative.Edge, gurobipy.Var], vehicle_count: int, g: networkx.DiGraph) -> list[tuple[networkx.DiGraph, dict[int, networkx.DiGraph], dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]]]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.retrieve_solutions
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.retrieve_solutions
+
+.. py:function:: reevaluate_solutions(solutions: list[tuple[networkx.DiGraph, dict[int, networkx.DiGraph], dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]]], vehicle_count: int, g: networkx.DiGraph, vrp_problem: discrete_optimization.vrp.problem.VrpProblem) -> tuple[dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], dict[int, list[discrete_optimization.vrp.solvers.lp_iterative.Node]], float, dict[int, list[tuple[set[discrete_optimization.vrp.solvers.lp_iterative.Node], int]]], list[tuple[set[discrete_optimization.vrp.solvers.lp_iterative.Node], int]], list[dict[int, list[tuple[set[discrete_optimization.vrp.solvers.lp_iterative.Node], int]]]], list[list[tuple[set[discrete_optimization.vrp.solvers.lp_iterative.Node], int]]]]
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.reevaluate_solutions
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.reevaluate_solutions
+
+.. py:function:: update_model_2(model: gurobipy.Model, x_var: dict[discrete_optimization.vrp.solvers.lp_iterative.Edge, gurobipy.Var], components_global: dict[int, list[tuple[set[discrete_optimization.vrp.solvers.lp_iterative.Node], int]]], edges_in_customers: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]], edges_out_customers: dict[int, set[discrete_optimization.vrp.solvers.lp_iterative.Edge]]) -> None
+   :canonical: discrete_optimization.vrp.solvers.lp_iterative.update_model_2
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.lp_iterative.update_model_2

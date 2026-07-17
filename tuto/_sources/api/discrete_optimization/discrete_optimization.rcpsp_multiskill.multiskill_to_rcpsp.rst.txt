@@ -1,0 +1,43 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp`
+====================================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MultiSkillToRcpsp <discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRcpsp
+          :summary:
+
+API
+~~~
+
+.. py:class:: MultiSkillToRcpsp(multiskill_model: discrete_optimization.rcpsp_multiskill.solvers.cp_mzn.MultiskillRcpspProblem)
+   :canonical: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRcpsp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRcpsp.__init__
+
+   .. py:method:: is_compatible(task_requirements: dict[str, int], ressource_availability: dict[str, numpy.array], duration_task, horizon)
+      :canonical: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRcpsp.is_compatible
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRcpsp.is_compatible
+
+   .. py:method:: construct_rcpsp_by_worker_type(limit_number_of_mode_per_task: bool = True, max_number_of_mode: int = None, check_resource_compliance: bool = True, one_worker_type_per_task: bool = False)
+      :canonical: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRcpsp.construct_rcpsp_by_worker_type
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.multiskill_to_rcpsp.MultiSkillToRcpsp.construct_rcpsp_by_worker_type

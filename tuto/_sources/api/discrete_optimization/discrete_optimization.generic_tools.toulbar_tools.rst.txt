@@ -1,0 +1,87 @@
+:py:mod:`discrete_optimization.generic_tools.toulbar_tools`
+===========================================================
+
+.. py:module:: discrete_optimization.generic_tools.toulbar_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.toulbar_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ToulbarSolver <discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`to_lns_toulbar <discrete_optimization.generic_tools.toulbar_tools.to_lns_toulbar>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.toulbar_tools.to_lns_toulbar
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.toulbar_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.toulbar_tools.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.toulbar_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.toulbar_tools.logger
+
+.. py:class:: ToulbarSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver.model
+      :type: pytoulbar2.CFN
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver.model
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver.init_model
+      :abstractmethod:
+
+   .. py:method:: retrieve_solution(solution_from_toulbar2: tuple[list, float, int]) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver.retrieve_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver.retrieve_solution
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, time_limit: typing.Optional[int] = 10, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver.solve
+
+.. py:function:: to_lns_toulbar(cls: type[discrete_optimization.generic_tools.toulbar_tools.ToulbarSolver])
+   :canonical: discrete_optimization.generic_tools.toulbar_tools.to_lns_toulbar
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.toulbar_tools.to_lns_toulbar

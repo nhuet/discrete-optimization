@@ -1,0 +1,107 @@
+:py:mod:`discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb`
+================================================================================
+
+.. py:module:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb
+
+.. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`BaseAllocSchedulingLowerBoundProvider <discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BaseAllocSchedulingLowerBoundProvider>`
+     -
+   * - :py:obj:`LBoundAllocScheduling <discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.LBoundAllocScheduling>`
+     -
+   * - :py:obj:`ApproximateBoundAllocScheduling <discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.ApproximateBoundAllocScheduling>`
+     -
+   * - :py:obj:`BoundResourceViaRelaxedProblem <discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BoundResourceViaRelaxedProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BoundResourceViaRelaxedProblem
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.logger
+
+.. py:class:: BaseAllocSchedulingLowerBoundProvider(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem)
+   :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BaseAllocSchedulingLowerBoundProvider
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable`, :py:obj:`abc.ABC`
+
+   .. py:attribute:: status
+      :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BaseAllocSchedulingLowerBoundProvider.status
+      :type: typing.Optional[str]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BaseAllocSchedulingLowerBoundProvider.status
+
+   .. py:method:: get_lb_nb_teams(**kwargs: typing.Any) -> int
+      :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BaseAllocSchedulingLowerBoundProvider.get_lb_nb_teams
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BaseAllocSchedulingLowerBoundProvider.get_lb_nb_teams
+
+.. py:class:: LBoundAllocScheduling(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem)
+   :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.LBoundAllocScheduling
+
+   Bases: :py:obj:`discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BaseAllocSchedulingLowerBoundProvider`
+
+   .. py:method:: get_lb_nb_teams(**args) -> int
+      :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.LBoundAllocScheduling.get_lb_nb_teams
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.LBoundAllocScheduling.get_lb_nb_teams
+
+.. py:class:: ApproximateBoundAllocScheduling(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem)
+   :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.ApproximateBoundAllocScheduling
+
+   Bases: :py:obj:`discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BaseAllocSchedulingLowerBoundProvider`
+
+   .. py:method:: get_lb_nb_teams(**args) -> int
+      :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.ApproximateBoundAllocScheduling.get_lb_nb_teams
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.ApproximateBoundAllocScheduling.get_lb_nb_teams
+
+.. py:class:: BoundResourceViaRelaxedProblem(problem: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem)
+   :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BoundResourceViaRelaxedProblem
+
+   Bases: :py:obj:`discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BaseAllocSchedulingLowerBoundProvider`
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BoundResourceViaRelaxedProblem
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BoundResourceViaRelaxedProblem.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BoundResourceViaRelaxedProblem.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BoundResourceViaRelaxedProblem.hyperparameters
+
+   .. py:method:: get_lb_nb_teams(**kwargs) -> int
+      :canonical: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BoundResourceViaRelaxedProblem.get_lb_nb_teams
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb.BoundResourceViaRelaxedProblem.get_lb_nb_teams

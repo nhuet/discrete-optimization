@@ -1,0 +1,423 @@
+:py:mod:`discrete_optimization.datasets`
+========================================
+
+.. py:module:: discrete_optimization.datasets
+
+.. autodoc2-docstring:: discrete_optimization.datasets
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_data_home <discrete_optimization.datasets.get_data_home>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.get_data_home
+          :summary:
+   * - :py:obj:`fetch_data_from_coursera <discrete_optimization.datasets.fetch_data_from_coursera>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_coursera
+          :summary:
+   * - :py:obj:`fetch_data_from_solutionsupdate <discrete_optimization.datasets.fetch_data_from_solutionsupdate>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_solutionsupdate
+          :summary:
+   * - :py:obj:`fetch_data_from_psplib <discrete_optimization.datasets.fetch_data_from_psplib>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_psplib
+          :summary:
+   * - :py:obj:`fetch_data_from_imopse <discrete_optimization.datasets.fetch_data_from_imopse>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_imopse
+          :summary:
+   * - :py:obj:`fetch_data_from_mspsplib_repo <discrete_optimization.datasets.fetch_data_from_mspsplib_repo>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_mspsplib_repo
+          :summary:
+   * - :py:obj:`fetch_data_from_mslib <discrete_optimization.datasets.fetch_data_from_mslib>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_mslib
+          :summary:
+   * - :py:obj:`decompress_gz_to_folder <discrete_optimization.datasets.decompress_gz_to_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.decompress_gz_to_folder
+          :summary:
+   * - :py:obj:`fetch_data_for_mis <discrete_optimization.datasets.fetch_data_for_mis>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_for_mis
+          :summary:
+   * - :py:obj:`fetch_mis_from_repo <discrete_optimization.datasets.fetch_mis_from_repo>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_mis_from_repo
+          :summary:
+   * - :py:obj:`fetch_fjsp_from_repo <discrete_optimization.datasets.fetch_fjsp_from_repo>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_fjsp_from_repo
+          :summary:
+   * - :py:obj:`fetch_datasets_from_repo <discrete_optimization.datasets.fetch_datasets_from_repo>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_datasets_from_repo
+          :summary:
+   * - :py:obj:`_extract_dataset_from_zipped_repo <discrete_optimization.datasets._extract_dataset_from_zipped_repo>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets._extract_dataset_from_zipped_repo
+          :summary:
+   * - :py:obj:`fetch_data_from_jsplib_repo <discrete_optimization.datasets.fetch_data_from_jsplib_repo>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_jsplib_repo
+          :summary:
+   * - :py:obj:`fetch_data_fjsp <discrete_optimization.datasets.fetch_data_fjsp>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_fjsp
+          :summary:
+   * - :py:obj:`fetch_data_from_bppc <discrete_optimization.datasets.fetch_data_from_bppc>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_bppc
+          :summary:
+   * - :py:obj:`fetch_data_from_cp25 <discrete_optimization.datasets.fetch_data_from_cp25>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_cp25
+          :summary:
+   * - :py:obj:`fetch_data_weighted_tardiness_single_machine <discrete_optimization.datasets.fetch_data_weighted_tardiness_single_machine>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_weighted_tardiness_single_machine
+          :summary:
+   * - :py:obj:`fetch_data_tsptw <discrete_optimization.datasets.fetch_data_tsptw>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_tsptw
+          :summary:
+   * - :py:obj:`fetch_all_datasets <discrete_optimization.datasets.fetch_all_datasets>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.fetch_all_datasets
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DO_DEFAULT_DATAHOME <discrete_optimization.datasets.DO_DEFAULT_DATAHOME>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.DO_DEFAULT_DATAHOME
+          :summary:
+   * - :py:obj:`DO_DEFAULT_DATAHOME_ENVVARNAME <discrete_optimization.datasets.DO_DEFAULT_DATAHOME_ENVVARNAME>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.DO_DEFAULT_DATAHOME_ENVVARNAME
+          :summary:
+   * - :py:obj:`OR_LIBRARY_ROOT_URL <discrete_optimization.datasets.OR_LIBRARY_ROOT_URL>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.OR_LIBRARY_ROOT_URL
+          :summary:
+   * - :py:obj:`COURSERA_REPO_URL <discrete_optimization.datasets.COURSERA_REPO_URL>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.COURSERA_REPO_URL
+          :summary:
+   * - :py:obj:`COURSERA_REPO_URL_SHA1 <discrete_optimization.datasets.COURSERA_REPO_URL_SHA1>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.COURSERA_REPO_URL_SHA1
+          :summary:
+   * - :py:obj:`COURSERA_DATASETS <discrete_optimization.datasets.COURSERA_DATASETS>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.COURSERA_DATASETS
+          :summary:
+   * - :py:obj:`COURSERA_DATADIRNAME <discrete_optimization.datasets.COURSERA_DATADIRNAME>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.COURSERA_DATADIRNAME
+          :summary:
+   * - :py:obj:`SOLUTIONSUPDATE_BASE_URL <discrete_optimization.datasets.SOLUTIONSUPDATE_BASE_URL>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.SOLUTIONSUPDATE_BASE_URL
+          :summary:
+   * - :py:obj:`SOLUTIONSUPDATE_DATASETS <discrete_optimization.datasets.SOLUTIONSUPDATE_DATASETS>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.SOLUTIONSUPDATE_DATASETS
+          :summary:
+   * - :py:obj:`PSPLIB_FILES_BASE_URL <discrete_optimization.datasets.PSPLIB_FILES_BASE_URL>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.PSPLIB_FILES_BASE_URL
+          :summary:
+   * - :py:obj:`PSPLIB_DATASETS <discrete_optimization.datasets.PSPLIB_DATASETS>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.PSPLIB_DATASETS
+          :summary:
+   * - :py:obj:`IMOPSE_REPO_URL <discrete_optimization.datasets.IMOPSE_REPO_URL>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.IMOPSE_REPO_URL
+          :summary:
+   * - :py:obj:`IMOPSE_REPO_URL_SHA1 <discrete_optimization.datasets.IMOPSE_REPO_URL_SHA1>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.IMOPSE_REPO_URL_SHA1
+          :summary:
+   * - :py:obj:`IMOPSE_DATASET_RELATIVE_PATH <discrete_optimization.datasets.IMOPSE_DATASET_RELATIVE_PATH>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.IMOPSE_DATASET_RELATIVE_PATH
+          :summary:
+   * - :py:obj:`MSPSPLIB_REPO_URL <discrete_optimization.datasets.MSPSPLIB_REPO_URL>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.MSPSPLIB_REPO_URL
+          :summary:
+   * - :py:obj:`MSPSPLIB_REPO_URL_SHA1 <discrete_optimization.datasets.MSPSPLIB_REPO_URL_SHA1>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.MSPSPLIB_REPO_URL_SHA1
+          :summary:
+   * - :py:obj:`JSPLIB_REPO_URL <discrete_optimization.datasets.JSPLIB_REPO_URL>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.JSPLIB_REPO_URL
+          :summary:
+   * - :py:obj:`JSPLIB_REPO_URL_SHA1 <discrete_optimization.datasets.JSPLIB_REPO_URL_SHA1>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.JSPLIB_REPO_URL_SHA1
+          :summary:
+   * - :py:obj:`MSLIB_DATASET_URL <discrete_optimization.datasets.MSLIB_DATASET_URL>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.MSLIB_DATASET_URL
+          :summary:
+   * - :py:obj:`MSLIB_DATASET_RELATIVE_PATH <discrete_optimization.datasets.MSLIB_DATASET_RELATIVE_PATH>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.MSLIB_DATASET_RELATIVE_PATH
+          :summary:
+   * - :py:obj:`MIS_FILES <discrete_optimization.datasets.MIS_FILES>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.MIS_FILES
+          :summary:
+   * - :py:obj:`BPPC_ZIP <discrete_optimization.datasets.BPPC_ZIP>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.BPPC_ZIP
+          :summary:
+   * - :py:obj:`FJSP_DATASET_PREFIX <discrete_optimization.datasets.FJSP_DATASET_PREFIX>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.FJSP_DATASET_PREFIX
+          :summary:
+   * - :py:obj:`MIS_DATASET_PREFIX <discrete_optimization.datasets.MIS_DATASET_PREFIX>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.MIS_DATASET_PREFIX
+          :summary:
+   * - :py:obj:`VRPTW_DATASET_PREFIX <discrete_optimization.datasets.VRPTW_DATASET_PREFIX>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.VRPTW_DATASET_PREFIX
+          :summary:
+   * - :py:obj:`ERROR_MSG_MISSING_DATASETS <discrete_optimization.datasets.ERROR_MSG_MISSING_DATASETS>`
+     - .. autodoc2-docstring:: discrete_optimization.datasets.ERROR_MSG_MISSING_DATASETS
+          :summary:
+
+API
+~~~
+
+.. py:data:: DO_DEFAULT_DATAHOME
+   :canonical: discrete_optimization.datasets.DO_DEFAULT_DATAHOME
+   :value: '~/discrete_optimization_data'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.DO_DEFAULT_DATAHOME
+
+.. py:data:: DO_DEFAULT_DATAHOME_ENVVARNAME
+   :canonical: discrete_optimization.datasets.DO_DEFAULT_DATAHOME_ENVVARNAME
+   :value: 'DISCRETE_OPTIMIZATION_DATA'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.DO_DEFAULT_DATAHOME_ENVVARNAME
+
+.. py:data:: OR_LIBRARY_ROOT_URL
+   :canonical: discrete_optimization.datasets.OR_LIBRARY_ROOT_URL
+   :value: 'https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.OR_LIBRARY_ROOT_URL
+
+.. py:data:: COURSERA_REPO_URL
+   :canonical: discrete_optimization.datasets.COURSERA_REPO_URL
+   :value: 'https://github.com/discreteoptimization/assignment'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.COURSERA_REPO_URL
+
+.. py:data:: COURSERA_REPO_URL_SHA1
+   :canonical: discrete_optimization.datasets.COURSERA_REPO_URL_SHA1
+   :value: 'f69378420ce2bb845abaef0f448eab303aa7a7e7'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.COURSERA_REPO_URL_SHA1
+
+.. py:data:: COURSERA_DATASETS
+   :canonical: discrete_optimization.datasets.COURSERA_DATASETS
+   :value: ['coloring', 'facility', 'knapsack', 'tsp', 'vrp']
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.COURSERA_DATASETS
+
+.. py:data:: COURSERA_DATADIRNAME
+   :canonical: discrete_optimization.datasets.COURSERA_DATADIRNAME
+   :value: 'data'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.COURSERA_DATADIRNAME
+
+.. py:data:: SOLUTIONSUPDATE_BASE_URL
+   :canonical: discrete_optimization.datasets.SOLUTIONSUPDATE_BASE_URL
+   :value: 'http://solutionsupdate.ugent.be/sites/default/files/datasets/instances'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.SOLUTIONSUPDATE_BASE_URL
+
+.. py:data:: SOLUTIONSUPDATE_DATASETS
+   :canonical: discrete_optimization.datasets.SOLUTIONSUPDATE_DATASETS
+   :value: ['RG30', 'RG300']
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.SOLUTIONSUPDATE_DATASETS
+
+.. py:data:: PSPLIB_FILES_BASE_URL
+   :canonical: discrete_optimization.datasets.PSPLIB_FILES_BASE_URL
+   :value: 'https://www.om-db.wi.tum.de/psplib/files'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.PSPLIB_FILES_BASE_URL
+
+.. py:data:: PSPLIB_DATASETS
+   :canonical: discrete_optimization.datasets.PSPLIB_DATASETS
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.PSPLIB_DATASETS
+
+.. py:data:: IMOPSE_REPO_URL
+   :canonical: discrete_optimization.datasets.IMOPSE_REPO_URL
+   :value: 'https://github.com/imopse/iMOPSE'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.IMOPSE_REPO_URL
+
+.. py:data:: IMOPSE_REPO_URL_SHA1
+   :canonical: discrete_optimization.datasets.IMOPSE_REPO_URL_SHA1
+   :value: 'e58ace53202ec29aa548dd0678ae3164d8349f4e'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.IMOPSE_REPO_URL_SHA1
+
+.. py:data:: IMOPSE_DATASET_RELATIVE_PATH
+   :canonical: discrete_optimization.datasets.IMOPSE_DATASET_RELATIVE_PATH
+   :value: 'configurations/problems/MSRCPSP/Regular'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.IMOPSE_DATASET_RELATIVE_PATH
+
+.. py:data:: MSPSPLIB_REPO_URL
+   :canonical: discrete_optimization.datasets.MSPSPLIB_REPO_URL
+   :value: 'https://github.com/youngkd/MSPSP-InstLib'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.MSPSPLIB_REPO_URL
+
+.. py:data:: MSPSPLIB_REPO_URL_SHA1
+   :canonical: discrete_optimization.datasets.MSPSPLIB_REPO_URL_SHA1
+   :value: 'f77644175b84beed3bd365315412abee1a15eea1'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.MSPSPLIB_REPO_URL_SHA1
+
+.. py:data:: JSPLIB_REPO_URL
+   :canonical: discrete_optimization.datasets.JSPLIB_REPO_URL
+   :value: 'https://github.com/tamy0612/JSPLIB'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.JSPLIB_REPO_URL
+
+.. py:data:: JSPLIB_REPO_URL_SHA1
+   :canonical: discrete_optimization.datasets.JSPLIB_REPO_URL_SHA1
+   :value: 'eea2b60dd7e2f5c907ff7302662c61812eb7efdf'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.JSPLIB_REPO_URL_SHA1
+
+.. py:data:: MSLIB_DATASET_URL
+   :canonical: discrete_optimization.datasets.MSLIB_DATASET_URL
+   :value: 'http://www.projectmanagement.ugent.be/sites/default/files/datasets/MSRCPSP/MSLIB.zip'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.MSLIB_DATASET_URL
+
+.. py:data:: MSLIB_DATASET_RELATIVE_PATH
+   :canonical: discrete_optimization.datasets.MSLIB_DATASET_RELATIVE_PATH
+   :value: 'MSLIB.zip'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.MSLIB_DATASET_RELATIVE_PATH
+
+.. py:data:: MIS_FILES
+   :canonical: discrete_optimization.datasets.MIS_FILES
+   :value: ['https://oeis.org/A265032/a265032_1dc.64.txt.gz', 'https://oeis.org/A265032/a265032_1dc.128.txt.gz'...
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.MIS_FILES
+
+.. py:data:: BPPC_ZIP
+   :canonical: discrete_optimization.datasets.BPPC_ZIP
+   :value: 'https://site.unibo.it/operations-research/en/research/library-of-codes-and-instances-1/bppc.zip/@@do...'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.BPPC_ZIP
+
+.. py:data:: FJSP_DATASET_PREFIX
+   :canonical: discrete_optimization.datasets.FJSP_DATASET_PREFIX
+   :value: 'jfsp_openhsu'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.FJSP_DATASET_PREFIX
+
+.. py:data:: MIS_DATASET_PREFIX
+   :canonical: discrete_optimization.datasets.MIS_DATASET_PREFIX
+   :value: 'mis'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.MIS_DATASET_PREFIX
+
+.. py:data:: VRPTW_DATASET_PREFIX
+   :canonical: discrete_optimization.datasets.VRPTW_DATASET_PREFIX
+   :value: 'vrptw/homberger_200_customer_instances'
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.VRPTW_DATASET_PREFIX
+
+.. py:data:: ERROR_MSG_MISSING_DATASETS
+   :canonical: discrete_optimization.datasets.ERROR_MSG_MISSING_DATASETS
+   :value: <Multiline-String>
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.ERROR_MSG_MISSING_DATASETS
+
+.. py:function:: get_data_home(data_home: typing.Optional[str] = None) -> str
+   :canonical: discrete_optimization.datasets.get_data_home
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.get_data_home
+
+.. py:function:: fetch_data_from_coursera(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_from_coursera
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_coursera
+
+.. py:function:: fetch_data_from_solutionsupdate(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_from_solutionsupdate
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_solutionsupdate
+
+.. py:function:: fetch_data_from_psplib(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_from_psplib
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_psplib
+
+.. py:function:: fetch_data_from_imopse(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_from_imopse
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_imopse
+
+.. py:function:: fetch_data_from_mspsplib_repo(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_from_mspsplib_repo
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_mspsplib_repo
+
+.. py:function:: fetch_data_from_mslib(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_from_mslib
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_mslib
+
+.. py:function:: decompress_gz_to_folder(input_file, output_folder, url)
+   :canonical: discrete_optimization.datasets.decompress_gz_to_folder
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.decompress_gz_to_folder
+
+.. py:function:: fetch_data_for_mis(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_for_mis
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_for_mis
+
+.. py:function:: fetch_mis_from_repo(data_home: typing.Optional[str] = None) -> None
+   :canonical: discrete_optimization.datasets.fetch_mis_from_repo
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_mis_from_repo
+
+.. py:function:: fetch_fjsp_from_repo(data_home: typing.Optional[str] = None) -> None
+   :canonical: discrete_optimization.datasets.fetch_fjsp_from_repo
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_fjsp_from_repo
+
+.. py:function:: fetch_datasets_from_repo(data_home: typing.Optional[str] = None, dataset_prefixes: typing.Optional[list[str]] = None) -> None
+   :canonical: discrete_optimization.datasets.fetch_datasets_from_repo
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_datasets_from_repo
+
+.. py:function:: _extract_dataset_from_zipped_repo(zipped_repo_path: str, dataset_prefix: str, data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets._extract_dataset_from_zipped_repo
+
+   .. autodoc2-docstring:: discrete_optimization.datasets._extract_dataset_from_zipped_repo
+
+.. py:function:: fetch_data_from_jsplib_repo(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_from_jsplib_repo
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_jsplib_repo
+
+.. py:function:: fetch_data_fjsp(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_fjsp
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_fjsp
+
+.. py:function:: fetch_data_from_bppc(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_from_bppc
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_bppc
+
+.. py:function:: fetch_data_from_cp25(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_from_cp25
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_from_cp25
+
+.. py:function:: fetch_data_weighted_tardiness_single_machine(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_weighted_tardiness_single_machine
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_weighted_tardiness_single_machine
+
+.. py:function:: fetch_data_tsptw(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_data_tsptw
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_data_tsptw
+
+.. py:function:: fetch_all_datasets(data_home: typing.Optional[str] = None)
+   :canonical: discrete_optimization.datasets.fetch_all_datasets
+
+   .. autodoc2-docstring:: discrete_optimization.datasets.fetch_all_datasets

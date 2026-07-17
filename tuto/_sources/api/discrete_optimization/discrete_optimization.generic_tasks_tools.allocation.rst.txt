@@ -1,0 +1,218 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.allocation`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.allocation
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`AllocationSolution <discrete_optimization.generic_tasks_tools.allocation.AllocationSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution
+          :summary:
+   * - :py:obj:`AllocationProblem <discrete_optimization.generic_tasks_tools.allocation.AllocationProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem
+          :summary:
+   * - :py:obj:`AllocationCpSolver <discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_default_tasks_n_unary_resources <discrete_optimization.generic_tasks_tools.allocation.get_default_tasks_n_unary_resources>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.get_default_tasks_n_unary_resources
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`UnaryResource <discrete_optimization.generic_tasks_tools.allocation.UnaryResource>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.UnaryResource
+          :summary:
+
+API
+~~~
+
+.. py:data:: UnaryResource
+   :canonical: discrete_optimization.generic_tasks_tools.allocation.UnaryResource
+   :value: 'TypeVar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.UnaryResource
+
+.. py:class:: AllocationSolution
+   :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksSolution`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ], :py:obj:`typing.Generic`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ , :py:obj:`discrete_optimization.generic_tasks_tools.allocation.UnaryResource`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.problem
+      :type: AllocationProblem[discrete_optimization.generic_tasks_tools.base.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.problem
+
+   .. py:method:: is_allocated(task: discrete_optimization.generic_tasks_tools.base.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource) -> bool
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.is_allocated
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.is_allocated
+
+   .. py:method:: get_default_tasks_n_unary_resources(tasks: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]] = None, unary_resources: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]] = None) -> tuple[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task], collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]]
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.get_default_tasks_n_unary_resources
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.get_default_tasks_n_unary_resources
+
+   .. py:method:: compute_nb_unary_resource_usages(tasks: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]] = None, unary_resources: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]] = None)
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.compute_nb_unary_resource_usages
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.compute_nb_unary_resource_usages
+
+   .. py:method:: _check_same_problem(ref: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution[discrete_optimization.generic_tasks_tools.base.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource]) -> None
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution._check_same_problem
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution._check_same_problem
+
+   .. py:method:: compute_nb_allocation_changes(ref: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution[discrete_optimization.generic_tasks_tools.base.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource], tasks: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]] = None, unary_resources: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]] = None) -> int
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.compute_nb_allocation_changes
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.compute_nb_allocation_changes
+
+   .. py:method:: compute_nb_tasks_done() -> int
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.compute_nb_tasks_done
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.compute_nb_tasks_done
+
+   .. py:method:: compute_nb_unary_resources_used() -> int
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.compute_nb_unary_resources_used
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.compute_nb_unary_resources_used
+
+   .. py:method:: check_same_allocation_as_ref(ref: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution[discrete_optimization.generic_tasks_tools.base.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource], tasks: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]] = None, unary_resources: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]] = None) -> bool
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.check_same_allocation_as_ref
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution.check_same_allocation_as_ref
+
+.. py:class:: AllocationProblem
+   :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksProblem`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ], :py:obj:`typing.Generic`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ , :py:obj:`discrete_optimization.generic_tasks_tools.allocation.UnaryResource`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem
+
+   .. py:property:: unary_resources_list
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem.unary_resources_list
+      :abstractmethod:
+      :type: list[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem.unary_resources_list
+
+   .. py:attribute:: _map_unary_resource_to_index
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem._map_unary_resource_to_index
+      :type: typing.Optional[dict[discrete_optimization.generic_tasks_tools.allocation.UnaryResource, int]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem._map_unary_resource_to_index
+
+   .. py:method:: get_unary_resource_from_index(i: int) -> discrete_optimization.generic_tasks_tools.allocation.UnaryResource
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem.get_unary_resource_from_index
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem.get_unary_resource_from_index
+
+   .. py:method:: get_index_from_unary_resource(unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource) -> int
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem.get_index_from_unary_resource
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem.get_index_from_unary_resource
+
+   .. py:method:: is_compatible_task_unary_resource(task: discrete_optimization.generic_tasks_tools.base.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource) -> bool
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem.is_compatible_task_unary_resource
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem.is_compatible_task_unary_resource
+
+.. py:class:: AllocationCpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksCpSolver`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ], :py:obj:`typing.Generic`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ , :py:obj:`discrete_optimization.generic_tasks_tools.allocation.UnaryResource`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.problem
+      :type: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem[discrete_optimization.generic_tasks_tools.base.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.problem
+
+   .. py:method:: add_constraint_on_task_unary_resource_allocation(task: discrete_optimization.generic_tasks_tools.base.Task, unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource, used: bool) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_on_task_unary_resource_allocation
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_on_task_unary_resource_allocation
+
+   .. py:method:: add_constraint_on_nb_allocation_changes(ref: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution[discrete_optimization.generic_tasks_tools.base.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource], nb_changes: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_on_nb_allocation_changes
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_on_nb_allocation_changes
+
+   .. py:method:: add_constraint_on_total_nb_usages(sign: discrete_optimization.generic_tools.cp_tools.SignEnum, target: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_on_total_nb_usages
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_on_total_nb_usages
+
+   .. py:method:: add_constraint_on_unary_resource_nb_usages(unary_resource: discrete_optimization.generic_tasks_tools.allocation.UnaryResource, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, target: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_on_unary_resource_nb_usages
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_on_unary_resource_nb_usages
+
+   .. py:method:: get_default_tasks_n_unary_resources(tasks: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]] = None, unary_resources: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]] = None) -> tuple[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task], collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]]
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.get_default_tasks_n_unary_resources
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.get_default_tasks_n_unary_resources
+
+   .. py:method:: add_constraint_same_allocation_as_ref(ref: discrete_optimization.generic_tasks_tools.allocation.AllocationSolution[discrete_optimization.generic_tasks_tools.base.Task, discrete_optimization.generic_tasks_tools.allocation.UnaryResource], tasks: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]] = None, unary_resources: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]] = None) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_same_allocation_as_ref
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.add_constraint_same_allocation_as_ref
+
+   .. py:method:: get_nb_tasks_done_variable() -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.get_nb_tasks_done_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.get_nb_tasks_done_variable
+
+   .. py:method:: get_nb_unary_resources_used_variable() -> typing.Any
+      :canonical: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.get_nb_unary_resources_used_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.AllocationCpSolver.get_nb_unary_resources_used_variable
+
+.. py:function:: get_default_tasks_n_unary_resources(problem: discrete_optimization.generic_tasks_tools.allocation.AllocationProblem, tasks: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task]] = None, unary_resources: typing.Optional[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]] = None) -> tuple[collections.abc.Iterable[discrete_optimization.generic_tasks_tools.base.Task], collections.abc.Iterable[discrete_optimization.generic_tasks_tools.allocation.UnaryResource]]
+   :canonical: discrete_optimization.generic_tasks_tools.allocation.get_default_tasks_n_unary_resources
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.allocation.get_default_tasks_n_unary_resources

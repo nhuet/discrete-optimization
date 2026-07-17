@@ -1,0 +1,20 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn`
+======================================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solution_repair
+   discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.solver
+   discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_tools
+   discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder
+   discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.postpro_ls

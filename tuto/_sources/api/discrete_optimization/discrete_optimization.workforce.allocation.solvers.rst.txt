@@ -1,0 +1,63 @@
+:py:mod:`discrete_optimization.workforce.allocation.solvers`
+============================================================
+
+.. py:module:: discrete_optimization.workforce.allocation.solvers
+
+.. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.workforce.allocation.solvers.cpmpy
+   discrete_optimization.workforce.allocation.solvers.cpsat
+   discrete_optimization.workforce.allocation.solvers.dp
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TeamAllocationSolver <discrete_optimization.workforce.allocation.solvers.TeamAllocationSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`folder_solver <discrete_optimization.workforce.allocation.solvers.folder_solver>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.folder_solver
+          :summary:
+
+API
+~~~
+
+.. py:data:: folder_solver
+   :canonical: discrete_optimization.workforce.allocation.solvers.folder_solver
+   :value: 'dirname(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.folder_solver
+
+.. py:class:: TeamAllocationSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.workforce.allocation.solvers.TeamAllocationSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.workforce.allocation.solvers.TeamAllocationSolver.problem
+      :type: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.TeamAllocationSolver.problem

@@ -1,0 +1,77 @@
+:py:mod:`discrete_optimization.tsp.solvers.quantum`
+===================================================
+
+.. py:module:: discrete_optimization.tsp.solvers.quantum
+
+.. autodoc2-docstring:: discrete_optimization.tsp.solvers.quantum
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Tsp2dQiskit <discrete_optimization.tsp.solvers.quantum.Tsp2dQiskit>`
+     -
+   * - :py:obj:`QaoaTspSolver <discrete_optimization.tsp.solvers.quantum.QaoaTspSolver>`
+     -
+   * - :py:obj:`VqeTspSolver <discrete_optimization.tsp.solvers.quantum.VqeTspSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.tsp.solvers.quantum.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.quantum.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.tsp.solvers.quantum.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.quantum.logger
+
+.. py:class:: Tsp2dQiskit(problem: discrete_optimization.tsp.problem.Point2DTspProblem)
+   :canonical: discrete_optimization.tsp.solvers.quantum.Tsp2dQiskit
+
+   Bases: :py:obj:`qiskit_optimization.applications.OptimizationApplication`
+
+   .. py:method:: to_quadratic_program() -> qiskit_optimization.QuadraticProgram
+      :canonical: discrete_optimization.tsp.solvers.quantum.Tsp2dQiskit.to_quadratic_program
+
+   .. py:method:: interpret(result: typing.Union[qiskit_optimization.algorithms.OptimizationResult, numpy.ndarray])
+      :canonical: discrete_optimization.tsp.solvers.quantum.Tsp2dQiskit.interpret
+
+.. py:class:: QaoaTspSolver(problem: discrete_optimization.tsp.problem.Point2DTspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.tsp.solvers.quantum.QaoaTspSolver
+
+   Bases: :py:obj:`discrete_optimization.tsp.solvers.TspSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.tsp.solvers.quantum.QaoaTspSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.tsp.solvers.quantum.QaoaTspSolver.retrieve_current_solution
+
+.. py:class:: VqeTspSolver(problem: discrete_optimization.tsp.problem.Point2DTspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.tsp.solvers.quantum.VqeTspSolver
+
+   Bases: :py:obj:`discrete_optimization.tsp.solvers.TspSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.tsp.solvers.quantum.VqeTspSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.tsp.solvers.quantum.VqeTspSolver.retrieve_current_solution

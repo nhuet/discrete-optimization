@@ -1,0 +1,59 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.precedence`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.precedence
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.precedence
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`PrecedenceProblem <discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`HashableTask <discrete_optimization.generic_tasks_tools.precedence.HashableTask>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.precedence.HashableTask
+          :summary:
+
+API
+~~~
+
+.. py:data:: HashableTask
+   :canonical: discrete_optimization.generic_tasks_tools.precedence.HashableTask
+   :value: 'TypeVar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.precedence.HashableTask
+
+.. py:class:: PrecedenceProblem
+   :canonical: discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksProblem`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.precedence.HashableTask`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem
+
+   .. py:method:: get_precedence_constraints() -> dict[discrete_optimization.generic_tasks_tools.precedence.HashableTask, collections.abc.Iterable[discrete_optimization.generic_tasks_tools.precedence.HashableTask]]
+      :canonical: discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem.get_precedence_constraints
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem.get_precedence_constraints
+
+   .. py:method:: get_precedence_graph() -> discrete_optimization.generic_tools.graph_api.Graph
+      :canonical: discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem.get_precedence_graph
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem.get_precedence_graph

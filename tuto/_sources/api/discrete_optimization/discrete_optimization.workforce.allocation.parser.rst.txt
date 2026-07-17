@@ -1,0 +1,54 @@
+:py:mod:`discrete_optimization.workforce.allocation.parser`
+===========================================================
+
+.. py:module:: discrete_optimization.workforce.allocation.parser
+
+.. autodoc2-docstring:: discrete_optimization.workforce.allocation.parser
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`parse_to_allocation_problem <discrete_optimization.workforce.allocation.parser.parse_to_allocation_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.parser.parse_to_allocation_problem
+          :summary:
+   * - :py:obj:`parse_to_allocation_problem_additional_constraint <discrete_optimization.workforce.allocation.parser.parse_to_allocation_problem_additional_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.parser.parse_to_allocation_problem_additional_constraint
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.allocation.parser.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.parser.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.allocation.parser.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.parser.logger
+
+.. py:function:: parse_to_allocation_problem(json_path: str, multiobjective: bool = True) -> discrete_optimization.workforce.allocation.problem.TeamAllocationProblem
+   :canonical: discrete_optimization.workforce.allocation.parser.parse_to_allocation_problem
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.parser.parse_to_allocation_problem
+
+.. py:function:: parse_to_allocation_problem_additional_constraint(json_path: str, multiobjective: bool = True) -> discrete_optimization.workforce.allocation.problem.TeamAllocationProblem
+   :canonical: discrete_optimization.workforce.allocation.parser.parse_to_allocation_problem_additional_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.parser.parse_to_allocation_problem_additional_constraint

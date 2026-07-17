@@ -1,0 +1,74 @@
+:py:mod:`discrete_optimization.rcpsp.sgs_without_array`
+=======================================================
+
+.. py:module:: discrete_optimization.rcpsp.sgs_without_array
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`SgsWithoutArray <discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray
+          :summary:
+
+API
+~~~
+
+.. py:class:: SgsWithoutArray(rcpsp_problem: discrete_optimization.rcpsp.RcpspProblem)
+   :canonical: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.__init__
+
+   .. py:method:: get_available_from_delta(sdict: sortedcontainers.SortedDict, time: int) -> int
+      :canonical: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.get_available_from_delta
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.get_available_from_delta
+
+   .. py:method:: get_available_from_absolute(sdict: sortedcontainers.SortedDict, time: int) -> int
+      :canonical: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.get_available_from_absolute
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.get_available_from_absolute
+
+   .. py:method:: add_event_delta(sdict: sortedcontainers.SortedDict, time_start: int, delta: int, time_end: int) -> None
+      :canonical: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.add_event_delta
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.add_event_delta
+
+   .. py:method:: add_event_delta_in_absolute(sdict: sortedcontainers.SortedDict, time_start: int, delta: int, time_end: int, liberate: bool = True) -> None
+      :canonical: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.add_event_delta_in_absolute
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.add_event_delta_in_absolute
+
+   .. py:method:: create_delta_dict(vector: numpy.typing.ArrayLike) -> sortedcontainers.SortedDict
+      :canonical: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.create_delta_dict
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.create_delta_dict
+
+   .. py:method:: create_absolute_dict(vector: numpy.typing.ArrayLike) -> sortedcontainers.SortedDict
+      :canonical: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.create_absolute_dict
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.create_absolute_dict
+
+   .. py:method:: generate_schedule_from_permutation_serial_sgs(solution: discrete_optimization.rcpsp.solution.RcpspSolution, rcpsp_problem: discrete_optimization.rcpsp.RcpspProblem) -> tuple[dict[collections.abc.Hashable, dict[str, int]], bool, dict[str, sortedcontainers.SortedDict]]
+      :canonical: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.generate_schedule_from_permutation_serial_sgs
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.sgs_without_array.SgsWithoutArray.generate_schedule_from_permutation_serial_sgs

@@ -1,0 +1,213 @@
+:py:mod:`discrete_optimization.generic_tools.mutations.permutation_mutations`
+=============================================================================
+
+.. py:module:: discrete_optimization.generic_tools.mutations.permutation_mutations
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ShuffleMove <discrete_optimization.generic_tools.mutations.permutation_mutations.ShuffleMove>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.ShuffleMove
+          :summary:
+   * - :py:obj:`PermutationShuffleMutation <discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation
+          :summary:
+   * - :py:obj:`PermutationPartialShuffleMutation <discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation
+          :summary:
+   * - :py:obj:`SwapsLocalMove <discrete_optimization.generic_tools.mutations.permutation_mutations.SwapsLocalMove>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.SwapsLocalMove
+          :summary:
+   * - :py:obj:`PermutationSwap <discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap
+          :summary:
+   * - :py:obj:`TwoOptMove <discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMove>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMove
+          :summary:
+   * - :py:obj:`TwoOptMutation <discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation
+          :summary:
+
+API
+~~~
+
+.. py:class:: ShuffleMove(attribute: str, new_permutation: typing.Union[list[int], numpy.ndarray], prev_permutation: typing.Union[list[int], numpy.ndarray])
+   :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.ShuffleMove
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.LocalMove`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.ShuffleMove
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.ShuffleMove.__init__
+
+   .. py:method:: apply_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.ShuffleMove.apply_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.ShuffleMove.apply_local_move
+
+   .. py:method:: backtrack_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.ShuffleMove.backtrack_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.ShuffleMove.backtrack_local_move
+
+.. py:class:: PermutationShuffleMutation(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, attribute: typing.Optional[str] = None)
+   :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation.__init__
+
+   .. py:method:: build(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, **kwargs: typing.Any) -> discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation.build
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationShuffleMutation.mutate_and_compute_obj
+
+.. py:class:: PermutationPartialShuffleMutation(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, attribute: typing.Optional[str] = None, proportion: float = 0.3)
+   :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation.__init__
+
+   .. py:method:: build(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, **kwargs: typing.Any) -> discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation.build
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationPartialShuffleMutation.mutate_and_compute_obj
+
+.. py:class:: SwapsLocalMove(attribute: str, list_index_swap: list[tuple[int, int]])
+   :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.SwapsLocalMove
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.LocalMove`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.SwapsLocalMove
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.SwapsLocalMove.__init__
+
+   .. py:method:: apply_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.SwapsLocalMove.apply_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.SwapsLocalMove.apply_local_move
+
+   .. py:method:: backtrack_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.SwapsLocalMove.backtrack_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.SwapsLocalMove.backtrack_local_move
+
+.. py:class:: PermutationSwap(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, attribute: typing.Optional[str] = None, nb_swap: int = 1)
+   :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap.__init__
+
+   .. py:method:: build(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, **kwargs: typing.Any) -> discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap.build
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.PermutationSwap.mutate_and_compute_obj
+
+.. py:class:: TwoOptMove(attribute: str, index_2opt: list[tuple[int, int]])
+   :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMove
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.LocalMove`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMove
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMove.__init__
+
+   .. py:method:: apply_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMove.apply_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMove.apply_local_move
+
+   .. py:method:: backtrack_local_move(solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMove.backtrack_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMove.backtrack_local_move
+
+.. py:class:: TwoOptMutation(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, attribute: typing.Optional[str] = None)
+   :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation.__init__
+
+   .. py:method:: build(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, **kwargs: typing.Any) -> discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation.build
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.permutation_mutations.TwoOptMutation.mutate_and_compute_obj

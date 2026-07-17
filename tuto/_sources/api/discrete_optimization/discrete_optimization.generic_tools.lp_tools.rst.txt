@@ -1,0 +1,632 @@
+:py:mod:`discrete_optimization.generic_tools.lp_tools`
+======================================================
+
+.. py:module:: discrete_optimization.generic_tools.lp_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ParametersMilp <discrete_optimization.generic_tools.lp_tools.ParametersMilp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.ParametersMilp
+          :summary:
+   * - :py:obj:`InequalitySense <discrete_optimization.generic_tools.lp_tools.InequalitySense>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.InequalitySense
+          :summary:
+   * - :py:obj:`MilpSolver <discrete_optimization.generic_tools.lp_tools.MilpSolver>`
+     -
+   * - :py:obj:`OrtoolsMathOptMilpSolver <discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver
+          :summary:
+   * - :py:obj:`MathOptCallback <discrete_optimization.generic_tools.lp_tools.MathOptCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MathOptCallback
+          :summary:
+   * - :py:obj:`GurobiMilpSolver <discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver
+          :summary:
+   * - :py:obj:`GurobiCallback <discrete_optimization.generic_tools.lp_tools.GurobiCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiCallback
+          :summary:
+   * - :py:obj:`CplexMilpSolver <discrete_optimization.generic_tools.lp_tools.CplexMilpSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.lp_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.logger
+          :summary:
+   * - :py:obj:`map_mathopt_status_to_do_status <discrete_optimization.generic_tools.lp_tools.map_mathopt_status_to_do_status>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.map_mathopt_status_to_do_status
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.lp_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.logger
+
+.. py:class:: ParametersMilp(pool_solutions: int, mip_gap_abs: float, mip_gap: float, retrieve_all_solution: bool, pool_search_mode: int = 0)
+   :canonical: discrete_optimization.generic_tools.lp_tools.ParametersMilp
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.ParametersMilp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.ParametersMilp.__init__
+
+   .. py:method:: default() -> discrete_optimization.generic_tools.lp_tools.ParametersMilp
+      :canonical: discrete_optimization.generic_tools.lp_tools.ParametersMilp.default
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.ParametersMilp.default
+
+.. py:class:: InequalitySense
+   :canonical: discrete_optimization.generic_tools.lp_tools.InequalitySense
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.InequalitySense
+
+   .. py:attribute:: LOWER_OR_EQUAL
+      :canonical: discrete_optimization.generic_tools.lp_tools.InequalitySense.LOWER_OR_EQUAL
+      :value: '<='
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.InequalitySense.LOWER_OR_EQUAL
+
+   .. py:attribute:: GREATER_OR_EQUAL
+      :canonical: discrete_optimization.generic_tools.lp_tools.InequalitySense.GREATER_OR_EQUAL
+      :value: '>='
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.InequalitySense.GREATER_OR_EQUAL
+
+   .. py:attribute:: EQUAL
+      :canonical: discrete_optimization.generic_tools.lp_tools.InequalitySense.EQUAL
+      :value: '=='
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.InequalitySense.EQUAL
+
+.. py:class:: MilpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.model
+      :type: typing.Optional[typing.Any]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.model
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.init_model
+      :abstractmethod:
+
+   .. py:method:: retrieve_solutions(parameters_milp: discrete_optimization.generic_tools.lp_tools.ParametersMilp) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.retrieve_solutions
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.retrieve_solutions
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.retrieve_current_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.retrieve_current_solution
+
+   .. py:method:: retrieve_ith_solution(i: int) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.retrieve_ith_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.retrieve_ith_solution
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.solve
+      :abstractmethod:
+
+   .. py:method:: get_var_value_for_ith_solution(var: typing.Any, i: int) -> float
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.get_var_value_for_ith_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.get_var_value_for_ith_solution
+
+   .. py:method:: get_obj_value_for_ith_solution(i: int) -> float
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.get_obj_value_for_ith_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.get_obj_value_for_ith_solution
+
+   .. py:property:: nb_solutions
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.nb_solutions
+      :abstractmethod:
+      :type: int
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.nb_solutions
+
+   .. py:method:: create_empty_model(name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.create_empty_model
+      :abstractmethod:
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.create_empty_model
+
+   .. py:method:: add_linear_constraint(expr: typing.Any, name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_linear_constraint
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_linear_constraint
+
+   .. py:method:: add_binary_variable(name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_binary_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_binary_variable
+
+   .. py:method:: add_integer_variable(lb: float = 0.0, ub: float = math.inf, name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_integer_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_integer_variable
+
+   .. py:method:: add_continuous_variable(lb: float = 0.0, ub: float = math.inf, name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_continuous_variable
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_continuous_variable
+
+   .. py:method:: set_model_objective(expr: typing.Any, minimize: bool) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.set_model_objective
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.set_model_objective
+
+   .. py:method:: construct_linear_sum(expr: collections.abc.Iterable) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.construct_linear_sum
+      :abstractmethod:
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.construct_linear_sum
+
+   .. py:method:: add_linear_constraint_with_indicator(binvar: discrete_optimization.generic_tools.lp_tools.VariableType, binval: int, lhs: typing.Any, sense: discrete_optimization.generic_tools.lp_tools.InequalitySense, rhs: typing.Any, penalty_coeff=100000, name: str = '') -> list[discrete_optimization.generic_tools.lp_tools.ConstraintType]
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_linear_constraint_with_indicator
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.add_linear_constraint_with_indicator
+
+   .. py:method:: set_warm_start_from_values(variable_values: dict[discrete_optimization.generic_tools.lp_tools.VariableType, float]) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.MilpSolver.set_warm_start_from_values
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MilpSolver.set_warm_start_from_values
+
+.. py:class:: OrtoolsMathOptMilpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`, :py:obj:`discrete_optimization.generic_tools.do_solver.BoundsProviderMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.hyperparameters
+
+   .. py:attribute:: solution_hint
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.solution_hint
+      :type: typing.Optional[ortools.math_opt.python.mathopt.SolutionHint]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.solution_hint
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.model
+      :type: typing.Optional[ortools.math_opt.python.mathopt.Model]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.model
+
+   .. py:attribute:: termination
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.termination
+      :type: ortools.math_opt.python.mathopt.Termination
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.termination
+
+   .. py:attribute:: early_stopping_exception
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.early_stopping_exception
+      :type: typing.Optional[Exception]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.early_stopping_exception
+
+   .. py:attribute:: has_quadratic_objective
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.has_quadratic_objective
+      :type: bool
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.has_quadratic_objective
+
+   .. py:attribute:: random_seed
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.random_seed
+      :type: typing.Optional[int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.random_seed
+
+   .. py:attribute:: mathopt_res
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.mathopt_res
+      :type: typing.Optional[ortools.math_opt.python.mathopt.SolveResult]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.mathopt_res
+
+   .. py:attribute:: _current_internal_objective_best_value
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver._current_internal_objective_best_value
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver._current_internal_objective_best_value
+
+   .. py:attribute:: _current_internal_objective_best_bound
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver._current_internal_objective_best_bound
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver._current_internal_objective_best_bound
+
+   .. py:method:: remove_constraints(constraints: collections.abc.Iterable[typing.Any]) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.remove_constraints
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.convert_to_variable_values
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.convert_to_variable_values
+
+   .. py:method:: convert_to_dual_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[ortools.math_opt.python.mathopt.LinearConstraint, float]
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.convert_to_dual_values
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.convert_to_dual_values
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.set_warm_start
+
+   .. py:method:: set_warm_start_from_values(variable_values: dict[ortools.math_opt.python.mathopt.Variable, float], dual_values: typing.Optional[dict[ortools.math_opt.python.mathopt.LinearConstraint, float]] = None) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.set_warm_start_from_values
+
+   .. py:method:: get_var_value_for_ith_solution(var: typing.Any, i: int) -> float
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.get_var_value_for_ith_solution
+      :abstractmethod:
+
+   .. py:method:: get_obj_value_for_ith_solution(i: int) -> float
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.get_obj_value_for_ith_solution
+      :abstractmethod:
+
+   .. py:property:: nb_solutions
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.nb_solutions
+      :abstractmethod:
+      :type: int
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, mathopt_solver_type: ortools.math_opt.python.mathopt.SolverType = mathopt.SolverType.CP_SAT, time_limit: typing.Optional[float] = 30.0, mathopt_enable_output: bool = False, mathopt_model_parameters: typing.Optional[ortools.math_opt.python.mathopt.ModelSolveParameters] = None, mathopt_additional_solve_parameters: typing.Optional[ortools.math_opt.python.mathopt.SolveParameters] = None, store_mathopt_res: bool = False, extract_solutions_from_mathopt_res: typing.Optional[bool] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.solve
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.solve
+
+   .. py:method:: set_random_seed(random_seed: int) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.set_random_seed
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.set_random_seed
+
+   .. py:method:: optimize_model(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, mathopt_solver_type: ortools.math_opt.python.mathopt.SolverType = mathopt.SolverType.CP_SAT, time_limit: typing.Optional[float] = 30.0, mathopt_cb: typing.Optional[ortools.math_opt.python.mathopt.SolveCallback] = None, mathopt_enable_output: bool = False, mathopt_model_parameters: typing.Optional[ortools.math_opt.python.mathopt.ModelSolveParameters] = None, mathopt_additional_solve_parameters: typing.Optional[ortools.math_opt.python.mathopt.SolveParameters] = None, **kwargs: typing.Any) -> ortools.math_opt.python.mathopt.SolveResult
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.optimize_model
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.optimize_model
+
+   .. py:method:: create_empty_model(name: str = '') -> ortools.math_opt.python.mathopt.Model
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.create_empty_model
+      :staticmethod:
+
+   .. py:method:: add_linear_constraint(expr: typing.Any, name: str = '') -> ortools.math_opt.python.mathopt.LinearConstraint
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.add_linear_constraint
+
+   .. py:method:: add_binary_variable(name: str = '') -> ortools.math_opt.python.mathopt.Variable
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.add_binary_variable
+
+   .. py:method:: add_integer_variable(lb: float = 0.0, ub: float = math.inf, name: str = '') -> ortools.math_opt.python.mathopt.Variable
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.add_integer_variable
+
+   .. py:method:: add_continuous_variable(lb: float = 0.0, ub: float = math.inf, name: str = '') -> ortools.math_opt.python.mathopt.Variable
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.add_continuous_variable
+
+   .. py:method:: set_model_objective(expr: typing.Any, minimize: bool) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.set_model_objective
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.set_model_objective
+
+   .. py:method:: construct_linear_sum(expr: collections.abc.Iterable) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.construct_linear_sum
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.construct_linear_sum
+
+   .. py:method:: _extract_result_storage(mathopt_res: ortools.math_opt.python.mathopt.SolveResult) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver._extract_result_storage
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver._extract_result_storage
+
+   .. py:method:: get_current_best_internal_objective_bound() -> typing.Optional[float]
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.get_current_best_internal_objective_bound
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.get_current_best_internal_objective_bound
+
+   .. py:method:: get_current_best_internal_objective_value() -> typing.Optional[float]
+      :canonical: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.get_current_best_internal_objective_value
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver.get_current_best_internal_objective_value
+
+.. py:data:: map_mathopt_status_to_do_status
+   :canonical: discrete_optimization.generic_tools.lp_tools.map_mathopt_status_to_do_status
+   :type: dict[ortools.math_opt.python.mathopt.TerminationReason, discrete_optimization.generic_tools.do_solver.StatusSolver]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.map_mathopt_status_to_do_status
+
+.. py:class:: MathOptCallback(do_solver: discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver, callback: discrete_optimization.generic_tools.callbacks.callback.Callback, mathopt_solver_type: ortools.math_opt.python.mathopt.SolverType)
+   :canonical: discrete_optimization.generic_tools.lp_tools.MathOptCallback
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MathOptCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MathOptCallback.__init__
+
+   .. py:method:: __call__(callback_data: ortools.math_opt.python.mathopt.CallbackData) -> ortools.math_opt.python.mathopt.CallbackResult
+      :canonical: discrete_optimization.generic_tools.lp_tools.MathOptCallback.__call__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.MathOptCallback.__call__
+
+.. py:class:: GurobiMilpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`, :py:obj:`discrete_optimization.generic_tools.do_solver.BoundsProviderMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.__init__
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.model
+      :type: typing.Optional[gurobipy.Model]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.model
+
+   .. py:attribute:: early_stopping_exception
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.early_stopping_exception
+      :type: typing.Optional[Exception]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.early_stopping_exception
+
+   .. py:attribute:: _current_internal_objective_best_value
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver._current_internal_objective_best_value
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver._current_internal_objective_best_value
+
+   .. py:attribute:: _current_internal_objective_best_bound
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver._current_internal_objective_best_bound
+      :type: typing.Optional[float]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver._current_internal_objective_best_bound
+
+   .. py:method:: remove_constraints(constraints: collections.abc.Iterable[typing.Any]) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.remove_constraints
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[float] = 30.0, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.solve
+
+   .. py:method:: explain_unsat_fine() -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.explain_unsat_fine
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.explain_unsat_fine
+
+   .. py:method:: explain_unsat_deduced_meta(meta_constraints: typing.Optional[list[discrete_optimization.generic_tools.unsat_tools.MetaConstraint]] = None) -> list[discrete_optimization.generic_tools.unsat_tools.MetaConstraint]
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.explain_unsat_deduced_meta
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.explain_unsat_deduced_meta
+
+   .. py:method:: get_meta_constraints() -> list[discrete_optimization.generic_tools.unsat_tools.MetaConstraint]
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_meta_constraints
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_meta_constraints
+
+   .. py:method:: set_random_seed(random_seed: int) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.set_random_seed
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.set_random_seed
+
+   .. py:method:: prepare_model(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[float] = 30.0, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.prepare_model
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.prepare_model
+
+   .. py:method:: optimize_model(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[float] = 30.0, gurobi_callback: typing.Optional[discrete_optimization.generic_tools.lp_tools.GurobiCallback] = None, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.optimize_model
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.optimize_model
+
+   .. py:method:: get_var_value_for_ith_solution(var: gurobipy.Var, i: int)
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_var_value_for_ith_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_var_value_for_ith_solution
+
+   .. py:method:: get_obj_value_for_ith_solution(i: int) -> float
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_obj_value_for_ith_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_obj_value_for_ith_solution
+
+   .. py:property:: nb_solutions
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.nb_solutions
+      :type: int
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.nb_solutions
+
+   .. py:method:: create_empty_model(name: str = '') -> gurobipy.Model
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.create_empty_model
+      :staticmethod:
+
+   .. py:method:: add_linear_constraint(expr: typing.Any, name: str = '') -> gurobipy.Constr
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.add_linear_constraint
+
+   .. py:method:: add_binary_variable(name: str = '') -> gurobipy.Var
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.add_binary_variable
+
+   .. py:method:: add_integer_variable(lb: float = 0.0, ub: float = math.inf, name: str = '') -> gurobipy.Var
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.add_integer_variable
+
+   .. py:method:: add_continuous_variable(lb: float = 0.0, ub: float = math.inf, name: str = '') -> gurobipy.Var
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.add_continuous_variable
+
+   .. py:method:: set_model_objective(expr: typing.Any, minimize: bool) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.set_model_objective
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.set_model_objective
+
+   .. py:method:: construct_linear_sum(expr: collections.abc.Iterable) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.construct_linear_sum
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.construct_linear_sum
+
+   .. py:method:: add_linear_constraint_with_indicator(binvar: discrete_optimization.generic_tools.lp_tools.VariableType, binval: int, lhs: typing.Any, sense: discrete_optimization.generic_tools.lp_tools.InequalitySense, rhs: typing.Any, penalty_coeff=100000, name: str = '') -> list[discrete_optimization.generic_tools.lp_tools.ConstraintType]
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.add_linear_constraint_with_indicator
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.add_linear_constraint_with_indicator
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.convert_to_variable_values
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.convert_to_variable_values
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.generic_tools.do_problem.Solution) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.set_warm_start
+
+   .. py:method:: set_warm_start_from_values(variable_values: dict[gurobipy.Var, float]) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.set_warm_start_from_values
+
+   .. py:method:: get_current_best_internal_objective_bound() -> typing.Optional[float]
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_current_best_internal_objective_bound
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_current_best_internal_objective_bound
+
+   .. py:method:: get_current_best_internal_objective_value() -> typing.Optional[float]
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_current_best_internal_objective_value
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver.get_current_best_internal_objective_value
+
+.. py:class:: GurobiCallback(do_solver: discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver, callback: discrete_optimization.generic_tools.callbacks.callback.Callback)
+   :canonical: discrete_optimization.generic_tools.lp_tools.GurobiCallback
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiCallback.__init__
+
+   .. py:method:: __call__(model, where) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.GurobiCallback.__call__
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.GurobiCallback.__call__
+
+.. py:class:: CplexMilpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.model
+      :type: typing.Optional[docplex.mp.model.Model]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.model
+
+   .. py:attribute:: results_solve
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.results_solve
+      :type: typing.Optional[list[docplex.mp.solution.SolveSolution]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.results_solve
+
+   .. py:method:: solve(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[float] = 30.0, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.solve
+
+   .. py:method:: get_var_value_for_ith_solution(var: docplex.mp.dvar.Var, i: int) -> float
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_var_value_for_ith_solution
+
+   .. py:method:: get_obj_value_for_ith_solution(i: int) -> float
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.get_obj_value_for_ith_solution
+
+   .. py:property:: nb_solutions
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.nb_solutions
+      :type: int
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.nb_solutions
+
+   .. py:method:: create_empty_model(name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.create_empty_model
+      :abstractmethod:
+      :staticmethod:
+
+   .. py:method:: add_linear_constraint(expr: typing.Any, name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.add_linear_constraint
+      :abstractmethod:
+
+   .. py:method:: add_binary_variable(name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.add_binary_variable
+      :abstractmethod:
+
+   .. py:method:: add_integer_variable(lb: float = 0.0, ub: float = math.inf, name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.add_integer_variable
+      :abstractmethod:
+
+   .. py:method:: add_continuous_variable(lb: float = 0.0, ub: float = math.inf, name: str = '') -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.add_continuous_variable
+      :abstractmethod:
+
+   .. py:method:: set_model_objective(expr: typing.Any, minimize: bool) -> None
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.set_model_objective
+      :abstractmethod:
+
+   .. py:method:: construct_linear_sum(expr: collections.abc.Iterable) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.lp_tools.CplexMilpSolver.construct_linear_sum
+      :abstractmethod:
+      :staticmethod:

@@ -1,0 +1,139 @@
+:py:mod:`discrete_optimization.coloring.solvers.greedy`
+=======================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.greedy
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`NxGreedyColoringMethod <discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod>`
+     -
+   * - :py:obj:`GreedyColoringSolver <discrete_optimization.coloring.solvers.greedy.GreedyColoringSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.GreedyColoringSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.coloring.solvers.greedy.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.logger
+          :summary:
+   * - :py:obj:`strategies <discrete_optimization.coloring.solvers.greedy.strategies>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.strategies
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.coloring.solvers.greedy.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.logger
+
+.. py:data:: strategies
+   :canonical: discrete_optimization.coloring.solvers.greedy.strategies
+   :value: ['largest_first', 'random_sequential', 'smallest_last', 'independent_set', 'connected_sequential_dfs...
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.strategies
+
+.. py:class:: NxGreedyColoringMethod
+   :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: largest_first
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.largest_first
+      :value: 'largest_first'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.largest_first
+
+   .. py:attribute:: random_sequential
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.random_sequential
+      :value: 'random_sequential'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.random_sequential
+
+   .. py:attribute:: smallest_last
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.smallest_last
+      :value: 'smallest_last'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.smallest_last
+
+   .. py:attribute:: independent_set
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.independent_set
+      :value: 'independent_set'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.independent_set
+
+   .. py:attribute:: connected_sequential_dfs
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.connected_sequential_dfs
+      :value: 'connected_sequential_dfs'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.connected_sequential_dfs
+
+   .. py:attribute:: connected_sequential_bfs
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.connected_sequential_bfs
+      :value: 'connected_sequential_bfs'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.connected_sequential_bfs
+
+   .. py:attribute:: connected_sequential
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.connected_sequential
+      :value: 'connected_sequential'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.connected_sequential
+
+   .. py:attribute:: saturation_largest_first
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.saturation_largest_first
+      :value: 'saturation_largest_first'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.saturation_largest_first
+
+   .. py:attribute:: dsatur
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.dsatur
+      :value: 'DSATUR'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.dsatur
+
+   .. py:attribute:: best
+      :canonical: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.best
+      :value: 'best'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.NxGreedyColoringMethod.best
+
+.. py:class:: GreedyColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.greedy.GreedyColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.GreedyColoringSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.GreedyColoringSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.greedy.GreedyColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.GreedyColoringSolver.hyperparameters
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.coloring.solvers.greedy.GreedyColoringSolver.solve
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.greedy.GreedyColoringSolver.solve

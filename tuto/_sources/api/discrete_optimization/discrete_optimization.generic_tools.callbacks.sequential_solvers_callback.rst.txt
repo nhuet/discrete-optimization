@@ -1,0 +1,38 @@
+:py:mod:`discrete_optimization.generic_tools.callbacks.sequential_solvers_callback`
+===================================================================================
+
+.. py:module:: discrete_optimization.generic_tools.callbacks.sequential_solvers_callback
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.sequential_solvers_callback
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`RetrieveSubRes <discrete_optimization.generic_tools.callbacks.sequential_solvers_callback.RetrieveSubRes>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.sequential_solvers_callback.RetrieveSubRes
+          :summary:
+
+API
+~~~
+
+.. py:class:: RetrieveSubRes()
+   :canonical: discrete_optimization.generic_tools.callbacks.sequential_solvers_callback.RetrieveSubRes
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.sequential_solvers_callback.RetrieveSubRes
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.sequential_solvers_callback.RetrieveSubRes.__init__
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.sequential_solvers_callback.RetrieveSubRes.on_step_end

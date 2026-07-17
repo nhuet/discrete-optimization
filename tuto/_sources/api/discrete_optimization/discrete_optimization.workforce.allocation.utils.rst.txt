@@ -1,0 +1,141 @@
+:py:mod:`discrete_optimization.workforce.allocation.utils`
+==========================================================
+
+.. py:module:: discrete_optimization.workforce.allocation.utils
+
+.. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`subgraph_teams <discrete_optimization.workforce.allocation.utils.subgraph_teams>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.subgraph_teams
+          :summary:
+   * - :py:obj:`subgraph_activities <discrete_optimization.workforce.allocation.utils.subgraph_activities>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.subgraph_activities
+          :summary:
+   * - :py:obj:`subgraph_bipartite_activities <discrete_optimization.workforce.allocation.utils.subgraph_bipartite_activities>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.subgraph_bipartite_activities
+          :summary:
+   * - :py:obj:`allocation_additional_constraint_subset_tasks <discrete_optimization.workforce.allocation.utils.allocation_additional_constraint_subset_tasks>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.allocation_additional_constraint_subset_tasks
+          :summary:
+   * - :py:obj:`create_subproblem_allocation <discrete_optimization.workforce.allocation.utils.create_subproblem_allocation>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.create_subproblem_allocation
+          :summary:
+   * - :py:obj:`additional_constraint_subset_teams <discrete_optimization.workforce.allocation.utils.additional_constraint_subset_teams>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.additional_constraint_subset_teams
+          :summary:
+   * - :py:obj:`cut_number_of_team <discrete_optimization.workforce.allocation.utils.cut_number_of_team>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.cut_number_of_team
+          :summary:
+   * - :py:obj:`compute_equivalent_teams <discrete_optimization.workforce.allocation.utils.compute_equivalent_teams>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_equivalent_teams
+          :summary:
+   * - :py:obj:`compute_overlapping_activities_on_start_time <discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_start_time>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_start_time
+          :summary:
+   * - :py:obj:`compute_overlapping_activities_on_end_time <discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_end_time>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_end_time
+          :summary:
+   * - :py:obj:`compute_active_activities_on_time <discrete_optimization.workforce.allocation.utils.compute_active_activities_on_time>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_active_activities_on_time
+          :summary:
+   * - :py:obj:`compute_all_overlapping <discrete_optimization.workforce.allocation.utils.compute_all_overlapping>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_all_overlapping
+          :summary:
+   * - :py:obj:`compute_changes_between_solution_alloc <discrete_optimization.workforce.allocation.utils.compute_changes_between_solution_alloc>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_changes_between_solution_alloc
+          :summary:
+   * - :py:obj:`plot_allocation_solution <discrete_optimization.workforce.allocation.utils.plot_allocation_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.plot_allocation_solution
+          :summary:
+   * - :py:obj:`modify_graph <discrete_optimization.workforce.allocation.utils.modify_graph>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.modify_graph
+          :summary:
+
+API
+~~~
+
+.. py:function:: subgraph_teams(graph_allocation: discrete_optimization.workforce.allocation.problem.GraphBipartite, nb_teams_keep: int = 3, subset_teams_keep: typing.Optional[set[typing.Hashable]] = None) -> discrete_optimization.workforce.allocation.problem.GraphBipartite
+   :canonical: discrete_optimization.workforce.allocation.utils.subgraph_teams
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.subgraph_teams
+
+.. py:function:: subgraph_activities(graph: discrete_optimization.generic_tools.graph_api.Graph, subset_tasks: set[typing.Hashable]) -> discrete_optimization.generic_tools.graph_api.Graph
+   :canonical: discrete_optimization.workforce.allocation.utils.subgraph_activities
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.subgraph_activities
+
+.. py:function:: subgraph_bipartite_activities(graph_allocation: discrete_optimization.workforce.allocation.problem.GraphBipartite, subset_tasks: set[typing.Hashable]) -> discrete_optimization.generic_tools.graph_api.Graph
+   :canonical: discrete_optimization.workforce.allocation.utils.subgraph_bipartite_activities
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.subgraph_bipartite_activities
+
+.. py:function:: allocation_additional_constraint_subset_tasks(allocation_additional_constraint: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint, subset_tasks: set[typing.Hashable])
+   :canonical: discrete_optimization.workforce.allocation.utils.allocation_additional_constraint_subset_tasks
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.allocation_additional_constraint_subset_tasks
+
+.. py:function:: create_subproblem_allocation(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, subset_tasks: set[typing.Hashable])
+   :canonical: discrete_optimization.workforce.allocation.utils.create_subproblem_allocation
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.create_subproblem_allocation
+
+.. py:function:: additional_constraint_subset_teams(allocation_additional_constraint: discrete_optimization.workforce.allocation.problem.AllocationAdditionalConstraint, subset_teams_keep: set[typing.Hashable])
+   :canonical: discrete_optimization.workforce.allocation.utils.additional_constraint_subset_teams
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.additional_constraint_subset_teams
+
+.. py:function:: cut_number_of_team(team_allocation: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, nb_teams_keep: int = 3, subset_teams_keep: typing.Optional[set[typing.Hashable]] = None)
+   :canonical: discrete_optimization.workforce.allocation.utils.cut_number_of_team
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.cut_number_of_team
+
+.. py:function:: compute_equivalent_teams(team_allocation_problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem) -> list[list[int]]
+   :canonical: discrete_optimization.workforce.allocation.utils.compute_equivalent_teams
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_equivalent_teams
+
+.. py:function:: compute_overlapping_activities_on_start_time(team_allocation_problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, activity: typing.Hashable) -> list[typing.Hashable]
+   :canonical: discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_start_time
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_start_time
+
+.. py:function:: compute_overlapping_activities_on_end_time(team_allocation_problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, activity: typing.Hashable) -> list[typing.Hashable]
+   :canonical: discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_end_time
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_overlapping_activities_on_end_time
+
+.. py:function:: compute_active_activities_on_time(team_allocation_problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, time: typing.Union[int, pandas.Timestamp], side='left') -> list[typing.Hashable]
+   :canonical: discrete_optimization.workforce.allocation.utils.compute_active_activities_on_time
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_active_activities_on_time
+
+.. py:function:: compute_all_overlapping(team_allocation_problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem) -> set[frozenset]
+   :canonical: discrete_optimization.workforce.allocation.utils.compute_all_overlapping
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_all_overlapping
+
+.. py:function:: compute_changes_between_solution_alloc(solution_a: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, solution_b: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, problem_a: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem = None, problem_b: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem = None)
+   :canonical: discrete_optimization.workforce.allocation.utils.compute_changes_between_solution_alloc
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.compute_changes_between_solution_alloc
+
+.. py:function:: plot_allocation_solution(problem: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem, sol: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution, index_team_to_other_index: dict[int, int] = None, use_color_map: bool = False, category: bool = True, display: bool = True, plot_breaks: bool = False, color_break: str = None, ignore_unallocated: bool = False, name_unallocated: str = 'Unset', text: typing.Optional[str] = None, title: typing.Optional[str] = None, ref_date: pandas.Timestamp = None, showlegend=True)
+   :canonical: discrete_optimization.workforce.allocation.utils.plot_allocation_solution
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.plot_allocation_solution
+
+.. py:function:: modify_graph(fig)
+   :canonical: discrete_optimization.workforce.allocation.utils.modify_graph
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.utils.modify_graph

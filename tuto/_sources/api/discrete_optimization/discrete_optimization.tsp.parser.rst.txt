@@ -1,0 +1,45 @@
+:py:mod:`discrete_optimization.tsp.parser`
+==========================================
+
+.. py:module:: discrete_optimization.tsp.parser
+
+.. autodoc2-docstring:: discrete_optimization.tsp.parser
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_data_available <discrete_optimization.tsp.parser.get_data_available>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.parser.get_data_available
+          :summary:
+   * - :py:obj:`parse_input_data <discrete_optimization.tsp.parser.parse_input_data>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.parser.parse_input_data
+          :summary:
+   * - :py:obj:`parse_file <discrete_optimization.tsp.parser.parse_file>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.parser.parse_file
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_data_available(data_folder: typing.Optional[str] = None, data_home: typing.Optional[str] = None) -> list[str]
+   :canonical: discrete_optimization.tsp.parser.get_data_available
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.parser.get_data_available
+
+.. py:function:: parse_input_data(input_data: str, start_index: int = 0, end_index: int = 0) -> discrete_optimization.tsp.problem.Point2DTspProblem
+   :canonical: discrete_optimization.tsp.parser.parse_input_data
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.parser.parse_input_data
+
+.. py:function:: parse_file(file_path: str, start_index: int = 0, end_index: int = 0) -> discrete_optimization.tsp.problem.Point2DTspProblem
+   :canonical: discrete_optimization.tsp.parser.parse_file
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.parser.parse_file

@@ -1,0 +1,96 @@
+:py:mod:`discrete_optimization.fjsp.solvers.cpsat`
+==================================================
+
+.. py:module:: discrete_optimization.fjsp.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.fjsp.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatFjspSolver <discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.fjsp.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.fjsp.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.cpsat.logger
+
+.. py:class:: CpSatFjspSolver(problem: discrete_optimization.fjsp.problem.FJobShopProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver`\ [\ :py:obj:`discrete_optimization.fjsp.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.MultimodeCpSatSolver`\ [\ :py:obj:`discrete_optimization.fjsp.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.problem
+      :type: discrete_optimization.fjsp.problem.FJobShopProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.problem
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.init_model
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.get_makespan_upper_bound
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.retrieve_solution
+
+   .. py:method:: create_vars(**args)
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.create_vars
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.create_vars
+
+   .. py:method:: create_precedence_constraints()
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.create_precedence_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.create_precedence_constraints
+
+   .. py:method:: create_is_present_constraints()
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.create_is_present_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.create_is_present_constraints
+
+   .. py:method:: create_disjunctive_constraints(**args)
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.create_disjunctive_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.create_disjunctive_constraints
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.fjsp.problem.FJobShopSolution) -> None
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.set_warm_start
+
+   .. py:method:: get_task_start_or_end_variable(task: discrete_optimization.fjsp.problem.Task, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.get_task_start_or_end_variable
+
+   .. py:method:: get_task_mode_is_present_variable(task: discrete_optimization.fjsp.problem.Task, mode: int) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.fjsp.solvers.cpsat.CpSatFjspSolver.get_task_mode_is_present_variable

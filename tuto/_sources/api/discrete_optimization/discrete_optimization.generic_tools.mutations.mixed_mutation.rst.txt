@@ -1,0 +1,69 @@
+:py:mod:`discrete_optimization.generic_tools.mutations.mixed_mutation`
+======================================================================
+
+.. py:module:: discrete_optimization.generic_tools.mutations.mixed_mutation
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`BasicPortfolioMutation <discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutation>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutation
+          :summary:
+   * - :py:obj:`BasicPortfolioMutationTrack <discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutationTrack>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutationTrack
+          :summary:
+
+API
+~~~
+
+.. py:class:: BasicPortfolioMutation(list_mutation: list[discrete_optimization.generic_tools.do_mutation.Mutation], weight_mutation: typing.Union[list[float], numpy.ndarray])
+   :canonical: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutation
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutation
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutation.__init__
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutation.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutation.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutation.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutation.mutate_and_compute_obj
+
+.. py:class:: BasicPortfolioMutationTrack(list_mutation: list[discrete_optimization.generic_tools.do_mutation.Mutation], weight_mutation: typing.Union[list[float], numpy.ndarray])
+   :canonical: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutationTrack
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutationTrack
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutationTrack.__init__
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutationTrack.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutationTrack.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutationTrack.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mixed_mutation.BasicPortfolioMutationTrack.mutate_and_compute_obj

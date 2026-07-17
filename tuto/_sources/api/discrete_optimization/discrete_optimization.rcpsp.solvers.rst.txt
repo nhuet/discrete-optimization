@@ -1,0 +1,32 @@
+:py:mod:`discrete_optimization.rcpsp.solvers`
+=============================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.rcpsp.solvers.cp_mzn_multiscenario
+   discrete_optimization.rcpsp.solvers.tempo
+   discrete_optimization.rcpsp.solvers.lns_cp_preemptive
+   discrete_optimization.rcpsp.solvers.cp_mzn
+   discrete_optimization.rcpsp.solvers.lns_lp
+   discrete_optimization.rcpsp.solvers.optal
+   discrete_optimization.rcpsp.solvers.lp
+   discrete_optimization.rcpsp.solvers.cpsat
+   discrete_optimization.rcpsp.solvers.ga
+   discrete_optimization.rcpsp.solvers.dp
+   discrete_optimization.rcpsp.solvers.pile
+   discrete_optimization.rcpsp.solvers.rcpsp_solver
+   discrete_optimization.rcpsp.solvers.lp_gantt
+   discrete_optimization.rcpsp.solvers.cpm
+   discrete_optimization.rcpsp.solvers.toulbar
+   discrete_optimization.rcpsp.solvers.lns_cp
+   discrete_optimization.rcpsp.solvers.cp_mzn_models

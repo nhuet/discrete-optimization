@@ -1,0 +1,157 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.lp_gantt`
+======================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.lp_gantt
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ConstraintTaskIndividual <discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintTaskIndividual>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintTaskIndividual
+          :summary:
+   * - :py:obj:`ConstraintWorkDuration <discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration
+          :summary:
+   * - :py:obj:`_BaseLpGanttMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.lp_gantt._BaseLpGanttMultimodeRcpspSolver>`
+     -
+   * - :py:obj:`GurobiGanttMultimodeRcpspSolver <discrete_optimization.rcpsp.solvers.lp_gantt.GurobiGanttMultimodeRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`intersect <discrete_optimization.rcpsp.solvers.lp_gantt.intersect>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.intersect
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.lp_gantt.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.logger
+
+.. py:function:: intersect(i1, i2)
+   :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.intersect
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.intersect
+
+.. py:class:: ConstraintTaskIndividual(list_tuple)
+   :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintTaskIndividual
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintTaskIndividual
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintTaskIndividual.__init__
+
+   .. py:attribute:: list_tuple
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintTaskIndividual.list_tuple
+      :type: list[tuple[str, int, int, bool]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintTaskIndividual.list_tuple
+
+.. py:class:: ConstraintWorkDuration(ressource, individual, time_bounds, working_time_upper_bound)
+   :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration.__init__
+
+   .. py:attribute:: ressource
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration.ressource
+      :type: str
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration.ressource
+
+   .. py:attribute:: individual
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration.individual
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration.individual
+
+   .. py:attribute:: time_bounds
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration.time_bounds
+      :type: tuple[int, int]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration.time_bounds
+
+   .. py:attribute:: working_time_upper_bound
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration.working_time_upper_bound
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration.working_time_upper_bound
+
+.. py:class:: _BaseLpGanttMultimodeRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, rcpsp_solution: discrete_optimization.rcpsp.solution.RcpspSolution, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.lp_gantt._BaseLpGanttMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt._BaseLpGanttMultimodeRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt._BaseLpGanttMultimodeRcpspSolver.problem
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> tuple[dict[typing.Any, dict[typing.Any, dict[typing.Any, typing.Any]]], float]
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt._BaseLpGanttMultimodeRcpspSolver.retrieve_current_solution
+
+.. py:class:: GurobiGanttMultimodeRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.GurobiGanttMultimodeRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver`, :py:obj:`discrete_optimization.rcpsp.solvers.lp_gantt._BaseLpGanttMultimodeRcpspSolver`
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.GurobiGanttMultimodeRcpspSolver.convert_to_variable_values
+      :abstractmethod:
+
+   .. py:method:: init_model(**args)
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.GurobiGanttMultimodeRcpspSolver.init_model
+
+   .. py:method:: adding_constraint(constraint_description: typing.Union[discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintTaskIndividual, discrete_optimization.rcpsp.solvers.lp_gantt.ConstraintWorkDuration], constraint_name: str = '')
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.GurobiGanttMultimodeRcpspSolver.adding_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.GurobiGanttMultimodeRcpspSolver.adding_constraint
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> tuple[dict[typing.Any, dict[typing.Any, dict[typing.Any, typing.Any]]], float]
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.GurobiGanttMultimodeRcpspSolver.retrieve_current_solution
+
+   .. py:method:: build_objective_function_from_a_solution(ressource_usage: dict[str, dict[int, dict[int, bool]]], ignore_tuple: set[tuple[str, int, int]] = None)
+      :canonical: discrete_optimization.rcpsp.solvers.lp_gantt.GurobiGanttMultimodeRcpspSolver.build_objective_function_from_a_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lp_gantt.GurobiGanttMultimodeRcpspSolver.build_objective_function_from_a_solution

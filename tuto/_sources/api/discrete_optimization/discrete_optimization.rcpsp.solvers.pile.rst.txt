@@ -1,0 +1,143 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.pile`
+==================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.pile
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GreedyChoice <discrete_optimization.rcpsp.solvers.pile.GreedyChoice>`
+     -
+   * - :py:obj:`PileRcpspSolver <discrete_optimization.rcpsp.solvers.pile.PileRcpspSolver>`
+     -
+   * - :py:obj:`PileCalendarRcpspSolver <discrete_optimization.rcpsp.solvers.pile.PileCalendarRcpspSolver>`
+     -
+   * - :py:obj:`Executor <discrete_optimization.rcpsp.solvers.pile.Executor>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.pile.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.logger
+          :summary:
+   * - :py:obj:`pop <discrete_optimization.rcpsp.solvers.pile.pop>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.pop
+          :summary:
+   * - :py:obj:`push <discrete_optimization.rcpsp.solvers.pile.push>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.push
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.pile.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.logger
+
+.. py:class:: GreedyChoice
+   :canonical: discrete_optimization.rcpsp.solvers.pile.GreedyChoice
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: MOST_SUCCESSORS
+      :canonical: discrete_optimization.rcpsp.solvers.pile.GreedyChoice.MOST_SUCCESSORS
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.GreedyChoice.MOST_SUCCESSORS
+
+   .. py:attribute:: SAMPLE_MOST_SUCCESSORS
+      :canonical: discrete_optimization.rcpsp.solvers.pile.GreedyChoice.SAMPLE_MOST_SUCCESSORS
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.GreedyChoice.SAMPLE_MOST_SUCCESSORS
+
+   .. py:attribute:: FASTEST
+      :canonical: discrete_optimization.rcpsp.solvers.pile.GreedyChoice.FASTEST
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.GreedyChoice.FASTEST
+
+   .. py:attribute:: TOTALLY_RANDOM
+      :canonical: discrete_optimization.rcpsp.solvers.pile.GreedyChoice.TOTALLY_RANDOM
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.GreedyChoice.TOTALLY_RANDOM
+
+.. py:data:: pop
+   :canonical: discrete_optimization.rcpsp.solvers.pile.pop
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.pop
+
+.. py:data:: push
+   :canonical: discrete_optimization.rcpsp.solvers.pile.push
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.push
+
+.. py:class:: PileRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.pile.PileRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.pile.PileRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.PileRcpspSolver.hyperparameters
+
+   .. py:method:: solve(**kwargs) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp.solvers.pile.PileRcpspSolver.solve
+
+.. py:class:: PileCalendarRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.pile.PileCalendarRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp.solvers.pile.PileCalendarRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.PileCalendarRcpspSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.pile.PileCalendarRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.PileCalendarRcpspSolver.problem
+
+   .. py:method:: solve(**kwargs) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp.solvers.pile.PileCalendarRcpspSolver.solve
+
+.. py:class:: Executor(problem: discrete_optimization.rcpsp.problem.RcpspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.pile.Executor
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.pile.PileRcpspSolver`
+
+   .. py:method:: update(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem)
+      :canonical: discrete_optimization.rcpsp.solvers.pile.Executor.update
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.Executor.update
+
+   .. py:method:: compute_schedule_from_priority_list(permutation_jobs: list[int], modes_dict: dict[int, int])
+      :canonical: discrete_optimization.rcpsp.solvers.pile.Executor.compute_schedule_from_priority_list
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.pile.Executor.compute_schedule_from_priority_list

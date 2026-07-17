@@ -1,0 +1,78 @@
+:py:mod:`discrete_optimization.generic_tools.callbacks.loggers`
+===============================================================
+
+.. py:module:: discrete_optimization.generic_tools.callbacks.loggers
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.loggers
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`NbIterationTracker <discrete_optimization.generic_tools.callbacks.loggers.NbIterationTracker>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.loggers.NbIterationTracker
+          :summary:
+   * - :py:obj:`ObjectiveLogger <discrete_optimization.generic_tools.callbacks.loggers.ObjectiveLogger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.loggers.ObjectiveLogger
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.callbacks.loggers.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.loggers.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.callbacks.loggers.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.loggers.logger
+
+.. py:class:: NbIterationTracker(step_verbosity_level: int = logging.DEBUG, end_verbosity_level: int = logging.INFO)
+   :canonical: discrete_optimization.generic_tools.callbacks.loggers.NbIterationTracker
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.loggers.NbIterationTracker
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.loggers.NbIterationTracker.__init__
+
+   .. py:method:: on_solve_end(res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.loggers.NbIterationTracker.on_solve_end
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.loggers.NbIterationTracker.on_step_end
+
+.. py:class:: ObjectiveLogger(step_verbosity_level: int = logging.DEBUG, end_verbosity_level: int = logging.INFO)
+   :canonical: discrete_optimization.generic_tools.callbacks.loggers.ObjectiveLogger
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.loggers.ObjectiveLogger
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.loggers.ObjectiveLogger.__init__
+
+   .. py:method:: on_solve_end(res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO)
+      :canonical: discrete_optimization.generic_tools.callbacks.loggers.ObjectiveLogger.on_solve_end
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.loggers.ObjectiveLogger.on_step_end

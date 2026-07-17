@@ -1,0 +1,29 @@
+:py:mod:`discrete_optimization.facility.utils`
+==============================================
+
+.. py:module:: discrete_optimization.facility.utils
+
+.. autodoc2-docstring:: discrete_optimization.facility.utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_matrix_distance_facility_problem <discrete_optimization.facility.utils.compute_matrix_distance_facility_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.utils.compute_matrix_distance_facility_problem
+          :summary:
+
+API
+~~~
+
+.. py:function:: compute_matrix_distance_facility_problem(problem: discrete_optimization.facility.problem.FacilityProblem)
+   :canonical: discrete_optimization.facility.utils.compute_matrix_distance_facility_problem
+
+   .. autodoc2-docstring:: discrete_optimization.facility.utils.compute_matrix_distance_facility_problem

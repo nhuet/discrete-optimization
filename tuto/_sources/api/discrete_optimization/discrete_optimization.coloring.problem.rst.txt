@@ -1,0 +1,233 @@
+:py:mod:`discrete_optimization.coloring.problem`
+================================================
+
+.. py:module:: discrete_optimization.coloring.problem
+
+.. autodoc2-docstring:: discrete_optimization.coloring.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ColoringSolution <discrete_optimization.coloring.problem.ColoringSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringSolution
+          :summary:
+   * - :py:obj:`ColoringConstraints <discrete_optimization.coloring.problem.ColoringConstraints>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringConstraints
+          :summary:
+   * - :py:obj:`ColoringProblem <discrete_optimization.coloring.problem.ColoringProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`transform_color_values_to_value_precede <discrete_optimization.coloring.problem.transform_color_values_to_value_precede>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.problem.transform_color_values_to_value_precede
+          :summary:
+   * - :py:obj:`transform_color_values_to_value_precede_on_other_node_order <discrete_optimization.coloring.problem.transform_color_values_to_value_precede_on_other_node_order>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.problem.transform_color_values_to_value_precede_on_other_node_order
+          :summary:
+   * - :py:obj:`compute_constraints_penalty <discrete_optimization.coloring.problem.compute_constraints_penalty>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.problem.compute_constraints_penalty
+          :summary:
+   * - :py:obj:`transform_coloring_problem <discrete_optimization.coloring.problem.transform_coloring_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.problem.transform_coloring_problem
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Node <discrete_optimization.coloring.problem.Node>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.problem.Node
+          :summary:
+   * - :py:obj:`Color <discrete_optimization.coloring.problem.Color>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.problem.Color
+          :summary:
+
+API
+~~~
+
+.. py:data:: Node
+   :canonical: discrete_optimization.coloring.problem.Node
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.Node
+
+.. py:data:: Color
+   :canonical: discrete_optimization.coloring.problem.Color
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.Color
+
+.. py:class:: ColoringSolution(problem: discrete_optimization.coloring.problem.ColoringProblem, colors: typing.Optional[typing.Union[list[int], numpy.ndarray]] = None, nb_color: typing.Optional[int] = None, nb_violations: typing.Optional[int] = None)
+   :canonical: discrete_optimization.coloring.problem.ColoringSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationSolution`\ [\ :py:obj:`discrete_optimization.coloring.problem.Node`\ , :py:obj:`discrete_optimization.coloring.problem.Color`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringSolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringSolution.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.coloring.problem.ColoringSolution.problem
+      :type: ColoringProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringSolution.problem
+
+   .. py:method:: copy() -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.problem.ColoringSolution.copy
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.problem.ColoringSolution.lazy_copy
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringSolution.lazy_copy
+
+   .. py:method:: to_reformated_solution() -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.problem.ColoringSolution.to_reformated_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringSolution.to_reformated_solution
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.coloring.problem.ColoringSolution.__str__
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.coloring.problem.ColoringSolution.change_problem
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringSolution.change_problem
+
+   .. py:method:: is_allocated(task: discrete_optimization.coloring.problem.Node, unary_resource: discrete_optimization.coloring.problem.Color) -> bool
+      :canonical: discrete_optimization.coloring.problem.ColoringSolution.is_allocated
+
+.. py:function:: transform_color_values_to_value_precede(color_vector: list[int]) -> list[int]
+   :canonical: discrete_optimization.coloring.problem.transform_color_values_to_value_precede
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.transform_color_values_to_value_precede
+
+.. py:function:: transform_color_values_to_value_precede_on_other_node_order(color_vector: list[int], nodes_ordering: list[int]) -> list[int]
+   :canonical: discrete_optimization.coloring.problem.transform_color_values_to_value_precede_on_other_node_order
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.transform_color_values_to_value_precede_on_other_node_order
+
+.. py:class:: ColoringConstraints(color_constraint: dict[collections.abc.Hashable, int])
+   :canonical: discrete_optimization.coloring.problem.ColoringConstraints
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringConstraints
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringConstraints.__init__
+
+   .. py:method:: nodes_fixed() -> set[collections.abc.Hashable]
+      :canonical: discrete_optimization.coloring.problem.ColoringConstraints.nodes_fixed
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringConstraints.nodes_fixed
+
+.. py:class:: ColoringProblem(graph: discrete_optimization.generic_tools.graph_api.Graph, subset_nodes: set[collections.abc.Hashable] = None, constraints_coloring: typing.Optional[discrete_optimization.coloring.problem.ColoringConstraints] = None)
+   :canonical: discrete_optimization.coloring.problem.ColoringProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationProblem`\ [\ :py:obj:`discrete_optimization.coloring.problem.Node`\ , :py:obj:`discrete_optimization.coloring.problem.Color`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.__init__
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.tasks_list
+      :type: list[discrete_optimization.coloring.problem.Node]
+
+   .. py:property:: unary_resources_list
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.unary_resources_list
+      :type: list[discrete_optimization.coloring.problem.Color]
+
+   .. py:method:: is_in_subset_index(index: int) -> bool
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.is_in_subset_index
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.is_in_subset_index
+
+   .. py:method:: is_in_subset_nodes(node: collections.abc.Hashable) -> bool
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.is_in_subset_nodes
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.is_in_subset_nodes
+
+   .. py:method:: count_colors(colors_list: list[int]) -> int
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.count_colors
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.count_colors
+
+   .. py:method:: count_colors_all_index(colors_list: list[int]) -> int
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.count_colors_all_index
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.count_colors_all_index
+
+   .. py:method:: evaluate(variable: discrete_optimization.coloring.problem.ColoringSolution) -> dict[str, float]
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.evaluate
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.evaluate
+
+   .. py:method:: satisfy(variable: discrete_optimization.coloring.problem.ColoringSolution) -> bool
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.satisfy
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.get_attribute_register
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.get_solution_type
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.get_objective_register
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.get_objective_register
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.get_dummy_solution
+
+   .. py:method:: count_violations(variable: discrete_optimization.coloring.problem.ColoringSolution) -> int
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.count_violations
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.count_violations
+
+   .. py:method:: evaluate_from_encoding(int_vector: list[int], encoding_name: str) -> dict[str, float]
+      :canonical: discrete_optimization.coloring.problem.ColoringProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.problem.ColoringProblem.evaluate_from_encoding
+
+.. py:function:: compute_constraints_penalty(coloring_solution: discrete_optimization.coloring.problem.ColoringSolution, coloring_problem: discrete_optimization.coloring.problem.ColoringProblem, constraints_coloring: discrete_optimization.coloring.problem.ColoringConstraints)
+   :canonical: discrete_optimization.coloring.problem.compute_constraints_penalty
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.compute_constraints_penalty
+
+.. py:function:: transform_coloring_problem(coloring_problem: discrete_optimization.coloring.problem.ColoringProblem, subset_nodes: typing.Optional[set[collections.abc.Hashable]] = None, constraints_coloring: typing.Optional[discrete_optimization.coloring.problem.ColoringConstraints] = None) -> discrete_optimization.coloring.problem.ColoringProblem
+   :canonical: discrete_optimization.coloring.problem.transform_coloring_problem
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.problem.transform_coloring_problem

@@ -1,0 +1,155 @@
+:py:mod:`discrete_optimization.jsp.problem`
+===========================================
+
+.. py:module:: discrete_optimization.jsp.problem
+
+.. autodoc2-docstring:: discrete_optimization.jsp.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`JobShopSolution <discrete_optimization.jsp.problem.JobShopSolution>`
+     -
+   * - :py:obj:`Subjob <discrete_optimization.jsp.problem.Subjob>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.problem.Subjob
+          :summary:
+   * - :py:obj:`JobShopProblem <discrete_optimization.jsp.problem.JobShopProblem>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Task <discrete_optimization.jsp.problem.Task>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.problem.Task
+          :summary:
+
+API
+~~~
+
+.. py:data:: Task
+   :canonical: discrete_optimization.jsp.problem.Task
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.problem.Task
+
+.. py:class:: JobShopSolution(problem: discrete_optimization.jsp.problem.JobShopProblem, schedule: list[list[tuple[int, int]]])
+   :canonical: discrete_optimization.jsp.problem.JobShopSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution`\ [\ :py:obj:`discrete_optimization.jsp.problem.Task`\ ]
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.jsp.problem.JobShopSolution.problem
+      :type: JobShopProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.problem.JobShopSolution.problem
+
+   .. py:method:: copy() -> discrete_optimization.jsp.problem.JobShopSolution
+      :canonical: discrete_optimization.jsp.problem.JobShopSolution.copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.jsp.problem.JobShopProblem) -> None
+      :canonical: discrete_optimization.jsp.problem.JobShopSolution.change_problem
+
+   .. py:method:: get_end_time(task: discrete_optimization.jsp.problem.Task) -> int
+      :canonical: discrete_optimization.jsp.problem.JobShopSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.problem.JobShopSolution.get_end_time
+
+   .. py:method:: get_start_time(task: discrete_optimization.jsp.problem.Task) -> int
+      :canonical: discrete_optimization.jsp.problem.JobShopSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.problem.JobShopSolution.get_start_time
+
+   .. py:method:: get_max_end_time() -> int
+      :canonical: discrete_optimization.jsp.problem.JobShopSolution.get_max_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.problem.JobShopSolution.get_max_end_time
+
+.. py:class:: Subjob(machine_id: int, processing_time: int)
+   :canonical: discrete_optimization.jsp.problem.Subjob
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.problem.Subjob
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.problem.Subjob.__init__
+
+   .. py:attribute:: machine_id
+      :canonical: discrete_optimization.jsp.problem.Subjob.machine_id
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.problem.Subjob.machine_id
+
+   .. py:attribute:: processing_time
+      :canonical: discrete_optimization.jsp.problem.Subjob.processing_time
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.problem.Subjob.processing_time
+
+.. py:class:: JobShopProblem(list_jobs: list[list[discrete_optimization.jsp.problem.Subjob]], n_jobs: int = None, n_machines: int = None, horizon: int = None)
+   :canonical: discrete_optimization.jsp.problem.JobShopProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem`\ [\ :py:obj:`discrete_optimization.jsp.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem`\ [\ :py:obj:`discrete_optimization.jsp.problem.Task`\ ]
+
+   .. py:attribute:: n_jobs
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.n_jobs
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.problem.JobShopProblem.n_jobs
+
+   .. py:attribute:: n_machines
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.n_machines
+      :type: int
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.problem.JobShopProblem.n_machines
+
+   .. py:attribute:: list_jobs
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.list_jobs
+      :type: list[list[discrete_optimization.jsp.problem.Subjob]]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.jsp.problem.JobShopProblem.list_jobs
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.tasks_list
+      :type: list[discrete_optimization.jsp.problem.Task]
+
+   .. py:method:: get_precedence_constraints() -> dict[discrete_optimization.jsp.problem.Task, list[discrete_optimization.jsp.problem.Task]]
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.get_precedence_constraints
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.get_makespan_upper_bound
+
+   .. py:method:: get_last_tasks() -> list[discrete_optimization.jsp.problem.Task]
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.get_last_tasks
+
+   .. py:method:: evaluate(variable: discrete_optimization.jsp.problem.JobShopSolution) -> dict[str, float]
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.evaluate
+
+   .. py:method:: satisfy(variable: discrete_optimization.jsp.problem.JobShopSolution) -> bool
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.jsp.problem.JobShopProblem.get_objective_register

@@ -1,0 +1,18 @@
+:py:mod:`discrete_optimization.gpdp.solvers`
+============================================
+
+.. py:module:: discrete_optimization.gpdp.solvers
+
+.. autodoc2-docstring:: discrete_optimization.gpdp.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.gpdp.solvers.gpdp_solver
+   discrete_optimization.gpdp.solvers.lp_iterative
+   discrete_optimization.gpdp.solvers.ortools_routing

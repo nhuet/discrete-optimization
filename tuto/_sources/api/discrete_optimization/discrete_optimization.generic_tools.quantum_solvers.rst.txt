@@ -1,0 +1,140 @@
+:py:mod:`discrete_optimization.generic_tools.quantum_solvers`
+=============================================================
+
+.. py:module:: discrete_optimization.generic_tools.quantum_solvers
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`solve <discrete_optimization.generic_tools.quantum_solvers.solve>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solve
+          :summary:
+   * - :py:obj:`solve_coloring <discrete_optimization.generic_tools.quantum_solvers.solve_coloring>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solve_coloring
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`solvers_coloring <discrete_optimization.generic_tools.quantum_solvers.solvers_coloring>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_coloring
+          :summary:
+   * - :py:obj:`solvers_map_coloring <discrete_optimization.generic_tools.quantum_solvers.solvers_map_coloring>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_coloring
+          :summary:
+   * - :py:obj:`solvers_mis <discrete_optimization.generic_tools.quantum_solvers.solvers_mis>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_mis
+          :summary:
+   * - :py:obj:`solvers_map_mis <discrete_optimization.generic_tools.quantum_solvers.solvers_map_mis>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_mis
+          :summary:
+   * - :py:obj:`solvers_facility <discrete_optimization.generic_tools.quantum_solvers.solvers_facility>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_facility
+          :summary:
+   * - :py:obj:`solvers_map_facility <discrete_optimization.generic_tools.quantum_solvers.solvers_map_facility>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_facility
+          :summary:
+   * - :py:obj:`solvers_tsp <discrete_optimization.generic_tools.quantum_solvers.solvers_tsp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_tsp
+          :summary:
+   * - :py:obj:`solvers_map_tsp <discrete_optimization.generic_tools.quantum_solvers.solvers_map_tsp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_tsp
+          :summary:
+   * - :py:obj:`solvers_knapsack <discrete_optimization.generic_tools.quantum_solvers.solvers_knapsack>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_knapsack
+          :summary:
+   * - :py:obj:`solvers_map_knapsack <discrete_optimization.generic_tools.quantum_solvers.solvers_map_knapsack>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_knapsack
+          :summary:
+
+API
+~~~
+
+.. py:data:: solvers_coloring
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_coloring
+   :type: dict[str, list[tuple[type[discrete_optimization.generic_tools.qiskit_tools.QiskitSolver], dict[str, typing.Any]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_coloring
+
+.. py:data:: solvers_map_coloring
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_map_coloring
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_coloring
+
+.. py:data:: solvers_mis
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_mis
+   :type: dict[str, list[tuple[type[discrete_optimization.generic_tools.qiskit_tools.QiskitSolver], dict[str, typing.Any]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_mis
+
+.. py:data:: solvers_map_mis
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_map_mis
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_mis
+
+.. py:data:: solvers_facility
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_facility
+   :type: dict[str, list[tuple[type[discrete_optimization.generic_tools.qiskit_tools.QiskitSolver], dict[str, typing.Any]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_facility
+
+.. py:data:: solvers_map_facility
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_map_facility
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_facility
+
+.. py:data:: solvers_tsp
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_tsp
+   :type: dict[str, list[tuple[type[discrete_optimization.generic_tools.qiskit_tools.QiskitSolver], dict[str, typing.Any]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_tsp
+
+.. py:data:: solvers_map_tsp
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_map_tsp
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_tsp
+
+.. py:data:: solvers_knapsack
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_knapsack
+   :type: dict[str, list[tuple[type[discrete_optimization.generic_tools.qiskit_tools.QiskitSolver], dict[str, typing.Any]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_knapsack
+
+.. py:data:: solvers_map_knapsack
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solvers_map_knapsack
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solvers_map_knapsack
+
+.. py:function:: solve(method: type[discrete_optimization.generic_tools.qiskit_tools.QiskitSolver], problem: typing.Union[discrete_optimization.maximum_independent_set.problem.MisProblem, discrete_optimization.tsp.problem.Point2DTspProblem, discrete_optimization.knapsack.problem.KnapsackProblem, discrete_optimization.facility.problem.Facility2DProblem], **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solve
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solve
+
+.. py:function:: solve_coloring(method: type[discrete_optimization.generic_tools.qiskit_tools.QiskitSolver], problem: discrete_optimization.coloring.solvers.greedy.ColoringProblem, nb_color, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+   :canonical: discrete_optimization.generic_tools.quantum_solvers.solve_coloring
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.quantum_solvers.solve_coloring

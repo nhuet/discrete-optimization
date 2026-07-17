@@ -1,0 +1,29 @@
+:py:mod:`discrete_optimization.coloring.utils`
+==============================================
+
+.. py:module:: discrete_optimization.coloring.utils
+
+.. autodoc2-docstring:: discrete_optimization.coloring.utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`compute_cliques <discrete_optimization.coloring.utils.compute_cliques>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.utils.compute_cliques
+          :summary:
+
+API
+~~~
+
+.. py:function:: compute_cliques(g: networkx.Graph, nb_max: typing.Optional[int] = None) -> tuple[list[list[collections.abc.Hashable]], bool]
+   :canonical: discrete_optimization.coloring.utils.compute_cliques
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.utils.compute_cliques

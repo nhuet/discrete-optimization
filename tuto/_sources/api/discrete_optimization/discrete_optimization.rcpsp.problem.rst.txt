@@ -1,0 +1,289 @@
+:py:mod:`discrete_optimization.rcpsp.problem`
+=============================================
+
+.. py:module:: discrete_optimization.rcpsp.problem
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ScheduleGenerationScheme <discrete_optimization.rcpsp.problem.ScheduleGenerationScheme>`
+     -
+   * - :py:obj:`RcpspProblem <discrete_optimization.rcpsp.problem.RcpspProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`create_np_data_and_jit_functions <discrete_optimization.rcpsp.problem.create_np_data_and_jit_functions>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.create_np_data_and_jit_functions
+          :summary:
+   * - :py:obj:`evaluate_constraints <discrete_optimization.rcpsp.problem.evaluate_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.evaluate_constraints
+          :summary:
+   * - :py:obj:`compute_constraints_details <discrete_optimization.rcpsp.problem.compute_constraints_details>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.compute_constraints_details
+          :summary:
+   * - :py:obj:`check_solution_with_special_constraints <discrete_optimization.rcpsp.problem.check_solution_with_special_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.check_solution_with_special_constraints
+          :summary:
+   * - :py:obj:`check_pair_mode_constraint <discrete_optimization.rcpsp.problem.check_pair_mode_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.check_pair_mode_constraint
+          :summary:
+   * - :py:obj:`compute_details_mode_constraint <discrete_optimization.rcpsp.problem.compute_details_mode_constraint>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.compute_details_mode_constraint
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.problem.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.problem.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.logger
+
+.. py:class:: ScheduleGenerationScheme
+   :canonical: discrete_optimization.rcpsp.problem.ScheduleGenerationScheme
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: SERIAL_SGS
+      :canonical: discrete_optimization.rcpsp.problem.ScheduleGenerationScheme.SERIAL_SGS
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.ScheduleGenerationScheme.SERIAL_SGS
+
+   .. py:attribute:: PARALLEL_SGS
+      :canonical: discrete_optimization.rcpsp.problem.ScheduleGenerationScheme.PARALLEL_SGS
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.ScheduleGenerationScheme.PARALLEL_SGS
+
+.. py:class:: RcpspProblem(resources: dict[str, typing.Union[int, list[int]]], non_renewable_resources: list[str], mode_details: dict[collections.abc.Hashable, dict[int, dict[str, int]]], successors: dict[collections.abc.Hashable, list[collections.abc.Hashable]], horizon: int, horizon_multiplier: int = 1, tasks_list: typing.Optional[list[collections.abc.Hashable]] = None, source_task: typing.Optional[collections.abc.Hashable] = None, sink_task: typing.Optional[collections.abc.Hashable] = None, name_task: typing.Optional[dict[collections.abc.Hashable, str]] = None, calendar_details: typing.Optional[dict[str, list[list[int]]]] = None, special_constraints: typing.Optional[discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription] = None, relax_the_start_at_end: bool = True, fixed_permutation: typing.Optional[list[int]] = None, fixed_modes: typing.Optional[list[int]] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp.problem.RcpspProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem`\ [\ :py:obj:`discrete_optimization.rcpsp.solution.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem`\ [\ :py:obj:`discrete_optimization.rcpsp.solution.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.precedence.PrecedenceProblem`\ [\ :py:obj:`discrete_optimization.rcpsp.solution.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.__init__
+
+   .. py:attribute:: sgs
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.sgs
+      :type: discrete_optimization.rcpsp.problem.ScheduleGenerationScheme
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.sgs
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.tasks_list
+      :type: list[discrete_optimization.rcpsp.solution.Task]
+
+   .. py:method:: get_task_modes(task: discrete_optimization.rcpsp.solution.Task) -> set[int]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_task_modes
+
+   .. py:method:: get_last_tasks() -> list[discrete_optimization.rcpsp.solution.Task]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_last_tasks
+
+   .. py:method:: get_precedence_constraints() -> dict[discrete_optimization.rcpsp.solution.Task, collections.abc.Iterable[discrete_optimization.rcpsp.solution.Task]]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_precedence_constraints
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_makespan_upper_bound
+
+   .. py:method:: update_functions() -> None
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.update_functions
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.update_functions
+
+   .. py:method:: is_rcpsp_multimode() -> bool
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.is_rcpsp_multimode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.is_rcpsp_multimode
+
+   .. py:method:: is_varying_resource() -> bool
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.is_varying_resource
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.is_varying_resource
+
+   .. py:method:: is_preemptive() -> bool
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.is_preemptive
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.is_preemptive
+
+   .. py:method:: is_multiskill() -> bool
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.is_multiskill
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.is_multiskill
+
+   .. py:method:: includes_special_constraint() -> bool
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.includes_special_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.includes_special_constraint
+
+   .. py:method:: get_resource_names() -> list[str]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_names
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_names
+
+   .. py:method:: get_resource_availability_array(res: str) -> list[int]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_availability_array
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_availability_array
+
+   .. py:method:: compute_graph(compute_predecessors: bool = False) -> discrete_optimization.generic_tools.graph_api.Graph
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.compute_graph
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.compute_graph
+
+   .. py:method:: evaluate_function(rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution) -> tuple[int, float, int]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_function
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_function
+
+   .. py:method:: evaluate_from_encoding(int_vector: list[int], encoding_name: str) -> dict[str, float]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_from_encoding
+
+   .. py:method:: evaluate(rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution) -> dict[str, float]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.evaluate
+
+   .. py:method:: evaluate_mobj(rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution) -> discrete_optimization.generic_tools.do_problem.TupleFitness
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_mobj
+
+   .. py:method:: evaluate_mobj_from_dict(dict_values: dict[str, float]) -> discrete_optimization.generic_tools.do_problem.TupleFitness
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.evaluate_mobj_from_dict
+
+   .. py:method:: build_mode_dict(rcpsp_modes_from_solution: list[int]) -> dict[collections.abc.Hashable, int]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.build_mode_dict
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.build_mode_dict
+
+   .. py:method:: build_mode_array(rcpsp_modes_from_solution: list[int]) -> list[int]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.build_mode_array
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.build_mode_array
+
+   .. py:method:: return_index_task(task: collections.abc.Hashable, offset: int = 0) -> int
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.return_index_task
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.return_index_task
+
+   .. py:method:: satisfy(rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution) -> bool
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.satisfy
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.__str__
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_solution_type
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_attribute_register
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_objective_register
+
+   .. py:method:: compute_resource_consumption(rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution) -> numpy.typing.NDArray[numpy.int_]
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.compute_resource_consumption
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.compute_resource_consumption
+
+   .. py:method:: plot_ressource_view(rcpsp_sol: discrete_optimization.rcpsp.solution.RcpspSolution) -> None
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.plot_ressource_view
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.plot_ressource_view
+
+   .. py:method:: copy() -> discrete_optimization.rcpsp.problem.RcpspProblem
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.copy
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.copy
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.rcpsp.solution.RcpspSolution
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.get_dummy_solution
+
+   .. py:method:: get_resource_available(res: str, time: int) -> int
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_available
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.get_resource_available
+
+   .. py:method:: get_max_resource_capacity(res: str) -> int
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.get_max_resource_capacity
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.get_max_resource_capacity
+
+   .. py:method:: set_fixed_attributes(encoding_str: str, sol: discrete_optimization.rcpsp.solution.RcpspSolution) -> None
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_attributes
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_attributes
+
+   .. py:method:: set_fixed_modes(fixed_modes: list[int]) -> None
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_modes
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_modes
+
+   .. py:method:: set_fixed_permutation(fixed_permutation: list[int]) -> None
+      :canonical: discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_permutation
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.RcpspProblem.set_fixed_permutation
+
+.. py:function:: create_np_data_and_jit_functions(rcpsp_problem: discrete_optimization.rcpsp.problem.RcpspProblem) -> tuple[collections.abc.Callable[..., tuple[dict[int, tuple[int, int]], bool]], collections.abc.Callable[..., tuple[dict[int, tuple[int, int]], bool]], collections.abc.Callable[..., float]]
+   :canonical: discrete_optimization.rcpsp.problem.create_np_data_and_jit_functions
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.create_np_data_and_jit_functions
+
+.. py:function:: evaluate_constraints(solution: discrete_optimization.rcpsp.solution.RcpspSolution, constraints: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription) -> int
+   :canonical: discrete_optimization.rcpsp.problem.evaluate_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.evaluate_constraints
+
+.. py:function:: compute_constraints_details(solution: discrete_optimization.rcpsp.solution.RcpspSolution, constraints: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription) -> list[tuple[str, collections.abc.Hashable, collections.abc.Hashable, typing.Optional[int], typing.Optional[int], int]]
+   :canonical: discrete_optimization.rcpsp.problem.compute_constraints_details
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.compute_constraints_details
+
+.. py:function:: check_solution_with_special_constraints(problem: discrete_optimization.rcpsp.problem.RcpspProblem, solution: discrete_optimization.rcpsp.solution.RcpspSolution, relax_the_start_at_end: bool = True) -> bool
+   :canonical: discrete_optimization.rcpsp.problem.check_solution_with_special_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.check_solution_with_special_constraints
+
+.. py:function:: check_pair_mode_constraint(solution: discrete_optimization.rcpsp.solution.RcpspSolution, pair_mode_constraint: discrete_optimization.rcpsp.special_constraints.PairModeConstraint)
+   :canonical: discrete_optimization.rcpsp.problem.check_pair_mode_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.check_pair_mode_constraint
+
+.. py:function:: compute_details_mode_constraint(solution: discrete_optimization.rcpsp.solution.RcpspSolution, pair_mode_constraint: discrete_optimization.rcpsp.special_constraints.PairModeConstraint)
+   :canonical: discrete_optimization.rcpsp.problem.compute_details_mode_constraint
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.problem.compute_details_mode_constraint

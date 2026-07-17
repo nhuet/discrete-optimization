@@ -1,0 +1,19 @@
+:py:mod:`discrete_optimization.generic_tools.dashboard`
+=======================================================
+
+.. py:module:: discrete_optimization.generic_tools.dashboard
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.dashboard
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.dashboard.dashboard
+   discrete_optimization.generic_tools.dashboard.plots
+   discrete_optimization.generic_tools.dashboard.config
+   discrete_optimization.generic_tools.dashboard.preprocess

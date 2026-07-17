@@ -1,0 +1,29 @@
+:py:mod:`discrete_optimization.vrp.plot`
+========================================
+
+.. py:module:: discrete_optimization.vrp.plot
+
+.. autodoc2-docstring:: discrete_optimization.vrp.plot
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`plot_vrp_solution <discrete_optimization.vrp.plot.plot_vrp_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.plot.plot_vrp_solution
+          :summary:
+
+API
+~~~
+
+.. py:function:: plot_vrp_solution(vrp_problem: discrete_optimization.vrp.problem.Customer2DVrpProblem, solution: discrete_optimization.vrp.problem.VrpSolution, ax: typing.Any = None) -> None
+   :canonical: discrete_optimization.vrp.plot.plot_vrp_solution
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.plot.plot_vrp_solution

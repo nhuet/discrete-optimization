@@ -1,0 +1,78 @@
+:py:mod:`discrete_optimization.vrp.solvers.dp`
+==============================================
+
+.. py:module:: discrete_optimization.vrp.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.vrp.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpVrpSolver <discrete_optimization.vrp.solvers.dp.DpVrpSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.vrp.solvers.dp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.vrp.solvers.dp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.vrp.solvers.dp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.vrp.solvers.dp.logger
+
+.. py:class:: DpVrpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.vrp.solvers.dp.DpVrpSolver
+
+   Bases: :py:obj:`discrete_optimization.vrp.solvers.VrpSolver`, :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.vrp.solvers.dp.DpVrpSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.dp.DpVrpSolver.hyperparameters
+
+   .. py:attribute:: transitions
+      :canonical: discrete_optimization.vrp.solvers.dp.DpVrpSolver.transitions
+      :type: dict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.dp.DpVrpSolver.transitions
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.vrp.solvers.dp.DpVrpSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.dp.DpVrpSolver.init_model
+
+   .. py:method:: init_model_(**kwargs)
+      :canonical: discrete_optimization.vrp.solvers.dp.DpVrpSolver.init_model_
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.dp.DpVrpSolver.init_model_
+
+   .. py:method:: retrieve_solution(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.vrp.solvers.dp.DpVrpSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.dp.DpVrpSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.vrp.problem.VrpSolution) -> None
+      :canonical: discrete_optimization.vrp.solvers.dp.DpVrpSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.vrp.solvers.dp.DpVrpSolver.set_warm_start

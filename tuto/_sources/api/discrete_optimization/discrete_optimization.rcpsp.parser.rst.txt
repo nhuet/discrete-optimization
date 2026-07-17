@@ -1,0 +1,53 @@
+:py:mod:`discrete_optimization.rcpsp.parser`
+============================================
+
+.. py:module:: discrete_optimization.rcpsp.parser
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.parser
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_data_available <discrete_optimization.rcpsp.parser.get_data_available>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.parser.get_data_available
+          :summary:
+   * - :py:obj:`parse_psplib <discrete_optimization.rcpsp.parser.parse_psplib>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.parser.parse_psplib
+          :summary:
+   * - :py:obj:`parse_patterson <discrete_optimization.rcpsp.parser.parse_patterson>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.parser.parse_patterson
+          :summary:
+   * - :py:obj:`parse_file <discrete_optimization.rcpsp.parser.parse_file>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.parser.parse_file
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_data_available(data_folder: typing.Optional[str] = None, data_home: typing.Optional[str] = None) -> list[str]
+   :canonical: discrete_optimization.rcpsp.parser.get_data_available
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.parser.get_data_available
+
+.. py:function:: parse_psplib(input_data: str) -> discrete_optimization.rcpsp.problem.RcpspProblem
+   :canonical: discrete_optimization.rcpsp.parser.parse_psplib
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.parser.parse_psplib
+
+.. py:function:: parse_patterson(input_data: str) -> discrete_optimization.rcpsp.problem.RcpspProblem
+   :canonical: discrete_optimization.rcpsp.parser.parse_patterson
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.parser.parse_patterson
+
+.. py:function:: parse_file(file_path: str) -> discrete_optimization.rcpsp.problem.RcpspProblem
+   :canonical: discrete_optimization.rcpsp.parser.parse_file
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.parser.parse_file

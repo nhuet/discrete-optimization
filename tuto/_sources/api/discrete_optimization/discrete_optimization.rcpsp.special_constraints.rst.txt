@@ -1,0 +1,45 @@
+:py:mod:`discrete_optimization.rcpsp.special_constraints`
+=========================================================
+
+.. py:module:: discrete_optimization.rcpsp.special_constraints
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.special_constraints
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`PairModeConstraint <discrete_optimization.rcpsp.special_constraints.PairModeConstraint>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.special_constraints.PairModeConstraint
+          :summary:
+   * - :py:obj:`SpecialConstraintsDescription <discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription
+          :summary:
+
+API
+~~~
+
+.. py:class:: PairModeConstraint(allowed_mode_assignment: typing.Optional[dict[tuple[collections.abc.Hashable, collections.abc.Hashable], set[tuple[int, int]]]] = None, same_score_mode: typing.Optional[set[tuple[collections.abc.Hashable, collections.abc.Hashable]]] = None, score_mode: dict[tuple[collections.abc.Hashable, int], int] = None)
+   :canonical: discrete_optimization.rcpsp.special_constraints.PairModeConstraint
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.special_constraints.PairModeConstraint
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.special_constraints.PairModeConstraint.__init__
+
+.. py:class:: SpecialConstraintsDescription(task_mode: typing.Optional[dict[collections.abc.Hashable, int]] = None, start_times: typing.Optional[dict[collections.abc.Hashable, int]] = None, end_times: typing.Optional[dict[collections.abc.Hashable, int]] = None, start_times_window: typing.Optional[dict[collections.abc.Hashable, tuple[typing.Union[int, None], typing.Union[int, None]]]] = None, end_times_window: typing.Optional[dict[collections.abc.Hashable, tuple[typing.Union[int, None], typing.Union[int, None]]]] = None, partial_permutation: typing.Optional[list[collections.abc.Hashable]] = None, list_partial_order: typing.Optional[list[list[collections.abc.Hashable]]] = None, start_together: typing.Optional[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]] = None, start_at_end: typing.Optional[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]] = None, start_at_end_plus_offset: typing.Optional[list[tuple[collections.abc.Hashable, collections.abc.Hashable, int]]] = None, start_after_nunit: typing.Optional[list[tuple[collections.abc.Hashable, collections.abc.Hashable, int]]] = None, disjunctive_tasks: typing.Optional[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]] = None, pair_mode_constraint: typing.Optional[discrete_optimization.rcpsp.special_constraints.PairModeConstraint] = None)
+   :canonical: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.special_constraints.SpecialConstraintsDescription.__init__

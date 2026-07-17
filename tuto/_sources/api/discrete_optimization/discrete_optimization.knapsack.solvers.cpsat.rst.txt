@@ -1,0 +1,98 @@
+:py:mod:`discrete_optimization.knapsack.solvers.cpsat`
+======================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatKnapsackSolver <discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.knapsack.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.knapsack.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.logger
+
+.. py:class:: CpSatKnapsackSolver(problem: discrete_optimization.knapsack.problem.KnapsackProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver`\ [\ :py:obj:`discrete_optimization.knapsack.problem.Item`\ , :py:obj:`discrete_optimization.knapsack.problem.Knapsack`\ ], :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:method:: get_task_unary_resource_is_present_variable(task: discrete_optimization.knapsack.problem.Item, unary_resource: discrete_optimization.knapsack.problem.Knapsack) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.get_task_unary_resource_is_present_variable
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.init_model
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> None
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.set_warm_start
+
+   .. py:method:: _internal_value() -> ortools.sat.python.cp_model.LinearExpr
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver._internal_value
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver._internal_value
+
+   .. py:method:: _internal_weight() -> ortools.sat.python.cp_model.LinearExpr
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver._internal_weight
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver._internal_weight
+
+   .. py:method:: _internal_heaviest_item() -> ortools.sat.python.cp_model.IntVar
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver._internal_heaviest_item
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver._internal_heaviest_item
+
+   .. py:method:: _internal_objective(obj: str) -> ortools.sat.python.cp_model.ObjLinearExprT
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver._internal_objective
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver._internal_objective
+
+   .. py:method:: set_lexico_objective(obj: str) -> None
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.set_lexico_objective
+
+   .. py:method:: add_lexico_constraint(obj: str, value: float) -> collections.abc.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.add_lexico_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.add_lexico_constraint
+
+   .. py:method:: implements_lexico_api() -> bool
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.implements_lexico_api
+      :staticmethod:
+
+   .. py:method:: get_lexico_objectives_available() -> list[str]
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.get_lexico_objectives_available
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.cpsat.CpSatKnapsackSolver.retrieve_solution

@@ -1,0 +1,204 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder`
+=======================================================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OptionNeighborRandom <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom>`
+     -
+   * - :py:obj:`Params <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.Params>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.Params
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`return_random_basic_constraint_handler <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.return_random_basic_constraint_handler>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.return_random_basic_constraint_handler
+          :summary:
+   * - :py:obj:`build_neighbor_random <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_random>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_random
+          :summary:
+   * - :py:obj:`build_constraint_handler_cut_part <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_constraint_handler_cut_part>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_constraint_handler_cut_part
+          :summary:
+   * - :py:obj:`build_basic_random_constraint_handler <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_random_constraint_handler>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_random_constraint_handler
+          :summary:
+   * - :py:obj:`build_basic_time_window_constraint_handler <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_time_window_constraint_handler>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_time_window_constraint_handler
+          :summary:
+   * - :py:obj:`build_basic_random_and_neighbor <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_random_and_neighbor>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_random_and_neighbor
+          :summary:
+   * - :py:obj:`build_neighbor_mixing_methods <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_mixing_methods>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_mixing_methods
+          :summary:
+   * - :py:obj:`build_neighbor_mixing_cut_parts <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_mixing_cut_parts>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_mixing_cut_parts
+          :summary:
+   * - :py:obj:`mix_both <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix_both>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix_both
+          :summary:
+   * - :py:obj:`random_neigh <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.random_neigh>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.random_neigh
+          :summary:
+   * - :py:obj:`time_window_neigh <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.time_window_neigh>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.time_window_neigh
+          :summary:
+   * - :py:obj:`constraint_neigh <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.constraint_neigh>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.constraint_neigh
+          :summary:
+   * - :py:obj:`cut_parts <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.cut_parts>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.cut_parts
+          :summary:
+   * - :py:obj:`mix <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix
+          :summary:
+   * - :py:obj:`mix_lot <discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix_lot>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix_lot
+          :summary:
+
+API
+~~~
+
+.. py:class:: OptionNeighborRandom
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: MIX_ALL
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.MIX_ALL
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.MIX_ALL
+
+   .. py:attribute:: MIX_FAST
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.MIX_FAST
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.MIX_FAST
+
+   .. py:attribute:: MIX_LARGE_NEIGH
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.MIX_LARGE_NEIGH
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.MIX_LARGE_NEIGH
+
+   .. py:attribute:: LARGE
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.LARGE
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.LARGE
+
+   .. py:attribute:: DEBUG
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.DEBUG
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.DEBUG
+
+   .. py:attribute:: NO_CONSTRAINT
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.NO_CONSTRAINT
+      :value: 6
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom.NO_CONSTRAINT
+
+.. py:function:: return_random_basic_constraint_handler(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, graph=None, fraction_to_fix=0.9, minus_delta=100, plus_delta=100, minus_delta_2=4000, plus_delta_2=4000)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.return_random_basic_constraint_handler
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.return_random_basic_constraint_handler
+
+.. py:class:: Params(fraction_to_fix, minus_delta, plus_delta)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.Params
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.Params
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.Params.__init__
+
+.. py:function:: build_neighbor_random(option_neighbor: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom, rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP) -> discrete_optimization.generic_tools.lns_cp.MznConstraintHandler
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_random
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_random
+
+.. py:function:: build_constraint_handler_cut_part(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, graph=None, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_constraint_handler_cut_part
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_constraint_handler_cut_part
+
+.. py:function:: build_basic_random_constraint_handler(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, graph, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_random_constraint_handler
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_random_constraint_handler
+
+.. py:function:: build_basic_time_window_constraint_handler(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, graph, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_time_window_constraint_handler
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_time_window_constraint_handler
+
+.. py:function:: build_basic_random_and_neighbor(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, graph, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_random_and_neighbor
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_basic_random_and_neighbor
+
+.. py:function:: build_neighbor_mixing_methods(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, graph: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp = None, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_mixing_methods
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_mixing_methods
+
+.. py:function:: build_neighbor_mixing_cut_parts(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, graph: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp = None, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_mixing_cut_parts
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.build_neighbor_mixing_cut_parts
+
+.. py:function:: mix_both(rcpsp_problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, option_neighbor_random: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.OptionNeighborRandom, graph: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp = None, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix_both
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix_both
+
+.. py:function:: random_neigh(rcpsp_problem, fraction_subproblem: float = 0.35, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.random_neigh
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.random_neigh
+
+.. py:function:: time_window_neigh(rcpsp_problem, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.time_window_neigh
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.time_window_neigh
+
+.. py:function:: constraint_neigh(rcpsp_problem, fraction_subproblem: float = 0.35, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.constraint_neigh
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.constraint_neigh
+
+.. py:function:: cut_parts(rcpsp_problem, nb_cut_part=4, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.cut_parts
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.cut_parts
+
+.. py:function:: mix(rcpsp_problem, nb_cut_part=3, fraction_subproblem=0.25)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix
+
+.. py:function:: mix_lot(rcpsp_problem, nb_cut_parts, fraction_subproblems, **kwargs)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix_lot
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.lns_cp_mzn.neighbor_builder.mix_lot

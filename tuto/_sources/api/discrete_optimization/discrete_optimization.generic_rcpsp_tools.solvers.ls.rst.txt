@@ -1,0 +1,73 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.solvers.ls`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.solvers.ls
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.ls
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`LsSolverType <discrete_optimization.generic_rcpsp_tools.solvers.ls.LsSolverType>`
+     -
+   * - :py:obj:`LsGenericRcpspSolver <discrete_optimization.generic_rcpsp_tools.solvers.ls.LsGenericRcpspSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_rcpsp_tools.solvers.ls.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.ls.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.ls.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.ls.logger
+
+.. py:class:: LsSolverType
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsSolverType
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: SA
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsSolverType.SA
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsSolverType.SA
+
+   .. py:attribute:: HC
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsSolverType.HC
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsSolverType.HC
+
+.. py:class:: LsGenericRcpspSolver(problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, ls_solver: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsSolverType = LsSolverType.SA, **args)
+   :canonical: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsGenericRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsGenericRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsGenericRcpspSolver.hyperparameters
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs)
+      :canonical: discrete_optimization.generic_rcpsp_tools.solvers.ls.LsGenericRcpspSolver.solve

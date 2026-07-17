@@ -1,0 +1,106 @@
+:py:mod:`discrete_optimization.rcpsp.solvers_map`
+=================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers_map
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`look_for_solver <discrete_optimization.rcpsp.solvers_map.look_for_solver>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.look_for_solver
+          :summary:
+   * - :py:obj:`look_for_solver_class <discrete_optimization.rcpsp.solvers_map.look_for_solver_class>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.look_for_solver_class
+          :summary:
+   * - :py:obj:`solve <discrete_optimization.rcpsp.solvers_map.solve>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solve
+          :summary:
+   * - :py:obj:`solve_return_solver <discrete_optimization.rcpsp.solvers_map.solve_return_solver>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solve_return_solver
+          :summary:
+   * - :py:obj:`return_solver <discrete_optimization.rcpsp.solvers_map.return_solver>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.return_solver
+          :summary:
+   * - :py:obj:`get_solver_default_arguments <discrete_optimization.rcpsp.solvers_map.get_solver_default_arguments>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.get_solver_default_arguments
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`solvers <discrete_optimization.rcpsp.solvers_map.solvers>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solvers
+          :summary:
+   * - :py:obj:`solvers_map <discrete_optimization.rcpsp.solvers_map.solvers_map>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solvers_map
+          :summary:
+   * - :py:obj:`solvers_compatibility <discrete_optimization.rcpsp.solvers_map.solvers_compatibility>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solvers_compatibility
+          :summary:
+
+API
+~~~
+
+.. py:data:: solvers
+   :canonical: discrete_optimization.rcpsp.solvers_map.solvers
+   :type: dict[str, list[tuple[typing.Union[type[discrete_optimization.rcpsp.solvers.RcpspSolver], type[discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]], dict[str, typing.Any]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solvers
+
+.. py:data:: solvers_map
+   :canonical: discrete_optimization.rcpsp.solvers_map.solvers_map
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solvers_map
+
+.. py:data:: solvers_compatibility
+   :canonical: discrete_optimization.rcpsp.solvers_map.solvers_compatibility
+   :type: dict[typing.Union[type[discrete_optimization.rcpsp.solvers.RcpspSolver], type[discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]], list[type[discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solvers_compatibility
+
+.. py:function:: look_for_solver(domain: discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP) -> list[typing.Union[type[discrete_optimization.rcpsp.solvers.RcpspSolver], type[discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]]]
+   :canonical: discrete_optimization.rcpsp.solvers_map.look_for_solver
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.look_for_solver
+
+.. py:function:: look_for_solver_class(class_domain: type[discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP]) -> list[typing.Union[type[discrete_optimization.rcpsp.solvers.RcpspSolver], type[discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]]]
+   :canonical: discrete_optimization.rcpsp.solvers_map.look_for_solver_class
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.look_for_solver_class
+
+.. py:function:: solve(method: typing.Union[type[discrete_optimization.rcpsp.solvers.RcpspSolver], type[discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]], problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+   :canonical: discrete_optimization.rcpsp.solvers_map.solve
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solve
+
+.. py:function:: solve_return_solver(method: typing.Union[type[discrete_optimization.rcpsp.solvers.RcpspSolver], type[discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]], problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP, **kwargs: typing.Any) -> tuple[discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, typing.Union[discrete_optimization.rcpsp.solvers.RcpspSolver, discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]]
+   :canonical: discrete_optimization.rcpsp.solvers_map.solve_return_solver
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.solve_return_solver
+
+.. py:function:: return_solver(method: typing.Union[type[discrete_optimization.rcpsp.solvers.RcpspSolver], type[discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]], problem: discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP, **kwargs: typing.Any) -> typing.Union[discrete_optimization.rcpsp.solvers.RcpspSolver, discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]
+   :canonical: discrete_optimization.rcpsp.solvers_map.return_solver
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.return_solver
+
+.. py:function:: get_solver_default_arguments(method: typing.Union[type[discrete_optimization.rcpsp.solvers.RcpspSolver], type[discrete_optimization.generic_rcpsp_tools.solvers.GenericRcpspSolver]]) -> dict[str, typing.Any]
+   :canonical: discrete_optimization.rcpsp.solvers_map.get_solver_default_arguments
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers_map.get_solver_default_arguments

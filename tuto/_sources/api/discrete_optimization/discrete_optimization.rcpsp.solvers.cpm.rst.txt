@@ -1,0 +1,131 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.cpm`
+=================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.cpm
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpmObject <discrete_optimization.rcpsp.solvers.cpm.CpmObject>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmObject
+          :summary:
+   * - :py:obj:`CpmRcpspSolver <discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`run_partial_classic_cpm <discrete_optimization.rcpsp.solvers.cpm.run_partial_classic_cpm>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.run_partial_classic_cpm
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.cpm.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.cpm.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.logger
+
+.. py:class:: CpmObject(ESD, EFD, LSD, LFD)
+   :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmObject
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmObject
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmObject.__init__
+
+   .. py:method:: set_earliest_start_date(ESD)
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_earliest_start_date
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_earliest_start_date
+
+   .. py:method:: set_earliest_finish_date(EFD)
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_earliest_finish_date
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_earliest_finish_date
+
+   .. py:method:: set_latest_start_date(LSD)
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_latest_start_date
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_latest_start_date
+
+   .. py:method:: set_latest_finish_date(LFD)
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_latest_finish_date
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmObject.set_latest_finish_date
+
+   .. py:method:: __str__()
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmObject.__str__
+
+.. py:class:: CpmRcpspSolver(problem: discrete_optimization.rcpsp.problem.RcpspProblem, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.rcpsp.solvers.RcpspSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.problem
+      :type: discrete_optimization.rcpsp.problem.RcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.problem
+
+   .. py:method:: run_classic_cpm()
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_classic_cpm
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_classic_cpm
+
+   .. py:method:: return_order_cpm()
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.return_order_cpm
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.return_order_cpm
+
+   .. py:method:: run_sgs_on_order(map_nodes: dict[typing.Any, discrete_optimization.rcpsp.solvers.cpm.CpmObject], critical_path: list[typing.Any], total_order: list[typing.Any] = None, cut_sgs_by_critical=True)
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_sgs_on_order
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_sgs_on_order
+
+   .. py:method:: get_first_time_to_do_one_task(resource_avail_in_time, task_id)
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.get_first_time_to_do_one_task
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.get_first_time_to_do_one_task
+
+   .. py:method:: run_sgs_time_loop(map_nodes: dict[typing.Any, discrete_optimization.rcpsp.solvers.cpm.CpmObject], critical_path: list[typing.Any], total_order: list[typing.Any] = None)
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_sgs_time_loop
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.run_sgs_time_loop
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp.solvers.cpm.CpmRcpspSolver.solve
+
+.. py:function:: run_partial_classic_cpm(partial_schedule, cpm_solver)
+   :canonical: discrete_optimization.rcpsp.solvers.cpm.run_partial_classic_cpm
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.cpm.run_partial_classic_cpm

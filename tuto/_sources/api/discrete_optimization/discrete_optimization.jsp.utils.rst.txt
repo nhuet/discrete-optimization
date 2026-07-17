@@ -1,0 +1,37 @@
+:py:mod:`discrete_optimization.jsp.utils`
+=========================================
+
+.. py:module:: discrete_optimization.jsp.utils
+
+.. autodoc2-docstring:: discrete_optimization.jsp.utils
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`transform_jsp_to_rcpsp <discrete_optimization.jsp.utils.transform_jsp_to_rcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.utils.transform_jsp_to_rcpsp
+          :summary:
+   * - :py:obj:`plot_jobshop_solution <discrete_optimization.jsp.utils.plot_jobshop_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.jsp.utils.plot_jobshop_solution
+          :summary:
+
+API
+~~~
+
+.. py:function:: transform_jsp_to_rcpsp(jsp_problem: discrete_optimization.jsp.problem.JobShopProblem) -> discrete_optimization.rcpsp.problem.RcpspProblem
+   :canonical: discrete_optimization.jsp.utils.transform_jsp_to_rcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.utils.transform_jsp_to_rcpsp
+
+.. py:function:: plot_jobshop_solution(solution: discrete_optimization.jsp.problem.JobShopSolution, title: str = 'Job Shop Schedule')
+   :canonical: discrete_optimization.jsp.utils.plot_jobshop_solution
+
+   .. autodoc2-docstring:: discrete_optimization.jsp.utils.plot_jobshop_solution

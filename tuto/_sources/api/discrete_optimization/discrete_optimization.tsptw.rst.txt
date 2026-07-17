@@ -1,0 +1,26 @@
+:py:mod:`discrete_optimization.tsptw`
+=====================================
+
+.. py:module:: discrete_optimization.tsptw
+
+.. autodoc2-docstring:: discrete_optimization.tsptw
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.tsptw.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.tsptw.problem
+   discrete_optimization.tsptw.parser

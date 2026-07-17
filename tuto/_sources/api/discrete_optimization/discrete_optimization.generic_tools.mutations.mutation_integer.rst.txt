@@ -1,0 +1,51 @@
+:py:mod:`discrete_optimization.generic_tools.mutations.mutation_integer`
+========================================================================
+
+.. py:module:: discrete_optimization.generic_tools.mutations.mutation_integer
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_integer
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MutationIntegerSpecificArity <discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity
+          :summary:
+
+API
+~~~
+
+.. py:class:: MutationIntegerSpecificArity(problem: discrete_optimization.generic_tools.do_problem.Problem, attribute: typing.Optional[str] = None, arities: typing.Optional[list[int]] = None, probability_flip: float = 0.1, min_value: int = 1)
+   :canonical: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity.__init__
+
+   .. py:method:: build(problem: discrete_optimization.generic_tools.do_problem.Problem, solution: discrete_optimization.generic_tools.do_problem.Solution, **kwargs: typing.Any) -> discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity
+      :canonical: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity.build
+
+   .. py:method:: mutate(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.generic_tools.do_problem.Solution) -> tuple[discrete_optimization.generic_tools.do_problem.Solution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.mutations.mutation_integer.MutationIntegerSpecificArity.mutate_and_compute_obj

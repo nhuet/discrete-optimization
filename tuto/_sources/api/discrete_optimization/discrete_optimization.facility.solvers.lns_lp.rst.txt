@@ -1,0 +1,134 @@
+:py:mod:`discrete_optimization.facility.solvers.lns_lp`
+=======================================================
+
+.. py:module:: discrete_optimization.facility.solvers.lns_lp
+
+.. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`InitialFacilityMethod <discrete_optimization.facility.solvers.lns_lp.InitialFacilityMethod>`
+     -
+   * - :py:obj:`InitialFacilitySolution <discrete_optimization.facility.solvers.lns_lp.InitialFacilitySolution>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.InitialFacilitySolution
+          :summary:
+   * - :py:obj:`_BaseFacilityConstraintHandler <discrete_optimization.facility.solvers.lns_lp._BaseFacilityConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp._BaseFacilityConstraintHandler
+          :summary:
+   * - :py:obj:`GurobiFacilityConstraintHandler <discrete_optimization.facility.solvers.lns_lp.GurobiFacilityConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.GurobiFacilityConstraintHandler
+          :summary:
+   * - :py:obj:`MathOptConstraintHandlerFacility <discrete_optimization.facility.solvers.lns_lp.MathOptConstraintHandlerFacility>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.MathOptConstraintHandlerFacility
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.facility.solvers.lns_lp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.facility.solvers.lns_lp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.logger
+
+.. py:class:: InitialFacilityMethod
+   :canonical: discrete_optimization.facility.solvers.lns_lp.InitialFacilityMethod
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: DUMMY
+      :canonical: discrete_optimization.facility.solvers.lns_lp.InitialFacilityMethod.DUMMY
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.InitialFacilityMethod.DUMMY
+
+   .. py:attribute:: GREEDY
+      :canonical: discrete_optimization.facility.solvers.lns_lp.InitialFacilityMethod.GREEDY
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.InitialFacilityMethod.GREEDY
+
+.. py:class:: InitialFacilitySolution(problem: discrete_optimization.facility.problem.FacilityProblem, initial_method: discrete_optimization.facility.solvers.lns_lp.InitialFacilityMethod, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction)
+   :canonical: discrete_optimization.facility.solvers.lns_lp.InitialFacilitySolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.InitialSolution`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.InitialFacilitySolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.InitialFacilitySolution.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.facility.solvers.lns_lp.InitialFacilitySolution.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.InitialFacilitySolution.hyperparameters
+
+   .. py:method:: get_starting_solution() -> discrete_optimization.facility.solvers.greedy.ResultStorage
+      :canonical: discrete_optimization.facility.solvers.lns_lp.InitialFacilitySolution.get_starting_solution
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.InitialFacilitySolution.get_starting_solution
+
+.. py:class:: _BaseFacilityConstraintHandler(problem: discrete_optimization.facility.problem.FacilityProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.facility.solvers.lns_lp._BaseFacilityConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.ConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp._BaseFacilityConstraintHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp._BaseFacilityConstraintHandler.__init__
+
+   .. py:method:: adding_constraint_from_results_store(solver: typing.Union[discrete_optimization.facility.solvers.lp.GurobiFacilitySolver, discrete_optimization.facility.solvers.lp.MathOptFacilitySolver], result_storage: discrete_optimization.facility.solvers.greedy.ResultStorage, result_storage_last_iteration: discrete_optimization.facility.solvers.greedy.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.facility.solvers.lns_lp._BaseFacilityConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp._BaseFacilityConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: GurobiFacilityConstraintHandler(problem: discrete_optimization.facility.problem.FacilityProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.facility.solvers.lns_lp.GurobiFacilityConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.facility.solvers.lns_lp._BaseFacilityConstraintHandler`, :py:obj:`discrete_optimization.generic_tools.lns_mip.GurobiConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.GurobiFacilityConstraintHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.GurobiFacilityConstraintHandler.__init__
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.facility.solvers.lp.GurobiFacilitySolver, result_storage: discrete_optimization.facility.solvers.greedy.ResultStorage, result_storage_last_iteration: discrete_optimization.facility.solvers.greedy.ResultStorage, **kwargs: typing.Any) -> collections.abc.Iterable[typing.Any]
+      :canonical: discrete_optimization.facility.solvers.lns_lp.GurobiFacilityConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.GurobiFacilityConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: MathOptConstraintHandlerFacility(problem: discrete_optimization.facility.problem.FacilityProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.facility.solvers.lns_lp.MathOptConstraintHandlerFacility
+
+   Bases: :py:obj:`discrete_optimization.facility.solvers.lns_lp._BaseFacilityConstraintHandler`, :py:obj:`discrete_optimization.generic_tools.lns_mip.OrtoolsMathOptConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.MathOptConstraintHandlerFacility
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.lns_lp.MathOptConstraintHandlerFacility.__init__

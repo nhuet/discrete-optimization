@@ -1,0 +1,86 @@
+:py:mod:`discrete_optimization.workforce.allocation.solvers.dp`
+===============================================================
+
+.. py:module:: discrete_optimization.workforce.allocation.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpAllocationSolver <discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.workforce.allocation.solvers.dp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.dp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.workforce.allocation.solvers.dp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.dp.logger
+
+.. py:class:: DpAllocationSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`, :py:obj:`discrete_optimization.workforce.allocation.solvers.TeamAllocationSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.problem
+      :type: discrete_optimization.workforce.allocation.problem.TeamAllocationProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.problem
+
+   .. py:attribute:: transitions
+      :canonical: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.transitions
+      :type: dict[str, list]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.transitions
+
+   .. py:method:: init_model_mono_objective(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.init_model_mono_objective
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.init_model_mono_objective
+
+   .. py:method:: init_model_multi_objective(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.init_model_multi_objective
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.init_model_multi_objective
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.init_model
+
+   .. py:method:: retrieve_solution(sol: discrete_optimization.generic_tools.dyn_prog_tools.dp.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.workforce.allocation.problem.TeamAllocationSolution) -> None
+      :canonical: discrete_optimization.workforce.allocation.solvers.dp.DpAllocationSolver.set_warm_start

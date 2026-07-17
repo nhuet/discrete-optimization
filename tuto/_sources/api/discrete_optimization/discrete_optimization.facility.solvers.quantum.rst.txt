@@ -1,0 +1,77 @@
+:py:mod:`discrete_optimization.facility.solvers.quantum`
+========================================================
+
+.. py:module:: discrete_optimization.facility.solvers.quantum
+
+.. autodoc2-docstring:: discrete_optimization.facility.solvers.quantum
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`FacilityQiskit <discrete_optimization.facility.solvers.quantum.FacilityQiskit>`
+     -
+   * - :py:obj:`QaoaFacilitySolver <discrete_optimization.facility.solvers.quantum.QaoaFacilitySolver>`
+     -
+   * - :py:obj:`VqeFacilitySolver <discrete_optimization.facility.solvers.quantum.VqeFacilitySolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.facility.solvers.quantum.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.quantum.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.facility.solvers.quantum.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.quantum.logger
+
+.. py:class:: FacilityQiskit(problem: discrete_optimization.facility.problem.FacilityProblem)
+   :canonical: discrete_optimization.facility.solvers.quantum.FacilityQiskit
+
+   Bases: :py:obj:`qiskit_optimization.applications.OptimizationApplication`
+
+   .. py:method:: to_quadratic_program() -> qiskit_optimization.QuadraticProgram
+      :canonical: discrete_optimization.facility.solvers.quantum.FacilityQiskit.to_quadratic_program
+
+   .. py:method:: interpret(result: typing.Union[qiskit_optimization.algorithms.OptimizationResult, numpy.ndarray])
+      :canonical: discrete_optimization.facility.solvers.quantum.FacilityQiskit.interpret
+
+.. py:class:: QaoaFacilitySolver(problem: discrete_optimization.facility.problem.FacilityProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.facility.solvers.quantum.QaoaFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.facility.solvers.FacilitySolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.facility.solvers.quantum.QaoaFacilitySolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.facility.solvers.quantum.QaoaFacilitySolver.retrieve_current_solution
+
+.. py:class:: VqeFacilitySolver(problem: discrete_optimization.facility.problem.FacilityProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.facility.solvers.quantum.VqeFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.facility.solvers.FacilitySolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.facility.solvers.quantum.VqeFacilitySolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.facility.solvers.quantum.VqeFacilitySolver.retrieve_current_solution

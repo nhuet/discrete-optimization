@@ -1,0 +1,400 @@
+:py:mod:`discrete_optimization.gpdp.solvers.lp_iterative`
+=========================================================
+
+.. py:module:: discrete_optimization.gpdp.solvers.lp_iterative
+
+.. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TemporaryResult <discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult
+          :summary:
+   * - :py:obj:`BaseLinearFlowGpdpSolver <discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver>`
+     -
+   * - :py:obj:`TemporaryResultGurobiCallback <discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultGurobiCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultGurobiCallback
+          :summary:
+   * - :py:obj:`GurobiLinearFlowGpdpSolver <discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver>`
+     -
+   * - :py:obj:`TemporaryResultMathOptCallback <discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultMathOptCallback>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultMathOptCallback
+          :summary:
+   * - :py:obj:`MathOptLinearFlowGpdpSolver <discrete_optimization.gpdp.solvers.lp_iterative.MathOptLinearFlowGpdpSolver>`
+     -
+   * - :py:obj:`GurobiLazyConstraintLinearFlowGpdpSolver <discrete_optimization.gpdp.solvers.lp_iterative.GurobiLazyConstraintLinearFlowGpdpSolver>`
+     -
+   * - :py:obj:`SubtourAddingConstraint <discrete_optimization.gpdp.solvers.lp_iterative.SubtourAddingConstraint>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.SubtourAddingConstraint
+          :summary:
+   * - :py:obj:`ConstraintHandlerOrWarmStart <discrete_optimization.gpdp.solvers.lp_iterative.ConstraintHandlerOrWarmStart>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.ConstraintHandlerOrWarmStart
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`convert_temporaryresult_to_gpdpsolution <discrete_optimization.gpdp.solvers.lp_iterative.convert_temporaryresult_to_gpdpsolution>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.convert_temporaryresult_to_gpdpsolution
+          :summary:
+   * - :py:obj:`retrieve_current_solution <discrete_optimization.gpdp.solvers.lp_iterative.retrieve_current_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.retrieve_current_solution
+          :summary:
+   * - :py:obj:`construct_edges_in_out_dict <discrete_optimization.gpdp.solvers.lp_iterative.construct_edges_in_out_dict>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.construct_edges_in_out_dict
+          :summary:
+   * - :py:obj:`build_path_from_vehicle_type_flow <discrete_optimization.gpdp.solvers.lp_iterative.build_path_from_vehicle_type_flow>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.build_path_from_vehicle_type_flow
+          :summary:
+   * - :py:obj:`build_the_cycles <discrete_optimization.gpdp.solvers.lp_iterative.build_the_cycles>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.build_the_cycles
+          :summary:
+   * - :py:obj:`rebuild_routine <discrete_optimization.gpdp.solvers.lp_iterative.rebuild_routine>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.rebuild_routine
+          :summary:
+   * - :py:obj:`rebuild_routine_variant <discrete_optimization.gpdp.solvers.lp_iterative.rebuild_routine_variant>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.rebuild_routine_variant
+          :summary:
+   * - :py:obj:`reevaluate_result <discrete_optimization.gpdp.solvers.lp_iterative.reevaluate_result>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.reevaluate_result
+          :summary:
+   * - :py:obj:`build_graph_solution <discrete_optimization.gpdp.solvers.lp_iterative.build_graph_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.build_graph_solution
+          :summary:
+   * - :py:obj:`build_graph_solutions <discrete_optimization.gpdp.solvers.lp_iterative.build_graph_solutions>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.build_graph_solutions
+          :summary:
+   * - :py:obj:`update_model_generic <discrete_optimization.gpdp.solvers.lp_iterative.update_model_generic>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.update_model_generic
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.gpdp.solvers.lp_iterative.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.logger
+
+.. py:class:: TemporaryResult(flow_solution: dict[int, dict[discrete_optimization.gpdp.problem.Edge, int]], graph_merge: networkx.DiGraph, graph_vehicle: dict[int, networkx.DiGraph], obj: float, all_variables: typing.Optional[dict[str, dict[typing.Any, typing.Any]]] = None)
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult.__init__
+
+.. py:function:: convert_temporaryresult_to_gpdpsolution(temporaryresult: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult, problem: discrete_optimization.gpdp.problem.GpdpProblem) -> discrete_optimization.gpdp.problem.GpdpSolution
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.convert_temporaryresult_to_gpdpsolution
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.convert_temporaryresult_to_gpdpsolution
+
+.. py:function:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float], variable_decisions: dict[str, typing.Any]) -> tuple[dict[str, dict[collections.abc.Hashable, typing.Any]], float]
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.retrieve_current_solution
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.retrieve_current_solution
+
+.. py:class:: BaseLinearFlowGpdpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`, :py:obj:`discrete_optimization.gpdp.solvers.GpdpSolver`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.problem
+      :type: discrete_optimization.gpdp.problem.GpdpProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.problem
+
+   .. py:attribute:: warm_start
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.warm_start
+      :type: typing.Optional[discrete_optimization.gpdp.problem.GpdpSolution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.warm_start
+
+   .. py:attribute:: lazy
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.lazy
+      :type: bool
+      :value: False
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.lazy
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.gpdp.problem.GpdpSolution) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.set_warm_start
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.convert_to_variable_values
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.convert_to_variable_values
+
+   .. py:method:: one_visit_per_node(nodes_of_interest: collections.abc.Iterable[discrete_optimization.gpdp.problem.Node], variables_edges: dict[int, dict[discrete_optimization.gpdp.problem.Edge, typing.Any]]) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.one_visit_per_node
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.one_visit_per_node
+
+   .. py:method:: one_visit_per_clusters(nodes_of_interest: collections.abc.Iterable[discrete_optimization.gpdp.problem.Node], variables_edges: dict[int, dict[discrete_optimization.gpdp.problem.Edge, typing.Any]]) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.one_visit_per_clusters
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.one_visit_per_clusters
+
+   .. py:method:: resources_constraint(variables_edges: dict[int, dict[discrete_optimization.gpdp.problem.Edge, typing.Any]]) -> dict[str, dict[str, dict[discrete_optimization.gpdp.problem.Node, typing.Any]]]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.resources_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.resources_constraint
+
+   .. py:method:: simple_capacity_constraint(variables_edges: dict[int, dict[discrete_optimization.gpdp.problem.Edge, typing.Any]]) -> dict[str, dict[int, dict[str, typing.Any]]]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.simple_capacity_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.simple_capacity_constraint
+
+   .. py:method:: time_evolution(variables_edges: dict[int, dict[discrete_optimization.gpdp.problem.Edge, typing.Any]]) -> dict[str, dict[discrete_optimization.gpdp.problem.Node, typing.Any]]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.time_evolution
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.time_evolution
+
+   .. py:method:: init_order_variables() -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.init_order_variables
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.init_order_variables
+
+   .. py:method:: add_order_constraints(nodes: collections.abc.Iterable[discrete_optimization.gpdp.problem.Node], lazy: bool = False) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.add_order_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.add_order_constraints
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.init_model
+
+   .. py:method:: retrieve_current_temporaryresult(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.retrieve_current_temporaryresult
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.retrieve_current_temporaryresult
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.gpdp.problem.GpdpSolution
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.retrieve_current_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.retrieve_current_solution
+
+   .. py:method:: solve_one_iteration(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[float] = 30.0, **kwargs: typing.Any) -> list[discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.solve_one_iteration
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.solve_one_iteration
+
+   .. py:method:: solve_iterative(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit_subsolver: typing.Optional[float] = 30.0, do_lns: bool = True, nb_iteration_max: int = 10, json_dump_folder: typing.Optional[str] = None, warm_start: typing.Optional[dict[typing.Any, typing.Any]] = None, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.solve_iterative
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.solve_iterative
+
+   .. py:method:: solve(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit_subsolver: typing.Optional[float] = 30.0, do_lns: bool = True, nb_iteration_max: int = 10, json_dump_folder: typing.Optional[str] = None, warm_start: typing.Optional[dict[typing.Any, typing.Any]] = None, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.solve
+
+   .. py:method:: convert_temporaryresults(temporary_results: list[discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult]) -> list[tuple[discrete_optimization.generic_tools.do_problem.Solution, typing.Union[float, discrete_optimization.generic_tools.result_storage.result_storage.TupleFitness]]]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.convert_temporaryresults
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver.convert_temporaryresults
+
+.. py:class:: TemporaryResultGurobiCallback(do_solver: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver)
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultGurobiCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiCallback`
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultGurobiCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultGurobiCallback.__init__
+
+   .. py:method:: __call__(model, where) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultGurobiCallback.__call__
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultGurobiCallback.__call__
+
+.. py:class:: GurobiLinearFlowGpdpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver`, :py:obj:`discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver`
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver.model
+      :type: typing.Optional[gurobipy.Model]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver.model
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver.init_model
+
+   .. py:method:: solve_one_iteration(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[float] = 30.0, **kwargs: typing.Any) -> list[discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver.solve_one_iteration
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver.solve_one_iteration
+
+   .. py:method:: solve(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit_subsolver: typing.Optional[float] = 30.0, do_lns: bool = True, nb_iteration_max: int = 10, json_dump_folder: typing.Optional[str] = None, warm_start: typing.Optional[dict[typing.Any, typing.Any]] = None, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver.solve
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver.convert_to_variable_values
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.gpdp.problem.GpdpSolution) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver.set_warm_start
+
+.. py:class:: TemporaryResultMathOptCallback(do_solver: discrete_optimization.gpdp.solvers.lp_iterative.MathOptLinearFlowGpdpSolver, mathopt_solver_type: ortools.math_opt.python.mathopt.SolverType)
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultMathOptCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MathOptCallback`
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultMathOptCallback
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultMathOptCallback.__init__
+
+   .. py:method:: __call__(callback_data: ortools.math_opt.python.mathopt.CallbackData) -> ortools.math_opt.python.mathopt.CallbackResult
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultMathOptCallback.__call__
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResultMathOptCallback.__call__
+
+.. py:class:: MathOptLinearFlowGpdpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.MathOptLinearFlowGpdpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`, :py:obj:`discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver`
+
+   .. py:method:: solve_one_iteration(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[float] = 30.0, mathopt_solver_type: ortools.math_opt.python.mathopt.SolverType = mathopt.SolverType.CP_SAT, mathopt_enable_output: bool = False, mathopt_model_parameters: typing.Optional[ortools.math_opt.python.mathopt.ModelSolveParameters] = None, mathopt_additional_solve_parameters: typing.Optional[ortools.math_opt.python.mathopt.SolveParameters] = None, **kwargs: typing.Any) -> list[discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.MathOptLinearFlowGpdpSolver.solve_one_iteration
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.MathOptLinearFlowGpdpSolver.solve_one_iteration
+
+   .. py:method:: solve(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit_subsolver: typing.Optional[float] = 30.0, do_lns: bool = True, nb_iteration_max: int = 10, json_dump_folder: typing.Optional[str] = None, warm_start: typing.Optional[dict[typing.Any, typing.Any]] = None, callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.MathOptLinearFlowGpdpSolver.solve
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.generic_tools.do_problem.Solution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.MathOptLinearFlowGpdpSolver.convert_to_variable_values
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.gpdp.problem.GpdpSolution) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.MathOptLinearFlowGpdpSolver.set_warm_start
+
+.. py:function:: construct_edges_in_out_dict(variables_edges: dict[int, dict[discrete_optimization.gpdp.problem.Edge, typing.Any]], clusters_dict: dict[discrete_optimization.gpdp.problem.Node, collections.abc.Hashable]) -> tuple[dict[discrete_optimization.gpdp.problem.Node, set[tuple[int, discrete_optimization.gpdp.problem.Edge]]], dict[discrete_optimization.gpdp.problem.Node, set[tuple[int, discrete_optimization.gpdp.problem.Edge]]], dict[int, dict[discrete_optimization.gpdp.problem.Node, set[discrete_optimization.gpdp.problem.Edge]]], dict[int, dict[discrete_optimization.gpdp.problem.Node, set[discrete_optimization.gpdp.problem.Edge]]], dict[collections.abc.Hashable, set[tuple[int, discrete_optimization.gpdp.problem.Edge]]], dict[collections.abc.Hashable, set[tuple[int, discrete_optimization.gpdp.problem.Edge]]], dict[int, dict[collections.abc.Hashable, set[discrete_optimization.gpdp.problem.Edge]]], dict[int, dict[collections.abc.Hashable, set[discrete_optimization.gpdp.problem.Edge]]]]
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.construct_edges_in_out_dict
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.construct_edges_in_out_dict
+
+.. py:function:: build_path_from_vehicle_type_flow(result_from_retrieve: dict[str, dict[collections.abc.Hashable, typing.Any]], problem: discrete_optimization.gpdp.problem.GpdpProblem) -> dict[int, list[discrete_optimization.gpdp.problem.Node]]
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.build_path_from_vehicle_type_flow
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.build_path_from_vehicle_type_flow
+
+.. py:class:: GurobiLazyConstraintLinearFlowGpdpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLazyConstraintLinearFlowGpdpSolver
+
+   Bases: :py:obj:`discrete_optimization.gpdp.solvers.lp_iterative.GurobiLinearFlowGpdpSolver`
+
+   .. py:attribute:: lazy
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLazyConstraintLinearFlowGpdpSolver.lazy
+      :value: True
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLazyConstraintLinearFlowGpdpSolver.lazy
+
+   .. py:method:: solve_one_iteration(parameters_milp: typing.Optional[discrete_optimization.generic_tools.lp_tools.ParametersMilp] = None, time_limit: typing.Optional[float] = 30.0, **kwargs: typing.Any) -> list[discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult]
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLazyConstraintLinearFlowGpdpSolver.solve_one_iteration
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLazyConstraintLinearFlowGpdpSolver.solve_one_iteration
+
+   .. py:method:: retrieve_ith_temporaryresult(i: int) -> discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLazyConstraintLinearFlowGpdpSolver.retrieve_ith_temporaryresult
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.GurobiLazyConstraintLinearFlowGpdpSolver.retrieve_ith_temporaryresult
+
+.. py:class:: SubtourAddingConstraint(problem: discrete_optimization.gpdp.problem.GpdpProblem, linear_solver: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver, lazy: bool = False, cluster: bool = False, do_order: bool = False, consider_only_first_component: bool = True)
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.SubtourAddingConstraint
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.SubtourAddingConstraint
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.SubtourAddingConstraint.__init__
+
+   .. py:method:: adding_component_constraints(list_solution: list[discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult]) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.SubtourAddingConstraint.adding_component_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.SubtourAddingConstraint.adding_component_constraints
+
+.. py:class:: ConstraintHandlerOrWarmStart(linear_solver: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver, problem: discrete_optimization.gpdp.problem.GpdpProblem, do_lns: bool = True)
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.ConstraintHandlerOrWarmStart
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.ConstraintHandlerOrWarmStart
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.ConstraintHandlerOrWarmStart.__init__
+
+   .. py:method:: adding_constraint(rebuilt_dict: dict[int, list[discrete_optimization.gpdp.problem.Node]]) -> None
+      :canonical: discrete_optimization.gpdp.solvers.lp_iterative.ConstraintHandlerOrWarmStart.adding_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.ConstraintHandlerOrWarmStart.adding_constraint
+
+.. py:function:: build_the_cycles(flow_solution: dict[discrete_optimization.gpdp.problem.Edge, int], component: set[discrete_optimization.gpdp.problem.Node], start_index: discrete_optimization.gpdp.problem.Node, end_index: discrete_optimization.gpdp.problem.Node) -> tuple[list[discrete_optimization.gpdp.problem.Node], dict[discrete_optimization.gpdp.problem.Node, int]]
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.build_the_cycles
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.build_the_cycles
+
+.. py:function:: rebuild_routine(sorted_connected_component: list[tuple[set[discrete_optimization.gpdp.problem.Node], int]], paths_component: dict[int, list[discrete_optimization.gpdp.problem.Node]], node_to_component: dict[discrete_optimization.gpdp.problem.Node, int], indexes: dict[int, dict[discrete_optimization.gpdp.problem.Node, int]], graph: networkx.DiGraph, edges: set[discrete_optimization.gpdp.problem.Edge], evaluate_function_indexes: collections.abc.Callable[[discrete_optimization.gpdp.problem.Node, discrete_optimization.gpdp.problem.Node], float], start_index: discrete_optimization.gpdp.problem.Node, end_index: discrete_optimization.gpdp.problem.Node) -> list[discrete_optimization.gpdp.problem.Node]
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.rebuild_routine
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.rebuild_routine
+
+.. py:function:: rebuild_routine_variant(sorted_connected_component: list[tuple[set[discrete_optimization.gpdp.problem.Node], int]], paths_component: dict[int, list[discrete_optimization.gpdp.problem.Node]], node_to_component: dict[discrete_optimization.gpdp.problem.Node, int], indexes: dict[int, dict[discrete_optimization.gpdp.problem.Node, int]], graph: networkx.DiGraph, edges: set[discrete_optimization.gpdp.problem.Edge], evaluate_function_indexes: collections.abc.Callable[[discrete_optimization.gpdp.problem.Node, discrete_optimization.gpdp.problem.Node], float], start_index: discrete_optimization.gpdp.problem.Node, end_index: discrete_optimization.gpdp.problem.Node) -> list[discrete_optimization.gpdp.problem.Node]
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.rebuild_routine_variant
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.rebuild_routine_variant
+
+.. py:function:: reevaluate_result(temporary_result: discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult, problem: discrete_optimization.gpdp.problem.GpdpProblem, variant_rebuilt: bool = True, possible_subcycle_in_component: bool = True) -> discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.reevaluate_result
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.reevaluate_result
+
+.. py:function:: build_graph_solution(results: dict[str, dict[collections.abc.Hashable, typing.Any]], obj: float, graph: discrete_optimization.generic_tools.graph_api.Graph) -> discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.build_graph_solution
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.build_graph_solution
+
+.. py:function:: build_graph_solutions(solutions: list[tuple[dict, float]], graph: discrete_optimization.generic_tools.graph_api.Graph) -> list[discrete_optimization.gpdp.solvers.lp_iterative.TemporaryResult]
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.build_graph_solutions
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.build_graph_solutions
+
+.. py:function:: update_model_generic(problem: discrete_optimization.gpdp.problem.GpdpProblem, lp_solver: discrete_optimization.gpdp.solvers.lp_iterative.BaseLinearFlowGpdpSolver, components_global: list[tuple[set[discrete_optimization.gpdp.problem.Node], int]], edges_in_all_vehicles: dict[discrete_optimization.gpdp.problem.Node, set[tuple[int, discrete_optimization.gpdp.problem.Edge]]], edges_out_all_vehicles: dict[discrete_optimization.gpdp.problem.Node, set[tuple[int, discrete_optimization.gpdp.problem.Edge]]], lazy: bool = False, cluster: bool = False, consider_only_first_component: bool = True, do_order: bool = False) -> list[typing.Any]
+   :canonical: discrete_optimization.gpdp.solvers.lp_iterative.update_model_generic
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.lp_iterative.update_model_generic

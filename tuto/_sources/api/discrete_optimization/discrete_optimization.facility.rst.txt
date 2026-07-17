@@ -1,0 +1,28 @@
+:py:mod:`discrete_optimization.facility`
+========================================
+
+.. py:module:: discrete_optimization.facility
+
+.. autodoc2-docstring:: discrete_optimization.facility
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.facility.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.facility.solvers_map
+   discrete_optimization.facility.problem
+   discrete_optimization.facility.utils
+   discrete_optimization.facility.parser

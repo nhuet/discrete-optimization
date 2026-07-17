@@ -1,0 +1,27 @@
+:py:mod:`discrete_optimization.workforce.allocation`
+====================================================
+
+.. py:module:: discrete_optimization.workforce.allocation
+
+.. autodoc2-docstring:: discrete_optimization.workforce.allocation
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.workforce.allocation.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.workforce.allocation.problem
+   discrete_optimization.workforce.allocation.utils
+   discrete_optimization.workforce.allocation.parser

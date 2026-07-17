@@ -1,0 +1,52 @@
+:py:mod:`discrete_optimization.singlemachine.solvers.dp`
+========================================================
+
+.. py:module:: discrete_optimization.singlemachine.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpWTSolver <discrete_optimization.singlemachine.solvers.dp.DpWTSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: DpWTSolver(problem: discrete_optimization.singlemachine.problem.WeightedTardinessProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.singlemachine.solvers.dp.DpWTSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.singlemachine.solvers.dp.DpWTSolver.problem
+      :type: discrete_optimization.singlemachine.problem.WeightedTardinessProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.dp.DpWTSolver.problem
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.singlemachine.solvers.dp.DpWTSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.dp.DpWTSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.singlemachine.solvers.dp.DpWTSolver.init_model
+
+   .. py:method:: retrieve_solution(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.singlemachine.solvers.dp.DpWTSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.singlemachine.solvers.dp.DpWTSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.singlemachine.problem.WTSolution) -> None
+      :canonical: discrete_optimization.singlemachine.solvers.dp.DpWTSolver.set_warm_start

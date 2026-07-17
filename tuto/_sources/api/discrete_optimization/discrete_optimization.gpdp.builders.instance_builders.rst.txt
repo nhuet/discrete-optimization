@@ -1,0 +1,78 @@
+:py:mod:`discrete_optimization.gpdp.builders.instance_builders`
+===============================================================
+
+.. py:module:: discrete_optimization.gpdp.builders.instance_builders
+
+.. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`create_selective_tsp <discrete_optimization.gpdp.builders.instance_builders.create_selective_tsp>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.create_selective_tsp
+          :summary:
+   * - :py:obj:`create_pickup_and_delivery <discrete_optimization.gpdp.builders.instance_builders.create_pickup_and_delivery>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.create_pickup_and_delivery
+          :summary:
+   * - :py:obj:`load_vrp_and_transform <discrete_optimization.gpdp.builders.instance_builders.load_vrp_and_transform>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.load_vrp_and_transform
+          :summary:
+   * - :py:obj:`load_tsp_and_transform <discrete_optimization.gpdp.builders.instance_builders.load_tsp_and_transform>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.load_tsp_and_transform
+          :summary:
+   * - :py:obj:`create_ortools_example <discrete_optimization.gpdp.builders.instance_builders.create_ortools_example>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.create_ortools_example
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.gpdp.builders.instance_builders.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.gpdp.builders.instance_builders.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.logger
+
+.. py:function:: create_selective_tsp(nb_nodes: int = 300, nb_vehicles: int = 1, nb_clusters: int = 30) -> discrete_optimization.gpdp.problem.GpdpProblem
+   :canonical: discrete_optimization.gpdp.builders.instance_builders.create_selective_tsp
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.create_selective_tsp
+
+.. py:function:: create_pickup_and_delivery(number_of_vehicles: int = 1, number_of_node: int = 100, include_cluster: bool = False, nb_clusters: int = 10, include_pickup: bool = True, fraction_of_pickup_deliver: float = 0.125, pickup_per_cluster: bool = False) -> discrete_optimization.gpdp.problem.GpdpProblem
+   :canonical: discrete_optimization.gpdp.builders.instance_builders.create_pickup_and_delivery
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.create_pickup_and_delivery
+
+.. py:function:: load_vrp_and_transform(index_in_files_available: int = 1) -> discrete_optimization.gpdp.problem.GpdpProblem
+   :canonical: discrete_optimization.gpdp.builders.instance_builders.load_vrp_and_transform
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.load_vrp_and_transform
+
+.. py:function:: load_tsp_and_transform(index_in_files_available: int = 1) -> discrete_optimization.gpdp.problem.GpdpProblem
+   :canonical: discrete_optimization.gpdp.builders.instance_builders.load_tsp_and_transform
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.load_tsp_and_transform
+
+.. py:function:: create_ortools_example() -> discrete_optimization.gpdp.problem.GpdpProblem
+   :canonical: discrete_optimization.gpdp.builders.instance_builders.create_ortools_example
+
+   .. autodoc2-docstring:: discrete_optimization.gpdp.builders.instance_builders.create_ortools_example

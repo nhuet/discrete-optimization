@@ -1,0 +1,117 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.typing`
+==========================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.typing
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`is_instance_any_rcpsp_problem <discrete_optimization.generic_rcpsp_tools.typing.is_instance_any_rcpsp_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.is_instance_any_rcpsp_problem
+          :summary:
+   * - :py:obj:`is_instance_any_rcpsp_solution <discrete_optimization.generic_rcpsp_tools.typing.is_instance_any_rcpsp_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.is_instance_any_rcpsp_solution
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ANY_CLASSICAL_RCPSP <discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP
+          :summary:
+   * - :py:obj:`ANY_RCPSP <discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP
+          :summary:
+   * - :py:obj:`ANY_MSRCPSP <discrete_optimization.generic_rcpsp_tools.typing.ANY_MSRCPSP>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_MSRCPSP
+          :summary:
+   * - :py:obj:`ANY_SOLUTION <discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION
+          :summary:
+   * - :py:obj:`ANY_SOLUTION_UNPREEMPTIVE <discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_UNPREEMPTIVE>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_UNPREEMPTIVE
+          :summary:
+   * - :py:obj:`ANY_SOLUTION_PREEMPTIVE <discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_PREEMPTIVE>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_PREEMPTIVE
+          :summary:
+   * - :py:obj:`ANY_SOLUTION_CLASSICAL_RCPSP <discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_CLASSICAL_RCPSP>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_CLASSICAL_RCPSP
+          :summary:
+   * - :py:obj:`ANY_SOLUTION_MSRCPSP <discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_MSRCPSP>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_MSRCPSP
+          :summary:
+
+API
+~~~
+
+.. py:data:: ANY_CLASSICAL_RCPSP
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_CLASSICAL_RCPSP
+
+.. py:data:: ANY_RCPSP
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_RCPSP
+
+.. py:data:: ANY_MSRCPSP
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.ANY_MSRCPSP
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_MSRCPSP
+
+.. py:data:: ANY_SOLUTION
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION
+
+.. py:data:: ANY_SOLUTION_UNPREEMPTIVE
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_UNPREEMPTIVE
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_UNPREEMPTIVE
+
+.. py:data:: ANY_SOLUTION_PREEMPTIVE
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_PREEMPTIVE
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_PREEMPTIVE
+
+.. py:data:: ANY_SOLUTION_CLASSICAL_RCPSP
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_CLASSICAL_RCPSP
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_CLASSICAL_RCPSP
+
+.. py:data:: ANY_SOLUTION_MSRCPSP
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_MSRCPSP
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.ANY_SOLUTION_MSRCPSP
+
+.. py:function:: is_instance_any_rcpsp_problem(problem: discrete_optimization.generic_tools.do_problem.Problem) -> bool
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.is_instance_any_rcpsp_problem
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.is_instance_any_rcpsp_problem
+
+.. py:function:: is_instance_any_rcpsp_solution(solution: discrete_optimization.generic_tools.do_problem.Solution) -> bool
+   :canonical: discrete_optimization.generic_rcpsp_tools.typing.is_instance_any_rcpsp_solution
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.typing.is_instance_any_rcpsp_solution

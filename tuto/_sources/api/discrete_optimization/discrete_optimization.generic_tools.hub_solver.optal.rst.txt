@@ -1,0 +1,17 @@
+:py:mod:`discrete_optimization.generic_tools.hub_solver.optal`
+==============================================================
+
+.. py:module:: discrete_optimization.generic_tools.hub_solver.optal
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.hub_solver.optal.model_collections
+   discrete_optimization.generic_tools.hub_solver.optal.generic_optal

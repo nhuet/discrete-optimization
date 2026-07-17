@@ -1,0 +1,27 @@
+:py:mod:`discrete_optimization.workforce.scheduling`
+====================================================
+
+.. py:module:: discrete_optimization.workforce.scheduling
+
+.. autodoc2-docstring:: discrete_optimization.workforce.scheduling
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.workforce.scheduling.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.workforce.scheduling.problem
+   discrete_optimization.workforce.scheduling.utils
+   discrete_optimization.workforce.scheduling.parser

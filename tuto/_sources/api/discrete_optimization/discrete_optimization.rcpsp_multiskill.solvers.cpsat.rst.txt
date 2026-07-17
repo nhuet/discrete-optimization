@@ -1,0 +1,177 @@
+:py:mod:`discrete_optimization.rcpsp_multiskill.solvers.cpsat`
+==============================================================
+
+.. py:module:: discrete_optimization.rcpsp_multiskill.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatMultiskillRcpspSolver <discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp_multiskill.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.logger
+
+.. py:class:: CpSatMultiskillRcpspSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.MultimodeCpSatSolver`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.AllocationCpSatSolver`\ [\ :py:obj:`discrete_optimization.rcpsp_multiskill.problem.Task`\ , :py:obj:`discrete_optimization.rcpsp_multiskill.problem.UnaryResource`\ ]
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.hyperparameters
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.problem
+      :type: discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.problem
+
+   .. py:method:: get_task_start_or_end_variable(task: discrete_optimization.rcpsp_multiskill.problem.Task, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.get_task_start_or_end_variable
+
+   .. py:method:: get_task_mode_is_present_variable(task: discrete_optimization.rcpsp_multiskill.problem.Task, mode: int) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.get_task_mode_is_present_variable
+
+   .. py:method:: get_global_makespan_variable() -> typing.Any
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.get_global_makespan_variable
+
+   .. py:method:: get_task_unary_resource_is_present_variable(task: discrete_optimization.rcpsp_multiskill.problem.Task, unary_resource: discrete_optimization.rcpsp_multiskill.problem.UnaryResource) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.get_task_unary_resource_is_present_variable
+
+   .. py:method:: set_lexico_objective(obj: str) -> None
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.set_lexico_objective
+
+   .. py:method:: add_lexico_constraint(obj: str, value: float) -> typing.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.add_lexico_constraint
+
+   .. py:method:: implements_lexico_api() -> bool
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.implements_lexico_api
+      :staticmethod:
+
+   .. py:method:: get_lexico_objectives_available() -> list[str]
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.get_lexico_objectives_available
+
+   .. py:method:: get_lexico_objective_value(obj: str, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> float
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.get_lexico_objective_value
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.init_model
+
+   .. py:method:: create_base_variable()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_base_variable
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_base_variable
+
+   .. py:method:: create_opt_variable_modes()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_opt_variable_modes
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_opt_variable_modes
+
+   .. py:method:: create_employee_intervals(one_worker_per_task: bool, one_skill_per_task: bool)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_employee_intervals
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_employee_intervals
+
+   .. py:method:: create_skills_variables()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_skills_variables
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_skills_variables
+
+   .. py:method:: create_workload_variables()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_workload_variables
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_workload_variables
+
+   .. py:method:: create_skills_constraint_to_mode()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_skills_constraint_to_mode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_skills_constraint_to_mode
+
+   .. py:method:: create_skills_constraint_worker(**args)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_skills_constraint_worker
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_skills_constraint_worker
+
+   .. py:method:: create_skills_constraints_v2(**args)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_skills_constraints_v2
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_skills_constraints_v2
+
+   .. py:method:: constraint_precedence()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.constraint_precedence
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.constraint_precedence
+
+   .. py:method:: create_constraint_resource()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_constraint_resource
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_constraint_resource
+
+   .. py:method:: create_non_renewable_res_constraint(res: str)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_non_renewable_res_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_non_renewable_res_constraint
+
+   .. py:method:: create_cumulative_resource_constraint(res: str)
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_cumulative_resource_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_cumulative_resource_constraint
+
+   .. py:method:: create_disjunctive_worker()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_disjunctive_worker
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_disjunctive_worker
+
+   .. py:method:: constraint_redundant_cumulative_skills()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.constraint_redundant_cumulative_skills
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.constraint_redundant_cumulative_skills
+
+   .. py:method:: constraint_redundant_cumulative_worker()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.constraint_redundant_cumulative_worker
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.constraint_redundant_cumulative_worker
+
+   .. py:method:: constraint_mode()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.constraint_mode
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.constraint_mode
+
+   .. py:method:: create_cost_objective_function()
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_cost_objective_function
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.create_cost_objective_function
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.rcpsp_multiskill.solvers.cpsat.CpSatMultiskillRcpspSolver.retrieve_solution

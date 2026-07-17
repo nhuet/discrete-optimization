@@ -1,0 +1,189 @@
+:py:mod:`discrete_optimization.generic_tools.qiskit_tools`
+==========================================================
+
+.. py:module:: discrete_optimization.generic_tools.qiskit_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`QiskitSolver <discrete_optimization.generic_tools.qiskit_tools.QiskitSolver>`
+     -
+   * - :py:obj:`QiskitQaoaSolver <discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver>`
+     -
+   * - :py:obj:`QiskitVqeSolver <discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver>`
+     -
+   * - :py:obj:`GeneralQaoaSolver <discrete_optimization.generic_tools.qiskit_tools.GeneralQaoaSolver>`
+     -
+   * - :py:obj:`GeneralVqeSolver <discrete_optimization.generic_tools.qiskit_tools.GeneralVqeSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_result_from_dict_result <discrete_optimization.generic_tools.qiskit_tools.get_result_from_dict_result>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.get_result_from_dict_result
+          :summary:
+   * - :py:obj:`cost_func <discrete_optimization.generic_tools.qiskit_tools.cost_func>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.cost_func
+          :summary:
+   * - :py:obj:`execute_ansatz_with_Hamiltonian <discrete_optimization.generic_tools.qiskit_tools.execute_ansatz_with_Hamiltonian>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.execute_ansatz_with_Hamiltonian
+          :summary:
+   * - :py:obj:`gurobi_to_qubo <discrete_optimization.generic_tools.qiskit_tools.gurobi_to_qubo>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.gurobi_to_qubo
+          :summary:
+   * - :py:obj:`matrix <discrete_optimization.generic_tools.qiskit_tools.matrix>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.matrix
+          :summary:
+   * - :py:obj:`compute_energy <discrete_optimization.generic_tools.qiskit_tools.compute_energy>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.compute_energy
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.qiskit_tools.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.logger
+
+.. py:function:: get_result_from_dict_result(dict_result: dict[str, int]) -> numpy.ndarray
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.get_result_from_dict_result
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.get_result_from_dict_result
+
+.. py:function:: cost_func(params, ansatz, hamiltonian, estimator, callback_dict)
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.cost_func
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.cost_func
+
+.. py:function:: execute_ansatz_with_Hamiltonian(solver, backend, ansatz, hamiltonian, use_session: typing.Optional[bool] = False, **kwargs) -> numpy.ndarray
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.execute_ansatz_with_Hamiltonian
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.execute_ansatz_with_Hamiltonian
+
+.. py:class:: QiskitSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:method:: set_executed_ansatz(ansatz)
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitSolver.set_executed_ansatz
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.QiskitSolver.set_executed_ansatz
+
+   .. py:method:: set_final_ansatz(ansatz)
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitSolver.set_final_ansatz
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.QiskitSolver.set_final_ansatz
+
+.. py:class:: QiskitQaoaSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, backend: typing.Optional = None, **kwargs)
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitSolver`, :py:obj:`discrete_optimization.generic_tools.hyperparameters.hyperparametrizable.Hyperparametrizable`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver.hyperparameters
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, backend: typing.Optional = None, use_session: typing.Optional[bool] = False, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver.solve
+
+   .. py:method:: init_model(**kwargs: any) -> None
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver.init_model
+      :abstractmethod:
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver.retrieve_current_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver.retrieve_current_solution
+
+.. py:class:: QiskitVqeSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, backend: typing.Optional = None, **kwargs)
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver.hyperparameters
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, backend: typing.Optional = None, use_session: typing.Optional[bool] = False, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver.solve
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver.init_model
+      :abstractmethod:
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver.retrieve_current_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver.retrieve_current_solution
+
+.. py:function:: gurobi_to_qubo(model)
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.gurobi_to_qubo
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.gurobi_to_qubo
+
+.. py:class:: GeneralQaoaSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, model: typing.Union[gurobipy.Model, discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver], retrieve_solution: collections.abc.Callable, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, backend: typing.Optional = None, **kwargs)
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.GeneralQaoaSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver`
+
+   .. py:method:: retrieve_current_solution(result: numpy.ndarray) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.GeneralQaoaSolver.retrieve_current_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.GeneralQaoaSolver.init_model
+
+.. py:class:: GeneralVqeSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, model: typing.Union[gurobipy.Model, discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver], retrieve_solution: collections.abc.Callable, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, backend: typing.Optional = None, **kwargs)
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.GeneralVqeSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver`
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.GeneralVqeSolver.retrieve_current_solution
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.qiskit_tools.GeneralVqeSolver.init_model
+
+.. py:function:: matrix(quad: qiskit_optimization.QuadraticProgram)
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.matrix
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.matrix
+
+.. py:function:: compute_energy(matrix, x)
+   :canonical: discrete_optimization.generic_tools.qiskit_tools.compute_energy
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.qiskit_tools.compute_energy

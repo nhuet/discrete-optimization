@@ -1,0 +1,194 @@
+:py:mod:`discrete_optimization.coloring.solvers.lns_cp`
+=======================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.lns_cp
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`InitialColoringMethod <discrete_optimization.coloring.solvers.lns_cp.InitialColoringMethod>`
+     -
+   * - :py:obj:`InitialColoring <discrete_optimization.coloring.solvers.lns_cp.InitialColoring>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.InitialColoring
+          :summary:
+   * - :py:obj:`FixColorsMznConstraintHandler <discrete_optimization.coloring.solvers.lns_cp.FixColorsMznConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsMznConstraintHandler
+          :summary:
+   * - :py:obj:`FixColorsCpSatConstraintHandler <discrete_optimization.coloring.solvers.lns_cp.FixColorsCpSatConstraintHandler>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsCpSatConstraintHandler
+          :summary:
+   * - :py:obj:`PostProcessSolutionColoring <discrete_optimization.coloring.solvers.lns_cp.PostProcessSolutionColoring>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.PostProcessSolutionColoring
+          :summary:
+   * - :py:obj:`LnsCpColoringSolver <discrete_optimization.coloring.solvers.lns_cp.LnsCpColoringSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.LnsCpColoringSolver
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`build_default_cp_model <discrete_optimization.coloring.solvers.lns_cp.build_default_cp_model>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.build_default_cp_model
+          :summary:
+   * - :py:obj:`build_default_constraint_handler <discrete_optimization.coloring.solvers.lns_cp.build_default_constraint_handler>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.build_default_constraint_handler
+          :summary:
+   * - :py:obj:`build_default_postprocess <discrete_optimization.coloring.solvers.lns_cp.build_default_postprocess>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.build_default_postprocess
+          :summary:
+   * - :py:obj:`build_default_initial_solution <discrete_optimization.coloring.solvers.lns_cp.build_default_initial_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.build_default_initial_solution
+          :summary:
+
+API
+~~~
+
+.. py:function:: build_default_cp_model(coloring_problem: discrete_optimization.coloring.problem.ColoringProblem, **kwargs)
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.build_default_cp_model
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.build_default_cp_model
+
+.. py:function:: build_default_constraint_handler(coloring_problem: discrete_optimization.coloring.problem.ColoringProblem, **kwargs)
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.build_default_constraint_handler
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.build_default_constraint_handler
+
+.. py:function:: build_default_postprocess(coloring_problem: discrete_optimization.coloring.problem.ColoringProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.build_default_postprocess
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.build_default_postprocess
+
+.. py:function:: build_default_initial_solution(coloring_problem: discrete_optimization.coloring.problem.ColoringProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.build_default_initial_solution
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.build_default_initial_solution
+
+.. py:class:: InitialColoringMethod
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.InitialColoringMethod
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: DUMMY
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.InitialColoringMethod.DUMMY
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.InitialColoringMethod.DUMMY
+
+   .. py:attribute:: GREEDY
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.InitialColoringMethod.GREEDY
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.InitialColoringMethod.GREEDY
+
+.. py:class:: InitialColoring(problem: discrete_optimization.coloring.problem.ColoringProblem, initial_method: discrete_optimization.coloring.solvers.lns_cp.InitialColoringMethod, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None)
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.InitialColoring
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.InitialSolution`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.InitialColoring
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.InitialColoring.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.InitialColoring.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.InitialColoring.hyperparameters
+
+   .. py:method:: get_starting_solution() -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.InitialColoring.get_starting_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.InitialColoring.get_starting_solution
+
+.. py:class:: FixColorsMznConstraintHandler(problem: discrete_optimization.coloring.problem.ColoringProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.FixColorsMznConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.MznConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsMznConstraintHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsMznConstraintHandler.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.FixColorsMznConstraintHandler.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsMznConstraintHandler.hyperparameters
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.generic_tools.cp_tools.MinizincCpSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, child_instance: minizinc.Instance, **kwargs: typing.Any) -> typing.Iterable[typing.Any]
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.FixColorsMznConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsMznConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: FixColorsCpSatConstraintHandler(problem: discrete_optimization.coloring.problem.ColoringProblem, fraction_to_fix: float = 0.9)
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.FixColorsCpSatConstraintHandler
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.OrtoolsCpSatConstraintHandler`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsCpSatConstraintHandler
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsCpSatConstraintHandler.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.FixColorsCpSatConstraintHandler.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsCpSatConstraintHandler.hyperparameters
+
+   .. py:method:: adding_constraint_from_results_store(solver: discrete_optimization.coloring.solvers.cpsat.CpSatColoringSolver, result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, result_storage_last_iteration: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, **kwargs: typing.Any) -> typing.Iterable[ortools.sat.python.cp_model.Constraint]
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.FixColorsCpSatConstraintHandler.adding_constraint_from_results_store
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.FixColorsCpSatConstraintHandler.adding_constraint_from_results_store
+
+.. py:class:: PostProcessSolutionColoring(problem: discrete_optimization.coloring.problem.ColoringProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None)
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.PostProcessSolutionColoring
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_tools.PostProcessSolution`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.PostProcessSolutionColoring
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.PostProcessSolutionColoring.__init__
+
+   .. py:method:: build_other_solution(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.PostProcessSolutionColoring.build_other_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.PostProcessSolutionColoring.build_other_solution
+
+.. py:class:: LnsCpColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, subsolver: typing.Optional[discrete_optimization.generic_tools.cp_tools.MinizincCpSolver] = None, initial_solution_provider: typing.Optional[discrete_optimization.generic_tools.lns_tools.InitialSolution] = None, constraint_handler: typing.Optional[discrete_optimization.generic_tools.lns_cp.MznConstraintHandler] = None, post_process_solution: typing.Optional[discrete_optimization.generic_tools.lns_tools.PostProcessSolution] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.coloring.solvers.lns_cp.LnsCpColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_cp.LnsCpMzn`, :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.LnsCpColoringSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.LnsCpColoringSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.lns_cp.LnsCpColoringSolver.hyperparameters
+      :value: 'copy_and_update_hyperparameters(...)'
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.lns_cp.LnsCpColoringSolver.hyperparameters

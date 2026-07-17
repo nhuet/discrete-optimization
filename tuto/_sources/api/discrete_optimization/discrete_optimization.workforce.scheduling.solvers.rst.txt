@@ -1,0 +1,91 @@
+:py:mod:`discrete_optimization.workforce.scheduling.solvers`
+============================================================
+
+.. py:module:: discrete_optimization.workforce.scheduling.solvers
+
+.. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.workforce.scheduling.solvers.tempo
+   discrete_optimization.workforce.scheduling.solvers.cpsat_relaxed
+   discrete_optimization.workforce.scheduling.solvers.optal
+   discrete_optimization.workforce.scheduling.solvers.cpsat
+   discrete_optimization.workforce.scheduling.solvers.alloc_scheduling_lb
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`ObjectivesEnum <discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum>`
+     -
+   * - :py:obj:`SolverAllocScheduling <discrete_optimization.workforce.scheduling.solvers.SolverAllocScheduling>`
+     -
+
+API
+~~~
+
+.. py:class:: ObjectivesEnum
+   :canonical: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: NB_TEAMS
+      :canonical: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.NB_TEAMS
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.NB_TEAMS
+
+   .. py:attribute:: DISPERSION
+      :canonical: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.DISPERSION
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.DISPERSION
+
+   .. py:attribute:: MAKESPAN
+      :canonical: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.MAKESPAN
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.MAKESPAN
+
+   .. py:attribute:: MIN_WORKLOAD
+      :canonical: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.MIN_WORKLOAD
+      :value: 4
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.MIN_WORKLOAD
+
+   .. py:attribute:: NB_DONE_AC
+      :canonical: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.NB_DONE_AC
+      :value: 5
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.NB_DONE_AC
+
+   .. py:attribute:: DELTA_TO_EXISTING_SOLUTION
+      :canonical: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.DELTA_TO_EXISTING_SOLUTION
+      :value: 6
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.ObjectivesEnum.DELTA_TO_EXISTING_SOLUTION
+
+.. py:class:: SolverAllocScheduling(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.workforce.scheduling.solvers.SolverAllocScheduling
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.workforce.scheduling.solvers.SolverAllocScheduling.problem
+      :type: discrete_optimization.workforce.scheduling.problem.AllocSchedulingProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.workforce.scheduling.solvers.SolverAllocScheduling.problem

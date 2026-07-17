@@ -1,0 +1,37 @@
+:py:mod:`discrete_optimization.maximum_independent_set.plot`
+============================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.plot
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.plot
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`plot_mis_solution <discrete_optimization.maximum_independent_set.plot.plot_mis_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.plot.plot_mis_solution
+          :summary:
+   * - :py:obj:`plot_mis_graph <discrete_optimization.maximum_independent_set.plot.plot_mis_graph>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.plot.plot_mis_graph
+          :summary:
+
+API
+~~~
+
+.. py:function:: plot_mis_solution(solution: discrete_optimization.maximum_independent_set.problem.MisSolution, name_figure: str = '')
+   :canonical: discrete_optimization.maximum_independent_set.plot.plot_mis_solution
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.plot.plot_mis_solution
+
+.. py:function:: plot_mis_graph(problem: discrete_optimization.maximum_independent_set.problem.MisProblem, name_figure: str = '')
+   :canonical: discrete_optimization.maximum_independent_set.plot.plot_mis_graph
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.plot.plot_mis_graph

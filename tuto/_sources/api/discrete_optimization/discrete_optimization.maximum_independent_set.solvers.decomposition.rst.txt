@@ -1,0 +1,96 @@
+:py:mod:`discrete_optimization.maximum_independent_set.solvers.decomposition`
+=============================================================================
+
+.. py:module:: discrete_optimization.maximum_independent_set.solvers.decomposition
+
+.. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DecomposedMisSolver <discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`cur_folder <discrete_optimization.maximum_independent_set.solvers.decomposition.cur_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.cur_folder
+          :summary:
+   * - :py:obj:`logger <discrete_optimization.maximum_independent_set.solvers.decomposition.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.logger
+          :summary:
+   * - :py:obj:`subsolvers <discrete_optimization.maximum_independent_set.solvers.decomposition.subsolvers>`
+     - .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.subsolvers
+          :summary:
+
+API
+~~~
+
+.. py:data:: cur_folder
+   :canonical: discrete_optimization.maximum_independent_set.solvers.decomposition.cur_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.cur_folder
+
+.. py:data:: logger
+   :canonical: discrete_optimization.maximum_independent_set.solvers.decomposition.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.logger
+
+.. py:data:: subsolvers
+   :canonical: discrete_optimization.maximum_independent_set.solvers.decomposition.subsolvers
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.subsolvers
+
+.. py:class:: DecomposedMisSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver
+
+   Bases: :py:obj:`discrete_optimization.maximum_independent_set.solvers.mis_solver.MisSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.__init__
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.hyperparameters
+
+   .. py:attribute:: initial_solution
+      :canonical: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.initial_solution
+      :type: typing.Optional[discrete_optimization.maximum_independent_set.problem.MisSolution]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.initial_solution
+
+   .. py:method:: rebuild_sol(sol: discrete_optimization.maximum_independent_set.problem.MisSolution, original_mis_model: discrete_optimization.maximum_independent_set.problem.MisProblem, original_solution: discrete_optimization.maximum_independent_set.problem.MisSolution, indexes_to_remove: set[int] = None)
+      :canonical: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.rebuild_sol
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.rebuild_sol
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.maximum_independent_set.problem.MisSolution) -> None
+      :canonical: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.set_warm_start
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.maximum_independent_set.solvers.decomposition.DecomposedMisSolver.solve

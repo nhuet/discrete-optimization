@@ -1,0 +1,77 @@
+:py:mod:`discrete_optimization.vrptw.solvers.cpsat`
+===================================================
+
+.. py:module:: discrete_optimization.vrptw.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatVRPTWSolver <discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.vrptw.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.vrptw.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat.logger
+
+.. py:class:: CpSatVRPTWSolver(problem: discrete_optimization.vrptw.problem.VRPTWProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver`\ [\ :py:obj:`discrete_optimization.vrptw.problem.Task`\ ], :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.__init__
+
+   .. py:method:: get_task_start_or_end_variable(task: discrete_optimization.vrptw.problem.Task, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.get_task_start_or_end_variable
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.problem
+      :type: discrete_optimization.vrptw.problem.VRPTWProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.problem
+
+   .. py:method:: init_model(scaling: int, cost_per_vehicle: int, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.init_model
+
+   .. py:method:: retrieve_solution(cpsolvercb: ortools.sat.python.cp_model.CpSolverSolutionCallback) -> discrete_optimization.vrptw.problem.VRPTWSolution
+      :canonical: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.retrieve_solution
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.vrptw.problem.VRPTWSolution) -> None
+      :canonical: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.vrptw.solvers.cpsat.CpSatVRPTWSolver.set_warm_start

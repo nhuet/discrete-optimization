@@ -1,0 +1,125 @@
+:py:mod:`discrete_optimization.coloring.solvers.cp_mzn`
+=======================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.cp_mzn
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpColoringModel <discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel>`
+     -
+   * - :py:obj:`CpColoringSolver <discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`path_minizinc <discrete_optimization.coloring.solvers.cp_mzn.path_minizinc>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.path_minizinc
+          :summary:
+   * - :py:obj:`logger <discrete_optimization.coloring.solvers.cp_mzn.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.logger
+          :summary:
+   * - :py:obj:`file_dict <discrete_optimization.coloring.solvers.cp_mzn.file_dict>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.file_dict
+          :summary:
+
+API
+~~~
+
+.. py:data:: path_minizinc
+   :canonical: discrete_optimization.coloring.solvers.cp_mzn.path_minizinc
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.path_minizinc
+
+.. py:data:: logger
+   :canonical: discrete_optimization.coloring.solvers.cp_mzn.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.logger
+
+.. py:class:: CpColoringModel
+   :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: CLIQUES
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel.CLIQUES
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel.CLIQUES
+
+   .. py:attribute:: DEFAULT
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel.DEFAULT
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel.DEFAULT
+
+   .. py:attribute:: LNS
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel.LNS
+      :value: 2
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel.LNS
+
+   .. py:attribute:: DEFAULT_WITH_SUBSET
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel.DEFAULT_WITH_SUBSET
+      :value: 3
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringModel.DEFAULT_WITH_SUBSET
+
+.. py:data:: file_dict
+   :canonical: discrete_optimization.coloring.solvers.cp_mzn.file_dict
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.file_dict
+
+.. py:class:: CpColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, silent_solve_error: bool = False, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.MinizincCpSolver`, :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.init_model
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.init_model
+
+   .. py:method:: export_dzn(file_name: typing.Optional[str] = None, keys: typing.Optional[collections.abc.Iterable[typing.Any]] = None) -> None
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.export_dzn
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.export_dzn
+
+   .. py:method:: retrieve_solution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.retrieve_solution
+
+   .. py:method:: add_coloring_constraint(coloring_constraint: discrete_optimization.coloring.problem.ColoringConstraints)
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.add_coloring_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.add_coloring_constraint
+
+   .. py:method:: get_solution(**kwargs: typing.Any) -> discrete_optimization.coloring.problem.ColoringSolution
+      :canonical: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.get_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.cp_mzn.CpColoringSolver.get_solution

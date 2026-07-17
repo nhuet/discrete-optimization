@@ -1,0 +1,26 @@
+:py:mod:`discrete_optimization.tsp.solvers`
+===========================================
+
+.. py:module:: discrete_optimization.tsp.solvers
+
+.. autodoc2-docstring:: discrete_optimization.tsp.solvers
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.tsp.solvers.cp_mzn
+   discrete_optimization.tsp.solvers.gpdp
+   discrete_optimization.tsp.solvers.optal
+   discrete_optimization.tsp.solvers.lp_iterative
+   discrete_optimization.tsp.solvers.ortools_routing
+   discrete_optimization.tsp.solvers.cpsat
+   discrete_optimization.tsp.solvers.tsp_solver
+   discrete_optimization.tsp.solvers.dp
+   discrete_optimization.tsp.solvers.toulbar
+   discrete_optimization.tsp.solvers.lns_cpsat
+   discrete_optimization.tsp.solvers.quantum

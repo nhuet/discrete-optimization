@@ -1,0 +1,112 @@
+:py:mod:`discrete_optimization.generic_tools.hub_solver.optal.generic_optal`
+============================================================================
+
+.. py:module:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`OptalBasicCallback <discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalBasicCallback>`
+     -
+   * - :py:obj:`OptalSolver <discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.hub_solver.optal.generic_optal.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.logger
+          :summary:
+   * - :py:obj:`this_folder <discrete_optimization.generic_tools.hub_solver.optal.generic_optal.this_folder>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.this_folder
+          :summary:
+   * - :py:obj:`NO_SOLUTION_STR <discrete_optimization.generic_tools.hub_solver.optal.generic_optal.NO_SOLUTION_STR>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.NO_SOLUTION_STR
+          :summary:
+   * - :py:obj:`INFEASIBLE_STR <discrete_optimization.generic_tools.hub_solver.optal.generic_optal.INFEASIBLE_STR>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.INFEASIBLE_STR
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.logger
+
+.. py:data:: this_folder
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.this_folder
+   :value: 'abspath(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.this_folder
+
+.. py:data:: NO_SOLUTION_STR
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.NO_SOLUTION_STR
+   :value: 'No solution found.'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.NO_SOLUTION_STR
+
+.. py:data:: INFEASIBLE_STR
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.INFEASIBLE_STR
+   :value: 'The problem is infeasible.'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.INFEASIBLE_STR
+
+.. py:class:: OptalBasicCallback(stats: dict)
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalBasicCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.stats_retrievers.BasicStatsCallback`
+
+   .. py:method:: get_df_metrics() -> pandas.DataFrame
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalBasicCallback.get_df_metrics
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalBasicCallback.get_df_metrics
+
+.. py:class:: OptalSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.CpSolver`
+
+   .. py:method:: minimize_variable(var: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.minimize_variable
+
+   .. py:method:: add_bound_constraint(var: typing.Any, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, value: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.add_bound_constraint
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.init_model
+
+   .. py:method:: build_command(parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: int = 10, **args: typing.Any)
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.build_command
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.build_command
+
+   .. py:method:: retrieve_current_solution(dict_results: dict) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.retrieve_current_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.retrieve_current_solution
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: int = 10, do_not_retrieve_solutions: bool = False, verbose: bool = True, debug: bool = False, **args: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.solve
+
+   .. py:method:: get_output_stats()
+      :canonical: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.get_output_stats
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.hub_solver.optal.generic_optal.OptalSolver.get_output_stats

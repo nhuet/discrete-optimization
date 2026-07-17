@@ -1,0 +1,101 @@
+:py:mod:`discrete_optimization.facility.solvers.dp`
+===================================================
+
+.. py:module:: discrete_optimization.facility.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.facility.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpFacilityModeling <discrete_optimization.facility.solvers.dp.DpFacilityModeling>`
+     -
+   * - :py:obj:`DpFacilitySolver <discrete_optimization.facility.solvers.dp.DpFacilitySolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.facility.solvers.dp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.facility.solvers.dp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.logger
+
+.. py:class:: DpFacilityModeling
+   :canonical: discrete_optimization.facility.solvers.dp.DpFacilityModeling
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: CUSTOMER
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilityModeling.CUSTOMER
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.DpFacilityModeling.CUSTOMER
+
+   .. py:attribute:: FACILITY
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilityModeling.FACILITY
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.DpFacilityModeling.FACILITY
+
+.. py:class:: DpFacilitySolver(problem: discrete_optimization.facility.problem.FacilityProblem, **kwargs: typing.Any)
+   :canonical: discrete_optimization.facility.solvers.dp.DpFacilitySolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`, :py:obj:`discrete_optimization.facility.solvers.FacilitySolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilitySolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.DpFacilitySolver.hyperparameters
+
+   .. py:method:: init_model(modeling: discrete_optimization.facility.solvers.dp.DpFacilityModeling = DpFacilityModeling.CUSTOMER, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilitySolver.init_model
+
+   .. py:method:: init_model_customer_view(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilitySolver.init_model_customer_view
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.DpFacilitySolver.init_model_customer_view
+
+   .. py:method:: init_model_factory_view(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilitySolver.init_model_factory_view
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.DpFacilitySolver.init_model_factory_view
+
+   .. py:method:: retrieve_solution(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilitySolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.DpFacilitySolver.retrieve_solution
+
+   .. py:method:: retrieve_solution_customer_view(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilitySolver.retrieve_solution_customer_view
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.DpFacilitySolver.retrieve_solution_customer_view
+
+   .. py:method:: retrieve_solution_factory_view(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilitySolver.retrieve_solution_factory_view
+
+      .. autodoc2-docstring:: discrete_optimization.facility.solvers.dp.DpFacilitySolver.retrieve_solution_factory_view
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.facility.problem.FacilitySolution) -> None
+      :canonical: discrete_optimization.facility.solvers.dp.DpFacilitySolver.set_warm_start

@@ -1,0 +1,65 @@
+:py:mod:`discrete_optimization.generic_tools.callbacks.warm_start_callback`
+===========================================================================
+
+.. py:module:: discrete_optimization.generic_tools.callbacks.warm_start_callback
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.warm_start_callback
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`WarmStartCallback <discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallback>`
+     -
+   * - :py:obj:`WarmStartCallbackLastRun <discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallbackLastRun>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallbackLastRun
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.callbacks.warm_start_callback.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.warm_start_callback.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.callbacks.warm_start_callback.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.warm_start_callback.logger
+
+.. py:class:: WarmStartCallback(warm_start_best_solution: bool = True, warm_start_last_solution: bool = False)
+   :canonical: discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallback
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.callback.Callback`
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallback.on_step_end
+
+.. py:class:: WarmStartCallbackLastRun(warm_start_best_solution: bool = True, warm_start_last_solution: bool = False)
+   :canonical: discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallbackLastRun
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallback`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallbackLastRun
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallbackLastRun.__init__
+
+   .. py:method:: on_step_end(step: int, res: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage, solver: discrete_optimization.generic_tools.do_solver.SolverDO) -> typing.Optional[bool]
+      :canonical: discrete_optimization.generic_tools.callbacks.warm_start_callback.WarmStartCallbackLastRun.on_step_end

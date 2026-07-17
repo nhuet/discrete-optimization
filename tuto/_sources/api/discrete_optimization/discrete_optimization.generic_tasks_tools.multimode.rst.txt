@@ -1,0 +1,97 @@
+:py:mod:`discrete_optimization.generic_tasks_tools.multimode`
+=============================================================
+
+.. py:module:: discrete_optimization.generic_tasks_tools.multimode
+
+.. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MultimodeSolution <discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution
+          :summary:
+   * - :py:obj:`MultimodeProblem <discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem
+          :summary:
+   * - :py:obj:`MultimodeCpSolver <discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver
+          :summary:
+
+API
+~~~
+
+.. py:class:: MultimodeSolution
+   :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksSolution`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution.problem
+      :type: MultimodeProblem[discrete_optimization.generic_tasks_tools.base.Task]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution.problem
+
+   .. py:method:: get_mode(task: discrete_optimization.generic_tasks_tools.base.Task) -> int
+      :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution.get_mode
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeSolution.get_mode
+
+.. py:class:: MultimodeProblem
+   :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksProblem`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem
+
+   .. py:method:: get_task_modes(task: discrete_optimization.generic_tasks_tools.base.Task) -> set[int]
+      :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem.get_task_modes
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem.get_task_modes
+
+   .. py:property:: is_multimode
+      :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem.is_multimode
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem.is_multimode
+
+   .. py:property:: max_number_of_mode
+      :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem.max_number_of_mode
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem.max_number_of_mode
+
+.. py:class:: MultimodeCpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.base.TasksCpSolver`\ [\ :py:obj:`discrete_optimization.generic_tasks_tools.base.Task`\ ]
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver.__init__
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver.problem
+      :type: discrete_optimization.generic_tasks_tools.multimode.MultimodeProblem[discrete_optimization.generic_tasks_tools.base.Task]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver.problem
+
+   .. py:method:: add_constraint_on_task_mode(task: discrete_optimization.generic_tasks_tools.base.Task, mode: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver.add_constraint_on_task_mode
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tasks_tools.multimode.MultimodeCpSolver.add_constraint_on_task_mode

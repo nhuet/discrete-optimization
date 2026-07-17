@@ -1,0 +1,45 @@
+:py:mod:`discrete_optimization.facility.parser`
+===============================================
+
+.. py:module:: discrete_optimization.facility.parser
+
+.. autodoc2-docstring:: discrete_optimization.facility.parser
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_data_available <discrete_optimization.facility.parser.get_data_available>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.parser.get_data_available
+          :summary:
+   * - :py:obj:`parse <discrete_optimization.facility.parser.parse>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.parser.parse
+          :summary:
+   * - :py:obj:`parse_file <discrete_optimization.facility.parser.parse_file>`
+     - .. autodoc2-docstring:: discrete_optimization.facility.parser.parse_file
+          :summary:
+
+API
+~~~
+
+.. py:function:: get_data_available(data_folder: typing.Optional[str] = None, data_home: typing.Optional[str] = None) -> list[str]
+   :canonical: discrete_optimization.facility.parser.get_data_available
+
+   .. autodoc2-docstring:: discrete_optimization.facility.parser.get_data_available
+
+.. py:function:: parse(input_data: str) -> discrete_optimization.facility.problem.Facility2DProblem
+   :canonical: discrete_optimization.facility.parser.parse
+
+   .. autodoc2-docstring:: discrete_optimization.facility.parser.parse
+
+.. py:function:: parse_file(file_path: str) -> discrete_optimization.facility.problem.Facility2DProblem
+   :canonical: discrete_optimization.facility.parser.parse_file
+
+   .. autodoc2-docstring:: discrete_optimization.facility.parser.parse_file

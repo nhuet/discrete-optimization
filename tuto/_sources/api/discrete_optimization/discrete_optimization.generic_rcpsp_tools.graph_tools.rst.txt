@@ -1,0 +1,111 @@
+:py:mod:`discrete_optimization.generic_rcpsp_tools.graph_tools`
+===============================================================
+
+.. py:module:: discrete_optimization.generic_rcpsp_tools.graph_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GraphRcpsp <discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp
+          :summary:
+   * - :py:obj:`GraphSpecialConstraintsRcpsp <discrete_optimization.generic_rcpsp_tools.graph_tools.GraphSpecialConstraintsRcpsp>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphSpecialConstraintsRcpsp
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`build_unrelated_task <discrete_optimization.generic_rcpsp_tools.graph_tools.build_unrelated_task>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.build_unrelated_task
+          :summary:
+   * - :py:obj:`build_graph_rcpsp_object <discrete_optimization.generic_rcpsp_tools.graph_tools.build_graph_rcpsp_object>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.build_graph_rcpsp_object
+          :summary:
+
+API
+~~~
+
+.. py:class:: GraphRcpsp(problem: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, discrete_optimization.rcpsp_multiskill.problem.MultiskillRcpspProblem, discrete_optimization.rcpsp_multiskill.problem.VariantMultiskillRcpspProblem])
+   :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.__init__
+
+   .. py:method:: get_next_activities(task)
+      :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.get_next_activities
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.get_next_activities
+
+   .. py:method:: get_pred_activities(task)
+      :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.get_pred_activities
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.get_pred_activities
+
+   .. py:method:: get_descendants_activities(task)
+      :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.get_descendants_activities
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.get_descendants_activities
+
+   .. py:method:: get_ancestors_activities(task)
+      :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.get_ancestors_activities
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.get_ancestors_activities
+
+   .. py:method:: check_loop()
+      :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.check_loop
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.check_loop
+
+   .. py:method:: compute_component_in_non_dummy_graph()
+      :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.compute_component_in_non_dummy_graph
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp.compute_component_in_non_dummy_graph
+
+.. py:class:: GraphSpecialConstraintsRcpsp(problem: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_specialized_constraints.SpecialConstraintsPreemptiveRcpspProblem])
+   :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphSpecialConstraintsRcpsp
+
+   Bases: :py:obj:`discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphSpecialConstraintsRcpsp
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphSpecialConstraintsRcpsp.__init__
+
+   .. py:method:: get_neighbors_constraints(task)
+      :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphSpecialConstraintsRcpsp.get_neighbors_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphSpecialConstraintsRcpsp.get_neighbors_constraints
+
+   .. py:method:: get_pred_constraints(task)
+      :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphSpecialConstraintsRcpsp.get_pred_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphSpecialConstraintsRcpsp.get_pred_constraints
+
+.. py:function:: build_unrelated_task(graph: discrete_optimization.generic_rcpsp_tools.graph_tools.GraphRcpsp)
+   :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.build_unrelated_task
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.build_unrelated_task
+
+.. py:function:: build_graph_rcpsp_object(rcpsp_problem: typing.Union[discrete_optimization.rcpsp.problem.RcpspProblem, discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem])
+   :canonical: discrete_optimization.generic_rcpsp_tools.graph_tools.build_graph_rcpsp_object
+
+   .. autodoc2-docstring:: discrete_optimization.generic_rcpsp_tools.graph_tools.build_graph_rcpsp_object

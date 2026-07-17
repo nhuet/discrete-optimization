@@ -1,0 +1,18 @@
+:py:mod:`discrete_optimization.generic_tools.result_storage`
+============================================================
+
+.. py:module:: discrete_optimization.generic_tools.result_storage
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.result_storage
+   :allowtitles:
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.generic_tools.result_storage.multiobj_utils
+   discrete_optimization.generic_tools.result_storage.resultcomparator
+   discrete_optimization.generic_tools.result_storage.result_storage

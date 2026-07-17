@@ -1,0 +1,61 @@
+:py:mod:`discrete_optimization.coloring.plot`
+=============================================
+
+.. py:module:: discrete_optimization.coloring.plot
+
+.. autodoc2-docstring:: discrete_optimization.coloring.plot
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`plot_coloring_problem <discrete_optimization.coloring.plot.plot_coloring_problem>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.plot.plot_coloring_problem
+          :summary:
+   * - :py:obj:`plot_coloring_solution <discrete_optimization.coloring.plot.plot_coloring_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.plot.plot_coloring_solution
+          :summary:
+   * - :py:obj:`_prepare_plot_graph <discrete_optimization.coloring.plot._prepare_plot_graph>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.plot._prepare_plot_graph
+          :summary:
+   * - :py:obj:`_default_plot_args <discrete_optimization.coloring.plot._default_plot_args>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.plot._default_plot_args
+          :summary:
+   * - :py:obj:`_plot_highlitghted_nodes_n_edges <discrete_optimization.coloring.plot._plot_highlitghted_nodes_n_edges>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.plot._plot_highlitghted_nodes_n_edges
+          :summary:
+
+API
+~~~
+
+.. py:function:: plot_coloring_problem(problem: discrete_optimization.coloring.problem.ColoringProblem, name_figure: str = '', highlighted_nodes: typing.Optional[list[collections.abc.Hashable]] = None, highlighted_edges: typing.Optional[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]] = None, highlighted_node_style: typing.Optional[dict[str, typing.Any]] = None, highlighted_edge_style: typing.Optional[dict[str, typing.Any]] = None, normal_node_style: typing.Optional[dict[str, typing.Any]] = None, normal_edge_style: typing.Optional[dict[str, typing.Any]] = None, ax: typing.Optional[matplotlib.axes.Axes] = None) -> matplotlib.axes.Axes
+   :canonical: discrete_optimization.coloring.plot.plot_coloring_problem
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.plot.plot_coloring_problem
+
+.. py:function:: plot_coloring_solution(solution: discrete_optimization.coloring.problem.ColoringSolution, name_figure: str = '', highlighted_nodes: typing.Optional[list[collections.abc.Hashable]] = None, highlighted_edges: typing.Optional[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]] = None, normal_edge_style: typing.Optional[dict[str, typing.Any]] = None, highlighted_node_style: typing.Optional[dict[str, typing.Any]] = None, highlighted_edge_style: typing.Optional[dict[str, typing.Any]] = None, ax: typing.Optional[matplotlib.axes.Axes] = None) -> matplotlib.axes.Axes
+   :canonical: discrete_optimization.coloring.plot.plot_coloring_solution
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.plot.plot_coloring_solution
+
+.. py:function:: _prepare_plot_graph(graph_nx: networkx.Graph, name_figure: str = '', ax: typing.Optional[matplotlib.axes.Axes] = None) -> tuple[matplotlib.axes.Axes, dict[collections.abc.Hashable, numpy.typing.NDArray[float]]]
+   :canonical: discrete_optimization.coloring.plot._prepare_plot_graph
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.plot._prepare_plot_graph
+
+.. py:function:: _default_plot_args(highlighted_nodes: typing.Optional[list[collections.abc.Hashable]] = None, highlighted_edges: typing.Optional[list[tuple[collections.abc.Hashable, collections.abc.Hashable]]] = None, highlighted_node_style: typing.Optional[dict[str, typing.Any]] = None, highlighted_edge_style: typing.Optional[dict[str, typing.Any]] = None, normal_node_style: typing.Optional[dict[str, typing.Any]] = None, normal_edge_style: typing.Optional[dict[str, typing.Any]] = None, plotting_solution: bool = False) -> tuple[list[collections.abc.Hashable], list[tuple[collections.abc.Hashable, collections.abc.Hashable]], dict[str, typing.Any], dict[str, typing.Any], dict[str, typing.Any], dict[str, typing.Any]]
+   :canonical: discrete_optimization.coloring.plot._default_plot_args
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.plot._default_plot_args
+
+.. py:function:: _plot_highlitghted_nodes_n_edges(ax: matplotlib.axes.Axes, pos: dict[collections.abc.Hashable, numpy.typing.NDArray[float]], graph_nx: networkx.Graph, highlighted_nodes: list[collections.abc.Hashable], highlighted_edges: list[tuple[collections.abc.Hashable, collections.abc.Hashable]], highlighted_node_style: dict[str, typing.Any], highlighted_edge_style: dict[str, typing.Any])
+   :canonical: discrete_optimization.coloring.plot._plot_highlitghted_nodes_n_edges
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.plot._plot_highlitghted_nodes_n_edges

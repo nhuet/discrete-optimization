@@ -1,0 +1,147 @@
+:py:mod:`discrete_optimization.generic_tools.graph_api`
+=======================================================
+
+.. py:module:: discrete_optimization.generic_tools.graph_api
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`Graph <discrete_optimization.generic_tools.graph_api.Graph>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph
+          :summary:
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`from_networkx <discrete_optimization.generic_tools.graph_api.from_networkx>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.from_networkx
+          :summary:
+   * - :py:obj:`get_node_attributes <discrete_optimization.generic_tools.graph_api.get_node_attributes>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.get_node_attributes
+          :summary:
+
+API
+~~~
+
+.. py:class:: Graph(nodes: list[tuple[collections.abc.Hashable, dict[str, typing.Any]]], edges: list[tuple[collections.abc.Hashable, collections.abc.Hashable, dict[str, typing.Any]]], undirected: bool = True, compute_predecessors: bool = True)
+   :canonical: discrete_optimization.generic_tools.graph_api.Graph
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.__init__
+
+   .. py:method:: get_edges() -> collections.abc.KeysView[tuple[collections.abc.Hashable, collections.abc.Hashable]]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.get_edges
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.get_edges
+
+   .. py:method:: get_nodes() -> list[collections.abc.Hashable]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.get_nodes
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.get_nodes
+
+   .. py:method:: build_nodes_infos_dict() -> None
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.build_nodes_infos_dict
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.build_nodes_infos_dict
+
+   .. py:method:: build_edges() -> None
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.build_edges
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.build_edges
+
+   .. py:method:: get_neighbors(node: collections.abc.Hashable) -> set[collections.abc.Hashable]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.get_neighbors
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.get_neighbors
+
+   .. py:method:: get_predecessors(node: collections.abc.Hashable) -> set[collections.abc.Hashable]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.get_predecessors
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.get_predecessors
+
+   .. py:method:: get_attr_node(node: collections.abc.Hashable, attr: str) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.get_attr_node
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.get_attr_node
+
+   .. py:method:: get_attr_edge(node1: collections.abc.Hashable, node2: collections.abc.Hashable, attr: str) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.get_attr_edge
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.get_attr_edge
+
+   .. py:method:: to_networkx() -> networkx.DiGraph
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.to_networkx
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.to_networkx
+
+   .. py:method:: check_loop() -> typing.Optional[list[tuple[collections.abc.Hashable, collections.abc.Hashable, str]]]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.check_loop
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.check_loop
+
+   .. py:method:: precedessors_nodes(n: collections.abc.Hashable) -> set[collections.abc.Hashable]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.precedessors_nodes
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.precedessors_nodes
+
+   .. py:method:: ancestors_map() -> dict[collections.abc.Hashable, set[collections.abc.Hashable]]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.ancestors_map
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.ancestors_map
+
+   .. py:method:: descendants_map() -> dict[collections.abc.Hashable, set[collections.abc.Hashable]]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.descendants_map
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.descendants_map
+
+   .. py:method:: successors_map() -> dict[collections.abc.Hashable, list[collections.abc.Hashable]]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.successors_map
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.successors_map
+
+   .. py:method:: predecessors_map() -> dict[collections.abc.Hashable, list[collections.abc.Hashable]]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.predecessors_map
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.predecessors_map
+
+   .. py:method:: compute_length(path: list[collections.abc.Hashable], attribute_name: typing.Optional[str] = None)
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.compute_length
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.compute_length
+
+   .. py:method:: compute_shortest_path(source: collections.abc.Hashable, target: collections.abc.Hashable, attribute_name: typing.Optional[str] = None)
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.compute_shortest_path
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.compute_shortest_path
+
+   .. py:method:: compute_all_shortest_path(attribute_name: typing.Optional[str] = None) -> dict[collections.abc.Hashable, dict[collections.abc.Hashable, tuple[list[collections.abc.Hashable], float]]]
+      :canonical: discrete_optimization.generic_tools.graph_api.Graph.compute_all_shortest_path
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.Graph.compute_all_shortest_path
+
+.. py:function:: from_networkx(graph_nx: typing.Union[networkx.DiGraph, networkx.Graph], undirected: typing.Optional[bool] = None, compute_predecessors: bool = False)
+   :canonical: discrete_optimization.generic_tools.graph_api.from_networkx
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.from_networkx
+
+.. py:function:: get_node_attributes(graph: networkx.Graph, name: string, default: typing.Any)
+   :canonical: discrete_optimization.generic_tools.graph_api.get_node_attributes
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.graph_api.get_node_attributes

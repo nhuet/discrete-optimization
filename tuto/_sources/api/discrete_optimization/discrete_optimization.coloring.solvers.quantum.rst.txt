@@ -1,0 +1,116 @@
+:py:mod:`discrete_optimization.coloring.solvers.quantum`
+========================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.quantum
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.quantum
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`MinimizeNbColorColoringQiskit <discrete_optimization.coloring.solvers.quantum.MinimizeNbColorColoringQiskit>`
+     -
+   * - :py:obj:`MinimizeNbColorQaoaColoringSolver <discrete_optimization.coloring.solvers.quantum.MinimizeNbColorQaoaColoringSolver>`
+     -
+   * - :py:obj:`MinimizeNbColorVqeColoringSolver <discrete_optimization.coloring.solvers.quantum.MinimizeNbColorVqeColoringSolver>`
+     -
+   * - :py:obj:`FeasibleNbColorColoringQiskit <discrete_optimization.coloring.solvers.quantum.FeasibleNbColorColoringQiskit>`
+     -
+   * - :py:obj:`FeasibleNbColorQaoaColoringSolver <discrete_optimization.coloring.solvers.quantum.FeasibleNbColorQaoaColoringSolver>`
+     -
+   * - :py:obj:`FeasibleNbColorVqeColoringSolver <discrete_optimization.coloring.solvers.quantum.FeasibleNbColorVqeColoringSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.coloring.solvers.quantum.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.quantum.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.coloring.solvers.quantum.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.quantum.logger
+
+.. py:class:: MinimizeNbColorColoringQiskit(problem: discrete_optimization.coloring.problem.ColoringProblem, nb_max_color=None)
+   :canonical: discrete_optimization.coloring.solvers.quantum.MinimizeNbColorColoringQiskit
+
+   Bases: :py:obj:`qiskit_optimization.applications.OptimizationApplication`
+
+   .. py:method:: to_quadratic_program() -> qiskit_optimization.QuadraticProgram
+      :canonical: discrete_optimization.coloring.solvers.quantum.MinimizeNbColorColoringQiskit.to_quadratic_program
+
+   .. py:method:: interpret(result: typing.Union[qiskit_optimization.algorithms.OptimizationResult, numpy.ndarray])
+      :canonical: discrete_optimization.coloring.solvers.quantum.MinimizeNbColorColoringQiskit.interpret
+
+.. py:class:: MinimizeNbColorQaoaColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, nb_max_color=None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.coloring.solvers.quantum.MinimizeNbColorQaoaColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.coloring.solvers.quantum.MinimizeNbColorQaoaColoringSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.coloring.solvers.quantum.MinimizeNbColorQaoaColoringSolver.retrieve_current_solution
+
+.. py:class:: MinimizeNbColorVqeColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, nb_max_color=None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.coloring.solvers.quantum.MinimizeNbColorVqeColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.coloring.solvers.quantum.MinimizeNbColorVqeColoringSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.coloring.solvers.quantum.MinimizeNbColorVqeColoringSolver.retrieve_current_solution
+
+.. py:class:: FeasibleNbColorColoringQiskit(problem: discrete_optimization.coloring.problem.ColoringProblem, nb_color=None)
+   :canonical: discrete_optimization.coloring.solvers.quantum.FeasibleNbColorColoringQiskit
+
+   Bases: :py:obj:`qiskit_optimization.applications.OptimizationApplication`
+
+   .. py:method:: to_quadratic_program() -> qiskit_optimization.QuadraticProgram
+      :canonical: discrete_optimization.coloring.solvers.quantum.FeasibleNbColorColoringQiskit.to_quadratic_program
+
+   .. py:method:: interpret(result: typing.Union[qiskit_optimization.algorithms.OptimizationResult, numpy.ndarray])
+      :canonical: discrete_optimization.coloring.solvers.quantum.FeasibleNbColorColoringQiskit.interpret
+
+.. py:class:: FeasibleNbColorQaoaColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, nb_color=None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.coloring.solvers.quantum.FeasibleNbColorQaoaColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitQaoaSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.coloring.solvers.quantum.FeasibleNbColorQaoaColoringSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.coloring.solvers.quantum.FeasibleNbColorQaoaColoringSolver.retrieve_current_solution
+
+.. py:class:: FeasibleNbColorVqeColoringSolver(problem: discrete_optimization.coloring.problem.ColoringProblem, nb_color=None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.coloring.solvers.quantum.FeasibleNbColorVqeColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`, :py:obj:`discrete_optimization.generic_tools.qiskit_tools.QiskitVqeSolver`
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.coloring.solvers.quantum.FeasibleNbColorVqeColoringSolver.init_model
+
+   .. py:method:: retrieve_current_solution(result) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.coloring.solvers.quantum.FeasibleNbColorVqeColoringSolver.retrieve_current_solution

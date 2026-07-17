@@ -1,0 +1,184 @@
+:py:mod:`discrete_optimization.knapsack.solvers.gphh`
+=====================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.gphh
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`FeatureEnum <discrete_optimization.knapsack.solvers.gphh.FeatureEnum>`
+     -
+   * - :py:obj:`ParametersGphh <discrete_optimization.knapsack.solvers.gphh.ParametersGphh>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.ParametersGphh
+          :summary:
+   * - :py:obj:`GphhKnapsackSolver <discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_profit <discrete_optimization.knapsack.solvers.gphh.get_profit>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.get_profit
+          :summary:
+   * - :py:obj:`get_capacities <discrete_optimization.knapsack.solvers.gphh.get_capacities>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.get_capacities
+          :summary:
+   * - :py:obj:`get_res_consumption <discrete_optimization.knapsack.solvers.gphh.get_res_consumption>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.get_res_consumption
+          :summary:
+   * - :py:obj:`get_avg_res_consumption_delta_capacity <discrete_optimization.knapsack.solvers.gphh.get_avg_res_consumption_delta_capacity>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.get_avg_res_consumption_delta_capacity
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`feature_function_map <discrete_optimization.knapsack.solvers.gphh.feature_function_map>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.feature_function_map
+          :summary:
+
+API
+~~~
+
+.. py:class:: FeatureEnum
+   :canonical: discrete_optimization.knapsack.solvers.gphh.FeatureEnum
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: PROFIT
+      :canonical: discrete_optimization.knapsack.solvers.gphh.FeatureEnum.PROFIT
+      :value: 'profit'
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.FeatureEnum.PROFIT
+
+   .. py:attribute:: CAPACITIES
+      :canonical: discrete_optimization.knapsack.solvers.gphh.FeatureEnum.CAPACITIES
+      :value: 'capacities'
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.FeatureEnum.CAPACITIES
+
+   .. py:attribute:: RES_CONSUMPTION_ARRAY
+      :canonical: discrete_optimization.knapsack.solvers.gphh.FeatureEnum.RES_CONSUMPTION_ARRAY
+      :value: 'res_consumption'
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.FeatureEnum.RES_CONSUMPTION_ARRAY
+
+   .. py:attribute:: AVG_RES_CONSUMPTION_DELTA_CAPACITY
+      :canonical: discrete_optimization.knapsack.solvers.gphh.FeatureEnum.AVG_RES_CONSUMPTION_DELTA_CAPACITY
+      :value: 'avg_res_consumption_delta_capacity'
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.FeatureEnum.AVG_RES_CONSUMPTION_DELTA_CAPACITY
+
+.. py:function:: get_profit(problem: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem, item_index: int, **kwargs: typing.Any) -> float
+   :canonical: discrete_optimization.knapsack.solvers.gphh.get_profit
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.get_profit
+
+.. py:function:: get_capacities(problem: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem, **kwargs: typing.Any) -> list[float]
+   :canonical: discrete_optimization.knapsack.solvers.gphh.get_capacities
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.get_capacities
+
+.. py:function:: get_res_consumption(problem: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem, item_index: int, **kwargs: typing.Any) -> list[float]
+   :canonical: discrete_optimization.knapsack.solvers.gphh.get_res_consumption
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.get_res_consumption
+
+.. py:function:: get_avg_res_consumption_delta_capacity(problem: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem, item_index: int, **kwargs: typing.Any) -> float
+   :canonical: discrete_optimization.knapsack.solvers.gphh.get_avg_res_consumption_delta_capacity
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.get_avg_res_consumption_delta_capacity
+
+.. py:data:: feature_function_map
+   :canonical: discrete_optimization.knapsack.solvers.gphh.feature_function_map
+   :type: dict[discrete_optimization.knapsack.solvers.gphh.FeatureEnum, collections.abc.Callable[..., typing.Union[float, list[float]]]]
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.feature_function_map
+
+.. py:class:: ParametersGphh(list_feature: list[discrete_optimization.knapsack.solvers.gphh.FeatureEnum], set_primitves: deap.gp.PrimitiveSetTyped, tournament_ratio: float, pop_size: int, n_gen: int, min_tree_depth: int, max_tree_depth: int, crossover_rate: float, mutation_rate: float, deap_verbose: bool)
+   :canonical: discrete_optimization.knapsack.solvers.gphh.ParametersGphh
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.ParametersGphh
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.ParametersGphh.__init__
+
+   .. py:method:: default() -> discrete_optimization.knapsack.solvers.gphh.ParametersGphh
+      :canonical: discrete_optimization.knapsack.solvers.gphh.ParametersGphh.default
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.ParametersGphh.default
+
+.. py:class:: GphhKnapsackSolver(problem: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem, training_domains: typing.Optional[list[discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem]] = None, weight: int = 1, params_gphh: typing.Optional[discrete_optimization.knapsack.solvers.gphh.ParametersGphh] = None, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs)
+   :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: toolbox
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.toolbox
+      :type: deap.base.Toolbox
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.toolbox
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.hyperparameters
+
+   .. py:method:: init_model(**kwargs) -> None
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.init_model
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.solve
+
+   .. py:method:: build_result_storage_for_domain(domain: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.build_result_storage_for_domain
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.build_result_storage_for_domain
+
+   .. py:method:: init_primitives(pset: deap.gp.PrimitiveSetTyped) -> deap.gp.PrimitiveSetTyped
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.init_primitives
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.init_primitives
+
+   .. py:method:: build_solution(domain: discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem, individual: typing.Optional[typing.Any] = None, func_heuristic: typing.Optional[collections.abc.Callable[..., float]] = None) -> discrete_optimization.knapsack.problem.MultidimensionalKnapsackSolution
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.build_solution
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.build_solution
+
+   .. py:method:: evaluate_heuristic(individual: typing.Any, domains: list[discrete_optimization.knapsack.problem.MultidimensionalKnapsackProblem]) -> list[float]
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.evaluate_heuristic
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.evaluate_heuristic
+
+   .. py:method:: evaluate_complexity(individual: typing.Any) -> float
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.evaluate_complexity
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.evaluate_complexity
+
+   .. py:method:: plot_solution(show: bool = True) -> None
+      :canonical: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.plot_solution
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.gphh.GphhKnapsackSolver.plot_solution

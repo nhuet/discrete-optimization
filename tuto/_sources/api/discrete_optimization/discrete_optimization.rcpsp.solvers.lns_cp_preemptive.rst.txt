@@ -1,0 +1,74 @@
+:py:mod:`discrete_optimization.rcpsp.solvers.lns_cp_preemptive`
+===============================================================
+
+.. py:module:: discrete_optimization.rcpsp.solvers.lns_cp_preemptive
+
+.. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_cp_preemptive
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`PostProLeftShift <discrete_optimization.rcpsp.solvers.lns_cp_preemptive.PostProLeftShift>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`last_opti_solution <discrete_optimization.rcpsp.solvers.lns_cp_preemptive.last_opti_solution>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.last_opti_solution
+          :summary:
+   * - :py:obj:`sgs_variant <discrete_optimization.rcpsp.solvers.lns_cp_preemptive.sgs_variant>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.sgs_variant
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.rcpsp.solvers.lns_cp_preemptive.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.logger
+
+.. py:function:: last_opti_solution(last_result_store: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage)
+   :canonical: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.last_opti_solution
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.last_opti_solution
+
+.. py:class:: PostProLeftShift(problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, params_objective_function: discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction = None, do_ls: bool = False, **kwargs)
+   :canonical: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.PostProLeftShift
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lns_mip.PostProcessSolution`
+
+   .. py:method:: build_other_solution(result_storage: discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.PostProLeftShift.build_other_solution
+
+      .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.PostProLeftShift.build_other_solution
+
+.. py:function:: sgs_variant(solution: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspSolution, problem: discrete_optimization.rcpsp.problem_preemptive.PreemptiveRcpspProblem, predecessors_dict)
+   :canonical: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.sgs_variant
+
+   .. autodoc2-docstring:: discrete_optimization.rcpsp.solvers.lns_cp_preemptive.sgs_variant

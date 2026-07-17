@@ -1,0 +1,355 @@
+:py:mod:`discrete_optimization.generic_tools.cpmpy_tools`
+=========================================================
+
+.. py:module:: discrete_optimization.generic_tools.cpmpy_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpmpyExplainUnsatMethod <discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod>`
+     -
+   * - :py:obj:`CpmpyCorrectUnsatMethod <discrete_optimization.generic_tools.cpmpy_tools.CpmpyCorrectUnsatMethod>`
+     -
+   * - :py:obj:`_CpmpyCbClass <discrete_optimization.generic_tools.cpmpy_tools._CpmpyCbClass>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._CpmpyCbClass
+          :summary:
+   * - :py:obj:`CpmpySolver <discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver
+          :summary:
+   * - :py:obj:`MetaCpmpyConstraint <discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint>`
+     -
+   * - :py:obj:`_OrtoolsCpSatCallbackViaCpmpy <discrete_optimization.generic_tools.cpmpy_tools._OrtoolsCpSatCallbackViaCpmpy>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`get_core_constraints <discrete_optimization.generic_tools.cpmpy_tools.get_core_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.get_core_constraints
+          :summary:
+   * - :py:obj:`_get_normalized_constraints <discrete_optimization.generic_tools.cpmpy_tools._get_normalized_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._get_normalized_constraints
+          :summary:
+   * - :py:obj:`_convert_normalized_metaconstraints_to_constraints <discrete_optimization.generic_tools.cpmpy_tools._convert_normalized_metaconstraints_to_constraints>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._convert_normalized_metaconstraints_to_constraints
+          :summary:
+   * - :py:obj:`_normalize_metaconstraints <discrete_optimization.generic_tools.cpmpy_tools._normalize_metaconstraints>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._normalize_metaconstraints
+          :summary:
+   * - :py:obj:`is_trivially_false <discrete_optimization.generic_tools.cpmpy_tools.is_trivially_false>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.is_trivially_false
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`map_exitstatus2statussolver <discrete_optimization.generic_tools.cpmpy_tools.map_exitstatus2statussolver>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.map_exitstatus2statussolver
+          :summary:
+   * - :py:obj:`map_explainunsatmethod2fun <discrete_optimization.generic_tools.cpmpy_tools.map_explainunsatmethod2fun>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.map_explainunsatmethod2fun
+          :summary:
+   * - :py:obj:`map_correctunsatmethod2fun <discrete_optimization.generic_tools.cpmpy_tools.map_correctunsatmethod2fun>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.map_correctunsatmethod2fun
+          :summary:
+
+API
+~~~
+
+.. py:data:: map_exitstatus2statussolver
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools.map_exitstatus2statussolver
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.map_exitstatus2statussolver
+
+.. py:class:: CpmpyExplainUnsatMethod
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: core
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.core
+      :value: 'core'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.core
+
+   .. py:attribute:: mus
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.mus
+      :value: 'mus'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.mus
+
+   .. py:attribute:: quickxplain
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.quickxplain
+      :value: 'quickxplain'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.quickxplain
+
+   .. py:attribute:: optimal_mus
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.optimal_mus
+      :value: 'optimal_mus'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.optimal_mus
+
+   .. py:attribute:: smus
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.smus
+      :value: 'smus'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.smus
+
+   .. py:attribute:: mus_naive
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.mus_naive
+      :value: 'mus_naive'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.mus_naive
+
+   .. py:attribute:: quickxplain_naive
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.quickxplain_naive
+      :value: 'quickxplain_naive'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.quickxplain_naive
+
+   .. py:attribute:: optimal_mus_naive
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.optimal_mus_naive
+      :value: 'optimal_mus_naive'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod.optimal_mus_naive
+
+.. py:function:: get_core_constraints(soft, hard, **kwargs)
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools.get_core_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.get_core_constraints
+
+.. py:data:: map_explainunsatmethod2fun
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools.map_explainunsatmethod2fun
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.map_explainunsatmethod2fun
+
+.. py:class:: CpmpyCorrectUnsatMethod
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyCorrectUnsatMethod
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: mcs_opt
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyCorrectUnsatMethod.mcs_opt
+      :value: 'mcs_opt'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyCorrectUnsatMethod.mcs_opt
+
+   .. py:attribute:: mcs_grow
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpyCorrectUnsatMethod.mcs_grow
+      :value: 'mcs_grow'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpyCorrectUnsatMethod.mcs_grow
+
+.. py:data:: map_correctunsatmethod2fun
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools.map_correctunsatmethod2fun
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.map_correctunsatmethod2fun
+
+.. py:class:: _CpmpyCbClass(do_solver: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver, callback: discrete_optimization.generic_tools.callbacks.callback.Callback)
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools._CpmpyCbClass
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._CpmpyCbClass
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._CpmpyCbClass.__init__
+
+   .. py:method:: callback_func()
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools._CpmpyCbClass.callback_func
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._CpmpyCbClass.callback_func
+
+.. py:class:: CpmpySolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, solver_name: typing.Optional[str] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.CpSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.__init__
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.model
+      :type: typing.Optional[cpmpy.model.Model]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.model
+
+   .. py:attribute:: cpm_status
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.cpm_status
+      :type: cpmpy.solvers.solver_interface.SolverStatus
+      :value: 'SolverStatus(...)'
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.cpm_status
+
+   .. py:attribute:: cpm_solver
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.cpm_solver
+      :type: typing.Optional[cpmpy.solvers.solver_interface.SolverInterface]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.cpm_solver
+
+   .. py:method:: minimize_variable(var: typing.Any) -> None
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.minimize_variable
+
+   .. py:method:: add_bound_constraint(var: typing.Any, sign: discrete_optimization.generic_tools.cp_tools.SignEnum, value: int) -> list[typing.Any]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.add_bound_constraint
+
+   .. py:method:: create_callback_function(callback: discrete_optimization.generic_tools.callbacks.callback.Callback)
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.create_callback_function
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.create_callback_function
+
+   .. py:method:: reset_cpm_solver()
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.reset_cpm_solver
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.reset_cpm_solver
+
+   .. py:method:: solve(callbacks: typing.Optional[list[discrete_optimization.generic_tools.callbacks.callback.Callback]] = None, parameters_cp: typing.Optional[discrete_optimization.generic_tools.cp_tools.ParametersCp] = None, time_limit: typing.Optional[float] = 100.0, **kwargs: typing.Any) -> discrete_optimization.generic_tools.result_storage.result_storage.ResultStorage
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.solve
+
+   .. py:method:: explain_unsat_meta(soft: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, hard: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, cpmpy_method: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod = CpmpyExplainUnsatMethod.mus, **kwargs: typing.Any) -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.explain_unsat_meta
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.explain_unsat_meta
+
+   .. py:method:: explain_unsat_deduced_meta(soft: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, hard: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, cpmpy_method: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod = CpmpyExplainUnsatMethod.mus, **kwargs: typing.Any) -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.explain_unsat_deduced_meta
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.explain_unsat_deduced_meta
+
+   .. py:method:: explain_unsat_fine(soft: typing.Optional[list[cpmpy.expressions.core.Expression]] = None, hard: typing.Optional[list[cpmpy.expressions.core.Expression]] = None, cpmpy_method: discrete_optimization.generic_tools.cpmpy_tools.CpmpyExplainUnsatMethod = CpmpyExplainUnsatMethod.mus, **kwargs: typing.Any) -> list[cpmpy.expressions.core.Expression]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.explain_unsat_fine
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.explain_unsat_fine
+
+   .. py:method:: correct_unsat_meta(soft: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, hard: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, cpmpy_method: discrete_optimization.generic_tools.cpmpy_tools.CpmpyCorrectUnsatMethod = CpmpyCorrectUnsatMethod.mcs_opt, **kwargs: typing.Any) -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.correct_unsat_meta
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.correct_unsat_meta
+
+   .. py:method:: correct_unsat_deduced_meta(soft: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, hard: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, cpmpy_method: discrete_optimization.generic_tools.cpmpy_tools.CpmpyCorrectUnsatMethod = CpmpyCorrectUnsatMethod.mcs_opt, **kwargs: typing.Any) -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.correct_unsat_deduced_meta
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.correct_unsat_deduced_meta
+
+   .. py:method:: correct_unsat_fine(soft: typing.Optional[list[cpmpy.expressions.core.Expression]] = None, hard: typing.Optional[list[cpmpy.expressions.core.Expression]] = None, cpmpy_method: discrete_optimization.generic_tools.cpmpy_tools.CpmpyCorrectUnsatMethod = CpmpyCorrectUnsatMethod.mcs_opt, **kwargs: typing.Any) -> list[cpmpy.expressions.core.Expression]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.correct_unsat_fine
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.correct_unsat_fine
+
+   .. py:method:: _deduce_meta_minimal_constraint_set_from_minimal_fine_constraint_set(fine_method: collections.abc.Callable[[...], list[cpmpy.expressions.core.Expression]], soft: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, hard: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, **kwargs: typing.Any) -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver._deduce_meta_minimal_constraint_set_from_minimal_fine_constraint_set
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver._deduce_meta_minimal_constraint_set_from_minimal_fine_constraint_set
+
+   .. py:method:: _compute_meta_minimal_meta_constraint_set_using_fine_constraint_method(fine_method: collections.abc.Callable[[...], list[cpmpy.expressions.core.Expression]], soft: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, hard: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None, include_all_trivial_false_constraints: bool = False, **kwargs: typing.Any) -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver._compute_meta_minimal_meta_constraint_set_using_fine_constraint_method
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver._compute_meta_minimal_meta_constraint_set_using_fine_constraint_method
+
+   .. py:method:: get_others_meta_constraint(meta_constraints: typing.Optional[list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]] = None) -> discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_others_meta_constraint
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_others_meta_constraint
+
+   .. py:method:: get_soft_constraints() -> list[cpmpy.expressions.core.Expression]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_soft_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_soft_constraints
+
+   .. py:method:: get_hard_constraints() -> list[cpmpy.expressions.core.Expression]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_hard_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_hard_constraints
+
+   .. py:method:: get_soft_meta_constraints() -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_soft_meta_constraints
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_soft_meta_constraints
+
+   .. py:method:: get_hard_meta_constraints() -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_hard_meta_constraints
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.get_hard_meta_constraints
+
+   .. py:method:: retrieve_current_solution() -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.retrieve_current_solution
+      :abstractmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver.retrieve_current_solution
+
+.. py:class:: MetaCpmpyConstraint(name: str, constraints: typing.Optional[list[discrete_optimization.generic_tools.unsat_tools.Constraint]] = None, metadata=None)
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.unsat_tools.MetaConstraint`\ [\ :py:obj:`cpmpy.expressions.core.Expression`\ ]
+
+   .. py:method:: normalize() -> None
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint.normalize
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint.normalize
+
+   .. py:method:: to_normalized() -> discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint.to_normalized
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint.to_normalized
+
+.. py:function:: _get_normalized_constraints(original_constraints: list[cpmpy.expressions.core.Expression]) -> list[cpmpy.expressions.core.Expression]
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools._get_normalized_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._get_normalized_constraints
+
+.. py:function:: _convert_normalized_metaconstraints_to_constraints(meta_constraints: list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]) -> list[cpmpy.expressions.core.Expression]
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools._convert_normalized_metaconstraints_to_constraints
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._convert_normalized_metaconstraints_to_constraints
+
+.. py:function:: _normalize_metaconstraints(meta_constraints: list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]) -> list[discrete_optimization.generic_tools.cpmpy_tools.MetaCpmpyConstraint]
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools._normalize_metaconstraints
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._normalize_metaconstraints
+
+.. py:class:: _OrtoolsCpSatCallbackViaCpmpy(do_solver: discrete_optimization.generic_tools.cpmpy_tools.CpmpySolver, solver_obj: cpmpy.solvers.solver_interface.SolverInterface, callback: discrete_optimization.generic_tools.callbacks.callback.Callback, retrieve_stats: bool = False)
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools._OrtoolsCpSatCallbackViaCpmpy
+
+   Bases: :py:obj:`ortools.sat.python.cp_model.CpSolverSolutionCallback`
+
+   .. py:method:: on_solution_callback() -> None
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools._OrtoolsCpSatCallbackViaCpmpy.on_solution_callback
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._OrtoolsCpSatCallbackViaCpmpy.on_solution_callback
+
+   .. py:method:: store_current_solution()
+      :canonical: discrete_optimization.generic_tools.cpmpy_tools._OrtoolsCpSatCallbackViaCpmpy.store_current_solution
+
+      .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools._OrtoolsCpSatCallbackViaCpmpy.store_current_solution
+
+.. py:function:: is_trivially_false(cstr: cpmpy.expressions.core.Expression) -> bool
+   :canonical: discrete_optimization.generic_tools.cpmpy_tools.is_trivially_false
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.cpmpy_tools.is_trivially_false

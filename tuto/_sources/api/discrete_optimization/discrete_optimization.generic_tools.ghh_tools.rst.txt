@@ -1,0 +1,139 @@
+:py:mod:`discrete_optimization.generic_tools.ghh_tools`
+=======================================================
+
+.. py:module:: discrete_optimization.generic_tools.ghh_tools
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`SupportsDunderLT <discrete_optimization.generic_tools.ghh_tools.SupportsDunderLT>`
+     -
+   * - :py:obj:`SupportsDunderGT <discrete_optimization.generic_tools.ghh_tools.SupportsDunderGT>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`index_min <discrete_optimization.generic_tools.ghh_tools.index_min>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.index_min
+          :summary:
+   * - :py:obj:`index_max <discrete_optimization.generic_tools.ghh_tools.index_max>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.index_max
+          :summary:
+   * - :py:obj:`argsort <discrete_optimization.generic_tools.ghh_tools.argsort>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.argsort
+          :summary:
+   * - :py:obj:`protected_div <discrete_optimization.generic_tools.ghh_tools.protected_div>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.protected_div
+          :summary:
+   * - :py:obj:`max_operator <discrete_optimization.generic_tools.ghh_tools.max_operator>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.max_operator
+          :summary:
+   * - :py:obj:`min_operator <discrete_optimization.generic_tools.ghh_tools.min_operator>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.min_operator
+          :summary:
+   * - :py:obj:`max_operator_list <discrete_optimization.generic_tools.ghh_tools.max_operator_list>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.max_operator_list
+          :summary:
+   * - :py:obj:`min_operator_list <discrete_optimization.generic_tools.ghh_tools.min_operator_list>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.min_operator_list
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`SupportsRichComparison <discrete_optimization.generic_tools.ghh_tools.SupportsRichComparison>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparison
+          :summary:
+   * - :py:obj:`SupportsRichComparisonT <discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT
+          :summary:
+
+API
+~~~
+
+.. py:function:: index_min(list_or_array: numpy.typing.ArrayLike) -> numpy.int_
+   :canonical: discrete_optimization.generic_tools.ghh_tools.index_min
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.index_min
+
+.. py:function:: index_max(list_or_array: numpy.typing.ArrayLike) -> numpy.int_
+   :canonical: discrete_optimization.generic_tools.ghh_tools.index_max
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.index_max
+
+.. py:function:: argsort(list_or_array: numpy.typing.ArrayLike) -> numpy.typing.NDArray[numpy.int_]
+   :canonical: discrete_optimization.generic_tools.ghh_tools.argsort
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.argsort
+
+.. py:function:: protected_div(left: float, right: float) -> float
+   :canonical: discrete_optimization.generic_tools.ghh_tools.protected_div
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.protected_div
+
+.. py:class:: SupportsDunderLT
+   :canonical: discrete_optimization.generic_tools.ghh_tools.SupportsDunderLT
+
+   Bases: :py:obj:`typing.Protocol`
+
+   .. py:method:: __lt__(__other: typing.Any) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.ghh_tools.SupportsDunderLT.__lt__
+
+.. py:class:: SupportsDunderGT
+   :canonical: discrete_optimization.generic_tools.ghh_tools.SupportsDunderGT
+
+   Bases: :py:obj:`typing.Protocol`
+
+   .. py:method:: __gt__(__other: typing.Any) -> typing.Any
+      :canonical: discrete_optimization.generic_tools.ghh_tools.SupportsDunderGT.__gt__
+
+.. py:data:: SupportsRichComparison
+   :canonical: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparison
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparison
+
+.. py:data:: SupportsRichComparisonT
+   :canonical: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT
+   :value: 'TypeVar(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT
+
+.. py:function:: max_operator(left: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT, right: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT) -> discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT
+   :canonical: discrete_optimization.generic_tools.ghh_tools.max_operator
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.max_operator
+
+.. py:function:: min_operator(left: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT, right: discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT) -> discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT
+   :canonical: discrete_optimization.generic_tools.ghh_tools.min_operator
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.min_operator
+
+.. py:function:: max_operator_list(list_: collections.abc.Iterable[discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT]) -> discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT
+   :canonical: discrete_optimization.generic_tools.ghh_tools.max_operator_list
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.max_operator_list
+
+.. py:function:: min_operator_list(list_: collections.abc.Iterable[discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT]) -> discrete_optimization.generic_tools.ghh_tools.SupportsRichComparisonT
+   :canonical: discrete_optimization.generic_tools.ghh_tools.min_operator_list
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.ghh_tools.min_operator_list

@@ -1,0 +1,26 @@
+:py:mod:`discrete_optimization.singlemachine`
+=============================================
+
+.. py:module:: discrete_optimization.singlemachine
+
+.. autodoc2-docstring:: discrete_optimization.singlemachine
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.singlemachine.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.singlemachine.problem
+   discrete_optimization.singlemachine.parser

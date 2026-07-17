@@ -1,0 +1,29 @@
+:py:mod:`discrete_optimization.coloring`
+========================================
+
+.. py:module:: discrete_optimization.coloring
+
+.. autodoc2-docstring:: discrete_optimization.coloring
+   :allowtitles:
+
+Subpackages
+-----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   discrete_optimization.coloring.solvers
+
+Submodules
+----------
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   discrete_optimization.coloring.solvers_map
+   discrete_optimization.coloring.problem
+   discrete_optimization.coloring.utils
+   discrete_optimization.coloring.parser
+   discrete_optimization.coloring.plot

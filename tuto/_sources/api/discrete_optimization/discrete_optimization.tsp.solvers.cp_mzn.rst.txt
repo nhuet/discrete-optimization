@@ -1,0 +1,87 @@
+:py:mod:`discrete_optimization.tsp.solvers.cp_mzn`
+==================================================
+
+.. py:module:: discrete_optimization.tsp.solvers.cp_mzn
+
+.. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CPTspModel <discrete_optimization.tsp.solvers.cp_mzn.CPTspModel>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.CPTspModel
+          :summary:
+   * - :py:obj:`CpTspSolver <discrete_optimization.tsp.solvers.cp_mzn.CpTspSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.tsp.solvers.cp_mzn.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.logger
+          :summary:
+   * - :py:obj:`this_path <discrete_optimization.tsp.solvers.cp_mzn.this_path>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.this_path
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.tsp.solvers.cp_mzn.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.logger
+
+.. py:data:: this_path
+   :canonical: discrete_optimization.tsp.solvers.cp_mzn.this_path
+   :value: 'dirname(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.this_path
+
+.. py:class:: CPTspModel
+   :canonical: discrete_optimization.tsp.solvers.cp_mzn.CPTspModel
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.CPTspModel
+
+   .. py:attribute:: FLOAT_VERSION
+      :canonical: discrete_optimization.tsp.solvers.cp_mzn.CPTspModel.FLOAT_VERSION
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.CPTspModel.FLOAT_VERSION
+
+   .. py:attribute:: INT_VERSION
+      :canonical: discrete_optimization.tsp.solvers.cp_mzn.CPTspModel.INT_VERSION
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.CPTspModel.INT_VERSION
+
+.. py:class:: CpTspSolver(problem: discrete_optimization.tsp.problem.TspProblem, model_type: discrete_optimization.tsp.solvers.cp_mzn.CPTspModel, cp_solver_name: discrete_optimization.generic_tools.cp_tools.CpSolverName = CpSolverName.CHUFFED, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, silent_solve_error: bool = False, **kwargs)
+   :canonical: discrete_optimization.tsp.solvers.cp_mzn.CpTspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.cp_tools.MinizincCpSolver`, :py:obj:`discrete_optimization.tsp.solvers.TspSolver`
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.tsp.solvers.cp_mzn.CpTspSolver.init_model
+
+   .. py:method:: retrieve_solution(_output_item: typing.Optional[str] = None, **kwargs: typing.Any) -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.solvers.cp_mzn.CpTspSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.CpTspSolver.retrieve_solution
+
+   .. py:method:: _retrieve_solution_from_circuit(circuit: list[int]) -> discrete_optimization.tsp.problem.TspSolution
+      :canonical: discrete_optimization.tsp.solvers.cp_mzn.CpTspSolver._retrieve_solution_from_circuit
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cp_mzn.CpTspSolver._retrieve_solution_from_circuit

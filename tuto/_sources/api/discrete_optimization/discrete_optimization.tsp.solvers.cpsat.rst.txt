@@ -1,0 +1,71 @@
+:py:mod:`discrete_optimization.tsp.solvers.cpsat`
+=================================================
+
+.. py:module:: discrete_optimization.tsp.solvers.cpsat
+
+.. autodoc2-docstring:: discrete_optimization.tsp.solvers.cpsat
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`CpSatTspSolver <discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.tsp.solvers.cpsat.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cpsat.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.tsp.solvers.cpsat.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cpsat.logger
+
+.. py:class:: CpSatTspSolver(problem: discrete_optimization.tsp.problem.TspProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.solvers.cpsat.SchedulingCpSatSolver`\ [\ :py:obj:`discrete_optimization.tsp.problem.Node`\ ], :py:obj:`discrete_optimization.tsp.solvers.TspSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver.problem
+      :type: discrete_optimization.tsp.problem.TspProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver.problem
+
+   .. py:method:: get_task_start_or_end_variable(task: discrete_optimization.tsp.problem.Node, start_or_end: discrete_optimization.generic_tasks_tools.enums.StartOrEnd) -> ortools.sat.python.cp_model.LinearExprT
+      :canonical: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver.get_task_start_or_end_variable
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.tsp.problem.TspSolution) -> None
+      :canonical: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver.set_warm_start
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver.set_warm_start
+
+   .. py:method:: retrieve_solution(cpsolvercb: discrete_optimization.generic_tools.ortools_cpsat_tools.CpSolverSolutionCallback) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver.retrieve_solution
+
+   .. py:method:: init_model(**args: typing.Any) -> None
+      :canonical: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver.init_model
+
+   .. py:method:: create_positional_variables() -> None
+      :canonical: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver.create_positional_variables
+
+      .. autodoc2-docstring:: discrete_optimization.tsp.solvers.cpsat.CpSatTspSolver.create_positional_variables

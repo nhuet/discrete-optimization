@@ -1,0 +1,123 @@
+:py:mod:`discrete_optimization.knapsack.solvers.lp`
+===================================================
+
+.. py:module:: discrete_optimization.knapsack.solvers.lp
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`_BaseLpKnapsackSolver <discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver
+          :summary:
+   * - :py:obj:`GurobiKnapsackSolver <discrete_optimization.knapsack.solvers.lp.GurobiKnapsackSolver>`
+     -
+   * - :py:obj:`MathOptKnapsackSolver <discrete_optimization.knapsack.solvers.lp.MathOptKnapsackSolver>`
+     -
+   * - :py:obj:`CbcKnapsackSolver <discrete_optimization.knapsack.solvers.lp.CbcKnapsackSolver>`
+     -
+   * - :py:obj:`OrtoolsKnapsackSolver <discrete_optimization.knapsack.solvers.lp.OrtoolsKnapsackSolver>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.knapsack.solvers.lp.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.knapsack.solvers.lp.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp.logger
+
+.. py:class:: _BaseLpKnapsackSolver(problem: discrete_optimization.knapsack.problem.KnapsackProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.MilpSolver`, :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver.__init__
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver.init_model
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> dict[typing.Any, float]
+      :canonical: discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver.convert_to_variable_values
+
+   .. py:method:: retrieve_current_solution(get_var_value_for_current_solution: collections.abc.Callable[[typing.Any], float], get_obj_value_for_current_solution: collections.abc.Callable[[], float]) -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver.retrieve_current_solution
+
+.. py:class:: GurobiKnapsackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.lp.GurobiKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.GurobiMilpSolver`, :py:obj:`discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver`
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.knapsack.solvers.lp.GurobiKnapsackSolver.init_model
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> dict[gurobipy.Var, float]
+      :canonical: discrete_optimization.knapsack.solvers.lp.GurobiKnapsackSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp.GurobiKnapsackSolver.convert_to_variable_values
+
+.. py:class:: MathOptKnapsackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.lp.MathOptKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.lp_tools.OrtoolsMathOptMilpSolver`, :py:obj:`discrete_optimization.knapsack.solvers.lp._BaseLpKnapsackSolver`
+
+   .. py:method:: convert_to_variable_values(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> dict[ortools.math_opt.python.mathopt.Variable, float]
+      :canonical: discrete_optimization.knapsack.solvers.lp.MathOptKnapsackSolver.convert_to_variable_values
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp.MathOptKnapsackSolver.convert_to_variable_values
+
+.. py:class:: CbcKnapsackSolver(problem: discrete_optimization.knapsack.problem.KnapsackProblem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.lp.CbcKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`
+
+   .. py:method:: init_model(warm_start: typing.Optional[dict[int, int]] = None, **kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.knapsack.solvers.lp.CbcKnapsackSolver.init_model
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.knapsack.solvers.lp.CbcKnapsackSolver.solve
+
+.. py:class:: OrtoolsKnapsackSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.knapsack.solvers.lp.OrtoolsKnapsackSolver
+
+   Bases: :py:obj:`discrete_optimization.knapsack.solvers.KnapsackSolver`
+
+   .. py:attribute:: model
+      :canonical: discrete_optimization.knapsack.solvers.lp.OrtoolsKnapsackSolver.model
+      :type: typing.Optional[ortools.algorithms.python.knapsack_solver.KnapsackSolver]
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.solvers.lp.OrtoolsKnapsackSolver.model
+
+   .. py:method:: init_model(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.knapsack.solvers.lp.OrtoolsKnapsackSolver.init_model
+
+   .. py:method:: solve(**kwargs: typing.Any) -> discrete_optimization.generic_tools.do_solver.ResultStorage
+      :canonical: discrete_optimization.knapsack.solvers.lp.OrtoolsKnapsackSolver.solve

@@ -1,0 +1,148 @@
+:py:mod:`discrete_optimization.binpack.problem`
+===============================================
+
+.. py:module:: discrete_optimization.binpack.problem
+
+.. autodoc2-docstring:: discrete_optimization.binpack.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`BinPackSolution <discrete_optimization.binpack.problem.BinPackSolution>`
+     -
+   * - :py:obj:`ItemBinPack <discrete_optimization.binpack.problem.ItemBinPack>`
+     - .. autodoc2-docstring:: discrete_optimization.binpack.problem.ItemBinPack
+          :summary:
+   * - :py:obj:`BinPackProblem <discrete_optimization.binpack.problem.BinPackProblem>`
+     -
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.binpack.problem.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.binpack.problem.logger
+          :summary:
+   * - :py:obj:`Item <discrete_optimization.binpack.problem.Item>`
+     - .. autodoc2-docstring:: discrete_optimization.binpack.problem.Item
+          :summary:
+   * - :py:obj:`BinPack <discrete_optimization.binpack.problem.BinPack>`
+     - .. autodoc2-docstring:: discrete_optimization.binpack.problem.BinPack
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.binpack.problem.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.binpack.problem.logger
+
+.. py:data:: Item
+   :canonical: discrete_optimization.binpack.problem.Item
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.binpack.problem.Item
+
+.. py:data:: BinPack
+   :canonical: discrete_optimization.binpack.problem.BinPack
+   :value: None
+
+   .. autodoc2-docstring:: discrete_optimization.binpack.problem.BinPack
+
+.. py:class:: BinPackSolution(problem: discrete_optimization.binpack.problem.BinPackProblem, allocation: list[int])
+   :canonical: discrete_optimization.binpack.problem.BinPackSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationSolution`\ [\ :py:obj:`discrete_optimization.binpack.problem.Item`\ , :py:obj:`discrete_optimization.binpack.problem.BinPack`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingSolution`\ [\ :py:obj:`discrete_optimization.binpack.problem.Item`\ ]
+
+   .. py:method:: copy() -> discrete_optimization.binpack.problem.BinPackSolution
+      :canonical: discrete_optimization.binpack.problem.BinPackSolution.copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.binpack.problem.BinPackSolution.change_problem
+
+   .. py:method:: get_end_time(task: discrete_optimization.binpack.problem.Item) -> int
+      :canonical: discrete_optimization.binpack.problem.BinPackSolution.get_end_time
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.problem.BinPackSolution.get_end_time
+
+   .. py:method:: get_start_time(task: discrete_optimization.binpack.problem.Item) -> int
+      :canonical: discrete_optimization.binpack.problem.BinPackSolution.get_start_time
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.problem.BinPackSolution.get_start_time
+
+   .. py:method:: is_allocated(task: discrete_optimization.binpack.problem.Item, unary_resource: discrete_optimization.binpack.problem.BinPack) -> bool
+      :canonical: discrete_optimization.binpack.problem.BinPackSolution.is_allocated
+
+.. py:class:: ItemBinPack
+   :canonical: discrete_optimization.binpack.problem.ItemBinPack
+
+   .. autodoc2-docstring:: discrete_optimization.binpack.problem.ItemBinPack
+
+   .. py:attribute:: index
+      :canonical: discrete_optimization.binpack.problem.ItemBinPack.index
+      :type: int
+      :value: 'field(...)'
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.problem.ItemBinPack.index
+
+   .. py:attribute:: weight
+      :canonical: discrete_optimization.binpack.problem.ItemBinPack.weight
+      :type: float
+      :value: 'field(...)'
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.problem.ItemBinPack.weight
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.binpack.problem.ItemBinPack.__str__
+
+.. py:class:: BinPackProblem(list_items: list[discrete_optimization.binpack.problem.ItemBinPack], capacity_bin: int, incompatible_items: set[tuple[int, int]] = None)
+   :canonical: discrete_optimization.binpack.problem.BinPackProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tasks_tools.allocation.AllocationProblem`\ [\ :py:obj:`discrete_optimization.binpack.problem.Item`\ , :py:obj:`discrete_optimization.binpack.problem.BinPack`\ ], :py:obj:`discrete_optimization.generic_tasks_tools.scheduling.SchedulingProblem`\ [\ :py:obj:`discrete_optimization.binpack.problem.Item`\ ]
+
+   .. py:method:: evaluate(variable: discrete_optimization.binpack.problem.BinPackSolution) -> dict[str, float]
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.evaluate
+
+   .. py:method:: compute_weights(variable: discrete_optimization.binpack.problem.BinPackSolution) -> dict[int, float]
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.compute_weights
+
+      .. autodoc2-docstring:: discrete_optimization.binpack.problem.BinPackProblem.compute_weights
+
+   .. py:method:: satisfy(variable: discrete_optimization.binpack.problem.BinPackSolution) -> bool
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.satisfy
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.get_attribute_register
+
+   .. py:method:: get_solution_type() -> type[discrete_optimization.generic_tools.do_problem.Solution]
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.get_solution_type
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.get_objective_register
+
+   .. py:property:: unary_resources_list
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.unary_resources_list
+      :type: list[discrete_optimization.binpack.problem.BinPack]
+
+   .. py:method:: get_makespan_upper_bound() -> int
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.get_makespan_upper_bound
+
+   .. py:property:: tasks_list
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.tasks_list
+      :type: list[discrete_optimization.binpack.problem.Item]
+
+   .. py:method:: get_makespan_lower_bound() -> int
+      :canonical: discrete_optimization.binpack.problem.BinPackProblem.get_makespan_lower_bound

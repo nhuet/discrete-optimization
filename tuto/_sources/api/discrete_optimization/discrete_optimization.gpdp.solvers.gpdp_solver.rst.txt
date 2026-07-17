@@ -1,0 +1,35 @@
+:py:mod:`discrete_optimization.gpdp.solvers.gpdp_solver`
+========================================================
+
+.. py:module:: discrete_optimization.gpdp.solvers.gpdp_solver
+
+.. autodoc2-docstring:: discrete_optimization.gpdp.solvers.gpdp_solver
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`GpdpSolver <discrete_optimization.gpdp.solvers.gpdp_solver.GpdpSolver>`
+     -
+
+API
+~~~
+
+.. py:class:: GpdpSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.gpdp.solvers.gpdp_solver.GpdpSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_solver.SolverDO`
+
+   .. py:attribute:: problem
+      :canonical: discrete_optimization.gpdp.solvers.gpdp_solver.GpdpSolver.problem
+      :type: discrete_optimization.gpdp.problem.GpdpProblem
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.gpdp.solvers.gpdp_solver.GpdpSolver.problem

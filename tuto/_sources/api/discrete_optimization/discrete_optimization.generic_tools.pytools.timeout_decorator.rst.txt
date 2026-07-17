@@ -1,0 +1,54 @@
+:py:mod:`discrete_optimization.generic_tools.pytools.timeout_decorator`
+=======================================================================
+
+.. py:module:: discrete_optimization.generic_tools.pytools.timeout_decorator
+
+.. autodoc2-docstring:: discrete_optimization.generic_tools.pytools.timeout_decorator
+   :allowtitles:
+
+Module Contents
+---------------
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`quit_function <discrete_optimization.generic_tools.pytools.timeout_decorator.quit_function>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.pytools.timeout_decorator.quit_function
+          :summary:
+   * - :py:obj:`exit_after <discrete_optimization.generic_tools.pytools.timeout_decorator.exit_after>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.pytools.timeout_decorator.exit_after
+          :summary:
+
+Data
+~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`logger <discrete_optimization.generic_tools.pytools.timeout_decorator.logger>`
+     - .. autodoc2-docstring:: discrete_optimization.generic_tools.pytools.timeout_decorator.logger
+          :summary:
+
+API
+~~~
+
+.. py:data:: logger
+   :canonical: discrete_optimization.generic_tools.pytools.timeout_decorator.logger
+   :value: 'getLogger(...)'
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.pytools.timeout_decorator.logger
+
+.. py:function:: quit_function(fn_name)
+   :canonical: discrete_optimization.generic_tools.pytools.timeout_decorator.quit_function
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.pytools.timeout_decorator.quit_function
+
+.. py:function:: exit_after(s)
+   :canonical: discrete_optimization.generic_tools.pytools.timeout_decorator.exit_after
+
+   .. autodoc2-docstring:: discrete_optimization.generic_tools.pytools.timeout_decorator.exit_after

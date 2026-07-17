@@ -1,0 +1,139 @@
+:py:mod:`discrete_optimization.knapsack.mutation`
+=================================================
+
+.. py:module:: discrete_optimization.knapsack.mutation
+
+.. autodoc2-docstring:: discrete_optimization.knapsack.mutation
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`SingleBitFlipMove <discrete_optimization.knapsack.mutation.SingleBitFlipMove>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.SingleBitFlipMove
+          :summary:
+   * - :py:obj:`KnapsackMutationSingleBitFlip <discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip
+          :summary:
+   * - :py:obj:`BitFlipMoveKP <discrete_optimization.knapsack.mutation.BitFlipMoveKP>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.BitFlipMoveKP
+          :summary:
+   * - :py:obj:`MutationKnapsack <discrete_optimization.knapsack.mutation.MutationKnapsack>`
+     - .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.MutationKnapsack
+          :summary:
+
+API
+~~~
+
+.. py:class:: SingleBitFlipMove(i: int, problem: discrete_optimization.knapsack.problem.KnapsackProblem)
+   :canonical: discrete_optimization.knapsack.mutation.SingleBitFlipMove
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.LocalMove`
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.SingleBitFlipMove
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.SingleBitFlipMove.__init__
+
+   .. py:method:: apply_local_move(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.mutation.SingleBitFlipMove.apply_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.SingleBitFlipMove.apply_local_move
+
+   .. py:method:: backtrack_local_move(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.mutation.SingleBitFlipMove.backtrack_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.SingleBitFlipMove.backtrack_local_move
+
+.. py:class:: KnapsackMutationSingleBitFlip(problem: discrete_optimization.knapsack.problem.KnapsackProblem)
+   :canonical: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip.__init__
+
+   .. py:method:: mutate(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> tuple[discrete_optimization.knapsack.problem.KnapsackSolution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip.mutate
+
+   .. py:method:: mutate_and_compute_obj(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> tuple[discrete_optimization.knapsack.problem.KnapsackSolution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip.mutate_and_compute_obj
+
+   .. py:method:: build(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem, solution: discrete_optimization.generic_tools.do_problem.Solution) -> KnapsackMutatio.nSingleBitFlip
+      :canonical: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.KnapsackMutationSingleBitFlip.build
+
+.. py:class:: BitFlipMoveKP(attribute: str, problem: discrete_optimization.knapsack.problem.KnapsackProblem, list_index_flip: list[int])
+   :canonical: discrete_optimization.knapsack.mutation.BitFlipMoveKP
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.LocalMove`
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.BitFlipMoveKP
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.BitFlipMoveKP.__init__
+
+   .. py:method:: apply_local_move(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.mutation.BitFlipMoveKP.apply_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.BitFlipMoveKP.apply_local_move
+
+   .. py:method:: backtrack_local_move(solution: discrete_optimization.knapsack.problem.KnapsackSolution) -> discrete_optimization.knapsack.problem.KnapsackSolution
+      :canonical: discrete_optimization.knapsack.mutation.BitFlipMoveKP.backtrack_local_move
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.BitFlipMoveKP.backtrack_local_move
+
+.. py:class:: MutationKnapsack(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem, attribute: typing.Optional[str] = None)
+   :canonical: discrete_optimization.knapsack.mutation.MutationKnapsack
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_mutation.Mutation`
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.MutationKnapsack
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.MutationKnapsack.__init__
+
+   .. py:method:: build(knapsack_problem: discrete_optimization.knapsack.problem.KnapsackProblem, solution: discrete_optimization.generic_tools.do_problem.Solution) -> discrete_optimization.knapsack.mutation.MutationKnapsack
+      :canonical: discrete_optimization.knapsack.mutation.MutationKnapsack.build
+      :staticmethod:
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.MutationKnapsack.build
+
+   .. py:method:: switch_on(variable: discrete_optimization.knapsack.problem.KnapsackSolution, come_from_outside: bool = False) -> tuple[discrete_optimization.knapsack.problem.KnapsackSolution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.knapsack.mutation.MutationKnapsack.switch_on
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.MutationKnapsack.switch_on
+
+   .. py:method:: switch_off(variable: discrete_optimization.knapsack.problem.KnapsackSolution, come_from_outside: bool = False) -> tuple[discrete_optimization.knapsack.problem.KnapsackSolution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.knapsack.mutation.MutationKnapsack.switch_off
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.MutationKnapsack.switch_off
+
+   .. py:method:: mutate(variable: discrete_optimization.knapsack.problem.KnapsackSolution) -> tuple[discrete_optimization.knapsack.problem.KnapsackSolution, discrete_optimization.generic_tools.do_mutation.LocalMove]
+      :canonical: discrete_optimization.knapsack.mutation.MutationKnapsack.mutate
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.MutationKnapsack.mutate
+
+   .. py:method:: mutate_and_compute_obj(variable: discrete_optimization.knapsack.problem.KnapsackSolution) -> tuple[discrete_optimization.knapsack.problem.KnapsackSolution, discrete_optimization.generic_tools.do_mutation.LocalMove, dict[str, float]]
+      :canonical: discrete_optimization.knapsack.mutation.MutationKnapsack.mutate_and_compute_obj
+
+      .. autodoc2-docstring:: discrete_optimization.knapsack.mutation.MutationKnapsack.mutate_and_compute_obj

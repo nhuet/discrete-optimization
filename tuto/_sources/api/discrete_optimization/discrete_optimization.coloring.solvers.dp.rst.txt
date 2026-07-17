@@ -1,0 +1,121 @@
+:py:mod:`discrete_optimization.coloring.solvers.dp`
+===================================================
+
+.. py:module:: discrete_optimization.coloring.solvers.dp
+
+.. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`DpColoringModeling <discrete_optimization.coloring.solvers.dp.DpColoringModeling>`
+     -
+   * - :py:obj:`DpColoringSolver <discrete_optimization.coloring.solvers.dp.DpColoringSolver>`
+     -
+
+Functions
+~~~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`bfs_iterator <discrete_optimization.coloring.solvers.dp.bfs_iterator>`
+     - .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.bfs_iterator
+          :summary:
+
+API
+~~~
+
+.. py:class:: DpColoringModeling
+   :canonical: discrete_optimization.coloring.solvers.dp.DpColoringModeling
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. py:attribute:: COLOR_TRANSITION
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringModeling.COLOR_TRANSITION
+      :value: 0
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringModeling.COLOR_TRANSITION
+
+   .. py:attribute:: COLOR_NODE_TRANSITION
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringModeling.COLOR_NODE_TRANSITION
+      :value: 1
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringModeling.COLOR_NODE_TRANSITION
+
+.. py:function:: bfs_iterator(g: networkx.Graph, source: typing.Any) -> collections.abc.Iterator[typing.Any]
+   :canonical: discrete_optimization.coloring.solvers.dp.bfs_iterator
+
+   .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.bfs_iterator
+
+.. py:class:: DpColoringSolver(problem: discrete_optimization.generic_tools.do_problem.Problem, params_objective_function: typing.Optional[discrete_optimization.generic_tools.do_problem.ParamsObjectiveFunction] = None, **kwargs: typing.Any)
+   :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.dyn_prog_tools.DpSolver`, :py:obj:`discrete_optimization.coloring.solvers.ColoringSolver`, :py:obj:`discrete_optimization.generic_tools.do_solver.WarmstartMixin`
+
+   .. py:attribute:: hyperparameters
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.hyperparameters
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringSolver.hyperparameters
+
+   .. py:attribute:: transitions
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.transitions
+      :type: dict
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringSolver.transitions
+
+   .. py:attribute:: nodes_reordering
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.nodes_reordering
+      :type: list
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringSolver.nodes_reordering
+
+   .. py:attribute:: modeling
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.modeling
+      :type: discrete_optimization.coloring.solvers.dp.DpColoringModeling
+      :value: None
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringSolver.modeling
+
+   .. py:method:: init_model(**kwargs)
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.init_model
+
+   .. py:method:: init_model_color_and_node(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.init_model_color_and_node
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringSolver.init_model_color_and_node
+
+   .. py:method:: init_model_color(**kwargs: typing.Any) -> None
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.init_model_color
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringSolver.init_model_color
+
+   .. py:method:: retrieve_solution(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.retrieve_solution
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringSolver.retrieve_solution
+
+   .. py:method:: retrieve_solution_color_and_node(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.retrieve_solution_color_and_node
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringSolver.retrieve_solution_color_and_node
+
+   .. py:method:: retrieve_solution_color(sol: didppy.Solution) -> discrete_optimization.generic_tools.do_problem.Solution
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.retrieve_solution_color
+
+      .. autodoc2-docstring:: discrete_optimization.coloring.solvers.dp.DpColoringSolver.retrieve_solution_color
+
+   .. py:method:: set_warm_start(solution: discrete_optimization.coloring.problem.ColoringSolution) -> None
+      :canonical: discrete_optimization.coloring.solvers.dp.DpColoringSolver.set_warm_start

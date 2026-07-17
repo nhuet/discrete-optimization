@@ -1,0 +1,88 @@
+:py:mod:`discrete_optimization.tsptw.problem`
+=============================================
+
+.. py:module:: discrete_optimization.tsptw.problem
+
+.. autodoc2-docstring:: discrete_optimization.tsptw.problem
+   :allowtitles:
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table::
+   :class: autosummary longtable
+   :align: left
+
+   * - :py:obj:`TSPTWSolution <discrete_optimization.tsptw.problem.TSPTWSolution>`
+     - .. autodoc2-docstring:: discrete_optimization.tsptw.problem.TSPTWSolution
+          :summary:
+   * - :py:obj:`TSPTWProblem <discrete_optimization.tsptw.problem.TSPTWProblem>`
+     - .. autodoc2-docstring:: discrete_optimization.tsptw.problem.TSPTWProblem
+          :summary:
+
+API
+~~~
+
+.. py:class:: TSPTWSolution(problem: discrete_optimization.tsptw.problem.TSPTWProblem, permutation: typing.List[int], arrival_times: typing.Optional[typing.Dict[int, float]] = None, start_service_times: typing.Optional[typing.Dict[int, float]] = None, makespan: typing.Optional[float] = None, tw_violation: typing.Optional[float] = None)
+   :canonical: discrete_optimization.tsptw.problem.TSPTWSolution
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Solution`
+
+   .. autodoc2-docstring:: discrete_optimization.tsptw.problem.TSPTWSolution
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.tsptw.problem.TSPTWSolution.__init__
+
+   .. py:method:: copy() -> discrete_optimization.tsptw.problem.TSPTWSolution
+      :canonical: discrete_optimization.tsptw.problem.TSPTWSolution.copy
+
+   .. py:method:: lazy_copy() -> discrete_optimization.tsptw.problem.TSPTWSolution
+      :canonical: discrete_optimization.tsptw.problem.TSPTWSolution.lazy_copy
+
+   .. py:method:: change_problem(new_problem: discrete_optimization.generic_tools.do_problem.Problem) -> None
+      :canonical: discrete_optimization.tsptw.problem.TSPTWSolution.change_problem
+
+   .. py:method:: __str__() -> str
+      :canonical: discrete_optimization.tsptw.problem.TSPTWSolution.__str__
+
+.. py:class:: TSPTWProblem(nb_nodes: int, distance_matrix: numpy.ndarray, time_windows: typing.List[typing.Tuple[int, int]], depot_node: int = 0)
+   :canonical: discrete_optimization.tsptw.problem.TSPTWProblem
+
+   Bases: :py:obj:`discrete_optimization.generic_tools.do_problem.Problem`
+
+   .. autodoc2-docstring:: discrete_optimization.tsptw.problem.TSPTWProblem
+
+   .. rubric:: Initialization
+
+   .. autodoc2-docstring:: discrete_optimization.tsptw.problem.TSPTWProblem.__init__
+
+   .. py:method:: get_attribute_register() -> discrete_optimization.generic_tools.do_problem.EncodingRegister
+      :canonical: discrete_optimization.tsptw.problem.TSPTWProblem.get_attribute_register
+
+   .. py:method:: get_objective_register() -> discrete_optimization.generic_tools.do_problem.ObjectiveRegister
+      :canonical: discrete_optimization.tsptw.problem.TSPTWProblem.get_objective_register
+
+   .. py:method:: evaluate(solution: discrete_optimization.tsptw.problem.TSPTWSolution) -> typing.Dict[str, float]
+      :canonical: discrete_optimization.tsptw.problem.TSPTWProblem.evaluate
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.problem.TSPTWProblem.evaluate
+
+   .. py:method:: evaluate_from_encoding(int_vector: typing.List[int], encoding_name: str) -> typing.Dict[str, float]
+      :canonical: discrete_optimization.tsptw.problem.TSPTWProblem.evaluate_from_encoding
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.problem.TSPTWProblem.evaluate_from_encoding
+
+   .. py:method:: satisfy(solution: discrete_optimization.tsptw.problem.TSPTWSolution) -> bool
+      :canonical: discrete_optimization.tsptw.problem.TSPTWProblem.satisfy
+
+   .. py:method:: get_dummy_solution() -> discrete_optimization.tsptw.problem.TSPTWSolution
+      :canonical: discrete_optimization.tsptw.problem.TSPTWProblem.get_dummy_solution
+
+      .. autodoc2-docstring:: discrete_optimization.tsptw.problem.TSPTWProblem.get_dummy_solution
+
+   .. py:method:: get_solution_type() -> type
+      :canonical: discrete_optimization.tsptw.problem.TSPTWProblem.get_solution_type
