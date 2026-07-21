@@ -29,10 +29,6 @@ from discrete_optimization.generic_tasks_tools.enums import StartOrEnd
 from discrete_optimization.generic_tasks_tools.generic_scheduling import (
     GenericSchedulingProblem,
 )
-from discrete_optimization.generic_tasks_tools.no_overlap import (
-    NoOverlapProblem,
-    WithoutNoOverlapProblem,
-)
 from discrete_optimization.generic_tasks_tools.skill import NoSkill, WithoutSkillProblem
 from discrete_optimization.generic_tools.do_problem import (
     ModeOptim,
@@ -77,11 +73,9 @@ class RcpspProblem(
     GenericSchedulingProblem[
         Task, NoUnaryResource, NoSkill, NonSkillCumulativeResource, NonRenewableResource
     ],
-    WithoutNoOverlapProblem[Task],
     WithoutSkillProblem[
         Task, NoUnaryResource, NonSkillCumulativeResource, NoUnaryResource
     ],
-    NoOverlapProblem[Task],
     WithoutAllocationProblem[Task],
 ):
     """Main class for RCPSP problem.
@@ -155,7 +149,7 @@ class RcpspProblem(
         >>> problem = RcpspProblem(
         ...     resources=resources,
         ...     non_renewable_resources=non_renewable_resources,
-        ...     mode_details=mode_details,
+        ...     # mode_details=mode_details,  # forget a parameter
         ...     successors=successors,
         ...     horizon=20, # Maximum time allowed for the project
         ...     source_task="source",
@@ -311,16 +305,25 @@ class RcpspProblem(
         if self.do_special_constraints:
             self.predecessors = self.graph.predecessors_dict
 
+    def get_no_overlap(self) -> set[frozenset[Task]]:
+        if self.do_special_constraints:
+            return {
+                frozenset(disjunctive_pair)
+                for disjunctive_pair in self.special_constraints.disjunctive_tasks
+            }
+        else:
+            return set()
+
     def update_calendars(self):
         self.is_calendar = False
         if any(isinstance(self.resources[res], Iterable) for res in self.resources):
             self.is_calendar = (
                 max(
                     (
-                        len(
-                            {self.resources[res]}
-                            if np.isscalar(self.resources[res])
-                            else set(self.resources[res])  # type: ignore
+                        1
+                        if np.isscalar(self.resources[res])
+                        else len(
+                            set(self.resources[res])  # type: ignore
                         )
                         for res in self.resources
                     )
