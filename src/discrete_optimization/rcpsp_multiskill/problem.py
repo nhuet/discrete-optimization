@@ -2253,6 +2253,9 @@ class MultiskillRcpspProblem(
         super().update_resource_availabilities()
         self.get_resource_availabilities.cache_clear()
 
+    def is_optional(self, task: Task) -> bool:
+        return False
+
     def get_no_overlap(self) -> set[frozenset[Task]]:
         if self.do_special_constraints:
             return {

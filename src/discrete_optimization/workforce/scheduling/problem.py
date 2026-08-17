@@ -198,6 +198,9 @@ class AllocSchedulingProblem(
         """Overridden from base AllocationProblem class"""
         return self.same_allocation
 
+    def is_optional(self, task: Task) -> bool:
+        return False
+
     @property
     def non_skill_cumulative_resources_list(self) -> list[NonSkillCumulativeResource]:
         return self.resources_list
