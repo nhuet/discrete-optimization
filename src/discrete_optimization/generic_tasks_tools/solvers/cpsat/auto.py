@@ -161,6 +161,7 @@ class GenericSchedulingAutoCpSatSolver(
     demand_variables: dict[Task, dict[AnyResource, LinearExprT]]
     energy_variables: dict[Task, dict[AnyResource, LinearExprT]]
     mode_cost_variables: dict[Task, LinearExprT]
+    task_is_scheduled: dict[Task, IntVar]
     unary_resource_cost_variables: dict[Task, dict[UnaryResource, LinearExprT]]
     all_used_variables: dict[AnyResource, IntVar]
     """Variables tracking whether a (unary, cumulative, or non-renewable) resource has been used at least once."""
@@ -1084,6 +1085,10 @@ class GenericSchedulingAutoCpSatSolver(
                 end=self.start_or_end_variables[task, StartOrEnd.END],
                 name=f"interval_{task}",
             )
+
+    def get_task_scheduled_variable(self, task: Task) -> LinearExprT:
+        """Return a boolean variable telling whether a given task is scheduled."""
+        return self.task_is_scheduled.get(task, 1)
 
     def get_cumulative_resource_demand_variable(
         self, task: Task, resource: CumulativeResource

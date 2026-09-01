@@ -1,8 +1,11 @@
 #  Copyright (c) 2026 AIRBUS and its affiliates.
 #  This source code is licensed under the MIT license found in the
 #  LICENSE file in the root directory of this source tree.
+from abc import abstractmethod
 from functools import reduce
 from typing import Generic
+
+from ortools.sat.python.cp_model import LinearExprT
 
 from discrete_optimization.generic_tasks_tools.alternative_subproblems import (
     AlternativeSchedulingProblem,
@@ -19,6 +22,17 @@ class AlternativeSubproblemCpSatSolver(
     MultimodeSchedulingCpSatSolver[Task], Generic[Task]
 ):
     problem: AlternativeSchedulingProblem[Task]
+
+    @abstractmethod
+    def get_task_scheduled_variable(self, task: Task) -> LinearExprT:
+        """
+
+        Args:
+            task:
+
+        Returns:
+
+        """
 
     def create_alternative_subproblems_constraints(self):
         subproblems = self.problem.get_alternative_scheduling_subproblem()
