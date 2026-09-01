@@ -50,16 +50,18 @@ class SchedulingEntity(Generic[Task]):
     - "Group of tasks must finish before another task starts" (precedence)
     - "Resource blocked from end of group to start of task" (resource blocking)
     - "If task is in mode 2, then block resource X" (conditional blocking)
-    Examples:
+    - "All phases of a project must respect a resource limit" (hierarchical constraints)
+
+    Example:
         >>> from discrete_optimization.generic_tasks_tools.entities import TaskEntity, GroupEntity
         >>> # Individual task
         >>> task_ent = TaskEntity("paint")
         >>> # Group of tasks
         >>> group_ent = GroupEntity(frozenset({"prep", "paint", "dry"}), "painting_job")
         >>> # Query in solution
-        #>>> start = task_ent.get_start_time(solution)
-        #>>> group_start = group_ent.get_start_time(solution)  # min of task starts
-    - "All phases of a project must respect a resource limit" (hierarchical constraints)
+        >>> # start = task_ent.get_start_time(solution)
+        >>> # group_start = group_ent.get_start_time(solution)  # min of task starts
+
     """
 
     @abstractmethod
