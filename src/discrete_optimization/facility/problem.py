@@ -22,7 +22,11 @@ from discrete_optimization.generic_tasks_tools.allocation import (
     AllocationProblem,
     AllocationSolution,
 )
-from discrete_optimization.generic_tasks_tools.base import Task
+from discrete_optimization.generic_tasks_tools.base import (
+    NoOptionalTasksProblem,
+    NoOptionalTasksSolution,
+    Task,
+)
 from discrete_optimization.generic_tools.do_problem import (
     ModeOptim,
     ObjectiveDoc,
@@ -59,7 +63,9 @@ class Customer:
     location: Point
 
 
-class FacilitySolution(AllocationSolution[Customer, Facility]):
+class FacilitySolution(
+    AllocationSolution[Customer, Facility], NoOptionalTasksSolution[Task]
+):
     """Solution object for facility location
 
     Attributes:
@@ -104,11 +110,10 @@ class FacilitySolution(AllocationSolution[Customer, Facility]):
     def is_allocated(self, task: Customer, unary_resource: Facility) -> bool:
         return self.facility_for_customers[task.index] == unary_resource.index
 
-    def is_present(self, task: Task) -> bool:
-        return self.facility_for_customers[task] is not None
 
-
-class FacilityProblem(AllocationProblem[Customer, Facility]):
+class FacilityProblem(
+    AllocationProblem[Customer, Facility], NoOptionalTasksProblem[Task]
+):
     """Base class for the facility problem.
 
     Attributes:
@@ -131,9 +136,6 @@ class FacilityProblem(AllocationProblem[Customer, Facility]):
         self.customer_count = customer_count
         self.facilities = facilities
         self.customers = customers
-
-    def is_optional(self, task: Task) -> bool:
-        return False
 
     @property
     def unary_resources_list(self) -> list[Facility]:

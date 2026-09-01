@@ -12,7 +12,10 @@ from typing import Any, Iterable, Optional
 
 import pytest
 
-from discrete_optimization.generic_tasks_tools.base import NoOptionalTasksProblem
+from discrete_optimization.generic_tasks_tools.base import (
+    NoOptionalTasksProblem,
+    NoOptionalTasksSolution,
+)
 from discrete_optimization.generic_tasks_tools.enums import StartOrEnd
 from discrete_optimization.generic_tasks_tools.generic_scheduling import (
     GenericSchedulingProblem,
@@ -66,6 +69,7 @@ class MySolution(
     GenericSchedulingSolution[
         Task, UnaryResource, Skill, NonSkillCumulativeResource, NonRenewableResource
     ],
+    NoOptionalTasksSolution[Task],
     WithoutSkillSolution[
         Task, UnaryResource, NonSkillCumulativeResource, UnaryResource
     ],

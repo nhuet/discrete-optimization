@@ -5,6 +5,7 @@
 
 import pytest
 
+from discrete_optimization.generic_tasks_tools.base import NoOptionalTasksSolution
 from discrete_optimization.generic_tasks_tools.entities import (
     CompositeEntity,
     GroupEntity,
@@ -34,7 +35,10 @@ class MockTask:
         return f"Task({self.id})"
 
 
-class MockSchedulingSolution(SchedulingSolution):
+Task = MockTask
+
+
+class MockSchedulingSolution(SchedulingSolution[Task], NoOptionalTasksSolution[Task]):
     """Mock solution for testing entity queries."""
 
     def __init__(self, task_times, task_modes=None):
@@ -59,7 +63,7 @@ class MockSchedulingSolution(SchedulingSolution):
         )
 
 
-class MockMultimodeSolution(MultimodeSolution):
+class MockMultimodeSolution(MultimodeSolution[Task], NoOptionalTasksSolution[Task]):
     """Mock multimode solution for testing mode-aware entities."""
 
     def __init__(self, task_times, task_modes):

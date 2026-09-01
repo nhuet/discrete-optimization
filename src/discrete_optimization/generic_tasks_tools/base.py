@@ -69,6 +69,13 @@ class TasksSolution(Solution, Generic[Task]):
         return [t for t in self.problem.tasks_list if self.is_present(t)]
 
 
+class NoOptionalTasksSolution(TasksSolution[Task]):
+    problem: NoOptionalTasksProblem[Task]
+
+    def is_present(self, task: Task) -> bool:
+        return True
+
+
 class TasksCpSolver(CpSolver, Generic[Task]):
     """Base class for cp solver handling tasks problems."""
 

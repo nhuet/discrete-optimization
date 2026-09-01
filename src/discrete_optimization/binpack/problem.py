@@ -9,12 +9,15 @@ from copy import deepcopy
 from dataclasses import dataclass, field
 from typing import Hashable
 
-from discrete_optimization.generic_tasks_tools import AbsentValue
 from discrete_optimization.generic_tasks_tools.allocation import (
     AllocationProblem,
     AllocationSolution,
 )
-from discrete_optimization.generic_tasks_tools.base import NoOptionalTasksProblem, Task
+from discrete_optimization.generic_tasks_tools.base import (
+    NoOptionalTasksProblem,
+    NoOptionalTasksSolution,
+    Task,
+)
 from discrete_optimization.generic_tasks_tools.scheduling import (
     SchedulingProblem,
     SchedulingSolution,
@@ -39,7 +42,11 @@ Item = int
 BinPack = int
 
 
-class BinPackSolution(AllocationSolution[Item, BinPack], SchedulingSolution[Item]):
+class BinPackSolution(
+    NoOptionalTasksSolution[Task],
+    AllocationSolution[Item, BinPack],
+    SchedulingSolution[Item],
+):
     problem: BinPackProblem
 
     def __init__(self, problem: BinPackProblem, allocation: list[int]):
@@ -49,12 +56,6 @@ class BinPackSolution(AllocationSolution[Item, BinPack], SchedulingSolution[Item
     def copy(self) -> BinPackSolution:
         return BinPackSolution(
             problem=self.problem, allocation=deepcopy(self.allocation)
-        )
-
-    def is_present(self, task: Task) -> bool:
-        return (
-            self.allocation[task] is not None
-            and self.allocation[task] != AbsentValue.ABSENT
         )
 
     def get_end_time(self, task: Item) -> int:

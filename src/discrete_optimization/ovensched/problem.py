@@ -11,7 +11,10 @@ from discrete_optimization.generic_tasks_tools.allocation import (
     AllocationProblem,
     AllocationSolution,
 )
-from discrete_optimization.generic_tasks_tools.base import NoOptionalTasksProblem
+from discrete_optimization.generic_tasks_tools.base import (
+    NoOptionalTasksProblem,
+    NoOptionalTasksSolution,
+)
 from discrete_optimization.generic_tasks_tools.scheduling import (
     SchedulingProblem,
     SchedulingSolution,
@@ -49,14 +52,13 @@ class ScheduleInfo:
 
 
 class OvenSchedulingSolution(
-    SchedulingSolution[Task], AllocationSolution[Task, UnaryResource]
+    SchedulingSolution[Task],
+    AllocationSolution[Task, UnaryResource],
+    NoOptionalTasksSolution[Task],
 ):
     """
     Represents a solution to the Oven Scheduling Problem.
     """
-
-    def is_present(self, task: Task) -> bool:
-        return task in self.schedule_per_task
 
     problem: OvenSchedulingProblem
 

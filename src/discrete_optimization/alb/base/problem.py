@@ -22,6 +22,10 @@ from discrete_optimization.generic_tasks_tools.allocation import (
     AllocationProblem,
     AllocationSolution,
 )
+from discrete_optimization.generic_tasks_tools.base import (
+    NoOptionalTasksProblem,
+    NoOptionalTasksSolution,
+)
 from discrete_optimization.generic_tasks_tools.precedence import PrecedenceProblem
 from discrete_optimization.generic_tasks_tools.scheduling import (
     SchedulingProblem,
@@ -125,6 +129,7 @@ class ResourceTaskData(TaskData):
 class BaseALBSolution(
     SchedulingSolution[Task],
     AllocationSolution[Task, Station],
+    NoOptionalTasksSolution[Task],
     Generic[Task, Station],
 ):
     """
@@ -264,6 +269,7 @@ class BaseALBProblem(
     PrecedenceProblem[Task],
     AllocationProblem[Task, Station],
     SchedulingProblem[Task],
+    NoOptionalTasksProblem[Task],
     Generic[Task, Station],
 ):
     """

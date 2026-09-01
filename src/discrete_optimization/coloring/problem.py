@@ -15,12 +15,15 @@ from typing import Optional, Union
 
 import numpy as np
 
-from discrete_optimization.generic_tasks_tools import AbsentValue
 from discrete_optimization.generic_tasks_tools.allocation import (
     AllocationProblem,
     AllocationSolution,
 )
-from discrete_optimization.generic_tasks_tools.base import NoOptionalTasksProblem, Task
+from discrete_optimization.generic_tasks_tools.base import (
+    NoOptionalTasksProblem,
+    NoOptionalTasksSolution,
+    Task,
+)
 from discrete_optimization.generic_tools.do_problem import (
     ModeOptim,
     ObjectiveDoc,
@@ -40,7 +43,7 @@ Node = Hashable  # node to color
 Color = int  # color
 
 
-class ColoringSolution(AllocationSolution[Node, Color]):
+class ColoringSolution(AllocationSolution[Node, Color], NoOptionalTasksSolution[Task]):
     """Solution class for graph coloring problem.
 
     The object contains a pointer to the problem instance,
@@ -72,9 +75,6 @@ class ColoringSolution(AllocationSolution[Node, Color]):
         self.colors = colors
         self.nb_color = nb_color
         self.nb_violations = nb_violations
-
-    def is_present(self, task: Task) -> bool:
-        return self.colors[task] is not None and self.colors[task] != AbsentValue.ABSENT
 
     def copy(self) -> ColoringSolution:
         """Efficient way of copying a coloring solution without deepcopying unnecessary attribute (problem).
