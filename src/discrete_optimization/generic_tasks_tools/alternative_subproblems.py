@@ -61,14 +61,6 @@ class AlternativeSchedulingSubProblem:
 
 
 class AlternativeSchedulingProblem(MultimodeSchedulingProblem[Task], Generic[Task]):
-    # @abstractmethod
-    def get_alternative_scheduling_subproblem(
-        self,
-    ) -> list[AlternativeSchedulingSubProblem]:
-        return []
-
-
-class NoAlternativeSchedulingProblem(AlternativeSchedulingProblem[Task]):
     def get_alternative_scheduling_subproblem(
         self,
     ) -> list[AlternativeSchedulingSubProblem]:
