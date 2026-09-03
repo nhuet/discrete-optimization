@@ -127,7 +127,6 @@ def parse_pytest_output(input: TextIO | None = None):
                 f"### ⚠️ Non-regression tests{' for ' + worker_id if worker_id else ''}\n\n"
                 f"{failure_types_found.capitalize()} found. See [workflow logs]({get_workflow_summary_url()}) for more details.\n"
             )
-            print(f"Comment sent to the PR:\n{PR_comment}")
             with open(PR_COMMENT_FILE, "at", encoding="utf-8") as f:
                 f.write(PR_comment)
 

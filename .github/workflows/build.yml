@@ -101,7 +101,7 @@ jobs:
           TARGET_STEP_NAME: "Test non-regression"
         run: |
           pytest -v $(python tests/find_non_regression_tests.py) | python -u .github/scripts/parse_non_regression.py || true
-
+          cat ./regressions_pr_comment.md
       - name: Post a comment in the PR triggering the workflow
         if: github.event_name == 'pull_request' && hashFiles('./regressions_pr_comment.md') != ''
         uses: actions/github-script@v9.0.0
