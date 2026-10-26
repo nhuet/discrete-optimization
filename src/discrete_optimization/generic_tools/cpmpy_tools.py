@@ -8,12 +8,12 @@ import inspect
 from abc import abstractmethod
 from collections.abc import Callable
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, Iterable, Optional
 
 import cpmpy
-from cpmpy import SolverLookup
+from cpmpy import Maximum, SolverLookup
 from cpmpy.expressions.core import BoolVal, Expression
-from cpmpy.expressions.variables import NDVarArray, _BoolVarImpl
+from cpmpy.expressions.variables import NDVarArray, _BoolVarImpl, boolvar, intvar
 from cpmpy.model import Model
 from cpmpy.solvers.solver_interface import ExitStatus, SolverInterface, SolverStatus
 from cpmpy.tools import make_assump_model
@@ -36,7 +36,6 @@ from discrete_optimization.generic_tools.callbacks.callback import (
 from discrete_optimization.generic_tools.cp_tools import (
     CpSolver,
     ParametersCp,
-    SignEnum,
 )
 from discrete_optimization.generic_tools.do_problem import (
     ParamsObjectiveFunction,
@@ -149,21 +148,29 @@ class CpmpySolver(CpSolver):
     def minimize_variable(self, var: Any) -> None:
         self.cp_model.minimize(var)
 
-    def add_bound_constraint(self, var: Any, sign: SignEnum, value: int) -> list[Any]:
-        if sign == SignEnum.LEQ:
-            cstr = var <= value
-        elif sign == SignEnum.UEQ:
-            cstr = var >= value
-        elif sign == SignEnum.EQUAL:
-            cstr = var == value
-        elif sign == SignEnum.LESS:
-            cstr = var < value
-        elif sign == SignEnum.UP:
-            cstr = var > value
-        else:
-            raise NotImplementedError(sign)
+    def add_bool_constraint(self, cstr: Any) -> Any:
         self.cp_model.add(cstr)
-        return [cstr]
+        return cstr
+
+    def create_int_var(self, lb: int, ub: int, name: str) -> Any:
+        return intvar(lb=lb, ub=ub, name=name)
+
+    def create_bool_var(self, name: str) -> Any:
+        return boolvar(name=name)
+
+    def add_max_equality(self, target: Any, variables: Iterable[Any]) -> list[Any]:
+        cstr = target == Maximum(list(variables))
+        self.cp_model.add(cstr)
+        return cstr
+
+    def remove_constraints(self, constraints: Iterable[Any]) -> None:
+        constraints_to_remove = set(constraints)
+        self.cp_model.constraints = [
+            cstr
+            for cstr in self.cp_model.constraints
+            if cstr not in constraints_to_remove
+        ]
+        self.reset_cpm_solver()
 
     def create_callback_function(self, callback: Callback):
         self.cb_object = _CpmpyCbClass(do_solver=self, callback=callback)

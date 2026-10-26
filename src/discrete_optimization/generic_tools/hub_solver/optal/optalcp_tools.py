@@ -15,7 +15,6 @@ from discrete_optimization.generic_tools.callbacks.callback import (
 from discrete_optimization.generic_tools.cp_tools import (
     CpSolver,
     ParametersCp,
-    SignEnum,
 )
 from discrete_optimization.generic_tools.do_problem import (
     ParamsObjectiveFunction,
@@ -193,19 +192,9 @@ class OptalCpSolver(CpSolver, BoundsProviderMixin):
     def minimize_variable(self, var: Any) -> None:
         self.cp_model.minimize(var)
 
-    def add_bound_constraint(self, var: Any, sign: SignEnum, value: int) -> list[Any]:
-        if sign == SignEnum.LEQ:
-            expr = var <= value
-        if sign == SignEnum.UEQ:
-            expr = var >= value
-        if sign == SignEnum.UP:
-            expr = var > value
-        if sign == SignEnum.LESS:
-            expr = var < value
-        if sign == SignEnum.EQUAL:
-            expr = var == value
-        self.cp_model.enforce(expr)
-        return [expr]
+    def add_bool_constraint(self, cstr: Any) -> Any:
+        self.cp_model.enforce(cstr)
+        return cstr
 
     @abstractmethod
     def retrieve_solution(self, result: "cp.SolveResult") -> Solution:
