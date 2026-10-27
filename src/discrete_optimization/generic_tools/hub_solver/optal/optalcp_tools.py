@@ -1,7 +1,7 @@
 # Generic optal-cp python wrapper.
 import asyncio
 import threading
-from typing import Awaitable, TypeVar
+from typing import Awaitable, Iterable, Sequence, TypeVar
 
 T = TypeVar("T")
 import logging
@@ -192,9 +192,71 @@ class OptalCpSolver(CpSolver, BoundsProviderMixin):
     def minimize_variable(self, var: Any) -> None:
         self.cp_model.minimize(var)
 
+    def maximize_variable(self, var: Any) -> None:
+        self.cp_model.maximize(var)
+
     def add_bool_constraint(self, cstr: Any) -> Any:
         self.cp_model.enforce(cstr)
         return cstr
+
+    def create_int_var(self, lb: int, ub: int, name: str) -> Any:
+        return self.cp_model.int_var(min=lb, max=ub, name=name)
+
+    def create_int_var_from_possible_values(
+        self, possible_values: Iterable[int], name: str
+    ) -> Any:
+        pass
+
+    def create_int_var_from_flat_intervals(
+        self, flat_intervals: Iterable[int], name: str
+    ) -> Any:
+        pass
+
+    def create_bool_var(self, name: str) -> Any:
+        pass
+
+    def add_max_equality(self, target: Any, variables: Iterable[Any]) -> list[Any]:
+        pass
+
+    def add_min_equality(self, target: Any, variables: Iterable[Any]) -> list[Any]:
+        pass
+
+    def add_abs_equality(self, target: Any, expr: Any) -> list[Any]:
+        pass
+
+    def add_element(
+        self, index: Any, expressions: Sequence[Any], target: Any
+    ) -> list[Any]:
+        pass
+
+    def add_modulo_equality(self, target: Any, expr: Any, mod: Any) -> list[Any]:
+        pass
+
+    def add_in_intervals(self, expr: Any, intervals: Iterable[tuple[int, int]]):
+        pass
+
+    def add_implication(self, left_bool_expr: Any, right_bool_expr: Any) -> list[Any]:
+        pass
+
+    def add_bool_and(self, *exprs: Any) -> list[Any]:
+        pass
+
+    def add_allowed_assignments(
+        self, variables: Sequence[Any], values: Iterable[Sequence[int]]
+    ) -> list[Any]:
+        pass
+
+    def add_exactly_one(self, exprs: Iterable[Any]) -> list[Any]:
+        pass
+
+    def add_at_most_one(self, exprs: Iterable[Any]) -> list[Any]:
+        pass
+
+    def add_at_least_one(self, exprs: Iterable[Any]) -> list[Any]:
+        pass
+
+    def hint_solution(self, hints: dict[Any, int | bool]) -> None:
+        pass
 
     @abstractmethod
     def retrieve_solution(self, result: "cp.SolveResult") -> Solution:
