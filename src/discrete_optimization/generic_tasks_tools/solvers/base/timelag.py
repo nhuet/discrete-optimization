@@ -85,35 +85,23 @@ class TimelagCpBaseSolver(SchedulingCpBaseSolver[Task]):
             set(max_timelags).union(max_timelags_0_offset)
         )
         for task1, task2, offset in min_only_timelags:
-            constraint = self.add_bool_constraint(
-                self.get_task_start_or_end_variable(
-                    task=task1, start_or_end=task1_start_or_end
-                )
-                + offset
-                <= self.get_task_start_or_end_variable(
-                    task=task2, start_or_end=task2_start_or_end
-                )
+            expr = self.get_task_start_or_end_variable(
+                task=task1, start_or_end=task1_start_or_end
+            ) + offset <= self.get_task_start_or_end_variable(
+                task=task2, start_or_end=task2_start_or_end
             )
             # handle optional tasks
-            enforce_only_if_tasks_present(
-                constraint=constraint, tasks=(task1, task2), solver=self
-            )
+            enforce_only_if_tasks_present(expr=expr, tasks=(task1, task2), solver=self)
         # max only constraints
         max_only_timelags = set(max_timelags).difference(min_timelags)
         for task1, task2, offset in max_only_timelags:
-            constraint = self.add_bool_constraint(
-                self.get_task_start_or_end_variable(
-                    task=task1, start_or_end=task1_start_or_end
-                )
-                + offset
-                >= self.get_task_start_or_end_variable(
-                    task=task2, start_or_end=task2_start_or_end
-                )
+            expr = self.get_task_start_or_end_variable(
+                task=task1, start_or_end=task1_start_or_end
+            ) + offset >= self.get_task_start_or_end_variable(
+                task=task2, start_or_end=task2_start_or_end
             )
             # handle optional tasks
-            enforce_only_if_tasks_present(
-                constraint=constraint, tasks=(task1, task2), solver=self
-            )
+            enforce_only_if_tasks_present(expr=expr, tasks=(task1, task2), solver=self)
 
     def create_timelag_constraints(self) -> None:
         """Add precedence constraints to cp model."""

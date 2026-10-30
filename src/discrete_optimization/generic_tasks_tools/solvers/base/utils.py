@@ -19,7 +19,7 @@ from discrete_optimization.generic_tasks_tools.solvers.base.scheduling import (
     SchedulingCpBaseSolver,
 )
 from discrete_optimization.generic_tasks_tools.solvers.base.typing import (
-    Constraint,
+    BoolExpr,
     LinearExpr,
 )
 
@@ -224,14 +224,12 @@ def create_resource_dependent_variable(
 
 
 def enforce_only_if_tasks_present(
-    constraint: Constraint, tasks: Iterable[Task], solver: TasksCpBaseSolver[Task]
+    expr: BoolExpr, tasks: Iterable[Task], solver: TasksCpBaseSolver[Task]
 ):
     """Enforce given constraints only if all given tasks are present.
 
-    Do nothing if all tasks are mandatory.
-
     Args:
-        constraint:
+        expr:
         tasks:
         solver:
 
@@ -244,9 +242,9 @@ def enforce_only_if_tasks_present(
         if solver.problem.is_optional(task)
     )
     if len(is_present_tasks_variables) > 0:
-        return solver.add_implication(is_present_tasks_variables, constraint)
+        return solver.add_implication(is_present_tasks_variables, expr)
     else:
-        return constraint
+        return solver.add_bool_constraint(expr)
 
 
 def create_span_start_end_variables(

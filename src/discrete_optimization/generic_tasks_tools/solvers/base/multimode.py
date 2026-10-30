@@ -58,7 +58,7 @@ class MultimodeCpBaseSolver(TasksCpBaseSolver[Task], MultimodeCpSolver[Task]):
             ]
             if mode_constraint == ModeConstraintType.SORTED_IMPLICATION:
                 # All true if vars[0] is true.
-                self.add_implication(vars[0], self.add_bool_and(vars))
+                self.add_implication_bool_and(vars[0], vars)
                 self.add_implication(vars[0], sum(vars) == len(vars))
                 for i in range(1, len(vars)):
                     self.add_implication(vars[i - 1], vars[i])
@@ -102,7 +102,7 @@ class MultimodeCpBaseSolver(TasksCpBaseSolver[Task], MultimodeCpSolver[Task]):
                     )
             if mode_constraint == ModeConstraintType.SORTED_IMPLICATION:
                 # All true if vars[0] is true.
-                self.add_implication(vars[0], self.add_bool_and(vars))
+                self.add_implication_bool_and(vars[0], vars)
                 self.add_implication(vars[0], sum(vars) == len(vars))
                 for k in range(1, len(vars)):
                     self.add_implication(vars[k - 1], vars[k])

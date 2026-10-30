@@ -106,14 +106,12 @@ class CalendarPreemptiveCpBaseSolver(
         is_present_mode = self.get_task_mode_is_present_variable(task=task, mode=mode)
         if len(positive_durations) == 1:
             dur = int(positive_durations[0])
-            self.add_implication(
-                is_present_mode,
-                self.add_in_intervals(
-                    self.get_task_start_or_end_variable(
-                        task, start_or_end=StartOrEnd.START
-                    ),
-                    duration_per_interval[dur],
+            self.add_implication_in_intervals(
+                left_bool_expr=is_present_mode,
+                right_expr=self.get_task_start_or_end_variable(
+                    task, start_or_end=StartOrEnd.START
                 ),
+                intervals=duration_per_interval[dur],
             )
             self.add_implication(
                 is_present_mode, self.get_duration_variable(task) == dur
@@ -126,12 +124,14 @@ class CalendarPreemptiveCpBaseSolver(
                 dictionary_indicators[((task, mode), possible_duration)] = (
                     self.create_bool_var(f"d_{(task, mode), possible_duration}")
                 )
-                self.add_implication(
-                    dictionary_indicators[((task, mode), possible_duration)],
-                    self.add_in_intervals(
-                        self.get_task_start_or_end_variable(task, StartOrEnd.START),
-                        duration_per_interval[possible_duration],
+                self.add_implication_in_intervals(
+                    left_bool_expr=dictionary_indicators[
+                        ((task, mode), possible_duration)
+                    ],
+                    right_expr=self.get_task_start_or_end_variable(
+                        task, StartOrEnd.START
                     ),
+                    intervals=duration_per_interval[possible_duration],
                 )
                 self.add_implication(
                     dictionary_indicators[((task, mode), possible_duration)],
@@ -164,12 +164,10 @@ class CalendarPreemptiveCpBaseSolver(
         is_present_mode = self.get_task_mode_is_present_variable(task, mode)
         if len(positive_durations) == 1:
             dur = int(positive_durations[0])
-            self.add_implication(
+            self.add_implication_in_intervals(
                 is_present_mode,
-                self.add_in_intervals(
-                    self.get_task_start_or_end_variable(task, StartOrEnd.START),
-                    duration_per_interval[dur],
-                ),
+                self.get_task_start_or_end_variable(task, StartOrEnd.START),
+                duration_per_interval[dur],
             )
             self.add_implication(
                 is_present_mode, self.get_duration_expression(task) == dur

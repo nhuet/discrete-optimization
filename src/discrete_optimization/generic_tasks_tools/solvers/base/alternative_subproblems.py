@@ -63,46 +63,38 @@ class AlternativeSubproblemCpBaseSolver(
             if alternative_problem.is_path_successors:
                 for p in ps:
                     for p0, p1 in zip(p[:-1], p[1:]):
-                        cstr = self.add_bool_constraint(
-                            self.get_task_start_or_end_variable(p1, StartOrEnd.START)
-                            >= self.get_task_start_or_end_variable(p0, StartOrEnd.END)
-                        )
+                        expr = self.get_task_start_or_end_variable(
+                            p1, StartOrEnd.START
+                        ) >= self.get_task_start_or_end_variable(p0, StartOrEnd.END)
                         enforce_only_if_tasks_present(
-                            constraint=cstr, tasks=(p1, p0), solver=self
+                            expr=expr, tasks=(p1, p0), solver=self
                         )
                 for p in alternative_problem.list_paths:
                     for p0, p1 in zip(p[:-1], p[1:]):
-                        cstr = self.add_bool_constraint(
-                            self.get_task_start_or_end_variable(p1, StartOrEnd.START)
-                            >= self.get_task_start_or_end_variable(p0, StartOrEnd.END)
-                        )
+                        expr = self.get_task_start_or_end_variable(
+                            p1, StartOrEnd.START
+                        ) >= self.get_task_start_or_end_variable(p0, StartOrEnd.END)
                         enforce_only_if_tasks_present(
-                            constraint=cstr, tasks=(p1, p0), solver=self
+                            expr=expr, tasks=(p1, p0), solver=self
                         )
 
                     if p[0] != alternative_problem.source_task:
-                        cstr = self.add_bool_constraint(
-                            self.get_task_start_or_end_variable(p[0], StartOrEnd.START)
-                            >= self.get_task_start_or_end_variable(
-                                alternative_problem.source_task, StartOrEnd.END
-                            )
+                        expr = self.get_task_start_or_end_variable(
+                            p[0], StartOrEnd.START
+                        ) >= self.get_task_start_or_end_variable(
+                            alternative_problem.source_task, StartOrEnd.END
                         )
                         enforce_only_if_tasks_present(
-                            constraint=cstr,
+                            expr=expr,
                             tasks=(p[0], alternative_problem.source_task),
                             solver=self,
                         )
                     if p[-1] != alternative_problem.sink_task:
-                        cstr = self.add_bool_constraint(
-                            self.get_task_start_or_end_variable(
-                                alternative_problem.sink_task, StartOrEnd.START
-                            )
-                            >= self.get_task_start_or_end_variable(
-                                p[-1], StartOrEnd.END
-                            )
-                        )
+                        expr = self.get_task_start_or_end_variable(
+                            alternative_problem.sink_task, StartOrEnd.START
+                        ) >= self.get_task_start_or_end_variable(p[-1], StartOrEnd.END)
                         enforce_only_if_tasks_present(
-                            constraint=cstr,
+                            expr=expr,
                             tasks=(alternative_problem.sink_task, p[-1]),
                             solver=self,
                         )

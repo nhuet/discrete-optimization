@@ -641,23 +641,15 @@ class GenericSchedulingAutoCpBaseSolver(
                         if self.use_only_skill_to_allocate:
                             if self.problem.only_one_skill_per_task:
                                 # allocation => exactly one skill used
-                                self.add_implication(
+                                self.add_implication_exactly_one(
                                     is_allocated,
-                                    self.add_exactly_one(
-                                        self.skill_variables[task][
-                                            unary_resource
-                                        ].values()
-                                    ),
+                                    self.skill_variables[task][unary_resource].values(),
                                 )
                             else:
                                 # allocation => at least one skill used
-                                self.add_implication(
+                                self.add_implication_at_least_one(
                                     is_allocated,
-                                    self.add_at_least_one(
-                                        self.skill_variables[task][
-                                            unary_resource
-                                        ].values()
-                                    ),
+                                    self.skill_variables[task][unary_resource].values(),
                                 )
                         elif self.problem.only_one_skill_per_task:
                             # at most one skill from each resource used for a given task

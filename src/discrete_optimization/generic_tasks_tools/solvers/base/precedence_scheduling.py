@@ -23,15 +23,12 @@ class PrecedenceSchedulingCpBaseSolver(SchedulingCpBaseSolver[Task]):
         """Add precedence constraints to cp model."""
         for task1, successors in self.problem.get_precedence_constraints().items():
             for task2 in successors:
-                constraint = self.add_bool_constraint(
-                    self.get_task_start_or_end_variable(
-                        task=task1, start_or_end=StartOrEnd.END
-                    )
-                    <= self.get_task_start_or_end_variable(
-                        task=task2, start_or_end=StartOrEnd.START
-                    )
+                expr = self.get_task_start_or_end_variable(
+                    task=task1, start_or_end=StartOrEnd.END
+                ) <= self.get_task_start_or_end_variable(
+                    task=task2, start_or_end=StartOrEnd.START
                 )
                 # handle optional tasks
                 enforce_only_if_tasks_present(
-                    constraint=constraint, tasks=(task1, task2), solver=self
+                    expr=expr, tasks=(task1, task2), solver=self
                 )

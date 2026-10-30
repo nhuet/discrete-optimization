@@ -233,18 +233,6 @@ class OrtoolsCpSatSolver(CpSolver, BoundsProviderMixin):
     def add_modulo_equality(self, target: Any, expr: Any, mod: Any) -> list[Any]:
         return [self.cp_model.add_modulo_equality(target=target, expr=expr, mod=mod)]
 
-    def add_in_intervals(
-        self, expr: Any, intervals: Iterable[tuple[int, int]]
-    ) -> list[Any]:
-        return [
-            self.cp_model.add_linear_expression_in_domain(
-                linear_expr=expr,
-                domain=Domain.from_intervals(
-                    list(list(interval) for interval in intervals)
-                ),
-            )
-        ]
-
     def add_implication(self, left_bool_expr: Any, right_bool_expr: Any) -> list[Any]:
         if isinstance(left_bool_expr, Literal) and isinstance(right_bool_expr, Literal):
             return [self.cp_model.add_implication(left_bool_expr, right_bool_expr)]
@@ -268,8 +256,42 @@ class OrtoolsCpSatSolver(CpSolver, BoundsProviderMixin):
             constraint = self.cp_model.add(right_bool_expr)
             return self.add_implication(left_bool_expr, constraint)
 
-    def add_bool_and(self, *exprs: Any) -> list[Any]:
-        return [self.cp_model.add_bool_and(*exprs)]
+    def add_implication_bool_and(
+        self, left_bool_expr: Any, right_bool_exprs: Sequence[Any]
+    ) -> list[Any]:
+        return [
+            self.cp_model.add_bool_and(right_bool_exprs).only_enforce_if(left_bool_expr)
+        ]
+
+    def add_implication_exactly_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        return [
+            self.cp_model.add_exactly_one(right_bool_exprs).only_enforce_if(
+                left_bool_expr
+            )
+        ]
+
+    def add_implication_at_least_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        return [
+            self.cp_model.add_at_least_one(right_bool_exprs).only_enforce_if(
+                left_bool_expr
+            )
+        ]
+
+    def add_implication_in_intervals(
+        self, left_bool_expr: Any, right_expr: Any, intervals: Iterable[tuple[int, int]]
+    ) -> list[Any]:
+        return [
+            self.cp_model.add_linear_expression_in_domain(
+                linear_expr=right_expr,
+                domain=Domain.from_intervals(
+                    list(list(interval) for interval in intervals)
+                ),
+            ).only_enforce_if(left_bool_expr)
+        ]
 
     def add_allowed_assignments(
         self, variables: Sequence[Any], values: Iterable[Sequence[int]]

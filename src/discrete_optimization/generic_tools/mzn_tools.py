@@ -236,15 +236,27 @@ class MinizincCpSolver(CpSolver):
     def add_modulo_equality(self, target: Any, expr: Any, mod: Any) -> list[Any]:
         raise NotImplementedError()
 
-    def add_in_intervals(
-        self, expr: Any, intervals: Iterable[tuple[int, int]]
-    ) -> list[Any]:
-        raise NotImplementedError()
-
     def add_implication(self, left_bool_expr: Any, right_bool_expr: Any) -> list[Any]:
         raise NotImplementedError()
 
-    def add_bool_and(self, *exprs: Any) -> list[Any]:
+    def add_implication_bool_and(
+        self, left_bool_expr: Any, right_bool_exprs: Sequence[Any]
+    ) -> list[Any]:
+        raise NotImplementedError()
+
+    def add_implication_exactly_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        raise NotImplementedError()
+
+    def add_implication_at_least_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        raise NotImplementedError()
+
+    def add_implication_in_intervals(
+        self, left_bool_expr: Any, right_expr: Any, intervals: Iterable[tuple[int, int]]
+    ) -> list[Any]:
         raise NotImplementedError()
 
     def add_allowed_assignments(

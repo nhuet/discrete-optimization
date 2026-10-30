@@ -711,15 +711,6 @@ class CpmpySolver(CpSolver):
         self.cp_model.add(cstr)
         return [cstr]
 
-    def add_in_intervals(
-        self, expr: Any, intervals: Iterable[tuple[int, int]]
-    ) -> list[Any]:
-        cstr = cpmpy.any(
-            (lb <= expr) & (expr <= ub) for interval in intervals for lb, ub in interval
-        )
-        self.cp_model.add(cstr)
-        return [cstr]
-
     def add_implication(self, left_bool_expr: Any, right_bool_expr: Any) -> list[Any]:
         if isinstance(right_bool_expr, list):
             # add implication for each right member
@@ -753,10 +744,33 @@ class CpmpySolver(CpSolver):
         self.cp_model.add(cstr)
         return [cstr]
 
-    def add_bool_and(self, *exprs: Any) -> list[Any]:
-        cstr = cpmpy.all(exprs)
-        self.cp_model.add(cstr)
-        return [cstr]
+    def add_implication_bool_and(
+        self, left_bool_expr: Any, right_bool_exprs: Sequence[Any]
+    ) -> list[Any]:
+        return super().add_implication_bool_and(
+            left_bool_expr=left_bool_expr, right_bool_exprs=right_bool_exprs
+        )
+
+    def add_implication_exactly_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        return super().add_implication_exactly_one(
+            left_bool_expr=left_bool_expr, right_bool_exprs=right_bool_exprs
+        )
+
+    def add_implication_at_least_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        return super().add_implication_at_least_one(
+            left_bool_expr=left_bool_expr, right_bool_exprs=right_bool_exprs
+        )
+
+    def add_implication_in_intervals(
+        self, left_bool_expr: Any, right_expr: Any, intervals: Iterable[tuple[int, int]]
+    ) -> list[Any]:
+        return super().add_implication_in_intervals(
+            left_bool_expr=left_bool_expr, right_expr=right_expr, intervals=intervals
+        )
 
     def add_allowed_assignments(
         self, variables: Sequence[Any], values: Iterable[Sequence[int]]
@@ -765,20 +779,20 @@ class CpmpySolver(CpSolver):
         self.cp_model.add(cstr)
         return [cstr]
 
+    def bool_and(self, exprs: Sequence[Any]) -> Any:
+        return cpmpy.all(exprs)
+
+    def at_least_one(self, exprs: Iterable[Any]) -> Any:
+        return cpmpy.any(exprs)
+
     def add_exactly_one(self, exprs: Iterable[Any]) -> list[Any]:
-        cstr = sum(exprs) == 1
-        self.cp_model.add(cstr)
-        return [cstr]
+        return super().add_exactly_one(exprs)
 
     def add_at_most_one(self, exprs: Iterable[Any]) -> list[Any]:
-        cstr = sum(exprs) <= 1
-        self.cp_model.add(cstr)
-        return [cstr]
+        return super().add_at_most_one(exprs)
 
     def add_at_least_one(self, exprs: Iterable[Any]) -> list[Any]:
-        cstr = cpmpy.any(exprs)
-        self.cp_model.add(cstr)
-        return [cstr]
+        return super().add_at_least_one(exprs)
 
     def hint_solution(self, hints: dict[Any, int | bool]) -> None:
         self.hints = hints

@@ -28,6 +28,7 @@ Model = Any
 
 Constraint = Any
 
+BoolExpr = Any
 
 CpVar = Any
 """Variable from the cp model."""

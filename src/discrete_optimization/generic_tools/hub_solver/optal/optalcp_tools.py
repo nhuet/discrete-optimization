@@ -3,6 +3,9 @@ import asyncio
 import threading
 from typing import Awaitable, Iterable, Sequence, TypeVar
 
+import numpy as np
+from optalcp import ModelElement
+
 T = TypeVar("T")
 import logging
 from abc import abstractmethod
@@ -189,6 +192,17 @@ class OptalCpSolver(CpSolver, BoundsProviderMixin):
             )
         )
 
+    @abstractmethod
+    def retrieve_solution(self, result: "cp.SolveResult") -> Solution:
+        """Return a d-o solution from the variables computed by minizinc.
+
+        Args:
+            result: output of the cp.solve
+        Returns:
+
+        """
+        ...
+
     def minimize_variable(self, var: Any) -> None:
         self.cp_model.minimize(var)
 
@@ -205,71 +219,138 @@ class OptalCpSolver(CpSolver, BoundsProviderMixin):
     def create_int_var_from_possible_values(
         self, possible_values: Iterable[int], name: str
     ) -> Any:
-        pass
+        lb = min(possible_values)
+        ub = max(possible_values)
+        var = self.cp_model.int_var(min=lb, max=ub, name=name)
+        self.cp_model.enforce(
+            self.cp_model.sum(var == value for value in possible_values) >= 1
+        )
+
+        return var
 
     def create_int_var_from_flat_intervals(
         self, flat_intervals: list[int], name: str
     ) -> Any:
-        pass
+        lb = min(flat_intervals)
+        ub = max(flat_intervals)
+        var = self.cp_model.int_var(min=lb, max=ub, name=name)
+        self.cp_model.enforce(
+            self.cp_model.sum(
+                var.in_range(flat_intervals[i * 2], flat_intervals[i * 2 + 1])
+                for i in range(len(flat_intervals) // 2)
+            )
+            >= 1
+        )
+        return var
 
     def create_bool_var(self, name: str) -> Any:
-        pass
+        return self.cp_model.bool_var(name=name)
 
     def add_max_equality(self, target: Any, variables: Iterable[Any]) -> list[Any]:
-        pass
+        return [self.cp_model.enforce(target == self.cp_model.max(variables))]
 
     def add_min_equality(self, target: Any, variables: Iterable[Any]) -> list[Any]:
-        pass
+        return [self.cp_model.enforce(target == self.cp_model.min(variables))]
 
     def add_abs_equality(self, target: Any, expr: Any) -> list[Any]:
-        pass
+        return [self.cp_model.enforce(target == self.cp_model.abs(expr))]
 
     def add_element(
         self, index: Any, expressions: Sequence[Any], target: Any
     ) -> list[Any]:
-        pass
+        return [
+            self.cp_model.enforce(
+                target == self.cp_model.element(array=expressions, subscript=index)
+            )
+        ]
 
     def add_modulo_equality(self, target: Any, expr: Any, mod: Any) -> list[Any]:
-        pass
-
-    def add_in_intervals(
-        self, expr: Any, intervals: Iterable[tuple[int, int]]
-    ) -> list[Any]:
-        pass
+        raise NotImplementedError()
 
     def add_implication(self, left_bool_expr: Any, right_bool_expr: Any) -> list[Any]:
-        pass
+        if right_bool_expr is None or isinstance(right_bool_expr, cp.Constraint):
+            raise NotImplementedError(
+                "Cannot imply a constraint already added to the model."
+            )
+        if isinstance(right_bool_expr, list):
+            # add implication for each right member
+            return [
+                cstr
+                for right in right_bool_expr
+                for cstr in self.add_implication(left_bool_expr, right)
+            ]
+        # From now, right hand is a bool expression or a literal
+        if not isinstance(right_bool_expr, ModelElement):
+            right_bool_expr = bool(right_bool_expr)
+        if isinstance(left_bool_expr, ModelElement):
+            cstr = self.cp_model.implies(left_bool_expr, right_bool_expr)
+        elif np.isscalar(left_bool_expr):
+            left_eval = bool(left_bool_expr)
+            cstr = self.cp_model.implies(left_eval, right_bool_expr)
+        else:
+            # multiple left hand: all must be true to imply right hand
+            aggregated_left_hand = self.bool_and(
+                *(
+                    expr if isinstance(expr, ModelElement) else bool(expr)
+                    for expr in left_bool_expr
+                )
+            )
+            return self.add_implication(aggregated_left_hand, right_bool_expr)
+        return [self.cp_model.enforce(cstr)]
 
-    def add_bool_and(self, *exprs: Any) -> list[Any]:
-        pass
+    def add_implication_bool_and(
+        self, left_bool_expr: Any, right_bool_exprs: Sequence[Any]
+    ) -> list[Any]:
+        return super().add_implication_bool_and(
+            left_bool_expr=left_bool_expr, right_bool_exprs=right_bool_exprs
+        )
+
+    def add_implication_exactly_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        return super().add_implication_exactly_one(
+            left_bool_expr=left_bool_expr, right_bool_exprs=right_bool_exprs
+        )
+
+    def add_implication_at_least_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        return super().add_implication_at_least_one(
+            left_bool_expr=left_bool_expr, right_bool_exprs=right_bool_exprs
+        )
+
+    def add_implication_in_intervals(
+        self, left_bool_expr: Any, right_expr: Any, intervals: Iterable[tuple[int, int]]
+    ) -> list[Any]:
+        return super().add_implication_in_intervals(
+            left_bool_expr=left_bool_expr, right_expr=right_expr, intervals=intervals
+        )
 
     def add_allowed_assignments(
         self, variables: Sequence[Any], values: Iterable[Sequence[int]]
     ) -> list[Any]:
-        pass
+        return super().add_allowed_assignments(variables=variables, values=values)
+
+    def bool_and(self, exprs: Sequence[Any]) -> Any:
+        return self.cp_model.sum(exprs) == len(exprs)
+
+    def exactly_one(self, exprs: Iterable[Any]) -> Any:
+        return self.cp_model.sum(exprs) == 1
+
+    def at_most_one(self, exprs: Iterable[Any]) -> Any:
+        return self.cp_model.sum(exprs) <= 1
+
+    def at_least_one(self, exprs: Iterable[Any]) -> Any:
+        return self.cp_model.sum(exprs) >= 1
 
     def add_exactly_one(self, exprs: Iterable[Any]) -> list[Any]:
-        pass
+        return super().add_exactly_one(exprs)
 
     def add_at_most_one(self, exprs: Iterable[Any]) -> list[Any]:
-        pass
+        return super().add_at_most_one(exprs)
 
     def add_at_least_one(self, exprs: Iterable[Any]) -> list[Any]:
-        pass
-
-    def hint_solution(self, hints: dict[Any, int | bool]) -> None:
-        pass
-
-    @abstractmethod
-    def retrieve_solution(self, result: "cp.SolveResult") -> Solution:
-        """Return a d-o solution from the variables computed by minizinc.
-
-        Args:
-            result: output of the cp.solve
-        Returns:
-
-        """
-        ...
+        return super().add_at_least_one(exprs)
 
 
 class OptalSolutionCallback:

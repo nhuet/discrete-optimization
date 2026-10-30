@@ -164,6 +164,46 @@ class CpSolver(SolverDO):
         """Set the cp solver objective as minimizing `var`."""
         self.minimize_variable(-var)
 
+    def add_bound_constraint(self, var: Any, sign: SignEnum, value: int) -> list[Any]:
+        """Add constraint of bound type on an integer variable (or expression) of the underlying cp model.
+
+        `var` must compare to `value` according to `value`.
+
+        Args:
+            var:
+            sign:
+            value:
+
+        Returns:
+
+        """
+        if sign == SignEnum.LEQ:
+            cstr = var <= value
+        elif sign == SignEnum.UEQ:
+            cstr = var >= value
+        elif sign == SignEnum.EQUAL:
+            cstr = var == value
+        elif sign == SignEnum.LESS:
+            cstr = var < value
+        elif sign == SignEnum.UP:
+            cstr = var > value
+        else:
+            raise NotImplementedError(sign)
+        return [self.add_bool_constraint(cstr)]
+
+    @abstractmethod
+    def add_bool_constraint(self, cstr: Any) -> Any:
+        """Add boolean constraint on the underlying cp model.
+
+        Args:
+            cstr: boolean constraint
+
+        Returns:
+            the created constraint, linked to the model
+
+        """
+        ...
+
     @abstractmethod
     def create_int_var(self, lb: int, ub: int, name: str) -> Any:
         """Create an integer variable in the underlying cp model.
@@ -304,52 +344,11 @@ class CpSolver(SolverDO):
         """
         ...
 
-    @abstractmethod
-    def add_in_intervals(
-        self, expr: Any, intervals: Iterable[tuple[int, int]]
-    ) -> list[Any]:
-        """Enforce the given expr to be in given intervals."""
-        ...
-
-    def add_bound_constraint(self, var: Any, sign: SignEnum, value: int) -> list[Any]:
-        """Add constraint of bound type on an integer variable (or expression) of the underlying cp model.
-
-        `var` must compare to `value` according to `value`.
-
-        Args:
-            var:
-            sign:
-            value:
-
-        Returns:
-
-        """
-        if sign == SignEnum.LEQ:
-            cstr = var <= value
-        elif sign == SignEnum.UEQ:
-            cstr = var >= value
-        elif sign == SignEnum.EQUAL:
-            cstr = var == value
-        elif sign == SignEnum.LESS:
-            cstr = var < value
-        elif sign == SignEnum.UP:
-            cstr = var > value
-        else:
-            raise NotImplementedError(sign)
-        return [self.add_bool_constraint(cstr)]
-
-    @abstractmethod
-    def add_bool_constraint(self, cstr: Any) -> Any:
-        """Add boolean constraint on the underlying cp model.
-
-        Args:
-            cstr: boolean constraint
-
-        Returns:
-            the created constraint, linked to the model
-
-        """
-        ...
+    def in_intervals(self, expr: Any, intervals: Iterable[tuple[int, int]]) -> Any:
+        """Construct boolean expression true iff the given expr to be in given intervals."""
+        return self.at_least_one(
+            tuple(self.bool_and(tuple(lb <= expr, expr <= ub)) for lb, ub in intervals)
+        )
 
     @abstractmethod
     def add_implication(self, left_bool_expr: Any, right_bool_expr: Any) -> list[Any]:
@@ -370,16 +369,34 @@ class CpSolver(SolverDO):
         ...
 
     @abstractmethod
-    def add_bool_and(self, *exprs: Any) -> list[Any]:
-        """Add `and(exprs) == True`
+    def add_implication_bool_and(
+        self, left_bool_expr: Any, right_bool_exprs: Sequence[Any]
+    ) -> list[Any]:
+        """Add implication constraint left_bool_expr => exactly_one(right_bool_exprs)"""
+        return self.add_implication(left_bool_expr, self.bool_and(right_bool_exprs))
 
-        Args:
-            *exprs:
+    @abstractmethod
+    def add_implication_exactly_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        """Add implication constraint left_bool_expr => exactly_one(right_bool_exprs)"""
+        return self.add_implication(left_bool_expr, self.exactly_one(right_bool_exprs))
 
-        Returns:
+    @abstractmethod
+    def add_implication_at_least_one(
+        self, left_bool_expr: Any, right_bool_exprs: Iterable[Any]
+    ) -> list[Any]:
+        """Add implication constraint left_bool_expr => any(right_bool_exprs)"""
+        return self.add_implication(left_bool_expr, self.at_least_one(right_bool_exprs))
 
-        """
-        ...
+    @abstractmethod
+    def add_implication_in_intervals(
+        self, left_bool_expr: Any, right_expr: Any, intervals: Iterable[tuple[int, int]]
+    ) -> list[Any]:
+        """Add implication constraint left_bool_expr => in_intervals(target, intervals)"""
+        return self.add_implication(
+            left_bool_expr, self.in_intervals(right_expr, intervals)
+        )
 
     @abstractmethod
     def add_allowed_assignments(
@@ -395,7 +412,18 @@ class CpSolver(SolverDO):
             created constraints
 
         """
-        ...
+        return [
+            self.add_bool_constraint(
+                self.at_least_one(
+                    tuple(
+                        self.bool_and(
+                            tuple(var == value for var, value in zip(variables, row))
+                        )
+                        for row in values
+                    )
+                )
+            )
+        ]
 
     @abstractmethod
     def add_exactly_one(self, exprs: Iterable[Any]) -> list[Any]:
@@ -407,7 +435,7 @@ class CpSolver(SolverDO):
         Returns:
 
         """
-        ...
+        return [self.add_bool_constraint(self.exactly_one(exprs))]
 
     @abstractmethod
     def add_at_most_one(self, exprs: Iterable[Any]) -> list[Any]:
@@ -419,7 +447,7 @@ class CpSolver(SolverDO):
         Returns:
 
         """
-        ...
+        return [self.add_bool_constraint(self.at_most_one(exprs))]
 
     @abstractmethod
     def add_at_least_one(self, exprs: Iterable[Any]) -> list[Any]:
@@ -431,7 +459,23 @@ class CpSolver(SolverDO):
         Returns:
 
         """
-        ...
+        return [self.add_bool_constraint(self.at_least_one(exprs))]
+
+    def bool_and(self, exprs: Sequence[Any]) -> Any:
+        """Construct conjunction of boolean expressions."""
+        return sum(exprs) == len(exprs)
+
+    def exactly_one(self, exprs: Iterable[Any]) -> Any:
+        """Construct boolean expression true iff exactly one expression is true."""
+        return sum(exprs) == 1
+
+    def at_most_one(self, exprs: Iterable[Any]) -> Any:
+        """Construct boolean expression true iff at most expression is true."""
+        return sum(exprs) <= 1
+
+    def at_least_one(self, exprs: Iterable[Any]) -> Any:
+        """Construct boolean expression true iff at least expression is true."""
+        return sum(exprs) >= 1
 
     def hint_solution(self, hints: dict[Any, int | bool]) -> None:
         """Warm-start the underlying cp-solver with hints on some variables
