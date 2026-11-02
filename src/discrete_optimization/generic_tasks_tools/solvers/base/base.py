@@ -8,6 +8,7 @@ from typing import Iterable
 
 from discrete_optimization.generic_tasks_tools.base import Task, TasksCpSolver
 from discrete_optimization.generic_tasks_tools.solvers.base.typing import (
+    BoolExpr,
     Constraint,
     IntervalVar,
     LinearExpr,
@@ -32,6 +33,30 @@ class TasksCpBaseSolver(TasksCpSolver[Task]):
         if self.problem.is_optional(task):
             raise NotImplementedError()
         return True
+
+    def enforce_only_if_tasks_present(
+        self,
+        expr: BoolExpr,
+        tasks: Iterable[Task],
+    ) -> list[Constraint]:
+        """Enforce given constraints only if all given tasks are present.
+
+        Args:
+            expr:
+            tasks:
+
+        Returns:
+
+        """
+        is_present_tasks_variables = tuple(
+            self.get_task_is_present_variable(task)
+            for task in tasks
+            if self.problem.is_optional(task)
+        )
+        if len(is_present_tasks_variables) > 0:
+            return self.add_implication(is_present_tasks_variables, expr)
+        else:
+            return [self.add_bool_constraint(expr)]
 
     @abstractmethod
     def create_interval_var(

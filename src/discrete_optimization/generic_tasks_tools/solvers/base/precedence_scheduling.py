@@ -9,9 +9,6 @@ from discrete_optimization.generic_tasks_tools.precedence_scheduling import (
 from discrete_optimization.generic_tasks_tools.solvers.base.scheduling import (
     SchedulingCpBaseSolver,
 )
-from discrete_optimization.generic_tasks_tools.solvers.base.utils import (
-    enforce_only_if_tasks_present,
-)
 
 
 class PrecedenceSchedulingCpBaseSolver(SchedulingCpBaseSolver[Task]):
@@ -29,6 +26,7 @@ class PrecedenceSchedulingCpBaseSolver(SchedulingCpBaseSolver[Task]):
                     task=task2, start_or_end=StartOrEnd.START
                 )
                 # handle optional tasks
-                enforce_only_if_tasks_present(
-                    expr=expr, tasks=(task1, task2), solver=self
+                self.enforce_only_if_tasks_present(
+                    expr=expr,
+                    tasks=(task1, task2),
                 )

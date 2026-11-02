@@ -13,9 +13,6 @@ from discrete_optimization.generic_tasks_tools.enums import StartOrEnd
 from discrete_optimization.generic_tasks_tools.solvers.base.multimode_scheduling import (
     MultimodeSchedulingCpBaseSolver,
 )
-from discrete_optimization.generic_tasks_tools.solvers.base.utils import (
-    enforce_only_if_tasks_present,
-)
 
 
 class AlternativeSubproblemCpBaseSolver(
@@ -66,16 +63,15 @@ class AlternativeSubproblemCpBaseSolver(
                         expr = self.get_task_start_or_end_variable(
                             p1, StartOrEnd.START
                         ) >= self.get_task_start_or_end_variable(p0, StartOrEnd.END)
-                        enforce_only_if_tasks_present(
-                            expr=expr, tasks=(p1, p0), solver=self
-                        )
+                        self.enforce_only_if_tasks_present(expr=expr, tasks=(p1, p0))
                 for p in alternative_problem.list_paths:
                     for p0, p1 in zip(p[:-1], p[1:]):
                         expr = self.get_task_start_or_end_variable(
                             p1, StartOrEnd.START
                         ) >= self.get_task_start_or_end_variable(p0, StartOrEnd.END)
-                        enforce_only_if_tasks_present(
-                            expr=expr, tasks=(p1, p0), solver=self
+                        self.enforce_only_if_tasks_present(
+                            expr=expr,
+                            tasks=(p1, p0),
                         )
 
                     if p[0] != alternative_problem.source_task:
@@ -84,19 +80,17 @@ class AlternativeSubproblemCpBaseSolver(
                         ) >= self.get_task_start_or_end_variable(
                             alternative_problem.source_task, StartOrEnd.END
                         )
-                        enforce_only_if_tasks_present(
+                        self.enforce_only_if_tasks_present(
                             expr=expr,
                             tasks=(p[0], alternative_problem.source_task),
-                            solver=self,
                         )
                     if p[-1] != alternative_problem.sink_task:
                         expr = self.get_task_start_or_end_variable(
                             alternative_problem.sink_task, StartOrEnd.START
                         ) >= self.get_task_start_or_end_variable(p[-1], StartOrEnd.END)
-                        enforce_only_if_tasks_present(
+                        self.enforce_only_if_tasks_present(
                             expr=expr,
                             tasks=(alternative_problem.sink_task, p[-1]),
-                            solver=self,
                         )
         else:
             path_taken = [

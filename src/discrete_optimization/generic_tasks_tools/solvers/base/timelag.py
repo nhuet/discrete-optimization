@@ -6,9 +6,6 @@ from discrete_optimization.generic_tasks_tools.enums import MinOrMax, StartOrEnd
 from discrete_optimization.generic_tasks_tools.solvers.base.scheduling import (
     SchedulingCpBaseSolver,
 )
-from discrete_optimization.generic_tasks_tools.solvers.base.utils import (
-    enforce_only_if_tasks_present,
-)
 from discrete_optimization.generic_tasks_tools.timelag import TimelagProblem
 
 
@@ -91,7 +88,7 @@ class TimelagCpBaseSolver(SchedulingCpBaseSolver[Task]):
                 task=task2, start_or_end=task2_start_or_end
             )
             # handle optional tasks
-            enforce_only_if_tasks_present(expr=expr, tasks=(task1, task2), solver=self)
+            self.enforce_only_if_tasks_present(expr=expr, tasks=(task1, task2))
         # max only constraints
         max_only_timelags = set(max_timelags).difference(min_timelags)
         for task1, task2, offset in max_only_timelags:
@@ -101,7 +98,7 @@ class TimelagCpBaseSolver(SchedulingCpBaseSolver[Task]):
                 task=task2, start_or_end=task2_start_or_end
             )
             # handle optional tasks
-            enforce_only_if_tasks_present(expr=expr, tasks=(task1, task2), solver=self)
+            self.enforce_only_if_tasks_present(expr=expr, tasks=(task1, task2))
 
     def create_timelag_constraints(self) -> None:
         """Add precedence constraints to cp model."""
