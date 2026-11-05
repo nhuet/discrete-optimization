@@ -9,6 +9,9 @@ from typing import Generic, Optional
 from discrete_optimization.generic_tasks_tools.allocation import UnaryResource
 from discrete_optimization.generic_tasks_tools.enums import StartOrEnd
 from discrete_optimization.generic_tasks_tools.exclusions import ExclusionResource
+from discrete_optimization.generic_tasks_tools.generic_scheduling import (
+    GenericSchedulingSolution,
+)
 from discrete_optimization.generic_tasks_tools.non_renewable_resource import (
     NonRenewableResource,
 )
@@ -234,6 +237,39 @@ class GenericSchedulingAutoOptalSolver(
         raw_sol = self.retrieve_tasks_variables(solution_value_fn=solution_value_fn)
         # convert to specific solution type
         return self.convert_task_variables_to_solution(raw_sol=raw_sol)
+
+    def set_warm_start(self, solution: Solution) -> None:
+        solution: GenericSchedulingSolution[
+            Task,
+            UnaryResource,
+            Skill,
+            NonSkillCumulativeResource,
+            NonRenewableResource,
+            ExclusionResource,
+        ]
+        optal_solution = cp.Solution()
+        for task in self.problem.tasks_list:
+            if solution.is_present(task):
+                start = solution.get_start_time(task)
+                end = solution.get_end_time(task)
+                mode = solution.get_mode(task)
+                optal_solution.set_value(self.get_task_interval(task=task), start, end)
+                optal_solution.set_value(
+                    self.get_task_mode_interval(task=task, mode=mode), start, end
+                )
+                for unary_resource in self.problem.unary_resources_list:
+                    if solution.is_allocated(task=task, unary_resource=unary_resource):
+                        optal_solution.set_value(
+                            self.get_task_unary_resource_interval(
+                                task=task, unary_resource=unary_resource
+                            ),
+                            start,
+                            end,
+                        )
+        objective = int(self.aggreg_from_sol(solution))
+        optal_solution.set_objective(objective)
+        self.warm_start_solution = optal_solution
+        self.use_warm_start = True
 
 
 class SinglemodeGenericSchedulingAutoOptalSolver(

@@ -307,7 +307,7 @@ class OrtoolsCpSatSolver(CpSolver, BoundsProviderMixin):
     def add_at_least_one(self, exprs: Iterable[Any]) -> list[Any]:
         return [self.cp_model.add_at_least_one(exprs)]
 
-    def hint_solution(self, hints: dict[Any, int | bool]) -> None:
+    def hint_solution(self, hints: dict[Any, int | bool | tuple[int, int]]) -> None:
         self.cp_model.clear_hints()
         for var, value in hints.items():
             self.cp_model.add_hint(var, value)

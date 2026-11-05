@@ -797,7 +797,7 @@ class CpmpySolver(CpSolver):
     def add_at_least_one(self, exprs: Iterable[Any]) -> list[Any]:
         return super().add_at_least_one(exprs)
 
-    def hint_solution(self, hints: dict[Any, int | bool]) -> None:
+    def hint_solution(self, hints: dict[Any, int | bool | tuple[int, int]]) -> None:
         self.hints = hints
 
     def remove_constraints(self, constraints: Iterable[Any]) -> None:

@@ -350,6 +350,32 @@ class OptalCpSolver(CpSolver, BoundsProviderMixin):
     def add_at_least_one(self, exprs: Iterable[Any]) -> list[Any]:
         return super().add_at_least_one(exprs)
 
+    def hint_solution(self, hints: dict[Any, int | bool | tuple[int, int]]) -> None:
+        """Warm-start the underlying cp-solver with hints on some variables
+
+        Special case for optal: we need also to pass the objective to optal
+        (even though it recomputes it to check the validity of the hints)
+        So you should pass in the dictionary a key of class `optalcp.Objective`
+        with the proper value for the hinted solution objective.
+
+        Args:
+            hints: mapping between variables and their hinted values
+
+        Returns:
+
+        """
+        sol = cp.Solution()
+        for variable, value in hints.items():
+            if isinstance(variable, cp.Objective):
+                sol.set_objective(value)
+            elif isinstance(variable, cp.IntervalVar):
+                start, end = value
+                sol.set_value(variable, start, end)
+            else:
+                sol.set_value(variable, value)
+        self.warm_start_solution = sol
+        self.use_warm_start = True
+
     def set_warm_start_from_previous_run(self):
         """Set warm start from the previous solve run."""
         if self.current_solution is not None:

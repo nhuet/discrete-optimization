@@ -481,7 +481,7 @@ class CpSolver(SolverDO):
         """Construct integer expression corresponding to sum of variables or expressions."""
         return sum(exprs)
 
-    def hint_solution(self, hints: dict[Any, int | bool]) -> None:
+    def hint_solution(self, hints: dict[Any, int | bool | tuple[int, int]]) -> None:
         """Warm-start the underlying cp-solver with hints on some variables
 
         Args:

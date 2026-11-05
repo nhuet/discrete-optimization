@@ -17,6 +17,7 @@ from discrete_optimization.generic_tasks_tools.generic_scheduling import (
 from discrete_optimization.generic_tasks_tools.generic_scheduling_utils import (
     Objective,
     RawSolution,
+    TaskVariable,
 )
 from discrete_optimization.generic_tasks_tools.objectives.objective_computer import (
     ObjectiveComputer,
@@ -386,3 +387,23 @@ def test_auto(
             assert kpi["nb_tasks_allocated"] == 2
             assert kpi["makespan"] == 9
             assert kpi["nb_allocated"] == 2
+
+    # check warm start from a "bad" solution
+    bad_sol = MySolution(
+        problem=problem,
+        raw_sol=RawSolution(
+            task_variables={
+                "task-1": TaskVariable(
+                    start=1, end=4, mode=1, allocated={"worker1": set()}
+                ),
+                "task-2": TaskVariable(
+                    start=6, end=10, mode=0, allocated={"worker2": set()}
+                ),
+            }
+        ),
+    )
+    problem.satisfy(bad_sol)
+    solver.set_warm_start(bad_sol)
+    res = solver.solve(
+        do_not_retrieve_solutions=OPTAL_PREVIEW_ONLY,
+    )
