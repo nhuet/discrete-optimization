@@ -26,9 +26,9 @@ class ScheduleChangesComputer(ObjectiveComputer[Task]):
         self,
         problem: SchedulingProblem[Task] | None = None,
         base_scheduling_solution: SchedulingSolution[Task] | None = None,
-        weight_objective: float = 1.0,
-        cost_any_shift: dict[Task, float] | None = None,
-        cost_unit_deviation: dict[Task, float] | None = None,
+        weight_objective: int = 1,
+        cost_any_shift: dict[Task, int] | None = None,
+        cost_unit_deviation: dict[Task, int] | None = None,
     ):
         super().__init__(problem, weight_objective)
         if base_scheduling_solution is None:
@@ -70,7 +70,7 @@ class ScheduleChangesComputer(ObjectiveComputer[Task]):
     def has_any_unit_deviation_cost(self):
         return len(self.tasks_with_unit_deviation_cost()) > 0
 
-    def compute_any_shift_cost(self, solution: SchedulingSolution[Task]) -> float:
+    def compute_any_shift_cost(self, solution: SchedulingSolution[Task]) -> int:
         if not self.has_any_shift_cost():
             return 0
         return sum(
@@ -82,7 +82,7 @@ class ScheduleChangesComputer(ObjectiveComputer[Task]):
             ]
         )
 
-    def compute_unit_deviation_cost(self, solution: SchedulingSolution[Task]) -> float:
+    def compute_unit_deviation_cost(self, solution: SchedulingSolution[Task]) -> int:
         if not self.has_any_unit_deviation_cost():
             return 0
         return sum(
@@ -96,7 +96,7 @@ class ScheduleChangesComputer(ObjectiveComputer[Task]):
             ]
         )
 
-    def compute_objective(self, solution: TasksSolution) -> float:
+    def compute_objective(self, solution: TasksSolution) -> int:
         return self.compute_any_shift_cost(solution) + self.compute_unit_deviation_cost(
             solution
         )
