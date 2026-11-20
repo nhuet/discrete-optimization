@@ -156,6 +156,8 @@ class GenericSchedulingAutoCpSolver(
             default=ModeToValueModeling.ENFORCE_IF,
         ),
     ]
+    # Flag for allocation solver without scheduling (default to False)
+    no_scheduling = False
     # Task start/end bounds settings
     use_cpm_for_task_bounds = False
     """Flag telling whether cpm should be used to refine task bounds."""
@@ -229,7 +231,7 @@ class GenericSchedulingAutoCpSolver(
         If additional custom constraints require them, override it.
 
         """
-        return (
+        return not self.no_scheduling and (
             self.needs_task_intervals
             or (
                 len(self.problem.unary_resources_list) > 0
@@ -248,7 +250,7 @@ class GenericSchedulingAutoCpSolver(
         If additional custom constraints require them, override this property.
 
         """
-        return (
+        return not self.no_scheduling and (
             (
                 # no optional interval per mode created => task intervals needed for end-start=duration constraint
                 self.avoid_interval_optional_for_cumulative_resources
@@ -449,27 +451,33 @@ class GenericSchedulingAutoCpSolver(
     def _create_start_or_end_variables(self):
         for task in self.problem.tasks_list:
             for start_or_end in StartOrEnd:
-                # lower/upper bound
-                flat_intervals = [
-                    self.get_task_start_or_end_lower_bound(
-                        task=task, start_or_end=start_or_end
-                    ),
-                    self.get_task_start_or_end_upper_bound(
-                        task=task, start_or_end=start_or_end
-                    ),
-                ]
-                if task in self.task_is_scheduled:
-                    # if optional task, add value 0 (when task is absent)
-                    if flat_intervals[0] > 0:
-                        flat_intervals = [0, 0] + flat_intervals
-                start_or_end_var = self.create_int_var_from_flat_intervals(
-                    flat_intervals=flat_intervals,
-                    name=f"{start_or_end.value}_{task}",
-                )
-                if task in self.task_is_scheduled:
-                    self.add_implication(
-                        ~self.task_is_scheduled[task], start_or_end_var == 0
+                if self.no_scheduling:
+                    if start_or_end == StartOrEnd.START:
+                        start_or_end_var = 0
+                    else:
+                        start_or_end_var = 1
+                else:
+                    # lower/upper bound
+                    flat_intervals = [
+                        self.get_task_start_or_end_lower_bound(
+                            task=task, start_or_end=start_or_end
+                        ),
+                        self.get_task_start_or_end_upper_bound(
+                            task=task, start_or_end=start_or_end
+                        ),
+                    ]
+                    if task in self.task_is_scheduled:
+                        # if optional task, add value 0 (when task is absent)
+                        if flat_intervals[0] > 0:
+                            flat_intervals = [0, 0] + flat_intervals
+                    start_or_end_var = self.create_int_var_from_flat_intervals(
+                        flat_intervals=flat_intervals,
+                        name=f"{start_or_end.value}_{task}",
                     )
+                    if task in self.task_is_scheduled:
+                        self.add_implication(
+                            ~self.task_is_scheduled[task], start_or_end_var == 0
+                        )
                 self.start_or_end_variables[task, start_or_end] = start_or_end_var
 
     def _create_task_duration_and_interval_variables(self):
